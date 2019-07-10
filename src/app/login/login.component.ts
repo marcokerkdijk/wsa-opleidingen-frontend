@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AutenticatieService, JwtResponse} from "../services/autenticatie.service";
 import {Router} from "@angular/router";
+import {TokenService} from "../services/token.service";
 
 @Component({
   selector: 'wsa-login',
@@ -11,7 +12,8 @@ import {Router} from "@angular/router";
 export class LoginComponent implements OnInit {
   loginform: FormGroup;
 
-  constructor(private fb: FormBuilder, private router: Router, private autenticatieService: AutenticatieService) {
+  constructor(private fb: FormBuilder, private router: Router, private autenticatieService: AutenticatieService,
+              private tokenService: TokenService) {
 
     this.loginform = this.fb.group({
       emailadres: ['', Validators.required],
@@ -30,8 +32,11 @@ export class LoginComponent implements OnInit {
       this.autenticatieService.login(val.emailadres, val.wachtwoord)
         .subscribe(
           (token: JwtResponse) => {
-            console.log(token);
-            this.router.navigateByUrl('/home');
+
+            this.tokenService.setAutoristatieToken(token);
+
+            const redirect = this.autenticatieService.redirectUrl ? this.router.parseUrl(this.autenticatieService.redirectUrl) : '/home';
+            this.router.navigateByUrl(redirect);
           },
           (error) => {
             console.log(error);

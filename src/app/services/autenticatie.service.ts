@@ -3,6 +3,10 @@ import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
 import {environment} from "../../environments/environment";
 import {Observable} from "rxjs";
 import {JwtHelperService} from "@auth0/angular-jwt";
+import {GebruikersRol} from "../model/GebruikersRol";
+import {isNotNullOrUndefined} from "codelyzer/util/isNotNullOrUndefined";
+import {TokenService} from "./token.service";
+import {isNullOrUndefined} from "util";
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +15,10 @@ export class AutenticatieService {
 
   private apiUrl: string;
   private wsaClientAuthorization: string;
+  private jwtToken: JwtToken;
+  public redirectUrl: string;
 
-  constructor(private http: HttpClient, private jwtHelperService: JwtHelperService) {
+  constructor(private http: HttpClient, private tokenService: TokenService, private jwtHelperService: JwtHelperService) {
 
     this.apiUrl = environment.apiUrl;
     this.wsaClientAuthorization = ''.concat(environment.wsaClientId, ':', environment.wsaClientSecret);
@@ -38,11 +44,37 @@ export class AutenticatieService {
       }
     );
   }
+
+  public isGeautoriseerd(gebruikersRol: GebruikersRol): boolean {
+
+    if (!this.tokenService.isIngelogd()) {
+      return false;
+    }
+
+    if (isNullOrUndefined(this.jwtToken)) {
+      this.jwtToken = this.jwtHelperService.decodeToken(this.tokenService.getBearerToken());
+    }
+
+    return !isNullOrUndefined(this.jwtToken)
+      && !isNullOrUndefined(this.jwtToken.authorities)
+      && !isNullOrUndefined(this.jwtToken.authorities.find(value => value === gebruikersRol.toString()));
+  }
 }
 
 export interface JwtResponse {
-  accessToken: string;
-  type: string;
-  username: string;
+  access_token: string;
+  refresh_token: string;
+  token_type: string;
+  expires_in: number;
+  jti: string;
+  scope: string;
+}
+
+export interface JwtToken {
   authorities: string[];
+  client_id: string;
+  exp: number;
+  jti: string;
+  scope: string[];
+  user_name: string;
 }

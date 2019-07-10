@@ -11,11 +11,14 @@ import {JWT_OPTIONS, JwtModule} from "@auth0/angular-jwt";
 import {environment} from "../environments/environment";
 import {TokenService} from "./services/token.service";
 import {HomeComponent} from './home/home.component';
+import {StudentComponent} from './student/student.component';
+import {DocentComponent} from './docent/docent.component';
+import {AdminComponent} from './admin/admin.component';
 
 export function jwtOptionsFactory(tokenService: TokenService) {
   return {
     tokenGetter: () => {
-      return tokenService.getAutorisatieToken();
+      return tokenService.getBearerToken();
     },
     whitelistedDomains: [environment.apiUrl],
     blacklistedRoutes: [environment.apiUrl + '/oauth/token'],
@@ -30,7 +33,10 @@ export function jwtOptionsFactory(tokenService: TokenService) {
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    StudentComponent,
+    DocentComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

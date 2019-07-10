@@ -1,15 +1,38 @@
 import {Injectable} from '@angular/core';
+import {JwtResponse} from "./autenticatie.service";
+import {isNotNullOrUndefined} from "codelyzer/util/isNotNullOrUndefined";
+import {GebruikersRol} from "../model/GebruikersRol";
+import {JwtHelperService} from "@auth0/angular-jwt";
 
 @Injectable({
   providedIn: 'root'
 })
 export class TokenService {
 
-  constructor() {
+  private autorisatieToken: JwtResponse;
+
+  constructor(private jwtHelperService: JwtHelperService) {
   }
 
-  public getAutorisatieToken() {
+  public setAutoristatieToken(autorisatieToken: JwtResponse): void {
 
-    return null;
+    this.autorisatieToken = autorisatieToken;
   }
+
+  public getAutorisatieToken(): JwtResponse {
+
+    return this.autorisatieToken;
+  }
+
+  public getBearerToken(): string {
+
+    return isNotNullOrUndefined(this.autorisatieToken) ? this.autorisatieToken.access_token : null;
+  }
+
+  public isIngelogd(): boolean {
+
+    return isNotNullOrUndefined(this.autorisatieToken);
+  }
+
+
 }
