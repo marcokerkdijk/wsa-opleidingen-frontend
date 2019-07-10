@@ -1,0 +1,19 @@
+<form [formGroup]="loginform">
+  <fieldset>
+    <h1>Inloggen</h1>
+    <div class="form-field">
+      <label>emailadres</label>
+      <input name="emailadres" formControlName="emailadres">
+    </div>
+    <div class="form-field">
+      <label>wachtwoord</label>
+      <input name="wachtwoord" formControlName="wachtwoord"
+             type="password">
+    </div>
+  </fieldset>
+  <div class="form-buttons">
+    <button class="button button-primary"
+            (click)="login()">Login
+    </button>
+  </div>
+</form>
