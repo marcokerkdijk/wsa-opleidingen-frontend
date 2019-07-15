@@ -15,6 +15,8 @@ import {StudentComponent} from './student/student.component';
 import {DocentComponent} from './docent/docent.component';
 import {AdminComponent} from './admin/admin.component';
 import { PageFooterComponent } from './page-footer/page-footer.component';
+import { HeaderComponent } from './header/header.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 export function jwtOptionsFactory(tokenService: TokenService) {
   return {
@@ -38,6 +40,8 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     StudentComponent,
     DocentComponent,
     AdminComponent,
+    HeaderComponent,
+    NavbarComponent,
     PageFooterComponent
   ],
   imports: [
