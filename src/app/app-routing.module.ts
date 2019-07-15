@@ -11,8 +11,9 @@ import {StudentAutorisatieGuard} from "./guards/student-autorisatie.guard";
 
 const routes: Routes = [
 
-  {path: 'login', component: LoginComponent},
+
   {path: 'home', component: HomeComponent},
+  {path: 'login', component: LoginComponent},
   {path: 'admin', component: AdminComponent, canActivate: [AdminAutorisatieGuard]},
   {path: 'student', component: StudentComponent, canActivate: [StudentAutorisatieGuard]},
   {path: 'docent', component: DocentComponent, canActivate: [DocentAutorisatieGuard]},

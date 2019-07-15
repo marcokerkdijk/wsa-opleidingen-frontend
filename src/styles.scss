@@ -8,15 +8,20 @@
 @font-face{
     font-family: "Working Spirit Header";
     src: url(assets/Fonts/Avenir-Black.ttf);
-
 }
+
 
 #header {
     font-family: "Working Spirit Header";
 }
 
+
 body {
-    font-family: "Working Spirit"
+    font-family: "Working Spirit";  
+    overflow-x: hidden;
+}
+html {
+    font-family: "Working Spirit";
 }
 
 html {
