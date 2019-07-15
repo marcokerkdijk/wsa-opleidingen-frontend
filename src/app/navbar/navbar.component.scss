@@ -1,0 +1,33 @@
+.navbar {
+    background-color: #ffffff;
+    height: 5.5%;
+    padding-left: 0%;
+    padding-right: 0%;
+}
+
+.container-fluid {
+    padding-left: 19%;
+    padding-right: 19%;
+}
+
+#navbarBrand{
+    width: 45px;
+}
+
+li a {
+    display: block;
+    text-transform: uppercase;
+    color: #00aeef;
+    border-radius: 0%;
+    border: none;
+    background-color: #ffffff;
+    font-size: 10px;
+    margin-left: 6em;
+}
+
+.nav-link:hover {
+    display: block;
+    border-radius: 0%;
+    background-color: #00aeef;
+    color: #ffffff;
+}
