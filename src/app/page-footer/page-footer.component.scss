@@ -1,0 +1,31 @@
+.row {
+    padding-top: 2.5%;
+}
+#footer {
+    padding-top: 1.0%;
+    background-color: rgb(0, 174, 239);
+    background-image: url("https://www.workingspirit.nl/themes/workingspirit/images/pattern.png");
+    background-size: auto 100%;
+    color: #ffffff;
+    height: 400px;
+}
+.container-fluid {
+    padding-left: 19%;
+    padding-right: 19%;
+}
+
+.textlogo {
+    font-family: "Working Spirit Header";
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 35px;
+}
+#contactinformatie {
+    font-size: 12px !important;
+    line-height: 1.7;
+    white-space: unset;
+}
+
+#contactinformatie a {
+    color: #ffffff;
+}
