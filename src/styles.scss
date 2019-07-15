@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+
+@font-face{
+    font-family: "Working Spirit";
+    src: url(assets/Fonts/Avenir-Roman.ttf);
+}
+
+@font-face{
+    font-family: "Working Spirit Header";
+    src: url(assets/Fonts/Avenir-Black.ttf);
+
+}
+
+#header {
+    font-family: "WOrking Spirit Header";
+}
