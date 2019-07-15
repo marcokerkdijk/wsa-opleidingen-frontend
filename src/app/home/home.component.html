@@ -1,7 +1,18 @@
 <wsa-header></wsa-header>
-<div class="row">
-    <div id=h6> Welkom bij de Working Spirit academy!</div>
-    <a id=linktekst [routerLink]="'/admin'">admin</a><br>
-    <a id=linktekst [routerLink]="'/student'">student</a><br>
-    <a id=linktekst [routerLink]="'/docent'">docent</a><br>
+<div class="container-fluid" >
+<div class="row tekstkader">
+   
+        <div id=h6 class="col-sm-3">
+            Welkom!
+        </div>
+        <div class="col-sm-6">
+            <p>
+             Welkom bij de Working Spirit academy. Klik op onderstaande links om in te loggen.
+            Log in als:
+            </p>
+            <a id=linktekst [routerLink]="'/admin'">admin</a><br>
+            <a id=linktekst [routerLink]="'/student'">student</a><br>
+            <a id=linktekst [routerLink]="'/docent'">docent</a><br>
+        </div>
+    </div>
 </div>
