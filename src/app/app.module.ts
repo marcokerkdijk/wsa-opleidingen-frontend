@@ -14,6 +14,7 @@ import {HomeComponent} from './home/home.component';
 import {StudentComponent} from './student/student.component';
 import {DocentComponent} from './docent/docent.component';
 import {AdminComponent} from './admin/admin.component';
+import { HeaderComponent } from './header/header.component';
 
 export function jwtOptionsFactory(tokenService: TokenService) {
   return {
@@ -36,7 +37,8 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     HomeComponent,
     StudentComponent,
     DocentComponent,
-    AdminComponent
+    AdminComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
