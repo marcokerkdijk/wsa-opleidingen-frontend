@@ -79,6 +79,12 @@ export class AutenticatieService {
       }
     }
   }
+
+  public logout(): string {
+    this.jwtToken = null;
+    this.tokenService.resetToken();
+    return '/home';
+  }
 }
 
 export interface JwtResponse {

@@ -34,5 +34,8 @@ export class TokenService {
     return isNotNullOrUndefined(this.autorisatieToken);
   }
 
+  public resetToken(): void {
+    this.autorisatieToken = null;
+  }
 
 }
