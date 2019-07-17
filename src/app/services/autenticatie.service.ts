@@ -59,6 +59,26 @@ export class AutenticatieService {
       && !isNullOrUndefined(this.jwtToken.authorities)
       && !isNullOrUndefined(this.jwtToken.authorities.find(value => value === gebruikersRol.toString()));
   }
+
+  public routePerRol(): string {
+    if (isNullOrUndefined(this.jwtToken)) {
+      this.jwtToken = this.jwtHelperService.decodeToken(this.tokenService.getBearerToken());
+    }
+
+    let rol = this.jwtToken.authorities[0];
+
+    switch(rol) {
+      case 'ADMIN': {
+        return '/admin';
+      }
+      case 'DOCENT': {
+        return '/docent';
+      }
+      case 'STUDENT': {
+        return '/student';
+      }
+    }
+  }
 }
 
 export interface JwtResponse {
