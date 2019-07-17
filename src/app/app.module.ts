@@ -19,6 +19,7 @@ import { PageFooterComponent } from './page-footer/page-footer.component';
 import { HeaderComponent } from './header/header.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ModalComponent } from './login-modal/modal.component';
+import { TrajectenComponent } from './trajecten/trajecten.component';
 
 export function jwtOptionsFactory(tokenService: TokenService) {
   return {
@@ -46,6 +47,7 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     NavbarComponent,
     PageFooterComponent,
     ModalComponent,
+    TrajectenComponent,
   ],
   imports: [
     BrowserModule,
