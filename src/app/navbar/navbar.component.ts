@@ -13,6 +13,7 @@ import { ModalService } from '../services/modal.service';
 })
 export class NavbarComponent implements OnInit {
   loginform: FormGroup;
+  ingelogd: boolean = false;
 
   constructor(private modalService: ModalService, private fb: FormBuilder, private router: Router, 
               private autenticatieService: AutenticatieService, private tokenService: TokenService) {
@@ -39,18 +40,13 @@ export class NavbarComponent implements OnInit {
             this.tokenService.setAutoristatieToken(token);
 
             const redirect = this.autenticatieService.redirectUrl ? this.router.parseUrl(this.autenticatieService.redirectUrl) : this.autenticatieService.routePerRol();
+            this.ingelogd = this.tokenService.isIngelogd();
             this.router.navigateByUrl(redirect);
           },
           (error) => {
             console.log(error);
           }
         );
-    }
-  }
-
-  keyDownFunction(event) {
-    if(event.keyCode == 13) {
-      this.login();
     }
   }
 

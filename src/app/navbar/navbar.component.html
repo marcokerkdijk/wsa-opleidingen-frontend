@@ -32,8 +32,11 @@
                     </a>
                 </li>
                 <li class="nav-item" id="LoginButton">
-                    <a class="nav-link" (click)="openModal('login-modal')" id="witte-tekst">
+                    <a class="nav-link" *ngIf="!ingelogd" (click)="openModal('login-modal')" id="witte-tekst">
                         Login
+                    </a>
+                    <a class="nav-link" *ngIf="ingelogd" (click)="logout()" id="witte-tekst">
+                        Logout
                     </a>
                 </li>
             </ul>
