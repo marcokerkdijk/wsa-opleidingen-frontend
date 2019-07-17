@@ -28,3 +28,95 @@ html {
     font-family: "Working Spirit";
     overflow-x: hidden;
 }
+
+
+
+// ============ //
+// Modal opmaak //
+// ============ //
+
+jw-modal {
+    /* modals are hidden by default */
+    display: none;
+
+    .jw-modal {
+        /* modal container fixed across whole screen */
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        /* z-index must be higher than .jw-modal-background */
+        z-index: 1000;
+        
+        /* enables scrolling for tall modals */
+        overflow: auto;
+
+        .jw-modal-body {
+            width: 40%;
+            padding: 1.7%;
+
+            background: #00aeef;
+            color: #ffffff;
+
+            /* margin exposes part of the modal background */
+            margin-top: 10%;
+            margin-left: 30%;
+            margin-right: 30%;
+        }
+
+        .jw-modal-body form input {
+            width: 100%;
+            margin-bottom: 2%;
+            padding: 1%;
+            border: none;
+            background-color: #ffffff;
+            color: #00aeef;
+        }
+
+        .jw-modal-body form input::placeholder {
+            color: #00aeef;
+            opacity: 0.7;
+        }
+
+        .jw-modal-body button {
+            width: 50%;
+            padding: 1%;
+            border: 1px solid #00aeef;
+            background-color: #ffffff;
+            color: #00aeef;
+        }
+
+        .jw-modal-body button:hover {
+            border: 1px solid #ffffff;
+            background-color: #00aeef;
+            color: #ffffff;
+        }
+    }
+
+    .jw-modal-background {
+        /* modal background fixed across whole screen */
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        /* semi-transparent black  */
+        background-color: #000000;
+        opacity: 0.75;
+        
+        /* z-index must be below .jw-modal and above everything else  */
+        z-index: 900;
+    }
+}
+
+body.jw-modal-open {
+    /* body overflow is hidden to hide main scrollbar when modal window is open */
+    overflow: hidden;
+}
+
+// ================== //
+// Einde Modal opmaak //
+// ================== //

@@ -1,5 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
@@ -17,6 +18,7 @@ import {AdminComponent} from './admin/admin.component';
 import { PageFooterComponent } from './page-footer/page-footer.component';
 import { HeaderComponent } from './header/header.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { ModalComponent } from './login-modal/modal.component';
 
 export function jwtOptionsFactory(tokenService: TokenService) {
   return {
@@ -42,7 +44,8 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     AdminComponent,
     HeaderComponent,
     NavbarComponent,
-    PageFooterComponent
+    PageFooterComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,7 +58,8 @@ export function jwtOptionsFactory(tokenService: TokenService) {
         deps: [TokenService]
       }
     }),
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: AutorisatieInterceptor, multi: true}
