@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
 
             this.tokenService.setAutoristatieToken(token);
 
-            const redirect = this.autenticatieService.redirectUrl ? this.router.parseUrl(this.autenticatieService.redirectUrl) : '/home';
+            const redirect = this.autenticatieService.redirectUrl ? this.router.parseUrl(this.autenticatieService.redirectUrl) : this.autenticatieService.routePerRol();
             this.router.navigateByUrl(redirect);
           },
           (error) => {
