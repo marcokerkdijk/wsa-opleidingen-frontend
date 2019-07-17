@@ -45,10 +45,19 @@
     <h1>Login</h1>
     <p>Voer uw e-mailadres en wachtwoord in om in te loggen.</p>
 
-    <form (keydown)="keyDownFunction($event)">
-        <input type="text" placeholder="E-mailadres" (input)="username = $event.target.value">
-        <input type="password" placeholder="Wachtwoord" maxlength="25" (input)="password = $event.target.value">
-    </form>
-    <button (click)="login()">Login</button>
-    <button (click)="closeModal('login-modal');">Sluiten</button>
+    <form [formGroup]="loginform">
+        <fieldset>
+          <div class="form-field">
+            <input name="emailadres" formControlName="emailadres" placeholder="E-mailadres">
+          </div>
+          <div class="form-field">
+            <input name="wachtwoord" formControlName="wachtwoord"
+                   type="password" placeholder="Wachtwoord" maxlength="25">
+          </div>
+        </fieldset>
+        <div>
+            <button class="button button-primary" (click)="login()">Login</button>
+            <button class="button button-primary" (click)="closeModal('login-modal');">Sluiten</button>
+        </div>
+      </form>
 </jw-modal>
