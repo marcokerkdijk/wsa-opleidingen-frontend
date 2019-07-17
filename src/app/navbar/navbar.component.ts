@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {AutenticatieService, JwtResponse} from "../services/autenticatie.service";
+import {Router} from "@angular/router";
+import {TokenService} from "../services/token.service";
 
 import { ModalService } from '../services/modal.service';
 
@@ -8,14 +12,40 @@ import { ModalService } from '../services/modal.service';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
+  loginform: FormGroup;
 
-  constructor(private modalService: ModalService) { }
+  constructor(private modalService: ModalService, private fb: FormBuilder, private router: Router, 
+              private autenticatieService: AutenticatieService, private tokenService: TokenService) {
+    
+    this.loginform = this.fb.group({
+      emailadres: ['', Validators.required],
+      wachtwoord: ['', Validators.required]
+    });
+  }
 
   ngOnInit() {
   }
 
-  login(): void {
-    alert("U bent ingelogd.")
+  public login(): void {
+    this.closeModal('login-modal');
+    
+    const val = this.loginform.value;
+
+    if (val.emailadres && val.wachtwoord) {
+      this.autenticatieService.login(val.emailadres, val.wachtwoord)
+        .subscribe(
+          (token: JwtResponse) => {
+
+            this.tokenService.setAutoristatieToken(token);
+
+            const redirect = this.autenticatieService.redirectUrl ? this.router.parseUrl(this.autenticatieService.redirectUrl) : this.autenticatieService.routePerRol();
+            this.router.navigateByUrl(redirect);
+          },
+          (error) => {
+            console.log(error);
+          }
+        );
+    }
   }
 
   keyDownFunction(event) {
