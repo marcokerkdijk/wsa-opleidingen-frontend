@@ -97,4 +97,8 @@ export interface JwtToken {
   jti: string;
   scope: string[];
   user_name: string;
+  voornaam: string;
+  tussenvoegsel: string;
+  achternaam: string;
+  displaynaam: string;
 }
