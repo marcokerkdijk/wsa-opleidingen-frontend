@@ -3,6 +3,13 @@
     height: 5.5%;
     padding-left: 0%;
     padding-right: 0%;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.nav-item .nav-link {
+    padding-top: 14px;
+    padding-bottom: 14px;
 }
 
 .container-fluid {
@@ -27,7 +34,12 @@ li a {
 
 .nav-link:hover {
     display: block;
+    cursor: pointer;
     border-radius: 0%;
     background-color: #00aeef;
+    color: #ffffff;
+}
+
+#witte-tekst:hover {
     color: #ffffff;
 }
