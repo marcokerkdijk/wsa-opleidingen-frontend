@@ -1,7 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {LoginComponent} from './login/login.component';
@@ -20,6 +19,7 @@ import { HeaderComponent } from './header/header.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ModalComponent } from './login-modal/modal.component';
 import { TrajectenComponent } from './trajecten/trajecten.component';
+import { AdminMaakTrajectComponent } from './admin/admin-maak-traject/admin-maak-traject.component';
 import { HomeInformatieComponent } from './home/home-informatie/home-informatie.component';
 
 export function jwtOptionsFactory(tokenService: TokenService) {
@@ -49,6 +49,7 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     PageFooterComponent,
     ModalComponent,
     TrajectenComponent,
+    AdminMaakTrajectComponent,
     HomeInformatieComponent,
   ],
   imports: [

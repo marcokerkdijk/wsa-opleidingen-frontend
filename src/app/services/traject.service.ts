@@ -17,6 +17,10 @@ export class TrajectService {
         return of(zichtbareTrajecten);
     }
 
+  MaakTraject(traject: Traject): Observable<any> {
+        return this.http.post<Traject>(`${this.api}/MaakTraject`, traject);
+    }
+
     //   return this.http.get<Traject[]>(`${this.api}/GeefZichtbareTrajecten`)
   //  }
 
