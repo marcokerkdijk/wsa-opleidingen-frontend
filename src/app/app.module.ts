@@ -20,6 +20,7 @@ import { HeaderComponent } from './header/header.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ModalComponent } from './login-modal/modal.component';
 import { TrajectenComponent } from './trajecten/trajecten.component';
+import { HomeInformatieComponent } from './home/home-informatie/home-informatie.component';
 
 export function jwtOptionsFactory(tokenService: TokenService) {
   return {
@@ -48,6 +49,7 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     PageFooterComponent,
     ModalComponent,
     TrajectenComponent,
+    HomeInformatieComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,38 @@
+
+tbody {
+    width: 1200px;
+}
+
+th {
+    background: #ffffff;
+    color: #696969;
+    font-size: 15px;
+    text-transform: uppercase;
+    border: 1px solid;
+    border-color: black;
+    width: auto;
+    height: 50px;
+    overflow: visible;
+}
+
+#tdNaam {
+    background: #ffffff;
+    color: #696969;
+    font-size: 15px;
+    border: 1px solid;
+    text-align: left;
+    height: auto;   
+    width: auto;
+    overflow: auto;
+}
+
+#tdOmschrijving {
+    background: #ffffff;
+    color: #696969;
+    font-size: 15px;
+    border: 1px solid;
+    text-align: left;
+    height: 50px;   
+    width: 400px;
+    overflow: auto;
+}

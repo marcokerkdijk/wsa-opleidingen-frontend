@@ -79,6 +79,11 @@ export class AutenticatieService {
       }
     }
   }
+
+  public haalTokenOp(): JwtToken {
+    return this.jwtToken;
+  }
+
 }
 
 export interface JwtResponse {
