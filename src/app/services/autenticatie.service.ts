@@ -80,6 +80,10 @@ export class AutenticatieService {
     }
   }
 
+  public haalTokenOp(): JwtToken {
+    return this.jwtToken;
+  }
+
   public logout(): string {
     this.jwtToken = null;
     this.tokenService.resetToken();
