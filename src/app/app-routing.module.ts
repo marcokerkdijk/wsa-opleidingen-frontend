@@ -16,9 +16,11 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   // {path: 'admin', component: AdminComponent},
   // {path: 'admin-maak-traject', component: AdminMaakTrajectComponent},
+  // {path: 'student', component: StudentComponent},
+  // {path: 'docent', component: DocentComponent},
   // {path: 'login', component: LoginComponent},
-  {path: 'admin-maak-traject', component: AdminMaakTrajectComponent},
   {path: 'admin', component: AdminComponent, canActivate: [AdminAutorisatieGuard]},
+  {path: 'admin-maak-traject', component: AdminMaakTrajectComponent, canActivate: [AdminAutorisatieGuard]},
   {path: 'student', component: StudentComponent, canActivate: [StudentAutorisatieGuard]},
   {path: 'docent', component: DocentComponent, canActivate: [DocentAutorisatieGuard]},
   {path: '', pathMatch: 'full', redirectTo: '/login',}
