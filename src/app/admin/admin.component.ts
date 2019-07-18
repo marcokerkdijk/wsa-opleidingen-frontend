@@ -13,10 +13,5 @@ export class AdminComponent implements OnInit {
 
   ngOnInit() {
 
-    this.vulGebruiker();
-  }
-
-  vulGebruiker() {
-    this.gebruiker = this.authenticatieService.getJwtToken();
   }
 }
