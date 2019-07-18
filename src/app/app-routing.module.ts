@@ -13,7 +13,7 @@ import { AdminMaakTrajectComponent } from './admin/admin-maak-traject/admin-maak
 const routes: Routes = [
 
   {path: 'home', component: HomeComponent},
-  // {path: 'login', component: LoginComponent},
+  {path: 'login', component: LoginComponent},
   {path: 'admin', component: AdminComponent, canActivate: [AdminAutorisatieGuard]},
   {path: 'admin-maak-traject', component: AdminMaakTrajectComponent, canActivate: [AdminAutorisatieGuard]},
   {path: 'student', component: StudentComponent, canActivate: [StudentAutorisatieGuard]},
