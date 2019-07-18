@@ -11,17 +11,23 @@ import { zichtbareTrajecten } from 'src/mockTrajecten';
 export class TrajectService {
   private api:string = environment.apiUrl
 
-  constructor(private http:HttpClient) { }
+  constructor(private http : HttpClient) { }
 
   GeefZichtbareTrajecten(): Observable<Traject[]> {
-        return of(zichtbareTrajecten);
+        // return of(zichtbareTrajecten);
+        
+      return this.http.get<Traject[]>(`${this.api}/GeefZichtbareTrajecten`)
+  
     }
 
   MaakTraject(traject: Traject): Observable<any> {
         return this.http.post<Traject>(`${this.api}/MaakTraject`, traject);
     }
 
-    //   return this.http.get<Traject[]>(`${this.api}/GeefZichtbareTrajecten`)
-  //  }
+  GeefZichtbareTrajectenHome(): Observable<Traject[]> {     
+    return this.http.get<Traject[]>(`${this.api}/home`)
+
+  }
+
 
 }

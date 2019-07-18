@@ -1,25 +1,25 @@
-
 <div class="col-sm-3">
     <wsa-trajecten></wsa-trajecten>
 
     <div class="container-fluid" id="mainbody">
         <div class="row">
-                <div id=h6 class="col-sm-3">
-                        Alle trajecten
-                    </div>
+            <div id=h6 class="col-sm-3">
+                Alle trajecten
+            </div>
+        </div>
+            <div class="row">
             <div class="col-sm-11">
                 <div>Trajectnaam:</div>
                 <div>
-                    <input [(ngModel)]="traject.naam" type="text" class="form-control"/>
+                    <input [(ngModel)]="traject.naam" type="text" class="form-control" />
                 </div>
-    
             </div>
-        </div>
+            </div>
         <div class="row">
             <div class="col-sm-11">
                 <div>Trajectomschrijving:</div>
                 <div>
-                    <input [(ngModel)]="traject.omschrijving" type="text" class="form-control"/>
+                    <input [(ngModel)]="traject.omschrijving" type="text" class="form-control" />
                 </div>
             </div>
         </div>
@@ -28,12 +28,12 @@
                 <div>Zichtbaar:</div>
             </div>
             <div class="col-sm-3">
-                <input [(ngModel)]="traject.zichtbaar" type="checkbox" id="checkbox" value ="true"/>
+                <input [(ngModel)]="traject.zichtbaar" type="checkbox" id="checkbox" value="true" />
             </div>
         </div>
         <div class="row">
             <div class="col-sm-11">
-                <button (click)="createTraject(traject)">Opslaan</button>
+                <button (click)=createTraject(traject)>Opslaan</button>
             </div>
         </div>
     </div>
