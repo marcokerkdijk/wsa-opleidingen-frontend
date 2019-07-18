@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { JwtToken, AutenticatieService } from '../services/autenticatie.service';
 import { TrajectService } from '../services/traject.service';
 import { Router } from '@angular/router';
 import { Traject } from '../traject';
-import {AutenticatieService, JwtResponse, JwtToken} from "../services/autenticatie.service";
 
 @Component({
   selector: 'wsa-admin',
@@ -10,13 +10,12 @@ import {AutenticatieService, JwtResponse, JwtToken} from "../services/autenticat
   styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent implements OnInit {
+  gebruiker: JwtToken;
 
   traject: Traject = new Traject();
 
   constructor(private trajectService: TrajectService, 
     private router: Router, private authenticatieService:AutenticatieService) { }
-
-    gebruiker:JwtToken;
 
   ngOnInit() {
     this.haalGebruikerOp();
@@ -25,5 +24,4 @@ export class AdminComponent implements OnInit {
   haalGebruikerOp():void {
     this.gebruiker = this.authenticatieService.haalTokenOp();
   }
-
 }
