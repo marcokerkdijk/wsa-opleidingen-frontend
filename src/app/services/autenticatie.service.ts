@@ -84,6 +84,11 @@ export class AutenticatieService {
     return this.jwtToken;
   }
 
+  public logout(): string {
+    this.jwtToken = null;
+    this.tokenService.resetToken();
+    return '/home';
+  }
 }
 
 export interface JwtResponse {
