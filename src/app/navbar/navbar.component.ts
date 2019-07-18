@@ -50,6 +50,12 @@ export class NavbarComponent implements OnInit {
     }
   }
 
+  public logout(): void {
+    const redirect = this.autenticatieService.logout();
+    this.ingelogd = this.tokenService.isIngelogd();
+    this.router.navigateByUrl(redirect);
+  }
+
   openModal(id: string) {
     this.modalService.open(id);
   }
