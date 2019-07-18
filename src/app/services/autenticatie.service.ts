@@ -60,6 +60,11 @@ export class AutenticatieService {
       && !isNullOrUndefined(this.jwtToken.authorities.find(value => value === gebruikersRol.toString()));
   }
 
+  public getJwtToken(): JwtToken {
+    
+    return this.jwtToken;
+  }
+
   public routePerRol(): string {
     if (isNullOrUndefined(this.jwtToken)) {
       this.jwtToken = this.jwtHelperService.decodeToken(this.tokenService.getBearerToken());
