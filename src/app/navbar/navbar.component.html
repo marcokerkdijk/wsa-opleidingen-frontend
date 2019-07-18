@@ -31,11 +31,11 @@
                         Werken bij
                     </a>
                 </li>
-                <li class="nav-item" id="LoginButton">
-                    <a class="nav-link" *ngIf="!ingelogd" (click)="openModal('login-modal')" id="witte-tekst">
+                <li class="nav-item" id="LogButton">
+                    <a class="nav-link" *ngIf="!ingelogd" (click)="openModal('login-modal')" id="LoginButton">
                         Login
                     </a>
-                    <a class="nav-link" *ngIf="ingelogd" (click)="logout()" id="witte-tekst">
+                    <a class="nav-link" *ngIf="ingelogd" (click)="logout()" id="LogoutButton">
                         Logout
                     </a>
                 </li>
