@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AutenticatieService, JwtResponse, JwtToken} from "../services/autenticatie.service";
 
 @Component({
   selector: 'wsa-admin',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent implements OnInit {
+  gebruiker:JwtToken;
 
-  constructor() { }
+  constructor(private authenticatieService:AutenticatieService) { }
 
   ngOnInit() {
+    this.haalGebruikerOp();
+  }
+
+  haalGebruikerOp():void {
+    this.gebruiker = this.authenticatieService.haalTokenOp();
   }
 
 }
