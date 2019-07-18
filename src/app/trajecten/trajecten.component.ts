@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Traject } from '../traject';
 import { TrajectService } from '../services/traject.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'wsa-trajecten',
@@ -10,7 +11,7 @@ import { TrajectService } from '../services/traject.service';
 export class TrajectenComponent implements OnInit {
 
   zichtbaarTrajecten : Traject[];
- 
+  private api:string = environment.apiUrl;
  
   constructor(private trajectService : TrajectService) { }
  
@@ -21,6 +22,10 @@ export class TrajectenComponent implements OnInit {
   getTrajecten(): void {
     this.trajectService.GeefZichtbareTrajecten()
         .subscribe(zichtbareTrajecten => this.zichtbaarTrajecten = zichtbareTrajecten);
+  }
+
+  postTraject(traject:Traject): void {
+    this.trajectService.MaakTraject(traject).subscribe;
   }
 
 //   getTrajecten(): void {
