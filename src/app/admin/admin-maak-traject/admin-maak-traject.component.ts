@@ -17,7 +17,6 @@ export class AdminMaakTrajectComponent implements OnInit {
   }
 
   createTraject(traject: Traject){
-    console.log(traject);
     this.trajectService.MaakTraject(traject)
     .subscribe(response => this.router.navigateByUrl('/admin-maak-traject'));
   }
