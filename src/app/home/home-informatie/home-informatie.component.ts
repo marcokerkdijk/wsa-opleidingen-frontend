@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Traject } from 'src/app/traject';
+import { environment } from 'src/environments/environment';
+import { TrajectService } from 'src/app/services/traject.service';
 
 @Component({
   selector: 'wsa-home-informatie',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeInformatieComponent implements OnInit {
 
-  constructor() { }
-
+  zichtbaarTrajecten : Traject[];
+  private api:string = environment.apiUrl;
+ 
+  constructor(private trajectService : TrajectService) { }
+ 
   ngOnInit() {
+    this.getTrajecten();
   }
-
+  
+  getTrajecten(): void {
+    this.trajectService.GeefZichtbareTrajectenHome()
+        .subscribe(zichtbareTrajecten => this.zichtbaarTrajecten = zichtbareTrajecten);
+  }
 }
