@@ -5,7 +5,9 @@
                 id="navbarBrand">
         </a>
         <nav>
+
             <ul class="navbar-nav">
+
                 <li class="nav-item" id="CorporateButton">
                     <a class="nav-link" href="https://www.workingspirit.nl/corporate/">
                         Corporate
@@ -39,6 +41,11 @@
                         Logout
                     </a>
                 </li>
+                <li class="nav-hamburger">
+                        <div id='hamburger'></div>
+                        <div id='hamburger'></div>
+                        <div id='hamburger'></div>
+                </li>
             </ul>
         </nav>
     </div>
@@ -50,17 +57,17 @@
 
     <form [formGroup]="loginform">
         <fieldset>
-          <div class="form-field">
-            <input name="emailadres" formControlName="emailadres" placeholder="E-mailadres">
-          </div>
-          <div class="form-field">
-            <input name="wachtwoord" formControlName="wachtwoord"
-                   type="password" placeholder="Wachtwoord" maxlength="25">
-          </div>
+            <div class="form-field">
+                <input name="emailadres" formControlName="emailadres" placeholder="E-mailadres">
+            </div>
+            <div class="form-field">
+                <input name="wachtwoord" formControlName="wachtwoord" type="password" placeholder="Wachtwoord"
+                    maxlength="25">
+            </div>
         </fieldset>
         <div>
             <button class="button button-primary" (click)="login()">Login</button>
             <button class="button button-primary" (click)="closeModal('login-modal');">Sluiten</button>
         </div>
-      </form>
+    </form>
 </jw-modal>
