@@ -8,8 +8,8 @@
 }
 
 .nav-item .nav-link {
-    padding-top: 14px;
-    padding-bottom: 14px;
+    padding-top: 13.5px;
+    padding-bottom: 13.5px;
 }
 
 .container-fluid {
@@ -47,4 +47,23 @@ li a {
 
 #LogoutButton:hover {
     color: #ffffff;
+}
+
+
+ #hamburger {
+    width: 35px;
+    height: 4px;
+    background-color: #00aeef;
+    margin: 4px 0;
+ }
+
+  @media (min-width: 1050){
+    .nav-hamburger {
+       visibility: hidden;
+       position: fixed;
+       padding-top: 7px;
+       padding-bottom: 7px;
+        
+    }
+    
 }

@@ -28,8 +28,5 @@ export class TrajectenComponent implements OnInit {
     this.trajectService.MaakTraject(traject).subscribe;
   }
 
-//   getTrajecten(): void {
-//     this.trajectService.GeefZichtbareTrajecten()
-//         .subscribe(zichtbareTrajecten => this.zichtbareTrajecten = zichtbareTrajecten);
-//   }
+
  }
