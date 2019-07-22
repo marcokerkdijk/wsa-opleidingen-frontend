@@ -21,6 +21,8 @@ import { ModalComponent } from './login-modal/modal.component';
 import { TrajectenComponent } from './trajecten/trajecten.component';
 import { AdminMaakTrajectComponent } from './admin/admin-maak-traject/admin-maak-traject.component';
 import { HomeInformatieComponent } from './home/home-informatie/home-informatie.component';
+import { AdminBeheerGebruikersComponent } from './admin/admin-beheer-gebruikers/admin-beheer-gebruikers.component';
+
 
 export function jwtOptionsFactory(tokenService: TokenService) {
   return {
@@ -51,6 +53,7 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     TrajectenComponent,
     AdminMaakTrajectComponent,
     HomeInformatieComponent,
+    AdminBeheerGebruikersComponent,
   ],
   imports: [
     BrowserModule,

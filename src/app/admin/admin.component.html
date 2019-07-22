@@ -1,3 +1,4 @@
+
 <div class="row">
         <div class="container-fluid">
                 <div class="row">
@@ -13,8 +14,15 @@
                             <p>
                                 Bekijk hier alle trajecten en pas ze eventueel aan:
                             </p>
-                            <button id=linktekst [routerLink]="'/admin-maak-traject'">trajecten</button><br>
+                            <button id=linktekst [routerLink]="'./admin-maak-traject'">trajecten</button><br>
                         </div>
+                        <div class="col-sm-6">
+                            <p>
+                                Bekijk hier alle actieve gebruikers en pas ze eventueel aan of voeg toe:
+                            </p>
+                            <button id=linktekst [routerLink]="'./admin-beheer-gebruikers'">Gebruikers</button><br>
+                        </div>
+                        <router-outlet></router-outlet>
                 </div>
             </div>
         </div>
