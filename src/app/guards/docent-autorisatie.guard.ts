@@ -23,7 +23,7 @@ export class DocentAutorisatieGuard implements CanActivate {
 
     const url: string = state.url;
     this.autenticatieService.redirectUrl = url;
-    return this.router.createUrlTree(['/login']);
+    return this.router.createUrlTree(['/home']);
 
   }
 
