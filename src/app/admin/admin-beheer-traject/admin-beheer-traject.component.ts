@@ -4,11 +4,11 @@ import { Traject } from 'src/app/traject';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'wsa-admin-maak-traject',
-  templateUrl: './admin-maak-traject.component.html',
-  styleUrls: ['./admin-maak-traject.component.scss']
+  selector: 'wsa-admin-beheer-traject',
+  templateUrl: './admin-beheer-traject.component.html',
+  styleUrls: ['./admin-beheer-traject.component.scss']
 })
-export class AdminMaakTrajectComponent implements OnInit {
+export class AdminBeheerTrajectComponent implements OnInit {
   traject:Traject = new Traject;
 
   constructor(private trajectService:TrajectService, private router:Router) { }
