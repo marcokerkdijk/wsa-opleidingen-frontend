@@ -10,6 +10,7 @@ import { environment } from 'src/environments/environment';
 })
 export class TrajectenComponent implements OnInit {
 
+  alleTrajecten : Traject[];
   zichtbaarTrajecten : Traject[];
   private api:string = environment.apiUrl;
  
@@ -17,6 +18,11 @@ export class TrajectenComponent implements OnInit {
  
   ngOnInit() {
     this.getTrajecten();
+  }
+
+  getAlleTrajecten(): void {
+    this.trajectService.GeefAlleTrajecten()
+        .subscribe(alleTrajecten => this.alleTrajecten = alleTrajecten);
   }
   
   getTrajecten(): void {

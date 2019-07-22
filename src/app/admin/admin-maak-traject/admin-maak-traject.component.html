@@ -1,36 +1,23 @@
 <div class="row">
-    <div class="container-fluid" id="mainbody">
-        <div class="row">
-            <div id=h6 class="col-sm-3">
-                Alle trajecten
-            </div>
-            <wsa-trajecten></wsa-trajecten>
+    <div id=h6 class="col-sm-3">
+        Maak een nieuw traject aan
+    </div>
+    <div class="col-sm-6">
+        <div>Trajectnaam:
         </div>
-        <div class="row">
-            <div id=h6 class="col-sm-3">
-                Maak een nieuw traject aan
-            </div>
-            <div class="col-sm-11">
-                <div>Trajectnaam:</div>
-                <div>
-                    <input [(ngModel)]="traject.naam" type="text" class="form-control" />
-                </div>
-            </div>
-            <div class="col-sm-11">
-                <div>Trajectomschrijving:</div>
-                <div>
-                    <input [(ngModel)]="traject.omschrijving" type="text" class="form-control" />
-                </div>
-            </div>
-            <div class="col-sm-11">
-                <div>Zichtbaar:</div>
-            </div>
-            <div class="col-sm-3">
-                <input [(ngModel)]="traject.zichtbaar" type="checkbox" id="checkbox" value="true" />
-            </div>
-            <div class="col-sm-11">
-                <button (click)="createTraject(traject)">Opslaan</button>
-            </div>
+        <div>
+            <input [(ngModel)]="traject.naam" type="text" class="form-control" />
+        </div>
+        <div>Trajectomschrijving:
+        </div>
+        <div>
+            <input [(ngModel)]="traject.omschrijving" type="text" class="form-control" />
+        </div>
+        <div>Zichtbaar:
+        </div>
+        <div><input [(ngModel)]="traject.zichtbaar" type="checkbox" id="checkbox" value="true" />
+        </div>
+        <div><button (click)="createTraject(traject)">Opslaan</button>
         </div>
     </div>
 </div>
