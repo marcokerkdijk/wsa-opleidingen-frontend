@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="container-fluid" id="mainbody">
+        <div class="row">
+            <div id=h6 class="col-sm-3">
+                Alle gebruikers
+            </div>
+            <table >
+                <thead id="table-bottom">
+                    <tr>
+                      <th>Voornaam</th>
+                      <th>Tussenvoegsel</th>
+                      <th>Achternaam</th>
+                      <th>Emailadres</th>
+                      <th>Rol</th>
+                      <th>Actief</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let Gebruiker of actieveGebruikers">
+                      <td >{{Gebruiker.voornaam}}</td>
+                      <td >{{Gebruiker.tussenvoegsel}}</td>
+                      <td >{{Gebruiker.achternaam}}</td>
+                      <td >{{Gebruiker.emailadres}}</td>
+                      <td >{{Gebruiker.rol}}</td>
+                      <td >{{Gebruiker.actief}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>

@@ -5,12 +5,9 @@
         </div>
         <div class="col-sm-6">
             <p>
-                Welkom bij de Working Spirit academy. Klik op onderstaande links om in te loggen.
-                Log in als:
+                Welkom bij de Working Spirit academy. Login voor meer informatie over jouw traject!
+                Nog geen deelnemer van een traject, bekijk hieronder de trajecten die lopen of nog gaan starten. 
             </p>
-            <a id=linktekst [routerLink]="'/admin'">admin</a><br>
-            <a id=linktekst [routerLink]="'/student'">student</a><br>
-            <a id=linktekst [routerLink]="'/docent'">docent</a><br>
         </div>
     </div>
     <div class="row">
@@ -18,17 +15,17 @@
             Lopende trajecten
         </div>
         <div class="col-sm-6">
-            <table >
+            <table>
                 <thead id="table-bottom">
                     <tr>
-                      <th>Traject</th>
-                      <th>Omschrijving</th>
+                        <th>Traject</th>
+                        <th>Omschrijving</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let Traject of zichtbaarTrajecten">
-                      <td id="tdNaam">{{Traject.naam}}</td>
-                      <td id="tdOmschrijving">{{Traject.omschrijving}}</td>
+                        <td id="tdNaam">{{Traject.naam}}</td>
+                        <td id="tdOmschrijving">{{Traject.omschrijving}}</td>
                     </tr>
                 </tbody>
             </table>

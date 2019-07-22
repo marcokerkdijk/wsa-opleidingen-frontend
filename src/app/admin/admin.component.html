@@ -1,20 +1,15 @@
+
 <div class="row">
-    <div class="container-fluid">
-        <div class="row">
-            <div id=h6 class="col-sm-3">
-                Welkom admin!
-            </div>
-            <div class="col-sm-6">
-                <p>
-                    Welkom {{gebruiker.displaynaam}} op de academy. Bekijk hier alle trajecten en pas ze eventueel aan.
-                </p>
-            </div>
-        </div>
-        <div class="row">
-            <div id=h6 class="col-sm-3">
-                Alle trajecten
-            </div>
-            <div class="col-sm-6">
+        <div class="container-fluid">
+                <div class="row">
+                    <div id=h6 class="col-sm-6">
+                        Welkom admin!
+                    </div>
+                    <div class="col-sm-6">
+                        <p>
+                                Welkom {{gebruiker.displaynaam}} op de academy.
+                        </p>
+                        <div class="col-sm-6">
 
                             <div>Traject</div>
                             <div id="tdOmschrijving">Omschrijving</div>
@@ -28,6 +23,21 @@
                             <div><a id="pencil" routerLink="/admin/admin-wijzig-traject/{{traject.id}}"
                                     routerLinkActive="active"><i class='fa fa-pencil'></i></a></div>
                             </div>
+                    </div>
+                    <div class="col-sm-6">
+                            <p>
+                                Bekijk hier alle trajecten en pas ze eventueel aan:
+                            </p>
+                            <button id=linktekst [routerLink]="'./admin-maak-traject'">trajecten</button><br>
+                        </div>
+                        <div class="col-sm-6">
+                            <p>
+                                Bekijk hier alle actieve gebruikers en pas ze eventueel aan of voeg toe:
+                            </p>
+                            <button id=linktekst [routerLink]="'./admin-beheer-gebruikers'">Gebruikers</button><br>
+                        </div>
+                        <router-outlet></router-outlet>
+                </div>
             </div>
         </div>
         <wsa-admin-maak-traject></wsa-admin-maak-traject>

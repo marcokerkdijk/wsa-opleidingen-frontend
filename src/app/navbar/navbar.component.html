@@ -41,11 +41,31 @@
                         Logout
                     </a>
                 </li>
-                <li class="nav-hamburger">
-                        <div id='hamburger'></div>
-                        <div id='hamburger'></div>
-                        <div id='hamburger'></div>
-                </li>
+                <div class="dropdown" id="nav-hamburger">
+                    <div id='hamburger'></div>
+                    <div id='hamburger'></div>
+                    <div id='hamburger'></div>
+                    <div class="dropdown-content">
+                        <a id="dropdown-link" class="nav-link" href="https://www.workingspirit.nl/corporate/">
+                            Corporate
+                        </a>
+                        <a id="dropdown-link" class="nav-link" href="https://www.workingspirit.nl/detachering/">
+                            Detachering
+                        </a>
+                        <a id="dropdown-link" class="nav-link" href="https://www.workingspirit.nl/academy/">
+                            Academy
+                        </a>
+                        <a id="dropdown-link" class="nav-link" href="https://www.workingspirit.nl/werken-bij-working-spirit/">
+                            Werken bij
+                        </a>
+                        <a id="dropdown-link" class="nav-link" *ngIf="!ingelogd" (click)="openModal('login-modal')" id="LoginButtonHamburger">
+                            Login
+                        </a>
+                        <a id="dropdown-link" class="nav-link" *ngIf="ingelogd" (click)="logout()" id="LogoutButtonHamburger">
+                            Logout
+                        </a>
+                    </div>
+                </div>
             </ul>
         </nav>
     </div>
