@@ -19,7 +19,7 @@ import { HeaderComponent } from './header/header.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ModalComponent } from './login-modal/modal.component';
 import { TrajectenComponent } from './trajecten/trajecten.component';
-import { AdminMaakTrajectComponent } from './admin/admin-maak-traject/admin-maak-traject.component';
+import { AdminBeheerTrajectComponent } from './admin/admin-beheer-traject/admin-beheer-traject.component';
 import { HomeInformatieComponent } from './home/home-informatie/home-informatie.component';
 import { AdminBeheerGebruikersComponent } from './admin/admin-beheer-gebruikers/admin-beheer-gebruikers.component';
 
@@ -51,7 +51,7 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     PageFooterComponent,
     ModalComponent,
     TrajectenComponent,
-    AdminMaakTrajectComponent,
+    AdminBeheerTrajectComponent,
     HomeInformatieComponent,
     AdminBeheerGebruikersComponent,
   ],
