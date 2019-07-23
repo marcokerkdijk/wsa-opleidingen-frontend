@@ -4,7 +4,7 @@
             <div id=h6 class="col-sm-3">
                 Alle gebruikers
             </div>
-            <table >
+            <table class='table table-bordered col-lg-10'>
                 <thead id="table-bottom">
                     <tr>
                       <th>Voornaam</th>
@@ -13,6 +13,7 @@
                       <th>Emailadres</th>
                       <th>Rol</th>
                       <th>Actief</th>
+                      <th>Bewerken</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -22,8 +23,64 @@
                       <td >{{Gebruiker.achternaam}}</td>
                       <td >{{Gebruiker.emailadres}}</td>
                       <td >{{Gebruiker.rol}}</td>
-                      <td >{{Gebruiker.actief}}</td>
+                      <td>
+                        <div *ngIf="Gebruiker.actief; else elseBlock">Ja.</div>
+                        <ng-template #elseBlock>Nee.</ng-template>
+                      </td>
+                      <td>   
+                        <a (click)="openModal()">Open Modal 1</a>
+                    </td>
                     </tr>
                 </tbody>
             </table>
         </div>
+
+        <jw-modal class="jw-modal" id="gebruikers-modal">
+            <div class="row">
+                <div class="col-sm-11">
+                    <div>Voornaam:</div>
+                    <div>
+                        <input [(ngModel)]="gebruikerInvoer.voornaam" type="text" class="form-control" placeholder={{this.Gebruiker.voornaam}}/>
+                    </div>
+        
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-11">
+                    <div>Tussenvoegsel:</div>
+                    <div>
+                        <input [(ngModel)]="gebruikerInvoer.tussenvoegsel" type="text" class="form-control" placeholder="{{Gebruiker.tussenvoegsel}}" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-11">
+                    <div>Achternaam:</div>
+                    <input [(ngModel)]="gebruikerInvoer.achternaam" type="text" class="form-control" placeholder="{{this.Gebruiker.achternaam}}" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-11">
+                    <div>Rol:</div>
+                    <div>
+                        <input [(ngModel)]="gebruikerInvoer.rol" type="text" class="form-control" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-11">
+                    <div>Actief:</div>
+                    <div>
+                        <textarea [(ngModel)]="gebruikerInvoer.actief" class="form-control" rows="5"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-11">
+                        <button (click)="wijzigGebruiker(gebruikerInvoer,Gebruiker.id)">Opslaan</button>
+                        <button >Verwijderen</button>
+                </div>
+            </div>
+            <button (click)="closeModal('gebruikers-modal');">Sluiten</button>
+        </jw-modal>
+        

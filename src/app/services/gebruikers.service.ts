@@ -16,4 +16,9 @@ export class GebruikersService {
         
     return this.http.get<Gebruiker[]>(`${this.api}/haalGebruikersOp`)
 }
+
+  wijzigGebruiker(gebruiker,id): Observable<any> {
+    gebruiker.id = id;
+    return this.http.put(`${this.api}/wijzigGebruiker/{{gebruiker.id}}`, gebruiker);
+  }
 }
