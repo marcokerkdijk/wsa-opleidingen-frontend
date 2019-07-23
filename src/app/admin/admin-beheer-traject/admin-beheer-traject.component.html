@@ -1,8 +1,51 @@
-<div class="row">
-    <div id=h6 class="col-sm-3">
-        Maak een nieuw traject aan
+<table>
+    <thead id="table-bottom">
+        <tr>
+            <th>Traject</th>
+            <th>Zichtbaar</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let Traject of alleTrajecten">
+            <td id="tdNaam">{{Traject.naam}}</td>
+            <td id="tdZichtbaar">{{Traject.zichtbaar}}</td>
+            <td><a id="pen" (click)="openModal('traject-modal')"><i class='fa fa-pencil-square-o'></i></a></td>
+        </tr>
+    </tbody>
+</table>
+
+<jw-modal class="jw-modal2" id="traject-modal">
+    <h1>Wijzig traject</h1>
+    <div class="row" *ngFor="let Traject of alleTrajecten">
+        <div class="col-sm-11">
+            <div>Naam:</div>
+            <div>
+                <input [(ngModel)]="Traject.naam" type="text" class="form-control" />
+            </div>
+        </div>
+        <div class="col-sm-11">
+            <div>Omschrijving:</div>
+            <div>
+                <textarea [(ngModel)]="Traject.omschrijving" class="form-control" rows="3"></textarea>
+            </div>
+        </div>
+        <div class="col-sm-11">
+            <div>Zichtbaar:</div>
+            <div>
+                <input [(ngModel)]="Traject.zichtbaar" type="text" class="form-control" />
+            </div>
+        </div>
     </div>
-    <div class="col-sm-6">
+    <div class="row">
+        <div class="col-sm-11">
+            <button (click)="updateTraject(Traject)">Opslaan</button>
+            <button (click)="closeModal('traject-modal');">Sluiten</button>
+        </div>
+    </div>
+</jw-modal>
+
+<div class="row">
+    <div class="col-sm-12">
         <div>Trajectnaam:
         </div>
         <div>
@@ -17,7 +60,7 @@
         </div>
         <div><input [(ngModel)]="traject.zichtbaar" type="checkbox" id="checkbox" value="true" />
         </div>
-        <div><button (click)="createTraject(traject)">Opslaan</button>
+        <div><button (click)="createTraject(traject)">Toevoegen</button>
         </div>
     </div>
 </div>
