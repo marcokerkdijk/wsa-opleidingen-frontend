@@ -28,3 +28,41 @@ p {
     line-height: 24px;
     color:  #808285;
 }
+
+#table-bottom,
+th {
+    background: #ffffff;
+    color: #696969;
+    font-size: 15px;
+    text-transform: uppercase;
+    border: 1px solid;
+    border-color: black;
+}
+#table-bottom,
+td {
+    background: #ffffff;
+    color: #696969;
+    font-size: 15px;
+    border: 1px solid;
+    text-align: left;
+}
+#tdNaam{
+    width: 380px;
+}
+#tdZichtbaar{
+    width: 100px;
+}
+
+#pen{
+    background: #ffffff;
+    color: #00aeef;
+    border: hidden;
+    font-size: 20px;
+}
+#pen:hover {
+    display: block;
+    cursor: pointer;
+    border-radius: 0%;
+    background-color: #00aeef;
+    color: #ffffff;
+}
