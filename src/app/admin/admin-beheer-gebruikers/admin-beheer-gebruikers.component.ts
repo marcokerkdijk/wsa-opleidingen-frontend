@@ -29,17 +29,19 @@ export class AdminBeheerGebruikersComponent implements OnInit {
         .subscribe(gebruikers => this.actieveGebruikers = gebruikers);
   }
      
-    openModal() {
-      this.modalService.open('gebruikers-modal');
+    openModal(id, idGebruiker : number) {
+      this.modalService.open(id);
+      this.gebruikerInvoer.id = idGebruiker;
   }
 
   closeModal() {
       this.modalService.close('gebruikers-modal');
   }
+  
 
-  wijzigGebruiker(gebruiker:Gebruiker,id:number){
-    console.log("hij doet het hier nog") ;
-    this.gebruikerService.wijzigGebruiker(gebruiker,id)
+  wijzigGebruiker(gebruiker:Gebruiker){
+    console.log("hij doet het hier nog");
+    this.gebruikerService.wijzigGebruiker(gebruiker,gebruiker.id)
     .subscribe(response => this.router.navigateByUrl('/admin'));
   }
 }
