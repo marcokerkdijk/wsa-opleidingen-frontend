@@ -4,9 +4,11 @@
             <div id=h6 class="col-sm-3">
                 Alle gebruikers
             </div>
+            <div>
             <table class='table table-bordered col-lg-10'>
                 <thead id="table-bottom">
                     <tr>
+                      <th>Id</th>
                       <th>Voornaam</th>
                       <th>Tussenvoegsel</th>
                       <th>Achternaam</th>
@@ -18,7 +20,7 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let Gebruiker of actieveGebruikers">
-                      <td>{{Gebruiker.id}}</td>
+                      <td id='gebruikerID'>{{Gebruiker.id}}</td>
                       <td >{{Gebruiker.voornaam}}</td>
                       <td >{{Gebruiker.tussenvoegsel}}</td>
                       <td >{{Gebruiker.achternaam}}</td>
@@ -29,26 +31,27 @@
                         <ng-template #elseBlock>Nee.</ng-template>
                       </td>
                       <td>   
-                        <a (click)="openModal('gebruikers-modal', 'Gebruiker.id')">Open Modal 1</a>
+                        <a value="Gebruiker.id" (click)="openModal('gebruikers-modal', this.value)">Open Modal 1</a>
                     </td>
                     </tr>
                 </tbody>
             </table>
-        </div>
-
+          </div>
+        <div>
+            
         <jw-modal class="jw-modal" id="gebruikers-modal">
-            <div class="row">
+            <div class="row" >
                 <div class="col-sm-11">
                     <div>Id:</div>
                     <div>
-                        <input [(ngModel)]="gebruikerInvoer.id" type="text" class="form-control" />
+                        <input [(ngModel)]="this.id" type="text" class="form-control" value={{gebruikerInvoer.id}} placeholder="{{this.value}}"/>
                     </div>
         
                 </div>
                 <div class="col-sm-11">
                     <div>Voornaam:</div>
                     <div>
-                        <input [(ngModel)]="gebruikerInvoer.voornaam" type="text" class="form-control" />
+                        <input [(ngModel)]="this.voornaam" type="text" class="form-control" />
                     </div>
         
                 </div>
@@ -57,21 +60,21 @@
                 <div class="col-sm-11">
                     <div>Tussenvoegsel:</div>
                     <div>
-                        <input [(ngModel)]="gebruikerInvoer.tussenvoegsel" type="text" class="form-control"/>
+                        <input [(ngModel)]="this.tussenvoegsel" type="text" class="form-control"/>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-11">
                     <div>Achternaam:</div>
-                    <input [(ngModel)]="gebruikerInvoer.achternaam" type="text" class="form-control" />
+                    <input [(ngModel)]="this.achternaam" type="text" class="form-control" />
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-11">
                     <div>Rol:</div>
                     <div>
-                        <input [(ngModel)]="gebruikerInvoer.rol" type="text" class="form-control" />
+                        <input [(ngModel)]="this.rol" type="text" class="form-control" />
                     </div>
                 </div>
             </div>
@@ -79,16 +82,18 @@
                 <div class="col-sm-11">
                     <div>Actief:</div>
                     <div>
-                        <textarea [(ngModel)]="gebruikerInvoer.actief" class="form-control" rows="5"></textarea>
+                        <textarea [(ngModel)]="this.actief" class="form-control" rows="5"></textarea>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-11">
-                        <button (click)="wijzigGebruiker(gebruikerInvoer,Gebruiker.id)">Opslaan</button>
+                        <button (click)="wijzigGebruiker(Gebruiker,Gebruiker.id)">Opslaan</button>
                         <button >Verwijderen</button>
                 </div>
             </div>
             <button (click)="closeModal('gebruikers-modal');">Sluiten</button>
         </jw-modal>
+      </div>
+      </div>
         

@@ -13,8 +13,15 @@ import { Router } from '@angular/router';
 export class AdminBeheerGebruikersComponent implements OnInit {
   gebruikerInvoer: Gebruiker = new Gebruiker;
   actieveGebruikers : Gebruiker[];
+  gebruiker: Gebruiker = new Gebruiker;
   private api:string = environment.apiUrl;
   bodyText:string;
+  id:number;
+  voornaam:string;
+  tussenvoegsel:string;
+  achternaam:string;
+  emailadres:string;
+  actief:boolean;
  
   constructor(private router: Router, private modalService: ModalService, private gebruikerService : GebruikersService) { }
  
@@ -29,9 +36,8 @@ export class AdminBeheerGebruikersComponent implements OnInit {
         .subscribe(gebruikers => this.actieveGebruikers = gebruikers);
   }
      
-    openModal(id, idGebruiker : number) {
+    openModal(id) {
       this.modalService.open(id);
-      this.gebruikerInvoer.id = idGebruiker;
   }
 
   closeModal() {
@@ -44,5 +50,14 @@ export class AdminBeheerGebruikersComponent implements OnInit {
     this.gebruikerService.wijzigGebruiker(gebruiker,gebruiker.id)
     .subscribe(response => this.router.navigateByUrl('/admin'));
   }
+
+  maakGebruiker() {
+    for(var i=0;this.actieveGebruikers.length;i++){
+      this.id = this.gebruiker.id;
+      this.voornaam=this.gebruiker.voornaam;
+      this.tussenvoegsel=this.gebruiker.tussenvoegsel;
+    }
+  }
+  
 }
 
