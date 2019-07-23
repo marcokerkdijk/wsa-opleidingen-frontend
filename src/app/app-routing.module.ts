@@ -13,16 +13,17 @@ import { AdminBeheerGebruikersComponent } from './admin/admin-beheer-gebruikers/
 
 const routes: Routes = [
 
-  { path: 'home', component: HomeComponent },
+  {path: 'home', component: HomeComponent},
   {path: 'admin', component: AdminComponent, canActivate: [AdminAutorisatieGuard],
     children: [
-      { path: "admi-beheer-traject", component: AdminBeheerTrajectComponent, canActivate: [AdminAutorisatieGuard] },
+      { path: "admin-beheer-traject", component: AdminBeheerTrajectComponent, canActivate: [AdminAutorisatieGuard] },
       { path: '', redirectTo: 'admin', pathMatch: 'full' },
       { path: "admin-beheer-gebruikers", component: AdminBeheerGebruikersComponent },
     ]
   },
   { path: 'student', component: StudentComponent, canActivate: [StudentAutorisatieGuard] },
   { path: 'docent', component: DocentComponent, canActivate: [DocentAutorisatieGuard] },
+  {path: '', redirectTo: '/home', pathMatch: 'full'}
 ];
 
 @NgModule({

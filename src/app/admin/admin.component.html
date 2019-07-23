@@ -1,44 +1,18 @@
-
-<div class="row">
-        <div class="container-fluid">
-                <div class="row">
-                    <div id=h6 class="col-sm-6">
-                        Welkom admin!
-                    </div>
-                    <div class="col-sm-6">
-                        <p>
-                                Welkom {{gebruiker.displaynaam}} op de academy.
-                        </p>
-                        <div class="col-sm-6">
-
-                            <div>Traject</div>
-                            <div id="tdOmschrijving">Omschrijving</div>
-                            <div id="tr2">Zichtbaar</div>
-                            <div id="tr2">Wijzig</div>
-
-                        <div *ngFor="let Traject of alleTrajecten">
-                            <div id="tdNaam">{{Traject.naam}}</div>
-                            <div id="tdOmschrijving">{{Traject.omschrijving}}</div>
-                            <div id="tdZichtbaar">{{Traject.zichtbaar}}</div>
-                            <!-- <div><a id="pencil" routerLink="/admin/admin-wijzig-traject/{{traject.id}}"
-                                    routerLinkActive="active"><i class='fa fa-pencil'></i></a></div> -->
-                            </div>
-                    </div>
-                    <div class="col-sm-6">
-                            <p>
-                                Bekijk hier alle trajecten en pas ze eventueel aan:
-                            </p>
-                            <button id=linktekst [routerLink]="'./admin-beheer-traject'">trajecten</button><br>
-                        </div>
-                        <div class="col-sm-6">
-                            <p>
-                                Bekijk hier alle gebruikers en pas ze eventueel aan of voeg toe:
-                            </p>
-                            <button id=linktekst [routerLink]="'./admin-beheer-gebruikers'">Gebruikers</button><br>
-                        </div>
-                        <router-outlet></router-outlet>
-                </div>
-            </div>
+<div class="container-fluid">
+    <div class="row">
+        <div id=h6 class="col-sm-3">
+            Welkom!
         </div>
-        <wsa-admin-beheer-traject></wsa-admin-beheer-traject>
+        <div class="col-sm-6">
+            <p>
+                Welkom {{gebruiker.displaynaam}} op de academy.
+                Op deze pagina kun je alles beheren. Door op de onderstaande knoppen te klikken, kun je de 
+                'trajecten' of de 'gebruikers' beheren.
+            </p>
+            <br>
+            <button id=linktekst [routerLink]="'./admin-beheer-traject'">trajecten</button><br>
+            <button id=linktekst [routerLink]="'./admin-beheer-gebruikers'">Gebruikers</button><br>
+        </div>
+        <router-outlet></router-outlet>
+    </div>
 </div>

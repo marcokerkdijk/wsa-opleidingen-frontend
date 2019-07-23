@@ -9,3 +9,16 @@
     <button>Login</button>
     <button (click)="closeModal('login-modal');">Sluiten</button>
 </jw-modal>
+
+<jw-modal class="jw-modal" id="gebruikers-modal">
+        <h1>Login</h1>
+        <p>Voer uw e-mailadres en wachtwoord in om in te loggen.</p>
+    
+        <form>
+            <input type="text" placeholder="E-mailadres" maxlength="25">
+            <input type="password" placeholder="Wachtwoord" maxlength="25">
+        </form>
+        <button>Login</button>
+        <button (click)="closeModal('gebruikers-modal');">Sluiten</button>
+    </jw-modal>
+    
