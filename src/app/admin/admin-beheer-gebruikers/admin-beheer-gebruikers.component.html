@@ -18,6 +18,7 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let Gebruiker of actieveGebruikers">
+                      <td>{{Gebruiker.id}}</td>
                       <td >{{Gebruiker.voornaam}}</td>
                       <td >{{Gebruiker.tussenvoegsel}}</td>
                       <td >{{Gebruiker.achternaam}}</td>
@@ -28,7 +29,7 @@
                         <ng-template #elseBlock>Nee.</ng-template>
                       </td>
                       <td>   
-                        <a (click)="openModal()">Open Modal 1</a>
+                        <a (click)="openModal('gebruikers-modal', 'Gebruiker.id')">Open Modal 1</a>
                     </td>
                     </tr>
                 </tbody>
@@ -38,9 +39,16 @@
         <jw-modal class="jw-modal" id="gebruikers-modal">
             <div class="row">
                 <div class="col-sm-11">
+                    <div>Id:</div>
+                    <div>
+                        <input [(ngModel)]="gebruikerInvoer.id" type="text" class="form-control" />
+                    </div>
+        
+                </div>
+                <div class="col-sm-11">
                     <div>Voornaam:</div>
                     <div>
-                        <input [(ngModel)]="gebruikerInvoer.voornaam" type="text" class="form-control" placeholder={{this.Gebruiker.voornaam}}/>
+                        <input [(ngModel)]="gebruikerInvoer.voornaam" type="text" class="form-control" />
                     </div>
         
                 </div>
@@ -49,14 +57,14 @@
                 <div class="col-sm-11">
                     <div>Tussenvoegsel:</div>
                     <div>
-                        <input [(ngModel)]="gebruikerInvoer.tussenvoegsel" type="text" class="form-control" placeholder="{{Gebruiker.tussenvoegsel}}" />
+                        <input [(ngModel)]="gebruikerInvoer.tussenvoegsel" type="text" class="form-control"/>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-11">
                     <div>Achternaam:</div>
-                    <input [(ngModel)]="gebruikerInvoer.achternaam" type="text" class="form-control" placeholder="{{this.Gebruiker.achternaam}}" />
+                    <input [(ngModel)]="gebruikerInvoer.achternaam" type="text" class="form-control" />
                 </div>
             </div>
             <div class="row">
