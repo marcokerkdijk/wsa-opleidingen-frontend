@@ -12,6 +12,7 @@ import { ModalService } from 'src/app/services/modal.service';
 export class AdminBeheerTrajectComponent implements OnInit {
   traject:Traject = new Traject;
   alleTrajecten:Traject[];
+  wijzigTraject:Traject = new Traject;
 
   constructor(private modalService: ModalService, private trajectService:TrajectService, private router:Router) { }
 
@@ -25,7 +26,8 @@ export class AdminBeheerTrajectComponent implements OnInit {
   }
 
   updateTraject(traject: Traject){
-    this.trajectService.WijzigTraject(traject)
+    console.log(traject.id);
+    this.trajectService.WijzigTraject(traject, traject.id)
     .subscribe(response => this.router.navigateByUrl('/admin'));
   }
 
@@ -40,6 +42,16 @@ export class AdminBeheerTrajectComponent implements OnInit {
 
   closeModal(id: string) {
     this.modalService.close(id);
+  }
+
+  clickWijzigModal(id,trajectId:number){
+    console.log(trajectId);
+    this.haalTrajectOpId(trajectId);
+    this.openModal(id);
+  }
+  haalTrajectOpId(id:number): void {
+    this.wijzigTraject.id = id;
+    this.trajectService.haalTrajectOpId(id).subscribe(traject => this.wijzigTraject = traject);
   }
 
 }
