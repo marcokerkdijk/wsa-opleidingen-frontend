@@ -9,27 +9,27 @@
             <ul class="navbar-nav">
 
                 <li class="nav-item" id="CorporateButton">
-                    <a class="nav-link" href="https://www.workingspirit.nl/corporate/">
+                    <a class="nav-link" href="https://www.workingspirit.nl/corporate/" id="Corperate">
                         Corporate
                     </a>
                 </li>
                 <li class="nav-item" id="DetacheringButton">
-                    <a class="nav-link" href="https://www.workingspirit.nl/detachering/">
+                    <a class="nav-link" href="https://www.workingspirit.nl/detachering/" id="Detachering">
                         Detachering
                     </a>
                 </li>
                 <li class="nav-item" id="AcademyButton">
-                    <a class="nav-link" href="https://www.workingspirit.nl/academy/">
+                    <a class="nav-link" href="https://www.workingspirit.nl/academy/" id="Contact">
                         Academy
                     </a>
                 </li>
                 <li class="nav-item" id="ContactButton">
-                    <a class="nav-link" href="https://www.workingspirit.nl/contact/">
+                    <a class="nav-link" href="https://www.workingspirit.nl/contact/" id="Contact">
                         Contact
                     </a>
                 </li>
                 <li class="nav-item" id="WerkenbijButton">
-                    <a class="nav-link" href="https://www.workingspirit.nl/werken-bij-working-spirit/">
+                    <a class="nav-link" href="https://www.workingspirit.nl/werken-bij-working-spirit/" id="WerkenBij">
                         Werken bij
                     </a>
                 </li>
@@ -46,22 +46,22 @@
                     <div id='hamburger'></div>
                     <div id='hamburger'></div>
                     <div class="dropdown-content">
-                        <a id="dropdown-link" class="nav-link" href="https://www.workingspirit.nl/corporate/">
+                        <a id="CorperateHamburger" class="nav-link" href="https://www.workingspirit.nl/corporate/">
                             Corporate
                         </a>
-                        <a id="dropdown-link" class="nav-link" href="https://www.workingspirit.nl/detachering/">
+                        <a id="DetacheringHamburger" class="nav-link" href="https://www.workingspirit.nl/detachering/">
                             Detachering
                         </a>
-                        <a id="dropdown-link" class="nav-link" href="https://www.workingspirit.nl/academy/">
+                        <a id="AcademyHamburger" class="nav-link" href="https://www.workingspirit.nl/academy/">
                             Academy
                         </a>
-                        <a id="dropdown-link" class="nav-link" href="https://www.workingspirit.nl/werken-bij-working-spirit/">
+                        <a id="WerkenBijHamburger" class="nav-link" href="https://www.workingspirit.nl/werken-bij-working-spirit/">
                             Werken bij
                         </a>
-                        <a id="dropdown-link" class="nav-link" *ngIf="!ingelogd" (click)="openModal('login-modal')" id="LoginButtonHamburger">
+                        <a  class="nav-link" *ngIf="!ingelogd" (click)="openModal('login-modal')" id="LoginButtonHamburger">
                             Login
                         </a>
-                        <a id="dropdown-link" class="nav-link" *ngIf="ingelogd" (click)="logout()" id="LogoutButtonHamburger">
+                        <a  class="nav-link" *ngIf="ingelogd" (click)="logout()" id="LogoutButtonHamburger">
                             Logout
                         </a>
                     </div>

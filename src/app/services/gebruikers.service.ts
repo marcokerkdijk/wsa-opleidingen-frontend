@@ -18,8 +18,7 @@ export class GebruikersService {
 }
 
   wijzigGebruiker(gebruiker,id:number): Observable<any> {
-    gebruiker.id = id;
-    return this.http.put(`${this.api}/wijzigGebruiker/{{gebruiker.id}}`, gebruiker);
+   return this.http.put(`${this.api}/wijzigGebruiker/`+gebruiker.id, gebruiker);
   }
 
   vraagGebruikerOpId(id:number) : Observable<any> {
