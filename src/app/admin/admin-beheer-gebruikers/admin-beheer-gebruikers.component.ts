@@ -15,6 +15,7 @@ export class AdminBeheerGebruikersComponent implements OnInit {
   actieveGebruikers : Gebruiker[];
   private api:string = environment.apiUrl;
   bodyText:string;
+
  
   constructor(private router: Router, private modalService: ModalService, private gebruikerService : GebruikersService) { }
  
@@ -29,9 +30,8 @@ export class AdminBeheerGebruikersComponent implements OnInit {
         .subscribe(gebruikers => this.actieveGebruikers = gebruikers);
   }
      
-    openModal(id, idGebruiker : number) {
+    openModal(id) {
       this.modalService.open(id);
-      this.gebruikerInvoer.id = idGebruiker;
   }
 
   closeModal() {
@@ -43,6 +43,14 @@ export class AdminBeheerGebruikersComponent implements OnInit {
     console.log("hij doet het hier nog");
     this.gebruikerService.wijzigGebruiker(gebruiker,gebruiker.id)
     .subscribe(response => this.router.navigateByUrl('/admin'));
+  } 
+
+  clickWijzigModal(id,gebruikerId:number) {
+    this.haalGebruikerOpId(gebruikerId);
+    this.openModal(id);
+	  }
+  haalGebruikerOpId(id:number): void {
+    this.gebruikerService.vraagGebruikerOpId(id).subscribe(gebruiker => this.gebruikerInvoer = gebruiker);
   }
 }
 
