@@ -14,11 +14,14 @@ export class GebruikersService {
 
   geefActieveGebruikers(): Observable<Gebruiker[]> {
         
-    return this.http.get<Gebruiker[]>(`${this.api}/haalGebruikersOp`)
+    return this.http.get<Gebruiker[]>(`${this.api}/haalGebruikersOp`);
 }
 
-  wijzigGebruiker(gebruiker,id): Observable<any> {
-    gebruiker.id = id;
-    return this.http.put(`${this.api}/wijzigGebruiker/{{gebruiker.id}}`, gebruiker);
+  wijzigGebruiker(gebruiker,id:number): Observable<any> {
+   return this.http.put(`${this.api}/wijzigGebruiker/`+gebruiker.id, gebruiker);
+  }
+
+  vraagGebruikerOpId(id:number) : Observable<any> {
+    return this.http.get<Gebruiker>(`${this.api}/getGebruikerId/`+id);
   }
 }

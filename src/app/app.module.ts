@@ -23,6 +23,7 @@ import { AdminBeheerTrajectComponent } from './admin/admin-beheer-traject/admin-
 import { HomeInformatieComponent } from './home/home-informatie/home-informatie.component';
 import { AdminBeheerGebruikersComponent } from './admin/admin-beheer-gebruikers/admin-beheer-gebruikers.component';
 import { TrajectModalComponent } from './admin/admin-beheer-traject/traject-modal/traject-modal.component';
+import { GebruikersModalComponent } from './admin/admin-beheer-gebruikers/gebruikers-modal/gebruikers-modal.component';
 
 
 
@@ -57,6 +58,7 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     HomeInformatieComponent,
     AdminBeheerGebruikersComponent,
     TrajectModalComponent,
+    GebruikersModalComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,12 +1,10 @@
 <div class="row">
     <div class="container-fluid" id="mainbody">
         <div class="row">
-            <div id=h6 class="col-sm-3">
-                Alle gebruikers
-            </div>
             <table class='table table-bordered col-lg-10'>
                 <thead id="table-bottom">
                     <tr>
+                      <th>Id</th>
                       <th>Voornaam</th>
                       <th>Tussenvoegsel</th>
                       <th>Achternaam</th>
@@ -17,78 +15,87 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let Gebruiker of actieveGebruikers">
-                      <td>{{Gebruiker.id}}</td>
+                    <tr *ngFor="let Gebruiker of actieveGebruikers"  >
+                      <td id=gebruikerID >{{Gebruiker.id}}</td>
                       <td >{{Gebruiker.voornaam}}</td>
                       <td >{{Gebruiker.tussenvoegsel}}</td>
                       <td >{{Gebruiker.achternaam}}</td>
                       <td >{{Gebruiker.emailadres}}</td>
                       <td >{{Gebruiker.rol}}</td>
                       <td>
-                        <div *ngIf="Gebruiker.actief; else elseBlock">Ja.</div>
-                        <ng-template #elseBlock>Nee.</ng-template>
+                        <div *ngIf="Gebruiker.actief; else elseBlock">Ja</div>
+                        <ng-template #elseBlock>Nee</ng-template>
                       </td>
                       <td>   
-                        <a (click)="openModal('gebruikers-modal', 'Gebruiker.id')">Open Modal 1</a>
+                        <div class='fa fa-pencil' id="pencil" (click)="clickWijzigModal('gebruikers-modal',Gebruiker.id)"
+                        ></div>
                     </td>
                     </tr>
                 </tbody>
             </table>
-        </div>
+        </div>'
 
-        <jw-modal class="jw-modal" id="gebruikers-modal">
-            <div class="row">
-                <div class="col-sm-11">
-                    <div>Id:</div>
-                    <div>
-                        <input [(ngModel)]="gebruikerInvoer.id" type="text" class="form-control" />
+        <jw-modal class="jw-modal" id="gebruikers-modal" >
+                <div class="row" >
+                    <div class="col-sm-11">
+                        <div>Voornaam:</div>
+                        <div>
+                            <input [(ngModel)]="gebruikerInvoer.voornaam" type="text" class="form-control" required/>
+                        </div>
+            
                     </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-11">
+                        <div>Tussenvoegsel:</div>
+                        <div>
+                            <input [(ngModel)]="gebruikerInvoer.tussenvoegsel" type="text" class="form-control"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-11">
+                        <div>Achternaam:</div>
+                        <input [(ngModel)]="gebruikerInvoer.achternaam" type="text" class="form-control" required/>
+                    </div>
+                </div> 
+                <div class="row">
+                        <div class="col-sm-11">
+                            <div>Rol:</div>
+                            <div>
+                                <input [(ngModel)]="gebruikerInvoer.emailadres" type="e-mail" class="form-control" required/>
+                            </div>
+                        </div>
+                    </div>
+                <div class="row">
+                    <div class="col-sm-11">
+                        <div>Rol:</div>
+                        <div>
+                            <input [(ngModel)]="gebruikerInvoer.rol" type="text" class="form-control" required/>
+                        </div>
+                    </div>
+                </div>
+               
+                <div class="row">
+                    <div class="col-sm-11">
+                            <div *ngIf="gebruikerInvoer.actief; else elseBlock">Actief: Ja</div>
+                            <ng-template #elseBlock>Actief: Nee</ng-template>
+                        <div>
+                            <input id='actiefCheckbox' type="checkbox" name='actief' value="true" [(ngModel)]="gebruikerInvoer.actief">Actief              
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-11">
+                            <button id='Opslaan'(click)="wijzigGebruiker(gebruikerInvoer)">Opslaan</button>
+                            <button >Verwijderen</button>
+                    </div>
+                </div>
+                <button id='SluitModal'(click)="sluitModal();">Sluiten</button>
+            </jw-modal>   
+
         
-                </div>
-                <div class="col-sm-11">
-                    <div>Voornaam:</div>
-                    <div>
-                        <input [(ngModel)]="gebruikerInvoer.voornaam" type="text" class="form-control" />
-                    </div>
+     
+
         
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-11">
-                    <div>Tussenvoegsel:</div>
-                    <div>
-                        <input [(ngModel)]="gebruikerInvoer.tussenvoegsel" type="text" class="form-control"/>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-11">
-                    <div>Achternaam:</div>
-                    <input [(ngModel)]="gebruikerInvoer.achternaam" type="text" class="form-control" />
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-11">
-                    <div>Rol:</div>
-                    <div>
-                        <input [(ngModel)]="gebruikerInvoer.rol" type="text" class="form-control" />
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-11">
-                    <div>Actief:</div>
-                    <div>
-                        <textarea [(ngModel)]="gebruikerInvoer.actief" class="form-control" rows="5"></textarea>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-11">
-                        <button (click)="wijzigGebruiker(gebruikerInvoer,Gebruiker.id)">Opslaan</button>
-                        <button >Verwijderen</button>
-                </div>
-            </div>
-            <button (click)="closeModal('gebruikers-modal');">Sluiten</button>
-        </jw-modal>
         
