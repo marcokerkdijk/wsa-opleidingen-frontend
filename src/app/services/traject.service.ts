@@ -25,12 +25,18 @@ export class TrajectService {
     return this.http.post<Traject>(`${this.api}/MaakTraject`, traject);
   }
 
-  WijzigTraject(traject: Traject): Observable<any> {
-    return this.http.put<Traject>(`${this.api}/WijzigTraject/1`, traject);
+  WijzigTraject(traject,id:number): Observable<any> {
+    traject.id = id;
+    console.log(traject.id);
+    return this.http.put(`${this.api}/WijzigTraject/{{traject.id}}`, traject);
   }
 
   GeefZichtbareTrajectenHome(): Observable<Traject[]> {
     return this.http.get<Traject[]>(`${this.api}/home`)
+  }
+
+  haalTrajectOpId(id:number) : Observable<any> {
+    return this.http.get<Traject>(`${this.api}/GeefTrajectOpId/`+id);
   }
 
 }
