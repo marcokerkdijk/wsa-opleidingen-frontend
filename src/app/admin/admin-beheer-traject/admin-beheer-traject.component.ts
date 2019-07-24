@@ -27,7 +27,7 @@ export class AdminBeheerTrajectComponent implements OnInit {
 
   updateTraject(traject: Traject){
     console.log(traject.id);
-    this.trajectService.WijzigTraject(traject, traject.id)
+    this.trajectService.WijzigTraject(traject)
     .subscribe(response => this.router.navigateByUrl('/admin'));
   }
 
