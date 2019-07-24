@@ -41,8 +41,6 @@ export class AdminBeheerGebruikersComponent implements OnInit {
   
 
   wijzigGebruiker(gebruiker:Gebruiker){
-    console.log("hij doet het hier nog");
-    gebruiker.actief= parsedocument.getElementById("actiefCheckbox");
     this.gebruikerService.wijzigGebruiker(gebruiker,gebruiker.id)
     .subscribe(response => this.router.navigateByUrl('/admin'));
   } 
