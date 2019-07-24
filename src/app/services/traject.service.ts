@@ -26,9 +26,8 @@ export class TrajectService {
   }
 
   WijzigTraject(traject,id:number): Observable<any> {
-    traject.id = id;
     console.log(traject.id);
-    return this.http.put(`${this.api}/WijzigTraject/{{traject.id}}`, traject);
+    return this.http.put(`${this.api}/WijzigTraject/`+traject.id, traject);
   }
 
   GeefZichtbareTrajectenHome(): Observable<Traject[]> {

@@ -8,7 +8,9 @@
     <tbody>
         <tr *ngFor="let Traject of alleTrajecten">
             <td id="tdNaam">{{Traject.naam}}</td>
-            <td id="tdZichtbaar">{{Traject.zichtbaar}}</td>
+            <!-- <td id="tdZichtbaar">{{Traject.zichtbaar}}</td> -->
+            <td><div *ngIf="Traject.zichtbaar; else elseBlock">Ja</div>
+            <ng-template #elseBlock>Nee</ng-template></td>
             <td><a id="pen" (click)="clickWijzigModal('traject-modal', Traject.id)"><i class='fa fa-pencil-square-o'></i></a></td>
         </tr>
     </tbody>
@@ -17,12 +19,6 @@
 <jw-modal class="jw-modal2" id="traject-modal">
     <h1>Wijzig traject</h1>
     <div class="row">
-            <div class="col-sm-12">
-                    <div>Id:</div>
-                    <div>
-                        <input [(ngModel)]="wijzigTraject.id" type="text" class="form-control" />
-                    </div>
-                </div>
         <div class="col-sm-12">
             <div>Naam:</div>
             <div>
@@ -38,14 +34,14 @@
         <div class="col-sm-12">
             <div>Zichtbaar:</div>
             <div>
-                <input [(ngModel)]="wijzigTraject.zichtbaar" type="text" class="form-control" />
+                <input [(ngModel)]="wijzigTraject.zichtbaar" type="checkbox" />
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-sm-12">
-            <button (click)="updateTraject(wijzigTraject); closeModal('traject-modal');">Opslaan</button>
-            <button (click)="closeModal('traject-modal');">Annuleren</button>
+            <button id='Opslaan' (click)="updateTraject(wijzigTraject); closeModal('traject-modal');">Opslaan</button>
+            <button id='SluitModal' (click)="closeModal('traject-modal');">Annuleren</button>
         </div>
     </div>
 </jw-modal>
