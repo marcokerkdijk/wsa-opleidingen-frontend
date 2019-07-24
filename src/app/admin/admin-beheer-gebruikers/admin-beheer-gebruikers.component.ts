@@ -4,6 +4,7 @@ import { GebruikersService } from 'src/app/services/gebruikers.service';
 import { Gebruiker } from 'src/app/gebruiker';
 import { ModalService } from 'src/app/services/modal.service';
 import { Router } from '@angular/router';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'wsa-admin-beheer-gebruikers',
@@ -41,6 +42,7 @@ export class AdminBeheerGebruikersComponent implements OnInit {
 
   wijzigGebruiker(gebruiker:Gebruiker){
     console.log("hij doet het hier nog");
+    gebruiker.actief= parsedocument.getElementById("actiefCheckbox");
     this.gebruikerService.wijzigGebruiker(gebruiker,gebruiker.id)
     .subscribe(response => this.router.navigateByUrl('/admin'));
   } 
@@ -52,5 +54,7 @@ export class AdminBeheerGebruikersComponent implements OnInit {
   haalGebruikerOpId(id:number): void {
     this.gebruikerService.vraagGebruikerOpId(id).subscribe(gebruiker => this.gebruikerInvoer = gebruiker);
   }
+
+  
 }
 
