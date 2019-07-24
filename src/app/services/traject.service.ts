@@ -1,8 +1,8 @@
-import { Injectable } from '@angular/core';
-import { Traject } from '../traject';
-import { Observable, of } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
+import {Injectable} from '@angular/core';
+import {Traject} from '../traject';
+import {Observable, of} from 'rxjs';
+import {HttpClient} from '@angular/common/http';
+import {environment} from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +11,8 @@ import { environment } from 'src/environments/environment';
 export class TrajectService {
   private api: string = environment.apiUrl
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   GeefAlleTrajecten(): Observable<Traject[]> {
     return this.http.get<Traject[]>(`${this.api}/GeefAlleTrajecten`)
@@ -20,22 +21,22 @@ export class TrajectService {
   GeefZichtbareTrajecten(): Observable<Traject[]> {
     return this.http.get<Traject[]>(`${this.api}/GeefZichtbareTrajecten`)
   }
-        
+
   MaakTraject(traject: Traject): Observable<any> {
     return this.http.post<Traject>(`${this.api}/MaakTraject`, traject);
   }
 
-  WijzigTraject(traject,id:number): Observable<any> {
+  WijzigTraject(traject: Traject): Observable<any> {
     console.log(traject.id);
-    return this.http.put(`${this.api}/WijzigTraject/`+traject.id, traject);
+    return this.http.put(`${this.api}/WijzigTraject/` + traject.id, traject);
   }
 
   GeefZichtbareTrajectenHome(): Observable<Traject[]> {
     return this.http.get<Traject[]>(`${this.api}/home`)
   }
 
-  haalTrajectOpId(id:number) : Observable<any> {
-    return this.http.get<Traject>(`${this.api}/GeefTrajectOpId/`+id);
+  haalTrajectOpId(id: number): Observable<any> {
+    return this.http.get<Traject>(`${this.api}/GeefTrajectOpId/` + id);
   }
 
 }
