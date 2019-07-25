@@ -34,5 +34,4 @@ export class AdminComponent implements OnInit {
         .subscribe(alleTrajecten => this.alleTrajecten = alleTrajecten);
   }
 
-
 }

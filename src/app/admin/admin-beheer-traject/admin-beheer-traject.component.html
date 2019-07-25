@@ -4,20 +4,20 @@
             <table class='table table-bordered col-lg-10'>
                 <thead id="table-bottom">
                     <tr>
-                        <th>Traject</th>
-                        <th>Zichtbaar</th>
+                        <th id="thNaam">Traject</th>
+                        <th id="thZichtbaar">Zichtbaar</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let Traject of alleTrajecten">
-                        <td id="tdNaam">{{Traject.naam}}</td>
+                        <td id="tdTraject{{Traject.id}}">{{Traject.naam}}</td>
                         <!-- <td id="tdZichtbaar">{{Traject.zichtbaar}}</td> -->
-                        <td>
+                        <td id="tdZichtbaar{{Traject.id}}">
                             <div *ngIf="Traject.zichtbaar; else elseBlock">Ja</div>
                             <ng-template #elseBlock>Nee</ng-template>
                         </td>
                         <td><a id="pencil" (click)="clickWijzigModal('traject-modal', Traject.id)"><i
-                                    class='fa fa-pencil'></i></a></td>
+                                    class='fa fa-pencil' id="tdWijzig{{Traject.id}}"></i></a></td>
                     </tr>
                 </tbody>
             </table>
@@ -32,26 +32,26 @@
         <div class="col-sm-12">
             <div>Naam:</div>
             <div>
-                <input [(ngModel)]="wijzigTraject.naam" type="text" class="form-control" />
+                <input [(ngModel)]="wijzigTraject.naam" type="text" class="form-control" id="veldTrajectModal"/>
             </div>
         </div>
         <div class="col-sm-12">
             <div>Omschrijving:</div>
             <div>
-                <textarea [(ngModel)]="wijzigTraject.omschrijving" class="form-control" rows="3"></textarea>
+                <textarea [(ngModel)]="wijzigTraject.omschrijving" class="form-control" rows="3" id="veldOmschrijvingModal"></textarea>
             </div>
         </div>
         <div class="col-sm-12">
             <div>Zichtbaar:</div>
             <div>
-                <input [(ngModel)]="wijzigTraject.zichtbaar" type="checkbox" />
+                <input [(ngModel)]="wijzigTraject.zichtbaar" type="checkbox" id="checkboxZichtbaarModal" />
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-sm-12">
-            <button id='Opslaan' (click)="updateTraject(wijzigTraject); closeModal('traject-modal');">Opslaan</button>
-            <button id='SluitModal' (click)="closeModal('traject-modal');">Annuleren</button>
+            <button id='trajectOpslaanModal' (click)="updateTraject(wijzigTraject); closeModal('traject-modal');">Opslaan</button>
+            <button id='trajectSluitModal' (click)="closeModal('traject-modal');">Annuleren</button>
         </div>
     </div>
 </jw-modal>
@@ -61,18 +61,18 @@
         <div>Trajectnaam:
         </div>
         <div>
-            <input [(ngModel)]="traject.naam" type="text" class="form-control" />
+            <input [(ngModel)]="traject.naam" type="text" class="form-control" id="veldTraject"/>
         </div>
         <div>Trajectomschrijving:
         </div>
         <div>
-            <input [(ngModel)]="traject.omschrijving" type="text" class="form-control" />
+            <input [(ngModel)]="traject.omschrijving" type="text" class="form-control" id="veldOmschrijving"/>
         </div>
         <div>Zichtbaar:
         </div>
-        <div><input [(ngModel)]="traject.zichtbaar" type="checkbox" id="checkbox" value="true" />
+        <div><input [(ngModel)]="traject.zichtbaar" type="checkbox" id="checkboxZichtbaar" value="true" />
         </div>
-        <div><button (click)="createTraject(traject)">Toevoegen</button>
+        <div><button id="trajectToevoegen" (click)="createTraject(traject)">Toevoegen</button>
         </div>
     </div>
 </div>
