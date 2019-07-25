@@ -1,0 +1,32 @@
+<div >
+    <div class="container-fluid" id="mainbody">
+        <div class="row">
+            <table id=gebruikersTabel class='table table-bordered col-lg-10'>
+                <thead id="table-bottom">
+                    <tr>
+                      <th >Voornaam</th>
+                      <th >Tussenvoegsel</th>
+                      <th >Achternaam<i id='sorteerPijlRol' class="fa fa-fw fa-sort" (click)="sortTable(4)"></i></th>
+                      <th >Rol <i id='sorteerPijlRol' class="fa fa-fw fa-sort" (click)="sortTable(4)"></i></th>
+                      <th (click)="sortTable(5)">Actief</th>
+                      <th>Bewerken</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let Gebruiker of actieveGebruikers"  >
+                      <td >{{Gebruiker.voornaam}}</td>
+                      <td >{{Gebruiker.tussenvoegsel}}</td>
+                      <td >{{Gebruiker.achternaam}}</td>
+                      <td >{{Gebruiker.rol}}</td>
+                      <td>
+                        <div *ngIf="Gebruiker.actief; else elseBlock">Ja</div>
+                        <ng-template #elseBlock>Nee</ng-template>
+                      </td>
+                      <td>   
+                        <div class='fa fa-pencil' id="pencil" (click)="openWijzigModal('gebruikers-modal',Gebruiker.id)"
+                        ></div>
+                    </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>'

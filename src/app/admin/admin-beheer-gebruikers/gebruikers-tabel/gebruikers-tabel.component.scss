@@ -29,13 +29,14 @@ p {
     color:  #808285;
 }
 
-#pencil {
+#pencil,#sorteerPijlRol {
     color: #00aeef;
 }
 
-#pencil:hover{
+#pencil:hover, #sorteerPijlRol:hover{
     cursor: pointer;
 }
+
 
 #table-bottom,
 th {
@@ -45,6 +46,7 @@ th {
     text-transform: uppercase;
     border: 1px solid;
     border-color: black;
+       
 }
 #table-bottom,
 td {
