@@ -34,9 +34,4 @@ export class AdminComponent implements OnInit {
         .subscribe(alleTrajecten => this.alleTrajecten = alleTrajecten);
   }
 
-  updateTraject(traject:Traject){
-    this.trajectService.WijzigTraject(traject)
-    .subscribe(response => this.router.navigateByUrl('/admin'));
-  }
-
 }
