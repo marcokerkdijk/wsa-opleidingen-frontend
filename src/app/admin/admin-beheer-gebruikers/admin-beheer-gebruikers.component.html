@@ -1,39 +1,4 @@
-<div class="row">
-    <div class="container-fluid" id="mainbody">
-        <div class="row">
-            <table class='table table-bordered col-lg-10'>
-                <thead id="table-bottom">
-                    <tr>
-                      <th>Id</th>
-                      <th>Voornaam</th>
-                      <th>Tussenvoegsel</th>
-                      <th>Achternaam</th>
-                      <th>Emailadres</th>
-                      <th>Rol</th>
-                      <th>Actief</th>
-                      <th>Bewerken</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let Gebruiker of actieveGebruikers"  >
-                      <td id=gebruikerID >{{Gebruiker.id}}</td>
-                      <td >{{Gebruiker.voornaam}}</td>
-                      <td >{{Gebruiker.tussenvoegsel}}</td>
-                      <td >{{Gebruiker.achternaam}}</td>
-                      <td >{{Gebruiker.emailadres}}</td>
-                      <td >{{Gebruiker.rol}}</td>
-                      <td>
-                        <div *ngIf="Gebruiker.actief; else elseBlock">Ja</div>
-                        <ng-template #elseBlock>Nee</ng-template>
-                      </td>
-                      <td>   
-                        <div class='fa fa-pencil' id="pencil" (click)="clickWijzigModal('gebruikers-modal',Gebruiker.id)"
-                        ></div>
-                    </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>'
+<wsa-gebruikers-tabel></wsa-gebruikers-tabel>
 
         <jw-modal class="jw-modal" id="gebruikers-modal" >
                 <div class="row" >
@@ -88,10 +53,9 @@
                 <div class="row">
                     <div class="col-sm-11">
                             <button id='Opslaan'(click)="wijzigGebruiker(gebruikerInvoer)">Opslaan</button>
-                            <button >Verwijderen</button>
+                            <button id='Annuleerbutton'(click)="sluitModal('gebruikers-modal');">Annuleren</button>
                     </div>
                 </div>
-                <button id='SluitModal'(click)="sluitModal();">Sluiten</button>
             </jw-modal>   
 
         

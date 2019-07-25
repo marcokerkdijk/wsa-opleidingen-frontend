@@ -35,8 +35,8 @@ export class AdminBeheerGebruikersComponent implements OnInit {
       this.modalService.open(id);
   }
 
-  closeModal() {
-      this.modalService.close('gebruikers-modal');
+  sluitModal(id) {
+      this.modalService.close(id);
   }
   
 
@@ -53,6 +53,7 @@ export class AdminBeheerGebruikersComponent implements OnInit {
     this.gebruikerService.vraagGebruikerOpId(id).subscribe(gebruiker => this.gebruikerInvoer = gebruiker);
   }
 
+  
   
 }
 
