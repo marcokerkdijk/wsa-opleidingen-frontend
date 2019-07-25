@@ -18,14 +18,14 @@
             <table>
                 <thead id="table-bottom">
                     <tr>
-                        <th>Traject</th>
-                        <th>Omschrijving</th>
+                        <th id="thNaam">Traject</th>
+                        <th id="thZichtbaar">Omschrijving</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let Traject of zichtbaarTrajecten">
-                        <td id="tdNaam">{{Traject.naam}}</td>
-                        <td id="tdOmschrijving">{{Traject.omschrijving}}</td>
+                        <td id="tdTraject{{Traject.id}}">{{Traject.naam}}</td>
+                        <td id="tdOmschrijving{{Traject.omschrijving}}">{{Traject.omschrijving}}</td>
                     </tr>
                 </tbody>
             </table>
