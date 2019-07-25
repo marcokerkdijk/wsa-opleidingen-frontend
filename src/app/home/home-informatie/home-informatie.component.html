@@ -6,29 +6,20 @@
         <div class="col-sm-6">
             <p>
                 Welkom bij de Working Spirit academy. Login voor meer informatie over jouw traject!
-                Nog geen deelnemer van een traject, bekijk hieronder de trajecten die lopen of nog gaan starten. 
+                Nog geen deelnemer van een traject, bekijk hieronder de trajecten die lopen of nog gaan starten.
             </p>
         </div>
     </div>
-    <div class="row">
-        <div id=h6 class="col-sm-3">
-            Lopende trajecten
+    <div class="row" *ngFor="let Traject of zichtbaarTrajecten">
+        <div id="trajectNaam" class="col-sm-3">
+            {{Traject.naam}}
         </div>
         <div class="col-sm-6">
-            <table>
-                <thead id="table-bottom">
-                    <tr>
-                        <th id="thNaam">Traject</th>
-                        <th id="thZichtbaar">Omschrijving</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let Traject of zichtbaarTrajecten">
-                        <td id="tdTraject{{Traject.id}}">{{Traject.naam}}</td>
-                        <td id="tdOmschrijving{{Traject.omschrijving}}">{{Traject.omschrijving}}</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div id="trajectOmschrijving{{Traject.omschrijving}}">
+                <div class="p2">
+                    {{Traject.omschrijving}}
+                </div>
+            </div>
         </div>
     </div>
 </div>
