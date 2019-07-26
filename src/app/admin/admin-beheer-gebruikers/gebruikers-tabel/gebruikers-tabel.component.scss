@@ -1,7 +1,8 @@
 .container-fluid {
-    padding-left: 19%;
-    padding-right: 19%;
+    padding-left: 8%;
+    padding-right: 8%;
 }
+
 .row{
     padding-top: 5%;
 }
@@ -29,14 +30,16 @@ p {
     color:  #808285;
 }
 
-#pencil,#sorteerPijlRol {
+#pencil,#sorteerPijlRol, #sorteerPijlVoornaam,
+#sorteerPijlAchternaam, #sorteerPijlActief
+{
     color: #00aeef;
 }
 
-#pencil:hover, #sorteerPijlRol:hover{
+#pencil:hover, #sorteerPijlRol:hover, #sorteerPijlVoornaam:hover,
+#sorteerPijlAchternaam:hover, #sorteerPijlActief:hover{
     cursor: pointer;
 }
-
 
 #table-bottom,
 th {
@@ -45,9 +48,9 @@ th {
     font-size: 15px;
     text-transform: uppercase;
     border: 1px solid;
-    border-color: black;
-       
+    border-color: black;    
 }
+
 #table-bottom,
 td {
     background: #ffffff;
@@ -55,4 +58,51 @@ td {
     font-size: 15px;
     border: 1px solid;
     text-align: left;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 5px 5px;
+    z-index: 1;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  } 
+
+  button{
+    border-color: #00aeef;
+    color: #00aeef;
+    width: 230px;
+    text-transform: uppercase;
+    border: 1px solid  #00aeef;
+    background-color: transparent;
+    border-radius: 0;
+    font-size: 12px;
+    font-weight: 600;
+    padding-top: 10px;
+    padding-bottom: 8px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    white-space: nowrap;
+    line-height: 1.42857;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+button:hover{
+    cursor: pointer;
+    color: white;
+    background-color: #00aeef;
 }

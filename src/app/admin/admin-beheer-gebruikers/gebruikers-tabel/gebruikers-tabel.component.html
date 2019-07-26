@@ -1,24 +1,43 @@
 <div >
-    <div class="container-fluid" id="mainbody">
+    <div class="container-fluid" id="Filter_Gebruiker">
         <div class="row">
-            <table id=gebruikersTabel class='table table-bordered col-lg-10'>
+                <div class="dropdown" id="FilterActief">
+                        <div><button id='FilterKnopGebruiker'>Filter op</button></div>
+                        <div class="dropdown-content">
+                            <a id="sorteerActiefJa" class="nav-link" (click)="filterTabel('Ja')">
+                                Actief: Ja
+                            </a>
+                            <a id="sorteerActiefNee" class="nav-link" (click)="filterTabel('Nee')">
+                                    Actief: Nee
+                                </a>
+                        </div>
+                    </div>
+                    <div>
+                    <button (click)="openToevoegModal('gebruikers-toevoegen-modal')">Toevoegen</button>
+                    </div>           
+            <table id=gebruikersTabel class='table table-bordered'>
                 <thead id="table-bottom">
                     <tr>
-                      <th >Voornaam</th>
-                      <th >Tussenvoegsel</th>
-                      <th >Achternaam<i id='sorteerPijlRol' class="fa fa-fw fa-sort" (click)="sortTable(4)"></i></th>
-                      <th >Rol <i id='sorteerPijlRol' class="fa fa-fw fa-sort" (click)="sortTable(4)"></i></th>
-                      <th (click)="sortTable(5)">Actief</th>
+                      <th >VoornaamGebruiker<i id='sorteerPijlVoornaam' class="fa fa-fw fa-sort" (click)="sorteerTabel(0)">
+                        </i></th>
+                      <th >AchternaamGebruiker<i id='sorteerPijlAchternaam' class="fa fa-fw fa-sort" (click)="sorteerTabel(1)"></i></th>
+                      <th >Rol <i id='sorteerPijlRol' class="fa fa-fw fa-sort" (click)="sorteerTabel(2)">
+                      </i></th>
+                      <th >Actief
+                        <div class='drop-down'>
+                                <i id='sorteerPijlActief' class="fa fa-fw fa-sort" (click)="sorteerTabel(3)">
+                                    </i>
+                        </div> 
+                    </th>
                       <th>Bewerken</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let Gebruiker of actieveGebruikers"  >
                       <td >{{Gebruiker.voornaam}}</td>
-                      <td >{{Gebruiker.tussenvoegsel}}</td>
-                      <td >{{Gebruiker.achternaam}}</td>
+                      <td >{{Gebruiker.tussenvoegsel}} {{Gebruiker.achternaam}}</td>
                       <td >{{Gebruiker.rol}}</td>
-                      <td>
+                      <td id='actief'>
                         <div *ngIf="Gebruiker.actief; else elseBlock">Ja</div>
                         <ng-template #elseBlock>Nee</ng-template>
                       </td>

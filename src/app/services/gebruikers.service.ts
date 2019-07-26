@@ -24,4 +24,7 @@ export class GebruikersService {
   vraagGebruikerOpId(id:number) : Observable<any> {
     return this.http.get<Gebruiker>(`${this.api}/getGebruikerId/`+id);
   }
+  gebruikerToevoegen(gebruiker) {
+    return this.http.post(`${this.api}/maakGebruikerAan/`, gebruiker);
+  }
 }
