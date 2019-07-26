@@ -11,15 +11,20 @@
         </div>
     </div>
     <div class="row" *ngFor="let Traject of zichtbaarTrajecten">
-        <div id="trajectNaam" class="col-sm-3">
+        <div id="h6" class="col-sm-3">
             {{Traject.naam}}
         </div>
         <div class="col-sm-6">
-            <div id="trajectOmschrijving{{Traject.omschrijving}}">
-                <div class="p2">
-                    {{Traject.omschrijving}}
-                </div>
+            <div *ngIf="zichtbaarTrajecten.length > 1; else elseBlock">
+                <p id="trajectKorteOmschrijving{{Traject.id}}">
+                    {{Traject.korteOmschrijving}}
+                </p>
             </div>
+            <ng-template #elseBlock>
+                <p id="trajectOmschrijving{{Traject.id}}">
+                    {{Traject.omschrijving}}
+                </p>
+            </ng-template>
         </div>
     </div>
 </div>

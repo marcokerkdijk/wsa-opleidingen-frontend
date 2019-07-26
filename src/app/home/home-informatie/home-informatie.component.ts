@@ -23,4 +23,5 @@ export class HomeInformatieComponent implements OnInit {
     this.trajectService.GeefZichtbareTrajectenHome()
         .subscribe(zichtbareTrajecten => this.zichtbaarTrajecten = zichtbareTrajecten);
   }
+
 }
