@@ -46,6 +46,15 @@ stages:
           **/dist/wsa-opleidingen-frontend/**
         TargetFolder: $(Build.ArtifactStagingDirectory)
 
+    - task: ArchiveFiles@2
+      inputs:
+        rootFolderOrFile: '$(System.DefaultWorkingDirectory)/**/dist/wsa-opleidingen-frontend/**' 
+        includeRootFolder: false
+        archiveType: 'zip
+        archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip' 
+        replaceExistingArchive: true
+        verbose: true
+    
     - upload: $(Build.ArtifactStagingDirectory)
       artifact: drop
 
@@ -69,5 +78,4 @@ stages:
               azureSubscription: $(azureSubscription)
               appType: webAppLinux
               appName: $(webAppName)
-              package: '$(Pipeline.Workspace)/drop/**/dist/wsa-opleidingen-frontend/**'
-              
+              package: '$(Pipeline.Workspace)/drop/**/dist/wsa-opleidingen-frontend/*.zip'
