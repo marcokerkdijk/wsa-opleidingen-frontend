@@ -31,13 +31,14 @@ p {
 }
 
 #pencil,#sorteerPijlRol, #sorteerPijlVoornaam,
-#sorteerPijlAchternaam, #sorteerPijlActief
-{
+#sorteerPijlAchternaam, #sorteerPijlActief, #sorteerActiefJa, 
+#sorteerActiefNee {
     color: #00aeef;
 }
 
 #pencil:hover, #sorteerPijlRol:hover, #sorteerPijlVoornaam:hover,
-#sorteerPijlAchternaam:hover, #sorteerPijlActief:hover{
+#sorteerPijlAchternaam:hover, #sorteerPijlActief:hover, #sorteerActiefJa:hover, 
+#sorteerActiefNee:hover {
     cursor: pointer;
 }
 
