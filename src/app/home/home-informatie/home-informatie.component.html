@@ -12,7 +12,9 @@
     </div>
     <div class="row" *ngFor="let Traject of zichtbaarTrajecten">
         <div id="h6" class="col-sm-3">
-            {{Traject.naam}}
+            <div id="trajectNaam{{Traject.id}}">
+                {{Traject.naam}}
+            </div>
         </div>
         <div class="col-sm-6">
             <div *ngIf="zichtbaarTrajecten.length > 1; else elseBlock">
