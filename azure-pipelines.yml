@@ -38,14 +38,6 @@ stages:
         npm run build
       displayName: 'npm install and build'
 
-    - task: CopyFiles@2
-      displayName: 'Copy Files to artifact staging directory'
-      inputs:
-        SourceFolder: '$(System.DefaultWorkingDirectory)'
-        Contents: |
-          **/dist/wsa-opleidingen-frontend/**
-        TargetFolder: $(Build.ArtifactStagingDirectory)
-
     - task: ArchiveFiles@2
       inputs:
         rootFolderOrFile: '$(System.DefaultWorkingDirectory)/dist/wsa-opleidingen-frontend/' 
@@ -77,4 +69,4 @@ stages:
               azureSubscription: $(azureSubscription)
               appType: webAppLinux
               appName: $(webAppName)
-              package: '$(Pipeline.Workspace)/drop/**/dist/wsa-opleidingen-frontend/*.zip'
+              package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
