@@ -2,6 +2,7 @@
     padding-left: 8%;
     padding-right: 8%;
 }
+
 .row{
     padding-top: 5%;
 }
@@ -41,7 +42,6 @@ p {
     cursor: pointer;
 }
 
-
 #table-bottom,
 th {
     background: #ffffff;
@@ -49,9 +49,9 @@ th {
     font-size: 15px;
     text-transform: uppercase;
     border: 1px solid;
-    border-color: black;
-       
+    border-color: black;    
 }
+
 #table-bottom,
 td {
     background: #ffffff;
@@ -79,6 +79,7 @@ td {
   .dropdown:hover .dropdown-content {
     display: block;
   } 
+
   button{
     border-color: #00aeef;
     color: #00aeef;
@@ -100,6 +101,7 @@ td {
     margin-top: 5px;
     margin-bottom: 5px;
 }
+
 button:hover{
     cursor: pointer;
     color: white;
