@@ -1,6 +1,66 @@
 <wsa-gebruikers-tabel></wsa-gebruikers-tabel>
 
+<!-- Modaal voor het wijzigen van de gebruiker. -->
+
         <jw-modal class="jw-modal" id="gebruikers-modal" >
+                <div class="row" >
+                    <div class="col-sm-11">
+                        <div>Voornaam:</div>
+                        <div>
+                            <input [(ngModel)]="gebruikerInvoer.voornaam" type="text" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-11">
+                        <div>Tussenvoegsel:</div>
+                        <div>
+                            <input [(ngModel)]="gebruikerInvoer.tussenvoegsel" type="text" class="form-control"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-11">
+                        <div>Achternaam:</div>
+                        <input [(ngModel)]="gebruikerInvoer.achternaam" type="text" class="form-control" />
+                    </div>
+                </div> 
+                <div class="row">
+                        <div class="col-sm-11">
+                            <div>Emailadres:</div>
+                            <div>
+                                <input [(ngModel)]="gebruikerInvoer.emailadres" type="e-mail" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                <div class="row">
+                    <div class="col-sm-11">
+                        <div>Rol:</div>
+                        <div>
+                            <input [(ngModel)]="gebruikerInvoer.rol" type="text" class="form-control" />
+                        </div>
+                    </div>
+          </div>
+                <div class="row">
+                    <div class="col-sm-11">
+                            <div *ngIf="gebruikerInvoer.actief; else elseBlock">Actief: Ja</div>
+                            <ng-template #elseBlock>Actief: Nee</ng-template>
+                        <div>
+                            <input id='actiefCheckbox' type="checkbox" name='actief' value="true" [(ngModel)]="gebruikerInvoer.actief">Actief              
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-11">
+                            <button id='OpslaanButtonWijzigGebruiker'(click)="wijzigGebruiker(gebruikerInvoer)">Opslaan</button>
+                            <button id='AnnuleerButtonWijzigGebruiker'(click)="sluitModal('gebruikers-modal');">Annuleren</button>
+                    </div>
+                </div>
+            </jw-modal>   
+    
+            <!-- Modaal voor het toevoegen van de gebruiker -->
+
+            <jw-modal class="jw-modal" id="gebruikers-toevoegen-modal" >
                 <div class="row" >
                     <div class="col-sm-11">
                         <div>Voornaam:</div>
@@ -26,12 +86,20 @@
                 </div> 
                 <div class="row">
                         <div class="col-sm-11">
-                            <div>Rol:</div>
+                            <div>Emailadres:</div>
                             <div>
                                 <input [(ngModel)]="gebruikerInvoer.emailadres" type="e-mail" class="form-control" required/>
                             </div>
                         </div>
                     </div>
+                    <div class="row">
+                            <div class="col-sm-11">
+                                <div>Wachtwoord:</div>
+                                <div>
+                                    <input [(ngModel)]="gebruikerInvoer.wachtwoord" type="password" class="form-control" required/>
+                                </div>
+                            </div>
+                        </div>
                 <div class="row">
                     <div class="col-sm-11">
                         <div>Rol:</div>
@@ -40,7 +108,6 @@
                         </div>
                     </div>
                 </div>
-               
                 <div class="row">
                     <div class="col-sm-11">
                             <div *ngIf="gebruikerInvoer.actief; else elseBlock">Actief: Ja</div>
@@ -52,11 +119,11 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-11">
-                            <button id='Opslaan'(click)="wijzigGebruiker(gebruikerInvoer)">Opslaan</button>
-                            <button id='Annuleerbutton'(click)="sluitModal('gebruikers-modal');">Annuleren</button>
+                            <button id='ToevoegenNieuweGebruikerButton'(click)="voegGebruikerToe(gebruikerInvoer)">Toevoegen</button>
+                            <button id='AnnuleerNieuweGebruikerButton'(click)="sluitModal('gebruikers-toevoegen-modal');">Annuleren</button>
                     </div>
                 </div>
-            </jw-modal>   
+            </jw-modal> 
 
         
      

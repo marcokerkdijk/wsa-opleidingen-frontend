@@ -24,9 +24,13 @@ export class GebruikersTabelComponent implements OnInit {
 
   openWijzigModal(id,gebruikerId:number) {
     this.adminBeheerGebruikers.clickWijzigModal(id,gebruikerId);
-	  }
+    }
+    
+  openToevoegModal(id){
+    this.adminBeheerGebruikers.openModal(id);
+  }
 
-  sortTable(n) {
+  sorteerTabel(n) {
     var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
     table = document.getElementById("gebruikersTabel");
     switching = true;
@@ -63,4 +67,29 @@ export class GebruikersTabelComponent implements OnInit {
       }
     }
   }
+
+  filterTabel(input) {
+ // Declare variables 
+ console.log(input);
+ var input, filter, table, tr, td, i, txtValue;
+ filter = input.toUpperCase();
+ table = document.getElementById("gebruikersTabel");
+ tr = table.getElementById("actief");
+
+ // Loop through all table rows, and hide those who don't match the search query
+ //for (i = 0; i < tr.length; i++) {
+   
+   td = tr.getElementsByTagName("td")[0];
+   console.log(td);
+  // for (i = 0; i < td.length; i++) {
+   if (td) {
+     txtValue = td.textContent || td.innerText;
+     if (txtValue.toUpperCase().indexOf(filter) > -1) {
+       tr[i].style.display = "";
+     } else {
+       tr[i].style.display = "none";
+     }
+   } 
+ }
+//}
 }

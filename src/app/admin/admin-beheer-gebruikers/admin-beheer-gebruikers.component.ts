@@ -23,7 +23,6 @@ export class AdminBeheerGebruikersComponent implements OnInit {
   ngOnInit() {
     this.bodyText = 'This text can be updated in modal 1';
     this.haalActieveGebruikers();
-    
   }
   
   haalActieveGebruikers(): void {
@@ -39,7 +38,6 @@ export class AdminBeheerGebruikersComponent implements OnInit {
       this.modalService.close(id);
   }
   
-
   wijzigGebruiker(gebruiker:Gebruiker){
     this.gebruikerService.wijzigGebruiker(gebruiker,gebruiker.id)
     .subscribe(response => this.router.navigateByUrl('/admin'));
@@ -48,12 +46,14 @@ export class AdminBeheerGebruikersComponent implements OnInit {
   clickWijzigModal(id,gebruikerId:number) {
     this.haalGebruikerOpId(gebruikerId);
     this.openModal(id);
-	  }
+	}
+  
   haalGebruikerOpId(id:number): void {
     this.gebruikerService.vraagGebruikerOpId(id).subscribe(gebruiker => this.gebruikerInvoer = gebruiker);
   }
 
-  
-  
+  voegGebruikerToe(gebruiker:Gebruiker) {
+    this.gebruikerService.gebruikerToevoegen(gebruiker).subscribe(response => this.router.navigateByUrl('/admin'));
+  }
 }
 
