@@ -9,7 +9,6 @@
                         <div>
                             <input [(ngModel)]="gebruikerInvoer.voornaam" type="text" class="form-control" />
                         </div>
-            
                     </div>
                 </div>
                 <div class="row">
@@ -41,8 +40,7 @@
                             <input [(ngModel)]="gebruikerInvoer.rol" type="text" class="form-control" />
                         </div>
                     </div>
-                </div>
-               
+          </div>
                 <div class="row">
                     <div class="col-sm-11">
                             <div *ngIf="gebruikerInvoer.actief; else elseBlock">Actief: Ja</div>
@@ -110,7 +108,6 @@
                         </div>
                     </div>
                 </div>
-               
                 <div class="row">
                     <div class="col-sm-11">
                             <div *ngIf="gebruikerInvoer.actief; else elseBlock">Actief: Ja</div>
