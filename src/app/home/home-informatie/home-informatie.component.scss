@@ -20,6 +20,42 @@ p {
     color:  #808285;
 }
 
-table {
-    font-size: 14px;
+// table {
+//     font-size: 14px;
+// }
+
+// #table-bottom,
+// th {
+//     background: #ffffff;
+//     color: #696969;
+//     font-size: 15px;
+//     text-transform: uppercase;
+//     border: 1px solid;
+//     border-color: black;
+// }
+// #table-bottom,
+// td {
+//     background: #ffffff;
+//     color: #696969;
+//     font-size: 15px;
+//     border: 1px solid;
+//     text-align: left;
+// }
+
+#trajectNaam{
+    letter-spacing: 1px;
+    color: #808285;
+    font-size: 26px;
+    font-weight: normal;
+    line-height: 32px;
 }
+
+.p2{
+    font-size: 14px;
+    line-height: 24px;
+    color:  #808285;
+    height:60px;
+    line-height:20px;
+    overflow:hidden;
+}
+
