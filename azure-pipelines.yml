@@ -49,6 +49,7 @@ stages:
     - task: PublishBuildArtifacts@1
       inputs:
         PathtoPublish: 'dist/wsa-opleidingen-frontend/'
+        artifactName: 'drop'
 
 - stage: Deploy
   displayName: Deploy stage
@@ -70,5 +71,5 @@ stages:
               azureSubscription: $(azureSubscription)
               appType: webAppLinux
               appName: $(webAppName)
-              package: '${Build.ArtifactStagingDirectory}/dist/wsa-opleidingen-frontend/'
+              package: '$(Pipeline.Workspace)/drop/**/dist/wsa-opleidingen-frontend/**'
               
