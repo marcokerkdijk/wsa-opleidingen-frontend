@@ -2,6 +2,7 @@
     padding-left: 19%;
     padding-right: 19%;
 }
+
 .row{
     padding-top: 5%;
 }
@@ -46,6 +47,7 @@ th {
     border: 1px solid;
     border-color: black;
 }
+
 #table-bottom,
 td {
     background: #ffffff;
@@ -54,9 +56,11 @@ td {
     border: 1px solid;
     text-align: left;
 }
+
 #thNaam{
     width: 500px;
 }
+
 #thZichtbaar{
     width: 100px;
 }
@@ -72,6 +76,7 @@ td {
     width: 20px; 
     height: 20px;
 }
+
 button{
     border-color: #00aeef;
     color: #00aeef;
@@ -91,6 +96,7 @@ button{
     white-space: nowrap;
     line-height: 1.42857;
 }
+
 button:hover{
     cursor: pointer;
     color: white;
