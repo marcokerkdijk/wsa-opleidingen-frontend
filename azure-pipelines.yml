@@ -48,12 +48,11 @@ stages:
 
     - task: ArchiveFiles@2
       inputs:
-        rootFolderOrFile: '$(System.DefaultWorkingDirectory)/**/dist/wsa-opleidingen-frontend/**' 
+        rootFolderOrFile: '$(System.DefaultWorkingDirectory)/**/dist/wsa-opleidingen-frontend/' 
         includeRootFolder: false
-        archiveType: 'zip
+        archiveType: 'zip'
         archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip' 
         replaceExistingArchive: true
-        verbose: true
     
     - upload: $(Build.ArtifactStagingDirectory)
       artifact: drop
