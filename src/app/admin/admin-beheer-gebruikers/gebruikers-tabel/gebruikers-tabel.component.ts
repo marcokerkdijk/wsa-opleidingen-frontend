@@ -68,20 +68,14 @@ export class GebruikersTabelComponent implements OnInit {
     }
   }
 
-  filterTabel(input) {
- // Declare variables 
- console.log(input);
- var input, filter, table, tr, td, i, txtValue;
+  filterTabel(input:string, kolomnr:number) { 
+ var filter, tabel, tr, td, i, txtValue;
  filter = input.toUpperCase();
- table = document.getElementById("gebruikersTabel");
- tr = table.getElementById("actief");
+ tabel = document.getElementById("gebruikersTabel");
+ tr = tabel.getElementsByTagName("tr");
 
- // Loop through all table rows, and hide those who don't match the search query
- //for (i = 0; i < tr.length; i++) {
-   
-   td = tr.getElementsByTagName("td")[0];
-   console.log(td);
-  // for (i = 0; i < td.length; i++) {
+ for (i = 0; i < tr.length; i++) {
+   td = tr[i].getElementsByTagName("td")[kolomnr];
    if (td) {
      txtValue = td.textContent || td.innerText;
      if (txtValue.toUpperCase().indexOf(filter) > -1) {
@@ -91,5 +85,5 @@ export class GebruikersTabelComponent implements OnInit {
      }
    } 
  }
-//}
+}
 }
