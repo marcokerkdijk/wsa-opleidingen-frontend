@@ -53,6 +53,9 @@ export class AdminBeheerGebruikersComponent implements OnInit {
     this.gebruikerService.vraagGebruikerOpId(id).subscribe(gebruiker => this.gebruikerInvoer = gebruiker);
   }
 
+  voegGebruikerToe(gebruiker:Gebruiker) {
+    this.gebruikerService.gebruikerToevoegen(gebruiker).subscribe(response => this.router.navigateByUrl('/admin'));
+  }
   
   
 }
