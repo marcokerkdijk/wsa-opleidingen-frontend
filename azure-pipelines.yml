@@ -48,7 +48,7 @@ stages:
 
     - task: PublishBuildArtifacts@1
       inputs:
-        PathtoPublish: 'dist/wsa-opleidingen-frontend/
+        PathtoPublish: 'dist/wsa-opleidingen-frontend/'
 
 - stage: Deploy
   displayName: Deploy stage
