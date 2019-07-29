@@ -26,8 +26,7 @@ export class AdminBeheerTrajectComponent implements OnInit {
   }
 
   updateTraject(traject: Traject){
-    console.log(traject.id);
-    this.trajectService.WijzigTraject(traject)
+    this.trajectService.WijzigTraject(traject, traject.id)
     .subscribe(response => this.router.navigateByUrl('/admin'));
   }
 
@@ -45,7 +44,6 @@ export class AdminBeheerTrajectComponent implements OnInit {
   }
 
   clickWijzigModal(id,trajectId:number){
-    console.log(trajectId);
     this.haalTrajectOpId(trajectId);
     this.openModal(id);
   }

@@ -33,3 +33,24 @@ p {
     color: #00aeef;
 }
 
+#pencil:hover{
+    cursor: pointer;
+}
+
+#table-bottom,
+th {
+    background: #ffffff;
+    color: #696969;
+    font-size: 15px;
+    text-transform: uppercase;
+    border: 1px solid;
+    border-color: black;
+}
+#table-bottom,
+td {
+    background: #ffffff;
+    color: #696969;
+    font-size: 15px;
+    border: 1px solid;
+    text-align: left;
+}
