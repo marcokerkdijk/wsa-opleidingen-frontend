@@ -11,13 +11,11 @@ import { ModalService } from 'src/app/services/modal.service';
 })
 export class AdminBeheerTrajectComponent implements OnInit {
   traject:Traject = new Traject;
-  alleTrajecten:Traject[];
   wijzigTraject:Traject = new Traject;
 
   constructor(private modalService: ModalService, private trajectService:TrajectService, private router:Router) { }
 
   ngOnInit() {
-    this.getAlleTrajecten();
   }
 
   createTraject(traject: Traject){
@@ -30,10 +28,7 @@ export class AdminBeheerTrajectComponent implements OnInit {
     .subscribe(response => this.router.navigateByUrl('/admin'));
   }
 
-  getAlleTrajecten(): void {
-    this.trajectService.GeefAlleTrajecten()
-        .subscribe(alleTrajecten => this.alleTrajecten = alleTrajecten);
-  }
+
 
   openModal(id: string) {
     this.modalService.open(id);
@@ -43,10 +38,6 @@ export class AdminBeheerTrajectComponent implements OnInit {
     this.modalService.close(id);
   }
 
-  clickWijzigModal(id,trajectId:number){
-    this.haalTrajectOpId(trajectId);
-    this.openModal(id);
-  }
   haalTrajectOpId(id:number): void {
     this.wijzigTraject.id = id;
     this.trajectService.haalTrajectOpId(id).subscribe(traject => this.wijzigTraject = traject);
