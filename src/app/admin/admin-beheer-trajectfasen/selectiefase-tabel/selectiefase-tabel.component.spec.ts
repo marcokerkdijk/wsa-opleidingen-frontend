@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TrajectfaseTabelComponent } from './trajectfase-tabel.component';
+import { SelectiefaseTabelComponent } from './selectiefase-tabel.component';
 
-describe('TrajectfaseTabelComponent', () => {
-  let component: TrajectfaseTabelComponent;
-  let fixture: ComponentFixture<TrajectfaseTabelComponent>;
+describe('SelectiefaseTabelComponent', () => {
+  let component: SelectiefaseTabelComponent;
+  let fixture: ComponentFixture<SelectiefaseTabelComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TrajectfaseTabelComponent ]
+      declarations: [ SelectiefaseTabelComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TrajectfaseTabelComponent);
+    fixture = TestBed.createComponent(SelectiefaseTabelComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
