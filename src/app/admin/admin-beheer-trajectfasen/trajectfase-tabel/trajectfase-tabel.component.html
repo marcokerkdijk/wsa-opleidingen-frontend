@@ -1,0 +1,24 @@
+<div class="container-fluid" id="Filter_Gebruiker">
+    <div class="row">
+        <div>
+            <button id="openToevoegModalSelectieFase" (click)="openToevoegModalSelectieFase('trajectFase-toevoegen-modal')">Toevoegen</button>
+        </div>
+        <table class='table table-bordered col-lg-12'>
+            <thead id="table-bottom">
+                <tr>
+                    <th id="thNaam">Fase</th>
+                    <th id="thZichtbaar">Omschrijving</th>
+                    <th id="thBewerken">Bewerken</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let SelectieFase of selectieFasen">
+                    <td id="tdSelectieFase{{SelectieFase.id}}">{{SelectieFase.naam}}</td>
+                    <td id="tdOmschrijving{{SelectieFase.id}}">{{SelectieFase.omschrijving}}</td>
+                    <td><a id="pencil" (click)="clickWijzigModal('trajectFase-modal', Selectie.id)"><i class='fa fa-pencil'
+                                id="tdWijzig{{Selectie.id}}"></i></a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

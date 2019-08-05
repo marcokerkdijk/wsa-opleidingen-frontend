@@ -17,9 +17,12 @@ export class SelectieFaseService {
     return this.http.get<SelectieFase>(`${this.api}/GeefSelectieFaseOpId/` + id);
   }
 
-  voegSelectieFaseToe(selectieFase: SelectieFase, trajectId:number): Observable<any> {
-    selectieFase.traject_id = trajectId;
-    return this.http.post<SelectieFase>(`${this.api}/MaakSelectieFase`, selectieFase);
+  voegSelectieFaseToe(selectieFase: SelectieFase): Observable<any> {
+     return this.http.post<SelectieFase>(`${this.api}/MaakSelectieFase`, selectieFase);
+  }
+
+  GeefAlleSelectieFasen(): Observable<SelectieFase[]> {
+    return this.http.get<SelectieFase[]>(`${this.api}/GeefAlleSelectieFasen`)
   }
 
 }
