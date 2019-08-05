@@ -41,17 +41,21 @@ li a {
     background-color: #00aeef;
     color: #ffffff;
 }
-#Logout:hover {
+#LogoutButton:hover {
     color: #ffffff;
 }
 
 #LoginButton:hover {
     color: #ffffff;
 }
+.hamburgerButton {
+    font-size: 14px;
+    color: #00aeef;
+}
 #LoginButtonHamburger {
     font-size: 14px;
     color: #00aeef; 
-  }
+}
   #LoginButtonHamburger:hover{
     font-size: 14px;
     color: #ffffff;
@@ -66,10 +70,11 @@ li a {
     color: #ffffff;
 }
 
- 
 #nav-hamburger {
+    float: right;
     position: absolute;
-    padding-top: 20px;
+    padding-top: 25px;
+    padding-left: 45%;
     padding-bottom: 7px;   
 }
 .dropdown {
