@@ -6,27 +6,26 @@
             </div>
             <div class="col-sm-6">
                 <p>
-                    Welkom {{gebruiker.displaynaam}} op de academy.
+                    Welkom {{gebruiker.displaynaam}} op de academy. Klik hieronder op het onderwerp om het te beheren. 
+                    Bijvoorbeeld om nieuwe trajecten te maken of te wijzigen. 
                 </p>
-            </div>
-        </div>
-        <div class="row">
-            <div id=h6 class="col-sm-3">
-                Trajecten
-            </div>
-            <div class="col-sm-6">
-                <wsa-admin-beheer-traject></wsa-admin-beheer-traject>
-            </div>
-        </div>
-        <div class="row">
-                <div id=h6 class="col-sm-3">
-                        Gebruikers
-                    </div>
-            <div class="col-sm-6">
-                <p>
-                    Bekijk hier alle gebruikers en pas ze eventueel aan of voeg toe:
-                </p>
+                <br>
+                <button id='linkBeheerGebruikers' [routerLink]="'./admin-beheer-traject'">Trajecten</button><br>
                 <button id='linkBeheerGebruikers' [routerLink]="'./admin-beheer-gebruikers'">Gebruikers</button><br>
+            </div>
+        
+             <!-- <div id=h6 class="col-sm-3">
+                Trajecten
+            </div> -->
+            <div class="col-sm-6">
+                
+           </div>
+        
+                     <!-- <div id=h6 class="col-sm-3">
+                        Gebruikers
+                    </div> -->
+            <div class="col-sm-6">
+                
             </div>
         </div>
         <router-outlet></router-outlet>
