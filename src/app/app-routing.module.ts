@@ -10,6 +10,7 @@ import { DocentAutorisatieGuard } from "./guards/docent-autorisatie.guard";
 import { StudentAutorisatieGuard } from "./guards/student-autorisatie.guard";
 import { AdminBeheerTrajectComponent } from './admin/admin-beheer-traject/admin-beheer-traject.component';
 import { AdminBeheerGebruikersComponent } from './admin/admin-beheer-gebruikers/admin-beheer-gebruikers.component';
+import { AdminBeheerTrajectfasenComponent } from './admin/admin-beheer-trajectfasen/admin-beheer-trajectfasen.component';
 
 const routes: Routes = [
 
@@ -19,6 +20,9 @@ const routes: Routes = [
       { path: "admin-beheer-traject", component: AdminBeheerTrajectComponent, canActivate: [AdminAutorisatieGuard] },
       { path: '', redirectTo: 'admin', pathMatch: 'full' },
       { path: "admin-beheer-gebruikers", component: AdminBeheerGebruikersComponent },
+      { path: '', redirectTo: 'admin', pathMatch: 'full' },
+      { path: "admin-beheer-trajectfasen", component: AdminBeheerTrajectfasenComponent},
+
     ]
   },
   { path: 'student', component: StudentComponent, canActivate: [StudentAutorisatieGuard] },

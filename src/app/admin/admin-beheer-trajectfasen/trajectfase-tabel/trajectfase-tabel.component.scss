@@ -1,6 +1,6 @@
 .container-fluid {
-    padding-left: 19%;
-    padding-right: 19%;
+    padding-left: 8%;
+    padding-right: 8%;
 }
 
 .row{
@@ -30,11 +30,15 @@ p {
     color:  #808285;
 }
 
-#pencil {
+#pencil,#sorteerPijlRol, #sorteerPijlVoornaam,
+#sorteerPijlAchternaam, #sorteerPijlActief, #sorteerActiefJa, 
+#sorteerActiefNee {
     color: #00aeef;
 }
 
-#pencil:hover{
+#pencil:hover, #sorteerPijlRol:hover, #sorteerPijlVoornaam:hover,
+#sorteerPijlAchternaam:hover, #sorteerPijlActief:hover, #sorteerActiefJa:hover, 
+#sorteerActiefNee:hover {
     cursor: pointer;
 }
 
@@ -45,7 +49,7 @@ th {
     font-size: 15px;
     text-transform: uppercase;
     border: 1px solid;
-    border-color: black;
+    border-color: black;    
 }
 
 #table-bottom,
@@ -57,30 +61,29 @@ td {
     text-align: left;
 }
 
-#thNaam{
-    width: 500px;
-}
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 5px 5px;
+    z-index: 1;
+  }
 
-#thZichtbaar{
-    width: 100px;
-}
+  .dropdown:hover .dropdown-content {
+    display: block;
+  } 
 
-#mainbody {
-    padding-top: 5%;
-    background: #ffffff;
-    color: #808080;
-    font-size: 14px;
-}
-
-#checkbox{
-    width: 20px; 
-    height: 20px;
-}
-
-button{
+  button{
     border-color: #00aeef;
     color: #00aeef;
-    width: 100%;
+    width: 230px;
     text-transform: uppercase;
     border: 1px solid  #00aeef;
     background-color: transparent;
@@ -95,6 +98,8 @@ button{
     touch-action: manipulation;
     white-space: nowrap;
     line-height: 1.42857;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 button:hover{
