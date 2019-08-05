@@ -21,7 +21,7 @@ const routes: Routes = [
       { path: '', redirectTo: 'admin', pathMatch: 'full' },
       { path: "admin-beheer-gebruikers", component: AdminBeheerGebruikersComponent },
       { path: '', redirectTo: 'admin', pathMatch: 'full' },
-      { path: "admin-beheer-trajectfasen", component: AdminBeheerTrajectfasenComponent},
+      { path: "admin-beheer-trajectfasen/:id", component: AdminBeheerTrajectfasenComponent},
 
     ]
   },

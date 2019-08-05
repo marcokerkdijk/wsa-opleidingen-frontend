@@ -27,7 +27,7 @@ import { GebruikersModalComponent } from './admin/admin-beheer-gebruikers/gebrui
 import { GebruikersTabelComponent } from './admin/admin-beheer-gebruikers/gebruikers-tabel/gebruikers-tabel.component';
 import { TrajectTabelComponent } from './admin/admin-beheer-traject/traject-tabel/traject-tabel.component';
 import { AdminBeheerTrajectfasenComponent } from './admin/admin-beheer-trajectfasen/admin-beheer-trajectfasen.component';
-import { TrajectfaseTabelComponent } from './admin/admin-beheer-trajectfasen/trajectfase-tabel/trajectfase-tabel.component';
+import { SelectiefaseTabelComponent } from './admin/admin-beheer-trajectfasen/selectiefase-tabel/selectiefase-tabel.component';
 
 
 
@@ -66,7 +66,7 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     GebruikersTabelComponent,
     TrajectTabelComponent,
     AdminBeheerTrajectfasenComponent,
-    TrajectfaseTabelComponent,
+    SelectiefaseTabelComponent,
   ],
   imports: [
     BrowserModule,

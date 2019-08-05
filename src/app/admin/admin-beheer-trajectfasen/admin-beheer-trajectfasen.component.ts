@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { SelectieFaseService } from 'src/app/services/selectie-fase.service';
 import { SelectieFase } from 'src/app/selectieFase';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { ModalService } from 'src/app/services/modal.service';
+import { TrajectService } from 'src/app/services/traject.service';
+import { Traject } from 'src/app/traject';
 
 @Component({
   selector: 'wsa-admin-beheer-trajectfasen',
@@ -13,10 +15,15 @@ export class AdminBeheerTrajectfasenComponent implements OnInit {
   selectieFase:SelectieFase = new SelectieFase;
   nieuweFase:SelectieFase = new SelectieFase;
   selectieFasen:SelectieFase[];
+  traject: Traject;
+  traject_id:number;
 
-  constructor(private selectieFaseService:SelectieFaseService, private router:Router, private modalService:ModalService) { }
+  constructor(private selectieFaseService:SelectieFaseService, private router:Router, 
+    private modalService:ModalService, private activeRouter:ActivatedRoute, private trajectService:TrajectService) { }
 
   ngOnInit() {
+    const id = +this.activeRouter.snapshot.paramMap.get('id');
+    this.maakTrajectId(id);
   }
   haalSelectieFase(id:number):void {
     this.selectieFase.id = id;
@@ -34,6 +41,14 @@ export class AdminBeheerTrajectfasenComponent implements OnInit {
   maakNieuwSelectieFase(nieuweFase){
     this.selectieFaseService.voegSelectieFaseToe(nieuweFase)
     .subscribe(response => this.router.navigateByUrl('/admin'));
+  }
+
+  maakTrajectId(id) {
+    this.traject_id = id;
+  }
+
+  haalTrajectOp() {
+   return this.trajectService.haalTrajectOpId(this.traject_id).subscribe(opgehaaldTraject => this.traject = opgehaaldTraject);
   }
 
 }

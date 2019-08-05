@@ -12,11 +12,11 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let SelectieFase of selectieFasen">
+                <tr *ngFor="let SelectieFase of alleSelectieFasen">
                     <td id="tdSelectieFase{{SelectieFase.id}}">{{SelectieFase.naam}}</td>
                     <td id="tdOmschrijving{{SelectieFase.id}}">{{SelectieFase.omschrijving}}</td>
-                    <td><a id="pencil" (click)="clickWijzigModal('trajectFase-modal', Selectie.id)"><i class='fa fa-pencil'
-                                id="tdWijzig{{Selectie.id}}"></i></a></td>
+                    <td><a id="pencil" (click)="clickWijzigModal('trajectFase-modal', SelectieFase.id)"><i class='fa fa-pencil'
+                                id="tdWijzig{{SelectieFase.id}}"></i></a></td>
                 </tr>
             </tbody>
         </table>
