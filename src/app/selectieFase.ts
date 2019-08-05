@@ -1,4 +1,4 @@
-export class TrajectFase {
+export class SelectieFase {
     id: number;
     naam: string;
     omschrijving: string;

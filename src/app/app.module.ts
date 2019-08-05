@@ -26,6 +26,7 @@ import { TrajectModalComponent } from './admin/admin-beheer-traject/traject-moda
 import { GebruikersModalComponent } from './admin/admin-beheer-gebruikers/gebruikers-modal/gebruikers-modal.component';
 import { GebruikersTabelComponent } from './admin/admin-beheer-gebruikers/gebruikers-tabel/gebruikers-tabel.component';
 import { TrajectTabelComponent } from './admin/admin-beheer-traject/traject-tabel/traject-tabel.component';
+import { AdminBeheerTrajectfasenComponent } from './admin/admin-beheer-trajectfasen/admin-beheer-trajectfasen.component';
 
 
 
@@ -63,6 +64,7 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     GebruikersModalComponent,
     GebruikersTabelComponent,
     TrajectTabelComponent,
+    AdminBeheerTrajectfasenComponent,
   ],
   imports: [
     BrowserModule,

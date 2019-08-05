@@ -3,6 +3,8 @@ import { TrajectService } from 'src/app/services/traject.service';
 import { Traject } from 'src/app/traject';
 import { Router } from '@angular/router';
 import { ModalService } from 'src/app/services/modal.service';
+import { SelectieFase } from 'src/app/selectieFase';
+import { SelectieFaseService } from 'src/app/services/selectie-fase.service';
 
 @Component({
   selector: 'wsa-admin-beheer-traject',
@@ -12,8 +14,10 @@ import { ModalService } from 'src/app/services/modal.service';
 export class AdminBeheerTrajectComponent implements OnInit {
   traject:Traject = new Traject;
   wijzigTraject:Traject = new Traject;
+  selectieFase:SelectieFase = new SelectieFase;
 
-  constructor(private modalService: ModalService, private trajectService:TrajectService, private router:Router) { }
+  constructor(private modalService: ModalService, private trajectService:TrajectService, private router:Router, 
+    private selectieFaseService:SelectieFaseService) { }
 
   ngOnInit() {
   }
@@ -41,6 +45,11 @@ export class AdminBeheerTrajectComponent implements OnInit {
   haalTrajectOpId(id:number): void {
     this.wijzigTraject.id = id;
     this.trajectService.haalTrajectOpId(id).subscribe(traject => this.wijzigTraject = traject);
+  }
+
+  maakNieuweSelectieFase(id:number):void {
+    this.selectieFase.id = id;
+    this.selectieFaseService.haalSelectieFaseOpId(id).subscribe(response => this.router.navigateByUrl('/admin'));
   }
 
 }

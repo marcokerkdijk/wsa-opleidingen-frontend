@@ -1,4 +1,4 @@
-import { TrajectFase } from './trajectFase';
+import { SelectieFase } from './selectieFase';
 
 export class Traject {
     id: number;
@@ -6,5 +6,5 @@ export class Traject {
     korteOmschrijving: string;
     omschrijving: string;
     zichtbaar: boolean;
-    trajectFase:TrajectFase;
+    selectieFase:SelectieFase;
 }
