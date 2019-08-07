@@ -14,11 +14,12 @@ export class SelectieFaseService {
   constructor(private http:HttpClient) { }
 
   haalSelectieFaseOpId(id: number): Observable<any> {
+    console.log(id);
     return this.http.get<SelectieFase>(`${this.api}/GeefSelectieFaseOpId/` + id);
   }
 
-  voegSelectieFaseToe(selectieFase: SelectieFase): Observable<any> {
-     return this.http.post<SelectieFase>(`${this.api}/MaakSelectieFase`, selectieFase);
+  voegSelectieFaseToe(selectieFase: SelectieFase, traject_id): Observable<any> {
+     return this.http.post<SelectieFase>(`${this.api}/MaakSelectieFase/`+traject_id, selectieFase );
   }
 
   GeefAlleSelectieFasen(): Observable<SelectieFase[]> {
@@ -27,6 +28,10 @@ export class SelectieFaseService {
 
   GeefTrajectFasen(traject_id): Observable<SelectieFase[]> {
     return this.http.get<SelectieFase[]>(`${this.api}/GeefAlleTrajectFasen/` + traject_id);
+  }
+
+  wijzigSelectieFase(gewijzigdeFase, selectieFase_id): Observable<any> {
+    return this.http.put<SelectieFase>(`${this.api}/WijzigSelectieFase/` +selectieFase_id, gewijzigdeFase);
   }
 
 }
