@@ -1,50 +1,36 @@
 <wsa-selectiefase-tabel></wsa-selectiefase-tabel>
 
-<!-- <jw-modal class="jw-modal2" id="trajectfase-modal">
-    <h1>Wijzig traject</h1>
+<jw-modal class="jw-modal" id="trajectFase-wijzig-modal">
+    <h1>Wijzig hierinder de selectiefase</h1>
     <div class="row">
         <div class="col-sm-12">
-            <div>Naam:</div>
+            <div>Selectiefase naam:</div>
             <div>
-                <input [(ngModel)]="wijzigTraject.naam" type="text" class="form-control" id="veldTrajectModal" />
+                <input [(ngModel)]="selectieFase.naam" type="text" class="form-control" id="veldSelectieFaseNaamWijzigen" />
             </div>
         </div>
-        <div class="col-sm-12">
-            <div>Korte omschrijving:</div>
-            <div>
-                <textarea [(ngModel)]="wijzigTraject.korteOmschrijving" class="form-control" rows="2"
-                    id="veldKorteOmschrijvingTrajectModal"></textarea>
+            <div class="col-sm-12">
+                <div>Omschrijving:</div>
+                <div>
+                    <textarea [(ngModel)]="selectieFase.omschrijving" class="form-control" rows="3"
+                        id="veldSelecteFaseOmschrijvingWijzigen"></textarea>
+                </div>
             </div>
         </div>
-        <div class="col-sm-12">
-            <div>Lange omschrijving:</div>
-            <div>
-                <textarea [(ngModel)]="wijzigTraject.omschrijving" class="form-control" rows="3"
-                    id="veldOmschrijvingTrajectModal "></textarea>
+        <div class="row">
+            <div class="col-sm-12">
+                <button id="selectieFaseWijzigen" (click)="wijzigSelectieFase(selectieFase, 'trajectFase-wijzig-modal')">Opslaan</button>
+                <button id='selectieFaseSluitWijzigModal' (click)="closeModal('trajectFase-wijzig-modal');">Annuleren</button>
             </div>
         </div>
-        <div class="col-sm-12">
-            <div>Zichtbaar:</div>
-            <div>
-                <input [(ngModel)]="wijzigTraject.zichtbaar" type="checkbox" id="checkbox" />
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-12">
-            <button id='trajectOpslaanModal'
-                (click)="updateTraject(wijzigTraject); closeModal('traject-modal');">Opslaan</button>
-            <button id='trajectSluitModal' (click)="closeModal('traject-modal');">Annuleren</button>
-        </div>
-    </div>
-</jw-modal> -->
+</jw-modal>
 
 
 <jw-modal class="jw-modal" id="trajectFase-toevoegen-modal">
-    <h1>Voeg een traject toe</h1>
+    <h1>Voeg een selectiefase toe</h1>
     <div class="row">
         <div class="col-sm-12">
-            <div>Traject fase naam:</div>
+            <div>Selectiefase naam:</div>
             <div>
                 <input [(ngModel)]="nieuweFase.naam" type="text" class="form-control" id="veldSelectieFaseNaamToevoegen" />
             </div>
@@ -59,8 +45,8 @@
         </div>
         <div class="row">
             <div class="col-sm-12">
-                <button id="selectieFaseToevoegen" (click)="maakNieuwSelectieFase(nieuweFase)">Toevoegen</button>
-                <button id='selectieFaseSluitModal' (click)="closeModal('trajectFase-toevoeg-modal');">Annuleren</button>
+                <button id="selectieFaseToevoegen" (click)="maakNieuwSelectieFase(nieuweFase, 'trajectFase-toevoeg-modal')">Toevoegen</button>
+                <button id='selectieFaseSluitModal' (click)="closeModal('trajectFase-toevoegen-modal');">Annuleren</button>
             </div>
         </div>
 </jw-modal>
