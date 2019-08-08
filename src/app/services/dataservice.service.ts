@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Traject } from '../traject';
+import { Traject } from '../Objecten/traject';
 
 @Injectable({
   providedIn: 'root'

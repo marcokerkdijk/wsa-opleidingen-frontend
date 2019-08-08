@@ -15,7 +15,7 @@ export class GebruikersService {
   geefActieveGebruikers(): Observable<Gebruiker[]> {
         
     return this.http.get<Gebruiker[]>(`${this.api}/haalGebruikersOp`);
-}
+  }
 
   wijzigGebruiker(gebruiker,id:number): Observable<any> {
    return this.http.put(`${this.api}/wijzigGebruiker/`+gebruiker.id, gebruiker);
@@ -26,5 +26,10 @@ export class GebruikersService {
   }
   gebruikerToevoegen(gebruiker) {
     return this.http.post(`${this.api}/maakGebruikerAan/`, gebruiker);
+  }
+
+  geefAlleStudenten(): Observable<Gebruiker[]> {
+
+    return this.http.get<Gebruiker[]>(`${this.api}/haalStudentenOp`);
   }
 }

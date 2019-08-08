@@ -28,6 +28,7 @@ import { GebruikersTabelComponent } from './admin/admin-beheer-gebruikers/gebrui
 import { TrajectTabelComponent } from './admin/admin-beheer-traject/traject-tabel/traject-tabel.component';
 import { AdminBeheerTrajectfasenComponent } from './admin/admin-beheer-trajectfasen/admin-beheer-trajectfasen.component';
 import { SelectiefaseTabelComponent } from './admin/admin-beheer-trajectfasen/selectiefase-tabel/selectiefase-tabel.component';
+import { DocentStudentenlijstComponent } from './docent/docent-studentenlijst/docent-studentenlijst.component';
 import { HomeTrajectenComponent } from './home/home-trajecten/home-trajecten.component';
 import { HomeTrajectenInformatieComponent } from './home/home-trajecten/home-trajecten-informatie/home-trajecten-informatie.component';
 import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
@@ -73,6 +74,7 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     TrajectTabelComponent,
     AdminBeheerTrajectfasenComponent,
     SelectiefaseTabelComponent,
+    DocentStudentenlijstComponent,
     HomeTrajectenComponent,
     HomeTrajectenInformatieComponent,
     AdminHomeComponent,

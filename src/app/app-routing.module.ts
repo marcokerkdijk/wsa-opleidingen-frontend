@@ -11,6 +11,8 @@ import { StudentAutorisatieGuard } from "./guards/student-autorisatie.guard";
 import { AdminBeheerTrajectComponent } from './admin/admin-beheer-traject/admin-beheer-traject.component';
 import { AdminBeheerGebruikersComponent } from './admin/admin-beheer-gebruikers/admin-beheer-gebruikers.component';
 import { AdminBeheerTrajectfasenComponent } from './admin/admin-beheer-trajectfasen/admin-beheer-trajectfasen.component';
+import { SelectiefaseTabelComponent } from './admin/admin-beheer-trajectfasen/selectiefase-tabel/selectiefase-tabel.component';
+import { DocentStudentenlijstComponent} from './docent/docent-studentenlijst/docent-studentenlijst.component';
 import { HomeTrajectenInformatieComponent } from './home/home-trajecten/home-trajecten-informatie/home-trajecten-informatie.component';
 import { HomeTrajectenComponent } from './home/home-trajecten/home-trajecten.component';
 import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
@@ -41,8 +43,13 @@ const routes: Routes = [
     ]
   },
   { path: 'student', component: StudentComponent, canActivate: [StudentAutorisatieGuard] },
-  { path: 'docent', component: DocentComponent, canActivate: [DocentAutorisatieGuard] },
-  {path: '', redirectTo: '/home/home-trajecten', pathMatch: 'full'}
+  { path: 'docent', component: DocentComponent, canActivate: [DocentAutorisatieGuard],
+    children: [
+      { path: "docent-studentenlijst", component: DocentStudentenlijstComponent },
+      { path: '', redirectTo: 'docent', pathMatch: 'full'}
+    ]
+  },
+  {path: '', redirectTo: '/home', pathMatch: 'full'}
 ];
 
 @NgModule({
