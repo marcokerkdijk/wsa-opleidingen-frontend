@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment';
 import { TrajectService } from 'src/app/services/traject.service';
 import { Router } from '@angular/router';
 import { DataserviceService } from 'src/app/services/dataservice.service';
+import { Traject } from 'src/app/Objecten/traject';
 
 @Component({
   selector: 'wsa-home-trajecten',
