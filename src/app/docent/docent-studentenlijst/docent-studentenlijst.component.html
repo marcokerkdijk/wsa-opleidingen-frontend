@@ -1,0 +1,20 @@
+<p>docent-studentenlijst works!</p>
+
+<div class="row">
+    <table id="studentenlijst" class="table table-bordered">
+        <thead id="table-bottom">
+            <tr>
+                <th>Voornaam</th>
+                <th>Achternaam</th>
+                <th>E-mailadres</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let Student of studenten">
+                <td>{{Student.voornaam}}</td>
+                <td>{{Student.tussenvoegsel}} {{Student.achternaam}}</td>
+                <td>{{Student.emailadres}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

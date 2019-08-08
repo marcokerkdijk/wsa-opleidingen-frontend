@@ -12,6 +12,7 @@ import { AdminBeheerTrajectComponent } from './admin/admin-beheer-traject/admin-
 import { AdminBeheerGebruikersComponent } from './admin/admin-beheer-gebruikers/admin-beheer-gebruikers.component';
 import { AdminBeheerTrajectfasenComponent } from './admin/admin-beheer-trajectfasen/admin-beheer-trajectfasen.component';
 import { SelectiefaseTabelComponent } from './admin/admin-beheer-trajectfasen/selectiefase-tabel/selectiefase-tabel.component';
+import { DocentStudentenlijstComponent} from './docent/docent-studentenlijst/docent-studentenlijst.component';
 
 const routes: Routes = [
 
@@ -28,7 +29,12 @@ const routes: Routes = [
     ]
   },
   { path: 'student', component: StudentComponent, canActivate: [StudentAutorisatieGuard] },
-  { path: 'docent', component: DocentComponent, canActivate: [DocentAutorisatieGuard] },
+  { path: 'docent', component: DocentComponent, canActivate: [DocentAutorisatieGuard],
+    children: [
+      { path: "docent-studentenlijst", component: DocentStudentenlijstComponent },
+      { path: '', redirectTo: 'docent', pathMatch: 'full'}
+    ]
+  },
   {path: '', redirectTo: '/home', pathMatch: 'full'}
 ];
 
