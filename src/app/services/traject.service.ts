@@ -38,4 +38,8 @@ export class TrajectService {
     return this.http.get<Traject>(`${this.api}/GeefTrajectOpId/` + id);
   }
 
+  geefTrajectOpId(id: number): Observable<any> {
+    return this.http.get<Traject>(`${this.api}/haalTrajectOpId/` + id);
+  }
+
 }
