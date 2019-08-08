@@ -28,6 +28,8 @@ import { GebruikersTabelComponent } from './admin/admin-beheer-gebruikers/gebrui
 import { TrajectTabelComponent } from './admin/admin-beheer-traject/traject-tabel/traject-tabel.component';
 import { AdminBeheerTrajectfasenComponent } from './admin/admin-beheer-trajectfasen/admin-beheer-trajectfasen.component';
 import { SelectiefaseTabelComponent } from './admin/admin-beheer-trajectfasen/selectiefase-tabel/selectiefase-tabel.component';
+import { HomeTrajectenComponent } from './home/home-trajecten/home-trajecten.component';
+import { HomeTrajectenInformatieComponent } from './home/home-trajecten/home-trajecten-informatie/home-trajecten-informatie.component';
 import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
 import { OpleidingsFaseTabelComponent } from './admin/admin-beheer-trajectfasen/opleidings-fase-tabel/opleidings-fase-tabel.component';
 import { BeheerSelectiefaseComponent } from './admin/admin-beheer-trajectfasen/beheer-selectiefase/beheer-selectiefase.component';
@@ -71,6 +73,8 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     TrajectTabelComponent,
     AdminBeheerTrajectfasenComponent,
     SelectiefaseTabelComponent,
+    HomeTrajectenComponent,
+    HomeTrajectenInformatieComponent,
     AdminHomeComponent,
     OpleidingsFaseTabelComponent,
     BeheerSelectiefaseComponent,
@@ -91,6 +95,7 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     FormsModule,
   ],
   providers: [
+    {provide: HomeTrajectenComponent},
     {provide: HTTP_INTERCEPTORS, useClass: AutorisatieInterceptor, multi: true}
   ],
   bootstrap: [AppComponent]
