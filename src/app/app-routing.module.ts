@@ -11,10 +11,20 @@ import { StudentAutorisatieGuard } from "./guards/student-autorisatie.guard";
 import { AdminBeheerTrajectComponent } from './admin/admin-beheer-traject/admin-beheer-traject.component';
 import { AdminBeheerGebruikersComponent } from './admin/admin-beheer-gebruikers/admin-beheer-gebruikers.component';
 import { AdminBeheerTrajectfasenComponent } from './admin/admin-beheer-trajectfasen/admin-beheer-trajectfasen.component';
+import { HomeTrajectenInformatieComponent } from './home/home-trajecten/home-trajecten-informatie/home-trajecten-informatie.component';
+import { HomeTrajectenComponent } from './home/home-trajecten/home-trajecten.component';
 
 const routes: Routes = [
 
-  {path: 'home', component: HomeComponent},
+  {path: 'home', component: HomeComponent,
+    children: [
+      {path: '', redirectTo: 'home-trajecten', pathMatch: 'full'},
+      {path: "home-trajecten", component:HomeTrajectenComponent},
+      {path: '', redirectTo: 'home-trajecten', pathMatch: 'full'},
+      {path: "home-trajecten-informatie", component: HomeTrajectenInformatieComponent},
+      {path: '', redirectTo: 'home-trajecten', pathMatch: 'full'},
+    ]
+  },
   {path: 'admin', component: AdminComponent, canActivate: [AdminAutorisatieGuard],
     children: [
       { path: "admin-beheer-traject", component: AdminBeheerTrajectComponent, canActivate: [AdminAutorisatieGuard] },
@@ -27,7 +37,7 @@ const routes: Routes = [
   },
   { path: 'student', component: StudentComponent, canActivate: [StudentAutorisatieGuard] },
   { path: 'docent', component: DocentComponent, canActivate: [DocentAutorisatieGuard] },
-  {path: '', redirectTo: '/home', pathMatch: 'full'}
+  {path: '', redirectTo: '/home/home-trajecten', pathMatch: 'full'}
 ];
 
 @NgModule({
