@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { GebruikersService } from 'src/app/services/gebruikers.service';
-import { Gebruiker } from 'src/app/gebruiker';
+import { Gebruiker } from 'src/app/Objecten/gebruiker';
 import { ModalService } from 'src/app/services/modal.service';
 import { Router } from '@angular/router';
 import { FormBuilder } from '@angular/forms';

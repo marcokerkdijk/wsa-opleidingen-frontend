@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { SelectieFaseService } from 'src/app/services/selectie-fase.service';
-import { SelectieFase } from 'src/app/selectieFase';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ModalService } from 'src/app/services/modal.service';
 import { TrajectService } from 'src/app/services/traject.service';
-import { Traject } from 'src/app/traject';
 import { Location } from '@angular/common';
+import { Observable } from 'rxjs';
+import { Traject } from 'src/app/Objecten/traject';
+import { SelectieFase } from 'src/app/Objecten/selectieFase';
+import { SelectieFaseService } from 'src/app/services/selectie-fase.service';
 
 @Component({
   selector: 'wsa-admin-beheer-trajectfasen',
@@ -17,8 +18,9 @@ export class AdminBeheerTrajectfasenComponent implements OnInit {
   nieuweFase:SelectieFase = new SelectieFase;
   gewijzigdeFase:SelectieFase=new SelectieFase;
   selectieFasen:SelectieFase[];
-  traject: Traject;
+  traject: Traject = new Traject;
   traject_id:number;
+  
 
   constructor(private selectieFaseService:SelectieFaseService, private router:Router, 
     private modalService:ModalService, private activeRouter:ActivatedRoute, private trajectService:TrajectService,
@@ -28,43 +30,17 @@ export class AdminBeheerTrajectfasenComponent implements OnInit {
     this.router.navigated = false;
     const id = +this.activeRouter.snapshot.paramMap.get('id');
     this.maakTrajectId(id);
-  }
-  haalSelectieFase(id:number):void {
-    this.selectieFase.id = id;
-    this.selectieFaseService.haalSelectieFaseOpId(id).subscribe(opgehaaldeSelectieFase => this.selectieFase = opgehaaldeSelectieFase);
+    this.haalTrajectOp(id);
   }
 
-  openModal(id: string, traject_id) {
-    this.traject_id=traject_id;
-    this.modalService.open(id);
-    return this.traject_id;
-  }
-
-  closeModal(id: string) {
-    this.modalService.close(id);
-  }
-
-  maakNieuwSelectieFase(nieuweFase,modalId){
-    this.selectieFaseService.voegSelectieFaseToe(nieuweFase,this.traject_id)
-    .subscribe(response =>this.refreshPagina());
-    this.closeModal(modalId);
-  }
-
-  maakTrajectId(id) {
+   maakTrajectId(id) {
     this.traject_id = id;
   }
 
-  haalTrajectOp() {
-   this.trajectService.haalTrajectOpId(this.traject_id).subscribe(opgehaaldTraject => this.traject = opgehaaldTraject);
-  }
-
-  wijzigSelectieFase(selectieFase, modalId) {
-    
-    this.selectieFaseService.wijzigSelectieFase(selectieFase, selectieFase.id)
-    .subscribe(response =>this.refreshPagina());
-    this.closeModal(modalId);
-    
-  }
+  haalTrajectOp(traject_id) {
+  this.trajectService.haalTrajectOpId(traject_id).subscribe(opgehaaldTraject => this.traject = opgehaaldTraject);  
+   
+   }
 
   refreshPagina():void{
     this.router.navigateByUrl("/admin", {skipLocationChange:true}) 
@@ -72,5 +48,4 @@ export class AdminBeheerTrajectfasenComponent implements OnInit {
       this.router.navigateByUrl(decodeURI(this.location.path()));
     });
   }
-
 }

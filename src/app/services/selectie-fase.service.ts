@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { SelectieFase } from '../selectieFase';
+import { SelectieFase } from '../Objecten/selectieFase';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 
@@ -22,12 +22,9 @@ export class SelectieFaseService {
      return this.http.post<SelectieFase>(`${this.api}/MaakSelectieFase/`+traject_id, selectieFase );
   }
 
-  GeefAlleSelectieFasen(): Observable<SelectieFase[]> {
-    return this.http.get<SelectieFase[]>(`${this.api}/GeefAlleSelectieFasen`);
-  }
 
-  GeefTrajectFasen(traject_id): Observable<SelectieFase[]> {
-    return this.http.get<SelectieFase[]>(`${this.api}/GeefAlleTrajectFasen/` + traject_id);
+  GeefSelectieFasenPerTraject(traject_id): Observable<SelectieFase[]> {
+    return this.http.get<SelectieFase[]>(`${this.api}/GeefSelectieFasenPerTraject/` + traject_id);
   }
 
   wijzigSelectieFase(gewijzigdeFase, selectieFase_id): Observable<any> {
