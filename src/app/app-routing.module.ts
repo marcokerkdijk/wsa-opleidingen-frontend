@@ -49,7 +49,7 @@ const routes: Routes = [
       { path: '', redirectTo: 'docent', pathMatch: 'full'}
     ]
   },
-  {path: '', redirectTo: '/home', pathMatch: 'full'}
+  {path: '', redirectTo: '/home/home-trajecten', pathMatch: 'full'} 
 ];
 
 @NgModule({
