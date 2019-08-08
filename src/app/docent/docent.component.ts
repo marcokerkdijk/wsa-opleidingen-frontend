@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JwtToken, AutenticatieService } from '../services/autenticatie.service';
-import { Gebruiker } from '../gebruiker';
+import { Gebruiker } from '../Objecten/gebruiker';
 
 @Component({
   selector: 'wsa-docent',

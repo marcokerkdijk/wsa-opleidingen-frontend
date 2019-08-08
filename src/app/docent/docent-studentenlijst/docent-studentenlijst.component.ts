@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Gebruiker } from 'src/app/gebruiker';
 import { GebruikersService } from 'src/app/services/gebruikers.service';
+import { Gebruiker } from 'src/app/Objecten/gebruiker';
 
 @Component({
   selector: 'wsa-docent-studentenlijst',
