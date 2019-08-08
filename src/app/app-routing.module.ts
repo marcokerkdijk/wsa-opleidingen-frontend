@@ -13,6 +13,8 @@ import { AdminBeheerGebruikersComponent } from './admin/admin-beheer-gebruikers/
 import { AdminBeheerTrajectfasenComponent } from './admin/admin-beheer-trajectfasen/admin-beheer-trajectfasen.component';
 import { HomeTrajectenInformatieComponent } from './home/home-trajecten/home-trajecten-informatie/home-trajecten-informatie.component';
 import { HomeTrajectenComponent } from './home/home-trajecten/home-trajecten.component';
+import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
+
 
 const routes: Routes = [
 
@@ -27,11 +29,14 @@ const routes: Routes = [
   },
   {path: 'admin', component: AdminComponent, canActivate: [AdminAutorisatieGuard],
     children: [
-      { path: "admin-beheer-traject", component: AdminBeheerTrajectComponent, canActivate: [AdminAutorisatieGuard] },
+      { path: '', redirectTo: 'admin', pathMatch: 'full'},
+      { path: '', component: AdminHomeComponent, pathMatch: 'full'},
+      { path: "admin-beheer-traject", component: AdminBeheerTrajectComponent},
       { path: '', redirectTo: 'admin', pathMatch: 'full' },
       { path: "admin-beheer-gebruikers", component: AdminBeheerGebruikersComponent },
       { path: '', redirectTo: 'admin', pathMatch: 'full' },
       { path: "admin-beheer-trajectfasen/:id", component: AdminBeheerTrajectfasenComponent},
+
 
     ]
   },
@@ -45,4 +50,6 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule {
+
+ 
 }
