@@ -29,6 +29,12 @@ import { TrajectTabelComponent } from './admin/admin-beheer-traject/traject-tabe
 import { AdminBeheerTrajectfasenComponent } from './admin/admin-beheer-trajectfasen/admin-beheer-trajectfasen.component';
 import { SelectiefaseTabelComponent } from './admin/admin-beheer-trajectfasen/selectiefase-tabel/selectiefase-tabel.component';
 import { DocentStudentenlijstComponent } from './docent/docent-studentenlijst/docent-studentenlijst.component';
+import { HomeTrajectenComponent } from './home/home-trajecten/home-trajecten.component';
+import { HomeTrajectenInformatieComponent } from './home/home-trajecten/home-trajecten-informatie/home-trajecten-informatie.component';
+import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
+import { OpleidingsFaseTabelComponent } from './admin/admin-beheer-trajectfasen/opleidings-fase-tabel/opleidings-fase-tabel.component';
+import { BeheerSelectiefaseComponent } from './admin/admin-beheer-trajectfasen/beheer-selectiefase/beheer-selectiefase.component';
+import { BeheerOpleidingsfaseComponent } from './admin/admin-beheer-trajectfasen/beheer-opleidingsfase/beheer-opleidingsfase.component';
 
 
 
@@ -69,6 +75,12 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     AdminBeheerTrajectfasenComponent,
     SelectiefaseTabelComponent,
     DocentStudentenlijstComponent,
+    HomeTrajectenComponent,
+    HomeTrajectenInformatieComponent,
+    AdminHomeComponent,
+    OpleidingsFaseTabelComponent,
+    BeheerSelectiefaseComponent,
+    BeheerOpleidingsfaseComponent,
   ],
   imports: [
     BrowserModule,
@@ -85,6 +97,7 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     FormsModule,
   ],
   providers: [
+    {provide: HomeTrajectenComponent},
     {provide: HTTP_INTERCEPTORS, useClass: AutorisatieInterceptor, multi: true}
   ],
   bootstrap: [AppComponent]

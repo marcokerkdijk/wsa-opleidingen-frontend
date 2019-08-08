@@ -13,13 +13,27 @@ import { AdminBeheerGebruikersComponent } from './admin/admin-beheer-gebruikers/
 import { AdminBeheerTrajectfasenComponent } from './admin/admin-beheer-trajectfasen/admin-beheer-trajectfasen.component';
 import { SelectiefaseTabelComponent } from './admin/admin-beheer-trajectfasen/selectiefase-tabel/selectiefase-tabel.component';
 import { DocentStudentenlijstComponent} from './docent/docent-studentenlijst/docent-studentenlijst.component';
+import { HomeTrajectenInformatieComponent } from './home/home-trajecten/home-trajecten-informatie/home-trajecten-informatie.component';
+import { HomeTrajectenComponent } from './home/home-trajecten/home-trajecten.component';
+import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
+
 
 const routes: Routes = [
 
-  {path: 'home', component: HomeComponent},
+  {path: 'home', component: HomeComponent,
+    children: [
+      {path: '', redirectTo: 'home-trajecten', pathMatch: 'full'},
+      {path: "home-trajecten", component:HomeTrajectenComponent},
+      {path: '', redirectTo: 'home-trajecten', pathMatch: 'full'},
+      {path: "home-trajecten-informatie", component: HomeTrajectenInformatieComponent},
+      {path: '', redirectTo: 'home-trajecten', pathMatch: 'full'},
+    ]
+  },
   {path: 'admin', component: AdminComponent, canActivate: [AdminAutorisatieGuard],
     children: [
-      { path: "admin-beheer-traject", component: AdminBeheerTrajectComponent, canActivate: [AdminAutorisatieGuard] },
+      { path: '', redirectTo: 'admin', pathMatch: 'full'},
+      { path: '', component: AdminHomeComponent, pathMatch: 'full'},
+      { path: "admin-beheer-traject", component: AdminBeheerTrajectComponent},
       { path: '', redirectTo: 'admin', pathMatch: 'full' },
       { path: "admin-beheer-gebruikers", component: AdminBeheerGebruikersComponent },
       { path: '', redirectTo: 'admin', pathMatch: 'full' },

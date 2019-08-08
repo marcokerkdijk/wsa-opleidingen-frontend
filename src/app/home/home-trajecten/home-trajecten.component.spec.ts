@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SelectieFaseModalComponent } from './selectie-fase-modal.component';
+import { HomeTrajectenComponent } from './home-trajecten.component';
 
-describe('SelectieFaseModalComponent', () => {
-  let component: SelectieFaseModalComponent;
-  let fixture: ComponentFixture<SelectieFaseModalComponent>;
+describe('HomeTrajectenComponent', () => {
+  let component: HomeTrajectenComponent;
+  let fixture: ComponentFixture<HomeTrajectenComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SelectieFaseModalComponent ]
+      declarations: [ HomeTrajectenComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SelectieFaseModalComponent);
+    fixture = TestBed.createComponent(HomeTrajectenComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

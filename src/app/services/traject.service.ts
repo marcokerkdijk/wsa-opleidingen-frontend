@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Traject} from '../traject';
+import {Traject} from '../Objecten/traject';
 import {Observable, of} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {environment} from 'src/environments/environment';
@@ -36,6 +36,10 @@ export class TrajectService {
 
   haalTrajectOpId(id: number): Observable<any> {
     return this.http.get<Traject>(`${this.api}/GeefTrajectOpId/` + id);
+  }
+
+  geefTrajectOpId(id: number): Observable<any> {
+    return this.http.get<Traject>(`${this.api}/haalTrajectOpId/` + id);
   }
 
 }

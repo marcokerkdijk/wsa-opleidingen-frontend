@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { TrajectService } from 'src/app/services/traject.service';
-import { Traject } from 'src/app/traject';
+import { Traject } from 'src/app/Objecten/traject';
 import { Router } from '@angular/router';
 import { ModalService } from 'src/app/services/modal.service';
-import { SelectieFase } from 'src/app/selectieFase';
+import { SelectieFase } from 'src/app/Objecten/selectieFase';
 import { SelectieFaseService } from 'src/app/services/selectie-fase.service';
 
 @Component({

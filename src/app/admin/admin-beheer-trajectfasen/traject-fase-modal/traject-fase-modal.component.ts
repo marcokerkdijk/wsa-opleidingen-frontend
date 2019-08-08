@@ -13,7 +13,7 @@ import { ModalService } from 'src/app/services/modal.service';
 
 })
 
-export class SelectieFaseModalComponent implements OnInit {
+export class TrajectFaseModalComponent implements OnInit {
 
       @Input() id: string;
       private element: any;

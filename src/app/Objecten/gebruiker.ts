@@ -1,4 +1,4 @@
-import {Rol} from './rol.enum';
+import {Rol} from '../rol.enum';
 
 export class Gebruiker {
   id: number;
