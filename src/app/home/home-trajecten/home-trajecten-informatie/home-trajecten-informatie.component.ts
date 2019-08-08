@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
-import { Traject } from 'src/app/traject';
+import { Traject } from 'src/app/Objecten/traject';
 import { Router, ActivatedRoute } from '@angular/router';
 import { TrajectService } from 'src/app/services/traject.service';
 import { HomeTrajectenComponent } from '../home-trajecten.component';
