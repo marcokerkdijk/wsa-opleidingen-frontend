@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Traject} from '../traject';
+import {Traject} from '../Objecten/traject';
 import {Observable, of} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {environment} from 'src/environments/environment';

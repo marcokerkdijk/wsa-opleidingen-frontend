@@ -1,0 +1,24 @@
+<div class="container-fluid">
+    <div class="row">
+        <div>
+            <button id="openToevoegModalOpleidingsFase" (click)="openToevoegModalOpleidingsFase('opleidingsFase-toevoegen-modal')">Toevoegen</button>
+        </div>
+        <table class='table table-bordered col-lg-12'>
+            <thead id="table-bottom">
+                <tr>
+                    <th id="thNaamSelectieFase">Fase</th>
+                    <th id="thOmschrijfingSelectieFase">Omschrijving</th>
+                    <th id="thBewerkenSelectieFase">Bewerken</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let OpleidingsFase of alleOpleidingsFasen">
+                    <td id="tdSelectieFase{{OpleidingsFase.id}}">{{OpleidingsFase.naam}}</td>
+                    <td id="tdOmschrijving{{OpleidingsFase.id}}">{{OpleidingsFase.omschrijving}}</td>
+                    <td><a id="pencil" (click)="clickWijzigModal('opleidingsFase-wijzig-modal', OpleidingsFase.id)"><i class='fa fa-pencil'
+                                id="tdWijzig{{OpleidingsFase.id}}"></i></a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

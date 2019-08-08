@@ -28,6 +28,10 @@ import { GebruikersTabelComponent } from './admin/admin-beheer-gebruikers/gebrui
 import { TrajectTabelComponent } from './admin/admin-beheer-traject/traject-tabel/traject-tabel.component';
 import { AdminBeheerTrajectfasenComponent } from './admin/admin-beheer-trajectfasen/admin-beheer-trajectfasen.component';
 import { SelectiefaseTabelComponent } from './admin/admin-beheer-trajectfasen/selectiefase-tabel/selectiefase-tabel.component';
+import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
+import { OpleidingsFaseTabelComponent } from './admin/admin-beheer-trajectfasen/opleidings-fase-tabel/opleidings-fase-tabel.component';
+import { BeheerSelectiefaseComponent } from './admin/admin-beheer-trajectfasen/beheer-selectiefase/beheer-selectiefase.component';
+import { BeheerOpleidingsfaseComponent } from './admin/admin-beheer-trajectfasen/beheer-opleidingsfase/beheer-opleidingsfase.component';
 
 
 
@@ -67,6 +71,10 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     TrajectTabelComponent,
     AdminBeheerTrajectfasenComponent,
     SelectiefaseTabelComponent,
+    AdminHomeComponent,
+    OpleidingsFaseTabelComponent,
+    BeheerSelectiefaseComponent,
+    BeheerOpleidingsfaseComponent,
   ],
   imports: [
     BrowserModule,

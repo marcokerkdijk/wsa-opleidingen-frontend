@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Traject } from '../traject';
+import { Traject } from '../Objecten/traject';
 import { TrajectService } from '../services/traject.service';
 import { environment } from 'src/environments/environment';
 

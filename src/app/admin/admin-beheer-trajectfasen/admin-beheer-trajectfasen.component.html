@@ -1,52 +1,24 @@
-<wsa-selectiefase-tabel></wsa-selectiefase-tabel>
-
-<jw-modal class="jw-modal" id="trajectFase-wijzig-modal">
-    <h1>Wijzig hierinder de selectiefase</h1>
-    <div class="row">
-        <div class="col-sm-12">
-            <div>Selectiefase naam:</div>
-            <div>
-                <input [(ngModel)]="selectieFase.naam" type="text" class="form-control" id="veldSelectieFaseNaamWijzigen" />
-            </div>
-        </div>
-            <div class="col-sm-12">
-                <div>Omschrijving:</div>
-                <div>
-                    <textarea [(ngModel)]="selectieFase.omschrijving" class="form-control" rows="3"
-                        id="veldSelecteFaseOmschrijvingWijzigen"></textarea>
-                </div>
-            </div>
-        </div>
+<div class="row">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-12">
-                <button id="selectieFaseWijzigen" (click)="wijzigSelectieFase(selectieFase, 'trajectFase-wijzig-modal')">Opslaan</button>
-                <button id='selectieFaseSluitWijzigModal' (click)="closeModal('trajectFase-wijzig-modal');">Annuleren</button>
+            <div id=h6 class="col-sm-3">
+                {{traject.naam}}
             </div>
-        </div>
-</jw-modal>
-
-
-<jw-modal class="jw-modal" id="trajectFase-toevoegen-modal">
-    <h1>Voeg een selectiefase toe</h1>
-    <div class="row">
-        <div class="col-sm-12">
-            <div>Selectiefase naam:</div>
+            <div class="col-sm-6">
+                <p>
+                    Pas hier de trajectfases, voeg ze toe of verwijder ze. 
+                </p>
+                <br>
+            </div>
             <div>
-                <input [(ngModel)]="nieuweFase.naam" type="text" class="form-control" id="veldSelectieFaseNaamToevoegen" />
+                <wsa-beheer-selectiefase></wsa-beheer-selectiefase>
+            </div>
+            <div>
+                <wsa-beheer-opleidingsfase></wsa-beheer-opleidingsfase>
             </div>
         </div>
-            <div class="col-sm-12">
-                <div>Omschrijving:</div>
-                <div>
-                    <textarea [(ngModel)]="nieuweFase.omschrijving" class="form-control" rows="3"
-                        id="veldSelecteFaseOmschrijvingToevoegen"></textarea>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12">
-                <button id="selectieFaseToevoegen" (click)="maakNieuwSelectieFase(nieuweFase, 'trajectFase-toevoeg-modal')">Toevoegen</button>
-                <button id='selectieFaseSluitModal' (click)="closeModal('trajectFase-toevoegen-modal');">Annuleren</button>
-            </div>
-        </div>
-</jw-modal>
+    </div>
+</div>
+
+
+

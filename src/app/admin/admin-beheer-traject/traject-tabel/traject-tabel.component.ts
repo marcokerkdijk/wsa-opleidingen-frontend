@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminBeheerTrajectComponent } from '../admin-beheer-traject.component';
 import { TrajectService } from 'src/app/services/traject.service';
-import { Traject } from 'src/app/traject';
+import { Traject } from 'src/app/Objecten/traject';
 
 @Component({
   selector: 'wsa-traject-tabel',

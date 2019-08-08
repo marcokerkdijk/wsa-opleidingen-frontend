@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminBeheerTrajectfasenComponent } from '../admin-beheer-trajectfasen.component';
 import { SelectieFaseService } from 'src/app/services/selectie-fase.service';
-import { SelectieFase } from 'src/app/selectieFase';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Traject } from 'src/app/traject';
+import { SelectieFase } from 'src/app/Objecten/selectieFase';
+import { Traject } from 'src/app/Objecten/traject';
+import { BeheerSelectiefaseComponent } from '../beheer-selectiefase/beheer-selectiefase.component';
 
 @Component({
   selector: 'wsa-selectiefase-tabel',
@@ -13,35 +13,34 @@ import { Traject } from 'src/app/traject';
 export class SelectiefaseTabelComponent implements OnInit {
   alleSelectieFasen:SelectieFase[];
   traject_id:number;
-  traject:Traject;
+  traject:Traject = new Traject;
 
-  constructor(private adminBeheerTrajectFaseComponent:AdminBeheerTrajectfasenComponent, private selectieFaseService:SelectieFaseService
-    , private activatedRouter:ActivatedRoute, private router:Router) { }
+  constructor(private beheerSelectieFaseComponent:BeheerSelectiefaseComponent, private selectieFaseService:SelectieFaseService
+    , private adminBeheeTrajectfasenComponent:AdminBeheerTrajectfasenComponent) { }
 
   ngOnInit() {
     this.haalTrajectIdOp();
   }
 
   clickWijzigModal(id,selectieFaseId:number){
-    this.adminBeheerTrajectFaseComponent.haalSelectieFase(selectieFaseId);
-    this.adminBeheerTrajectFaseComponent.openModal(id, this.traject_id);
+    this.beheerSelectieFaseComponent.haalSelectieFase(selectieFaseId);
+    this.beheerSelectieFaseComponent.openModal(id, this.traject_id);
   }
 
   openToevoegModalSelectieFase(id){
-    this.adminBeheerTrajectFaseComponent.openModal(id, this.traject_id);
+    this.beheerSelectieFaseComponent.openModal(id, this.traject_id);
   }
 
   haalTrajectIdOp() {
-    this.traject_id = this.adminBeheerTrajectFaseComponent.traject_id;
-    this.getAlleSelectieFasen(this.traject_id);
+    this.traject_id = this.adminBeheeTrajectfasenComponent.traject_id;
+    this.getAlleSelectieFasen(this.adminBeheeTrajectfasenComponent.traject_id);
     return this.traject_id;
+
   }
 
   getAlleSelectieFasen(traject_id): void {
-    this.selectieFaseService.GeefTrajectFasen(traject_id)
+    this.selectieFaseService.GeefSelectieFasenPerTraject(traject_id)
         .subscribe(selectieFasen => this.alleSelectieFasen = selectieFasen);
   }
-
- 
 
 }

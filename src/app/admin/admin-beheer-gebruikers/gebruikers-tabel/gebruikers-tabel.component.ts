@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Gebruiker } from 'src/app/gebruiker';
+import { Gebruiker } from 'src/app/Objecten/gebruiker';
 import { GebruikersService } from 'src/app/services/gebruikers.service';
 import { AdminBeheerGebruikersComponent } from '../admin-beheer-gebruikers.component';
 
