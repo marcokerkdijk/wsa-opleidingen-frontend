@@ -35,6 +35,10 @@ import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
 import { OpleidingsFaseTabelComponent } from './admin/admin-beheer-trajectfasen/opleidings-fase-tabel/opleidings-fase-tabel.component';
 import { BeheerSelectiefaseComponent } from './admin/admin-beheer-trajectfasen/beheer-selectiefase/beheer-selectiefase.component';
 import { BeheerOpleidingsfaseComponent } from './admin/admin-beheer-trajectfasen/beheer-opleidingsfase/beheer-opleidingsfase.component';
+import { DocentOpdrachtenComponent } from './docent/docent-opdrachten/docent-opdrachten.component';
+import { DocentLesstofComponent } from './docent/docent-lesstof/docent-lesstof.component';
+import { DocentTrajectComponent } from './docent/docent-traject/docent-traject.component';
+import { DocentHomeComponent } from './docent/docent-home/docent-home.component';
 
 
 
@@ -81,6 +85,10 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     OpleidingsFaseTabelComponent,
     BeheerSelectiefaseComponent,
     BeheerOpleidingsfaseComponent,
+    DocentOpdrachtenComponent,
+    DocentLesstofComponent,
+    DocentTrajectComponent,
+    DocentHomeComponent,
   ],
   imports: [
     BrowserModule,

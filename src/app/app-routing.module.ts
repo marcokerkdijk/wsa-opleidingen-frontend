@@ -16,6 +16,11 @@ import { DocentStudentenlijstComponent} from './docent/docent-studentenlijst/doc
 import { HomeTrajectenInformatieComponent } from './home/home-trajecten/home-trajecten-informatie/home-trajecten-informatie.component';
 import { HomeTrajectenComponent } from './home/home-trajecten/home-trajecten.component';
 import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
+import { DocentLesstofComponent } from './docent/docent-lesstof/docent-lesstof.component';
+import { DocentOpdrachtenComponent } from './docent/docent-opdrachten/docent-opdrachten.component';
+import { DocentTrajectComponent } from './docent/docent-traject/docent-traject.component';
+import { DocentHomeComponent } from './docent/docent-home/docent-home.component';
+
 
 
 const routes: Routes = [
@@ -45,8 +50,18 @@ const routes: Routes = [
   { path: 'student', component: StudentComponent, canActivate: [StudentAutorisatieGuard] },
   { path: 'docent', component: DocentComponent, canActivate: [DocentAutorisatieGuard],
     children: [
-      { path: "docent-studentenlijst", component: DocentStudentenlijstComponent },
-      { path: '', redirectTo: 'docent', pathMatch: 'full'}
+      { path: '', redirectTo: 'docent', pathMatch: 'full'},
+      { path: '', component: DocentHomeComponent, pathMatch: 'full'},
+      { path: "docent-traject", component: DocentTrajectComponent,
+        children: [
+          { path: "docent-studentenlijst", component: DocentStudentenlijstComponent },
+          { path: '', redirectTo: 'docent', pathMatch: 'full'},
+          { path: "docent-lesstof", component: DocentLesstofComponent },
+          { path: '', redirectTo: 'docent', pathMatch: 'full'},
+          { path: "docent-opdrachten", component: DocentOpdrachtenComponent },
+          { path: '', redirectTo: 'docent', pathMatch: 'full'},
+        ]
+      },
     ]
   },
   {path: '', redirectTo: '/home/home-trajecten', pathMatch: 'full'} 

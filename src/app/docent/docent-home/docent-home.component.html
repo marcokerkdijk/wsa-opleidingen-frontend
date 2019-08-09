@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="container-fluid">
+        <div class="row">
+            <div id=h6 class="col-sm-6">
+                Welkom docent!
+            </div>
+            <div class="col-sm-6">
+                <p>
+                    Welkom {{gebruiker.displaynaam}} op de academy.
+                </p>
+            </div>
+        </div>
+        <div class="row traject" *ngFor="let Traject of trajectenDocent">
+            <div class="col-sm-6">
+                <p>{{Traject.naam}}</p>
+            </div>
+            <div class="col-sm-6">
+                <button routerLink="./docent-traject/" routerLinkActive="active">Meer informatie</button>
+            </div>
+        </div>
+    </div>
+</div>
