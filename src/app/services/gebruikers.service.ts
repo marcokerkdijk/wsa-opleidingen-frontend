@@ -27,4 +27,8 @@ export class GebruikersService {
   gebruikerToevoegen(gebruiker) {
     return this.http.post(`${this.api}/maakGebruikerAan/`, gebruiker);
   }
+
+  gebruikerOpvragenRol(rolGebruiker): Observable<any> {
+    return this.http.get<Gebruiker>(`${this.api}/haalGebruikerOpRol/` +rolGebruiker);
+  }
 }

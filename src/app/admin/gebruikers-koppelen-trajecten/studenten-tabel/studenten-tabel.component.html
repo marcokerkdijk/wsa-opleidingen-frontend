@@ -1,22 +1,21 @@
 <div class="container-fluid" id="Filter_Gebruiker">
     <div class="row">
-        <div>
-            <button id="openToevoegModal" (click)="openToevoegModal('traject-toevoegen-modal')">Toevoegen</button>
-        </div>
         <table class='table table-bordered col-lg-12'>
             <thead id="table-bottom">
                 <tr>
-                    <th id="thNaam">Traject</th>
-                    <th id="thZichtbaar">Zichtbaar</th>
-                    <th id="thBewerken">Bewerken</th>
-                </tr>
+                    <th id="thNaam">Voornaam</th>
+                    <th id="thZichtbaar">Achternaam</th>
+                    <th id="thBewerken">E-mailadres</th>
+                    <th id="thBewerken">Toevoegen aan traject</th>
+                </tr>           
             </thead>
             <tbody >
                 <tr *ngFor="let Traject of alleTrajecten"  >
-                    <td  id="tdTraject{{Traject.id}}"  >{{Traject.naam}}</td>
-                    <td id="tdZichtbaar{{Traject.id}}">
-                        <div *ngIf="Traject.zichtbaar; else elseBlock">Ja</div>
-                        <ng-template #elseBlock>Nee</ng-template>
+                    <td  id="tdVoornaam{{Gebruiker.id}}"  >{{Gebruiker.Voornaam}}</td>
+                    <td  id="tdAchternaam{{Gebruiker.id}}"  >{{Gebruiker.Voornaam}}</td>
+                    <td  id="tdEmailadres{{Gebruiker.id}}"  >{{Gebruiker.Voornaam}}</td>
+                    <td id="tdGekoppeld{{Gebruiker.id}}">
+                        
                     </td>
                     <td ><a id="pencil" (click)="clickWijzigModal('traject-modal', Traject.id)"><i class='fa fa-pencil'
                                 id="tdWijzig{{Traject.id}}"></i></a></td>
@@ -24,5 +23,6 @@
                 </tr>
             </tbody>
         </table>
+    </div>
     </div>
 </div>

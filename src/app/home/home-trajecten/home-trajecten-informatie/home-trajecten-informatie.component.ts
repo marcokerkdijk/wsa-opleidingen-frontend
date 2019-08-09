@@ -1,9 +1,9 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
-import { Traject } from 'src/app/traject';
 import { Router, ActivatedRoute } from '@angular/router';
 import { TrajectService } from 'src/app/services/traject.service';
 import { HomeTrajectenComponent } from '../home-trajecten.component';
 import { DataserviceService } from 'src/app/services/dataservice.service';
+import { Traject } from 'src/app/Objecten/traject';
 
 @Component({
   selector: 'wsa-home-trajecten-informatie',
