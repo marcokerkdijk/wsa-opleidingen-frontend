@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { GebruikersService } from 'src/app/services/gebruikers.service';
 import { Gebruiker } from 'src/app/Objecten/gebruiker';
 
@@ -10,14 +11,15 @@ import { Gebruiker } from 'src/app/Objecten/gebruiker';
 export class DocentStudentenlijstComponent implements OnInit {
   studenten: Gebruiker[];
 
-  constructor(private gebruikerService: GebruikersService) { }
+  constructor(private gebruikerService: GebruikersService, private activeRouter:ActivatedRoute) { }
 
   ngOnInit() {
-    this.haalStudentenOp();
+    const id = +this.activeRouter.snapshot.paramMap.get('id');
+    this.haalStudentenOp(id);
   }
 
-  haalStudentenOp(): void {
-    this.gebruikerService.geefAlleStudenten()
+  haalStudentenOp(id: number): void {
+    this.gebruikerService.geefAlleStudentenVanTraject(id)
       .subscribe(studenten => this.studenten = studenten);
   }
 

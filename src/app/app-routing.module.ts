@@ -54,7 +54,7 @@ const routes: Routes = [
       { path: '', component: DocentHomeComponent, pathMatch: 'full'},
       { path: "docent-traject", component: DocentTrajectComponent,
         children: [
-          { path: "docent-studentenlijst", component: DocentStudentenlijstComponent },
+          { path: "docent-studentenlijst/:id", component: DocentStudentenlijstComponent },
           { path: '', redirectTo: 'docent', pathMatch: 'full'},
           { path: "docent-lesstof", component: DocentLesstofComponent },
           { path: '', redirectTo: 'docent', pathMatch: 'full'},
