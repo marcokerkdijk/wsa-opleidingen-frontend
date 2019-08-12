@@ -65,6 +65,7 @@ const routes: Routes = [
     ]
   },
   {path: '', redirectTo: '/home/home-trajecten', pathMatch: 'full'} 
+
 ];
 
 @NgModule({
