@@ -35,7 +35,8 @@ import { OpleidingsFaseTabelComponent } from './admin/admin-beheer-trajectfasen/
 import { BeheerSelectiefaseComponent } from './admin/admin-beheer-trajectfasen/beheer-selectiefase/beheer-selectiefase.component';
 import { BeheerOpleidingsfaseComponent } from './admin/admin-beheer-trajectfasen/beheer-opleidingsfase/beheer-opleidingsfase.component';
 import { GebruikersKoppelenTrajectenComponent } from './admin/gebruikers-koppelen-trajecten/gebruikers-koppelen-trajecten.component';
-import { StudentenTabelComponent } from './admin/gebruikers-koppelen-trajecten/studenten-tabel/studenten-tabel.component';
+import { GebruikerKoppelTabelComponent } from './admin/gebruikers-koppelen-trajecten/gebruiker-koppel-tabel/gebruiker-koppel-tabel.component';
+import { KoppelDocentComponent } from './admin/gebruikers-koppelen-trajecten/koppel-docent/koppel-docent.component';
 
 
 
@@ -82,7 +83,8 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     BeheerSelectiefaseComponent,
     BeheerOpleidingsfaseComponent,
     GebruikersKoppelenTrajectenComponent,
-    StudentenTabelComponent,
+    GebruikerKoppelTabelComponent,
+    KoppelDocentComponent,
   ],
   imports: [
     BrowserModule,

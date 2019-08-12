@@ -1,0 +1,57 @@
+<div class="container-fluid" id="Lijst_Studenten_Gekoppeld">
+    <div class="row">
+        <button>Beheer studenten</button>
+        <table class='table table-bordered col-lg-12'>
+            <thead id="table-bottom">
+                <tr>
+                    <th id="thNaam">Voornaam</th>
+                    <th id="thZichtbaar">Achternaam</th>
+                    <th id="thBewerken">E-mailadres</th>
+                    <th id="thBewerken">Toevoegen aan traject</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let Gebruiker of studenten">
+                    <td id="tdVoornaam{{Gebruiker.id}}">{{Gebruiker.Voornaam}}</td>
+                    <td id="tdAchternaam{{Gebruiker.id}}">{{Gebruiker.Achternaam}}</td>
+                    <td id="tdEmailadres{{Gebruiker.id}}">{{Gebruiker.E-mailadres}}</td>
+                    <td id="tdGekoppeld{{Gebruiker.id}}">
+
+                    </td>
+                    <!-- <td ><a id="pencil" (click)="clickWijzigModal('traject-modal', Gebruiker.id)"><i class='fa fa-pencil' -->
+                    <!-- id="tdWijzig{{Gebruiker.id}}"></i></a></td> -->
+                    <!-- <button routerLink="../admin-beheer-trajectfasen/{{Traject.id}}" routerLinkActive="active">Traject fasen</button> -->
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="container-fluid" id="Lijst_Docenten">
+    <div class="row">
+        <button>Beheer studenten</button>
+        <table class='table table-bordered col-lg-12'>
+            <thead id="table-bottom">
+                <tr>
+                    <th id="thNaam">Voornaam</th>
+                    <th id="thZichtbaar">Achternaam</th>
+                    <th id="thBewerken">E-mailadres</th>
+                    <th id="thBewerken">Toevoegen aan traject</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let Gebruiker of docenten">
+                    <td id="tdVoornaam{{Gebruiker.id}}">{{Gebruiker.Voornaam}}</td>
+                    <td id="tdAchternaam{{Gebruiker.id}}">{{Gebruiker.Achternaam}}</td>
+                    <td id="tdEmailadres{{Gebruiker.id}}">{{Gebruiker.E-mailadres}}</td>
+                    <td id="tdGekoppeld{{Gebruiker.id}}">
+
+                    </td>
+                    <!-- <td ><a id="pencil" (click)="clickWijzigModal('traject-modal', Gebruiker.id)"><i class='fa fa-pencil' -->
+                    <!-- id="tdWijzig{{Gebruiker.id}}"></i></a></td> -->
+                    <!-- <button routerLink="../admin-beheer-trajectfasen/{{Traject.id}}" routerLinkActive="active">Traject fasen</button> -->
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
