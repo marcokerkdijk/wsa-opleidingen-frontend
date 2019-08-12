@@ -28,6 +28,7 @@ import { GebruikersTabelComponent } from './admin/admin-beheer-gebruikers/gebrui
 import { TrajectTabelComponent } from './admin/admin-beheer-traject/traject-tabel/traject-tabel.component';
 import { AdminBeheerTrajectfasenComponent } from './admin/admin-beheer-trajectfasen/admin-beheer-trajectfasen.component';
 import { SelectiefaseTabelComponent } from './admin/admin-beheer-trajectfasen/selectiefase-tabel/selectiefase-tabel.component';
+import { DocentStudentenlijstComponent } from './docent/docent-studentenlijst/docent-studentenlijst.component';
 import { HomeTrajectenComponent } from './home/home-trajecten/home-trajecten.component';
 import { HomeTrajectenInformatieComponent } from './home/home-trajecten/home-trajecten-informatie/home-trajecten-informatie.component';
 import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
@@ -37,6 +38,10 @@ import { BeheerOpleidingsfaseComponent } from './admin/admin-beheer-trajectfasen
 import { GebruikersKoppelenTrajectenComponent } from './admin/gebruikers-koppelen-trajecten/gebruikers-koppelen-trajecten.component';
 import { GebruikerKoppelTabelComponent } from './admin/gebruikers-koppelen-trajecten/gebruiker-koppel-tabel/gebruiker-koppel-tabel.component';
 import { KoppelDocentComponent } from './admin/gebruikers-koppelen-trajecten/koppel-docent/koppel-docent.component';
+import { DocentOpdrachtenComponent } from './docent/docent-opdrachten/docent-opdrachten.component';
+import { DocentLesstofComponent } from './docent/docent-lesstof/docent-lesstof.component';
+import { DocentTrajectComponent } from './docent/docent-traject/docent-traject.component';
+import { DocentHomeComponent } from './docent/docent-home/docent-home.component';
 
 
 
@@ -76,6 +81,7 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     TrajectTabelComponent,
     AdminBeheerTrajectfasenComponent,
     SelectiefaseTabelComponent,
+    DocentStudentenlijstComponent,
     HomeTrajectenComponent,
     HomeTrajectenInformatieComponent,
     AdminHomeComponent,
@@ -85,6 +91,10 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     GebruikersKoppelenTrajectenComponent,
     GebruikerKoppelTabelComponent,
     KoppelDocentComponent,
+    DocentOpdrachtenComponent,
+    DocentLesstofComponent,
+    DocentTrajectComponent,
+    DocentHomeComponent,
   ],
   imports: [
     BrowserModule,

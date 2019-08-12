@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="container-fluid">
+        <div class="row">
+            <p>docent-traject works! {{traject.naam}}</p>
+        </div>
+        <div class="row">
+            <div class="buttons">
+                <button id="studentButton" routerLink="./docent-studentenlijst/{{traject.id}}" routerLinkActive="active">Studenten</button>
+                <button id="lesstofButton" [routerLink]="'./docent-lesstof'">Lesstof</button>
+                <button id="opdrachtButton" [routerLink]="'./docent-opdrachten'">Opdrachten</button>
+            </div>
+        </div>
+        <router-outlet></router-outlet>
+    </div>
+</div>

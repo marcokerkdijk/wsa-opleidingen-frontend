@@ -15,7 +15,7 @@ export class GebruikersService {
   geefActieveGebruikers(): Observable<Gebruiker[]> {
         
     return this.http.get<Gebruiker[]>(`${this.api}/haalGebruikersOp`);
-}
+  }
 
   wijzigGebruiker(gebruiker,id:number): Observable<any> {
    return this.http.put(`${this.api}/wijzigGebruiker/`+gebruiker.id, gebruiker);
@@ -30,5 +30,9 @@ export class GebruikersService {
 
   gebruikerOpvragenRol(rolGebruiker): Observable<any> {
     return this.http.get<Gebruiker>(`${this.api}/haalGebruikerOpRol/` +rolGebruiker);
+  }
+  
+    geefAlleStudentenVanTraject(id: number): Observable<Gebruiker[]> {
+    return this.http.get<Gebruiker[]>(`${this.api}/haalStudentenOpMetTrajectId/` + id);
   }
 }

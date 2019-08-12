@@ -111,4 +111,5 @@ export interface JwtToken {
   tussenvoegsel: string;
   achternaam: string;
   displaynaam: string;
+  gebruiker_id: number;
 }
