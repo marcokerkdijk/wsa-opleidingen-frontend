@@ -1,0 +1,58 @@
+#sorteerPijlVoornaam, #sorteerPijlAchternaam, #sorteerPijlEmail,
+#sorteerPijlTraject {
+    color: #00aeef;
+}
+
+#sorteerPijlVoornaam:hover, #sorteerPijlAchternaam:hover, 
+#sorteerPijlEmail:hover, #sorteerPijlTraject:hover {
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 2%;
+    width: 100%;
+}
+  
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    width: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 5px 5px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown button {
+    border-color: #00aeef;
+    color: #00aeef;
+    width: 100%;
+    text-transform: uppercase;
+    border: 1px solid  #00aeef;
+    background-color: transparent;
+    border-radius: 0;
+    font-size: 12px;
+    font-weight: 600;
+    padding-top: 10px;
+    padding-bottom: 8px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    white-space: nowrap;
+    line-height: 1.42857;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.dropdown button:hover{
+    cursor: pointer;
+    color: white;
+    background-color: #00aeef;
+}

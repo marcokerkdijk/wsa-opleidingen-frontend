@@ -28,8 +28,8 @@ export class GebruikersService {
     return this.http.post(`${this.api}/maakGebruikerAan/`, gebruiker);
   }
 
-  geefAlleStudenten(): Observable<Gebruiker[]> {
+  geefAlleStudentenVanTraject(id: number): Observable<Gebruiker[]> {
 
-    return this.http.get<Gebruiker[]>(`${this.api}/haalStudentenOp`);
+    return this.http.get<Gebruiker[]>(`${this.api}/haalStudentenOpMetTrajectId/` + id);
   }
 }

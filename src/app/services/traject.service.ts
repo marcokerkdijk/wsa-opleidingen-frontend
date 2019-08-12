@@ -42,4 +42,7 @@ export class TrajectService {
     return this.http.get<Traject>(`${this.api}/haalTrajectOpId/` + id);
   }
 
+  haalTrajectenOpVanGebruiker(gebruiker_id: number): Observable<Traject[]> {
+    return this.http.get<Traject[]>(`${this.api}/geefTrajectenMetGebruikerId/` + gebruiker_id);
+  }
 }

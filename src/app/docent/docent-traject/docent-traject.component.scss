@@ -1,0 +1,54 @@
+.container-fluid {
+    padding-left: 19%;
+    padding-right: 19%;
+}
+.row{
+    padding-top: 5%;
+}
+
+p {
+    font-family: "Working Spirit";
+    font-size: 14px;
+    line-height: 24px;
+    color:  #808285;
+}
+
+.buttons {
+    margin-bottom: 2%;
+}
+
+.buttons button {
+    border-color: #00aeef;
+    color: #00aeef;
+    width: 230px;
+    text-transform: uppercase;
+    border: 1px solid  #00aeef;
+    background-color: transparent;
+    border-radius: 0;
+    font-size: 12px;
+    font-weight: 600;
+    padding-top: 10px;
+    padding-bottom: 8px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    white-space: nowrap;
+    line-height: 1.42857;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#studentButton {
+    margin-right: 10px;
+}
+
+#opdrachtButton {
+    margin-left: 10px;
+}
+
+.buttons button:hover {
+    cursor: pointer;
+    color: white;
+    background-color: #00aeef;
+}

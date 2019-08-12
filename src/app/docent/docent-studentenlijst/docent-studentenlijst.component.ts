@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { GebruikersService } from 'src/app/services/gebruikers.service';
 import { Gebruiker } from 'src/app/Objecten/gebruiker';
 
@@ -10,15 +11,53 @@ import { Gebruiker } from 'src/app/Objecten/gebruiker';
 export class DocentStudentenlijstComponent implements OnInit {
   studenten: Gebruiker[];
 
-  constructor(private gebruikerService: GebruikersService) { }
+  constructor(private gebruikerService: GebruikersService, private activeRouter:ActivatedRoute) { }
 
   ngOnInit() {
-    this.haalStudentenOp();
+    const id = +this.activeRouter.snapshot.paramMap.get('id');
+    this.haalStudentenOp(id);
   }
 
-  haalStudentenOp(): void {
-    this.gebruikerService.geefAlleStudenten()
-        .subscribe(studenten => this.studenten = studenten);
+  haalStudentenOp(id: number): void {
+    this.gebruikerService.geefAlleStudentenVanTraject(id)
+      .subscribe(studenten => this.studenten = studenten);
   }
 
+  sorteerTabel(n) {
+    var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+    table = document.getElementById("studentenlijst");
+    switching = true;
+    dir = "asc";
+    while (switching) {
+      switching = false;
+      rows = table.rows;
+      for (i = 1; i < (rows.length - 1); i++) {
+        shouldSwitch = false;
+        x = rows[i].getElementsByTagName("TD")[n];
+        y = rows[i + 1].getElementsByTagName("TD")[n];
+
+        if (dir == "asc") {
+          if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+            shouldSwitch = true;
+            break;
+          }
+        } else if (dir == "desc") {
+          if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+            shouldSwitch = true;
+            break;
+          }
+        }
+      }
+      if (shouldSwitch) {
+        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+        switching = true;
+        switchcount++;
+      } else {
+        if (switchcount == 0 && dir == "asc") {
+          dir = "desc";
+          switching = true;
+        }
+      }
+    }
+  }
 }

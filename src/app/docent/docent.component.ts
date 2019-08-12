@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { JwtToken, AutenticatieService } from '../services/autenticatie.service';
-import { Gebruiker } from '../Objecten/gebruiker';
 
 @Component({
   selector: 'wsa-docent',
@@ -8,16 +6,9 @@ import { Gebruiker } from '../Objecten/gebruiker';
   styleUrls: ['./docent.component.scss']
 })
 export class DocentComponent implements OnInit {
-  gebruiker:JwtToken;
-  studenten: Gebruiker[];
 
-  constructor(private authenticatieService: AutenticatieService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.haalGebruikerOp();
-  }
-
-  haalGebruikerOp():void {
-    this.gebruiker = this.authenticatieService.haalTokenOp();
   }
 }

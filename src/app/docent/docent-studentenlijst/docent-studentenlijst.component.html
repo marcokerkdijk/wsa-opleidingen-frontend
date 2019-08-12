@@ -1,12 +1,10 @@
-<p>docent-studentenlijst works!</p>
-
 <div class="row">
     <table id="studentenlijst" class="table table-bordered">
         <thead id="table-bottom">
             <tr>
-                <th>Voornaam</th>
-                <th>Achternaam</th>
-                <th>E-mailadres</th>
+                <th>Voornaam<i id='sorteerPijlVoornaam' class="fa fa-fw fa-sort" (click)="sorteerTabel(0)"></i></th>
+                <th>Achternaam<i id='sorteerPijlAchternaam' class="fa fa-fw fa-sort" (click)="sorteerTabel(1)"></i></th>
+                <th>E-mailadres<i id='sorteerPijlEmail' class="fa fa-fw fa-sort" (click)="sorteerTabel(1)"></i></th>
             </tr>
         </thead>
         <tbody>
