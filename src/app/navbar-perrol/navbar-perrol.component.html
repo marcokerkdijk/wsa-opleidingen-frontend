@@ -1,0 +1,71 @@
+<nav class="navbar navbar-expand-sm fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="https://www.workingspirit.nl/themes/workingspirit/images/beeldmerk_blue.png" alt="logo"
+                id="navbarBrand">
+        </a>
+        <nav>
+            <ul class="navbar-nav">
+                <li class="nav-item" id="DetacheringButton">
+                    <a class="nav-link" href="https://www.workingspirit.nl/detachering/" id="Detachering">
+                        Detachering
+                    </a>
+                </li>
+                <li class="nav-item" id="AcademyButton">
+                    <a class="nav-link" href="https://www.workingspirit.nl/academy/" id="Academy">
+                        Academy
+                    </a>
+                </li>
+                <li class="nav-item" id="ContactButton">
+                    <a class="nav-link" href="https://www.workingspirit.nl/contact/" id="Contact">
+                        Contact
+                    </a>
+                </li>
+                <li class="nav-item" id="TerugButton">
+                    <a class="nav-link" (click)="terug();" id="TerugKnop">
+                        Terug
+                    </a>
+                </li>
+                <li class="nav-item" id="LogButton">
+                    <a class="nav-link" (click)="logout()" id="LogoutButton">
+                        Logout
+                    </a>
+                </li>
+                <li class="nav-item" id="ProfielButton">
+                    <a class="nav-link" id="ProfielKnop" (click)="naarProfiel();">
+                        <i class="fa fa-user-circle" aria-hidden="true" id="user-icon"></i>
+                    </a>
+                </li>
+                <div class="dropdown" id="nav-hamburger">
+                    <div id='hamburger'></div>
+                    <div id='hamburger'></div>
+                    <div id='hamburger'></div>
+                    <div class="dropdown-content">
+                        <a id="ProfielHamburger" class="nav-link hamburgerButton">
+                            Profiel
+                        </a>
+                        <a id="CorperateHamburger" class="nav-link hamburgerButton"
+                            href="https://www.workingspirit.nl/corporate/">
+                            Corporate
+                        </a>
+                        <a id="DetacheringHamburger" class="nav-link hamburgerButton"
+                            href="https://www.workingspirit.nl/detachering/">
+                            Detachering
+                        </a>
+                        <a id="AcademyHamburger" class="nav-link hamburgerButton"
+                            href="https://www.workingspirit.nl/academy/">
+                            Academy
+                        </a>
+                        <a id="WerkenBijHamburger" class="nav-link hamburgerButton"
+                            href="https://www.workingspirit.nl/werken-bij-working-spirit/">
+                            Werken bij
+                        </a>
+                        <a class="nav-link" (click)="logout()" id="LogoutButtonHamburger">
+                            Logout
+                        </a>
+                    </div>
+                </div>
+            </ul>
+        </nav>
+    </div>
+</nav>
