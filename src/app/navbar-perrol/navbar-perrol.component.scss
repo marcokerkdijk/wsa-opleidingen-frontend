@@ -1,0 +1,126 @@
+.navbar {
+    background-color: #ffffff;
+    height: 5.5%;
+    padding-left: 0%;
+    padding-right: 0%;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.nav-link {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.container-fluid {
+    padding-left: 15%;
+    padding-right: 19%;
+}
+
+#navbarBrand{
+    padding-top: 7px;
+    width: 45px;
+}
+
+li a {
+    display: block;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: #00aeef;
+    border-radius: 0%;
+    border: none;
+    background-color: #ffffff;
+    font-size: 10px;
+    margin-left: 6em;
+}
+
+.nav-link:hover {
+    display: block;
+    cursor: pointer;
+    border-radius: 0%;
+    background-color: #00aeef;
+    color: #ffffff;
+}
+
+#user-icon {
+    font-size: 17.5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#TerugKnop:hover {
+    color: #ffffff;
+}
+
+#ProfielKnop:hover {
+    color: #ffffff;
+}
+
+#LogoutButton:hover {
+    color: #ffffff;
+}
+
+.hamburgerButton {
+    font-size: 14px;
+    color: #00aeef;
+}
+
+#ProfielHamburger {
+    color: #00aeef;
+}
+
+#ProfielHamburger:hover {
+    color: #ffffff;
+}
+
+#LogoutButtonHamburger {
+    color: #00aeef;
+}
+
+#LogoutButtonHamburger:hover {
+    color: #ffffff;
+}
+
+#nav-hamburger {
+    position: absolute;
+    padding-top: 25px;
+    right: 5%;
+    padding-bottom: 7px;   
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+  
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0%;
+    background-color: #ffffff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 5px 5px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}   
+ 
+@media (max-width: 65rem){
+    #hamburger {
+        visibility: visible;
+        width: 35px;
+        height: 4px;
+        background-color: #00aeef;
+        margin: 4px 0;
+        border-radius: 9px;
+     }
+
+     .nav-item {
+        visibility: hidden;
+        padding-top: 13.5px;
+        padding-bottom: 13.5px;
+    }
+}

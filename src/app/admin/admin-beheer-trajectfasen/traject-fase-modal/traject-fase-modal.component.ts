@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnInit, OnDestroy } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, OnDestroy, NgModule } from '@angular/core';
 import { ModalService } from 'src/app/services/modal.service';
 
 @Component({
@@ -11,6 +11,12 @@ import { ModalService } from 'src/app/services/modal.service';
         </div>
         <div class="jw-modal-background"></div>`,
 
+})
+
+@NgModule({
+    providers: [
+        TrajectFaseModalComponent,
+    ]
 })
 
 export class TrajectFaseModalComponent implements OnInit {
