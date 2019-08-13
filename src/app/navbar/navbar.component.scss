@@ -42,7 +42,13 @@ li a {
     color: #ffffff;
 }
 
-#LogoutButton:hover {
+#user-icon {
+    font-size: 16.5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#ProfielButton:hover {
     color: #ffffff;
 }
 
@@ -65,12 +71,12 @@ li a {
     color: #ffffff;
 }
 
-#LogoutButtonHamburger {
+#ProfielButtonHamburger {
     font-size: 14px;
     color: #00aeef; 
 }
 
-  #LogoutButtonHamburger:hover {
+  #ProfielButtonHamburger:hover {
     font-size: 14px;
     color: #ffffff;
 }
