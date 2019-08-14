@@ -4,6 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { TrajectService } from 'src/app/services/traject.service';
 import { HomeTrajectenComponent } from '../home-trajecten.component';
 import { DataserviceService } from 'src/app/services/dataservice.service';
+import { SelectieFase } from 'src/app/Objecten/selectieFase';
 
 @Component({
   selector: 'wsa-home-trajecten-informatie',
@@ -12,12 +13,14 @@ import { DataserviceService } from 'src/app/services/dataservice.service';
 })
 export class HomeTrajectenInformatieComponent implements OnInit {
   traject_id: number;
-  traject: Traject;
+  traject: Traject = new Traject;
+  // myTraject: string;  
   
   constructor(private dataService: DataserviceService, private trajectService:TrajectService, private router:Router, private activeRouter:ActivatedRoute, private comp: HomeTrajectenComponent) { }
   
   ngOnInit() {
     this.traject = this.dataService.getTraject();
+ 
   }
   
  

@@ -1,0 +1,38 @@
+h6{
+    letter-spacing: 1px;
+    color: white;
+    font-size: 42px;
+    font-weight: bold;
+    line-height: 32px;
+    text-align: center;
+    margin-top: 195px;
+}
+.container-fluid {
+    padding-left: 19%;
+    padding-right: 19%;
+}
+.row{
+    padding-top: 2%;
+}
+#background {
+    background-image: url(src\assets\Images\Academy-people2.jpg);
+    height: 400px;
+    width: 960px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+#titel{
+    letter-spacing: 1px;
+    color: #808285;
+    font-size: 26px;
+    font-weight: normal;
+    line-height: 32px;
+    text-align: right;
+}
+#mainText {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 20px;
+    color: #808285
+}
