@@ -1,4 +1,5 @@
 <div class="container-fluid">
+    <!-- achtergrondafbeelding met titel -->
     <div class="row">
         <div class="landingspage-header">
             <div class="container" id="background">
@@ -8,16 +9,31 @@
             </div>
         </div>
     </div>
+    <!-- Traject informatie  -->
     <div class="row">
         <div class="col-sm-3" id="titel">
             {{this.traject.naam}}
         </div>
         <div class="col-sm-8" id="mainText">
             {{this.traject.omschrijving}}
-
         </div>
     </div>
-    <div class="row">
-        {{traject.selectieFases[0].naam}}
+    <!-- Selectiefases behorend bij het traject -->
+    <div class="row" *ngFor="let SelectieFase of zichtbareSelectieFase">
+        <div class="col-sm-3" id="titel">
+            {{SelectieFase.naam}}
+        </div>
+        <div class="col-sm-8" id="mainText">
+            {{SelectieFase.omschrijving}}
+        </div>
+    </div>
+    <!-- Opleidingsfases behorend bij het traject -->
+    <div class="row" *ngFor="let OpleidingsFase of zichtbareOpleidingsFase">
+        <div class="col-sm-3" id="titel">
+            {{OpleidingsFase.naam}}
+        </div>
+        <div class="col-sm-8" id="mainText">
+            {{OpleidingsFase.omschrijving}}
+        </div>
     </div>
 </div>
