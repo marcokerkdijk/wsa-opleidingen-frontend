@@ -37,8 +37,8 @@
                     <a class="nav-link" *ngIf="!ingelogd" (click)="openModal('login-modal')" id="LoginButton">
                         Login
                     </a>
-                    <a class="nav-link" *ngIf="ingelogd" (click)="logout()" id="LogoutButton">
-                        Logout
+                    <a class="nav-link" *ngIf="ingelogd" (click)="navigeerNaar('profiel')" id="ProfielButton">
+                        <i class="fa fa-user-circle" aria-hidden="true" id="user-icon"></i>
                     </a>
                 </li>
                 <div class="dropdown" id="nav-hamburger">
@@ -46,6 +46,9 @@
                     <div id='hamburger'></div>
                     <div id='hamburger'></div>
                     <div class="dropdown-content">
+                        <a  class="nav-link" *ngIf="ingelogd" (click)="navigeerNaar('profiel')" id="ProfielButtonHamburger">
+                            Profiel
+                        </a>
                         <a id="CorperateHamburger" class="nav-link hamburgerButton" href="https://www.workingspirit.nl/corporate/">
                             Corporate
                         </a>
@@ -60,9 +63,6 @@
                         </a>
                         <a  class="nav-link" *ngIf="!ingelogd" (click)="openModal('login-modal')" id="LoginButtonHamburger">
                             Login
-                        </a>
-                        <a  class="nav-link" *ngIf="ingelogd" (click)="logout()" id="LogoutButtonHamburger">
-                            Logout
                         </a>
                     </div>
                 </div>
