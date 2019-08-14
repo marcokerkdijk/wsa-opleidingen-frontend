@@ -1,4 +1,5 @@
 import { SelectieFase } from './selectieFase';
+import { OpleidingsFase } from './opleidingsfase';
 
 export class Traject {
     id: number;
@@ -6,5 +7,6 @@ export class Traject {
     korteOmschrijving: string;
     omschrijving: string;
     zichtbaar: boolean;
-    selectieFase:SelectieFase;
+    selectieFases:SelectieFase[];
+    opleidingsFases: OpleidingsFase[];
 }

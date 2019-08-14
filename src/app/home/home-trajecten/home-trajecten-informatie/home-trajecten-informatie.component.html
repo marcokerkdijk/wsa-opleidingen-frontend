@@ -1,9 +1,23 @@
 <div class="container-fluid">
     <div class="row">
-        <div id=h6 class="col-sm-3">
-            {{this.traject.naam}}
-            {{this.traject.id}}
-            {{this.traject.omschrijving}}
+        <div class="landingspage-header">
+            <div class="container" id="background">
+                <h6>
+                    {{this.traject.naam}}
+                </h6>
+            </div>
         </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3" id="titel">
+            {{this.traject.naam}}
+        </div>
+        <div class="col-sm-8" id="mainText">
+            {{this.traject.omschrijving}}
+
+        </div>
+    </div>
+    <div class="row">
+        {{traject.selectieFases[0].naam}}
     </div>
 </div>
