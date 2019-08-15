@@ -25,6 +25,7 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.ingelogd = this.tokenService.isIngelogd();
   }
 
   public login(): void {
@@ -48,6 +49,10 @@ export class NavbarComponent implements OnInit {
           }
         );
     }
+  }
+
+  public navigeerNaar(url: string): void {
+    this.router.navigateByUrl('/' + url);
   }
 
   public logout(): void {

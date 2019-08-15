@@ -25,7 +25,6 @@ export class NavbarPerrolComponent implements OnInit {
   public checkInlogEnKrijgRol(): void {
     this.ingelogd = this.tokenService.isIngelogd();
     this.rol = this.autenticatieService.krijgRol();
-    console.log(this.rol);
   }
 
   public terug(): void {
@@ -37,8 +36,8 @@ export class NavbarPerrolComponent implements OnInit {
     }
   }
 
-  public naarProfiel(): void {
-    this.router.navigateByUrl("/profiel");
+  public navigeerNaar(url: string): void {
+    this.router.navigateByUrl("/" + url);
   }
 
   public logout(): void {

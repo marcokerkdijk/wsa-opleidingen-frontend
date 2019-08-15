@@ -8,23 +8,50 @@
                 <p>Bekijk hier je profielinformatie en andere gegevens.</p>
             </div>
         </div>
+
         <div class="row">
-            <div class="row">
-                <div class="col-sm-6">
-                    <p>Naam:</p>
-                </div>
-                <div class="col-sm-6">
-                    <p>{{token.displaynaam}}</p>
-                </div>
+            <div class="col-sm-6">
+                <p class="infotitel">Naam</p>
             </div>
-            <div class="row">
-                <div class="col-sm-6">
-                    <p>Email:</p>
-                </div>
-                <div class="col-sm-6">
-                    <p>{{gebruiker.emailadres}}</p>
+            <div class="col-sm-6">
+                <p>{{token.displaynaam}}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <p class="infotitel">Email</p>
+            </div>
+            <div class="col-sm-6">
+                <p>{{gebruiker.emailadres}}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <p class="infotitel">Wachtwoord</p>
+            </div>
+            <div class="col-sm-6">
+                <a (click)="showForm();" id="wachtwoordLink">Wachtwoord wijzigen</a>
+                <div id="wachtwoordwijzigformulier" *ngIf="zichtbaar">
+                    <form [formGroup]="wijzigWachtwoordForm">
+                        <fieldset>
+                            <div class="form-field">
+                                <input name="huidigwachtwoord1" formControlName="huidigwachtwoord" type="password" 
+                                    placeholder="Huidig wachtwoord" maxlength="25">
+                            </div>
+                            <div class="form-field">
+                                <input name="nieuwWachtwoord" formControlName="nieuwwachtwoord" type="password"
+                                    placeholder="Nieuw wachtwoord" maxlength="25">
+                            </div>
+                        </fieldset>
+                        <div>
+                            <button class="button button-primary" (click)="wijzigWachtwoord(token.gebruiker_id);">
+                                Wijzigen
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
+
     </div>
 </div>

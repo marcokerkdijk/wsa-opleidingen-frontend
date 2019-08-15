@@ -42,6 +42,7 @@ import { DocentHomeComponent } from './docent/docent-home/docent-home.component'
 import { NavbarPerrolComponent } from './navbar-perrol/navbar-perrol.component';
 import { ProfielComponent } from './profiel/profiel.component';
 import { ProfielInfoComponent } from './profiel/profiel-info/profiel-info.component';
+import { TrajectFaseModalComponent } from './admin/admin-beheer-trajectfasen/traject-fase-modal/traject-fase-modal.component';
 
 
 
@@ -95,6 +96,7 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     NavbarPerrolComponent,
     ProfielComponent,
     ProfielInfoComponent,
+    TrajectFaseModalComponent,
   ],
   imports: [
     BrowserModule,
