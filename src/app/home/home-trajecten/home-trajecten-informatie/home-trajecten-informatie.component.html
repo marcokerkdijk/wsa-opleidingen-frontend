@@ -18,6 +18,32 @@
             {{this.traject.omschrijving}}
         </div>
     </div>
+    <!-- Agenda van het traject -->
+    <div class="row">
+        <div class="col-sm-12" id="Agenda">
+            <table class="table table-bordered">
+                <thead id="tabel-headers">
+                    <tr>
+                        <th>Datum</th>
+                        <th>Tijdstip</th>
+                        <th>Informatie</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let SelectieFase of zichtbareSelectieFase">
+                        <td>{{SelectieFase.startdatum}}</td>
+                        <td>{{SelectieFase.tijdstip}}</td>
+                        <td>{{SelectieFase.naam}}</td>
+                    </tr>
+                    <tr *ngFor="let OpleidingsFase of zichtbareOpleidingsFase">
+                        <td>{{OpleidingsFase.startdatum}}</td>
+                        <td>{{OpleidingsFase.tijdstip}}</td>
+                        <td>{{OpleidingsFase.naam}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
     <!-- Selectiefases behorend bij het traject -->
     <div class="row" *ngFor="let SelectieFase of zichtbareSelectieFase">
         <div class="col-sm-3" id="titel">
@@ -35,5 +61,6 @@
         <div class="col-sm-8" id="mainText">
             {{OpleidingsFase.omschrijving}}
         </div>
+        <br><br>
     </div>
 </div>

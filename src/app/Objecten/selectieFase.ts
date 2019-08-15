@@ -3,4 +3,6 @@ export class SelectieFase {
     naam: string;
     omschrijving: string;
     traject_id:number;
+    startdatum: string;
+    tijdstip: string;
 }
