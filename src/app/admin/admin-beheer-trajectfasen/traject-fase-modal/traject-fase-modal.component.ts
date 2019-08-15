@@ -13,12 +13,6 @@ import { ModalService } from 'src/app/services/modal.service';
 
 })
 
-@NgModule({
-    providers: [
-        TrajectFaseModalComponent,
-    ]
-})
-
 export class TrajectFaseModalComponent implements OnInit {
 
       @Input() id: string;
