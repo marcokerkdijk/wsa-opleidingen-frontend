@@ -6,39 +6,105 @@
         <div class="col-sm-6">
             <p>
                 Welkom bij de Working Spirit academy. Login voor meer informatie over jouw traject!
-                Nog geen deelnemer van een traject, bekijk hieronder de trajecten die lopen of nog gaan starten.
+                Nog geen deelnemer van een traject, bekijk hieronder de traject(en) die lopen of nog gaan starten.
             </p>
         </div>
     </div>
-    <div class="row" *ngFor="let Traject of zichtbaarTrajecten">
-        <div class="col-md-4 col-xs-24">
-            <div id="background" class="home-banner"
-                style="background-image: url('https://www.workingspirit.nl/assets/HH-40894461.jpg')">
-                <a (click)="gaNaarTrajectInformatie(Traject)">
-                    <div class="caption" id="caption">
-                        <span class="catagory"></span>
-                        <h4 id="trajectNaam{{Traject.id}}">
-                            {{Traject.naam}}
-                        </h4>
-                        <p>
-                            Klik voor meer informatie.
+    <div *ngFor="let Traject of zichtbaarTrajecten; let i=index;">
+        <div *ngIf="zichtbaarTrajecten.length > 1; else elseBlock">
+            <!-- Onderdeel als meerdere trajecten actief zijn -->
+            <div class="row">
+                <div class="col-md-4 col-xs-24">
+                    <div id="trajectAfbeelding" class="home-banner"
+                    [ngStyle]="{'background': 'url(' + afbeeldingen[i] + ') no-repeat 0 0'}" [style.background-size]="cover">
+                        <a (click)="gaNaarTrajectInformatie(Traject)">
+                            <div class="caption" id="caption">
+                                <span class="catagory"></span>
+                                <h4 id="trajectNaam{{Traject.id}}">
+                                    {{Traject.naam}}
+                                </h4>
+                                <p>
+                                    Klik voor meer informatie.
+                                </p>
+                            </div>
+
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div>
+                        <p id="trajectKorteOmschrijving{{Traject.id}}">
+                            {{Traject.korteOmschrijving}}
                         </p>
                     </div>
-
-                </a>
+                </div>
             </div>
         </div>
-        <div class="col-md-5">
-            <div *ngIf="zichtbaarTrajecten.length > 1; else elseBlock">
-                <p id="trajectKorteOmschrijving{{Traject.id}}">
-                    {{Traject.korteOmschrijving}}
-                </p>
+        <!-- Onderdeel als er maar 1 traject actief is -->
+        <ng-template #elseBlock>
+            <div class="row">
+                <div class="landingspage-header">
+                    <div class="container" id="backgroundWSA">
+                        <h6>
+                            {{Traject.naam}}
+                        </h6>
+                    </div>
+                </div>
             </div>
-            <ng-template #elseBlock>
-                <p id="trajectOmschrijving{{Traject.id}}">
+            <!-- Traject informatie  -->
+            <div class="row">
+                <div class="col-sm-3" id="titel">
+                    {{Traject.naam}}
+                </div>
+                <div class="col-sm-8" id="mainText">
                     {{Traject.omschrijving}}
-                </p>
-            </ng-template>
-        </div>
+                </div>
+            </div>
+            <!-- Agenda gevuld met selectiefases en opleidingsfases -->
+            <div class="row">
+                <div class="col-sm-12" id="Agenda">
+                    <table class="table table-bordered">
+                        <thead id="tabel-headers">
+                            <tr>
+                                <th>Datum</th>
+                                <th>Tijdstip</th>
+                                <th>Informatie</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let SelectieFase of Traject.selectieFases">
+                                <td>{{SelectieFase.startdatum}}</td>
+                                <td>{{SelectieFase.tijdstip}}</td>
+                                <td>{{SelectieFase.naam}}</td>
+                            </tr>
+                            <tr *ngFor="let OpleidingsFase of Traject.opleidingsFases">
+                                <td>{{OpleidingsFase.startdatum}}</td>
+                                <td>{{OpleidingsFase.tijdstip}}</td>
+                                <td>{{OpleidingsFase.naam}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Selectiefases behorend bij het traject + informatie -->
+            <div class="row" *ngFor="let SelectieFase of Traject.selectieFases">
+                <div class="col-sm-4" id="titel">
+                    {{SelectieFase.naam}}
+                </div>
+                <div class="col-sm-8" id="mainText">
+                    {{SelectieFase.omschrijving}}
+                </div>
+            </div>
+            <!-- Opleidingsfases behorend bij het traject -->
+            <div class="row" *ngFor="let OpleidingsFase of Traject.opleidingsFases">
+                <div class="col-sm-4" id="titel">
+                    {{OpleidingsFase.naam}}
+                </div>
+                <div class="col-sm-8" id="mainText">
+                    {{OpleidingsFase.omschrijving}}
+                </div>
+                <br><br>
+            </div>
+        </ng-template>
     </div>
 </div>

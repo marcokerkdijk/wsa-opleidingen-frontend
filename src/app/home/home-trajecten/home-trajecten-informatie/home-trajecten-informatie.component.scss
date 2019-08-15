@@ -12,7 +12,7 @@ h6{
     padding-right: 19%;
 }
 .row{
-    padding-top: 2%;
+    padding-top: 4%;
 }
 #background {
     background-image: url(src\assets\Images\Academy-people2.jpg);
@@ -35,4 +35,22 @@ h6{
     line-height: 24px;
     margin-bottom: 20px;
     color: #808285
+}
+#table-bottom,
+th {
+    background: #ffffff;
+    color: #696969;
+    font-size: 15px;
+    text-transform: uppercase;
+    border: 1px solid;
+    border-color: black
+}
+#table-bottom,
+td {
+    background: #ffffff;
+    color: #696969;
+    font-size: 15px;
+    border: 1px solid;
+    // border-bottom-color: #00aeef;
+    text-align: left;
 }
