@@ -90,4 +90,14 @@
             <button class="button button-primary" (click)="closeModal('login-modal');">Sluiten</button>
         </div>
     </form>
+    <div id="vergetenWachtwoord">
+        <a id="vergetenWachtwoord" (click)="toggleVergeten();">Wachtwoord vergeten?</a>
+    </div>
+    <div id="wwvergetendiv" *ngIf="vergeten">
+        <p>Voer uw e-mailadres in:</p>
+        <input [(ngModel)]="emailgebruiker" name="email" id="emailInput" 
+            placeholder="E-mailadres" (keydown)="keyDownFunction($event)">
+        <button class="button button-primary" (click)="wachtwoordVergeten();">Verzenden</button>
+        <p>{{melding}}</p>
+    </div>
 </jw-modal>
