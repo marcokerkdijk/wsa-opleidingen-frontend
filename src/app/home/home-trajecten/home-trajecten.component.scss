@@ -1,12 +1,10 @@
-#background {
-    background-image: url(https://www.workingspirit.nl/assets/Uploads/HeaderAfbeeldingen/HH-60257639.jpg);
-}
 .container-fluid {
     padding-left: 19%;
     padding-right: 19%;
 }
 .row{
     padding-top: 2%;
+    padding-bottom: 2%;
 }
 #h6{
     letter-spacing: 1px;
@@ -16,6 +14,13 @@
     line-height: 32px;
     text-align: right;
     margin-top: 20px;
+}
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
 }
 p {
     font-size: 14px;
@@ -69,10 +74,62 @@ p {
     -o-transition: 500ms;
     transition: 500ms;
 }
-p {
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
+#titel{
+    letter-spacing: 1px;
+    color: #808285;
+    font-size: 26px;
+    font-weight: normal;
+    line-height: 32px;
+    text-align: right;
 }
+#mainText {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 20px;
+    color: #808285
+}
+#table-bottom,
+th {
+    background: #ffffff;
+    color: #696969;
+    font-size: 15px;
+    text-transform: uppercase;
+    border: 1px solid;
+    border-color: black
+}
+#table-bottom,
+td {
+    background: #ffffff;
+    color: #696969;
+    font-size: 15px;
+    border: 1px solid;
+    // border-bottom-color: #00aeef;
+    text-align: left;
+}
+#backgroundWSA {
+    background-image: url(src\assets\Images\Academy-people2.jpg);
+    height: 400px;
+    width: 960px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+h6{
+    letter-spacing: 1px;
+    color: white;
+    font-size: 42px;
+    font-weight: bold;
+    line-height: 32px;
+    text-align: center;
+    margin-top: 195px;
+}
+// #trajectAfbeelding{
+//     width: 290px;
+//     height: 230px;
+//     margin-bottom: 40px;
+//     background-size: cover;
+//     background-repeat: no-repeat;
+//     background-position: center center;
+//     float: right;
+//     position: relative;
+// }
