@@ -123,6 +123,26 @@ li a {
         padding-top: 13.5px;
         padding-bottom: 13.5px;
     }
+}
 
+#vergetenWachtwoord {
+    padding-top: 1.5%;
+}
 
+#vergetenWachtwoord a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#wwvergetendiv {
+    padding-top: 1.5%;
+}
+
+#emailInput {
+    width: 49.75%;
+    padding: 1%;
+    margin-right: 0.25%;
+    border: none;
+    background-color: #ffffff;
+    color: #00aeef;
 }
