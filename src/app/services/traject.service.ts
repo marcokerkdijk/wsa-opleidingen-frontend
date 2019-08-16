@@ -3,6 +3,7 @@ import {Traject} from '../Objecten/traject';
 import {Observable, of} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {environment} from 'src/environments/environment';
+import { DTOGebruikerID } from '../Objecten/gebruikerDTO';
 
 @Injectable({
   providedIn: 'root'
@@ -44,5 +45,10 @@ export class TrajectService {
 
   haalTrajectenOpVanGebruiker(gebruiker_id: number): Observable<Traject[]> {
     return this.http.get<Traject[]>(`${this.api}/geefTrajectenMetGebruikerId/` + gebruiker_id);
+  }
+
+  koppelTrajectAanGebruiker(lijstGebruikers:DTOGebruikerID[], trajectId:number){
+    console.log("Hij komt echt in de service terecht.")
+    return this.http.put<DTOGebruikerID>(`${this.api}/voegGebruikersOfVerwijderVanTraject/` +trajectId, lijstGebruikers);
   }
 }

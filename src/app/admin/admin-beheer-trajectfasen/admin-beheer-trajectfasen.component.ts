@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { ModalService } from 'src/app/services/modal.service';
 import { TrajectService } from 'src/app/services/traject.service';
 import { Location } from '@angular/common';
-import { Observable } from 'rxjs';
 import { Traject } from 'src/app/Objecten/traject';
 import { SelectieFase } from 'src/app/Objecten/selectieFase';
-import { SelectieFaseService } from 'src/app/services/selectie-fase.service';
+import { DataserviceService } from 'src/app/services/dataservice.service';
 
 @Component({
   selector: 'wsa-admin-beheer-trajectfasen',
@@ -22,9 +20,9 @@ export class AdminBeheerTrajectfasenComponent implements OnInit {
   traject_id:number;
   
 
-  constructor(private selectieFaseService:SelectieFaseService, private router:Router, 
-    private modalService:ModalService, private activeRouter:ActivatedRoute, private trajectService:TrajectService,
-    private location:Location) { }
+  constructor(private router:Router, 
+    private activeRouter:ActivatedRoute, private trajectService:TrajectService,
+    private location:Location, private dataService:DataserviceService) { }
 
   ngOnInit() {
     this.router.navigated = false;
@@ -35,6 +33,8 @@ export class AdminBeheerTrajectfasenComponent implements OnInit {
 
    maakTrajectId(id) {
     this.traject_id = id;
+    this.dataService.setTraject_id(id);
+
   }
 
   haalTrajectOp(traject_id) {

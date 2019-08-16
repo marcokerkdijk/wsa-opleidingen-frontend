@@ -3,6 +3,8 @@ import { Observable } from 'rxjs/internal/Observable';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Gebruiker } from '../Objecten/gebruiker';
+import { GebruikersRol } from '../model/GebruikersRol';
+import { DTOGebruikerID } from '../Objecten/gebruikerDTO';
 
 @Injectable({
   providedIn: 'root'
@@ -30,6 +32,15 @@ export class GebruikersService {
 
   gebruikerOpvragenRol(rolGebruiker): Observable<any> {
     return this.http.get<Gebruiker>(`${this.api}/haalGebruikerOpRol/` +rolGebruiker);
+  }
+
+  haalDocentOpMetTraject(traject_id): Observable<any> {
+    console.log(traject_id);
+    return this.http.get<Gebruiker>(`${this.api}/haalDocentOpMetTraject/` +traject_id);
+  }
+  
+  geefAlleGebruikersOpRolVanTraject(id: number, rol:GebruikersRol): Observable<any> {
+    return this.http.get<Gebruiker[]>(`${this.api}/haalGebruikersOpRolMetTrajectId/` + id + "/" +rol);
   }
   
     geefAlleStudentenVanTraject(id: number): Observable<Gebruiker[]> {
