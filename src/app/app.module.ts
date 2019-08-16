@@ -41,6 +41,10 @@ import { DocentOpdrachtenComponent } from './docent/docent-opdrachten/docent-opd
 import { DocentLesstofComponent } from './docent/docent-lesstof/docent-lesstof.component';
 import { DocentTrajectComponent } from './docent/docent-traject/docent-traject.component';
 import { DocentHomeComponent } from './docent/docent-home/docent-home.component';
+import { NavbarPerrolComponent } from './navbar-perrol/navbar-perrol.component';
+import { ProfielComponent } from './profiel/profiel.component';
+import { ProfielInfoComponent } from './profiel/profiel-info/profiel-info.component';
+import { TrajectFaseModalComponent } from './admin/admin-beheer-trajectfasen/traject-fase-modal/traject-fase-modal.component';
 
 
 
@@ -93,6 +97,10 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     DocentLesstofComponent,
     DocentTrajectComponent,
     DocentHomeComponent,
+    NavbarPerrolComponent,
+    ProfielComponent,
+    ProfielInfoComponent,
+    TrajectFaseModalComponent,
   ],
   imports: [
     BrowserModule,

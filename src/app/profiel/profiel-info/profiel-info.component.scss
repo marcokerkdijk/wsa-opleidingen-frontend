@@ -1,0 +1,63 @@
+.container-fluid {
+    padding-left: 19%;
+    padding-right: 19%;
+}
+.row{
+    padding-top: 5%;
+}
+
+#h6{
+    letter-spacing: 1px;
+    color: #808285;
+    font-size: 26px;
+    font-weight: normal;
+    line-height: 32px;
+}
+
+.infotitel {
+    color: #00aeef;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+p {
+    font-family: "Working Spirit";
+    font-size: 14px;
+    line-height: 24px;
+    color:  #808285;
+}
+
+#wachtwoordLink {
+    color: #00aeef;
+}
+
+#wachtwoordLink:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#wachtwoordwijzigformulier {
+    margin-top: 1%;
+}
+
+form input {
+    width: 75%;
+    color: #00aeef;
+    padding: 1%;
+    margin-bottom: 1%;
+    border: 1px solid #00aeef;
+}
+
+form button {
+    width: 75%;
+    padding: 1%;
+    border: 1px solid #00aeef;
+    background-color: #ffffff;
+    color: #00aeef;
+}
+
+form button:hover {
+    border: 1px solid #ffffff;
+    background-color: #00aeef;
+    color: #ffffff;
+}

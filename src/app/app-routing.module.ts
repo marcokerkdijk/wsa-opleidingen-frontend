@@ -20,6 +20,9 @@ import { DocentLesstofComponent } from './docent/docent-lesstof/docent-lesstof.c
 import { DocentOpdrachtenComponent } from './docent/docent-opdrachten/docent-opdrachten.component';
 import { DocentTrajectComponent } from './docent/docent-traject/docent-traject.component';
 import { DocentHomeComponent } from './docent/docent-home/docent-home.component';
+import { ProfielComponent } from './profiel/profiel.component';
+import { ProfielInfoComponent } from './profiel/profiel-info/profiel-info.component';
+import { GebruikerAutorisatieGuard } from './guards/gebruiker-autorisatie.guard';
 
 
 
@@ -63,6 +66,12 @@ const routes: Routes = [
         ]
       },
     ]
+  },
+  { path: 'profiel', component: ProfielComponent, canActivate: [GebruikerAutorisatieGuard],
+    children: [
+      { path: '', redirectTo: 'profiel-info', pathMatch: 'full' },
+      { path: "profiel-info", component: ProfielInfoComponent, pathMatch: 'full' },
+    ] 
   },
   {path: '', redirectTo: '/home/home-trajecten', pathMatch: 'full'} 
 

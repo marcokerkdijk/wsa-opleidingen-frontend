@@ -80,6 +80,26 @@ export class AutenticatieService {
     }
   }
 
+  public krijgRol(): string {
+    if (isNotNullOrUndefined(this.jwtToken)) {
+      this.jwtToken = this.jwtHelperService.decodeToken(this.tokenService.getBearerToken());
+    }
+
+    let rol = this.jwtToken.authorities[0];
+
+    switch(rol) {
+      case 'ADMIN': {
+        return "admin";
+      }
+      case 'DOCENT': {
+        return "docent";
+      }
+      case 'STUDENT': {
+        return "student";
+      }
+    }
+  }
+
   public haalTokenOp(): JwtToken {
     return this.jwtToken;
   }

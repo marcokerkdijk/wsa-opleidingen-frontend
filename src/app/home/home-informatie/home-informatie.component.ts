@@ -14,7 +14,7 @@ export class HomeInformatieComponent implements OnInit {
   private api:string = environment.apiUrl;
  
   constructor(private trajectService : TrajectService) { }
- 
+
   ngOnInit() {
     this.getTrajecten();
   }

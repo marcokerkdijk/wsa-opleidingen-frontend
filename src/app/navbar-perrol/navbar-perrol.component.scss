@@ -13,7 +13,7 @@
 }
 
 .container-fluid {
-    padding-left: 15%;
+    padding-left: 11%;
     padding-right: 19%;
 }
 
@@ -48,11 +48,31 @@ li a {
     padding-right: 10px;
 }
 
-#ProfielButton:hover {
+#Home:hover {
     color: #ffffff;
 }
 
-#LoginButton:hover {
+#Adminpagina:hover {
+    color: #ffffff;
+}
+
+#Docentpagina:hover {
+    color: #ffffff;
+}
+
+#Studentpagina:hover {
+    color: #ffffff;
+}
+
+#TerugKnop:hover {
+    color: #ffffff;
+}
+
+#ProfielKnop:hover {
+    color: #ffffff;
+}
+
+#LogoutButton:hover {
     color: #ffffff;
 }
 
@@ -61,23 +81,19 @@ li a {
     color: #00aeef;
 }
 
-#LoginButtonHamburger {
-    font-size: 14px;
-    color: #00aeef; 
+#ProfielHamburger {
+    color: #00aeef;
 }
 
-  #LoginButtonHamburger:hover{
-    font-size: 14px;
+#ProfielHamburger:hover {
     color: #ffffff;
 }
 
-#ProfielButtonHamburger {
-    font-size: 14px;
-    color: #00aeef; 
+#LogoutButtonHamburger {
+    color: #00aeef;
 }
 
-  #ProfielButtonHamburger:hover {
-    font-size: 14px;
+#LogoutButtonHamburger:hover {
     color: #ffffff;
 }
 
@@ -123,26 +139,4 @@ li a {
         padding-top: 13.5px;
         padding-bottom: 13.5px;
     }
-}
-
-#vergetenWachtwoord {
-    padding-top: 1.5%;
-}
-
-#vergetenWachtwoord a:hover {
-    cursor: pointer;
-    text-decoration: underline;
-}
-
-#wwvergetendiv {
-    padding-top: 1.5%;
-}
-
-#emailInput {
-    width: 49.75%;
-    padding: 1%;
-    margin-right: 0.25%;
-    border: none;
-    background-color: #ffffff;
-    color: #00aeef;
 }

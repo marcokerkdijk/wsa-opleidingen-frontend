@@ -5,6 +5,7 @@ import { Location } from '@angular/common';
 import { Traject } from 'src/app/Objecten/traject';
 import { SelectieFase } from 'src/app/Objecten/selectieFase';
 import { DataserviceService } from 'src/app/services/dataservice.service';
+import { OpleidingsFase } from 'src/app/Objecten/opleidingsfase';
 
 @Component({
   selector: 'wsa-admin-beheer-trajectfasen',
@@ -18,6 +19,8 @@ export class AdminBeheerTrajectfasenComponent implements OnInit {
   selectieFasen:SelectieFase[];
   traject: Traject = new Traject;
   traject_id:number;
+  opleidingsFase: OpleidingsFase = new OpleidingsFase;
+  opleidingsFasen:OpleidingsFase[];
   
 
   constructor(private router:Router, 

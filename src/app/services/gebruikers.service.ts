@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Gebruiker } from '../Objecten/gebruiker';
 import { GebruikersRol } from '../model/GebruikersRol';
-import { DTOGebruikerID } from '../Objecten/gebruikerDTO';
+import { WijzigWachtwoordDTO } from '../Objecten/wijzig-wachtwoord-dto';
 
 @Injectable({
   providedIn: 'root'
@@ -45,5 +45,13 @@ export class GebruikersService {
   
     geefAlleStudentenVanTraject(id: number): Observable<Gebruiker[]> {
     return this.http.get<Gebruiker[]>(`${this.api}/haalStudentenOpMetTrajectId/` + id);
+  }
+
+  wijzigWachtwoord(id: number, wachtwoordDTO: WijzigWachtwoordDTO): Observable<any> {
+    return this.http.put(`${this.api}/wijzigWachtwoord/` + id, wachtwoordDTO);
+  }
+
+  wachtwoordVergeten(email: string): Observable<any> {
+    return this.http.post(`${this.api}/home`, email);
   }
 }
