@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 import { Traject } from 'src/app/Objecten/traject';
 import { SelectieFase } from 'src/app/Objecten/selectieFase';
 import { SelectieFaseService } from 'src/app/services/selectie-fase.service';
+import { OpleidingsFase } from 'src/app/Objecten/opleidingsfase';
 
 @Component({
   selector: 'wsa-admin-beheer-trajectfasen',
@@ -20,6 +21,8 @@ export class AdminBeheerTrajectfasenComponent implements OnInit {
   selectieFasen:SelectieFase[];
   traject: Traject = new Traject;
   traject_id:number;
+  opleidingsFase: OpleidingsFase = new OpleidingsFase;
+  opleidingsFasen:OpleidingsFase[];
   
 
   constructor(private selectieFaseService:SelectieFaseService, private router:Router, 

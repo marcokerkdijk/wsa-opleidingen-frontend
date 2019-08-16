@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 import { OpleidingsFase } from 'src/app/Objecten/opleidingsfase';
 import { Traject } from 'src/app/Objecten/traject';
 import { OpleidingsFaseService } from 'src/app/services/opleidings-fase.service';
@@ -16,7 +15,7 @@ export class OpleidingsFaseTabelComponent implements OnInit {
   traject_id:number;
   traject:Traject = new Traject;
 
-  constructor(private opledingsFaseComponent:BeheerOpleidingsfaseComponent, private opleidingsFaseService:OpleidingsFaseService
+  constructor(private opleidingsFaseComponent:BeheerOpleidingsfaseComponent, private opleidingsFaseService:OpleidingsFaseService
   ,  private adminBeheeTrajectfasenComponent:AdminBeheerTrajectfasenComponent) { }
 
   ngOnInit() {
@@ -24,12 +23,12 @@ export class OpleidingsFaseTabelComponent implements OnInit {
   }
 
   clickWijzigModal(id,opleidingsFaseId:number){
-    this.opledingsFaseComponent.haalOpleidingsFase(opleidingsFaseId);
-    this.opledingsFaseComponent.openModal(id, this.traject_id);
+    this.opleidingsFaseComponent.haalOpleidingsFase(opleidingsFaseId);
+    this.opleidingsFaseComponent.openModal(id, this.traject_id);
   }
 
   openToevoegModalOpleidingsFase(id){
-    this.opledingsFaseComponent.openModal(id, this.traject_id);
+    this.opleidingsFaseComponent.openModal(id, this.traject_id);
   }
 
   haalTrajectIdOp() {

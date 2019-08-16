@@ -6,23 +6,40 @@
         <div class="col-sm-12">
             <div>Opleidingsfase naam:</div>
             <div>
-                <input [(ngModel)]="nieuweOpleiding.naam" type="text" class="form-control" id="veldOpleidingsFaseNaamWijzigen" />
+                <input [(ngModel)]="opleidingsFase.naam" type="text" class="form-control"
+                    id="veldOpleidingsFaseNaamWijzigen" />
             </div>
         </div>
-            <div class="col-sm-12">
-                <div>Omschrijving:</div>
-                <div>
-                    <textarea [(ngModel)]="nieuweOpleiding.omschrijving" class="form-control" rows="3"
-                        id="veldOpleidingsFaseOmschrijvingWijzigen"></textarea>
-                </div>
+        <div class="col-sm-12">
+            <div>Omschrijving:</div>
+            <div>
+                <textarea [(ngModel)]="opleidingsFase.omschrijving" class="form-control" rows="3"
+                    id="veldOpleidingsFaseOmschrijvingWijzigen"></textarea>
             </div>
         </div>
-        <div class="row">
-            <div class="col-sm-12">
-                <button id="opleidingsFaseWijzigen" (click)="wijzigOpleidingsFase(nieuweOpleiding, 'opleidingsFase-wijzig-modal')">Opslaan</button>
-                <button id='opleidingsFaseSluitWijzigModal' (click)="closeModal('opleidingsFase-wijzig-modal');">Annuleren</button>
+        <div class="col-sm-12">
+            <div>Startdatum:</div>
+            <div>
+                <textarea [(ngModel)]="opleidingsFase.startdatum" class="form-control" rows="1"
+                    id="veldOpleidingsFaseStartdatumWijzigen"></textarea>
             </div>
         </div>
+        <div class="col-sm-12">
+            <div>Tijdstip:</div>
+            <div>
+                <textarea [(ngModel)]="opleidingsFase.tijdstip" class="form-control" rows="1"
+                    id="veldOpleidingsFaseTijdstipWijzigen"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <button id="opleidingsFaseWijzigen"
+                (click)="wijzigOpleidingsFase(nieuweOpleiding, 'opleidingsFase-wijzig-modal')">Opslaan</button>
+            <button id='opleidingsFaseSluitWijzigModal'
+                (click)="closeModal('opleidingsFase-wijzig-modal');">Annuleren</button>
+        </div>
+    </div>
 </jw-modal>
 
 
@@ -32,21 +49,38 @@
         <div class="col-sm-12">
             <div>Opleidingsfase naam:</div>
             <div>
-                <input [(ngModel)]="nieuweOpleiding.naam" type="text" class="form-control" id="veldOpleidingsFaseNaamToevoegen" />
+                <input [(ngModel)]="nieuweOpleiding.naam" type="text" class="form-control"
+                    id="veldOpleidingsFaseNaamToevoegen" />
             </div>
         </div>
-            <div class="col-sm-12">
-                <div>Omschrijving:</div>
-                <div>
-                    <textarea [(ngModel)]="nieuweOpleiding.omschrijving" class="form-control" rows="3"
-                        id="veldOpleidingsFaseOmschrijvingToevoegen"></textarea>
-                </div>
+        <div class="col-sm-12">
+            <div>Omschrijving:</div>
+            <div>
+                <textarea [(ngModel)]="nieuweOpleiding.omschrijving" class="form-control" rows="3"
+                    id="veldOpleidingsFaseOmschrijvingToevoegen"></textarea>
             </div>
         </div>
-        <div class="row">
-            <div class="col-sm-12">
-                <button id="selectieFaseToevoegen" (click)="maakNieuwOpleidingsFase(nieuweOpleiding, 'opleidingsFase-toevoegen-modal')">Toevoegen</button>
-                <button id='selectieFaseSluitModal' (click)="closeModal('opleidingsFase-toevoegen-modal');">Annuleren</button>
+        <div class="col-sm-12">
+            <div>Startdatum:</div>
+            <div>
+                <textarea [(ngModel)]="nieuweOpleiding.startdatum" class="form-control" rows="1"
+                    id="veldOpleidingsFaseStartdatumToevoegen"></textarea>
             </div>
         </div>
+        <div class="col-sm-12">
+            <div>Tijdstip:</div>
+            <div>
+                <textarea [(ngModel)]="nieuweOpleiding.tijdstip" class="form-control" rows="1"
+                    id="veldOpleidingsFaseTijdstipToevoegen"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <button id="selectieFaseToevoegen"
+                (click)="maakNieuwOpleidingsFase(nieuweOpleiding, 'opleidingsFase-toevoegen-modal')">Toevoegen</button>
+            <button id='selectieFaseSluitModal'
+                (click)="closeModal('opleidingsFase-toevoegen-modal');">Annuleren</button>
+        </div>
+    </div>
 </jw-modal>
