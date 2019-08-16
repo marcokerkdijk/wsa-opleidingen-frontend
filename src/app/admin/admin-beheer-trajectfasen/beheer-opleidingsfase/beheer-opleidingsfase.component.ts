@@ -13,7 +13,7 @@ import { OpleidingsFase } from 'src/app/Objecten/opleidingsfase';
   styleUrls: ['./beheer-opleidingsfase.component.scss']
 })
 export class BeheerOpleidingsfaseComponent implements OnInit {
-  opleidingsfase:OpleidingsFase = new OpleidingsFase;
+  opleidingsFase:OpleidingsFase = new OpleidingsFase;
   nieuweOpleiding:OpleidingsFase = new OpleidingsFase;
   gewijzigdeFase:OpleidingsFase=new OpleidingsFase;
   opleidingsfasen:OpleidingsFase[];
@@ -31,8 +31,8 @@ export class BeheerOpleidingsfaseComponent implements OnInit {
     this.haalTrajectOp(this.traject_id);
   }
   haalOpleidingsFase(id:number):void {
-    this.opleidingsfase.id = id;
-    this.opleidingsFaseService.haalOpleidingsFaseOpId(id).subscribe(opgehaaldeOpleidingsFase => this.opleidingsfase = opgehaaldeOpleidingsFase);
+    this.opleidingsFase.id = id;
+    this.opleidingsFaseService.haalOpleidingsFaseOpId(id).subscribe(opgehaaldeOpleidingsFase => this.opleidingsFase = opgehaaldeOpleidingsFase);
   }
 
   openModal(id: string, opleidingsfase_id) {
