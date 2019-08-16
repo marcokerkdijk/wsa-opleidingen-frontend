@@ -8,6 +8,8 @@
                 <tr>
                     <th id="thNaamSelectieFase">Fase</th>
                     <th id="thOmschrijfingSelectieFase">Omschrijving</th>
+                    <th id="thStartdatum">Startdatum</th>
+                    <th id="thTijdstip">Tijdstip</th>
                     <th id="thBewerkenSelectieFase">Bewerken</th>
                 </tr>
             </thead>
@@ -15,6 +17,8 @@
                 <tr *ngFor="let OpleidingsFase of alleOpleidingsFasen">
                     <td id="tdSelectieFase{{OpleidingsFase.id}}">{{OpleidingsFase.naam}}</td>
                     <td id="tdOmschrijving{{OpleidingsFase.id}}">{{OpleidingsFase.omschrijving}}</td>
+                    <td id="tdStartdatum{{OpleidingsFase.id}}">{{OpleidingsFase.startdatum}}</td>
+                    <td id="tdTijdstip{{OpleidingsFase.id}}">{{OpleidingsFase.tijdstip}}</td>
                     <td><a id="pencil" (click)="clickWijzigModal('opleidingsFase-wijzig-modal', OpleidingsFase.id)"><i class='fa fa-pencil'
                                 id="tdWijzig{{OpleidingsFase.id}}"></i></a></td>
                 </tr>
