@@ -43,6 +43,7 @@ import { NavbarPerrolComponent } from './navbar-perrol/navbar-perrol.component';
 import { ProfielComponent } from './profiel/profiel.component';
 import { ProfielInfoComponent } from './profiel/profiel-info/profiel-info.component';
 import { TrajectFaseModalComponent } from './admin/admin-beheer-trajectfasen/traject-fase-modal/traject-fase-modal.component';
+import { OpdrachtAanmaakComponent } from './docent/docent-opdrachten/opdracht-aanmaak/opdracht-aanmaak.component';
 
 
 
@@ -97,6 +98,7 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     ProfielComponent,
     ProfielInfoComponent,
     TrajectFaseModalComponent,
+    OpdrachtAanmaakComponent,
   ],
   imports: [
     BrowserModule,

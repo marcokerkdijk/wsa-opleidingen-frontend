@@ -23,6 +23,7 @@ import { DocentHomeComponent } from './docent/docent-home/docent-home.component'
 import { ProfielComponent } from './profiel/profiel.component';
 import { ProfielInfoComponent } from './profiel/profiel-info/profiel-info.component';
 import { GebruikerAutorisatieGuard } from './guards/gebruiker-autorisatie.guard';
+import { OpdrachtAanmaakComponent } from './docent/docent-opdrachten/opdracht-aanmaak/opdracht-aanmaak.component';
 
 
 
@@ -61,8 +62,12 @@ const routes: Routes = [
           { path: '', redirectTo: 'docent', pathMatch: 'full'},
           { path: "docent-lesstof", component: DocentLesstofComponent },
           { path: '', redirectTo: 'docent', pathMatch: 'full'},
-          { path: "docent-opdrachten", component: DocentOpdrachtenComponent },
-          { path: '', redirectTo: 'docent', pathMatch: 'full'},
+          { path: "docent-opdrachten", component: DocentOpdrachtenComponent,
+            children: [
+              { path: "opdracht-aanmaak", component: OpdrachtAanmaakComponent },
+              { path: '', redirectTo: 'docent-opdrachten', pathMatch: 'full' },
+            ] 
+          },
         ]
       },
     ]
