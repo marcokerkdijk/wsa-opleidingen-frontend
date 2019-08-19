@@ -22,7 +22,6 @@ export class SelectieFaseService {
      return this.http.post<SelectieFase>(`${this.api}/MaakSelectieFase/`+traject_id, selectieFase );
   }
 
-
   GeefSelectieFasenPerTraject(traject_id): Observable<SelectieFase[]> {
     return this.http.get<SelectieFase[]>(`${this.api}/GeefSelectieFasenPerTraject/` + traject_id);
   }

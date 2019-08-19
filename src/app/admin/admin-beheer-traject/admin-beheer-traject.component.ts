@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { ModalService } from 'src/app/services/modal.service';
 import { SelectieFase } from 'src/app/Objecten/selectieFase';
 import { SelectieFaseService } from 'src/app/services/selectie-fase.service';
+import { DataserviceService } from 'src/app/services/dataservice.service';
 
 @Component({
   selector: 'wsa-admin-beheer-traject',
@@ -20,6 +21,7 @@ export class AdminBeheerTrajectComponent implements OnInit {
     private selectieFaseService:SelectieFaseService) { }
 
   ngOnInit() {
+
   }
 
   createTraject(traject: Traject){
@@ -45,6 +47,7 @@ export class AdminBeheerTrajectComponent implements OnInit {
   haalTrajectOpId(id:number): void {
     this.wijzigTraject.id = id;
     this.trajectService.haalTrajectOpId(id).subscribe(traject => this.wijzigTraject = traject);
+
   }
 
   maakNieuweSelectieFase(id:number):void {
