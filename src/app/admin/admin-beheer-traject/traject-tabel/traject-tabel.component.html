@@ -8,18 +8,19 @@
                 <tr>
                     <th id="thNaam">Traject</th>
                     <th id="thZichtbaar">Zichtbaar</th>
+                    <th id="thBewerken">Bewerken</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr *ngFor="let Traject of alleTrajecten">
-                    <td id="tdTraject{{Traject.id}}">{{Traject.naam}}</td>
+            <tbody >
+                <tr *ngFor="let Traject of alleTrajecten"  >
+                    <td  id="tdTraject{{Traject.id}}"  >{{Traject.naam}}</td>
                     <td id="tdZichtbaar{{Traject.id}}">
                         <div *ngIf="Traject.zichtbaar; else elseBlock">Ja</div>
                         <ng-template #elseBlock>Nee</ng-template>
                     </td>
-                    <td><a id="pencil" (click)="clickWijzigModal('traject-modal', Traject.id)"><i class='fa fa-pencil'
+                    <td ><a id="pencil" (click)="clickWijzigModal('traject-modal', Traject.id)"><i class='fa fa-pencil'
                                 id="tdWijzig{{Traject.id}}"></i></a></td>
-                    <td><button id='linkBeheerTrajectFasen' routerLink="../admin-beheer-trajectfasen/{{Traject.id}}" routerLinkActive="active">Traject fasen</button></td>
+                    <button routerLink="../admin-beheer-trajectfasen/{{Traject.id}}" routerLinkActive="active">Traject fasen</button>
                 </tr>
             </tbody>
         </table>

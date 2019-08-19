@@ -7,6 +7,7 @@ import { Traject } from '../Objecten/traject';
 
 export class DataserviceService {
   public traject: Traject;
+  public traject_id:number;
 
   constructor() { }
 
@@ -16,5 +17,13 @@ export class DataserviceService {
   
   public getTraject(): Traject{
     return this.traject;
+  }
+
+  public setTraject_id(traject_id): void{
+    this.traject_id=traject_id;
+  }
+
+  public getTraject_id(){
+    return this.traject_id;
   }
 }

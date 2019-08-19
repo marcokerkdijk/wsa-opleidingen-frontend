@@ -1,0 +1,43 @@
+<wsa-gebruiker-koppel-tabel></wsa-gebruiker-koppel-tabel>
+
+<jw-modal class="jw-modal" id="docent-koppel-modal">
+    <h1>Selecteer de docenten die aan het traject gekoppeld moeten worden</h1>
+    <div class="row">
+        <div class="col-sm-12">
+            <div>Lijst met docenten:</div>
+            <table class='table table-bordered col-lg-12'>
+                <thead id="table-bottom">
+                    <tr>
+                        <th id="thNaam">Voornaam</th>
+                        <th id="thZichtbaar">Achternaam</th>
+                        <th id="thGekoppeld">Gekoppeld aantraject?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let Gebruiker of gebruikers">
+                        <td id="tdVoornaam">{{Gebruiker.voornaam}}</td>
+                        <td id="tdAchternaam">{{Gebruiker.achternaam}}</td>
+                        <td id="tdGekoppeld">
+                                <div *ngIf="maakGekoppeldBoolean(Gebruiker); else elseBlock">
+                                        <div>Ja</div>
+                                </div>
+                                <ng-template #elseBlock >Nee
+                                </ng-template>
+                            
+                            <!-- (click)="maakLijstGebruikerDTO(Gebruiker.id)" [ngModel]='maakGekoppeldBoolean(Gebruiker)'> -->
+                        </td>
+                        <div><button (click)="maakLijstGebruikerDTO(Gebruiker.id)">Toevoegen</button>
+                        <button (click)="verwijderUitLijstGebruikerDTO(Gebruiker.id)">verwijderen</button></div>
+                        
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+    </div>                
+        <div class="row">
+            <div class="col-sm-12">
+                <button id="GebruikerKoppelen" (click)="koppelOfOntkoppelGebruikersAanTraject('docent-koppel-modal')">Opslaan</button>
+                <button id='selectieFaseSluitWijzigModal' (click)="closeModal('docent-koppel-modal');">Annuleren</button>
+            </div>
+        </div>
+</jw-modal>

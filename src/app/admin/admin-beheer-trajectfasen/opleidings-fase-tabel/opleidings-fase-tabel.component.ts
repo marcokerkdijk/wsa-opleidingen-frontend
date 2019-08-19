@@ -34,6 +34,7 @@ export class OpleidingsFaseTabelComponent implements OnInit {
   haalTrajectIdOp() {
     this.traject_id = this.adminBeheeTrajectfasenComponent.traject_id;
     this.getOpleidingsFasen(this.adminBeheeTrajectfasenComponent.traject_id);
+    
     return this.traject_id;
 
   }
