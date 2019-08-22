@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Component, OnInit } from '@angular/core';
 import { JwtToken, AutenticatieService } from 'src/app/services/autenticatie.service';
 import { Traject } from 'src/app/Objecten/traject';
 import { TrajectService } from 'src/app/services/traject.service';
