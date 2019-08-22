@@ -25,6 +25,11 @@ import { RecruiterAutorisatieGuard } from './guards/recruiter-autorisatie.guard'
 import { ProfielComponent } from './profiel/profiel.component';
 import { ProfielInfoComponent } from './profiel/profiel-info/profiel-info.component';
 import { GebruikerAutorisatieGuard } from './guards/gebruiker-autorisatie.guard';
+import { OpdrachtenComponent } from './student/opdrachten/opdrachten.component';
+import { InstallatiehulpComponent } from './student/installatiehulp/installatiehulp.component';
+import { NotitiesComponent } from './student/notities/notities.component';
+import { MijnGegevensComponent } from './student/mijn-gegevens/mijn-gegevens.component';
+
 import { OpdrachtAanmaakComponent } from './docent/docent-opdrachten/opdracht-aanmaak/opdracht-aanmaak.component';
 import { AdminBeheerTrajectgebruikersComponent } from './admin/admin-beheer-trajectgebruikers/admin-beheer-trajectgebruikers.component';
 
@@ -52,8 +57,21 @@ const routes: Routes = [
       { path: "admin-beheer-trajectgebruikers/:id", component: AdminBeheerTrajectgebruikersComponent},
     ]
   },
-  { path: 'student', component: StudentComponent, canActivate: [StudentAutorisatieGuard] },
-   { path: 'docent', component: DocentComponent, canActivate: [DocentAutorisatieGuard],
+  { path: 'student', component: StudentComponent, canActivate: [StudentAutorisatieGuard],
+    children: [
+      // {path: '', redirectTo: 'student', pathMatch: 'full'},
+      // {path: '', component: StudentComponent, pathMatch: 'full'},
+      {path: "opdrachten", component: OpdrachtenComponent},
+      {path: '', redirectTo: 'student', pathMatch: 'full'},
+      {path: "installatiehulp", component: InstallatiehulpComponent},
+      {path: '', redirectTo: 'student', pathMatch: 'full'},
+      {path: "notities", component: NotitiesComponent},
+      {path: '', redirectTo: 'student', pathMatch: 'full'},
+      {path: "mijn-gegevens", component: MijnGegevensComponent},
+    ]
+  },
+  
+  { path: 'docent', component: DocentComponent, canActivate: [DocentAutorisatieGuard],
     children: [
       { path: '', redirectTo: 'docent', pathMatch: 'full'},
       { path: '', component: DocentHomeComponent, pathMatch: 'full'},
