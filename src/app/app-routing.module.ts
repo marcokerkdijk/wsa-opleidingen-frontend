@@ -20,13 +20,18 @@ import { DocentLesstofComponent } from './docent/docent-lesstof/docent-lesstof.c
 import { DocentOpdrachtenComponent } from './docent/docent-opdrachten/docent-opdrachten.component';
 import { DocentTrajectComponent } from './docent/docent-traject/docent-traject.component';
 import { DocentHomeComponent } from './docent/docent-home/docent-home.component';
+import { RecruiterComponent } from "./recruiter/recruiter.component";
+import { RecruiterAutorisatieGuard } from './guards/recruiter-autorisatie.guard';
 import { ProfielComponent } from './profiel/profiel.component';
 import { ProfielInfoComponent } from './profiel/profiel-info/profiel-info.component';
 import { GebruikerAutorisatieGuard } from './guards/gebruiker-autorisatie.guard';
+import { OpdrachtenComponent } from './student/opdrachten/opdrachten.component';
+import { InstallatiehulpComponent } from './student/installatiehulp/installatiehulp.component';
+import { NotitiesComponent } from './student/notities/notities.component';
+import { MijnGegevensComponent } from './student/mijn-gegevens/mijn-gegevens.component';
+
 import { OpdrachtAanmaakComponent } from './docent/docent-opdrachten/opdracht-aanmaak/opdracht-aanmaak.component';
 import { AdminBeheerTrajectgebruikersComponent } from './admin/admin-beheer-trajectgebruikers/admin-beheer-trajectgebruikers.component';
-
-
 
 const routes: Routes = [
 
@@ -52,7 +57,20 @@ const routes: Routes = [
       { path: "admin-beheer-trajectgebruikers/:id", component: AdminBeheerTrajectgebruikersComponent},
     ]
   },
-  { path: 'student', component: StudentComponent, canActivate: [StudentAutorisatieGuard] },
+  { path: 'student', component: StudentComponent, canActivate: [StudentAutorisatieGuard],
+    children: [
+      // {path: '', redirectTo: 'student', pathMatch: 'full'},
+      // {path: '', component: StudentComponent, pathMatch: 'full'},
+      {path: "opdrachten", component: OpdrachtenComponent},
+      {path: '', redirectTo: 'student', pathMatch: 'full'},
+      {path: "installatiehulp", component: InstallatiehulpComponent},
+      {path: '', redirectTo: 'student', pathMatch: 'full'},
+      {path: "notities", component: NotitiesComponent},
+      {path: '', redirectTo: 'student', pathMatch: 'full'},
+      {path: "mijn-gegevens", component: MijnGegevensComponent},
+    ]
+  },
+  
   { path: 'docent', component: DocentComponent, canActivate: [DocentAutorisatieGuard],
     children: [
       { path: '', redirectTo: 'docent', pathMatch: 'full'},
@@ -73,6 +91,7 @@ const routes: Routes = [
       },
     ]
   },
+  { path: 'recruiter', component: RecruiterComponent, canActivate: [RecruiterAutorisatieGuard] },
   { path: 'profiel', component: ProfielComponent, canActivate: [GebruikerAutorisatieGuard],
     children: [
       { path: '', redirectTo: 'profiel-info', pathMatch: 'full' },
@@ -87,7 +106,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {
-
- 
+export class AppRoutingModule { 
 }

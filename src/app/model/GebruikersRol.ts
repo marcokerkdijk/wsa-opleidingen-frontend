@@ -1,5 +1,6 @@
 export enum GebruikersRol {
   ADMIN = "ADMIN",
   STUDENT = "STUDENT",
-  DOCENT = "DOCENT"
+  DOCENT = "DOCENT",
+  RECRUITER = "RECRUITER"
 }

@@ -21,10 +21,8 @@
                     <a class="nav-link" *ngIf="rol === 'student'" (click)="navigeerNaar('student');" id="Studentpagina">
                         Student
                     </a>
-                </li>
-                <li class="nav-item" id="AcademyButton">
-                    <a class="nav-link" href="https://www.workingspirit.nl/academy/" id="Academy">
-                        Academy
+                    <a class="nav-link" *ngIf="rol === 'recruiter'" (click)="navigeerNaar('recruiter');" id="Recruiterpagina">
+                        Recruiter
                     </a>
                 </li>
                 <li class="nav-item" id="TerugButton">

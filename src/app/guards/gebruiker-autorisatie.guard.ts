@@ -18,7 +18,8 @@ export class GebruikerAutorisatieGuard implements CanActivate {
 
     if (this.autenticatieService.isGeautoriseerd(GebruikersRol.ADMIN)  || 
         this.autenticatieService.isGeautoriseerd(GebruikersRol.DOCENT) ||
-        this.autenticatieService.isGeautoriseerd(GebruikersRol.STUDENT)) {
+        this.autenticatieService.isGeautoriseerd(GebruikersRol.STUDENT) ||
+        this.autenticatieService.isGeautoriseerd(GebruikersRol.RECRUITER)) {
 
       return true;
     }
