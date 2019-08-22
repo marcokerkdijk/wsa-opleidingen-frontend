@@ -77,6 +77,9 @@ export class AutenticatieService {
       case 'STUDENT': {
         return '/student';
       }
+      case 'RECRUITER': {
+        return '/recruiter';
+      }
     }
   }
 
@@ -96,6 +99,9 @@ export class AutenticatieService {
       }
       case 'STUDENT': {
         return "student";
+      }
+      case 'RECRUITER': {
+        return "recruiter";
       }
     }
   }

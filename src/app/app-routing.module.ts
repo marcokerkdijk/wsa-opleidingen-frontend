@@ -20,13 +20,13 @@ import { DocentLesstofComponent } from './docent/docent-lesstof/docent-lesstof.c
 import { DocentOpdrachtenComponent } from './docent/docent-opdrachten/docent-opdrachten.component';
 import { DocentTrajectComponent } from './docent/docent-traject/docent-traject.component';
 import { DocentHomeComponent } from './docent/docent-home/docent-home.component';
+import { RecruiterComponent } from "./recruiter/recruiter.component";
+import { RecruiterAutorisatieGuard } from './guards/recruiter-autorisatie.guard';
 import { ProfielComponent } from './profiel/profiel.component';
 import { ProfielInfoComponent } from './profiel/profiel-info/profiel-info.component';
 import { GebruikerAutorisatieGuard } from './guards/gebruiker-autorisatie.guard';
 import { OpdrachtAanmaakComponent } from './docent/docent-opdrachten/opdracht-aanmaak/opdracht-aanmaak.component';
 import { AdminBeheerTrajectgebruikersComponent } from './admin/admin-beheer-trajectgebruikers/admin-beheer-trajectgebruikers.component';
-
-
 
 const routes: Routes = [
 
@@ -53,7 +53,7 @@ const routes: Routes = [
     ]
   },
   { path: 'student', component: StudentComponent, canActivate: [StudentAutorisatieGuard] },
-  { path: 'docent', component: DocentComponent, canActivate: [DocentAutorisatieGuard],
+   { path: 'docent', component: DocentComponent, canActivate: [DocentAutorisatieGuard],
     children: [
       { path: '', redirectTo: 'docent', pathMatch: 'full'},
       { path: '', component: DocentHomeComponent, pathMatch: 'full'},
@@ -73,6 +73,7 @@ const routes: Routes = [
       },
     ]
   },
+  { path: 'recruiter', component: RecruiterComponent, canActivate: [RecruiterAutorisatieGuard] },
   { path: 'profiel', component: ProfielComponent, canActivate: [GebruikerAutorisatieGuard],
     children: [
       { path: '', redirectTo: 'profiel-info', pathMatch: 'full' },
@@ -87,7 +88,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {
-
- 
+export class AppRoutingModule { 
 }
