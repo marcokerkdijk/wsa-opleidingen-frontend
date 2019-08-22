@@ -1,9 +1,9 @@
 <div class="container-fluid" id="Filter_Gebruiker">
     <div class="row">
         <div>
-            <button id="openToevoegModal" (click)="openToevoegModal('traject-toevoegen-modal')">Toevoegen</button>
+            <button id="openToevoegModal" (click)="openToevoegModal('traject-toevoegen-modal')">Traject toevoegen</button>
         </div>
-        <table class='table table-bordered col-lg-12'>
+        <table class='table borderless col-lg-12'>
             <thead id="table-bottom">
                 <tr>
                     <th id="thNaam">Traject</th>
@@ -13,14 +13,23 @@
             </thead>
             <tbody >
                 <tr *ngFor="let Traject of alleTrajecten"  >
-                    <td  id="tdTraject{{Traject.id}}"  >{{Traject.naam}}</td>
+                    <td id="tdTraject{{Traject.id}}">{{Traject.naam}}</td>
                     <td id="tdZichtbaar{{Traject.id}}">
                         <div *ngIf="Traject.zichtbaar; else elseBlock">Ja</div>
                         <ng-template #elseBlock>Nee</ng-template>
                     </td>
-                    <td ><a id="pencil" (click)="clickWijzigModal('traject-modal', Traject.id)"><i class='fa fa-pencil'
+                    <td class="text-center align-middle"><a id="pencil" (click)="clickWijzigModal('traject-modal', Traject.id)"><i class='fa fa-pencil'
                                 id="tdWijzig{{Traject.id}}"></i></a></td>
-                    <button routerLink="../admin-beheer-trajectfasen/{{Traject.id}}" routerLinkActive="active">Traject fasen</button>
+                    <td>
+                        <button routerLink="../admin-beheer-trajectfasen/{{Traject.id}}" routerLinkActive="active">
+                            Beheer fasen
+                        </button>
+                    </td>
+                    <td>
+                        <button routerLink="../admin-beheer-trajectgebruikers/{{Traject.id}}" routerLinkActive="active">
+                            Koppel gebruikers
+                        </button>
+                    </td>
                 </tr>
             </tbody>
         </table>
