@@ -46,12 +46,18 @@ import { ProfielComponent } from './profiel/profiel.component';
 import { ProfielInfoComponent } from './profiel/profiel-info/profiel-info.component';
 import { TrajectFaseModalComponent } from './admin/admin-beheer-trajectfasen/traject-fase-modal/traject-fase-modal.component';
 import { RecruiterComponent } from './recruiter/recruiter.component';
+<<<<<<< HEAD
 import { RecruiterHomeComponent } from './recruiter/recruiter-home/recruiter-home.component';
+=======
+>>>>>>> f375d24067c1ab5be4d687bc7421401d1cf75333
 import { OpdrachtAanmaakComponent } from './docent/docent-opdrachten/opdracht-aanmaak/opdracht-aanmaak.component';
 import { GebruikerKoppelModalComponent } from './admin/gebruikers-koppelen-trajecten/gebruiker-koppel-modal/gebruiker-koppel-modal.component';
 import { AdminBeheerTrajectgebruikersComponent } from './admin/admin-beheer-trajectgebruikers/admin-beheer-trajectgebruikers.component';
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f375d24067c1ab5be4d687bc7421401d1cf75333
 export function jwtOptionsFactory(tokenService: TokenService) {
   return {
     tokenGetter: () => {
