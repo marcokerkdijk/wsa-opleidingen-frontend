@@ -6,6 +6,8 @@ import { Router } from '@angular/router';
 import { DataserviceService } from 'src/app/services/dataservice.service';
 import { SelectieFase } from 'src/app/Objecten/selectieFase';
 import { OpleidingsFase } from 'src/app/Objecten/opleidingsfase';
+import { TekstobjectserviceService } from 'src/app/services/tekstobjectservice.service';
+import { TekstObject } from 'src/app/Objecten/tekst-object';
 
 @Component({
   selector: 'wsa-home-trajecten',
@@ -13,6 +15,9 @@ import { OpleidingsFase } from 'src/app/Objecten/opleidingsfase';
   styleUrls: ['./home-trajecten.component.scss']
 })
 export class HomeTrajectenComponent implements OnInit {
+  tekstId: Number = 1;
+  tekstObject: TekstObject = new TekstObject();
+
   traject: Traject = new Traject();
   zichtbaarTrajecten: Traject[] = new Array;
   private api: string = environment.apiUrl;
@@ -22,10 +27,15 @@ export class HomeTrajectenComponent implements OnInit {
      "https://www.workingspirit.nl/assets/Uploads/HeaderAfbeeldingen/HH-60257639.jpg"
     ]
 
-  constructor(private dataService: DataserviceService, private trajectService: TrajectService,private router: Router) { }
+  constructor(
+    private dataService: DataserviceService, 
+    private trajectService: TrajectService,
+    private tekstObjectService: TekstobjectserviceService,
+    private router: Router) { }
 
   ngOnInit() {
     this.getTrajecten();
+    // this.getWelkomstTekst(this.tekstId);
   }
 
   getTrajecten(): void {
@@ -37,5 +47,9 @@ export class HomeTrajectenComponent implements OnInit {
     this.traject = traject;
     this.dataService.setTraject(traject);
     this.router.navigateByUrl("home/home-trajecten-informatie");
+  }
+
+  getWelkomstTekst(tekstId){
+    this.tekstObjectService.geefTekstobjectPerId(tekstId).subscribe(tekstObject => this.tekstObject = tekstObject);
   }
 }
