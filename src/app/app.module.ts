@@ -35,8 +35,6 @@ import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
 import { OpleidingsFaseTabelComponent } from './admin/admin-beheer-trajectfasen/opleidings-fase-tabel/opleidings-fase-tabel.component';
 import { BeheerSelectiefaseComponent } from './admin/admin-beheer-trajectfasen/beheer-selectiefase/beheer-selectiefase.component';
 import { BeheerOpleidingsfaseComponent } from './admin/admin-beheer-trajectfasen/beheer-opleidingsfase/beheer-opleidingsfase.component';
-import { GebruikersKoppelenTrajectenComponent } from './admin/gebruikers-koppelen-trajecten/gebruikers-koppelen-trajecten.component';
-import { GebruikerKoppelTabelComponent } from './admin/gebruikers-koppelen-trajecten/gebruiker-koppel-tabel/gebruiker-koppel-tabel.component';
 import { DocentOpdrachtenComponent } from './docent/docent-opdrachten/docent-opdrachten.component';
 import { DocentLesstofComponent } from './docent/docent-lesstof/docent-lesstof.component';
 import { DocentTrajectComponent } from './docent/docent-traject/docent-traject.component';
@@ -46,7 +44,6 @@ import { ProfielComponent } from './profiel/profiel.component';
 import { ProfielInfoComponent } from './profiel/profiel-info/profiel-info.component';
 import { TrajectFaseModalComponent } from './admin/admin-beheer-trajectfasen/traject-fase-modal/traject-fase-modal.component';
 import { OpdrachtAanmaakComponent } from './docent/docent-opdrachten/opdracht-aanmaak/opdracht-aanmaak.component';
-import { GebruikerKoppelModalComponent } from './admin/gebruikers-koppelen-trajecten/gebruiker-koppel-modal/gebruiker-koppel-modal.component';
 import { AdminBeheerTrajectgebruikersComponent } from './admin/admin-beheer-trajectgebruikers/admin-beheer-trajectgebruikers.component';
 
 
@@ -93,8 +90,6 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     OpleidingsFaseTabelComponent,
     BeheerSelectiefaseComponent,
     BeheerOpleidingsfaseComponent,
-    GebruikersKoppelenTrajectenComponent,
-    GebruikerKoppelTabelComponent,
     DocentOpdrachtenComponent,
     DocentLesstofComponent,
     DocentTrajectComponent,
@@ -104,7 +99,6 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     ProfielInfoComponent,
     TrajectFaseModalComponent,
     OpdrachtAanmaakComponent,
-    GebruikerKoppelModalComponent,
     AdminBeheerTrajectgebruikersComponent,
   ],
   imports: [

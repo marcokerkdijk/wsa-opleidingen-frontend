@@ -31,7 +31,7 @@ export class GebruikersService {
   }
 
   gebruikerOpvragenRol(rolGebruiker): Observable<any> {
-    return this.http.get<Gebruiker>(`${this.api}/haalGebruikerOpRol/` + rolGebruiker);
+    return this.http.get<Gebruiker[]>(`${this.api}/haalGebruikerOpRol/` + rolGebruiker);
   }
 
   haalDocentOpMetTraject(traject_id): Observable<any> {

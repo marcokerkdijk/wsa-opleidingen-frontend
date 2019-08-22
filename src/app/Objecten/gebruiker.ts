@@ -12,4 +12,5 @@ export class Gebruiker {
   actief: boolean;
   trajecten:Traject[];
   gekoppeld:boolean;
+  aanTraject: boolean;
 }
