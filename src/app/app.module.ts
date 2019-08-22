@@ -46,6 +46,7 @@ import { ProfielComponent } from './profiel/profiel.component';
 import { ProfielInfoComponent } from './profiel/profiel-info/profiel-info.component';
 import { TrajectFaseModalComponent } from './admin/admin-beheer-trajectfasen/traject-fase-modal/traject-fase-modal.component';
 import { RecruiterComponent } from './recruiter/recruiter.component';
+import { RecruiterHomeComponent } from './recruiter/recruiter-home/recruiter-home.component';
 
 export function jwtOptionsFactory(tokenService: TokenService) {
   return {
@@ -101,6 +102,7 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     ProfielInfoComponent,
     TrajectFaseModalComponent,
     RecruiterComponent,
+    RecruiterHomeComponent,
   ],
   imports: [
     BrowserModule,
