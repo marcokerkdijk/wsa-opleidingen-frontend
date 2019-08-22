@@ -20,6 +20,8 @@ import { DocentLesstofComponent } from './docent/docent-lesstof/docent-lesstof.c
 import { DocentOpdrachtenComponent } from './docent/docent-opdrachten/docent-opdrachten.component';
 import { DocentTrajectComponent } from './docent/docent-traject/docent-traject.component';
 import { DocentHomeComponent } from './docent/docent-home/docent-home.component';
+import { RecruiterComponent } from "./recruiter/recruiter.component";
+import { RecruiterAutorisatieGuard } from './guards/recruiter-autorisatie.guard';
 import { ProfielComponent } from './profiel/profiel.component';
 import { ProfielInfoComponent } from './profiel/profiel-info/profiel-info.component';
 import { GebruikerAutorisatieGuard } from './guards/gebruiker-autorisatie.guard';
@@ -28,7 +30,8 @@ import { InstallatiehulpComponent } from './student/installatiehulp/installatieh
 import { NotitiesComponent } from './student/notities/notities.component';
 import { MijnGegevensComponent } from './student/mijn-gegevens/mijn-gegevens.component';
 
-
+import { OpdrachtAanmaakComponent } from './docent/docent-opdrachten/opdracht-aanmaak/opdracht-aanmaak.component';
+import { AdminBeheerTrajectgebruikersComponent } from './admin/admin-beheer-trajectgebruikers/admin-beheer-trajectgebruikers.component';
 
 const routes: Routes = [
 
@@ -50,6 +53,8 @@ const routes: Routes = [
       { path: "admin-beheer-gebruikers", component: AdminBeheerGebruikersComponent },
       { path: '', redirectTo: 'admin', pathMatch: 'full' },
       { path: "admin-beheer-trajectfasen/:id", component: AdminBeheerTrajectfasenComponent},
+      { path: '', redirectTo: 'admin', pathMatch: 'full' },
+      { path: "admin-beheer-trajectgebruikers/:id", component: AdminBeheerTrajectgebruikersComponent},
     ]
   },
   { path: 'student', component: StudentComponent, canActivate: [StudentAutorisatieGuard],
@@ -76,12 +81,17 @@ const routes: Routes = [
           { path: '', redirectTo: 'docent', pathMatch: 'full'},
           { path: "docent-lesstof", component: DocentLesstofComponent },
           { path: '', redirectTo: 'docent', pathMatch: 'full'},
-          { path: "docent-opdrachten", component: DocentOpdrachtenComponent },
-          { path: '', redirectTo: 'docent', pathMatch: 'full'},
+          { path: "docent-opdrachten", component: DocentOpdrachtenComponent,
+            children: [
+              { path: "opdracht-aanmaak", component: OpdrachtAanmaakComponent },
+              { path: '', redirectTo: 'docent-opdrachten', pathMatch: 'full' },
+            ] 
+          },
         ]
       },
     ]
   },
+  { path: 'recruiter', component: RecruiterComponent, canActivate: [RecruiterAutorisatieGuard] },
   { path: 'profiel', component: ProfielComponent, canActivate: [GebruikerAutorisatieGuard],
     children: [
       { path: '', redirectTo: 'profiel-info', pathMatch: 'full' },
@@ -96,7 +106,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {
-
- 
+export class AppRoutingModule { 
 }

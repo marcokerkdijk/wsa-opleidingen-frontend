@@ -21,6 +21,9 @@
                     <a class="nav-link" *ngIf="rol === 'student'" (click)="navigeerNaar('student');" id="Studentpagina">
                         Student
                     </a>
+                    <a class="nav-link" *ngIf="rol === 'recruiter'" (click)="navigeerNaar('recruiter');" id="Recruiterpagina">
+                        Recruiter
+                    </a>
                 </li>
                 <li class="nav-item" id="TerugButton">
                     <a class="nav-link" (click)="terug();" id="TerugKnop">

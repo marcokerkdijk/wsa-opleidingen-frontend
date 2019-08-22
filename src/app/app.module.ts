@@ -49,7 +49,11 @@ import { OpdrachtenComponent } from './student/opdrachten/opdrachten.component';
 import { InstallatiehulpComponent } from './student/installatiehulp/installatiehulp.component';
 import { NotitiesComponent } from './student/notities/notities.component';
 import { MijnGegevensComponent } from './student/mijn-gegevens/mijn-gegevens.component';
-
+import { RecruiterComponent } from './recruiter/recruiter.component';
+import { RecruiterHomeComponent } from './recruiter/recruiter-home/recruiter-home.component';
+import { OpdrachtAanmaakComponent } from './docent/docent-opdrachten/opdracht-aanmaak/opdracht-aanmaak.component';
+import { GebruikerKoppelModalComponent } from './admin/gebruikers-koppelen-trajecten/gebruiker-koppel-modal/gebruiker-koppel-modal.component';
+import { AdminBeheerTrajectgebruikersComponent } from './admin/admin-beheer-trajectgebruikers/admin-beheer-trajectgebruikers.component';
 
 
 export function jwtOptionsFactory(tokenService: TokenService) {
@@ -109,6 +113,11 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     InstallatiehulpComponent,
     NotitiesComponent,
     MijnGegevensComponent,
+    RecruiterComponent,
+    RecruiterHomeComponent,
+    OpdrachtAanmaakComponent,
+    GebruikerKoppelModalComponent,
+    AdminBeheerTrajectgebruikersComponent,
   ],
   imports: [
     BrowserModule,
