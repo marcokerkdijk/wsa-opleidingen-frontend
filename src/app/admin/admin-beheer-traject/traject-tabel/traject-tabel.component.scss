@@ -1,26 +1,5 @@
-.container-fluid {
-    padding-left: 8%;
-    padding-right: 8%;
-}
-
 .row{
     padding-top: 5%;
-}
-
-#h5{
-    letter-spacing: 1px;
-    color: #808285;
-    font-size: 26px;
-    font-weight: normal;
-    line-height: 32px;
-}
-
-#h6{
-    letter-spacing: 1px;
-    color: #808285;
-    font-size: 26px;
-    font-weight: normal;
-    line-height: 32px;
 }
 
 p {
@@ -28,6 +7,10 @@ p {
     font-size: 14px;
     line-height: 24px;
     color:  #808285;
+}
+
+.borderless td, .borderless th, .borderless tr, .borderless thead, .borderless {
+    border-color: transparent !important;
 }
 
 #pencil,#sorteerPijlRol, #sorteerPijlVoornaam,

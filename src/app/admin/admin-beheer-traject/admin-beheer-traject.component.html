@@ -6,11 +6,9 @@
             </div>
             <div class="col-sm-6">
             </div>
-            <div>
-                <wsa-traject-tabel></wsa-traject-tabel>
-            </div>
-            <div>
-            </div>
+
+            <wsa-traject-tabel></wsa-traject-tabel>
+
         </div>
     </div>
 </div>
@@ -72,26 +70,24 @@
                     id="veldKorteOmschrijvingToevoegen"></textarea>
             </div>
         </div>
-            <div class="col-sm-12">
-                <div>Lange omschrijving:</div>
-                <div>
-                    <textarea [(ngModel)]="traject.omschrijving" class="form-control" rows="3"
-                        id="veldOmschrijvingToevoegen"></textarea>
-                </div>
-            </div>
-            <div class="col-sm-12">
-                <div>Zichtbaar:</div>
-                <div>
-                    <input [(ngModel)]="traject.zichtbaar" type="checkbox" id="checkbox" value="true" />
-                </div>
+        <div class="col-sm-12">
+            <div>Lange omschrijving:</div>
+            <div>
+                <textarea [(ngModel)]="traject.omschrijving" class="form-control" rows="3"
+                    id="veldOmschrijvingToevoegen"></textarea>
             </div>
         </div>
-        <div class="row">
-            <div class="col-sm-12">
-                <button id="trajectToevoegen" (click)="createTraject(traject)">Toevoegen</button>
-                <button id='trajectSluitModal' (click)="closeModal('traject-toevoeg-modal');">Annuleren</button>
+        <div class="col-sm-12">
+            <div>Zichtbaar:</div>
+            <div>
+                <input [(ngModel)]="traject.zichtbaar" type="checkbox" id="checkbox" value="true" />
             </div>
         </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <button id="trajectToevoegen" (click)="createTraject(traject)">Toevoegen</button>
+            <button id='trajectSluitModal' (click)="closeModal('traject-toevoeg-modal');">Annuleren</button>
+        </div>
+    </div>
 </jw-modal>
-
-

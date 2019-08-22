@@ -45,7 +45,9 @@ import { NavbarPerrolComponent } from './navbar-perrol/navbar-perrol.component';
 import { ProfielComponent } from './profiel/profiel.component';
 import { ProfielInfoComponent } from './profiel/profiel-info/profiel-info.component';
 import { TrajectFaseModalComponent } from './admin/admin-beheer-trajectfasen/traject-fase-modal/traject-fase-modal.component';
-
+import { OpdrachtAanmaakComponent } from './docent/docent-opdrachten/opdracht-aanmaak/opdracht-aanmaak.component';
+import { GebruikerKoppelModalComponent } from './admin/gebruikers-koppelen-trajecten/gebruiker-koppel-modal/gebruiker-koppel-modal.component';
+import { AdminBeheerTrajectgebruikersComponent } from './admin/admin-beheer-trajectgebruikers/admin-beheer-trajectgebruikers.component';
 
 
 export function jwtOptionsFactory(tokenService: TokenService) {
@@ -101,6 +103,9 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     ProfielComponent,
     ProfielInfoComponent,
     TrajectFaseModalComponent,
+    OpdrachtAanmaakComponent,
+    GebruikerKoppelModalComponent,
+    AdminBeheerTrajectgebruikersComponent,
   ],
   imports: [
     BrowserModule,
