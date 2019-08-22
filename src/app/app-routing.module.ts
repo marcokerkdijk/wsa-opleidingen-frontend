@@ -23,6 +23,10 @@ import { DocentHomeComponent } from './docent/docent-home/docent-home.component'
 import { ProfielComponent } from './profiel/profiel.component';
 import { ProfielInfoComponent } from './profiel/profiel-info/profiel-info.component';
 import { GebruikerAutorisatieGuard } from './guards/gebruiker-autorisatie.guard';
+import { OpdrachtenComponent } from './student/opdrachten/opdrachten.component';
+import { InstallatiehulpComponent } from './student/installatiehulp/installatiehulp.component';
+import { NotitiesComponent } from './student/notities/notities.component';
+import { MijnGegevensComponent } from './student/mijn-gegevens/mijn-gegevens.component';
 
 
 
@@ -46,11 +50,22 @@ const routes: Routes = [
       { path: "admin-beheer-gebruikers", component: AdminBeheerGebruikersComponent },
       { path: '', redirectTo: 'admin', pathMatch: 'full' },
       { path: "admin-beheer-trajectfasen/:id", component: AdminBeheerTrajectfasenComponent},
-
-
     ]
   },
-  { path: 'student', component: StudentComponent, canActivate: [StudentAutorisatieGuard] },
+  { path: 'student', component: StudentComponent, canActivate: [StudentAutorisatieGuard],
+    children: [
+      // {path: '', redirectTo: 'student', pathMatch: 'full'},
+      // {path: '', component: StudentComponent, pathMatch: 'full'},
+      {path: "opdrachten", component: OpdrachtenComponent},
+      {path: '', redirectTo: 'student', pathMatch: 'full'},
+      {path: "installatiehulp", component: InstallatiehulpComponent},
+      {path: '', redirectTo: 'student', pathMatch: 'full'},
+      {path: "notities", component: NotitiesComponent},
+      {path: '', redirectTo: 'student', pathMatch: 'full'},
+      {path: "mijn-gegevens", component: MijnGegevensComponent},
+    ]
+  },
+  
   { path: 'docent', component: DocentComponent, canActivate: [DocentAutorisatieGuard],
     children: [
       { path: '', redirectTo: 'docent', pathMatch: 'full'},

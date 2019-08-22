@@ -1,17 +1,52 @@
 <wsa-navbar-perrol></wsa-navbar-perrol>
 
-<div class="row">
-    <div class="container-fluid">
-        <div class="row">
-            <div id=h6 class="col-sm-6">
-                Welkom student!
+<div class="container-fluid">
+    <div class="row">
+
+    </div>
+    <div class="row">
+        <div id=h6 class="col-sm-6">
+            Welkom student!
+        </div>
+        <div class="col-sm-6">
+            <p>
+                Welkom {{gebruiker.displaynaam}} op de academy. Gebruik het dashboard hieronder om te navigeren tussen
+                de verschillende pagina's.
+            </p>
+        </div>
+    </div>
+
+
+    <!-- Hier begint het dashboard voor de student -->
+    <div class="row">
+        <div class="col-sm-6">
+            <div id="afbeelding">
+                <div id="Installatiehulp"> </div>
+                <div>Installatiehulp </div>
             </div>
-            <div class="col-sm-6">
-                <p>
-                    Welkom {{gebruiker.displaynaam}} op de academy.
-                </p>
+        </div>
+        <div class="col-sm-6">
+            <a routerLink="./opdrachten" routerLinkActive="active">
+                <div id="afbeelding">
+                    <div id="Opdrachten"></div>
+                    <div>Opdrachten</div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div id="afbeelding">
+                <div id="Notities"></div>
+                <div>Notities</div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div id="afbeelding">
+                <div id="MijnProfiel"></div>
+                <div>Mijn Profiel</div>
             </div>
         </div>
     </div>
 </div>
-<router-outlet></router-outlet>

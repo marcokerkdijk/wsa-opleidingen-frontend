@@ -28,3 +28,37 @@ p {
     line-height: 24px;
     color:  #808285;
 }
+#afbeelding{
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-left: 117px;
+    padding-right: 117px;
+}
+#Opdrachten{
+    background-image: url(src/assets/Images/Opdrachten.png);
+    height: 225px;
+    width: 225px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#Installatiehulp {
+    background-image: url(src/assets/Images/Installatiehulp.png);
+    height: 225px;
+    width: 225px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#Notities {
+    background-image: url(src/assets/Images/Notities2.png);
+    height: 225px;
+    width: 225px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#MijnProfiel {
+    background-image: url(src/assets/Images/Profiel3.png);
+    height: 225px;
+    width: 225px;
+    background-repeat: no-repeat;
+    background-position: center;
+}

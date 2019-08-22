@@ -45,6 +45,10 @@ import { NavbarPerrolComponent } from './navbar-perrol/navbar-perrol.component';
 import { ProfielComponent } from './profiel/profiel.component';
 import { ProfielInfoComponent } from './profiel/profiel-info/profiel-info.component';
 import { TrajectFaseModalComponent } from './admin/admin-beheer-trajectfasen/traject-fase-modal/traject-fase-modal.component';
+import { OpdrachtenComponent } from './student/opdrachten/opdrachten.component';
+import { InstallatiehulpComponent } from './student/installatiehulp/installatiehulp.component';
+import { NotitiesComponent } from './student/notities/notities.component';
+import { MijnGegevensComponent } from './student/mijn-gegevens/mijn-gegevens.component';
 
 
 
@@ -101,6 +105,10 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     ProfielComponent,
     ProfielInfoComponent,
     TrajectFaseModalComponent,
+    OpdrachtenComponent,
+    InstallatiehulpComponent,
+    NotitiesComponent,
+    MijnGegevensComponent,
   ],
   imports: [
     BrowserModule,
