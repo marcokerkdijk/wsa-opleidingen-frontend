@@ -44,13 +44,17 @@ import { ProfielComponent } from './profiel/profiel.component';
 import { ProfielInfoComponent } from './profiel/profiel-info/profiel-info.component';
 import { TrajectFaseModalComponent } from './admin/admin-beheer-trajectfasen/traject-fase-modal/traject-fase-modal.component';
 import { OpdrachtenComponent } from './student/opdrachten/opdrachten.component';
-import { InstallatiehulpComponent } from './student/installatiehulp/installatiehulp.component';
 import { NotitiesComponent } from './student/notities/notities.component';
 import { MijnGegevensComponent } from './student/mijn-gegevens/mijn-gegevens.component';
 import { RecruiterComponent } from './recruiter/recruiter.component';
 import { RecruiterHomeComponent } from './recruiter/recruiter-home/recruiter-home.component';
 import { OpdrachtAanmaakComponent } from './docent/docent-opdrachten/opdracht-aanmaak/opdracht-aanmaak.component';
 import { AdminBeheerTrajectgebruikersComponent } from './admin/admin-beheer-trajectgebruikers/admin-beheer-trajectgebruikers.component';
+import { StudentHomeComponent } from './student/student-home/student-home.component';
+import { VoorbereidingComponent } from './student/voorbereiding/voorbereiding.component';
+import { GettingstartedComponent } from './student/gettingstarted/gettingstarted.component';
+import { InstallatiehulpComponent } from './student/installatiehulp/installatiehulp.component';
+import { OpdrachtComponent } from './student/opdracht/opdracht.component';
 
 
 export function jwtOptionsFactory(tokenService: TokenService) {
@@ -105,13 +109,17 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     ProfielInfoComponent,
     TrajectFaseModalComponent,
     OpdrachtenComponent,
-    InstallatiehulpComponent,
     NotitiesComponent,
     MijnGegevensComponent,
     RecruiterComponent,
     RecruiterHomeComponent,
     OpdrachtAanmaakComponent,
     AdminBeheerTrajectgebruikersComponent,
+    StudentHomeComponent,
+    VoorbereidingComponent,
+    GettingstartedComponent,
+    InstallatiehulpComponent,
+    OpdrachtComponent,
   ],
   imports: [
     BrowserModule,
