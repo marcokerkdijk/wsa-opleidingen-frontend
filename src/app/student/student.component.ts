@@ -24,8 +24,4 @@ export class StudentComponent implements OnInit {
     this.gebruiker = this.authenticatieService.haalTokenOp();
   }
 
-  NavigeerNaarOpdrachten(){
-    this.router.navigateByUrl("student/opdrachten")
-  }
-
 }
