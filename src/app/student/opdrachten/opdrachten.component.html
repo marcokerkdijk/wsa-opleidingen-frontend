@@ -1,7 +1,31 @@
-
-<div class="container-fluid">
+<div class="container-fluid" id="mainbody">
     <div class="row">
-        <p>Tekst test</p>
+        <br><br>
+    </div>
+    <div class="row">
+        <div class="col-sm-3 titel">
+            Opdrachten
+        </div>
+        <div class="col-sm-9">
+            Gebruik het Code Upload form om je code in te leveren.
+            Als het niet lukt om een opdracht te maken, lever dan (maximaal) 3 pogingen in zodat we kunnen zien hoe je de opdracht
+            aangepakt hebt en daar tips over kunnen geven.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3 subtitel">
+        </div>
+        <div class="col-sm-9">
+            <table class='table col-lg-8'>
+                <tbody>
+                    <tr *ngFor="let opdracht of opdrachten" routerLink="../opdracht/{{opdracht.id}}">
+                        <td>
+                            <button >{{opdracht.id}} : {{opdracht.titel}}</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
-
+<br>
