@@ -81,12 +81,10 @@ const routes: Routes = [
           { path: '', redirectTo: 'docent', pathMatch: 'full'},
           { path: "docent-lesstof", component: DocentLesstofComponent },
           { path: '', redirectTo: 'docent', pathMatch: 'full'},
-          { path: "docent-opdrachten", component: DocentOpdrachtenComponent,
-            children: [
-              { path: "opdracht-aanmaak", component: OpdrachtAanmaakComponent },
-              { path: '', redirectTo: 'docent-opdrachten', pathMatch: 'full' },
-            ] 
-          },
+          { path: "docent-opdrachten", component: DocentOpdrachtenComponent },
+          { path: '', redirectTo: 'docent', pathMatch: 'full'},
+          { path: "opdracht-aanmaak/:id", component: OpdrachtAanmaakComponent },
+          { path: '', redirectTo: 'docent-traject', pathMatch: 'full'},
         ]
       },
     ]
