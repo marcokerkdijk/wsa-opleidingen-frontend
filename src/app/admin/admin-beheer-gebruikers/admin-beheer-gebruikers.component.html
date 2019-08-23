@@ -37,7 +37,12 @@
         <div class="col-sm-11">
             <div>Rol:</div>
             <div>
-                <input [(ngModel)]="gebruikerInvoer.rol" type="text" class="form-control" />
+                <select name="rol" [(ngModel)]="gebruikerInvoer.rol" class="form-control" required>
+                    <option value="ADMIN">Admin</option>
+                    <option value="DOCENT">Docent</option>
+                    <option value="RECRUITER">Recruiter</option>
+                    <option value="STUDENT">Student</option>
+                </select>
             </div>
         </div>
     </div>
@@ -105,7 +110,12 @@
         <div class="col-sm-11">
             <div>Rol:</div>
             <div>
-                <input [(ngModel)]="gebruikerInvoer.rol" type="text" class="form-control" required />
+                <select name="rol" [(ngModel)]="gebruikerInvoer.rol" class="form-control" required>
+                    <option value="ADMIN">Admin</option>
+                    <option value="DOCENT">Docent</option>
+                    <option value="RECRUITER">Recruiter</option>
+                    <option value="STUDENT">Student</option>
+                </select>
             </div>
         </div>
     </div>
