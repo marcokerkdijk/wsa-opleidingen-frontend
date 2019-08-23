@@ -3,4 +3,5 @@ export class Opdracht {
     titel: string;
     omschrijving: string;
     zichtbaar: boolean;
+    codevoorbeeld: string;
 }

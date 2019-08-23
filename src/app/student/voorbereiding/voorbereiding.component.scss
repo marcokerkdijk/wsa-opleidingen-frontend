@@ -21,20 +21,7 @@ p {
     line-height: 24px;
     color:  #808285;
 }
-#afbeelding{
-    background-repeat: no-repeat;
-    background-position: center;
-}
-#Opdrachten{
-    background-image: url(src/assets/Images/Opdrachten.png);
-    height: 212px;
-    width: 212px;
-    background-repeat: no-repeat;
-    background-position: center;
-    align-self: center;
-    cursor: pointer;
-}
-#Voorbereiding {
+#Gettingstarted {
     background-image: url(src/assets/Images/Installatiehulp.png);
     height: 212px;
     width: 212px;
@@ -43,17 +30,8 @@ p {
     align-self: center;
     cursor: pointer;
 }
-#Notities {
-    background-image: url(src/assets/Images/Notities2.png);
-    height: 212px;
-    width: 212px;
-    background-repeat: no-repeat;
-    background-position: center;
-    align-self: center;
-    cursor: pointer;
-}
-#MijnProfiel {
-    background-image: url(src/assets/Images/Profiel3.png);
+#Installatiehulp{
+    background-image: url(src/assets/Images/Opdrachten.png);
     height: 212px;
     width: 212px;
     background-repeat: no-repeat;
