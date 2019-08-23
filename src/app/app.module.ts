@@ -51,6 +51,7 @@ import { RecruiterComponent } from './recruiter/recruiter.component';
 import { RecruiterHomeComponent } from './recruiter/recruiter-home/recruiter-home.component';
 import { OpdrachtAanmaakComponent } from './docent/docent-opdrachten/opdracht-aanmaak/opdracht-aanmaak.component';
 import { AdminBeheerTrajectgebruikersComponent } from './admin/admin-beheer-trajectgebruikers/admin-beheer-trajectgebruikers.component';
+import { StudentHomeComponent } from './student/student-home/student-home.component';
 
 
 export function jwtOptionsFactory(tokenService: TokenService) {
@@ -112,6 +113,7 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     RecruiterHomeComponent,
     OpdrachtAanmaakComponent,
     AdminBeheerTrajectgebruikersComponent,
+    StudentHomeComponent,
   ],
   imports: [
     BrowserModule,

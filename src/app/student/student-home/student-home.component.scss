@@ -1,0 +1,63 @@
+.container-fluid {
+    padding-left: 19%;
+    padding-right: 19%;
+}
+.row{
+    padding-top: 5%;
+}
+
+#h6{
+    letter-spacing: 1px;
+    color: #808285;
+    font-size: 26px;
+    font-weight: normal;
+    line-height: 32px;
+    text-align: center;
+}
+
+p {
+    font-family: "Working Spirit";
+    font-size: 14px;
+    line-height: 24px;
+    color:  #808285;
+}
+#afbeelding{
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#Opdrachten{
+    background-image: url(src/assets/Images/Opdrachten.png);
+    height: 212px;
+    width: 212px;
+    background-repeat: no-repeat;
+    background-position: center;
+    align-self: center;
+    cursor: pointer;
+}
+#Installatiehulp {
+    background-image: url(src/assets/Images/Installatiehulp.png);
+    height: 212px;
+    width: 212px;
+    background-repeat: no-repeat;
+    background-position: center;
+    align-self: center;
+    cursor: pointer;
+}
+#Notities {
+    background-image: url(src/assets/Images/Notities2.png);
+    height: 212px;
+    width: 212px;
+    background-repeat: no-repeat;
+    background-position: center;
+    align-self: center;
+    cursor: pointer;
+}
+#MijnProfiel {
+    background-image: url(src/assets/Images/Profiel3.png);
+    height: 212px;
+    width: 212px;
+    background-repeat: no-repeat;
+    background-position: center;
+    align-self: center;
+    cursor: pointer;
+}

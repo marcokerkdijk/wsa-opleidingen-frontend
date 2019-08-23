@@ -32,6 +32,7 @@ import { MijnGegevensComponent } from './student/mijn-gegevens/mijn-gegevens.com
 
 import { OpdrachtAanmaakComponent } from './docent/docent-opdrachten/opdracht-aanmaak/opdracht-aanmaak.component';
 import { AdminBeheerTrajectgebruikersComponent } from './admin/admin-beheer-trajectgebruikers/admin-beheer-trajectgebruikers.component';
+import { StudentHomeComponent } from './student/student-home/student-home.component';
 
 const routes: Routes = [
 
@@ -59,14 +60,14 @@ const routes: Routes = [
   },
   { path: 'student', component: StudentComponent, canActivate: [StudentAutorisatieGuard],
     children: [
-      // {path: '', redirectTo: 'student', pathMatch: 'full'},
-      // {path: '', component: StudentComponent, pathMatch: 'full'},
+      {path: '', redirectTo: 'student-home', pathMatch: 'full'},
+      {path: '', component: StudentHomeComponent, pathMatch: 'full'},
       {path: "opdrachten", component: OpdrachtenComponent},
-      {path: '', redirectTo: 'student', pathMatch: 'full'},
+      {path: '', redirectTo: 'student-home', pathMatch: 'full'},
       {path: "installatiehulp", component: InstallatiehulpComponent},
-      {path: '', redirectTo: 'student', pathMatch: 'full'},
+      {path: '', redirectTo: 'student-home', pathMatch: 'full'},
       {path: "notities", component: NotitiesComponent},
-      {path: '', redirectTo: 'student', pathMatch: 'full'},
+      {path: '', redirectTo: 'student-home', pathMatch: 'full'},
       {path: "mijn-gegevens", component: MijnGegevensComponent},
     ]
   },
