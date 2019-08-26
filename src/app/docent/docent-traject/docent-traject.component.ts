@@ -18,5 +18,6 @@ export class DocentTrajectComponent implements OnInit {
 
   laadTraject(): void {
     this.traject = this.dataservice.getTraject();
+    this.dataservice.setTraject_id(this.traject.id);
   }
 }
