@@ -22,6 +22,12 @@ import { DocentTrajectComponent } from './docent/docent-traject/docent-traject.c
 import { DocentHomeComponent } from './docent/docent-home/docent-home.component';
 import { RecruiterComponent } from "./recruiter/recruiter.component";
 import { RecruiterAutorisatieGuard } from './guards/recruiter-autorisatie.guard';
+import { RecruiterHomeComponent } from './recruiter/recruiter-home/recruiter-home.component';
+import { RecruiterBeheerTrajectComponent } from './recruiter/recruiter-beheer-traject/recruiter-beheer-traject.component';
+import { RecruiterBeheerTrajectfaseComponent } from './recruiter/recruiter-beheer-traject/recruiter-beheer-trajectfase/recruiter-beheer-trajectfase.component';
+import { RecruiterBeheerSelectiefaseTabelComponent } from './recruiter/recruiter-beheer-traject/recruiter-beheer-trajectfase/recruiter-beheer-selectiefase-tabel/recruiter-beheer-selectiefase-tabel.component'
+import { RecruiterBeheerTrajectgebruikersComponent } from './recruiter/recruiter-beheer-trajectgebruikers/recruiter-beheer-trajectgebruikers.component';
+
 import { ProfielComponent } from './profiel/profiel.component';
 import { ProfielInfoComponent } from './profiel/profiel-info/profiel-info.component';
 import { GebruikerAutorisatieGuard } from './guards/gebruiker-autorisatie.guard';
@@ -80,7 +86,6 @@ const routes: Routes = [
       {path: "opdracht/:id", component: OpdrachtComponent},
     ]
   },
-  
   { path: 'docent', component: DocentComponent, canActivate: [DocentAutorisatieGuard],
     children: [
       { path: '', redirectTo: 'docent', pathMatch: 'full'},
@@ -99,7 +104,17 @@ const routes: Routes = [
       },
     ]
   },
-  { path: 'recruiter', component: RecruiterComponent, canActivate: [RecruiterAutorisatieGuard] },
+  { path: 'recruiter', component: RecruiterComponent, canActivate: [RecruiterAutorisatieGuard],
+    children: [
+      { path: '', redirectTo: 'recruiter', pathMatch: 'full'},
+      { path: '', component: RecruiterHomeComponent, pathMatch: 'full'},
+      { path: "recruiter-beheer-traject", component: RecruiterBeheerTrajectComponent},
+      { path: '', redirectTo: 'recruiter', pathMatch: 'full' },
+      { path: "recruiter-beheer-trajectfase/:id", component: RecruiterBeheerTrajectfaseComponent},
+      { path: '', redirectTo: 'recruiter', pathMatch: 'full' },
+      { path: "recruiter-beheer-trajectgebruikers/:id", component: RecruiterBeheerTrajectgebruikersComponent},
+    ]
+  },
   { path: 'profiel', component: ProfielComponent, canActivate: [GebruikerAutorisatieGuard],
     children: [
       { path: '', redirectTo: 'profiel-info', pathMatch: 'full' },
