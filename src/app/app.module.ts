@@ -54,7 +54,16 @@ import { RecruiterHomeComponent } from './recruiter/recruiter-home/recruiter-hom
 import { OpdrachtAanmaakComponent } from './docent/docent-opdrachten/opdracht-aanmaak/opdracht-aanmaak.component';
 import { GebruikerKoppelModalComponent } from './admin/gebruikers-koppelen-trajecten/gebruiker-koppel-modal/gebruiker-koppel-modal.component';
 import { AdminBeheerTrajectgebruikersComponent } from './admin/admin-beheer-trajectgebruikers/admin-beheer-trajectgebruikers.component';
-
+import { RecruiterBeheerTrajectComponent } from './recruiter/recruiter-beheer-traject/recruiter-beheer-traject.component';
+import { RecruiterBeheerTrajectTabelComponent } from './recruiter/recruiter-beheer-traject/recruiter-beheer-traject-tabel/recruiter-beheer-traject-tabel.component';
+import { RecruiterBeheerTrajectModalComponent } from './recruiter/recruiter-beheer-traject/recruiter-beheer-traject-modal/recruiter-beheer-traject-modal.component';
+import { RecruiterBeheerTrajectfaseComponent } from './recruiter/recruiter-beheer-traject/recruiter-beheer-trajectfase/recruiter-beheer-trajectfase.component';
+import { RecruiterBeheerOpleidingsfaseComponent } from './recruiter/recruiter-beheer-traject/recruiter-beheer-trajectfase/recruiter-beheer-opleidingsfase/recruiter-beheer-opleidingsfase.component';
+import { RecruiterBeheerSelectiefaseComponent } from './recruiter/recruiter-beheer-traject/recruiter-beheer-trajectfase/recruiter-beheer-selectiefase/recruiter-beheer-selectiefase.component';
+import { RecruiterBeheerOpleidingsfaseTabelComponent } from './recruiter/recruiter-beheer-traject/recruiter-beheer-trajectfase/recruiter-beheer-opleidingsfase-tabel/recruiter-beheer-opleidingsfase-tabel.component';
+import { RecruiterBeheerSelectiefaseTabelComponent } from './recruiter/recruiter-beheer-traject/recruiter-beheer-trajectfase/recruiter-beheer-selectiefase-tabel/recruiter-beheer-selectiefase-tabel.component';
+import { RecruiterBeheerTrajectfaseModalComponent } from './recruiter/recruiter-beheer-traject/recruiter-beheer-trajectfase/recruiter-beheer-trajectfase-modal/recruiter-beheer-trajectfase-modal.component';
+import { RecruiterBeheerTrajectgebruikersComponent } from './recruiter/recruiter-beheer-trajectgebruikers/recruiter-beheer-trajectgebruikers.component';
 
 export function jwtOptionsFactory(tokenService: TokenService) {
   return {
@@ -118,6 +127,16 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     OpdrachtAanmaakComponent,
     GebruikerKoppelModalComponent,
     AdminBeheerTrajectgebruikersComponent,
+    RecruiterBeheerTrajectComponent,
+    RecruiterBeheerTrajectTabelComponent,
+    RecruiterBeheerTrajectModalComponent,
+    RecruiterBeheerTrajectfaseComponent,
+    RecruiterBeheerOpleidingsfaseComponent,
+    RecruiterBeheerSelectiefaseComponent,
+    RecruiterBeheerOpleidingsfaseTabelComponent,
+    RecruiterBeheerSelectiefaseTabelComponent,
+    RecruiterBeheerTrajectfaseModalComponent,
+    RecruiterBeheerTrajectgebruikersComponent,
   ],
   imports: [
     BrowserModule,
