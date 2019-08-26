@@ -1,4 +1,5 @@
 #mainbody {
+    padding-top: 5%;
     background: #ffffff;
     color: #808080;
     font-size: 15px;
@@ -10,16 +11,51 @@
 .row {
     padding-top: 2.5%;
 }
-.titel {
+.titel{
     font-size: 32px;
     color: #808080;
     font-weight: 400;
     text-align: right;
 }
+.titel2 {
+    font-size: 32px;
+    color: #808080;
+    font-weight: 400;
+    text-align: left;
+}
+.subTitel{
+    font-size: 32px;
+    color: #808080;
+    font-weight: 400;
+    text-align: left;
+}
+table {
+    white-space: normal;
+    line-height: normal;
+    font-weight: normal;
+    font-size: medium;
+    font-style: normal;
+    text-align: start;
+    font-variant: normal;
+    border-block-color: white;
+}
+td{
+    border-right-style: solid;
+    padding: 5pt 5pt 5pt 5pt;
+    border-top-width: 1pt;
+    border-right-width: 1pt;
+    vertical-align: top;
+    border-left-width: 1pt;
+    border-top-style: solid;
+    border-left-style: solid;
+    border-bottom-width: 1pt;
+    width: 459.5pt;
+    border-bottom-style: solid;
+}
 button{
     border-color: #00aeef;
     color: #00aeef;
-    width: 100%;
+    width: 30%;
     text-transform: uppercase;
     border: 1px solid  #00aeef;
     background-color: transparent;

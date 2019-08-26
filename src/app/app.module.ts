@@ -35,8 +35,6 @@ import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
 import { OpleidingsFaseTabelComponent } from './admin/admin-beheer-trajectfasen/opleidings-fase-tabel/opleidings-fase-tabel.component';
 import { BeheerSelectiefaseComponent } from './admin/admin-beheer-trajectfasen/beheer-selectiefase/beheer-selectiefase.component';
 import { BeheerOpleidingsfaseComponent } from './admin/admin-beheer-trajectfasen/beheer-opleidingsfase/beheer-opleidingsfase.component';
-import { GebruikersKoppelenTrajectenComponent } from './admin/gebruikers-koppelen-trajecten/gebruikers-koppelen-trajecten.component';
-import { GebruikerKoppelTabelComponent } from './admin/gebruikers-koppelen-trajecten/gebruiker-koppel-tabel/gebruiker-koppel-tabel.component';
 import { DocentOpdrachtenComponent } from './docent/docent-opdrachten/docent-opdrachten.component';
 import { DocentLesstofComponent } from './docent/docent-lesstof/docent-lesstof.component';
 import { DocentTrajectComponent } from './docent/docent-traject/docent-traject.component';
@@ -46,13 +44,11 @@ import { ProfielComponent } from './profiel/profiel.component';
 import { ProfielInfoComponent } from './profiel/profiel-info/profiel-info.component';
 import { TrajectFaseModalComponent } from './admin/admin-beheer-trajectfasen/traject-fase-modal/traject-fase-modal.component';
 import { OpdrachtenComponent } from './student/opdrachten/opdrachten.component';
-import { InstallatiehulpComponent } from './student/installatiehulp/installatiehulp.component';
 import { NotitiesComponent } from './student/notities/notities.component';
 import { MijnGegevensComponent } from './student/mijn-gegevens/mijn-gegevens.component';
 import { RecruiterComponent } from './recruiter/recruiter.component';
 import { RecruiterHomeComponent } from './recruiter/recruiter-home/recruiter-home.component';
 import { OpdrachtAanmaakComponent } from './docent/docent-opdrachten/opdracht-aanmaak/opdracht-aanmaak.component';
-import { GebruikerKoppelModalComponent } from './admin/gebruikers-koppelen-trajecten/gebruiker-koppel-modal/gebruiker-koppel-modal.component';
 import { AdminBeheerTrajectgebruikersComponent } from './admin/admin-beheer-trajectgebruikers/admin-beheer-trajectgebruikers.component';
 import { RecruiterBeheerTrajectComponent } from './recruiter/recruiter-beheer-traject/recruiter-beheer-traject.component';
 import { RecruiterBeheerTrajectTabelComponent } from './recruiter/recruiter-beheer-traject/recruiter-beheer-traject-tabel/recruiter-beheer-traject-tabel.component';
@@ -64,6 +60,11 @@ import { RecruiterBeheerOpleidingsfaseTabelComponent } from './recruiter/recruit
 import { RecruiterBeheerSelectiefaseTabelComponent } from './recruiter/recruiter-beheer-traject/recruiter-beheer-trajectfase/recruiter-beheer-selectiefase-tabel/recruiter-beheer-selectiefase-tabel.component';
 import { RecruiterBeheerTrajectfaseModalComponent } from './recruiter/recruiter-beheer-traject/recruiter-beheer-trajectfase/recruiter-beheer-trajectfase-modal/recruiter-beheer-trajectfase-modal.component';
 import { RecruiterBeheerTrajectgebruikersComponent } from './recruiter/recruiter-beheer-trajectgebruikers/recruiter-beheer-trajectgebruikers.component';
+import { StudentHomeComponent } from './student/student-home/student-home.component';
+import { VoorbereidingComponent } from './student/voorbereiding/voorbereiding.component';
+import { GettingstartedComponent } from './student/gettingstarted/gettingstarted.component';
+import { InstallatiehulpComponent } from './student/installatiehulp/installatiehulp.component';
+import { OpdrachtComponent } from './student/opdracht/opdracht.component';
 
 export function jwtOptionsFactory(tokenService: TokenService) {
   return {
@@ -108,8 +109,6 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     OpleidingsFaseTabelComponent,
     BeheerSelectiefaseComponent,
     BeheerOpleidingsfaseComponent,
-    GebruikersKoppelenTrajectenComponent,
-    GebruikerKoppelTabelComponent,
     DocentOpdrachtenComponent,
     DocentLesstofComponent,
     DocentTrajectComponent,
@@ -119,13 +118,11 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     ProfielInfoComponent,
     TrajectFaseModalComponent,
     OpdrachtenComponent,
-    InstallatiehulpComponent,
     NotitiesComponent,
     MijnGegevensComponent,
     RecruiterComponent,
     RecruiterHomeComponent,
     OpdrachtAanmaakComponent,
-    GebruikerKoppelModalComponent,
     AdminBeheerTrajectgebruikersComponent,
     RecruiterBeheerTrajectComponent,
     RecruiterBeheerTrajectTabelComponent,
@@ -137,6 +134,11 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     RecruiterBeheerSelectiefaseTabelComponent,
     RecruiterBeheerTrajectfaseModalComponent,
     RecruiterBeheerTrajectgebruikersComponent,
+    StudentHomeComponent,
+    VoorbereidingComponent,
+    GettingstartedComponent,
+    InstallatiehulpComponent,
+    OpdrachtComponent,
   ],
   imports: [
     BrowserModule,

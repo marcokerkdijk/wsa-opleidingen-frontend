@@ -1,0 +1,55 @@
+<div class="container-fluid" id="mainbody">
+    <div class="row">
+        <div class="col-sm-3 titel">
+            <div>
+                <pre>Opdracht: {{opdracht.id}}</pre>
+            </div>
+        </div>
+        <div class="col-sm-9 subTitel">
+            <div>
+                <pre>{{opdracht.titel}}</pre>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div>Opdracht beschrijving:</div>
+            <div>{{opdracht.omschrijving}}</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <table>
+                <td>
+                    <pre>{{opdracht.codevoorbeeld}}</pre>
+                </td>
+            </table>
+        </div>
+    </div>
+
+    <div class="row">
+
+    </div>
+
+    <div class="row">
+        <div class="col titel2">
+            Lever je code in via onderstaand formulier
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-11">
+            <form action="#codeupload">
+                <div class="form-group" id="codeupload">
+                    <td class="form-control" id="opdrachtDetails">Opdracht ID: {{opdracht.id}}, Opdracht:
+                        {{opdracht.titel}}</td>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" rows="10" id="code" [(ngModel)]="textareaContent"
+                        placeholder="Voer code in" name="code" required></textarea>
+                </div>
+                <button type="submit" (click)="verstuurOpdracht()" class="btn btn-primary"
+                    id="submitbutton">Verzenden</button>
+            </form>
+        </div>
+    </div>
+</div>

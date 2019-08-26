@@ -1,25 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { JwtToken, AutenticatieService } from '../services/autenticatie.service';
+import { AutenticatieService, JwtToken } from 'src/app/services/autenticatie.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'wsa-student',
-  templateUrl: './student.component.html',
-  styleUrls: ['./student.component.scss']
+  selector: 'wsa-student-home',
+  templateUrl: './student-home.component.html',
+  styleUrls: ['./student-home.component.scss']
 })
-export class StudentComponent implements OnInit {
+export class StudentHomeComponent implements OnInit {
   gebruiker:JwtToken;
-
+  
   constructor(
     private authenticatieService:AutenticatieService,
-    private router: Router,
-
-    ) { }
+    private router: Router,) { }
 
   ngOnInit() {
     this.haalGebruikerOp();
   }
-
+  
   haalGebruikerOp():void {
     this.gebruiker = this.authenticatieService.haalTokenOp();
   }
