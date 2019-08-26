@@ -8,8 +8,8 @@
         </div>
         <div class="col-sm-6">
             <p>
-                Welkom {{gebruiker.displaynaam}} op de academy. Gebruik het dashboard hieronder om te navigeren tussen
-                de verschillende pagina's.
+                LORUM IPSUM -- Welkom {{gebruiker.displaynaam}} op de academy. Gebruik het dashboard hieronder om te navigeren tussen
+                de verschillende pagina's. LORUM IPSUM
             </p>
         </div>
     </div>
@@ -38,10 +38,50 @@
 
         <div class="col-sm-3">
             <div id="afbeelding" [routerLink]="'mijn-gegevens'">
-                <div id="MijnProfiel"></div>
-                <div id=h6>Mijn Profiel</div>
+                <div id="MijnOverzicht"></div>
+                <div id=h6>Mijn Overzicht</div>
             </div>
         </div>
     </div>
 
+    <!-- Hier wordt de trajectinformatie van het traject getoont waar de student aan gekoppeld is -->
+    <div *ngFor="let traject of trajecten">
+        <div class="row">
+            <div id=h6 class="col-sm-4">
+                {{traject.naam}}
+            </div>
+            <div class="col-sm-8">
+                <p>
+                 {{traject.omschrijving}}
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+                <div class="col-sm-12" id="Agenda">
+                    <table class="table table-bordered">
+                        <thead id="tabel-headers">
+                            <tr>
+                                <th>Datum</th>
+                                <th>Tijdstip</th>
+                                <th>Informatie</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let SelectieFase of traject.selectieFases">
+                                <td>{{SelectieFase.startdatum}}</td>
+                                <td>{{SelectieFase.tijdstip}}</td>
+                                <td>{{SelectieFase.naam}}</td>
+                            </tr>
+                            <tr *ngFor="let OpleidingsFase of traject.opleidingsFases">
+                                <td>{{OpleidingsFase.startdatum}}</td>
+                                <td>{{OpleidingsFase.tijdstip}}</td>
+                                <td>{{OpleidingsFase.naam}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+    </div>
 </div>
