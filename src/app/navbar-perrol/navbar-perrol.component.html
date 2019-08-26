@@ -21,7 +21,8 @@
                     <a class="nav-link" *ngIf="rol === 'student'" (click)="navigeerNaar('student');" id="Studentpagina">
                         Student
                     </a>
-                    <a class="nav-link" *ngIf="rol === 'recruiter'" (click)="navigeerNaar('recruiter');" id="Recruiterpagina">
+                    <a class="nav-link" *ngIf="rol === 'recruiter'" (click)="navigeerNaar('recruiter');"
+                        id="Recruiterpagina">
                         Recruiter
                     </a>
                 </li>
@@ -45,19 +46,29 @@
                     <div id='hamburger'></div>
                     <div id='hamburger'></div>
                     <div class="dropdown-content">
+                        <a class="nav-link hamburgerButton" (click)="navigeerNaar('home');" id="HomeHamburger">
+                            Home
+                        </a>
+                        <a class="nav-link hamburgerButton" *ngIf="rol === 'admin'" (click)="navigeerNaar('admin');" id="AdminpaginaHamburger">
+                            Admin
+                        </a>
+                        <a class="nav-link hamburgerButton" *ngIf="rol === 'docent'" (click)="navigeerNaar('docent');" id="DocentpaginaHamburger">
+                            Docent
+                        </a>
+                        <a class="nav-link hamburgerButton" *ngIf="rol === 'student'" (click)="navigeerNaar('student');" id="StudentpaginaHamburger">
+                            Student
+                        </a>
+                        <a class="nav-link hamburgerButton" *ngIf="rol === 'recruiter'" (click)="navigeerNaar('recruiter');" id="RecruiterpaginaHamburger">
+                            Recruiter
+                        </a>
+                        <a class="nav-link hamburgerButton" (click)="terug();" id="TerugKnopHamburger">
+                            Terug
+                        </a>
+                        <a class="nav-link hamburgerButton" (click)="logout()" id="LogoutButtonHamburger">
+                            Logout
+                        </a>
                         <a id="ProfielHamburger" class="nav-link hamburgerButton" (click)="navigeerNaar('profiel');">
                             Profiel
-                        </a>
-                        <a id="DetacheringHamburger" class="nav-link hamburgerButton"
-                            href="https://www.workingspirit.nl/detachering/">
-                            Detachering
-                        </a>
-                        <a id="AcademyHamburger" class="nav-link hamburgerButton"
-                            href="https://www.workingspirit.nl/academy/">
-                            Academy
-                        </a>
-                        <a class="nav-link" (click)="logout()" id="LogoutButtonHamburger">
-                            Logout
                         </a>
                     </div>
                 </div>
