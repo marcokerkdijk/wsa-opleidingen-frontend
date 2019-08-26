@@ -42,8 +42,8 @@
                             <ng-template #elseBlock>Nee</ng-template>
                         </td>
                         <td>
-                            <div class='fa fa-pencil' id="pencil"
-                                (click)="openWijzigModal('gebruikers-modal',Gebruiker.id)"></div>
+                            <div id="pencil"><div class='fa fa-pencil' id="pencil{{Gebruiker.id}}"
+                                (click)="openWijzigModal('gebruikers-modal',Gebruiker.id)"></div></div>
                         </td>
                     </tr>
                 </tbody>
