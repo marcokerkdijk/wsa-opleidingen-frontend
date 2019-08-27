@@ -23,7 +23,6 @@ export class OpdrachtAanmaakComponent implements OnInit {
 
   opdrachtOpslaan(opdracht: Opdracht): void {
     opdracht.type = OpdrachtType.OPDRACHT;
-    console.log(this.traject_id);
     this.opdrachtservice.maakOpdrachtAan(this.traject_id, opdracht)
         .subscribe(response => this.router.navigateByUrl('/docent/docent-traject').then(success => {
           this.router.navigateByUrl('/docent/docent-traject/docent-opdrachten');
