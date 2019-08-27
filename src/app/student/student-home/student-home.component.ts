@@ -42,5 +42,4 @@ export class StudentHomeComponent implements OnInit {
     .subscribe(trajecten => this.trajecten = trajecten);
  
   }
-
 }
