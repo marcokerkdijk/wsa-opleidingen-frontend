@@ -65,6 +65,7 @@ import { VoorbereidingComponent } from './student/voorbereiding/voorbereiding.co
 import { GettingstartedComponent } from './student/gettingstarted/gettingstarted.component';
 import { InstallatiehulpComponent } from './student/installatiehulp/installatiehulp.component';
 import { OpdrachtComponent } from './student/opdracht/opdracht.component';
+import { OpdrachtWijzigComponent } from './docent/docent-opdrachten/opdracht-wijzig/opdracht-wijzig.component';
 import { NavbarPerRolComponent } from './navbar-per-rol/navbar-per-rol.component';
 
 export function jwtOptionsFactory(tokenService: TokenService) {
@@ -140,6 +141,7 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     GettingstartedComponent,
     InstallatiehulpComponent,
     OpdrachtComponent,
+    OpdrachtWijzigComponent,
     NavbarPerRolComponent,
   ],
   imports: [
