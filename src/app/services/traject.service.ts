@@ -51,4 +51,5 @@ export class TrajectService {
     console.log("Hij komt echt in de service terecht.")
     return this.http.put<DTOGebruikerID>(`${this.api}/voegGebruikersOfVerwijderVanTraject/` +trajectId, lijstGebruikers);
   }
+
 }

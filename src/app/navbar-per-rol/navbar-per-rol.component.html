@@ -1,0 +1,112 @@
+<nav class="navbar navbar-expand-sm fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="https://www.workingspirit.nl/themes/workingspirit/images/beeldmerk_blue.png" alt="logo"
+                id="navbarBrand">
+        </a>
+        <!-- Navbar voor STUDENT -->
+        <nav *ngIf="rol === 'student'">
+            <ul class="navbar-nav">
+                <li class="nav-item" id="HomeButton">
+                    <a class="nav-link" (click)="navigeerNaar('student');" id="Studentpagina">
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item" id="VoorbereidingButton">
+                    <a class="nav-link" (click)="navigeerNaar('student/voorbereiding');" id="Voorbereiding">
+                        Voorbereiding
+                    </a>
+                </li>
+                <li class="nav-item" id="OpdrachtenButton">
+                    <a class="nav-link" (click)="navigeerNaar('student/opdrachten');" id="Opdrachten">
+                        Opdrachten
+                    </a>
+                </li>
+                <li class="nav-item" id="NotitiesButton">
+                    <a class="nav-link" (click)="navigeerNaar('student/notities');" id="Notities">
+                        Notities
+                    </a>
+                </li>
+                <li class="nav-item" id="MijnOverzichtButton">
+                    <a class="nav-link" (click)="navigeerNaar('student/mijn-gegevens');" id="Mijn-Gegevens">
+                        Mijn-Overzicht
+                    </a>
+                </li>
+                <li class="nav-item" id="LogButton">
+                    <a class="nav-link" (click)="logout()" id="LogoutButton">
+                        Logout
+                    </a>
+                </li>
+                <li class="nav-item" id="ProfielButton">
+                    <a class="nav-link" id="ProfielKnop" (click)="navigeerNaar('profiel');">
+                        <i class="fa fa-user-circle" aria-hidden="true" id="user-icon"></i>
+                    </a>
+                </li>
+            </ul>
+            <div class="dropdown" id="nav-hamburger">
+                <div id='hamburger'></div>
+                <div id='hamburger'></div>
+                <div id='hamburger'></div>
+                <div class="dropdown-content">
+                    <a class="nav-link hamburgerButton" (click)="navigeerNaar('student');" id="StudentpaginaHamburger">
+                        Home
+                    </a>
+                    <a class="nav-link hamburgerButton" (click)="navigeerNaar('student/voorbereiding');"
+                        id="VoorbereidingHamburger">
+                        Voorbereiding
+                    </a>
+                    <a class="nav-link hamburgerButton" (click)="navigeerNaar('student/opdrachten');" id="OpdrachtenHamburger">
+                        Opdrachten
+                    </a>
+                    <a class="nav-link hamburgerButton" (click)="navigeerNaar('student/notities');" id="NotitiesHamburger">
+                        Notities
+                    </a>
+                    <a class="nav-link hamburgerButton" (click)="navigeerNaar('student/mijn-gegevens');"
+                        id="Mijn-GegevensHamburger">
+                        Mijn-Gegevens
+                    </a>
+                    <a class="nav-link hamburgerButton" (click)="logout()" id="LogoutButtonHamburger">
+                        Logout
+                    </a>
+                    <a id="ProfielHamburger" class="nav-link hamburgerButton" (click)="navigeerNaar('profiel');">
+                        Profiel
+                    </a>
+                </div>
+            </div>
+        </nav>
+        <!-- Navbar voor DOCENT -->
+        <nav *ngIf="rol === 'docent'">
+            <ul class="navbar-nav">
+                <li class="nav-item" id="HomeButton">
+                    <a class="nav-link" (click)="navigeerNaar('home');" id="Home">
+                        Home
+                    </a>
+                </li>
+            </ul>
+
+        </nav>
+        <!-- Navbar voor RECRUITER -->
+        <nav *ngIf="rol === 'recruiter'">
+            <ul class="navbar-nav">
+                <li class="nav-item" id="HomeButton">
+                    <a class="nav-link" (click)="navigeerNaar('home');" id="Home">
+                        Home
+                    </a>
+                </li>
+            </ul>
+
+        </nav>
+        <!-- Navbar voor ADMIN -->
+        <nav *ngIf="rol === 'admin'">
+            <ul class="navbar-nav">
+                <li class="nav-item" id="HomeButton">
+                    <a class="nav-link" (click)="navigeerNaar('home');" id="Home">
+                        Home
+                    </a>
+                </li>
+            </ul>
+
+        </nav>
+
+    </div>
+</nav>

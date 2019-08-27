@@ -7,12 +7,11 @@
             <div class="col-sm-6">
             </div>
 
-            <wsa-traject-tabel></wsa-traject-tabel>
+            <wsa-recruiter-beheer-traject-tabel></wsa-recruiter-beheer-traject-tabel>
 
         </div>
     </div>
 </div>
-
 
 <jw-modal class="jw-modal2" id="traject-modal">
     <h1>Wijzig traject</h1>
@@ -34,7 +33,7 @@
             <div>Lange omschrijving:</div>
             <div>
                 <textarea [(ngModel)]="wijzigTraject.omschrijving" class="form-control" rows="3"
-                    id="veldOmschrijvingTrajectModal"></textarea>
+                    id="veldOmschrijvingTrajectModal "></textarea>
             </div>
         </div>
         <div class="col-sm-12">
@@ -52,7 +51,6 @@
         </div>
     </div>
 </jw-modal>
-
 
 <jw-modal class="jw-modal2" id="traject-toevoegen-modal">
     <h1>Voeg een traject toe</h1>
@@ -87,7 +85,7 @@
     <div class="row">
         <div class="col-sm-12">
             <button id="trajectToevoegen" (click)="createTraject(traject)">Toevoegen</button>
-            <button id='trajectSluitModal' (click)="closeModal('traject-toevoegen-modal');">Annuleren</button>
+            <button id="trajectSluitModal" (click)="closeModal('traject-toevoegen-modal');">Annuleren</button>
         </div>
     </div>
 </jw-modal>

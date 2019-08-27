@@ -1,0 +1,39 @@
+<div class="row">
+    <div class="container-fluid">
+        <div class="row">
+            <div id=h6 class="col-sm-3">
+                {{traject.naam}}
+            </div>
+            <div class="col-sm-6">
+                <p>
+                    Koppel hier studenten en docenten aan een traject.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            Tabel met studenten.
+            <table class="table table-bordered col-lg-12">
+                <thead id="table-bottom">
+                    <tr>
+                        <th id="Voornaam">Voornaam</th>
+                        <th id="Achternaam">Achternaam</th>
+                        <th id="Koppelen">Koppelen</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let Student of studentenlijst">
+                        <td id="Voornaam{{Student.id}}">{{Student.voornaam}}</td>
+                        <td id="Achternaam{{Student.id}}">{{Student.tussenvoegsel}} {{Student.achternaam}}</td>
+                        <td id="Vink{{Student.id}}">
+                            <input type="checkbox" [(ngModel)]="Student.gekoppeld" (click)="wijzigStudentArray(Student, Student.gekoppeld);"/>
+                            {{Student.gekoppeld}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="row">
+            Tabel met docenten.
+        </div>
+    </div>
+</div>
