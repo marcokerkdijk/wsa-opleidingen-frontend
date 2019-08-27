@@ -11,11 +11,9 @@ import { environment } from 'src/environments/environment';
 export class OpleidingsFaseService {
   private api: string = environment.apiUrl
 
-
   constructor(private http:HttpClient) { }
 
   haalOpleidingsFaseOpId(id: number): Observable<any> {
-    console.log(id);
     return this.http.get<OpleidingsFase>(`${this.api}/GeefOpleidingsFaseOpId/` + id);
   }
   

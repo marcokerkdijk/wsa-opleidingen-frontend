@@ -15,9 +15,9 @@
             <table class="table table-bordered col-lg-12">
                 <thead id="table-bottom">
                     <tr>
-                        <th id="Voornaam">Voornaam</th>
-                        <th id="Achternaam">Achternaam</th>
-                        <th id="Koppelen">Koppelen</th>
+                        <th id="VoornaamStudent">Voornaam</th>
+                        <th id="AchternaamStudent">Achternaam</th>
+                        <th id="KoppelenStudent">Koppelen</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -34,6 +34,25 @@
         </div>
         <div class="row">
             Tabel met docenten.
+            <table class="table table-bordered col-lg-12">
+                <thead id="table bottom">
+                    <tr>
+                        <th id="VoornaamDocent">Voornaam</th>
+                        <th id="AchternaamDocent">Achternaam</th>
+                        <th id="KoppelenDocent">Koppelen</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let Docent of docentenlijst">
+                        <td id="Voornaam{{Docent.id}}">{{Docent.voornaam}}</td>
+                        <td id="Achternaam{{Docent.id}}">{{Docent.tussenvoegsel}} {{Docent.achternaam}}</td>
+                        <td id="Vink{{Docent.id}}">
+                            <input type="checkbox" [(ngModel)]="Docent.aanTraject" (click)="wijzigDocentArray(Docent, Docent.aanTraject);"/>
+                            {{Docent.aanTraject}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>

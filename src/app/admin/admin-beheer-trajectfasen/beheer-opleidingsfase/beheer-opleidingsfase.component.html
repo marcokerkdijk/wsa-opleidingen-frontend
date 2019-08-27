@@ -1,7 +1,7 @@
 <wsa-opleidings-fase-tabel></wsa-opleidings-fase-tabel>
 
 <jw-modal class="jw-modal" id="opleidingsFase-wijzig-modal">
-    <h1>Wijzig hierinder de opleidingsfase</h1>
+    <h1>Wijzig hieronder de opleidingsfase</h1>
     <div class="row">
         <div class="col-sm-12">
             <div>Opleidingsfase naam:</div>
@@ -35,13 +35,12 @@
     <div class="row">
         <div class="col-sm-12">
             <button id="opleidingsFaseWijzigen"
-                (click)="wijzigOpleidingsFase(nieuweOpleiding, 'opleidingsFase-wijzig-modal')">Opslaan</button>
+                (click)="wijzigOpleidingsFase(opleidingsFase, 'opleidingsFase-wijzig-modal')">Opslaan</button>
             <button id='opleidingsFaseSluitWijzigModal'
                 (click)="closeModal('opleidingsFase-wijzig-modal');">Annuleren</button>
         </div>
     </div>
 </jw-modal>
-
 
 <jw-modal class="jw-modal" id="opleidingsFase-toevoegen-modal">
     <h1>Voeg een opleidingsfase toe</h1>

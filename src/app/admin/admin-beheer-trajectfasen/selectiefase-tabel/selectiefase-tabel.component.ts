@@ -23,8 +23,7 @@ export class SelectiefaseTabelComponent implements OnInit {
   }
 
   clickWijzigModal(id,selectieFaseId:number){
-    this.beheerSelectieFaseComponent.haalSelectieFase(selectieFaseId);
-    this.beheerSelectieFaseComponent.openModal(id, this.traject_id);
+    this.beheerSelectieFaseComponent.openModal(id, selectieFaseId);
   }
 
   openToevoegModalSelectieFase(id){
@@ -35,7 +34,6 @@ export class SelectiefaseTabelComponent implements OnInit {
     this.traject_id = this.adminBeheeTrajectfasenComponent.traject_id;
     this.getAlleSelectieFasen(this.adminBeheeTrajectfasenComponent.traject_id);
     return this.traject_id;
-
   }
 
   getAlleSelectieFasen(traject_id): void {
