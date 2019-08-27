@@ -3,11 +3,11 @@
 
     </div>
     <div class="row">
-        <div id=h6 class="col-sm-4">
+        <div id="h6" class="col-sm-4">
             Welkom student!
         </div>
         <div class="col-sm-8">
-            <p>
+            <p id="text">
                 LORUM IPSUM -- Welkom {{gebruiker.displaynaam}} op de academy. Gebruik het dashboard hieronder om te navigeren tussen
                 de verschillende pagina's. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eget erat sodales, condimentum quam et, feugiat felis. Cras malesuada convallis porta. Maecenas malesuada ipsum sit amet nulla finibus, quis pretium massa commodo. Etiam ornare diam nec neque sagittis pretium. Quisque accumsan ut lectus nec laoreet. Morbi eu vestibulum tortor. Nunc tincidunt efficitur luctus. Pellentesque varius accumsan fermentum. 
             </p>
@@ -47,11 +47,11 @@
     <!-- Hier wordt de trajectinformatie van het traject getoont waar de student aan gekoppeld is -->
     <div *ngFor="let traject of trajecten">
         <div class="row">
-            <div id=h6 class="col-sm-4">
+            <div id="h6" class="col-sm-4">
                 {{traject.naam}}
             </div>
             <div class="col-sm-8">
-                <p>
+                <p id="text">
                  {{traject.omschrijving}}
                 </p>
             </div>
