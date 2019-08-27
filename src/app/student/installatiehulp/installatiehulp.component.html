@@ -1,17 +1,16 @@
 <div class="container-fluid" id="mainbody">
-    <div class="row"></div>
     <div class="row">
-        <div class="col-sm-8 introTitle">
-            Java SE installatie instructies
-        </div>
+        <br><br>
     </div>
     <div>
         <div class="row">
-            <div class="col-sm-3 subIntroTitle">
+            <div class="col-sm-3 introTitle">
+                Installatiehulp
             </div>
             <div class="col-sm-8">
-                De officiële installatie instructies staan op deze <a id="clickWebsite"
-                    (click)="goToInstallInstructions()">webpagina</a>.
+                <p id="text">
+                    De officiële installatie instructies staan op deze <a id="clickWebsite"
+                        (click)="goToInstallInstructions()">webpagina</a>.</p>
                 <br>
             </div>
         </div>
@@ -21,51 +20,54 @@
             JDK downloaden
         </div>
         <div class="col-sm-8">
-            <b>JDK installeren:</b>
-            <br>
-            - <a id="clickWebsite" (click)="goToJDKDownload()">Download JDK</a>
-            <br>
-            - Voer het installatie bestand uit en volg de instructies
-            <br>
-            <br>
-            <b>Aanpassen van het PATH (of Path) bij SystemProperties/Systeemeigenschappen:</b>
-            <br>
-            - Druk op Windows toets + R
-            <br>
-            - In de tekst box die nu verschijnt type je in:
-            SystemPropertiesAdvanced
-            <br>
-            - Een nieuw window opent in de tab: Advanced / Geavanceerd
-            <br>
-            - Selecteer: Environment Variable / Omgevingsvariabelen
-            <br>
-            - In System Variables / Systeemvariabelen: selecteer de PATH variabele om te bewerken
-            <br>
-            - Voeg toe aan einde van de PATH variabele de locatie van de bin directory van de JDK, bv:
-            &nbsp;&nbsp;;C:\Program Files\Java\jdk1.8.0_66\bin<br>
-            &nbsp;&nbsp;<b>Let op:</b> de <b>;</b> dient als scheidingsteken met het bestaande PATH
-            <br>
-            <br>
-            <b>Installatie testen</b>
-            <br>
-            - Druk op Windows toets + R
-            <br>
-            - In de tekst box die nu verschijnt type je: cmd
-            <br>
-            - Een nieuw command window opent, type hierin: java -version
-            <br>
-            <br>
-            De output die je nu krijgt zal er als volgt uitzien (nummers verschillen afhankelijk van de geïnstalleerde
-            versie):
-            <br><br>
-            Java(TM) SE Runtime Environment (build 1.8.0_91-b14)
-            <br>
-            Java HotSpot(TM) 64-Bit Server VM (build 25.91-b14, mixed mode)
-            <br>
-            Indien de installatie niet correct is zie je als output:
-            <br>
-            java wordt niet herkend als een interne of externe opdracht, programma of batchbestand.
-            <br>
+            <p id="text">
+                <b>JDK installeren:</b>
+                <br>
+                - <a id="clickWebsite" (click)="goToJDKDownload()">Download JDK</a>
+                <br>
+                - Voer het installatie bestand uit en volg de instructies
+                <br>
+                <br>
+                <b>Aanpassen van het PATH (of Path) bij SystemProperties/Systeemeigenschappen:</b>
+                <br>
+                - Druk op Windows toets + R
+                <br>
+                - In de tekst box die nu verschijnt type je in:
+                SystemPropertiesAdvanced
+                <br>
+                - Een nieuw window opent in de tab: Advanced / Geavanceerd
+                <br>
+                - Selecteer: Environment Variable / Omgevingsvariabelen
+                <br>
+                - In System Variables / Systeemvariabelen: selecteer de PATH variabele om te bewerken
+                <br>
+                - Voeg toe aan einde van de PATH variabele de locatie van de bin directory van de JDK, bv:
+                &nbsp;&nbsp;;C:\Program Files\Java\jdk1.8.0_66\bin<br>
+                &nbsp;&nbsp;<b>Let op:</b> de <b>;</b> dient als scheidingsteken met het bestaande PATH
+                <br>
+                <br>
+                <b>Installatie testen</b>
+                <br>
+                - Druk op Windows toets + R
+                <br>
+                - In de tekst box die nu verschijnt type je: cmd
+                <br>
+                - Een nieuw command window opent, type hierin: java -version
+                <br>
+                <br>
+                De output die je nu krijgt zal er als volgt uitzien (nummers verschillen afhankelijk van de
+                geïnstalleerde
+                versie):
+                <br><br>
+                Java(TM) SE Runtime Environment (build 1.8.0_91-b14)
+                <br>
+                Java HotSpot(TM) 64-Bit Server VM (build 25.91-b14, mixed mode)
+                <br>
+                Indien de installatie niet correct is zie je als output:
+                <br>
+                java wordt niet herkend als een interne of externe opdracht, programma of batchbestand.
+                <br>
+            </p>
         </div>
     </div>
     <div class="row">
@@ -73,10 +75,12 @@
             Notepad++
         </div>
         <div class="col-sm-8">
-            <b>Download Notepad++</b>
-            <br>
-            Notepad++ is een handige editor die we gebruiken om code in te schrijven.<br>
-            Notepad++ vind je <a id="clickWebsite" (click)="goToNotepadWebsite()">hier</a>.
+            <p id="text">
+                <b>Download Notepad++</b>
+                <br>
+                Notepad++ is een handige editor die we gebruiken om code in te schrijven.<br>
+                Notepad++ vind je <a id="clickWebsite" (click)="goToNotepadWebsite()">hier</a>.
+            </p>
         </div>
     </div>
     <div class="row">
@@ -84,8 +88,10 @@
             Installatiehulp
         </div>
         <div class="col-sm-8">
-            Als het je zelf niet lukt om de software te installeren, dan ben je op de installatie ochtend
-            welkom. Bij die sessie gaan we de installatie klassikaal doornemen.
+            <p id="text">
+                Als het je zelf niet lukt om de software te installeren, dan ben je op de installatie ochtend
+                welkom. Bij die sessie gaan we de installatie klassikaal doornemen.
+            </p>
         </div>
     </div>
 </div>

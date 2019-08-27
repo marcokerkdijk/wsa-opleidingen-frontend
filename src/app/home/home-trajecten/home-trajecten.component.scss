@@ -37,6 +37,7 @@ p {
     background-position: center center;
     float: right;
     position: relative;
+    cursor: pointer;
 }
 .home-banner:hover .overlay {
     height: 100%;
@@ -51,6 +52,7 @@ p {
     width: 100%;
     height: 0;
     transition: .5s ease;
+    cursor: pointer;
   }
   .text {
     white-space: nowrap; 
