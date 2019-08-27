@@ -50,4 +50,5 @@ export class TrajectService {
   koppelTrajectAanGebruiker(lijstGebruikers:DTOGebruikerID[], trajectId:number){
     return this.http.put<DTOGebruikerID>(`${this.api}/voegGebruikersOfVerwijderVanTraject/` +trajectId, lijstGebruikers);
   }
+
 }

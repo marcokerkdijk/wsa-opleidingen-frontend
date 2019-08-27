@@ -12,10 +12,10 @@
     padding-top: 2.5%;
 }
 .introTitle {
-    font-size: 32px;
+    font-size: 24px;
     color: #808080;
     font-weight: 400;
-    text-align: center;
+    text-align: right;
 }
 .subIntroTitle{
     font-size: 24px;
@@ -28,4 +28,7 @@
 #clickWebsite:hover{
     cursor: pointer;
     color: #00aeef;
+}
+#text {
+    padding-top: 9px;
 }

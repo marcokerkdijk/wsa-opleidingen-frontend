@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Traject } from '../Objecten/traject';
+import { Opdracht } from '../Objecten/opdracht';
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +9,7 @@ import { Traject } from '../Objecten/traject';
 export class DataserviceService {
   public traject: Traject;
   public traject_id:number;
+  private opdracht: Opdracht;
 
   constructor() { }
 
@@ -25,5 +27,13 @@ export class DataserviceService {
 
   public getTraject_id(){
     return this.traject_id;
+  }
+
+  public setOpdracht(opdracht: Opdracht): void {
+    this.opdracht = opdracht;
+  }
+
+  public getOpdracht(): Opdracht {
+    return this.opdracht;
   }
 }

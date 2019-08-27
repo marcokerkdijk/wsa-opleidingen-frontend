@@ -12,9 +12,11 @@
     font-size: 26px;
     font-weight: normal;
     line-height: 32px;
-    text-align: center;
+    text-align: right;
 }
-
+#text {
+    padding-top: 8px;
+}
 p {
     font-family: "Working Spirit";
     font-size: 14px;
@@ -23,8 +25,10 @@ p {
 }
 #Gettingstarted {
     background-image: url(src/assets/Images/Installatiehulp.png);
-    height: 212px;
-    width: 212px;
+    height: 180px;
+    width: 180px;
+    margin-left: 16px;
+    border-radius: 40%;
     background-repeat: no-repeat;
     background-position: center;
     align-self: center;
@@ -32,10 +36,20 @@ p {
 }
 #Installatiehulp{
     background-image: url(src/assets/Images/Opdrachten.png);
-    height: 212px;
-    width: 212px;
+    height: 180px;
+    width: 180px;
+    margin-left: 16px;
+    border-radius: 40%;
     background-repeat: no-repeat;
     background-position: center;
     align-self: center;
     cursor: pointer;
+}
+#h5{
+    letter-spacing: 1px;
+    color: #808285;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 26px;
+    text-align: center;
 }

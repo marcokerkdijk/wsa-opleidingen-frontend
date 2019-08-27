@@ -21,8 +21,6 @@ p {
     margin-block-end: 1em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
-}
-p {
     font-size: 14px;
     line-height: 24px;
     margin-bottom: 20px;
@@ -37,43 +35,35 @@ p {
     background-position: center center;
     float: right;
     position: relative;
+    cursor: pointer;
 }
-.home-banner .caption {
-    height: 40%;
+.home-banner:hover .overlay {
+    height: 100%;
+}
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #008CBA;
+    overflow: hidden;
     width: 100%;
+    height: 0;
+    transition: .5s ease;
+    cursor: pointer;
+  }
+.text {
+    white-space: nowrap; 
+    color: white;
+    font-size: 20px;
     position: absolute;
     overflow: hidden;
-    padding: 25px 15px;
-    bottom: 0;
-    background-color: rgba(0, 174, 239, 0.7);
-    -webkit-transition: 500ms;
-    -o-transition: 500ms;
-    transition: 500ms;
-}
-.home-banner .caption .category {
-    color: white;
-    text-transform: uppercase;
-    font-size: 10px;
-    display: block;
-}
-.home-banner .caption h4 {
-    color: white;
-    font-size: 18px;
-    line-height: 20px;
-    text-align: center;
-    font-weight: bold;
-}
-.home-banner:hover .caption p {
-    opacity: 1;
-}
-.home-banner .caption p {
-    color: white;
-    text-align: center;
-    opacity: 0;
-    -webkit-transition: 500ms;
-    -o-transition: 500ms;
-    transition: 500ms;
-}
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    padding-top: 12px;
+  }
 #titel{
     letter-spacing: 1px;
     color: #808285;
@@ -82,11 +72,13 @@ p {
     line-height: 32px;
     text-align: right;
 }
-#mainText {
-    font-size: 16px;
-    line-height: 24px;
-    margin-bottom: 20px;
-    color: #808285
+#subTitel{
+    letter-spacing: 1px;
+    color: #808285;
+    font-size: 24px;
+    font-weight: normal;
+    line-height: 32px;
+
 }
 #table-bottom,
 th {
@@ -103,7 +95,6 @@ td {
     color: #696969;
     font-size: 15px;
     border: 1px solid;
-    // border-bottom-color: #00aeef;
     text-align: left;
 }
 #backgroundWSA {
@@ -114,7 +105,7 @@ td {
     background-repeat: no-repeat;
     background-position: center top;
 }
-h6{
+#h5{
     letter-spacing: 1px;
     color: white;
     font-size: 42px;
@@ -123,13 +114,3 @@ h6{
     text-align: center;
     margin-top: 195px;
 }
-// #trajectAfbeelding{
-//     width: 290px;
-//     height: 230px;
-//     margin-bottom: 40px;
-//     background-size: cover;
-//     background-repeat: no-repeat;
-//     background-position: center center;
-//     float: right;
-//     position: relative;
-// }

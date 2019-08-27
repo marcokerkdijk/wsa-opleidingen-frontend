@@ -3,45 +3,85 @@
 
     </div>
     <div class="row">
-        <div id=h6 class="col-sm-6">
+        <div id="h6" class="col-sm-4">
             Welkom student!
         </div>
-        <div class="col-sm-6">
-            <p>
-                Welkom {{gebruiker.displaynaam}} op de academy. Gebruik het dashboard hieronder om te navigeren tussen
-                de verschillende pagina's.
+        <div class="col-sm-8">
+            <p id="text">
+                LORUM IPSUM -- Welkom {{gebruiker.displaynaam}} op de academy. Gebruik het dashboard hieronder om te navigeren tussen
+                de verschillende pagina's. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eget erat sodales, condimentum quam et, feugiat felis. Cras malesuada convallis porta. Maecenas malesuada ipsum sit amet nulla finibus, quis pretium massa commodo. Etiam ornare diam nec neque sagittis pretium. Quisque accumsan ut lectus nec laoreet. Morbi eu vestibulum tortor. Nunc tincidunt efficitur luctus. Pellentesque varius accumsan fermentum. 
             </p>
         </div>
     </div>
     <!-- Hier begint het dashboard voor de student -->
     <div class="row">
         <div class="col-sm-3">
-            <div id="afbeelding" [routerLink]="'voorbereiding'">
+            <div  [routerLink]="'voorbereiding'">
                 <div id="Voorbereiding"> </div>
-                <div id=h6 >Voorbereiding</div>
+                <div id=h5 >Voorbereiding</div>
             </div>
         </div>
 
         <div class="col-sm-3">
-            <div id="afbeelding" [routerLink]="'opdrachten'">
+            <div  [routerLink]="'opdrachten'">
                 <div id="Opdrachten"></div>
-                <div id=h6>Opdrachten</div>
+                <div id=h5>Opdrachten</div>
             </div>
         </div>
 
         <div class="col-sm-3">
-            <div id="afbeelding" [routerLink]="'notities'">
+            <div  [routerLink]="'notities'">
                 <div id="Notities"></div>
-                <div id=h6>Notities</div>
+                <div id=h5>Notities</div>
             </div>
         </div>
 
         <div class="col-sm-3">
-            <div id="afbeelding" [routerLink]="'mijn-gegevens'">
-                <div id="MijnProfiel"></div>
-                <div id=h6>Mijn Profiel</div>
+            <div  [routerLink]="'mijn-gegevens'">
+                <div id="MijnOverzicht"></div>
+                <div id=h5>Mijn Overzicht</div>
             </div>
         </div>
     </div>
 
+    <!-- Hier wordt de trajectinformatie van het traject getoont waar de student aan gekoppeld is -->
+    <div *ngFor="let traject of trajecten">
+        <div class="row">
+            <div id="h6" class="col-sm-4">
+                {{traject.naam}}
+            </div>
+            <div class="col-sm-8">
+                <p id="text">
+                 {{traject.omschrijving}}
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+                <div class="col-sm-12" id="Agenda">
+                    <table class="table table-bordered">
+                        <thead id="tabel-headers">
+                            <tr>
+                                <th>Datum</th>
+                                <th>Tijdstip</th>
+                                <th>Informatie</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let SelectieFase of traject.selectieFases">
+                                <td>{{SelectieFase.startdatum}}</td>
+                                <td>{{SelectieFase.tijdstip}}</td>
+                                <td>{{SelectieFase.naam}}</td>
+                            </tr>
+                            <tr *ngFor="let OpleidingsFase of traject.opleidingsFases">
+                                <td>{{OpleidingsFase.startdatum}}</td>
+                                <td>{{OpleidingsFase.tijdstip}}</td>
+                                <td>{{OpleidingsFase.naam}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+    </div>
 </div>

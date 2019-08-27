@@ -41,6 +41,7 @@ import { VoorbereidingComponent } from './student/voorbereiding/voorbereiding.co
 import { GettingstartedComponent } from './student/gettingstarted/gettingstarted.component';
 import { InstallatiehulpComponent } from './student/installatiehulp/installatiehulp.component';
 import { OpdrachtComponent } from './student/opdracht/opdracht.component';
+import { OpdrachtWijzigComponent } from './docent/docent-opdrachten/opdracht-wijzig/opdracht-wijzig.component';
 
 
 const routes: Routes = [
@@ -99,6 +100,8 @@ const routes: Routes = [
           { path: "docent-opdrachten", component: DocentOpdrachtenComponent },
           { path: '', redirectTo: 'docent', pathMatch: 'full'},
           { path: "opdracht-aanmaak/:id", component: OpdrachtAanmaakComponent },
+          { path: '', redirectTo: 'docent-traject', pathMatch: 'full'},
+          { path: "opdracht-wijzig", component: OpdrachtWijzigComponent },
           { path: '', redirectTo: 'docent-traject', pathMatch: 'full'},
         ]
       },

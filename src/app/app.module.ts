@@ -20,7 +20,6 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ModalComponent } from './login-modal/modal.component';
 import { TrajectenComponent } from './trajecten/trajecten.component';
 import { AdminBeheerTrajectComponent } from './admin/admin-beheer-traject/admin-beheer-traject.component';
-import { HomeInformatieComponent } from './home/home-informatie/home-informatie.component';
 import { AdminBeheerGebruikersComponent } from './admin/admin-beheer-gebruikers/admin-beheer-gebruikers.component';
 import { TrajectModalComponent } from './admin/admin-beheer-traject/traject-modal/traject-modal.component';
 import { GebruikersModalComponent } from './admin/admin-beheer-gebruikers/gebruikers-modal/gebruikers-modal.component';
@@ -65,6 +64,8 @@ import { VoorbereidingComponent } from './student/voorbereiding/voorbereiding.co
 import { GettingstartedComponent } from './student/gettingstarted/gettingstarted.component';
 import { InstallatiehulpComponent } from './student/installatiehulp/installatiehulp.component';
 import { OpdrachtComponent } from './student/opdracht/opdracht.component';
+import { OpdrachtWijzigComponent } from './docent/docent-opdrachten/opdracht-wijzig/opdracht-wijzig.component';
+import { NavbarPerRolComponent } from './navbar-per-rol/navbar-per-rol.component';
 
 export function jwtOptionsFactory(tokenService: TokenService) {
   return {
@@ -94,7 +95,6 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     ModalComponent,
     TrajectenComponent,
     AdminBeheerTrajectComponent,
-    HomeInformatieComponent,
     AdminBeheerGebruikersComponent,
     TrajectModalComponent,
     GebruikersModalComponent,
@@ -139,6 +139,8 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     GettingstartedComponent,
     InstallatiehulpComponent,
     OpdrachtComponent,
+    OpdrachtWijzigComponent,
+    NavbarPerRolComponent,
   ],
   imports: [
     BrowserModule,
