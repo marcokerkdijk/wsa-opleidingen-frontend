@@ -3,10 +3,10 @@
 
     </div>
     <div class="row">
-        <div id=h6 class="col-sm-6">
+        <div id=h6 class="col-sm-4">
             Welkom student!
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-8">
             <p>
                 LORUM IPSUM -- Welkom {{gebruiker.displaynaam}} op de academy. Gebruik het dashboard hieronder om te navigeren tussen
                 de verschillende pagina's. LORUM IPSUM
@@ -16,28 +16,28 @@
     <!-- Hier begint het dashboard voor de student -->
     <div class="row">
         <div class="col-sm-3">
-            <div id="afbeelding" [routerLink]="'voorbereiding'">
+            <div  [routerLink]="'voorbereiding'">
                 <div id="Voorbereiding"> </div>
                 <div id=h6 >Voorbereiding</div>
             </div>
         </div>
 
         <div class="col-sm-3">
-            <div id="afbeelding" [routerLink]="'opdrachten'">
+            <div  [routerLink]="'opdrachten'">
                 <div id="Opdrachten"></div>
                 <div id=h6>Opdrachten</div>
             </div>
         </div>
 
         <div class="col-sm-3">
-            <div id="afbeelding" [routerLink]="'notities'">
+            <div  [routerLink]="'notities'">
                 <div id="Notities"></div>
                 <div id=h6>Notities</div>
             </div>
         </div>
 
         <div class="col-sm-3">
-            <div id="afbeelding" [routerLink]="'mijn-gegevens'">
+            <div  [routerLink]="'mijn-gegevens'">
                 <div id="MijnOverzicht"></div>
                 <div id=h6>Mijn Overzicht</div>
             </div>
