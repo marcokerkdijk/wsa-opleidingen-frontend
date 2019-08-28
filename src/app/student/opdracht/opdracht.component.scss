@@ -11,6 +11,9 @@
 .row {
     padding-top: 2.5%;
 }
+// pre{
+//     width: 100%;
+// }
 .titel{
     font-size: 32px;
     color: #808080;
@@ -49,8 +52,12 @@ td{
     border-top-style: solid;
     border-left-style: solid;
     border-bottom-width: 1pt;
-    width: 459.5pt;
+    max-width: 618px;
+    min-width: 618px;
     border-bottom-style: solid;
+}
+pre{
+    max-width: 940px;
 }
 button{
     border-color: #00aeef;
