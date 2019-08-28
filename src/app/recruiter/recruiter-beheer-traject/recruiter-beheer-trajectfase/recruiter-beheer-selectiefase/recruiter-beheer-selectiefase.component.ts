@@ -42,7 +42,6 @@ export class RecruiterBeheerSelectiefaseComponent implements OnInit {
     this.selectieFase_id=selectieFase_id;
     this.haalSelectieFase(selectieFase_id);
     this.modalService.open(id);
-    return this.traject_id;
   }
 
   closeModal(id: string) {

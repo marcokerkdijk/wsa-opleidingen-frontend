@@ -14,7 +14,6 @@ export class SelectieFaseService {
   constructor(private http:HttpClient) { }
 
   haalSelectieFaseOpId(id: number): Observable<any> {
-    console.log(id);
     return this.http.get<SelectieFase>(`${this.api}/GeefSelectieFaseOpId/` + id);
   }
 

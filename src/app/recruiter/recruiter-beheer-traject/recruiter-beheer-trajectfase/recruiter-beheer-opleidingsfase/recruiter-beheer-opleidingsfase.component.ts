@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { OpleidingsFaseService } from 'src/app/services/opleidings-fase.service';
-import { Router, ActivatedRoute } from '@angular/router';
-import { TrajectService } from 'src/app/services/traject.service';
 import { ModalService } from 'src/app/services/modal.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { TrajectService } from 'src/app/services/traject.service';
 import { RecruiterBeheerTrajectfaseComponent } from '../recruiter-beheer-trajectfase.component';
-import { Traject } from 'src/app/Objecten/traject';
 import { OpleidingsFase } from 'src/app/Objecten/opleidingsfase';
+import { Traject } from 'src/app/Objecten/traject';
+import { OpleidingsFaseService } from 'src/app/services/opleidings-fase.service';
 
 @Component({
   selector: 'wsa-recruiter-beheer-opleidingsfase',
@@ -42,7 +42,6 @@ export class RecruiterBeheerOpleidingsfaseComponent implements OnInit {
     this.opleidingsfase_id=opleidingsfase_id;
     this.haalOpleidingsFase(opleidingsfase_id);
     this.modalService.open(id);
-    return this.traject_id;
   }
 
   closeModal(id: string) {

@@ -24,8 +24,7 @@ export class RecruiterBeheerSelectiefaseTabelComponent implements OnInit {
   }
 
   clickWijzigModal(id,selectieFaseId:number){
-    this.recruiterBeheerSelectieFaseComponent.haalSelectieFase(selectieFaseId);
-    this.recruiterBeheerSelectieFaseComponent.openModal(id, this.traject_id);
+    this.recruiterBeheerSelectieFaseComponent.openModal(id, selectieFaseId);
   }
 
   openToevoegModalSelectieFase(id){
