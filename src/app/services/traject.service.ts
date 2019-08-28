@@ -48,7 +48,6 @@ export class TrajectService {
   }
 
   koppelTrajectAanGebruiker(lijstGebruikers:DTOGebruikerID[], trajectId:number){
-    console.log("Hij komt echt in de service terecht.")
     return this.http.put<DTOGebruikerID>(`${this.api}/voegGebruikersOfVerwijderVanTraject/` +trajectId, lijstGebruikers);
   }
 

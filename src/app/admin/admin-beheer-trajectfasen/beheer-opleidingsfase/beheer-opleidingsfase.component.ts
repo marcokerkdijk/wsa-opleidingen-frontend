@@ -30,6 +30,7 @@ export class BeheerOpleidingsfaseComponent implements OnInit {
     this.traject_id = this.adminBeheerTrajectfasen.traject_id;
     this.haalTrajectOp(this.traject_id);
   }
+  
   haalOpleidingsFase(id:number):void {
     this.opleidingsFase.id = id;
     this.opleidingsFaseService.haalOpleidingsFaseOpId(id).subscribe(opgehaaldeOpleidingsFase => this.opleidingsFase = opgehaaldeOpleidingsFase);
@@ -39,7 +40,6 @@ export class BeheerOpleidingsfaseComponent implements OnInit {
     this.opleidingsfase_id=opleidingsfase_id;
     this.haalOpleidingsFase(opleidingsfase_id);
     this.modalService.open(id);
-    return this.traject_id;
   }
 
   closeModal(id: string) {

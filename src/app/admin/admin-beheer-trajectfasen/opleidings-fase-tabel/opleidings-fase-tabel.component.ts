@@ -23,8 +23,7 @@ export class OpleidingsFaseTabelComponent implements OnInit {
   }
 
   clickWijzigModal(id,opleidingsFaseId:number){
-    this.opleidingsFaseComponent.haalOpleidingsFase(opleidingsFaseId);
-    this.opleidingsFaseComponent.openModal(id, this.traject_id);
+    this.opleidingsFaseComponent.openModal(id, opleidingsFaseId);
   }
 
   openToevoegModalOpleidingsFase(id){
@@ -34,9 +33,7 @@ export class OpleidingsFaseTabelComponent implements OnInit {
   haalTrajectIdOp() {
     this.traject_id = this.adminBeheeTrajectfasenComponent.traject_id;
     this.getOpleidingsFasen(this.adminBeheeTrajectfasenComponent.traject_id);
-    
     return this.traject_id;
-
   }
 
   getOpleidingsFasen(traject_id): void {
@@ -44,7 +41,4 @@ export class OpleidingsFaseTabelComponent implements OnInit {
         .subscribe(opleidingsFasen => this.alleOpleidingsFasen = opleidingsFasen);
   }
 
- 
-
 }
-

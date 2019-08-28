@@ -24,8 +24,7 @@ export class RecruiterBeheerOpleidingsfaseTabelComponent implements OnInit {
   }
 
   clickWijzigModal(id,opleidingsFaseId:number){
-    this.opleidingsFaseComponent.haalOpleidingsFase(opleidingsFaseId);
-    this.opleidingsFaseComponent.openModal(id, this.traject_id);
+    this.opleidingsFaseComponent.openModal(id, opleidingsFaseId);
   }
 
   openToevoegModalOpleidingsFase(id){
@@ -35,7 +34,6 @@ export class RecruiterBeheerOpleidingsfaseTabelComponent implements OnInit {
   haalTrajectIdOp() {
     this.traject_id = this.recruiterBeheerTrajectfaseComponent.traject_id;
     this.getOpleidingsFasen(this.recruiterBeheerTrajectfaseComponent.traject_id);
-    
     return this.traject_id;
   }
 
