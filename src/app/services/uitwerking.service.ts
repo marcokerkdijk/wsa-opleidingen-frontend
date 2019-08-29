@@ -15,4 +15,8 @@ export class UitwerkingService {
   maakUitwerking(gebruiker_id: number, opdracht_id: number, uitwerking: Uitwerking): Observable<Uitwerking> {
     return this.http.post<Uitwerking>(`${this.api}/maakUitwerking/` + gebruiker_id + '/' + opdracht_id, uitwerking);
   }
+
+  wijzigUitwerking(gebruiker_id: number, uitwerking: Uitwerking) {
+    return this.http.put<Uitwerking>(`${this.api}/WijzigUitwerking/` + gebruiker_id, uitwerking);
+  }
 }
