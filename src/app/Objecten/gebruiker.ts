@@ -1,5 +1,6 @@
 import {Rol} from '../rol.enum';
 import { Traject } from './traject';
+import { Uitwerking } from './uitwerking';
 
 export class Gebruiker {
   id: number;
@@ -13,4 +14,5 @@ export class Gebruiker {
   trajecten:Traject[];
   gekoppeld:boolean;
   aanTraject: boolean;
+  uitwerkingen: Uitwerking[];
 }

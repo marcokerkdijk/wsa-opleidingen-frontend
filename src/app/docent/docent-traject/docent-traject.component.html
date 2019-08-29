@@ -8,6 +8,7 @@
                 <button id="studentButton" routerLink="./docent-studentenlijst/{{traject.id}}" routerLinkActive="active">Studenten</button>
                 <button id="lesstofButton" [routerLink]="'./docent-lesstof'">Lesstof</button>
                 <button id="opdrachtButton" [routerLink]="'./docent-opdrachten'">Opdrachten</button>
+                <button id="uitwerkingButton" routerLink="./docent-uitwerkingen/{{traject.id}}">Uitwerkingen</button>
             </div>
         </div>
         <router-outlet></router-outlet>

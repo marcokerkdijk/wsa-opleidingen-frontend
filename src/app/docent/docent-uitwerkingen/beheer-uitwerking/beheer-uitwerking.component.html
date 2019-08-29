@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col-sm-6">
+        <h5>Opdracht: {{uitwerking.opdracht.titel}}</h5>
+        <p>Bij deze opdracht hoort de volgende beschrijving: {{uitwerking.opdracht.omschrijving}}</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+        <h6>Codevoorbeeld van de opdracht</h6>
+        <pre>{{uitwerking.opdracht.codevoorbeeld}}</pre>
+    </div>
+    <div class="col-sm-6">
+        <h6>Uitwerking van de student</h6>
+        <pre>{{uitwerking.resultaat}}</pre>
+    </div>
+</div>
+<div class="row" id="bottomrow">
+    <div class="col-sm-6">
+        <h6>Opmerkingen</h6>
+        <p>Plaats opmerkingen over het gemaakte werk van de student.</p>
+        <textarea id="opmerkingInvoer" [(ngModel)]="uitwerking.opmerking"></textarea>
+        <button id="opmerkingToevoegButton" (click)="opmerkingOpslaan(uitwerking);">Opmerking toevoegen</button>
+    </div>
+</div>

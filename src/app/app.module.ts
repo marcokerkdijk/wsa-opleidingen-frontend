@@ -66,6 +66,9 @@ import { InstallatiehulpComponent } from './student/installatiehulp/installatieh
 import { OpdrachtComponent } from './student/opdracht/opdracht.component';
 import { OpdrachtWijzigComponent } from './docent/docent-opdrachten/opdracht-wijzig/opdracht-wijzig.component';
 import { NavbarPerRolComponent } from './navbar-per-rol/navbar-per-rol.component';
+import { DocentUitwerkingenComponent } from './docent/docent-uitwerkingen/docent-uitwerkingen.component';
+import { BeheerUitwerkingComponent } from './docent/docent-uitwerkingen/beheer-uitwerking/beheer-uitwerking.component';
+import { UitwerkingenLijstComponent } from './docent/docent-uitwerkingen/uitwerkingen-lijst/uitwerkingen-lijst.component';
 
 export function jwtOptionsFactory(tokenService: TokenService) {
   return {
@@ -141,6 +144,9 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     OpdrachtComponent,
     OpdrachtWijzigComponent,
     NavbarPerRolComponent,
+    DocentUitwerkingenComponent,
+    BeheerUitwerkingComponent,
+    UitwerkingenLijstComponent,
   ],
   imports: [
     BrowserModule,
