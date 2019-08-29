@@ -1,6 +1,5 @@
 import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { Subscription } from 'rxjs';
-
 import { Alert, AlertType } from './alert.model';
 import { AlertService } from './alert.service';
 
@@ -21,7 +20,6 @@ export class AlertComponent implements OnInit, OnDestroy {
                     this.alerts = [];
                     return;
                 }
-
                 // add alert to array
                 this.alerts.push(alert);
             });
