@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { AdminBeheerAssessmentsComponent } from './admin-beheer-assessments.component';
 
 describe('AdminBeheerAssessmentsComponent', () => {
