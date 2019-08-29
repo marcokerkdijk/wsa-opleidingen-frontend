@@ -20,7 +20,7 @@
                 <tbody>
                     <tr *ngFor="let opdracht of opdrachten" routerLink="../opdracht/{{opdracht.id}}">
                         <td>
-                            <button >{{opdracht.id}} : {{opdracht.titel}}</button>
+                            <button id="opdracht{{opdracht.id}}">{{opdracht.id}} : {{opdracht.titel}}</button>
                         </td>
                     </tr>
                 </tbody>

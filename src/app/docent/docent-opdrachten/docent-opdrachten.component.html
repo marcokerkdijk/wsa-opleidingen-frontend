@@ -30,12 +30,14 @@
                             <p *ngIf="Opdracht.zichtbaar">Ja</p>
                             <p *ngIf="!Opdracht.zichtbaar">Nee</p>
                         </td>
-                        <td id="pencil{{Opdracht.id}}">
-                            <i class='fa fa-pencil' id="pencil" (click)="wijzigOpdracht(Opdracht);"
+                        <td><div id="pencil">
+                            <i class='fa fa-pencil' id="pencil{{Opdracht.id}}" (click)="wijzigOpdracht(Opdracht);"
                                 routerLink="../opdracht-wijzig"></i>
+                            </div>
                         </td>
-                        <td id="verwijder{{Opdracht.id}}">
-                            <i class='fa fa-trash' id="prullenbak" (click)="toggle(i);"></i>
+                        <td><div id="prullenbak">
+                            <i class='fa fa-trash' id="verwijder{{Opdracht.id}}" (click)="toggle(i);"></i>
+                            </div>
                         </td>
                     </tr>
                     <tr *ngIf="zichtbaar[i]">
