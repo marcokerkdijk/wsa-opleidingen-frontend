@@ -46,25 +46,32 @@
                     <div id='hamburger'></div>
                     <div id='hamburger'></div>
                     <div class="dropdown-content">
-                        <a  class="nav-link" *ngIf="ingelogd" (click)="navigeerNaar('profiel')" id="ProfielButtonHamburger">
+                        <a class="nav-link" *ngIf="ingelogd" (click)="navigeerNaar('profiel')"
+                            id="ProfielButtonHamburger">
                             Profiel
                         </a>
-                        <a id="CorperateHamburger" class="nav-link hamburgerButton" href="https://www.workingspirit.nl/corporate/">
+                        <a id="CorperateHamburger" class="nav-link hamburgerButton"
+                            href="https://www.workingspirit.nl/corporate/">
                             Corporate
                         </a>
-                        <a id="DetacheringHamburger" class="nav-link hamburgerButton" href="https://www.workingspirit.nl/detachering/">
+                        <a id="DetacheringHamburger" class="nav-link hamburgerButton"
+                            href="https://www.workingspirit.nl/detachering/">
                             Detachering
                         </a>
-                        <a id="AcademyHamburger" class="nav-link hamburgerButton" href="https://www.workingspirit.nl/academy/">
+                        <a id="AcademyHamburger" class="nav-link hamburgerButton"
+                            href="https://www.workingspirit.nl/academy/">
                             Academy
                         </a>
-                        <a id="ContactHamburger" class="nav-link hamburgerButton" href="https://www.workingspirit.nl/contact/" id="Contact">
-                                Contact
+                        <a id="ContactHamburger" class="nav-link hamburgerButton"
+                            href="https://www.workingspirit.nl/contact/" id="Contact">
+                            Contact
                         </a>
-                        <a id="WerkenBijHamburger" class="nav-link hamburgerButton" href="https://www.workingspirit.nl/werken-bij-working-spirit/">
+                        <a id="WerkenBijHamburger" class="nav-link hamburgerButton"
+                            href="https://www.workingspirit.nl/werken-bij-working-spirit/">
                             Werken bij
                         </a>
-                        <a  class="nav-link" *ngIf="!ingelogd" (click)="openModal('login-modal')" id="LoginButtonHamburger">
+                        <a class="nav-link" *ngIf="!ingelogd" (click)="openModal('login-modal')"
+                            id="LoginButtonHamburger">
                             Login
                         </a>
                     </div>
@@ -73,6 +80,12 @@
         </nav>
     </div>
 </nav>
+
+<div class="row">
+    <div class="spinner col-sm-2 fixed-top">
+        <ngx-spinner id="spinner" name="laadspinner" [fullScreen]="false"></ngx-spinner>
+    </div>
+</div>
 
 <jw-modal class="jw-modal" id="login-modal">
     <h1>Login</h1>
@@ -98,9 +111,11 @@
     </div>
     <div id="wwvergetendiv" *ngIf="vergeten">
         <p>Voer uw e-mailadres in:</p>
-        <input [(ngModel)]="emailgebruiker" name="email" id="emailInput" 
-            placeholder="E-mailadres" (keydown)="keyDownFunction($event)">
+        <input [(ngModel)]="emailgebruiker" name="email" id="emailInput" placeholder="E-mailadres"
+            (keydown)="keyDownFunction($event)">
         <button class="button button-primary" (click)="wachtwoordVergeten();">Verzenden</button>
-        <p><alert id="alert-1"></alert></p>
+    </div>
+    <div id="melding">
+        <alert id="alert-1"></alert>
     </div>
 </jw-modal>
