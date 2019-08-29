@@ -19,7 +19,7 @@ export class RecruiterBeheerTrajectgebruikersComponent implements OnInit {
   docentIDLijst: DTOGebruikerID[] = new Array;
 
   constructor(private activeRouter: ActivatedRoute, private trajectService:TrajectService,
-              private gebruikersService: GebruikersService) { }
+    private gebruikersService: GebruikersService) { }
 
   ngOnInit() {
     const id = +this.activeRouter.snapshot.paramMap.get('id');
@@ -137,4 +137,5 @@ export class RecruiterBeheerTrajectgebruikersComponent implements OnInit {
   opslaanGebruikers(gebruikerIDs: DTOGebruikerID[]): void {
     this.trajectService.koppelTrajectAanGebruiker(gebruikerIDs, this.traject.id).subscribe();
   }
+
 }

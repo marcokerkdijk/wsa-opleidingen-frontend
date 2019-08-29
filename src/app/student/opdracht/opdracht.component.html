@@ -1,36 +1,44 @@
 <div class="container-fluid" id="mainbody">
+
+    <!-- Opdracht titel -->
     <div class="row">
-        <div class="col-sm-3 titel">
+        <div class="col-sm-4 titel">
             <div>
-                <pre>Opdracht: {{opdracht.id}}</pre>
+                Opdracht:
             </div>
         </div>
-        <div class="col-sm-9 subTitel">
+        <div class="col-sm-8 subTitel">
             <div>
                 <pre>{{opdracht.titel}}</pre>
             </div>
         </div>
     </div>
+
+    <!-- Opdracht omschrijving -->
     <div class="row">
-        <div class="col-sm-12">
-            <div>Opdracht beschrijving:</div>
-            <div>{{opdracht.omschrijving}}</div>
+        <div class="col-sm-4 titel">
+            <div>Beschrijving:</div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-12">
-            <table>
-                <td>
-                    <pre>{{opdracht.codevoorbeeld}}</pre>
-                </td>
-            </table>
+        <div class="col-sm-8">
+            <pre>{{opdracht.omschrijving}}</pre>
         </div>
     </div>
 
+    <!-- Opdracht codevoorbeeld -->
+    <div class="row">
+        <div class="col-sm-4 titel">
+            <div>Code voorbeeld:</div>
+        </div>
+        <div class="col-sm-8">
+            <pre>{{opdracht.codevoorbeeld}}</pre>
+        </div>
+    </div>
+
     <div class="row">
 
     </div>
 
+    <!-- Code upload formulier -->
     <div class="row">
         <div class="col titel2">
             Lever je code in via onderstaand formulier

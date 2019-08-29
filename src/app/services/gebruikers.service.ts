@@ -50,12 +50,8 @@ export class GebruikersService {
   geefStudentenVanTrajectEnOngekoppelde(traject_id: number): Observable<Gebruiker[]> {
     return this.http.get<Gebruiker[]>(`${this.api}/studentenVanTrajectEnOngekoppeldeStudenten/` + traject_id);
   }
-
-  wijzigWachtwoord(id: number, wachtwoordDTO: WijzigWachtwoordDTO): Observable<any> {
-    return this.http.put(`${this.api}/wijzigWachtwoord/` + id, wachtwoordDTO);
+  wijzigWachtwoord(id: number, wachtwoordDTO: WijzigWachtwoordDTO): Observable<any> {	
+    return this.http.put(`${this.api}/wijzigWachtwoord/` + id, wachtwoordDTO);	
   }
 
-  wachtwoordVergeten(email: string): Observable<any> {
-    return this.http.post(`${this.api}/home`, email);
-  }
 }

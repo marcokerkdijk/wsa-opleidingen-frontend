@@ -12,6 +12,9 @@
 .row {
     padding-top: 2.5%;
 }
+// pre{
+//     width: 100%;
+// }
 .titel{
     font-size: 32px;
     color: #808080;
@@ -50,8 +53,20 @@ td{
     border-top-style: solid;
     border-left-style: solid;
     border-bottom-width: 1pt;
-    width: 459.5pt;
+    max-width: 618px;
+    min-width: 618px;
     border-bottom-style: solid;
+}
+pre{
+    max-width: 940px;
+    overflow-y: auto;
+    // text-overflow: inherit;
+    word-wrap: normal;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    
 }
 button{
     border-color: #00aeef;

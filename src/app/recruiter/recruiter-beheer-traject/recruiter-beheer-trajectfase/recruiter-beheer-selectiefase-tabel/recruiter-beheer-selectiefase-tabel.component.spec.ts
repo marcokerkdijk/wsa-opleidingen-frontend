@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { RecruiterBeheerSelectiefaseTabelComponent } from './recruiter-beheer-selectiefase-tabel.component';
 
 describe('RecruiterBeheerSelectiefaseTabelComponent', () => {

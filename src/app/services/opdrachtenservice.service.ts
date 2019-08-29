@@ -19,4 +19,9 @@ export class OpdrachtenserviceService {
   haalOpdrachtOpId(id: number): Observable<any> {
     return this.http.get<Opdracht>(`${this.api}/haalOpdrachtOpId/` + id)
   }
+
+  haalAlleAssessments(){
+    return this.http.get<Opdracht[]>(`${this.api}/haalAlleAssessmentsOp`)
+  }
+
 }
