@@ -42,6 +42,7 @@ import { GettingstartedComponent } from './student/gettingstarted/gettingstarted
 import { InstallatiehulpComponent } from './student/installatiehulp/installatiehulp.component';
 import { OpdrachtComponent } from './student/opdracht/opdracht.component';
 import { OpdrachtWijzigComponent } from './docent/docent-opdrachten/opdracht-wijzig/opdracht-wijzig.component';
+import { AdminBeheerAssessmentsComponent } from './admin/admin-beheer-assessments/admin-beheer-assessments.component';
 import { DocentUitwerkingenComponent } from './docent/docent-uitwerkingen/docent-uitwerkingen.component';
 import { UitwerkingenLijstComponent } from './docent/docent-uitwerkingen/uitwerkingen-lijst/uitwerkingen-lijst.component';
 import { BeheerUitwerkingComponent } from './docent/docent-uitwerkingen/beheer-uitwerking/beheer-uitwerking.component';
@@ -69,6 +70,8 @@ const routes: Routes = [
       { path: "admin-beheer-trajectfasen/:id", component: AdminBeheerTrajectfasenComponent},
       { path: '', redirectTo: 'admin', pathMatch: 'full' },
       { path: "admin-beheer-trajectgebruikers/:id", component: AdminBeheerTrajectgebruikersComponent},
+      { path: '', redirectTo: 'admin', pathMatch: 'full' },
+      { path: "admin-beheer-assessments", component: AdminBeheerAssessmentsComponent},
     ]
   },
   { path: 'student', component: StudentComponent, canActivate: [StudentAutorisatieGuard],

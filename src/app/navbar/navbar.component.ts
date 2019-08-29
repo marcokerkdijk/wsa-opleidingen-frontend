@@ -1,11 +1,13 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {AutenticatieService, JwtResponse} from "../services/autenticatie.service";
-import {Router} from "@angular/router";
-import {TokenService} from "../services/token.service";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { AutenticatieService, JwtResponse } from "../services/autenticatie.service";
+import { Router } from "@angular/router";
+import { TokenService } from "../services/token.service";
 
 import { ModalService } from '../services/modal.service';
 import { GebruikersService } from '../services/gebruikers.service';
+import { WachtwoordVergetenService } from '../services/wachtwoord-vergeten.service';
+import { AlertService } from '../_alert';
 
 @Component({
   selector: 'wsa-navbar',
@@ -17,14 +19,16 @@ export class NavbarComponent implements OnInit {
   ingelogd: boolean = false;
   vergeten: boolean = false;
   emailgebruiker: string;
-  melding: string;
+  // melding: string;
   konamicode: Number[] = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
   toetscombinatie: Number[] = new Array;
 
-  constructor(private modalService: ModalService, private fb: FormBuilder, private router: Router, 
-              private autenticatieService: AutenticatieService, private tokenService: TokenService,
-              private gebruikersService: GebruikersService) {
-    
+  constructor(private modalService: ModalService, private fb: FormBuilder, private router: Router,
+    private autenticatieService: AutenticatieService, private tokenService: TokenService,
+    private gebruikersService: GebruikersService,
+    private wachtwoordService: WachtwoordVergetenService,
+    private alertService: AlertService) {
+
     this.loginform = this.fb.group({
       emailadres: ['', Validators.required],
       wachtwoord: ['', Validators.required]
@@ -55,13 +59,13 @@ export class NavbarComponent implements OnInit {
     const outerArray = IngevoerdeCode.toString();
 
     const codeIngevoerd = outerArray.includes(innerArray);
-    
+
     return codeIngevoerd;
   }
 
   public login(): void {
     this.closeModal('login-modal');
-    
+
     const val = this.loginform.value;
 
     if (val.emailadres && val.wachtwoord) {
@@ -87,7 +91,7 @@ export class NavbarComponent implements OnInit {
   }
 
   public toggleVergeten(): void {
-    this.vergeten = ! this.vergeten;
+    this.vergeten = !this.vergeten;
   }
 
   public keyDownFunction(event): void {
@@ -98,10 +102,20 @@ export class NavbarComponent implements OnInit {
 
   public wachtwoordVergeten(): void {
     if (this.emailgebruiker != null) {
-      this.gebruikersService.wachtwoordVergeten(this.emailgebruiker)
-          .subscribe();
+      this.wachtwoordService.wachtwoordVergeten(this.emailgebruiker)
+            .subscribe(
+              ()  => {this.alertService.success("Er is een email gestuurd met een nieuw wachtwoord.", "alert-1");
+              },
+              // Hier zit nog een melding in die getoont word op de frontend die er niet hoort te zitten.. geen idee waarom
+              // groetjes Wietse :D
+              (error) => {
+                this.alertService.error("Het opgegeven emailadres is onjuist, probeer het opnieuw of neem contact op", "alert-1");
+              }
+              );
+    } else {
+      this.alertService.error("Er is geen emailadres opgegeven, probeer het opnieuw of neem contact op.", "alert-1");
     }
-  }
+}
 
   public logout(): void {
     const redirect = this.autenticatieService.logout();
