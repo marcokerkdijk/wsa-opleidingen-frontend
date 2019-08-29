@@ -25,4 +25,8 @@ export class AssessmentTabelComponent implements OnInit {
     .subscribe(alleAssessments => this.alleAssessments = alleAssessments);
   }
 
+  openToevoegModal(modalnaam: string) {
+    console.log("LOL, hij doet nog niks. Moet nog geïmplementeerd worden.");
+  }
+
 }

@@ -1,9 +1,17 @@
-#sorteerPijlOpdracht, #sorteerPijlInleverdatum {
-    color: #00aeef;
+#sorteerPijlOpdracht {
+    color: #ffffff;
 }
 
 #sorteerPijlOpdracht:hover, #sorteerPijlInleverdatum:hover {
     cursor: pointer;
+}
+
+h6 {
+    letter-spacing: 1px;
+    color: #00aeef;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 32px;
 }
 
 button {
@@ -33,4 +41,20 @@ button:hover {
     cursor: pointer;
     color: white;
     background-color: #00aeef;
+}
+
+.table {
+    border-top-color: transparent !important;
+}
+
+thead, th {
+    border-color: transparent !important;
+    color: #ffffff;
+    background-color: #00aaef;
+}
+
+td {
+    border-top: transparent !important;
+    border-left-color: transparent !important;
+    border-right-color: transparent !important;
 }
