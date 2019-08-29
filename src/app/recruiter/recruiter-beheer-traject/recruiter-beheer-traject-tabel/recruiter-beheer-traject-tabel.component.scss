@@ -2,31 +2,19 @@
     padding-top: 5%;
 }
 
-p {
-    font-family: "Working Spirit";
-    font-size: 14px;
-    line-height: 24px;
-    color:  #808285;
-}
-
 .borderless td, .borderless th, .borderless tr, .borderless thead, .borderless {
     border-color: transparent !important;
 }
 
-#pencil,#sorteerPijlRol, #sorteerPijlVoornaam,
-#sorteerPijlAchternaam, #sorteerPijlActief, #sorteerActiefJa, 
-#sorteerActiefNee {
+#pencil {
     color: #00aeef;
 }
 
-#pencil:hover, #sorteerPijlRol:hover, #sorteerPijlVoornaam:hover,
-#sorteerPijlAchternaam:hover, #sorteerPijlActief:hover, #sorteerActiefJa:hover, 
-#sorteerActiefNee:hover {
+#pencil:hover {
     cursor: pointer;
 }
 
-#table-bottom,
-th {
+#table-bottom, th {
     background: #ffffff;
     color: #696969;
     font-size: 15px;
@@ -35,8 +23,7 @@ th {
     border-color: black;    
 }
 
-#table-bottom,
-td {
+#table-bottom, td {
     background: #ffffff;
     color: #696969;
     font-size: 15px;
@@ -44,33 +31,7 @@ td {
     text-align: left;
 }
 
-.tabellink:hover {
-    cursor: pointer;
-    color: white;
-    background-color: #00aeef;
-}
-
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #ffffff;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    padding: 5px 5px;
-    z-index: 1;
-  }
-
-  .dropdown:hover .dropdown-content {
-    display: block;
-  } 
-
-  button{
+  button {
     border-color: #00aeef;
     color: #00aeef;
     width: 230px;

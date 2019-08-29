@@ -16,14 +16,16 @@ import { SelectieFaseService } from 'src/app/services/selectie-fase.service';
 export class RecruiterBeheerSelectiefaseComponent implements OnInit {
   selectieFase:SelectieFase = new SelectieFase;
   nieuweFase:SelectieFase = new SelectieFase;
-  gewijzigdeFase:SelectieFase=new SelectieFase;
   selectieFasen:SelectieFase[];
   traject: Traject = new Traject;
   traject_id:number;
   selectieFase_id:number;
 
-  constructor(private selectieFaseService:SelectieFaseService, private router:Router, 
-    private modalService:ModalService, private activeRouter:ActivatedRoute, private trajectService:TrajectService,
+  constructor(private selectieFaseService:SelectieFaseService, 
+    private router:Router, 
+    private modalService:ModalService, 
+    private activeRouter:ActivatedRoute, 
+    private trajectService:TrajectService,
     private recruiterBeheerTrajectfasen:RecruiterBeheerTrajectfaseComponent) { }
 
   ngOnInit() {
@@ -40,7 +42,9 @@ export class RecruiterBeheerSelectiefaseComponent implements OnInit {
 
   openModal(id: string, selectieFase_id) {
     this.selectieFase_id=selectieFase_id;
-    this.haalSelectieFase(selectieFase_id);
+    if(id == "trajectFase-wijzig-modal"){
+      this.haalSelectieFase(selectieFase_id);
+    }
     this.modalService.open(id);
   }
 
@@ -63,4 +67,5 @@ export class RecruiterBeheerSelectiefaseComponent implements OnInit {
     .subscribe(response =>this.recruiterBeheerTrajectfasen.refreshPagina());
     this.closeModal(modalId);
   }
+
 }
