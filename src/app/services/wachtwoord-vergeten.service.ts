@@ -14,4 +14,5 @@ export class WachtwoordVergetenService {
   wachtwoordVergeten(email: string): Observable<any> {
     return this.http.post(`${this.api}`, email);
   }
+  
 }
