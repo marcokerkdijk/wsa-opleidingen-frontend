@@ -15,7 +15,6 @@ import { OpleidingsFaseService } from 'src/app/services/opleidings-fase.service'
 export class RecruiterBeheerOpleidingsfaseComponent implements OnInit {
   opleidingsFase:OpleidingsFase = new OpleidingsFase;
   nieuweOpleiding:OpleidingsFase = new OpleidingsFase;
-  gewijzigdeFase:OpleidingsFase=new OpleidingsFase;
   opleidingsfasen:OpleidingsFase[];
   traject: Traject = new Traject;
   traject_id:number;
@@ -24,7 +23,6 @@ export class RecruiterBeheerOpleidingsfaseComponent implements OnInit {
   constructor(private opleidingsFaseService:OpleidingsFaseService, 
     private router:Router, 
     private modalService:ModalService, 
-    private activeRouter:ActivatedRoute, 
     private trajectService:TrajectService,
     private recruiterBeheerTrajectfasen:RecruiterBeheerTrajectfaseComponent) { }
 
@@ -40,7 +38,9 @@ export class RecruiterBeheerOpleidingsfaseComponent implements OnInit {
 
   openModal(id: string, opleidingsfase_id) {
     this.opleidingsfase_id=opleidingsfase_id;
-    this.haalOpleidingsFase(opleidingsfase_id);
+    if(id == "opleidingsFase-wijzig-modal"){
+      this.haalOpleidingsFase(opleidingsfase_id);
+    }
     this.modalService.open(id);
   }
 

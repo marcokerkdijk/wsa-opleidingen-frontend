@@ -3,9 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { TrajectService } from 'src/app/services/traject.service';
 import { Location } from '@angular/common';
 import { Traject } from 'src/app/Objecten/traject';
-import { SelectieFase } from 'src/app/Objecten/selectieFase';
 import { DataserviceService } from 'src/app/services/dataservice.service';
-import { OpleidingsFase } from 'src/app/Objecten/opleidingsfase';
 
 @Component({
   selector: 'wsa-recruiter-beheer-trajectfase',
@@ -13,14 +11,8 @@ import { OpleidingsFase } from 'src/app/Objecten/opleidingsfase';
   styleUrls: ['./recruiter-beheer-trajectfase.component.scss']
 })
 export class RecruiterBeheerTrajectfaseComponent implements OnInit {
-  selectieFase:SelectieFase = new SelectieFase;
-  nieuweFase:SelectieFase = new SelectieFase;
-  gewijzigdeFase:SelectieFase=new SelectieFase;
-  selectieFasen:SelectieFase[];
   traject: Traject = new Traject;
   traject_id:number;
-  opleidingsFase: OpleidingsFase = new OpleidingsFase;
-  opleidingsFasen:OpleidingsFase[];
  
   constructor(private router:Router, 
     private activeRouter:ActivatedRoute, private trajectService:TrajectService,

@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { RecruiterBeheerTrajectComponent } from './recruiter-beheer-traject.component';
 
 describe('RecruiterBeheerTrajectComponent', () => {
