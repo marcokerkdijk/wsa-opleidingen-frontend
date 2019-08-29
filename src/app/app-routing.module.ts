@@ -42,6 +42,9 @@ import { GettingstartedComponent } from './student/gettingstarted/gettingstarted
 import { InstallatiehulpComponent } from './student/installatiehulp/installatiehulp.component';
 import { OpdrachtComponent } from './student/opdracht/opdracht.component';
 import { OpdrachtWijzigComponent } from './docent/docent-opdrachten/opdracht-wijzig/opdracht-wijzig.component';
+import { DocentUitwerkingenComponent } from './docent/docent-uitwerkingen/docent-uitwerkingen.component';
+import { UitwerkingenLijstComponent } from './docent/docent-uitwerkingen/uitwerkingen-lijst/uitwerkingen-lijst.component';
+import { BeheerUitwerkingComponent } from './docent/docent-uitwerkingen/beheer-uitwerking/beheer-uitwerking.component';
 
 
 const routes: Routes = [
@@ -102,6 +105,12 @@ const routes: Routes = [
           { path: "opdracht-aanmaak/:id", component: OpdrachtAanmaakComponent },
           { path: '', redirectTo: 'docent-traject', pathMatch: 'full'},
           { path: "opdracht-wijzig", component: OpdrachtWijzigComponent },
+          { path: '', redirectTo: 'docent-traject', pathMatch: 'full'},
+          { path: "docent-uitwerkingen/:id", component: DocentUitwerkingenComponent },
+          { path: '', redirectTo: 'docent', pathMatch: 'full'},
+          { path: "uitwerkingen-lijst", component: UitwerkingenLijstComponent },
+          { path: '', redirectTo: 'docent-traject', pathMatch: 'full'},
+          { path: "beheer-uitwerking", component: BeheerUitwerkingComponent },
           { path: '', redirectTo: 'docent-traject', pathMatch: 'full'},
         ]
       },
