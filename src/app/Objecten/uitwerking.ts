@@ -7,4 +7,5 @@ export class Uitwerking {
     inleverTijdstip: Date;
     opdracht: Opdracht;
     gebruiker: Gebruiker;
+    opmerking: string;
 }
