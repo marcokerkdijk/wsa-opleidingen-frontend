@@ -66,6 +66,10 @@ import { InstallatiehulpComponent } from './student/installatiehulp/installatieh
 import { OpdrachtComponent } from './student/opdracht/opdracht.component';
 import { OpdrachtWijzigComponent } from './docent/docent-opdrachten/opdracht-wijzig/opdracht-wijzig.component';
 import { NavbarPerRolComponent } from './navbar-per-rol/navbar-per-rol.component';
+import { AdminBeheerAssessmentsComponent } from './admin/admin-beheer-assessments/admin-beheer-assessments.component';
+import { AssessmentTabelComponent } from './admin/admin-beheer-assessments/assessment-tabel/assessment-tabel.component';
+import { AssessmentModalComponent } from './admin/admin-beheer-assessments/assessment-modal/assessment-modal.component';
+import { AlertModule } from './_alert';
 
 export function jwtOptionsFactory(tokenService: TokenService) {
   return {
@@ -141,9 +145,13 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     OpdrachtComponent,
     OpdrachtWijzigComponent,
     NavbarPerRolComponent,
+    AdminBeheerAssessmentsComponent,
+    AssessmentTabelComponent,
+    AssessmentModalComponent,
   ],
   imports: [
     BrowserModule,
+    AlertModule,
     ReactiveFormsModule,
     HttpClientModule,
     JwtModule.forRoot({

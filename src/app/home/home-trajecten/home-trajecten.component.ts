@@ -15,8 +15,9 @@ import { TekstObject } from 'src/app/Objecten/tekst-object';
   styleUrls: ['./home-trajecten.component.scss']
 })
 export class HomeTrajectenComponent implements OnInit {
-  tekstId: Number = 1;
+  tekstId: number = 1;
   tekstObject: TekstObject = new TekstObject();
+  trajecttest: Traject = new Traject();
 
   traject: Traject = new Traject();
   zichtbaarTrajecten: Traject[] = new Array;

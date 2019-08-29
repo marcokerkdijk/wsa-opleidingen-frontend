@@ -59,6 +59,14 @@ td{
 }
 pre{
     max-width: 940px;
+    overflow-y: auto;
+    // text-overflow: inherit;
+    word-wrap: normal;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    
 }
 button{
     border-color: #00aeef;

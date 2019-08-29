@@ -1,8 +1,10 @@
 <div class="container-fluid" id="mainbody">
+
+    <!-- Opdracht titel -->
     <div class="row">
         <div class="col-sm-4 titel">
             <div>
-                Opdracht: {{opdracht.id}}
+                Opdracht:
             </div>
         </div>
         <div class="col-sm-8 subTitel">
@@ -11,6 +13,8 @@
             </div>
         </div>
     </div>
+
+    <!-- Opdracht omschrijving -->
     <div class="row">
         <div class="col-sm-4 titel">
             <div>Beschrijving:</div>
@@ -20,16 +24,13 @@
         </div>
     </div>
 
+    <!-- Opdracht codevoorbeeld -->
     <div class="row">
         <div class="col-sm-4 titel">
-                <div>Code voorbeeld:</div>
+            <div>Code voorbeeld:</div>
         </div>
         <div class="col-sm-8">
-            <table>
-                <td>
-                    <pre>{{opdracht.codevoorbeeld}}</pre>
-                </td>
-            </table>
+            <pre>{{opdracht.codevoorbeeld}}</pre>
         </div>
     </div>
 
@@ -37,6 +38,7 @@
 
     </div>
 
+    <!-- Code upload formulier -->
     <div class="row">
         <div class="col titel2">
             Lever je code in via onderstaand formulier

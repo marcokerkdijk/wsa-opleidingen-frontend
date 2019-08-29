@@ -11,7 +11,10 @@ import { Traject } from 'src/app/Objecten/traject';
 export class TrajectTabelComponent implements OnInit {
   alleTrajecten:Traject[];
 
-  constructor(private trajectService:TrajectService, private adminBeheerTrajectCompnent:AdminBeheerTrajectComponent) { }
+  constructor(
+    private trajectService:TrajectService, 
+    private adminBeheerTrajectCompnent:AdminBeheerTrajectComponent
+    ) { }
 
   ngOnInit() {
     this.getAlleTrajecten();
