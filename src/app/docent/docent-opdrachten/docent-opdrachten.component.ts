@@ -13,6 +13,7 @@ export class DocentOpdrachtenComponent implements OnInit {
   traject_id: number;
   opdrachten: Opdracht[] = new Array;
   zichtbaar: boolean[] = new Array;
+  geenOpdrachten: boolean;
 
   constructor(private dataservice: DataserviceService, private opdrachtService: OpdrachtService,
               private router: Router) { }
@@ -28,7 +29,12 @@ export class DocentOpdrachtenComponent implements OnInit {
 
   krijgOpdrachtenVanTraject(): void {
     this.opdrachtService.geefAlleOpdrachtenVanTraject(this.traject_id)
-        .subscribe(opdrachtlijst => this.opdrachten = opdrachtlijst);
+        .subscribe(opdrachtlijst => {
+          this.opdrachten = opdrachtlijst
+        },
+        (error) => {
+          this.geenOpdrachten = true;
+        });
   }
 
   wijzigOpdracht(opdracht: Opdracht): void {
