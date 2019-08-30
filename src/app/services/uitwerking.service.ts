@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { Uitwerking } from '../Objecten/uitwerking';
@@ -11,6 +11,10 @@ export class UitwerkingService {
   private api: string = environment.apiUrl
 
   constructor(private http: HttpClient) { }
+
+  haalAlleUitwerkingenOp() {
+    return this.http.get<Uitwerking[]>(`${this.api}/geefAlleUitwerkingen`)
+  }
 
   maakUitwerking(gebruiker_id: number, opdracht_id: number, uitwerking: Uitwerking): Observable<Uitwerking> {
     return this.http.post<Uitwerking>(`${this.api}/maakUitwerking/` + gebruiker_id + '/' + opdracht_id, uitwerking);
