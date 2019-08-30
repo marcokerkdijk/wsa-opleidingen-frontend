@@ -1,5 +1,5 @@
 #sorteerPijlVoornaam, #sorteerPijlAchternaam {
-    color: #00aeef;
+    color: #ffffff;
 }
 
 #sorteerPijlVoornaam:hover, #sorteerPijlAchternaam:hover {
@@ -33,4 +33,20 @@ button:hover {
     cursor: pointer;
     color: white;
     background-color: #00aeef;
+}
+
+.table {
+    border-top-color: transparent !important;
+}
+
+thead, th {
+    border-color: transparent !important;
+    color: #ffffff;
+    background-color: #00aaef;
+}
+
+td {
+    border-top: transparent !important;
+    border-left-color: transparent !important;
+    border-right-color: transparent !important;
 }

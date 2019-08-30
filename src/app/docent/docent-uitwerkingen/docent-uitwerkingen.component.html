@@ -4,13 +4,16 @@
             <tr>
                 <th>Voornaam<i id='sorteerPijlVoornaam' class="fa fa-fw fa-sort" (click)="sorteerTabel(0)"></i></th>
                 <th>Achternaam<i id='sorteerPijlAchternaam' class="fa fa-fw fa-sort" (click)="sorteerTabel(1)"></i></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let Student of studenten">
                 <td>{{Student.voornaam}}</td>
                 <td>{{Student.tussenvoegsel}} {{Student.achternaam}}</td>
-                <button (click)="naarUitwerkinglijst(Student);">Bekijk uitwerkingen</button>
+                <td>
+                    <button (click)="naarUitwerkinglijst(Student);">Bekijk uitwerkingen</button>
+                </td>
             </tr>
         </tbody>
     </table>
