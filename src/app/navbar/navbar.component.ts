@@ -5,9 +5,9 @@ import { Router } from "@angular/router";
 import { TokenService } from "../services/token.service";
 
 import { ModalService } from '../services/modal.service';
-import { GebruikersService } from '../services/gebruikers.service';
 import { WachtwoordVergetenService } from '../services/wachtwoord-vergeten.service';
 import { AlertService } from '../_alert';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'wsa-navbar',
@@ -19,15 +19,13 @@ export class NavbarComponent implements OnInit {
   ingelogd: boolean = false;
   vergeten: boolean = false;
   emailgebruiker: string;
-  // melding: string;
   konamicode: Number[] = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
   toetscombinatie: Number[] = new Array;
 
   constructor(private modalService: ModalService, private fb: FormBuilder, private router: Router,
     private autenticatieService: AutenticatieService, private tokenService: TokenService,
-    private gebruikersService: GebruikersService,
     private wachtwoordService: WachtwoordVergetenService,
-    private alertService: AlertService) {
+    private alertService: AlertService, private spinner: NgxSpinnerService) {
 
     this.loginform = this.fb.group({
       emailadres: ['', Validators.required],
@@ -64,7 +62,12 @@ export class NavbarComponent implements OnInit {
   }
 
   public login(): void {
-    this.closeModal('login-modal');
+    this.spinner.show("laadspinner", {
+      type: "ball-square-clockwise-spin",
+      color: "#00aeef",
+      bdColor: "transparent",
+      size: "medium",
+    });
 
     const val = this.loginform.value;
 
@@ -77,10 +80,15 @@ export class NavbarComponent implements OnInit {
 
             const redirect = this.autenticatieService.redirectUrl ? this.router.parseUrl(this.autenticatieService.redirectUrl) : this.autenticatieService.routePerRol();
             this.ingelogd = this.tokenService.isIngelogd();
+            this.closeModal('login-modal');
+            this.spinner.hide("laadspinner");
             this.router.navigateByUrl(redirect);
           },
           (error) => {
+            this.spinner.hide("laadspinner");
             console.log(error);
+            this.alertService.clear("alert-1");
+            this.alertService.error("Uw e-mailadres of wachtwoord is onjuist. Probeer het opnieuw.", "alert-1");
           }
         );
     }
@@ -92,6 +100,7 @@ export class NavbarComponent implements OnInit {
 
   public toggleVergeten(): void {
     this.vergeten = !this.vergeten;
+    this.alertService.clear("alert-1");
   }
 
   public keyDownFunction(event): void {
@@ -104,15 +113,19 @@ export class NavbarComponent implements OnInit {
     if (this.emailgebruiker != null) {
       this.wachtwoordService.wachtwoordVergeten(this.emailgebruiker)
             .subscribe(
-              ()  => {this.alertService.success("Er is een email gestuurd met een nieuw wachtwoord.", "alert-1");
+              ()  => {
+                this.alertService.clear("alert-1");
+                this.alertService.success("Er is een email gestuurd met een nieuw wachtwoord.", "alert-1");
               },
               // Hier zit nog een melding in die getoont word op de frontend die er niet hoort te zitten.. geen idee waarom
               // groetjes Wietse :D
               (error) => {
-                this.alertService.error("Het opgegeven emailadres is onjuist, probeer het opnieuw of neem contact op", "alert-1");
+                this.alertService.clear("alert-1");
+                this.alertService.error("Het opgegeven emailadres is onjuist, probeer het opnieuw of neem contact op.", "alert-1");
               }
-              );
+            );
     } else {
+      this.alertService.clear("alert-1");
       this.alertService.error("Er is geen emailadres opgegeven, probeer het opnieuw of neem contact op.", "alert-1");
     }
 }

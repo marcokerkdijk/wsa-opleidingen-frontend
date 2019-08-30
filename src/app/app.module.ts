@@ -71,7 +71,7 @@ import { AlertModule } from './_alert';
 import { DocentUitwerkingenComponent } from './docent/docent-uitwerkingen/docent-uitwerkingen.component';
 import { BeheerUitwerkingComponent } from './docent/docent-uitwerkingen/beheer-uitwerking/beheer-uitwerking.component';
 import { UitwerkingenLijstComponent } from './docent/docent-uitwerkingen/uitwerkingen-lijst/uitwerkingen-lijst.component';
-
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 export function jwtOptionsFactory(tokenService: TokenService) {
   return {
@@ -166,6 +166,7 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     }),
     AppRoutingModule,
     FormsModule,
+    NgxSpinnerModule,
   ],
   providers: [
     {provide: HomeTrajectenComponent},
