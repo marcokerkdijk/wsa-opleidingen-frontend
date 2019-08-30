@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { AdminBeheerTrajectComponent } from './admin-beheer-traject.component';
 
 describe('AdminBeheerTrajectComponent', () => {
