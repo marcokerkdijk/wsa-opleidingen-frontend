@@ -12,6 +12,10 @@ export class UitwerkingService {
 
   constructor(private http: HttpClient) { }
 
+  haalAlleUitwerkingenOp(){
+    return this.http.get<Uitwerking[]>(`${this.api}/geefAlleUitwerkingen`)
+  }
+
   maakUitwerking(gebruiker_id: number, opdracht_id: number, uitwerking: Uitwerking): Observable<Uitwerking> {
     return this.http.post<Uitwerking>(`${this.api}/maakUitwerking/` + gebruiker_id + '/' + opdracht_id, uitwerking);
   }

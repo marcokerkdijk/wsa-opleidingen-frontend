@@ -71,6 +71,7 @@ import { AlertModule } from './_alert';
 import { DocentUitwerkingenComponent } from './docent/docent-uitwerkingen/docent-uitwerkingen.component';
 import { BeheerUitwerkingComponent } from './docent/docent-uitwerkingen/beheer-uitwerking/beheer-uitwerking.component';
 import { UitwerkingenLijstComponent } from './docent/docent-uitwerkingen/uitwerkingen-lijst/uitwerkingen-lijst.component';
+import { AdminBeheerResultatenComponent } from './admin/admin-beheer-resultaten/admin-beheer-resultaten.component';
 
 
 export function jwtOptionsFactory(tokenService: TokenService) {
@@ -151,6 +152,7 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     DocentUitwerkingenComponent,
     BeheerUitwerkingComponent,
     UitwerkingenLijstComponent,
+    AdminBeheerResultatenComponent,
   ],
   imports: [
     BrowserModule,
