@@ -3,8 +3,8 @@
         <div class="row">
             <p id="traject-titel">{{traject.naam}}</p>
         </div>
-        <div class="row">
-            <div class="buttons">
+        <div class="row buttons">
+            <div>
                 <button id="studentButton" routerLink="./docent-studentenlijst/{{traject.id}}" routerLinkActive="active">Studenten</button>
                 <button id="lesstofButton" [routerLink]="'./docent-lesstof'">Lesstof</button>
                 <button id="opdrachtButton" [routerLink]="'./docent-opdrachten'">Opdrachten</button>

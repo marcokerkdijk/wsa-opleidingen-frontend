@@ -1,6 +1,6 @@
 <div class="row">
     <div>
-        <p>Uitwerkingen van {{student.voornaam}}</p>
+        <h6>Uitwerkingen van {{student.voornaam}}</h6>
     </div>
 </div>
 <div class="row">
@@ -9,13 +9,16 @@
             <tr>
                 <th>Opdracht<i id='sorteerPijlOpdracht' class="fa fa-fw fa-sort" (click)="sorteerTabel(0)"></i></th>
                 <th>Inleverdatum<i id='sorteerPijlInleverdatum' class="fa fa-fw fa-sort" (click)="sorteerTabel(1)"></i></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let Uitwerking of student.uitwerkingen">
                 <td>{{Uitwerking.opdracht.titel}}</td>
                 <td>{{Uitwerking.inleverTijdstip | date:'dd-MM-yyyy HH:mm:ss'}}</td>
-                <button (click)="naarUitwerking(Uitwerking);">Bekijk uitwerking</button>
+                <td>
+                    <button (click)="naarUitwerking(Uitwerking);">Bekijk uitwerking</button>
+                </td>
             </tr>
         </tbody>
     </table>

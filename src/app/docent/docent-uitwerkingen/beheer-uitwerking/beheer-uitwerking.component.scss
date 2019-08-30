@@ -1,3 +1,7 @@
+.row {
+    margin-bottom: 2%;
+}
+
 pre {
     background-color: #ffffff;
     border-color: #00aaef;
@@ -5,6 +9,7 @@ pre {
     max-width: 500px;
     min-height: 300px;
     max-height: 300px;
+    border-radius: 0;
 }
 
 .col-sm-6 {
@@ -33,7 +38,6 @@ textarea {
     min-height: 200px;
     max-height: 200px;
     border-color: #00aaef;
-    border-radius: 5px;
     padding: 2%;
     resize: none;
 }
@@ -56,7 +60,7 @@ button {
     touch-action: manipulation;
     white-space: nowrap;
     line-height: 1.42857;
-    margin-top: 2px;
+    margin-top: 10px;
     margin-bottom: 2px;
 }
 

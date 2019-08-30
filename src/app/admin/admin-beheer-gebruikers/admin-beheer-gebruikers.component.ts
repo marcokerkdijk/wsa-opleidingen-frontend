@@ -4,7 +4,7 @@ import { GebruikersService } from 'src/app/services/gebruikers.service';
 import { Gebruiker } from 'src/app/Objecten/gebruiker';
 import { ModalService } from 'src/app/services/modal.service';
 import { Router } from '@angular/router';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, SelectControlValueAccessor } from '@angular/forms';
 
 @Component({
   selector: 'wsa-admin-beheer-gebruikers',
@@ -40,7 +40,9 @@ export class AdminBeheerGebruikersComponent implements OnInit {
   
   wijzigGebruiker(gebruiker:Gebruiker){
     this.gebruikerService.wijzigGebruiker(gebruiker,gebruiker.id)
-    .subscribe(response => this.router.navigateByUrl('/admin'));
+    .subscribe(response => this.router.navigateByUrl('/admin').then(Succes => { 
+      this.router.navigateByUrl('/admin/admin-beheer-gebruikers')
+    }));
   } 
 
   clickWijzigModal(id,gebruikerId:number) {
@@ -53,7 +55,10 @@ export class AdminBeheerGebruikersComponent implements OnInit {
   }
 
   voegGebruikerToe(gebruiker:Gebruiker) {
-    this.gebruikerService.gebruikerToevoegen(gebruiker).subscribe(response => this.router.navigateByUrl('/admin'));
+    this.gebruikerService.gebruikerToevoegen(gebruiker)
+    .subscribe(response => this.router.navigateByUrl('/admin').then(Succes => { 
+      this.router.navigateByUrl('/admin/admin-beheer-gebruikers')
+    }));
   }
 }
 
