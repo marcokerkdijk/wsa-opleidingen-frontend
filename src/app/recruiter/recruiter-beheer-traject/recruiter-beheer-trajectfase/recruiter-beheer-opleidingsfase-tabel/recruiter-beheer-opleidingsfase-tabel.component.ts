@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { OpleidingsFase } from 'src/app/Objecten/opleidingsfase';
 import { Traject } from 'src/app/Objecten/traject';
-import { OpleidingsFaseService } from 'src/app/services/opleidings-fase.service';
 import { RecruiterBeheerOpleidingsfaseComponent } from '../recruiter-beheer-opleidingsfase/recruiter-beheer-opleidingsfase.component';
 import { RecruiterBeheerTrajectfaseComponent } from '../recruiter-beheer-trajectfase.component';
 
@@ -11,13 +9,11 @@ import { RecruiterBeheerTrajectfaseComponent } from '../recruiter-beheer-traject
   styleUrls: ['./recruiter-beheer-opleidingsfase-tabel.component.scss']
 })
 export class RecruiterBeheerOpleidingsfaseTabelComponent implements OnInit {
-  alleOpleidingsFasen:OpleidingsFase[];
   traject_id:number;
   traject:Traject = new Traject;
   
-   constructor(private opleidingsFaseComponent:RecruiterBeheerOpleidingsfaseComponent, 
-    private opleidingsFaseService:OpleidingsFaseService, 
-    private recruiterBeheerTrajectfaseComponent:RecruiterBeheerTrajectfaseComponent) { }
+  constructor(private opleidingsFaseComponent:RecruiterBeheerOpleidingsfaseComponent,
+              private recruiterBeheerTrajectfaseComponent:RecruiterBeheerTrajectfaseComponent) { }
 
   ngOnInit() {
     this.haalTrajectIdOp();
@@ -38,8 +34,7 @@ export class RecruiterBeheerOpleidingsfaseTabelComponent implements OnInit {
   }
 
   getOpleidingsFasen(traject_id): void {
-    this.opleidingsFaseService.GeefOpleidingsFasenPerTraject(traject_id)
-        .subscribe(opleidingsFasen => this.alleOpleidingsFasen = opleidingsFasen);
+    
   }
 
 }

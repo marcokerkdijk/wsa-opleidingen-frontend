@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { RecruiterBeheerTrajectfaseComponent } from '../recruiter-beheer-trajectfase.component';
-import { SelectieFaseService } from 'src/app/services/selectie-fase.service';
-import { SelectieFase } from 'src/app/Objecten/selectieFase';
 import { Traject } from 'src/app/Objecten/traject';
 import { RecruiterBeheerSelectiefaseComponent } from '../recruiter-beheer-selectiefase/recruiter-beheer-selectiefase.component';
 
@@ -11,13 +9,11 @@ import { RecruiterBeheerSelectiefaseComponent } from '../recruiter-beheer-select
   styleUrls: ['./recruiter-beheer-selectiefase-tabel.component.scss']
 })
 export class RecruiterBeheerSelectiefaseTabelComponent implements OnInit {
-  alleSelectieFasen:SelectieFase[];
   traject_id:number;
   traject:Traject = new Traject;
 
-  constructor(private recruiterBeheerSelectieFaseComponent:RecruiterBeheerSelectiefaseComponent, 
-    private selectieFaseService:SelectieFaseService, 
-    private recruiterBeheerTrajectfasenComponent:RecruiterBeheerTrajectfaseComponent) { }
+  constructor(private recruiterBeheerSelectieFaseComponent:RecruiterBeheerSelectiefaseComponent,  
+              private recruiterBeheerTrajectfasenComponent:RecruiterBeheerTrajectfaseComponent) { }
 
   ngOnInit() {
     this.haalTrajectIdOp();
@@ -38,8 +34,7 @@ export class RecruiterBeheerSelectiefaseTabelComponent implements OnInit {
   }
 
   getAlleSelectieFasen(traject_id): void {
-    this.selectieFaseService.GeefSelectieFasenPerTraject(traject_id)
-        .subscribe(selectieFasen => this.alleSelectieFasen = selectieFasen);
+
   }
 
 }

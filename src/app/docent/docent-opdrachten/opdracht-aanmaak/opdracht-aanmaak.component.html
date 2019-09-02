@@ -34,9 +34,10 @@
         <div class="row">
             <div>
                 <p>Kies bij welke fase de opdracht hoort</p>
-                <select name="fase" [(ngModel)]="opdracht.fase" id="opleidingsfasemenu">
-                    <option value="SELECTIE" id="selectiefasekeuze">Selectiefase</option>
-                    <option value="OPLEIDING" id="opleidingsfasekeuze">Opleidingsfase</option>
+                <select name="fase" [(ngModel)]="opdracht.trajectOnderdeel" id="trajectonderdeelmenu">
+                    <ng-container *ngFor="let Trajectonderdeel of trajectonderdelen">
+                        <option id="fasekeuze{{Trajectonderdeel.id}}" [ngValue]="Trajectonderdeel">{{Trajectonderdeel.naam}}</option>
+                    </ng-container>
                 </select>
             </div>
         </div>

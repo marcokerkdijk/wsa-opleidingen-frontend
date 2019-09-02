@@ -111,7 +111,7 @@ const routes: Routes = [
           { path: '', redirectTo: 'docent', pathMatch: 'full'},
           { path: "opdracht-aanmaak/:id", component: OpdrachtAanmaakComponent },
           { path: '', redirectTo: 'docent-traject', pathMatch: 'full'},
-          { path: "opdracht-wijzig", component: OpdrachtWijzigComponent },
+          { path: "opdracht-wijzig/:id", component: OpdrachtWijzigComponent },
           { path: '', redirectTo: 'docent-traject', pathMatch: 'full'},
           { path: "docent-uitwerkingen/:id", component: DocentUitwerkingenComponent },
           { path: '', redirectTo: 'docent', pathMatch: 'full'},

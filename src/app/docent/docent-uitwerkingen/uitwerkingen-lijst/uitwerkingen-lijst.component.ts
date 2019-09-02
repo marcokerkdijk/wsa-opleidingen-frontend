@@ -4,7 +4,6 @@ import { DataserviceService } from 'src/app/services/dataservice.service';
 import { Uitwerking } from 'src/app/Objecten/uitwerking';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AlertService } from 'src/app/_alert';
-import { Subscription } from 'rxjs';
 import { GebruikersService } from 'src/app/services/gebruikers.service';
 
 @Component({

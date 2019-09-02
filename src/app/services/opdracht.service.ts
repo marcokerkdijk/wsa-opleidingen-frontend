@@ -16,8 +16,8 @@ export class OpdrachtService {
     return this.http.get<Opdracht[]>(`${this.api}/geefAlleOpdrachtenVanTraject/` + traject_id);
   }
 
-  maakOpdrachtAan(traject_id: Number, opdracht: Opdracht): Observable<Opdracht> {
-    return this.http.post<Opdracht>(`${this.api}/maakOpdracht/` + traject_id, opdracht);
+  maakOpdrachtAan(opdracht: Opdracht): Observable<Opdracht> {
+    return this.http.post<Opdracht>(`${this.api}/maakOpdracht`, opdracht);
   }
 
   wijzigOpdracht(opdracht: Opdracht): Observable<Opdracht> {
