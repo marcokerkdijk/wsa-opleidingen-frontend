@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { OpleidingsFase } from 'src/app/Objecten/opleidingsfase';
 import { Traject } from 'src/app/Objecten/traject';
-import { OpleidingsFaseService } from 'src/app/services/opleidings-fase.service';
 import { BeheerOpleidingsfaseComponent } from '../beheer-opleidingsfase/beheer-opleidingsfase.component';
 import { AdminBeheerTrajectfasenComponent } from '../admin-beheer-trajectfasen.component';
 
@@ -11,12 +9,11 @@ import { AdminBeheerTrajectfasenComponent } from '../admin-beheer-trajectfasen.c
   styleUrls: ['./opleidings-fase-tabel.component.scss']
 })
 export class OpleidingsFaseTabelComponent implements OnInit {
-  alleOpleidingsFasen:OpleidingsFase[];
   traject_id:number;
   traject:Traject = new Traject;
 
-  constructor(private opleidingsFaseComponent:BeheerOpleidingsfaseComponent, private opleidingsFaseService:OpleidingsFaseService
-  ,  private adminBeheeTrajectfasenComponent:AdminBeheerTrajectfasenComponent) { }
+  constructor(private opleidingsFaseComponent:BeheerOpleidingsfaseComponent,
+              private adminBeheeTrajectfasenComponent:AdminBeheerTrajectfasenComponent) { }
 
   ngOnInit() {
     this.haalTrajectIdOp();
@@ -37,8 +34,7 @@ export class OpleidingsFaseTabelComponent implements OnInit {
   }
 
   getOpleidingsFasen(traject_id): void {
-    this.opleidingsFaseService.GeefOpleidingsFasenPerTraject(traject_id)
-        .subscribe(opleidingsFasen => this.alleOpleidingsFasen = opleidingsFasen);
+
   }
 
 }

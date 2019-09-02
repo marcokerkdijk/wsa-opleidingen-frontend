@@ -12,7 +12,7 @@
                     <th id="omschrijving">Omschrijving</th>
                     <th id="codevoorbeeld">Codevoorbeeld</th>
                     <th id="dag">Bootcampdag</th>
-                    <th id="fasetype">Fasetype</th>
+                    <th id="fase">Fase</th>
                     <th id="zichtbaar">Zichtbaar</th>
                     <th id="wijzigen">Wijzig</th>
                     <th id="verwijderen">Verwijder</th>
@@ -25,7 +25,7 @@
                         <td id="omschrijving{{Opdracht.id}}">{{Opdracht.omschrijving}}</td>
                         <td id="code{{Opdracht.id}}">{{Opdracht.codevoorbeeld}}</td>
                         <td id="dag{{Opdracht.id}}">{{Opdracht.dag}}</td>
-                        <td class="fasetype" id="fasetype{{Opdracht.id}}">{{Opdracht.fase}}</td>
+                        <td id="trajectonderdeel{{Opdracht.id}}">{{Opdracht.trajectOnderdeel.naam}}</td>
                         <td id="zichtbaar{{Opdracht.id}}">
                             <p *ngIf="Opdracht.zichtbaar">Ja</p>
                             <p *ngIf="!Opdracht.zichtbaar">Nee</p>
