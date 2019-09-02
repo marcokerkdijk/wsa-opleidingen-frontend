@@ -11,6 +11,8 @@ import { StudentAutorisatieGuard } from "./guards/student-autorisatie.guard";
 import { AdminBeheerTrajectComponent } from './admin/admin-beheer-traject/admin-beheer-traject.component';
 import { AdminBeheerGebruikersComponent } from './admin/admin-beheer-gebruikers/admin-beheer-gebruikers.component';
 import { AdminBeheerTrajectfasenComponent } from './admin/admin-beheer-trajectfasen/admin-beheer-trajectfasen.component';
+import { AdminBeheerResultatenComponent } from './admin/admin-beheer-resultaten/admin-beheer-resultaten.component';
+
 import { SelectiefaseTabelComponent } from './admin/admin-beheer-trajectfasen/selectiefase-tabel/selectiefase-tabel.component';
 import { DocentStudentenlijstComponent} from './docent/docent-studentenlijst/docent-studentenlijst.component';
 import { HomeTrajectenInformatieComponent } from './home/home-trajecten/home-trajecten-informatie/home-trajecten-informatie.component';
@@ -70,6 +72,8 @@ const routes: Routes = [
       { path: "admin-beheer-trajectfasen/:id", component: AdminBeheerTrajectfasenComponent},
       { path: '', redirectTo: 'admin', pathMatch: 'full' },
       { path: "admin-beheer-trajectgebruikers/:id", component: AdminBeheerTrajectgebruikersComponent},
+      { path: '', redirectTo: 'admin', pathMatch: 'full' },
+      { path: "admin-beheer-resultaten/:id", component: AdminBeheerResultatenComponent},
       { path: '', redirectTo: 'admin', pathMatch: 'full' },
       { path: "admin-beheer-assessments", component: AdminBeheerAssessmentsComponent},
     ]
