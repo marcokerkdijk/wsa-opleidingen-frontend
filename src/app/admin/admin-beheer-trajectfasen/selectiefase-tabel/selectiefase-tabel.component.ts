@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminBeheerTrajectfasenComponent } from '../admin-beheer-trajectfasen.component';
-import { SelectieFaseService } from 'src/app/services/selectie-fase.service';
-import { SelectieFase } from 'src/app/Objecten/selectieFase';
 import { Traject } from 'src/app/Objecten/traject';
 import { BeheerSelectiefaseComponent } from '../beheer-selectiefase/beheer-selectiefase.component';
 
@@ -11,12 +9,11 @@ import { BeheerSelectiefaseComponent } from '../beheer-selectiefase/beheer-selec
   styleUrls: ['./selectiefase-tabel.component.scss']
 })
 export class SelectiefaseTabelComponent implements OnInit {
-  alleSelectieFasen:SelectieFase[];
   traject_id:number;
   traject:Traject = new Traject;
 
-  constructor(private beheerSelectieFaseComponent:BeheerSelectiefaseComponent, private selectieFaseService:SelectieFaseService
-    , private adminBeheeTrajectfasenComponent:AdminBeheerTrajectfasenComponent) { }
+  constructor(private beheerSelectieFaseComponent:BeheerSelectiefaseComponent, 
+              private adminBeheeTrajectfasenComponent:AdminBeheerTrajectfasenComponent) { }
 
   ngOnInit() {
     this.haalTrajectIdOp();
@@ -37,8 +34,7 @@ export class SelectiefaseTabelComponent implements OnInit {
   }
 
   getAlleSelectieFasen(traject_id): void {
-    this.selectieFaseService.GeefSelectieFasenPerTraject(traject_id)
-        .subscribe(selectieFasen => this.alleSelectieFasen = selectieFasen);
+    
   }
 
 }

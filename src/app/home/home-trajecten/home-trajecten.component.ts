@@ -4,8 +4,6 @@ import { environment } from 'src/environments/environment';
 import { TrajectService } from 'src/app/services/traject.service';
 import { Router } from '@angular/router';
 import { DataserviceService } from 'src/app/services/dataservice.service';
-import { SelectieFase } from 'src/app/Objecten/selectieFase';
-import { OpleidingsFase } from 'src/app/Objecten/opleidingsfase';
 import { TekstobjectserviceService } from 'src/app/services/tekstobjectservice.service';
 import { TekstObject } from 'src/app/Objecten/tekst-object';
 

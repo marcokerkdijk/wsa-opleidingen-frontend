@@ -4,6 +4,7 @@ import {Observable, of} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {environment} from 'src/environments/environment';
 import { DTOGebruikerID } from '../Objecten/gebruikerDTO';
+import { TrajectOnderdeel } from '../Objecten/traject-onderdeel';
 
 @Injectable({
   providedIn: 'root'
@@ -47,4 +48,7 @@ export class TrajectService {
     return this.http.put<DTOGebruikerID>(`${this.api}/voegGebruikersOfVerwijderVanTraject/` +trajectId, lijstGebruikers);
   }
 
+  geefAlleTrajectonderdelen(traject_id: number): Observable<TrajectOnderdeel[]> {
+    return this.http.get<TrajectOnderdeel[]>(`${this.api}/geefTrajectOnderdelenVanTraject/` + traject_id);
+  }
 }

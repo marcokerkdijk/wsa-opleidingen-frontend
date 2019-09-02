@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { OpleidingsFaseService } from 'src/app/services/opleidings-fase.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { TrajectService } from 'src/app/services/traject.service';
 import { ModalService } from 'src/app/services/modal.service';
 import { AdminBeheerTrajectfasenComponent } from '../admin-beheer-trajectfasen.component';
 import { Traject } from 'src/app/Objecten/traject';
-import { OpleidingsFase } from 'src/app/Objecten/opleidingsfase';
 
 @Component({
   selector: 'wsa-beheer-opleidingsfase',
@@ -13,17 +11,12 @@ import { OpleidingsFase } from 'src/app/Objecten/opleidingsfase';
   styleUrls: ['./beheer-opleidingsfase.component.scss']
 })
 export class BeheerOpleidingsfaseComponent implements OnInit {
-  opleidingsFase:OpleidingsFase = new OpleidingsFase;
-  nieuweOpleiding:OpleidingsFase = new OpleidingsFase;
-  gewijzigdeFase:OpleidingsFase=new OpleidingsFase;
-  opleidingsfasen:OpleidingsFase[];
   traject: Traject = new Traject;
   traject_id:number;
   opleidingsfase_id:number;
 
-  constructor(private opleidingsFaseService:OpleidingsFaseService, private router:Router, 
-    private modalService:ModalService, private activeRouter:ActivatedRoute, private trajectService:TrajectService,
-    private adminBeheerTrajectfasen:AdminBeheerTrajectfasenComponent) { }
+  constructor(private router:Router, private modalService:ModalService, private activeRouter:ActivatedRoute, 
+    private trajectService:TrajectService, private adminBeheerTrajectfasen:AdminBeheerTrajectfasenComponent) { }
 
   ngOnInit() {
     this.router.navigated = false;
@@ -32,14 +25,7 @@ export class BeheerOpleidingsfaseComponent implements OnInit {
   }
   
   haalOpleidingsFase(id:number):void {
-    this.opleidingsFase.id = id;
-    this.opleidingsFaseService.haalOpleidingsFaseOpId(id).subscribe(opgehaaldeOpleidingsFase => {
-      this.opleidingsFase = opgehaaldeOpleidingsFase
-    },
-    (error) => {
-      console.log();
-    }
-    );
+
   }
 
   openModal(id: string, opleidingsfase_id) {
@@ -53,8 +39,7 @@ export class BeheerOpleidingsfaseComponent implements OnInit {
   }
 
   maakNieuwOpleidingsFase(nieuweOpleiding,modalId){
-    this.opleidingsFaseService.voegOpleidingsFaseToe(nieuweOpleiding,this.traject_id)
-    .subscribe(response =>this.adminBeheerTrajectfasen.refreshPagina());
+
     this.closeModal(modalId);
   }
 
@@ -63,8 +48,7 @@ export class BeheerOpleidingsfaseComponent implements OnInit {
   }
 
   wijzigOpleidingsFase(opleidingsfase, modalId) {
-    this.opleidingsFaseService.wijzigOpleidingsFase(opleidingsfase, opleidingsfase.id)
-    .subscribe(response =>this.adminBeheerTrajectfasen.refreshPagina());
+
     this.closeModal(modalId);
   }
 }

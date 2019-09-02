@@ -1,6 +1,7 @@
 import { OpdrachtType } from '../model/opdracht-type.enum';
 import { Traject } from './traject';
-import { FaseType } from '../model/fase-type.enum';
+import { Uitwerking } from './uitwerking';
+import { TrajectOnderdeel } from './traject-onderdeel';
 
 export class Opdracht {
     id: number;
@@ -9,7 +10,7 @@ export class Opdracht {
     zichtbaar: boolean;
     codevoorbeeld: string;
     dag: number;
+    trajectOnderdeel: TrajectOnderdeel;
     type: OpdrachtType;
-    fase: FaseType;
-    traject: Traject;
+    uitwerkingen: Uitwerking[];
 }

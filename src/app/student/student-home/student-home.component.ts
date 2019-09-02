@@ -1,12 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Gebruiker } from 'src/app/Objecten/gebruiker';
 import { Traject } from 'src/app/Objecten/traject';
 import { AutenticatieService, JwtToken } from 'src/app/services/autenticatie.service';
 import { TrajectService } from 'src/app/services/traject.service';
-import {Observable, of} from 'rxjs';
-import { SelectieFase } from 'src/app/Objecten/selectieFase';
-import { OpleidingsFase } from 'src/app/Objecten/opleidingsfase';
 import { AlertService } from 'src/app/_alert';
 
 @Component({
@@ -18,17 +13,9 @@ export class StudentHomeComponent implements OnInit {
   gebruiker:JwtToken;
   index: number = 0;
   trajecten: Traject[];
-  SelectieFase: SelectieFase[]; 
-  OpleidingsFase: OpleidingsFase[]; 
-
   
-  
-  constructor(
-    private authenticatieService:AutenticatieService,
-    private router: Router,
-    private trajectService: TrajectService,
-    private alertservice: AlertService,
-    ) { }
+  constructor(private authenticatieService:AutenticatieService, private trajectService: TrajectService,
+              private alertservice: AlertService ) { }
 
   ngOnInit() {
     this.haalGebruikerOp();

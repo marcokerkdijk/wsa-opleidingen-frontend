@@ -16,14 +16,6 @@ table {
     table-layout:fixed;
 }
 
-.fasetype {
-    text-transform: lowercase;
-}
-
-.fasetype::first-letter {
-    text-transform: uppercase;
-}
-
 #waarschuwing {
     width: 990px;
     max-width: 990px;
