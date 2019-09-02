@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Gebruiker } from 'src/app/Objecten/gebruiker';
 import { GebruikersService } from 'src/app/services/gebruikers.service';
 import { AdminBeheerGebruikersComponent } from '../admin-beheer-gebruikers.component';
+import { AlertService } from 'src/app/_alert';
 
 @Component({
   selector: 'wsa-gebruikers-tabel',
@@ -11,7 +12,8 @@ import { AdminBeheerGebruikersComponent } from '../admin-beheer-gebruikers.compo
 export class GebruikersTabelComponent implements OnInit {
   actieveGebruikers : Gebruiker[];
   
-  constructor(private gebruikerService : GebruikersService, private adminBeheerGebruikers:AdminBeheerGebruikersComponent) { }
+  constructor(private gebruikerService : GebruikersService, private adminBeheerGebruikers:AdminBeheerGebruikersComponent,
+              private alertservice: AlertService) { }
 
   ngOnInit() {
     this.haalActieveGebruikers();
@@ -19,7 +21,13 @@ export class GebruikersTabelComponent implements OnInit {
 
   haalActieveGebruikers(): void {
     this.gebruikerService.geefActieveGebruikers()
-        .subscribe(gebruikers => this.actieveGebruikers = gebruikers);
+        .subscribe(gebruikers => {
+          this.actieveGebruikers = gebruikers;
+        },
+        (error) => {
+          this.alertservice.error("Er zijn geen gebruikers gevonden in de database.", "alert-1");
+        }
+        );
   }
 
   openWijzigModal(id,gebruikerId:number) {

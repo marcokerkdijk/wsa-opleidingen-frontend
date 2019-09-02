@@ -4,6 +4,7 @@ import { Traject } from 'src/app/Objecten/traject';
 import { TrajectService } from 'src/app/services/traject.service';
 import { DataserviceService } from 'src/app/services/dataservice.service';
 import { Router } from '@angular/router';
+import { AlertService } from 'src/app/_alert';
 
 @Component({
   selector: 'wsa-docent-home',
@@ -15,7 +16,7 @@ export class DocentHomeComponent implements OnInit {
   trajectenDocent: Traject[];
 
   constructor(private authenticatieService: AutenticatieService, private trajectService: TrajectService, 
-              private dataservice: DataserviceService, private router: Router) { }
+              private dataservice: DataserviceService, private router: Router, private alertservice: AlertService) { }
 
   ngOnInit() {
     this.haalGebruikerOp();
@@ -28,7 +29,13 @@ export class DocentHomeComponent implements OnInit {
 
   haalTrajectenVanDocentOp():void {
     this.trajectService.haalTrajectenOpVanGebruiker(this.gebruiker.gebruiker_id)
-        .subscribe(trajecten => this.trajectenDocent = trajecten);
+        .subscribe(trajecten => {
+          this.trajectenDocent = trajecten;
+        },
+        (error) => {
+          this.alertservice.error("U bent nog niet aan een traject gekoppeld.", "alert-1");
+        }
+        );
   }
 
   naarTrajectPagina(traject: Traject):void {

@@ -5,6 +5,7 @@ import { TrajectService } from 'src/app/services/traject.service';
 import { Gebruiker } from 'src/app/Objecten/gebruiker';
 import { GebruikersService } from 'src/app/services/gebruikers.service';
 import { DTOGebruikerID } from 'src/app/Objecten/gebruikerDTO';
+import { AlertService } from 'src/app/_alert';
 
 @Component({
   selector: 'wsa-recruiter-beheer-trajectgebruikers',
@@ -19,7 +20,7 @@ export class RecruiterBeheerTrajectgebruikersComponent implements OnInit {
   docentIDLijst: DTOGebruikerID[] = new Array;
 
   constructor(private activeRouter: ActivatedRoute, private trajectService:TrajectService,
-    private gebruikersService: GebruikersService) { }
+              private gebruikersService: GebruikersService, private alertservice: AlertService) { }
 
   ngOnInit() {
     const id = +this.activeRouter.snapshot.paramMap.get('id');
@@ -36,6 +37,9 @@ export class RecruiterBeheerTrajectgebruikersComponent implements OnInit {
     this.gebruikersService.geefStudentenVanTrajectEnOngekoppelde(traject_id).subscribe(studenten => {
       this.studentenlijst = studenten;
       this.maakStudentArray();
+    },
+    (error) => {
+      this.alertservice.error("Er zijn geen studenten zonder traject.", "alert-1");
     });
   }
 

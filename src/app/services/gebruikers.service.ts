@@ -23,7 +23,7 @@ export class GebruikersService {
     return this.http.put(`${this.api}/wijzigGebruiker/` + gebruiker.id, gebruiker);
   }
 
-  vraagGebruikerOpId(id: number): Observable<any> {
+  vraagGebruikerOpId(id: number): Observable<Gebruiker> {
     return this.http.get<Gebruiker>(`${this.api}/getGebruikerId/` + id);
   }
   gebruikerToevoegen(gebruiker) {

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { GebruikersService } from 'src/app/services/gebruikers.service';
 import { Gebruiker } from 'src/app/Objecten/gebruiker';
+import { AlertService } from 'src/app/_alert';
 
 @Component({
   selector: 'wsa-docent-studentenlijst',
@@ -11,7 +12,8 @@ import { Gebruiker } from 'src/app/Objecten/gebruiker';
 export class DocentStudentenlijstComponent implements OnInit {
   studenten: Gebruiker[];
 
-  constructor(private gebruikerService: GebruikersService, private activeRouter:ActivatedRoute) { }
+  constructor(private gebruikerService: GebruikersService, private activeRouter:ActivatedRoute,
+              private alertservice: AlertService) { }
 
   ngOnInit() {
     const id = +this.activeRouter.snapshot.paramMap.get('id');
@@ -19,8 +21,13 @@ export class DocentStudentenlijstComponent implements OnInit {
   }
 
   haalStudentenOp(id: number): void {
-    this.gebruikerService.geefAlleStudentenVanTraject(id)
-      .subscribe(studenten => this.studenten = studenten);
+    this.gebruikerService.geefAlleStudentenVanTraject(id).subscribe(studenten => {
+      this.studenten = studenten;
+    },
+    (error) => {
+      this.alertservice.error("Er zijn nog geen studenten aan dit traject gekoppeld.", "alert-1");
+    }
+    );
   }
 
   sorteerTabel(n) {

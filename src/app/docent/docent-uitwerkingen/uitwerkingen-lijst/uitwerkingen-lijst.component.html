@@ -13,7 +13,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let Uitwerking of student.uitwerkingen">
+            <tr id="uitwerkingrow" *ngFor="let Uitwerking of student.uitwerkingen">
                 <td>{{Uitwerking.opdracht.titel}}</td>
                 <td>{{Uitwerking.inleverTijdstip | date:'dd-MM-yyyy HH:mm:ss'}}</td>
                 <td>
@@ -22,4 +22,7 @@
             </tr>
         </tbody>
     </table>
+    <div id="melding">
+        <alert id="alert-1"></alert>
+    </div>
 </div>

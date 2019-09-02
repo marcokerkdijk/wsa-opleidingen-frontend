@@ -3,6 +3,7 @@ import { DataserviceService } from 'src/app/services/dataservice.service';
 import { Opdracht } from 'src/app/Objecten/opdracht';
 import { OpdrachtService } from 'src/app/services/opdracht.service';
 import { Router } from '@angular/router';
+import { AlertService } from 'src/app/_alert';
 
 @Component({
   selector: 'wsa-docent-opdrachten',
@@ -16,7 +17,7 @@ export class DocentOpdrachtenComponent implements OnInit {
   geenOpdrachten: boolean;
 
   constructor(private dataservice: DataserviceService, private opdrachtService: OpdrachtService,
-              private router: Router) { }
+              private router: Router, private alertservice: AlertService) { }
 
   ngOnInit() {
     this.krijgTrajectId();
@@ -30,10 +31,10 @@ export class DocentOpdrachtenComponent implements OnInit {
   krijgOpdrachtenVanTraject(): void {
     this.opdrachtService.geefAlleOpdrachtenVanTraject(this.traject_id)
         .subscribe(opdrachtlijst => {
-          this.opdrachten = opdrachtlijst
+          this.opdrachten = opdrachtlijst;
         },
         (error) => {
-          this.geenOpdrachten = true;
+          this.alertservice.error("Dit traject heeft nog geen opdrachten.", "alert-1");
         });
   }
 

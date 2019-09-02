@@ -33,7 +33,13 @@ export class BeheerOpleidingsfaseComponent implements OnInit {
   
   haalOpleidingsFase(id:number):void {
     this.opleidingsFase.id = id;
-    this.opleidingsFaseService.haalOpleidingsFaseOpId(id).subscribe(opgehaaldeOpleidingsFase => this.opleidingsFase = opgehaaldeOpleidingsFase);
+    this.opleidingsFaseService.haalOpleidingsFaseOpId(id).subscribe(opgehaaldeOpleidingsFase => {
+      this.opleidingsFase = opgehaaldeOpleidingsFase
+    },
+    (error) => {
+      console.log();
+    }
+    );
   }
 
   openModal(id: string, opleidingsfase_id) {
@@ -53,8 +59,8 @@ export class BeheerOpleidingsfaseComponent implements OnInit {
   }
 
   haalTrajectOp(traject_id) {
-  this.trajectService.haalTrajectOpId(traject_id).subscribe(opgehaaldTraject => this.traject = opgehaaldTraject);   
-   }
+    this.trajectService.haalTrajectOpId(traject_id).subscribe(opgehaaldTraject => this.traject = opgehaaldTraject);   
+  }
 
   wijzigOpleidingsFase(opleidingsfase, modalId) {
     this.opleidingsFaseService.wijzigOpleidingsFase(opleidingsfase, opleidingsfase.id)

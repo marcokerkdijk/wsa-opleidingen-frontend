@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GebruikersService } from 'src/app/services/gebruikers.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Gebruiker } from 'src/app/Objecten/gebruiker';
-import { DataserviceService } from 'src/app/services/dataservice.service';
+import { AlertService } from 'src/app/_alert';
 
 @Component({
   selector: 'wsa-docent-uitwerkingen',
@@ -13,7 +13,7 @@ export class DocentUitwerkingenComponent implements OnInit {
   studenten: Gebruiker[];
 
   constructor(private gebruikerService: GebruikersService, private activeRouter: ActivatedRoute,
-              private dataservice: DataserviceService, private router: Router, ) { }
+              private router: Router, private alertservice: AlertService) { }
 
   ngOnInit() {
     const id = +this.activeRouter.snapshot.paramMap.get('id');
@@ -21,13 +21,17 @@ export class DocentUitwerkingenComponent implements OnInit {
   }
 
   haalStudentenOp(id: number): void {
-    this.gebruikerService.geefAlleStudentenVanTraject(id)
-      .subscribe(studenten => this.studenten = studenten);
+    this.gebruikerService.geefAlleStudentenVanTraject(id).subscribe(studenten => {
+      this.studenten = studenten;
+    },
+    (error) => {
+      this.alertservice.error("Er zijn geen studenten aan dit traject gekoppeld.", "alert-1");
+    }
+    );
   }
 
   naarUitwerkinglijst(student: Gebruiker):void {
-    this.dataservice.setGebruiker(student);
-    this.router.navigateByUrl('docent/docent-traject/uitwerkingen-lijst');
+    this.router.navigateByUrl('docent/docent-traject/uitwerkingen-lijst/' + student.id);
   }
 
   sorteerTabel(n) {
