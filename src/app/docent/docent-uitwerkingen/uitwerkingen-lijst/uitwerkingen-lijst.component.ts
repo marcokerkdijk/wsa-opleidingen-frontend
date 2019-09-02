@@ -1,8 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewChecked, ElementRef } from '@angular/core';
 import { Gebruiker } from 'src/app/Objecten/gebruiker';
 import { DataserviceService } from 'src/app/services/dataservice.service';
 import { Uitwerking } from 'src/app/Objecten/uitwerking';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { AlertService } from 'src/app/_alert';
+import { Subscription } from 'rxjs';
+import { GebruikersService } from 'src/app/services/gebruikers.service';
 
 @Component({
   selector: 'wsa-uitwerkingen-lijst',
@@ -12,14 +15,26 @@ import { Router } from '@angular/router';
 export class UitwerkingenLijstComponent implements OnInit {
   student: Gebruiker = new Gebruiker();
 
-  constructor(private dataservice: DataserviceService, private router: Router,) { }
+  constructor(private dataservice: DataserviceService, private router: Router, private alertservice: AlertService, 
+              private activeRoute: ActivatedRoute, private gebruikerService: GebruikersService) { }
 
   ngOnInit() {
-    this.haalStudentOp();
+    const id = +this.activeRoute.snapshot.paramMap.get('id');
+    this.haalStudentOp(id);
   }
 
-  haalStudentOp(): void {
-    this.student = this.dataservice.getGebruiker();
+  haalStudentOp(id: number): void {
+    this.gebruikerService.vraagGebruikerOpId(id).subscribe(student => {
+      this.student = student;
+      this.dataservice.setGebruiker(student);
+      if (student.uitwerkingen.length === 0) {
+        this.foutmelding();
+      }
+    });
+  }
+
+  foutmelding(): void {
+    this.alertservice.error("Deze student heeft nog geen uitwerkingen ingeleverd.", "alert-1");
   }
 
   naarUitwerking(uitwerking: Uitwerking): void {

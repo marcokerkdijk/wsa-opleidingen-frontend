@@ -10,6 +10,9 @@ pre {
     min-height: 300px;
     max-height: 300px;
     border-radius: 0;
+    overflow-x: hidden;
+    white-space: pre-wrap;
+    word-break: keep-all; 
 }
 
 .col-sm-6 {

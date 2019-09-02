@@ -48,49 +48,15 @@ li a {
     padding-right: 10px;
 }
 
-#Home:hover {
-    color: #ffffff;
-}
-
-#Adminpagina:hover {
-    color: #ffffff;
-}
-
-#Docentpagina:hover {
-    color: #ffffff;
-}
-
-#Studentpagina:hover {
-    color: #ffffff;
-}
-
-#Recruiterpagina:hover {
-    color: #ffffff;
-}
-
-#TerugKnop:hover {
-    color: #ffffff;
-}
-
-#ProfielKnop:hover {
-    color: #ffffff;
-}
-
-#LogoutButton:hover {
+#Home:hover, #Adminpagina:hover, #Docentpagina:hover, #Studentpagina:hover, #Recruiterpagina:hover,
+#TerugKnop:hover, #ProfielKnop:hover, #LogoutButton:hover, #VoorbereidingButton:hover, #OpdrachtenButton:hover,
+#NotitiesButton:hover, #MijnOverzichtButton:hover {
     color: #ffffff;
 }
 
 .hamburgerButton {
     font-size: 14px;
     color: #00aeef;
-}
-
-#StudentpaginaHamburger {
-    color: #00aeef;
-}
-
-#StudentpaginaHamburger:hover {
-    color: #ffffff;
 }
 
 // #TerugKnopHamburger {
@@ -101,51 +67,13 @@ li a {
 //     color: #ffffff;
 // }
 
-#VoorbereidingHamburger {
+#VoorbereidingHamburger, #StudentpaginaHamburger, #OpdrachtenHamburger, #NotitiesHamburger,
+#Mijn-GegevensHamburger, #ProfielHamburger, #LogoutButtonHamburger {
     color: #00aeef;
 }
 
-#VoorbereidingHamburger:hover {
-    color: #ffffff;
-}
-
-#OpdrachtenHamburger {
-    color: #00aeef;
-}
-
-#OpdrachtenHamburger:hover {
-    color: #ffffff;
-}
-
-#NotitiesHamburger {
-    color: #00aeef;
-}
-
-#NotitiesHamburger:hover {
-    color: #ffffff;
-}
-
-#Mijn-GegevensHamburger {
-    color: #00aeef;
-}
-
-#Mijn-GegevensHamburger:hover {
-    color: #ffffff;
-}
-
-#ProfielHamburger {
-    color: #00aeef;
-}
-
-#ProfielHamburger:hover {
-    color: #ffffff;
-}
-
-#LogoutButtonHamburger {
-    color: #00aeef;
-}
-
-#LogoutButtonHamburger:hover {
+#VoorbereidingHamburger:hover,  #StudentpaginaHamburger:hover, #OpdrachtenHamburger:hover, #NotitiesHamburger:hover,
+#Mijn-GegevensHamburger:hover, #ProfielHamburger:hover, #LogoutButtonHamburger:hover {
     color: #ffffff;
 }
 
@@ -176,7 +104,7 @@ li a {
     display: block;
 }   
  
-@media (max-width: 65rem){
+@media (max-width: 70rem){
     #hamburger {
         visibility: visible;
         width: 35px;

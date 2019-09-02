@@ -56,6 +56,10 @@ li a {
     color: #ffffff;
 }
 
+#Admin:hover, #Docent:hover, #Recruiter:hover, #Student:hover {
+    color: #ffffff;
+}
+
 .hamburgerButton {
     font-size: 14px;
     color: #00aeef;
@@ -66,7 +70,7 @@ li a {
     color: #00aeef; 
 }
 
-  #LoginButtonHamburger:hover{
+#LoginButtonHamburger:hover{
     font-size: 14px;
     color: #ffffff;
 }
@@ -76,8 +80,19 @@ li a {
     color: #00aeef; 
 }
 
-  #ProfielButtonHamburger:hover {
+#ProfielButtonHamburger:hover {
     font-size: 14px;
+    color: #ffffff;
+}
+
+#AdminButtonHamburger, #DocentButtonHamburger, 
+#RecruiterButtonHamburger, #StudentButtonHamburger {
+    font-size: 14px;
+    color: #00aeef; 
+}
+
+#AdminButtonHamburger:hover, #DocentButtonHamburger:hover, 
+#RecruiterButtonHamburger:hover, #StudentButtonHamburger:hover {
     color: #ffffff;
 }
 

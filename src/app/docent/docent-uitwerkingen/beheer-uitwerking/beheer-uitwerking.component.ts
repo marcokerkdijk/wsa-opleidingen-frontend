@@ -28,6 +28,6 @@ export class BeheerUitwerkingComponent implements OnInit {
 
   opmerkingOpslaan(uitwerking: Uitwerking): void {
     this.uitwerkingservice.wijzigUitwerking(this.student.id ,uitwerking)
-        .subscribe(response => this.router.navigateByUrl('docent/docent-traject/uitwerkingen-lijst'));
+        .subscribe(response => this.router.navigateByUrl('docent/docent-traject/uitwerkingen-lijst/' + this.student.id));
   }
 }

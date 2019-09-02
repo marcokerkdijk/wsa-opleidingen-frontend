@@ -1,6 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { AutenticatieService, JwtResponse } from "../services/autenticatie.service";
+import { AutenticatieService, JwtResponse, JwtToken } from "../services/autenticatie.service";
 import { Router } from "@angular/router";
 import { TokenService } from "../services/token.service";
 
@@ -17,6 +17,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 export class NavbarComponent implements OnInit {
   loginform: FormGroup;
   ingelogd: boolean = false;
+  rol: string;
   vergeten: boolean = false;
   emailgebruiker: string;
   konamicode: Number[] = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
@@ -50,6 +51,10 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
     this.ingelogd = this.tokenService.isIngelogd();
+    
+    if (this.ingelogd == true) {
+      this.rol = this.autenticatieService.krijgRol();
+    }
   }
 
   public checkoutKonamiCode(KonamiCode: Number[], IngevoerdeCode: Number[]): boolean {

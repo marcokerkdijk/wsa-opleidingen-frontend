@@ -7,6 +7,7 @@ import { TrajectService } from 'src/app/services/traject.service';
 import {Observable, of} from 'rxjs';
 import { SelectieFase } from 'src/app/Objecten/selectieFase';
 import { OpleidingsFase } from 'src/app/Objecten/opleidingsfase';
+import { AlertService } from 'src/app/_alert';
 
 @Component({
   selector: 'wsa-student-home',
@@ -26,6 +27,7 @@ export class StudentHomeComponent implements OnInit {
     private authenticatieService:AutenticatieService,
     private router: Router,
     private trajectService: TrajectService,
+    private alertservice: AlertService,
     ) { }
 
   ngOnInit() {
@@ -38,8 +40,11 @@ export class StudentHomeComponent implements OnInit {
   }
 
   HaalTrajectBijGebruikerOp(){
-    this.trajectService.haalTrajectenOpVanGebruiker(this.gebruiker.gebruiker_id)
-    .subscribe(trajecten => this.trajecten = trajecten);
- 
+    this.trajectService.haalTrajectenOpVanGebruiker(this.gebruiker.gebruiker_id).subscribe(trajecten => {
+      this.trajecten = trajecten;
+    },
+    (error) => {
+      this.alertservice.error("Je bent nog niet aan een traject gekoppeld.", "alert-1");
+    });
   }
 }

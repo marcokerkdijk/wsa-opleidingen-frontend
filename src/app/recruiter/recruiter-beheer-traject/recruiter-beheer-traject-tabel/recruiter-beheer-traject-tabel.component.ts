@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RecruiterBeheerTrajectComponent } from '../recruiter-beheer-traject.component';
 import { TrajectService } from 'src/app/services/traject.service';
 import { Traject } from 'src/app/Objecten/traject';
+import { AlertService } from 'src/app/_alert';
 
 @Component({
   selector: 'wsa-recruiter-beheer-traject-tabel',
@@ -11,7 +12,8 @@ import { Traject } from 'src/app/Objecten/traject';
 export class RecruiterBeheerTrajectTabelComponent implements OnInit {
   alleTrajecten:Traject[];
 
-  constructor(private trajectService:TrajectService, private recruiterBeheerTrajectComponent:RecruiterBeheerTrajectComponent) { }
+  constructor(private trajectService:TrajectService, private recruiterBeheerTrajectComponent:RecruiterBeheerTrajectComponent,
+              private alertservice: AlertService) { }
 
   ngOnInit() {
     this.getAlleTrajecten();
@@ -27,8 +29,13 @@ export class RecruiterBeheerTrajectTabelComponent implements OnInit {
   }
 
   getAlleTrajecten(): void {
-    this.trajectService.GeefAlleTrajecten()
-        .subscribe(alleTrajecten => this.alleTrajecten = alleTrajecten);
+    this.trajectService.GeefAlleTrajecten().subscribe(alleTrajecten => {
+      this.alleTrajecten = alleTrajecten;
+    },
+    (error) => {
+      this.alertservice.error("Er zijn nog geen trajecten aangemaakt.", "alert-1");
+    }
+    );
   }
 
 }

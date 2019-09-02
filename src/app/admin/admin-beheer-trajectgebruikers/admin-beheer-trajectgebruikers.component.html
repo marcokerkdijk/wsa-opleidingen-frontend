@@ -11,7 +11,7 @@
             </div>
         </div>
         <div class="row">
-            Tabel met studenten.
+            <h6>Studenten</h6>
             <table class="table table-bordered col-lg-12">
                 <thead id="table-bottom">
                     <tr>
@@ -26,14 +26,16 @@
                         <td id="Achternaam{{Student.id}}">{{Student.tussenvoegsel}} {{Student.achternaam}}</td>
                         <td id="Vink{{Student.id}}">
                             <input type="checkbox" [(ngModel)]="Student.gekoppeld" (click)="wijzigStudentArray(Student, Student.gekoppeld);"/>
-                            {{Student.gekoppeld}}
                         </td>
                     </tr>
                 </tbody>
             </table>
+            <div id="melding">
+                <alert id="alert-1"></alert>
+            </div>
         </div>
         <div class="row">
-            Tabel met docenten.
+            <h6>Docenten</h6>
             <table class="table table-bordered col-lg-12">
                 <thead id="table bottom">
                     <tr>
@@ -48,7 +50,6 @@
                         <td id="Achternaam{{Docent.id}}">{{Docent.tussenvoegsel}} {{Docent.achternaam}}</td>
                         <td id="Vink{{Docent.id}}">
                             <input type="checkbox" [(ngModel)]="Docent.aanTraject" (click)="wijzigDocentArray(Docent, Docent.aanTraject);"/>
-                            {{Docent.aanTraject}}
                         </td>
                     </tr>
                 </tbody>
