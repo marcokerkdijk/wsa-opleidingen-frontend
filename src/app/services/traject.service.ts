@@ -37,11 +37,7 @@ export class TrajectService {
   }
 
   haalTrajectOpId(id: number): Observable<any> {
-    return this.http.get<Traject>(`${this.api}/GeefTrajectOpId/` + id);
-  }
-
-  geefTrajectOpId(id: number): Observable<any> {
-    return this.http.get<Traject>(`${this.api}/haalTrajectOpId/` + id);
+    return this.http.get<Traject>(`${this.api}/HaalTrajectOpId/` + id);
   }
 
   haalTrajectenOpVanGebruiker(gebruiker_id: number): Observable<Traject[]> {
