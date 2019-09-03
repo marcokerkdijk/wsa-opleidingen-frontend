@@ -3,6 +3,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { GebruikersService } from 'src/app/services/gebruikers.service';
 import { Gebruiker } from 'src/app/Objecten/gebruiker';
 import { AlertService } from 'src/app/_alert';
+import { Rol } from 'src/app/rol.enum';
+import { GebruikersRol } from 'src/app/model/GebruikersRol';
 
 @Component({
   selector: 'wsa-docent-studentenlijst',
@@ -20,8 +22,13 @@ export class DocentStudentenlijstComponent implements OnInit {
     this.haalStudentenOp(id);
   }
 
+  /**
+   * Aangepast wegens dubbele endpoints -> veranderd naar geefAlleGebruikersOpRolVanTraject
+   * @param id = traject_ID
+   * @Param GebruikersRol.Student = rol van de opgevraagde gebruiker
+   */
   haalStudentenOp(id: number): void {
-    this.gebruikerService.geefAlleStudentenVanTraject(id).subscribe(studenten => {
+    this.gebruikerService.haalAlleStudentenVanTraject(id).subscribe(studenten => {
       this.studenten = studenten;
     },
     (error) => {
