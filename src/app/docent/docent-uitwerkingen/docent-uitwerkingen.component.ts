@@ -21,7 +21,7 @@ export class DocentUitwerkingenComponent implements OnInit {
   }
 
   haalStudentenOp(id: number): void {
-    this.gebruikerService.geefAlleStudentenVanTraject(id).subscribe(studenten => {
+    this.gebruikerService.haalAlleStudentenVanTraject(id).subscribe(studenten => {
       this.studenten = studenten;
     },
     (error) => {
