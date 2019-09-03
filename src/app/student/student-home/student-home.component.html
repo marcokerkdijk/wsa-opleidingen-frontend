@@ -67,7 +67,7 @@
 
         <div class="row">
             <div class="col-sm-12" id="Agenda">
-                <table class="table table-bordered">
+                <table class="table table-bordered" id="agendatabel">
                     <thead id="tabel-headers">
                         <tr>
                             <th>Datum</th>
@@ -76,15 +76,10 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let SelectieFase of traject.selectieFases">
-                            <td>{{SelectieFase.startdatum}}</td>
-                            <td>{{SelectieFase.tijdstip}}</td>
-                            <td>{{SelectieFase.naam}}</td>
-                        </tr>
-                        <tr *ngFor="let OpleidingsFase of traject.opleidingsFases">
-                            <td>{{OpleidingsFase.startdatum}}</td>
-                            <td>{{OpleidingsFase.tijdstip}}</td>
-                            <td>{{OpleidingsFase.naam}}</td>
+                        <tr *ngFor="let Trajectonderdeel of traject.trajectOnderdelen">
+                            <td>{{Trajectonderdeel.startdatum}}</td>
+                            <td>{{Trajectonderdeel.tijdstip}}</td>
+                            <td>{{Trajectonderdeel.naam}}</td>
                         </tr>
                     </tbody>
                 </table>
