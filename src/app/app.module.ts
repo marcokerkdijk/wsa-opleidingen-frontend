@@ -21,19 +21,13 @@ import { ModalComponent } from './login-modal/modal.component';
 import { TrajectenComponent } from './trajecten/trajecten.component';
 import { AdminBeheerTrajectComponent } from './admin/admin-beheer-traject/admin-beheer-traject.component';
 import { AdminBeheerGebruikersComponent } from './admin/admin-beheer-gebruikers/admin-beheer-gebruikers.component';
-import { TrajectModalComponent } from './admin/admin-beheer-traject/traject-modal/traject-modal.component';
 import { GebruikersModalComponent } from './admin/admin-beheer-gebruikers/gebruikers-modal/gebruikers-modal.component';
 import { GebruikersTabelComponent } from './admin/admin-beheer-gebruikers/gebruikers-tabel/gebruikers-tabel.component';
 import { TrajectTabelComponent } from './admin/admin-beheer-traject/traject-tabel/traject-tabel.component';
-import { AdminBeheerTrajectfasenComponent } from './admin/admin-beheer-trajectfasen/admin-beheer-trajectfasen.component';
-import { SelectiefaseTabelComponent } from './admin/admin-beheer-trajectfasen/selectiefase-tabel/selectiefase-tabel.component';
 import { DocentStudentenlijstComponent } from './docent/docent-studentenlijst/docent-studentenlijst.component';
 import { HomeTrajectenComponent } from './home/home-trajecten/home-trajecten.component';
 import { HomeTrajectenInformatieComponent } from './home/home-trajecten/home-trajecten-informatie/home-trajecten-informatie.component';
 import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
-import { OpleidingsFaseTabelComponent } from './admin/admin-beheer-trajectfasen/opleidings-fase-tabel/opleidings-fase-tabel.component';
-import { BeheerSelectiefaseComponent } from './admin/admin-beheer-trajectfasen/beheer-selectiefase/beheer-selectiefase.component';
-import { BeheerOpleidingsfaseComponent } from './admin/admin-beheer-trajectfasen/beheer-opleidingsfase/beheer-opleidingsfase.component';
 import { DocentOpdrachtenComponent } from './docent/docent-opdrachten/docent-opdrachten.component';
 import { DocentLesstofComponent } from './docent/docent-lesstof/docent-lesstof.component';
 import { DocentTrajectComponent } from './docent/docent-traject/docent-traject.component';
@@ -41,7 +35,6 @@ import { DocentHomeComponent } from './docent/docent-home/docent-home.component'
 import { NavbarPerrolComponent } from './navbar-perrol/navbar-perrol.component';
 import { ProfielComponent } from './profiel/profiel.component';
 import { ProfielInfoComponent } from './profiel/profiel-info/profiel-info.component';
-import { TrajectFaseModalComponent } from './admin/admin-beheer-trajectfasen/traject-fase-modal/traject-fase-modal.component';
 import { OpdrachtenComponent } from './student/opdrachten/opdrachten.component';
 import { NotitiesComponent } from './student/notities/notities.component';
 import { MijnGegevensComponent } from './student/mijn-gegevens/mijn-gegevens.component';
@@ -73,6 +66,10 @@ import { BeheerUitwerkingComponent } from './docent/docent-uitwerkingen/beheer-u
 import { UitwerkingenLijstComponent } from './docent/docent-uitwerkingen/uitwerkingen-lijst/uitwerkingen-lijst.component';
 import { AdminBeheerResultatenComponent } from './admin/admin-beheer-resultaten/admin-beheer-resultaten.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { TrajectToevoegenComponent } from './admin/admin-beheer-traject/traject-toevoegen/traject-toevoegen.component';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { ArchwizardModule } from 'angular-archwizard';
+import { TrajectWijzigenComponent } from './admin/admin-beheer-traject/traject-wijzigen/traject-wijzigen.component';
 
 export function jwtOptionsFactory(tokenService: TokenService) {
   return {
@@ -103,19 +100,13 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     TrajectenComponent,
     AdminBeheerTrajectComponent,
     AdminBeheerGebruikersComponent,
-    TrajectModalComponent,
     GebruikersModalComponent,
     GebruikersTabelComponent,
     TrajectTabelComponent,
-    AdminBeheerTrajectfasenComponent,
-    SelectiefaseTabelComponent,
     DocentStudentenlijstComponent,
     HomeTrajectenComponent,
     HomeTrajectenInformatieComponent,
     AdminHomeComponent,
-    OpleidingsFaseTabelComponent,
-    BeheerSelectiefaseComponent,
-    BeheerOpleidingsfaseComponent,
     DocentOpdrachtenComponent,
     DocentLesstofComponent,
     DocentTrajectComponent,
@@ -123,7 +114,6 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     NavbarPerrolComponent,
     ProfielComponent,
     ProfielInfoComponent,
-    TrajectFaseModalComponent,
     OpdrachtenComponent,
     NotitiesComponent,
     MijnGegevensComponent,
@@ -153,6 +143,8 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     BeheerUitwerkingComponent,
     UitwerkingenLijstComponent,
     AdminBeheerResultatenComponent,
+    TrajectToevoegenComponent,
+    TrajectWijzigenComponent,
   ],
   imports: [
     BrowserModule,
@@ -169,6 +161,8 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     AppRoutingModule,
     FormsModule,
     NgxSpinnerModule,
+    NgSelectModule,
+    ArchwizardModule,
   ],
   providers: [
     {provide: HomeTrajectenComponent},

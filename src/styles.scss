@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@ng-select/ng-select/themes/default.theme.css";
+@import '../node_modules/angular-archwizard/archwizard.css';
 
 @font-face{
     font-family: "Working Spirit";
@@ -60,7 +62,7 @@ jw-modal {
             color: #ffffff;
 
             /* margin exposes part of the modal background */
-            margin-top: 10%;
+            margin-top: 5%;
             margin-left: 30%;
             margin-right: 30%;
         }

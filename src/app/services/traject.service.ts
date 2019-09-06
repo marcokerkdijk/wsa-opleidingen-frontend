@@ -5,6 +5,7 @@ import {HttpClient} from '@angular/common/http';
 import {environment} from 'src/environments/environment';
 import { DTOGebruikerID } from '../Objecten/gebruikerDTO';
 import { TrajectOnderdeel } from '../Objecten/traject-onderdeel';
+import { TrajectDTO } from '../Objecten/traject-dto';
 
 @Injectable({
   providedIn: 'root'
@@ -24,12 +25,12 @@ export class TrajectService {
     return this.http.get<Traject[]>(`${this.api}/GeefZichtbareTrajecten`)
   }
 
-  MaakTraject(traject: Traject): Observable<any> {
-    return this.http.post<Traject>(`${this.api}/MaakTraject`, traject);
+  maakTrajectAan(trajectDto: TrajectDTO): Observable<any> {
+    return this.http.post<TrajectDTO>(`${this.api}/maakTrajectAan`, trajectDto);
   }
 
-  WijzigTraject(traject,id:number): Observable<any> {
-    return this.http.put(`${this.api}/WijzigTraject/`+traject.id, traject);
+  wijzigTraject(trajectDto: TrajectDTO): Observable<any> {
+    return this.http.put(`${this.api}/WijzigTrajectMetDTO`, trajectDto);
   }
 
   GeefZichtbareTrajectenHome(): Observable<Traject[]> {
@@ -38,6 +39,10 @@ export class TrajectService {
 
   haalTrajectOpId(id: number): Observable<any> {
     return this.http.get<Traject>(`${this.api}/HaalTrajectOpId/` + id);
+  }
+
+  geefTrajectDTOMetTrajectId(traject_id: number): Observable<TrajectDTO> {
+    return this.http.get<TrajectDTO>(`${this.api}/geefTrajectDTO/` + traject_id);
   }
 
   haalTrajectenOpVanGebruiker(gebruiker_id: number): Observable<Traject[]> {

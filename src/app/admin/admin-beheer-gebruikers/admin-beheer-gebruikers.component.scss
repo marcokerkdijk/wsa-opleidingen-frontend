@@ -1,20 +1,14 @@
 .container-fluid {
+    margin-top: 5%;
     padding-left: 19%;
     padding-right: 19%;
+    margin-bottom: 3%;
 }
 .row{
     padding-top: 5%;
 }
 
-#h5{
-    letter-spacing: 1px;
-    color: #808285;
-    font-size: 26px;
-    font-weight: normal;
-    line-height: 32px;
-}
-
-#h6{
+h6 {
     letter-spacing: 1px;
     color: #808285;
     font-size: 26px;
@@ -35,22 +29,4 @@ p {
 
 #pencil:hover{
     cursor: pointer;
-}
-
-#table-bottom,
-th {
-    background: #ffffff;
-    color: #696969;
-    font-size: 15px;
-    text-transform: uppercase;
-    border: 1px solid;
-    border-color: black;
-}
-#table-bottom,
-td {
-    background: #ffffff;
-    color: #696969;
-    font-size: 15px;
-    border: 1px solid;
-    text-align: left;
 }

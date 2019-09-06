@@ -19,23 +19,12 @@ export class TrajectTabelComponent implements OnInit {
     this.getAlleTrajecten();
   }
 
-  clickWijzigModal(id,trajectId:number){
-    this.adminBeheerTrajectCompnent.haalTrajectOpId(trajectId);
-    this.adminBeheerTrajectCompnent.openModal(id);
-  }
-
-  openToevoegModal(id){
-    this.adminBeheerTrajectCompnent.openModal(id);
-  }
-
   getAlleTrajecten(): void {
     this.trajectService.GeefAlleTrajecten().subscribe(alleTrajecten => {
       this.alleTrajecten = alleTrajecten;
     },
     (error) => {
       this.alertservice.error("Er zijn nog geen trajecten aangemaakt.", "alert-1");
-    }
-    );
+    });
   }
-
 }

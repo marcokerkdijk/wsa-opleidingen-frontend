@@ -11,4 +11,5 @@ export class TrajectOnderdeel {
     fase: FaseType;
     opdrachten: Opdracht[];
     traject: Traject;
+    index: number;
 }

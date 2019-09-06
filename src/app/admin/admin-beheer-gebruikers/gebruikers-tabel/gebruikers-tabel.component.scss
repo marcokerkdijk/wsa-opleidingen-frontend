@@ -1,10 +1,9 @@
-.container-fluid {
-    padding-left: 8%;
-    padding-right: 8%;
-}
-
 .row{
     padding-top: 5%;
+}
+
+#FilterActief {
+    margin-right: 1%;
 }
 
 #h5{
@@ -42,23 +41,8 @@ p {
     cursor: pointer;
 }
 
-#table-bottom,
-th {
-    background: #ffffff;
-    color: #696969;
-    font-size: 15px;
-    text-transform: uppercase;
-    border: 1px solid;
-    border-color: black;    
-}
-
-#table-bottom,
-td {
-    background: #ffffff;
-    color: #696969;
-    font-size: 15px;
-    border: 1px solid;
-    text-align: left;
+#gebruikersTabel {
+    margin-top: 1%;
 }
 
 .dropdown {

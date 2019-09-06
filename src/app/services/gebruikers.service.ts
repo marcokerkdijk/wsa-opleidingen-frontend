@@ -60,4 +60,5 @@ export class GebruikersService {
     console.log(traject_id);
     return this.http.get<Gebruiker>(`${this.api}/haalDocentOpMetTraject/` + traject_id);
   }
+
 }

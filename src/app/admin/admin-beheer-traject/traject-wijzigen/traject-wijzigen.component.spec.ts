@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TrajectFaseModalComponent } from './traject-fase-modal.component';
+import { TrajectWijzigenComponent } from './traject-wijzigen.component';
 
-describe('SelectieFaseModalComponent', () => {
-  let component: TrajectFaseModalComponent;
-  let fixture: ComponentFixture<TrajectFaseModalComponent>;
+describe('TrajectWijzigenComponent', () => {
+  let component: TrajectWijzigenComponent;
+  let fixture: ComponentFixture<TrajectWijzigenComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TrajectFaseModalComponent ]
+      declarations: [ TrajectWijzigenComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TrajectFaseModalComponent);
+    fixture = TestBed.createComponent(TrajectWijzigenComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
