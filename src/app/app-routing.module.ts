@@ -48,6 +48,7 @@ import { AdminBeheerAssessmentsComponent } from './admin/admin-beheer-assessment
 import { DocentUitwerkingenComponent } from './docent/docent-uitwerkingen/docent-uitwerkingen.component';
 import { UitwerkingenLijstComponent } from './docent/docent-uitwerkingen/uitwerkingen-lijst/uitwerkingen-lijst.component';
 import { BeheerUitwerkingComponent } from './docent/docent-uitwerkingen/beheer-uitwerking/beheer-uitwerking.component';
+import { TrajectToevoegenComponent } from './admin/admin-beheer-traject/traject-toevoegen/traject-toevoegen.component';
 
 
 const routes: Routes = [
@@ -67,6 +68,8 @@ const routes: Routes = [
       { path: '', component: AdminHomeComponent, pathMatch: 'full'},
       { path: "admin-beheer-traject", component: AdminBeheerTrajectComponent},
       { path: '', redirectTo: 'admin', pathMatch: 'full' },
+      { path: "traject-toevoegen", component: TrajectToevoegenComponent},
+      { path: '', redirectTo: 'admin', pathMatch: 'full'},
       { path: "admin-beheer-gebruikers", component: AdminBeheerGebruikersComponent },
       { path: '', redirectTo: 'admin', pathMatch: 'full' },
       { path: "admin-beheer-trajectfasen/:id", component: AdminBeheerTrajectfasenComponent},

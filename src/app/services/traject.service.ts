@@ -5,6 +5,7 @@ import {HttpClient} from '@angular/common/http';
 import {environment} from 'src/environments/environment';
 import { DTOGebruikerID } from '../Objecten/gebruikerDTO';
 import { TrajectOnderdeel } from '../Objecten/traject-onderdeel';
+import { TrajectDTO } from '../Objecten/traject-dto';
 
 @Injectable({
   providedIn: 'root'
@@ -24,10 +25,16 @@ export class TrajectService {
     return this.http.get<Traject[]>(`${this.api}/GeefZichtbareTrajecten`)
   }
 
+  maakTrajectAan(trajectDto: TrajectDTO): Observable<any> {
+    return this.http.post<TrajectDTO>(`${this.api}/maakTrajectAan`, trajectDto);
+  }
+
+  // Oude methode, kan als het goed is weg als bovenstaande methode naar behoren werkt
   MaakTraject(traject: Traject): Observable<any> {
     return this.http.post<Traject>(`${this.api}/MaakTraject`, traject);
   }
 
+  // Oude methode, kan als het goed is weg als bovenstaande methode naar behoren werkt
   WijzigTraject(traject,id:number): Observable<any> {
     return this.http.put(`${this.api}/WijzigTraject/`+traject.id, traject);
   }

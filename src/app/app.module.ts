@@ -73,6 +73,10 @@ import { BeheerUitwerkingComponent } from './docent/docent-uitwerkingen/beheer-u
 import { UitwerkingenLijstComponent } from './docent/docent-uitwerkingen/uitwerkingen-lijst/uitwerkingen-lijst.component';
 import { AdminBeheerResultatenComponent } from './admin/admin-beheer-resultaten/admin-beheer-resultaten.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { TrajectToevoegenComponent } from './admin/admin-beheer-traject/traject-toevoegen/traject-toevoegen.component';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { ArchwizardModule } from 'angular-archwizard';
+import { TrajectWijzigenComponent } from './admin/admin-beheer-traject/traject-wijzigen/traject-wijzigen.component';
 
 export function jwtOptionsFactory(tokenService: TokenService) {
   return {
@@ -153,6 +157,8 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     BeheerUitwerkingComponent,
     UitwerkingenLijstComponent,
     AdminBeheerResultatenComponent,
+    TrajectToevoegenComponent,
+    TrajectWijzigenComponent,
   ],
   imports: [
     BrowserModule,
@@ -169,6 +175,8 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     AppRoutingModule,
     FormsModule,
     NgxSpinnerModule,
+    NgSelectModule,
+    ArchwizardModule,
   ],
   providers: [
     {provide: HomeTrajectenComponent},
