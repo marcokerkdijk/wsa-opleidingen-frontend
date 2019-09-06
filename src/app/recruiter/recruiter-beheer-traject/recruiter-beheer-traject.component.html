@@ -29,13 +29,13 @@
             <div>Lange omschrijving:</div>
             <div>
                 <textarea [(ngModel)]="wijzigTraject.omschrijving" class="form-control" rows="3"
-                    id="veldOmschrijvingTrajectModal "></textarea>
+                    id="veldOmschrijvingTrajectModal"></textarea>
             </div>
         </div>
         <div class="col-sm-12">
             <div>Zichtbaar:</div>
             <div>
-                <input [(ngModel)]="wijzigTraject.zichtbaar" type="checkbox" id="checkbox" />
+                <input name="zichtbaarcheck" [(ngModel)]="wijzigTraject.zichtbaar" type="checkbox" id="checkbox" />
             </div>
         </div>
     </div>
@@ -74,7 +74,7 @@
         <div class="col-sm-12">
             <div>Zichtbaar:</div>
             <div>
-                <input [(ngModel)]="traject.zichtbaar" type="checkbox" id="checkbox" value="true" />
+                <input name="zichtbaarheid" [(ngModel)]="traject.zichtbaar" type="checkbox" id="checkbox" value="true" />
             </div>
         </div>
     </div>
