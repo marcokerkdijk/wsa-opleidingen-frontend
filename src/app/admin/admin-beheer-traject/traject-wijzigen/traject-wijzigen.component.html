@@ -5,7 +5,6 @@
                 <h5>Traject wijzigen</h5>
             </div>
             <div class="col-sm-6">
-                <!-- <p>Voeg hier een traject toe.</p> -->
             </div>
         </div>
         <aw-wizard class="my-custom-css-wrapper">
@@ -25,7 +24,6 @@
                     </div>
                     <div class="col-sm-6">
                         <p>Zichtbaarheid traject</p>
-                        <!-- <input name="zichtbaar" [(ngModel)]="traject.zichtbaar" type="checkbox" id="zichtbaarcheck"> -->
                         <div>
                             <label class="switch">
                                 <input type="checkbox" [(ngModel)]="traject.zichtbaar">
@@ -63,7 +61,7 @@
                     <div class="col-sm-6">
                         <h6>Trajectonderdelen</h6>
                         <div id="trajectonderdelendisplay">
-                            <ng-container *ngFor="let Trajectonderdeel of nieuweTrajectOnderdelen">
+                            <ng-container *ngFor="let Trajectonderdeel of traject.trajectOnderdelen">
                                 <div class="trajectonderdeel">
                                     <div class="col-sm-10 onderdeelnaam">
                                         <a id="wijzigonderdeel" (click)="wijzigTrajectonderdeel(Trajectonderdeel);">

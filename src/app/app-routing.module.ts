@@ -10,10 +10,7 @@ import { DocentAutorisatieGuard } from "./guards/docent-autorisatie.guard";
 import { StudentAutorisatieGuard } from "./guards/student-autorisatie.guard";
 import { AdminBeheerTrajectComponent } from './admin/admin-beheer-traject/admin-beheer-traject.component';
 import { AdminBeheerGebruikersComponent } from './admin/admin-beheer-gebruikers/admin-beheer-gebruikers.component';
-import { AdminBeheerTrajectfasenComponent } from './admin/admin-beheer-trajectfasen/admin-beheer-trajectfasen.component';
 import { AdminBeheerResultatenComponent } from './admin/admin-beheer-resultaten/admin-beheer-resultaten.component';
-
-import { SelectiefaseTabelComponent } from './admin/admin-beheer-trajectfasen/selectiefase-tabel/selectiefase-tabel.component';
 import { DocentStudentenlijstComponent} from './docent/docent-studentenlijst/docent-studentenlijst.component';
 import { HomeTrajectenInformatieComponent } from './home/home-trajecten/home-trajecten-informatie/home-trajecten-informatie.component';
 import { HomeTrajectenComponent } from './home/home-trajecten/home-trajecten.component';
@@ -29,7 +26,6 @@ import { RecruiterBeheerTrajectComponent } from './recruiter/recruiter-beheer-tr
 import { RecruiterBeheerTrajectfaseComponent } from './recruiter/recruiter-beheer-traject/recruiter-beheer-trajectfase/recruiter-beheer-trajectfase.component';
 import { RecruiterBeheerSelectiefaseTabelComponent } from './recruiter/recruiter-beheer-traject/recruiter-beheer-trajectfase/recruiter-beheer-selectiefase-tabel/recruiter-beheer-selectiefase-tabel.component'
 import { RecruiterBeheerTrajectgebruikersComponent } from './recruiter/recruiter-beheer-trajectgebruikers/recruiter-beheer-trajectgebruikers.component';
-
 import { ProfielComponent } from './profiel/profiel.component';
 import { ProfielInfoComponent } from './profiel/profiel-info/profiel-info.component';
 import { GebruikerAutorisatieGuard } from './guards/gebruiker-autorisatie.guard';
@@ -49,6 +45,7 @@ import { DocentUitwerkingenComponent } from './docent/docent-uitwerkingen/docent
 import { UitwerkingenLijstComponent } from './docent/docent-uitwerkingen/uitwerkingen-lijst/uitwerkingen-lijst.component';
 import { BeheerUitwerkingComponent } from './docent/docent-uitwerkingen/beheer-uitwerking/beheer-uitwerking.component';
 import { TrajectToevoegenComponent } from './admin/admin-beheer-traject/traject-toevoegen/traject-toevoegen.component';
+import { TrajectWijzigenComponent } from './admin/admin-beheer-traject/traject-wijzigen/traject-wijzigen.component';
 
 
 const routes: Routes = [
@@ -70,9 +67,9 @@ const routes: Routes = [
       { path: '', redirectTo: 'admin', pathMatch: 'full' },
       { path: "traject-toevoegen", component: TrajectToevoegenComponent},
       { path: '', redirectTo: 'admin', pathMatch: 'full'},
+      { path: "traject-wijzigen/:id", component: TrajectWijzigenComponent},
+      { path: '', redirectTo: 'admin', pathMatch: 'full'},
       { path: "admin-beheer-gebruikers", component: AdminBeheerGebruikersComponent },
-      { path: '', redirectTo: 'admin', pathMatch: 'full' },
-      { path: "admin-beheer-trajectfasen/:id", component: AdminBeheerTrajectfasenComponent},
       { path: '', redirectTo: 'admin', pathMatch: 'full' },
       { path: "admin-beheer-trajectgebruikers/:id", component: AdminBeheerTrajectgebruikersComponent},
       { path: '', redirectTo: 'admin', pathMatch: 'full' },

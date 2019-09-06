@@ -1,7 +1,6 @@
 <div class="container-fluid" id="Filter_Gebruiker">
     <div class="row">
         <div>
-            <!-- <button id="openToevoegModal" (click)="openToevoegModal('traject-toevoegen-modal')">Traject toevoegen</button> -->
             <button id="trajecttoevoegknop" routerLink="../traject-toevoegen">Traject toevoegen</button>
         </div>
         <table class='table borderless col-lg-12'>
@@ -19,13 +18,8 @@
                         <ng-template #elseBlock>Nee</ng-template>
                     </td>
                     <td>
-                        <button id="tdWijzig{{Traject.id}}" (click)="clickWijzigModal('traject-modal', Traject.id)">
+                        <button id="tdWijzig{{Traject.id}}" routerLink="../traject-wijzigen/{{Traject.id}}">
                             Bewerk traject
-                        </button>
-                    </td>
-                    <td>
-                        <button id="Beheer{{Traject.id}}" routerLink="../admin-beheer-trajectfasen/{{Traject.id}}" routerLinkActive="active">
-                            Beheer fasen
                         </button>
                     </td>
                     <td>
@@ -42,7 +36,7 @@
             </tbody>
         </table>
         <div id="melding">
-                <alert id="alert-1"></alert>
+            <alert id="alert-1"></alert>
         </div>
     </div>
 </div>
