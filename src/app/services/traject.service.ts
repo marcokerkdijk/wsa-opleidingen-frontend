@@ -29,18 +29,8 @@ export class TrajectService {
     return this.http.post<TrajectDTO>(`${this.api}/maakTrajectAan`, trajectDto);
   }
 
-  // Oude methode, kan als het goed is weg als bovenstaande methode naar behoren werkt
-  MaakTraject(traject: Traject): Observable<any> {
-    return this.http.post<Traject>(`${this.api}/MaakTraject`, traject);
-  }
-
   wijzigTraject(trajectDto: TrajectDTO): Observable<any> {
     return this.http.put(`${this.api}/WijzigTrajectMetDTO`, trajectDto);
-  }
-
-  // Oude methode, kan als het goed is weg als bovenstaande methode naar behoren werkt
-  WijzigTraject(traject,id:number): Observable<any> {
-    return this.http.put(`${this.api}/WijzigTraject/`+traject.id, traject);
   }
 
   GeefZichtbareTrajectenHome(): Observable<Traject[]> {
