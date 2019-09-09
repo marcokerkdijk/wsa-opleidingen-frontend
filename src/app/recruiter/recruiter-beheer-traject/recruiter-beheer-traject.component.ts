@@ -20,18 +20,18 @@ export class RecruiterBeheerTrajectComponent implements OnInit {
   }
 
   createTraject(traject: Traject){
-    this.trajectService.MaakTraject(traject)
+    this.trajectService.maakTrajectAan(traject)
     .subscribe(response => this.router.navigateByUrl('/recruiter').then(success => {
       this.router.navigateByUrl('/recruiter/recruiter-beheer-traject')
     }));
   }
 
-  updateTraject(traject: Traject){
-    this.trajectService.WijzigTraject(traject, traject.id)
-    .subscribe(response => this.router.navigateByUrl('/recruiter').then(success => {
-      this.router.navigateByUrl('/recruiter/recruiter-beheer-traject')
-    }));
-  }
+  // updateTraject(traject: Traject){
+  //   this.trajectService.wijzigTraject(traject, traject.id)
+  //   .subscribe(response => this.router.navigateByUrl('/recruiter').then(success => {
+  //     this.router.navigateByUrl('/recruiter/recruiter-beheer-traject')
+  //   }));
+  // }
 
   openModal(id: string) {
     this.modalService.open(id);
