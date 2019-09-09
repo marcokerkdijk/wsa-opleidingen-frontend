@@ -35,7 +35,7 @@ export class DocentUitwerkingenComponent implements OnInit {
   }
 
   /**
-   * Maakt een lijst met booleans aan de hand van de gebruikers dit binnenkomen.
+   * Maakt een lijst met booleans aan de hand van de gebruikers die binnenkomen.
    * Als de gebruiker een ongelezen uitwerking heeft wordt false aan de lijst gevoegd,
    * als alle uitwerkingen gelezen zijn of als er geen uitwerkingen zijn wordt true toegevoegd.
    * @param gebruiker
