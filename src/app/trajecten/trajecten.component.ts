@@ -31,7 +31,7 @@ export class TrajectenComponent implements OnInit {
   }
 
   postTraject(traject:Traject): void {
-    this.trajectService.MaakTraject(traject).subscribe;
+    this.trajectService.maakTrajectAan(traject).subscribe;
   }
 
 
