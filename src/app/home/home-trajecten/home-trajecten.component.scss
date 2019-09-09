@@ -24,7 +24,8 @@ p {
     font-size: 14px;
     line-height: 24px;
     margin-bottom: 20px;
-    color: #808285
+    color: #808285;
+    
 }
 .home-banner{
     width: 290px;
@@ -50,19 +51,29 @@ p {
     width: 100%;
     height: 0;
     transition: .5s ease;
-    cursor: pointer;
+    /* These are technically the same, but use both */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+
   }
 .text {
     white-space: nowrap; 
     color: white;
     font-size: 20px;
     position: absolute;
-    overflow: hidden;
+    // overflow: hidden;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     padding-top: 12px;
+    /* These are technically the same, but use both */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+
   }
 #titel{
     letter-spacing: 1px;
@@ -114,3 +125,4 @@ td {
     text-align: center;
     margin-top: 195px;
 }
+
