@@ -1,5 +1,12 @@
 <div class="container-fluid">
-        <div class="row">
-            <p>Tekst test</p>
+    <div class="row">
+        <div class="col-sm-11 introTitle" *ngFor="let aantekening of aantekeningen">
+            {{aantekening.tekst}}
         </div>
     </div>
+    <div class="row">
+        <div class="col-sm-11">
+            <pre> Test</pre>
+        </div>
+    </div>
+</div>

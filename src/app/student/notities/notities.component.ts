@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Aantekening } from 'src/app/Objecten/aantekening';
+import { AantekeningserviceService } from 'src/app/services/aantekeningservice.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'wsa-notities',
@@ -6,10 +9,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./notities.component.scss']
 })
 export class NotitiesComponent implements OnInit {
+  aantekeningen: Aantekening[]
 
-  constructor() { }
+  constructor(
+    private aantekeningService: AantekeningserviceService
+  ) { }
 
   ngOnInit() {
+    this.getAlleAantekeningen();
+  }
+
+  getAlleAantekeningen(){
+    this.aantekeningService.getAlleAantekeningen()
+    .subscribe(aantekeningen => this.aantekeningen = aantekeningen);
   }
 
 }
