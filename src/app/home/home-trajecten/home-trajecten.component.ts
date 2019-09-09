@@ -23,7 +23,8 @@ export class HomeTrajectenComponent implements OnInit {
   afbeeldingen: string[] = [
      "https://www.workingspirit.nl/assets/HH-40894461.jpg",
      "https://www.workingspirit.nl/assets/Uploads/HeaderAfbeeldingen/Softwareontwikkelaars.jpg",
-     "https://www.workingspirit.nl/assets/Uploads/HeaderAfbeeldingen/HH-60257639.jpg"
+     "https://www.workingspirit.nl/assets/Uploads/HeaderAfbeeldingen/HH-60257639.jpg",
+     "https://www.workingspirit.nl/assets/HH-60267130.jpg"
     ]
 
   constructor(
@@ -52,3 +53,4 @@ export class HomeTrajectenComponent implements OnInit {
     this.tekstObjectService.geefTekstobjectPerId(tekstId).subscribe(tekstObject => this.tekstObject = tekstObject);
   }
 }
+
