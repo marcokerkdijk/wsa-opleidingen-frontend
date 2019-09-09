@@ -1,18 +1,42 @@
-<div class="row">
-    <div class="container-fluid">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3">
+            <h5>Welkom admin!</h5>
+        </div>
+        <div class="col-sm-6">
+            <p>
+                Welkom {{gebruiker.displaynaam}} op de academy. Klik hieronder op het onderwerp om het te beheren.
+                Bijvoorbeeld om nieuwe trajecten te maken of te wijzigen.
+            </p>
+        </div>
+    </div>
+    <div class="grijs">
         <div class="row">
-            <div id=h6 class="col-sm-3">
-                Welkom admin!
+            <div class="col-sm-6">
+                <div class="dashboard">
+                    <img src="assets/Images/tekstobject_wit.png">
+                    <h6>Webtekst beheren</h6>
+                </div>
             </div>
             <div class="col-sm-6">
-                <p>
-                    Welkom {{gebruiker.displaynaam}} op de academy. Klik hieronder op het onderwerp om het te beheren. 
-                    Bijvoorbeeld om nieuwe trajecten te maken of te wijzigen. 
-                </p>
-                <br>
-                <button id='linkBeheerTrajecten' [routerLink]="'./admin-beheer-traject/'">Trajecten</button><br>
-                <button id='linkBeheerGebruikers' [routerLink]="'./admin-beheer-gebruikers'">Gebruikers</button><br>
-                <button id="linkBeheerAssessments" [routerLink]="'./admin-beheer-assessments'">Assessments</button><br>
+                <div class="waves-effect waves-light rgba-white-slight">
+                    <img src="assets/Images/gebruikers_wit.png" [routerLink]="'./admin-beheer-gebruikers'">
+                    <h6>Gebruikers beheren</h6>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 waves-effect waves-light rgba-white-slight">
+                <div class="dashboard">
+                    <img src="assets/Images/trajecten_wit.png" [routerLink]="'./admin-beheer-traject/'">
+                    <h6>Trajecten beheren</h6>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="waves-effect waves-light rgba-white-slight">
+                    <img src="assets/Images/assessments_wit.png" [routerLink]="'./admin-beheer-assessments'">
+                    <h6>Assessments beheren</h6>
+                </div>
             </div>
         </div>
     </div>

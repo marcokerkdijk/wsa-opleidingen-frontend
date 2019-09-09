@@ -1,12 +1,14 @@
 .container-fluid {
+    margin-top: 5%;
+    margin-bottom: 3%;
     padding-left: 19%;
     padding-right: 19%;
 }
 .row{
-    padding-top: 5%;
+    margin-top: 2%;
 }
 
-#h6{
+h5 {
     letter-spacing: 1px;
     color: #808285;
     font-size: 26px;
@@ -14,11 +16,40 @@
     line-height: 32px;
 }
 
+h6 {
+    letter-spacing: 1px;
+    color: #00aaef;
+    font-size: 16px;
+    font-weight: normal;
+    margin-top: 7.5px;
+}
+
 p {
     font-family: "Working Spirit";
     font-size: 14px;
     line-height: 24px;
     color:  #808285;
+}
+
+.grijs {
+    background-color: rgba($color: #a9a9a9, $alpha: 0.05);
+    padding-top: 2%;
+    padding-bottom: 4%;
+}
+
+.dashboard {
+    margin-left: 45%;
+}
+
+img {
+    height: 200px;
+    width: 200px;
+    padding: 10px;
+    background-color: #00aeef;
+}
+
+img:hover {
+    cursor: pointer;
 }
 
 button{

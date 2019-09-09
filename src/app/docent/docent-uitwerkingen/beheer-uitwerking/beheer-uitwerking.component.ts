@@ -19,11 +19,17 @@ export class BeheerUitwerkingComponent implements OnInit {
 
   ngOnInit() {
     this.haalUitwerkingOp();
+    this.markeerAlsGelezen();
   }
 
   haalUitwerkingOp(): void {
     this.uitwerking = this.dataservice.getUitwerking();
     this.student = this.dataservice.getGebruiker();
+  }
+
+  markeerAlsGelezen(): void {
+    this.uitwerking.gelezen = true;
+    this.uitwerkingservice.wijzigUitwerking(this.student.id, this.uitwerking).subscribe();
   }
 
   opmerkingOpslaan(uitwerking: Uitwerking): void {

@@ -8,4 +8,5 @@ export class Uitwerking {
     opdracht: Opdracht;
     gebruiker: Gebruiker;
     opmerking: string;
+    gelezen: boolean;
 }
