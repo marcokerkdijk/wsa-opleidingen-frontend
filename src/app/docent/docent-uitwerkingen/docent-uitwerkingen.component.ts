@@ -11,6 +11,7 @@ import { AlertService } from 'src/app/_alert';
 })
 export class DocentUitwerkingenComponent implements OnInit {
   studenten: Gebruiker[];
+  gelezen: boolean[] = new Array;
 
   constructor(private gebruikerService: GebruikersService, private activeRouter: ActivatedRoute,
               private router: Router, private alertservice: AlertService) { }
@@ -23,11 +24,54 @@ export class DocentUitwerkingenComponent implements OnInit {
   haalStudentenOp(id: number): void {
     this.gebruikerService.haalAlleStudentenVanTraject(id).subscribe(studenten => {
       this.studenten = studenten;
+      for (let student of studenten) {
+        this.maakGelezenLijst(student);
+      }
     },
     (error) => {
       this.alertservice.error("Er zijn geen studenten aan dit traject gekoppeld.", "alert-1");
     }
     );
+  }
+
+  /**
+   * Maakt een lijst met booleans aan de hand van de gebruikers dit binnenkomen.
+   * Als de gebruiker een ongelezen uitwerking heeft wordt false aan de lijst gevoegd,
+   * als alle uitwerkingen gelezen zijn of als er geen uitwerkingen zijn wordt true toegevoegd.
+   * @param gebruiker
+   * @author David Smit
+   */
+  maakGelezenLijst(gebruiker: Gebruiker): void {
+    if(this.checkGelezen(gebruiker)) {
+      this.gelezen.push(true);
+    }
+    else {
+      this.gelezen.push(false);
+    }
+  }
+
+  checkGelezen(gebruiker: Gebruiker): boolean {
+    let checks: number = 0;
+
+    // Als de gebruiker geen uitwerkingen heeft wordt true gereturnd.
+    if(gebruiker.uitwerkingen.length === 0) {
+      return true;
+    }
+
+    // Voor elke gelezen uitwerking wordt 'checks' opgehoogd.
+    for(let uitwerking of gebruiker.uitwerkingen) {
+      if(uitwerking.gelezen === true) {
+        checks++;
+      }
+    }
+
+    // Als 'checks' gelijk is aan de lengte van uitwerkingen komt true terug want alle uitwerkingen zijn gelezen, anders false.
+    if(checks === gebruiker.uitwerkingen.length) {
+      return true;
+    }
+    else {
+      return false;
+    }
   }
 
   naarUitwerkinglijst(student: Gebruiker):void {

@@ -17,7 +17,11 @@
                 <td>{{Uitwerking.opdracht.titel}}</td>
                 <td>{{Uitwerking.inleverTijdstip | date:'dd-MM-yyyy HH:mm:ss'}}</td>
                 <td>
-                    <button (click)="naarUitwerking(Uitwerking);">Bekijk uitwerking</button>
+                    <button (click)="naarUitwerking(Uitwerking);">Bekijk uitwerking 
+                        <div id="notificatie" *ngIf="!Uitwerking.gelezen">
+                            <i class="fa fa-exclamation-circle" title="Nieuwe uitwerking beschikbaar" aria-hidden="true"></i>
+                        </div>
+                    </button>
                 </td>
             </tr>
         </tbody>

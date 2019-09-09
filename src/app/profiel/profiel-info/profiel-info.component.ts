@@ -4,8 +4,6 @@ import { GebruikersService } from 'src/app/services/gebruikers.service';
 import { Gebruiker } from 'src/app/Objecten/gebruiker';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { WijzigWachtwoordDTO } from 'src/app/Objecten/wijzig-wachtwoord-dto';
-import { Router } from '@angular/router';
-import { Location } from '@angular/common'
 
 @Component({
   selector: 'wsa-profiel-info',
@@ -20,7 +18,7 @@ export class ProfielInfoComponent implements OnInit {
   wachtwoordDTO: WijzigWachtwoordDTO = new WijzigWachtwoordDTO();
 
   constructor(private authenticatieService: AutenticatieService, private gebruikersService: GebruikersService,
-              private fb: FormBuilder, private router: Router, private location: Location,) {
+              private fb: FormBuilder) {
     
     this.wijzigWachtwoordForm = this.fb.group({
       huidigwachtwoord: ['', Validators.required],
@@ -42,13 +40,6 @@ export class ProfielInfoComponent implements OnInit {
         .subscribe(opgehaaldeGebruiker => this.gebruiker = opgehaaldeGebruiker);
   }
 
-  refreshPagina(): void {
-    this.router.navigateByUrl('/' + this.gebruiker.rol.toLowerCase(), {skipLocationChange:true})
-    .then(() => {
-      this.router.navigateByUrl(decodeURI(this.location.path()))
-    });
-  }
-
   showForm(): void {
     this.zichtbaar = ! this.zichtbaar;
   }
@@ -60,6 +51,9 @@ export class ProfielInfoComponent implements OnInit {
     this.wachtwoordDTO.nieuwWachtwoord = val.nieuwwachtwoord;
 
     this.gebruikersService.wijzigWachtwoord(id, this.wachtwoordDTO)
-        .subscribe(response => this.refreshPagina());
+        .subscribe(response => {
+          this.wijzigWachtwoordForm.reset();
+          this.showForm()
+        });
   }
 }
