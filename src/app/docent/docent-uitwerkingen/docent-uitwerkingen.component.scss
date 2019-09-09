@@ -35,6 +35,22 @@ button:hover {
     background-color: #00aeef;
 }
 
+#notificatie {
+    float: right;
+}
+
+.fa-exclamation-circle {
+    background-color: #ffffff;
+    color: red;
+    border-radius: 50%;
+    font-size: 15px;
+    font-weight: bold;
+    padding-right: 2px;
+    padding-bottom: 2px;
+    height: 12.5px;
+    width: 13px;
+}
+
 .table {
     border-top-color: transparent !important;
 }

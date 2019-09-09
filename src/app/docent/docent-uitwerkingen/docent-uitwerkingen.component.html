@@ -8,11 +8,16 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let Student of studenten">
+            <tr *ngFor="let Student of studenten; let i = index;">
                 <td>{{Student.voornaam}}</td>
                 <td>{{Student.tussenvoegsel}} {{Student.achternaam}}</td>
                 <td>
-                    <button (click)="naarUitwerkinglijst(Student);">Bekijk uitwerkingen</button>
+                    <button (click)="naarUitwerkinglijst(Student);">Bekijk uitwerkingen
+                        <div id="notificatie" *ngIf="!gelezen[i]">
+                            <i class="fa fa-exclamation-circle" title="Nieuwe uitwerking beschikbaar"
+                                aria-hidden="true"></i>
+                        </div>
+                    </button>
                 </td>
             </tr>
         </tbody>
