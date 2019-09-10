@@ -1,8 +1,8 @@
-import {Injectable} from '@angular/core';
-import {Traject} from '../Objecten/traject';
-import {Observable, of} from 'rxjs';
-import {HttpClient} from '@angular/common/http';
-import {environment} from 'src/environments/environment';
+import { Injectable } from '@angular/core';
+import { Traject } from '../Objecten/traject';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 import { DTOGebruikerID } from '../Objecten/gebruikerDTO';
 import { TrajectOnderdeel } from '../Objecten/traject-onderdeel';
 import { TrajectDTO } from '../Objecten/traject-dto';
@@ -12,7 +12,7 @@ import { TrajectDTO } from '../Objecten/traject-dto';
 })
 
 export class TrajectService {
-  private api: string = environment.apiUrl
+  private api: string = (environment.apiUrl+ "/traject")
 
   constructor(private http: HttpClient) {
   }
@@ -33,27 +33,23 @@ export class TrajectService {
     return this.http.put(`${this.api}/WijzigTrajectMetDTO`, trajectDto);
   }
 
-  GeefZichtbareTrajectenHome(): Observable<Traject[]> {
-    return this.http.get<Traject[]>(`${this.api}/home`)
-  }
-
-  haalTrajectOpId(id: number): Observable<any> {
-    return this.http.get<Traject>(`${this.api}/HaalTrajectOpId/` + id);
+  haalTrajectOpId(traject_id: number): Observable<any> {
+    return this.http.get<Traject>(`${this.api}/HaalTrajectOpId/` + traject_id);
   }
 
   geefTrajectDTOMetTrajectId(traject_id: number): Observable<TrajectDTO> {
     return this.http.get<TrajectDTO>(`${this.api}/geefTrajectDTO/` + traject_id);
   }
 
-  haalTrajectenOpVanGebruiker(gebruiker_id: number): Observable<Traject[]> {
-    return this.http.get<Traject[]>(`${this.api}/geefTrajectenMetGebruikerId/` + gebruiker_id);
+  geefAlleTrajectenVanGebruiker(gebruiker_id: number): Observable<Traject[]> {
+    return this.http.get<Traject[]>(`${this.api}/geefAlleTrajectenVanGebruiker/` + gebruiker_id);
   }
 
-  koppelTrajectAanGebruiker(lijstGebruikers:DTOGebruikerID[], trajectId:number){
-    return this.http.put<DTOGebruikerID>(`${this.api}/voegGebruikersOfVerwijderVanTraject/` +trajectId, lijstGebruikers);
+  koppelTrajectAanGebruiker(traject_id:number, lijstGebruikers:DTOGebruikerID[]){
+    return this.http.put<DTOGebruikerID>(`${this.api}/koppelTrajectAanGebruiker/` + traject_id, lijstGebruikers);
   }
 
-  geefAlleTrajectonderdelen(traject_id: number): Observable<TrajectOnderdeel[]> {
+  geefAlleTrajectonderdelenVanTraject(traject_id: number): Observable<TrajectOnderdeel[]> {
     return this.http.get<TrajectOnderdeel[]>(`${this.api}/geefTrajectOnderdelenVanTraject/` + traject_id);
   }
 }

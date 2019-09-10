@@ -31,7 +31,7 @@ export class OpdrachtWijzigComponent implements OnInit {
   }
 
   haalTrajectonderdelenOp(): void {
-    this.trajectservice.geefAlleTrajectonderdelen(this.traject_id).subscribe(trajectonderdelen => {
+    this.trajectservice.geefAlleTrajectonderdelenVanTraject(this.traject_id).subscribe(trajectonderdelen => {
       this.trajectonderdelen = trajectonderdelen;
     });
   }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Opdracht } from 'src/app/Objecten/opdracht';
-import { OpdrachtenserviceService } from 'src/app/services/opdrachtenservice.service';
+import { OpdrachtService } from 'src/app/services/opdracht.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Uitwerking } from 'src/app/Objecten/uitwerking';
 import { UitwerkingService } from 'src/app/services/uitwerking.service';
@@ -16,7 +16,7 @@ export class OpdrachtComponent implements OnInit {
   uitwerking: Uitwerking = new Uitwerking();
   gebruiker_id: number;
 
-  constructor(private opdrachtenservice: OpdrachtenserviceService, private route: ActivatedRoute,
+  constructor(private opdrachtservice: OpdrachtService, private route: ActivatedRoute,
               private uitwerkingservice: UitwerkingService, private authenticatieservice: AutenticatieService,
               private router: Router) { }
 
@@ -27,7 +27,7 @@ export class OpdrachtComponent implements OnInit {
   }
 
   haalOpdrachtOp(id: number): void{
-    this.opdrachtenservice.haalOpdrachtOpId(id).subscribe(opdracht => this.opdracht = opdracht);
+    this.opdrachtservice.haalOpdrachtOpId(id).subscribe(opdracht => this.opdracht = opdracht);
   }
 
   haalGebruikerIdOp(): void {
