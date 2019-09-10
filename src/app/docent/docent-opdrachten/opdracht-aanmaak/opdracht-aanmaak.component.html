@@ -4,51 +4,61 @@
             <h6>Nieuwe opdracht aanmaken</h6>
         </div>
         <div class="row">
-            <div>
+            <div class="col-sm-6">
                 <p>Titel</p>
-                <input name="titel" [(ngModel)]="opdracht.titel" type="text" id="titelinvoer" maxlength="256">
+                <input name="titel" class="form-control" [(ngModel)]="opdracht.titel" type="text" id="titelinvoer"
+                    maxlength="256">
+            </div>
+            <div class="col-sm-6">
+                <p>Zichtbaar</p>
+                <div>
+                    <label class="switch">
+                        <input name="zichtbaar" type="checkbox" [(ngModel)]="opdracht.zichtbaar">
+                        <span class="slider round"></span>
+                    </label>
+                    <ng-container>
+                        <span class="zichtbaartekst" *ngIf="opdracht.zichtbaar">De opdracht is zichtbaar.</span>
+                        <span class="zichtbaartekst" *ngIf="!opdracht.zichtbaar">De opdracht is niet zichtbaar.</span>
+                    </ng-container>
+                </div>
             </div>
         </div>
         <div class="row">
-            <div>
-                <p>Omschrijving</p>
-                <textarea name="omschrijving" [(ngModel)]="opdracht.omschrijving" id="omschrijvinginvoer" maxlength="10000"></textarea>
-            </div>
-        </div>
-        <div class="row">
-            <div>
-                <p>Codevoorbeeld</p>
-                <textarea name="codevoorbeeld" [(ngModel)]="opdracht.codevoorbeeld" id="codeinvoer" maxlength="10000"><pre></pre></textarea>
-            </div>
-        </div>
-        <div class="row">
-            <div>
+            <div class="col-sm-6">
                 <p>Kies bootcampdag (laat leeg als opdracht niet bij bootcamp hoort)</p>
-                <select name="dag" [(ngModel)]="opdracht.dag" id="dagkeuzemenu">
+                <select name="dag" class="form-control" [(ngModel)]="opdracht.dag" id="dagkeuzemenu">
                     <option value="1" id="bootcampkeuze1">Bootcampdag 1</option>
                     <option value="2" id="bootcampkeuze2">Bootcampdag 2</option>
                     <option value="3" id="bootcampkeuze3">Bootcampdag 3</option>
                 </select>
             </div>
-        </div>
-        <div class="row">
-            <div>
+            <div class="col-sm-6">
                 <p>Kies bij welke fase de opdracht hoort</p>
-                <select name="fase" [(ngModel)]="opdracht.trajectOnderdeel" id="trajectonderdeelmenu">
+                <select name="fase" class="form-control" [(ngModel)]="opdracht.trajectOnderdeel"
+                    id="trajectonderdeelmenu">
                     <ng-container *ngFor="let Trajectonderdeel of trajectonderdelen">
-                        <option id="fasekeuze{{Trajectonderdeel.id}}" [ngValue]="Trajectonderdeel">{{Trajectonderdeel.naam}}</option>
+                        <option id="fasekeuze{{Trajectonderdeel.id}}" [ngValue]="Trajectonderdeel">
+                            {{Trajectonderdeel.naam}}</option>
                     </ng-container>
                 </select>
             </div>
         </div>
         <div class="row">
-            <div>
-                <p>Zichtbaar</p>
-                <input name="zichtbaar" [(ngModel)]="opdracht.zichtbaar" type="checkbox" id="zichtbaarcheck">
+            <div class="col-sm-6">
+                <p>Omschrijving</p>
+                <textarea name="omschrijving" class="form-control" [(ngModel)]="opdracht.omschrijving"
+                    id="omschrijvinginvoer" maxlength="10000"></textarea>
+            </div>
+            <div class="col-sm-6">
+                <p>Codevoorbeeld</p>
+                <textarea name="codevoorbeeld" class="form-control" [(ngModel)]="opdracht.codevoorbeeld" id="codeinvoer"
+                    maxlength="10000"><pre></pre></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <button id="opslaanbutton" (click)="opdrachtOpslaan(opdracht)">Opslaan</button>
             </div>
         </div>
     </form>
-    <div class="row">
-        <button id="opslaanbutton" (click)="opdrachtOpslaan(opdracht)">Opslaan</button>
-    </div>
 </div>

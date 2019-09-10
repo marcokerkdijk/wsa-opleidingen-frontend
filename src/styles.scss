@@ -121,3 +121,23 @@ body.jw-modal-open {
 // ================== //
 // Einde Modal opmaak //
 // ================== //
+
+
+// == Opmaak tabellen == //
+.table {
+    border-top-color: transparent !important;
+}
+
+thead, th {
+    border-color: transparent !important;
+    color: #ffffff;
+    background-color: #00aaef;
+}
+
+td {
+    border-top: transparent !important;
+    border-left-color: transparent !important;
+    border-right-color: transparent !important;
+}
+
+// Einde opmaak tabellen //

@@ -29,15 +29,31 @@ p {
     color:  #808285;
 }
 
-#pencil,#sorteerPijlRol, #sorteerPijlVoornaam,
+#sorteerPijlRol, #sorteerPijlVoornaam,
 #sorteerPijlAchternaam, #sorteerPijlActief, #sorteerActiefJa, 
 #sorteerActiefNee {
+    color: #ffffff;
+}
+
+#sorteerPijlRol:hover, #sorteerPijlVoornaam:hover,
+#sorteerPijlAchternaam:hover, #sorteerPijlActief:hover, #sorteerActiefJa:hover, 
+#sorteerActiefNee:hover {
+    cursor: pointer;
+}
+
+.rolnaam {
+    text-transform: lowercase;
+}
+
+.rolnaam::first-letter {
+    text-transform: capitalize;
+}
+
+#pencil {
     color: #00aeef;
 }
 
-#pencil:hover, #sorteerPijlRol:hover, #sorteerPijlVoornaam:hover,
-#sorteerPijlAchternaam:hover, #sorteerPijlActief:hover, #sorteerActiefJa:hover, 
-#sorteerActiefNee:hover {
+.fa-pencil:hover {
     cursor: pointer;
 }
 

@@ -7,8 +7,10 @@
     <table id="uitwerkingenlijst" class="table table-bordered">
         <thead id="table-bottom">
             <tr>
-                <th>Opdracht<i id='sorteerPijlOpdracht' class="fa fa-fw fa-sort" (click)="sorteerTabel(0)"></i></th>
-                <th>Inleverdatum<i id='sorteerPijlInleverdatum' class="fa fa-fw fa-sort" (click)="sorteerTabel(1)"></i></th>
+                <th>Opdracht<i class="sorteer" id='sorteerPijlOpdracht' class="fa fa-fw fa-sort"
+                        (click)="sorteerTabel(0)"></i></th>
+                <th>Inleverdatum<i class="sorteer" id='sorteerPijlInleverdatum' class="fa fa-fw fa-sort"
+                        (click)="sorteerTabel(1)"></i></th>
                 <th></th>
             </tr>
         </thead>
@@ -17,9 +19,10 @@
                 <td>{{Uitwerking.opdracht.titel}}</td>
                 <td>{{Uitwerking.inleverTijdstip | date:'dd-MM-yyyy HH:mm:ss'}}</td>
                 <td>
-                    <button (click)="naarUitwerking(Uitwerking);">Bekijk uitwerking 
+                    <button (click)="naarUitwerking(Uitwerking);">Bekijk uitwerking
                         <div id="notificatie" *ngIf="!Uitwerking.gelezen">
-                            <i class="fa fa-exclamation-circle" title="Nieuwe uitwerking beschikbaar" aria-hidden="true"></i>
+                            <i class="fa fa-exclamation-circle" title="Nieuwe uitwerking beschikbaar"
+                                aria-hidden="true"></i>
                         </div>
                     </button>
                 </td>

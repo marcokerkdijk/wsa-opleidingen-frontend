@@ -3,6 +3,7 @@ import { TrajectService } from 'src/app/services/traject.service';
 import { Traject } from 'src/app/Objecten/traject';
 import { Router } from '@angular/router';
 import { ModalService } from 'src/app/services/modal.service';
+import { TrajectDTO } from 'src/app/Objecten/traject-dto';
 
 @Component({
   selector: 'wsa-recruiter-beheer-traject',
@@ -16,10 +17,10 @@ export class RecruiterBeheerTrajectComponent implements OnInit {
   constructor(private modalService: ModalService, 
     private trajectService:TrajectService, private router:Router) { }
 
-    ngOnInit() {
+  ngOnInit() {
   }
 
-  createTraject(traject: Traject){
+  createTraject(traject: TrajectDTO){
     this.trajectService.maakTrajectAan(traject)
     .subscribe(response => this.router.navigateByUrl('/recruiter').then(success => {
       this.router.navigateByUrl('/recruiter/recruiter-beheer-traject')

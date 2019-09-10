@@ -25,7 +25,16 @@ td {
     text-align: left;
 }
 
-  button{
+.trajectlink {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.align {
+    vertical-align: middle;
+}
+
+button {
     border-color: #00aeef;
     color: #00aeef;
     width: 230px;

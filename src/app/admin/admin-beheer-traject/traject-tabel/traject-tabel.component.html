@@ -10,10 +10,10 @@
                     <th id="thZichtbaar">Zichtbaar</th>
                 </tr>
             </thead>
-            <tbody >
-                <tr *ngFor="let Traject of alleTrajecten"  >
-                    <td id="tdTraject{{Traject.id}}">{{Traject.naam}}</td>
-                    <td id="tdZichtbaar{{Traject.id}}">
+            <tbody>
+                <tr *ngFor="let Traject of alleTrajecten">
+                    <td class="align" id="tdTraject{{Traject.id}}">{{Traject.naam}}</td>
+                    <td class="align" id="tdZichtbaar{{Traject.id}}">
                         <div *ngIf="Traject.zichtbaar; else elseBlock">Ja</div>
                         <ng-template #elseBlock>Nee</ng-template>
                     </td>
@@ -23,12 +23,14 @@
                         </button>
                     </td>
                     <td>
-                        <button id="Koppel{{Traject.id}}" routerLink="../admin-beheer-trajectgebruikers/{{Traject.id}}" routerLinkActive="active">
+                        <button id="Koppel{{Traject.id}}" routerLink="../admin-beheer-trajectgebruikers/{{Traject.id}}"
+                            routerLinkActive="active">
                             Koppel gebruikers
                         </button>
                     </td>
                     <td>
-                        <button id="resultaten{{Traject.id}}" routerLink="../admin-beheer-resultaten/{{Traject.id}}" routerLinkActive="active">
+                        <button id="resultaten{{Traject.id}}" routerLink="../admin-beheer-resultaten/{{Traject.id}}"
+                            routerLinkActive="active">
                             Zie resultaten
                         </button>
                     </td>
