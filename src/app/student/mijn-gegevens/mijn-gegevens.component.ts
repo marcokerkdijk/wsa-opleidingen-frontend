@@ -16,14 +16,14 @@ export class MijnGegevensComponent implements OnInit {
   studenten: Gebruiker[];
   gebruiker: any;
   trajecten: Traject[];
-  traject:   any;
+  traject: any;
 
   constructor(
-    private authenticatieService:AutenticatieService,
+    private authenticatieService: AutenticatieService,
     private trajectService: TrajectService,
     private router: Router,
-    private gebruikerService: GebruikersService, private activeRouter:ActivatedRoute,
-              private alertservice: AlertService
+    private gebruikerService: GebruikersService, private activeRouter: ActivatedRoute,
+    private alertservice: AlertService
   ) { }
 
   ngOnInit() {
@@ -31,17 +31,17 @@ export class MijnGegevensComponent implements OnInit {
     this.HaalTrajectBijGebruikerOp();
   }
 
-  haalGebruikerOp():void {
+  haalGebruikerOp(): void {
     this.gebruiker = this.authenticatieService.haalTokenOp();
   }
 
-  HaalTrajectBijGebruikerOp(){
+  HaalTrajectBijGebruikerOp() {
     this.trajectService.haalTrajectenOpVanGebruiker(this.gebruiker.gebruiker_id).subscribe(trajecten => {
       this.trajecten = trajecten;
     },
-    (error) => {
-      this.alertservice.error("Je bent nog niet aan een traject gekoppeld.", "alert-1");
-    });
+      (error) => {
+        this.alertservice.error("Je bent nog niet aan een traject gekoppeld.", "alert-1");
+      });
   }
 
   haalStudentenOp(id) {
