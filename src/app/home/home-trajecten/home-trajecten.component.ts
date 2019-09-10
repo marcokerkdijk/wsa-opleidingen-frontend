@@ -46,7 +46,7 @@ export class HomeTrajectenComponent implements OnInit {
   gaNaarTrajectInformatie(traject:Traject){
     this.traject = traject;
     this.dataService.setTraject(traject);
-    this.router.navigateByUrl("home/home-trajecten-informatie/" + traject.id);
+    this.router.navigateByUrl("home/home-trajecten-informatie");
   }
 
   getWelkomstTekst(tekstId){

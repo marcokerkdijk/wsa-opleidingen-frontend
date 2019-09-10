@@ -53,7 +53,7 @@ const routes: Routes = [
       {path: '', redirectTo: 'home-trajecten', pathMatch: 'full'},
       {path: "home-trajecten", component:HomeTrajectenComponent},
       {path: '', redirectTo: 'home-trajecten', pathMatch: 'full'},
-      {path: "home-trajecten-informatie/:id", component: HomeTrajectenInformatieComponent},
+      {path: "home-trajecten-informatie", component: HomeTrajectenInformatieComponent},
       {path: '', redirectTo: 'home-trajecten', pathMatch: 'full'},
     ]
   },
