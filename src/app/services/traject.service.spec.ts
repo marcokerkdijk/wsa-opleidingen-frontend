@@ -1,5 +1,4 @@
 import { TestBed } from '@angular/core/testing';
-
 import { TrajectService } from './traject.service';
 
 describe('TrajectService', () => {

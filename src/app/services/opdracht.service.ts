@@ -8,7 +8,7 @@ import { Opdracht } from '../Objecten/opdracht';
   providedIn: 'root'
 })
 export class OpdrachtService {
-  private api: string = environment.apiUrl
+  private api: string = (environment.apiUrl + "/opdracht")
 
   constructor(private http: HttpClient) { }
 
@@ -27,4 +27,17 @@ export class OpdrachtService {
   verwijderOpdracht(opdracht: Opdracht): Observable<any> {
     return this.http.put(`${this.api}/verwijderOpdracht`, opdracht);
   }
+
+  haalZichtbareOpdrachtenOp(): Observable<Opdracht[]>{
+    return this.http.get<Opdracht[]>(`${this.api}/haalZichtbareOpdrachtenOp`);
+  }
+
+  haalOpdrachtOpId(id: number): Observable<any> {
+    return this.http.get<Opdracht>(`${this.api}/haalOpdrachtOpId/` + id);
+  }
+
+  haalAlleAssessments(){
+    return this.http.get<Opdracht[]>(`${this.api}/haalAlleAssessmentsOp`);
+  }
+
 }

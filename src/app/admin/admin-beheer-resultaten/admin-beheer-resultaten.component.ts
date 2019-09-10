@@ -28,7 +28,7 @@ export class AdminBeheerResultatenComponent implements OnInit {
   }
 
   haalUitwerkingenOp(): void {
-    this.uitwerkingService.haalAlleUitwerkingenOp()
+    this.uitwerkingService.geefAlleUitwerkingen()
         .subscribe(uitwerkingenlijst => this.uitwerkingenlijst = uitwerkingenlijst);
   }
 }
