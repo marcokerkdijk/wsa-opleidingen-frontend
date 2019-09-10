@@ -14,6 +14,7 @@ export class DocentOpdrachtenComponent implements OnInit {
   traject_id: number;
   opdrachten: Opdracht[] = new Array;
   zichtbaar: boolean[] = new Array;
+  toonOmschrijving: boolean[] = new Array;
   geenOpdrachten: boolean;
 
   constructor(private dataservice: DataserviceService, private opdrachtService: OpdrachtService,
@@ -44,10 +45,15 @@ export class DocentOpdrachtenComponent implements OnInit {
 
   maakBooleanLijst(): void {
     this.zichtbaar.concat(false);
+    this.toonOmschrijving.concat(false);
   }
 
   toggle(index: number): void {
     this.zichtbaar[index] = !this.zichtbaar[index];
+  }
+
+  toggleOmschrijving(index: number): void {
+    this.toonOmschrijving[index] = !this.toonOmschrijving[index];
   }
 
   verwijderOpdracht(opdracht: Opdracht): void {

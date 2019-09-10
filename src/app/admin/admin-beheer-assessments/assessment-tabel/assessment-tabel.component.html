@@ -24,8 +24,10 @@
                     <td id="tdTraject{{Opdracht.id}}">{{Opdracht.traject.naam}}</td>
                     <td id="tdFase{{Opdracht.id}}">{{Opdracht.fase}}</td>
                     <td id="tdWijzig{{Opdracht.id}}">
-                        <a id="pencil" (click)="clickWijzigModal('assessment-wijzig-modal', Opdracht.id)"><i
-                                class='fa fa-pencil' id="tdWijzig{{Opdracht.id}}"></i></a>
+                        <a id="pencil">
+                            <i class='fa fa-pencil' id="tdWijzig{{Opdracht.id}}"
+                                (click)="clickWijzigModal('assessment-wijzig-modal', Opdracht.id)"></i>
+                        </a>
                     </td>
                 </tr>
             </tbody>

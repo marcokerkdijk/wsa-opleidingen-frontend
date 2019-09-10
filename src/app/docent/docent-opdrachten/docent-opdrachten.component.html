@@ -9,8 +9,6 @@
             <thead id="table-bottom">
                 <tr>
                     <th id="titel">Titel</th>
-                    <th id="omschrijving">Omschrijving</th>
-                    <th id="codevoorbeeld">Codevoorbeeld</th>
                     <th id="dag">Bootcampdag</th>
                     <th id="fase">Fase</th>
                     <th id="zichtbaar">Zichtbaar</th>
@@ -21,24 +19,41 @@
             <tbody>
                 <ng-container *ngFor="let Opdracht of opdrachten; let i = index;">
                     <tr (onCreate)="maakBooleanLijst();">
-                        <td id="titel{{Opdracht.id}}">{{Opdracht.titel}}</td>
-                        <td id="omschrijving{{Opdracht.id}}">{{Opdracht.omschrijving}}</td>
-                        <td id="code{{Opdracht.id}}">{{Opdracht.codevoorbeeld}}</td>
+                        <td id="titel{{Opdracht.id}}"><span id="opdrachttitel" title="Toon opdrachtinformatie"
+                                (click)="toggleOmschrijving(i);">{{Opdracht.titel}}</span>
+                        </td>
                         <td id="dag{{Opdracht.id}}">{{Opdracht.dag}}</td>
                         <td id="trajectonderdeel{{Opdracht.id}}">{{Opdracht.trajectOnderdeel.naam}}</td>
                         <td id="zichtbaar{{Opdracht.id}}">
                             <p *ngIf="Opdracht.zichtbaar">Ja</p>
                             <p *ngIf="!Opdracht.zichtbaar">Nee</p>
                         </td>
-                        <td><div id="pencil">
-                            <i class='fa fa-pencil' id="pencil{{Opdracht.id}}" (click)="wijzigOpdracht(Opdracht);"
-                                routerLink="../opdracht-wijzig/{{traject_id}}"></i>
+                        <td>
+                            <div id="pencil">
+                                <i class='fa fa-pencil' id="pencil{{Opdracht.id}}" (click)="wijzigOpdracht(Opdracht);"
+                                    routerLink="../opdracht-wijzig/{{traject_id}}"></i>
                             </div>
                         </td>
-                        <td><div id="prullenbak">
-                            <i class='fa fa-trash' id="verwijder{{Opdracht.id}}" (click)="toggle(i);"></i>
+                        <td>
+                            <div id="prullenbak">
+                                <i class='fa fa-trash' id="verwijder{{Opdracht.id}}" (click)="toggle(i);"></i>
                             </div>
                         </td>
+                    </tr>
+                    <tr *ngIf="toonOmschrijving[i]">
+                        <div class="alert alert-primary" role="alert" id="uitklapdiv">
+                            <div class="col-sm-5" id="opdrachtomschrijving">
+                                <p class="kop">Omschrijving</p>
+                                <p>{{Opdracht.omschrijving}}</p>
+                            </div>
+                            <div class="col-sm-5" id="opdrachtcode">
+                                <p class="kop">Codevoorbeeld</p>
+                                <pre>{{Opdracht.codevoorbeeld}}</pre>
+                            </div>
+                            <button type="button" class="close" aria-label="Close" (click)="toggleOmschrijving(i);">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
                     </tr>
                     <tr *ngIf="zichtbaar[i]">
                         <div class="alert alert-danger" role="alert" id="waarschuwing">

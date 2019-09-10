@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AdminBeheerTrajectComponent } from '../admin-beheer-traject.component';
 import { TrajectService } from 'src/app/services/traject.service';
 import { Traject } from 'src/app/Objecten/traject';
 import { AlertService } from 'src/app/_alert';
@@ -12,8 +11,7 @@ import { AlertService } from 'src/app/_alert';
 export class TrajectTabelComponent implements OnInit {
   alleTrajecten:Traject[];
 
-  constructor(private trajectService:TrajectService, private adminBeheerTrajectCompnent:AdminBeheerTrajectComponent,
-              private alertservice: AlertService) { }
+  constructor(private trajectService:TrajectService, private alertservice: AlertService) { }
 
   ngOnInit() {
     this.getAlleTrajecten();

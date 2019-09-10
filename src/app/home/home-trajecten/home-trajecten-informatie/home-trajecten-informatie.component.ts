@@ -1,9 +1,7 @@
-import { Component, OnInit, Input, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Traject } from 'src/app/Objecten/traject';
-import { Router, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { TrajectService } from 'src/app/services/traject.service';
-import { HomeTrajectenComponent } from '../home-trajecten.component';
-import { DataserviceService } from 'src/app/services/dataservice.service';
 
 @Component({
   selector: 'wsa-home-trajecten-informatie',
@@ -14,13 +12,16 @@ export class HomeTrajectenInformatieComponent implements OnInit {
   traject_id: number;
   traject: Traject = new Traject;
   
-  constructor(private dataService: DataserviceService, private trajectService:TrajectService, private router:Router, private activeRouter:ActivatedRoute, private comp: HomeTrajectenComponent) { }
+  constructor(private trajectService:TrajectService, private activeRouter:ActivatedRoute) { }
   
   ngOnInit() {
-    this.traject = this.dataService.getTraject();
- 
+    const id = +this.activeRouter.snapshot.paramMap.get('id');
+    this.haalTrajectOp(id);
   }
   
- 
-
+  haalTrajectOp(id: number):void {
+    this.trajectService.haalTrajectOpId(id).subscribe(opgehaaldTraject => {
+      this.traject = opgehaaldTraject;
+    });
+  }
 }

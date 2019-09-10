@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from "./home/home.component";
-import { LoginComponent } from "./login/login.component";
 import { AdminComponent } from "./admin/admin.component";
 import { AdminAutorisatieGuard } from "./guards/admin-autorisatie.guard";
 import { StudentComponent } from "./student/student.component";
@@ -24,7 +23,6 @@ import { RecruiterAutorisatieGuard } from './guards/recruiter-autorisatie.guard'
 import { RecruiterHomeComponent } from './recruiter/recruiter-home/recruiter-home.component';
 import { RecruiterBeheerTrajectComponent } from './recruiter/recruiter-beheer-traject/recruiter-beheer-traject.component';
 import { RecruiterBeheerTrajectfaseComponent } from './recruiter/recruiter-beheer-traject/recruiter-beheer-trajectfase/recruiter-beheer-trajectfase.component';
-import { RecruiterBeheerSelectiefaseTabelComponent } from './recruiter/recruiter-beheer-traject/recruiter-beheer-trajectfase/recruiter-beheer-selectiefase-tabel/recruiter-beheer-selectiefase-tabel.component'
 import { RecruiterBeheerTrajectgebruikersComponent } from './recruiter/recruiter-beheer-trajectgebruikers/recruiter-beheer-trajectgebruikers.component';
 import { ProfielComponent } from './profiel/profiel.component';
 import { ProfielInfoComponent } from './profiel/profiel-info/profiel-info.component';
@@ -55,7 +53,7 @@ const routes: Routes = [
       {path: '', redirectTo: 'home-trajecten', pathMatch: 'full'},
       {path: "home-trajecten", component:HomeTrajectenComponent},
       {path: '', redirectTo: 'home-trajecten', pathMatch: 'full'},
-      {path: "home-trajecten-informatie", component: HomeTrajectenInformatieComponent},
+      {path: "home-trajecten-informatie/:id", component: HomeTrajectenInformatieComponent},
       {path: '', redirectTo: 'home-trajecten', pathMatch: 'full'},
     ]
   },
@@ -140,7 +138,7 @@ const routes: Routes = [
       { path: "profiel-info", component: ProfielInfoComponent, pathMatch: 'full' },
     ] 
   },
-  {path: '', redirectTo: '/home/home-trajecten', pathMatch: 'full'} 
+  {path: '', redirectTo: '/home/home-trajecten', pathMatch: 'full'}
 
 ];
 
