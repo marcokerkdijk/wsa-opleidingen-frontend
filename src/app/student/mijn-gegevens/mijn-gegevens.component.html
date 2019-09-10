@@ -1,5 +1,42 @@
-<div class="container-fluid">
-        <div class="row">
-            <p>Tekst test</p>
+<div class="container-fluid" id="mainbody">
+    <div class="row">
+        <br><br>
+    </div>
+    <div class="row">
+        <div class="col-sm-3 titel">
+            Mijn overzicht
+        </div>
+        <div class="col-sm-9">
+            Door op jouw traject te klikken kun je zien wie je medestudenten voor desbetreffend traject zijn.
         </div>
     </div>
+    <div class="row">
+        <h6>Trajecten</h6>
+        <div class="table" *ngFor="let Traject of trajecten">
+            <button id="geefLijstVoorTraject{{Traject.id}}" (click)="haalStudentenOp(Traject.id)">
+                {{Traject.naam}}</button>
+        </div>
+    </div>
+    <div class="row">
+        <h6>Studenten</h6>
+        <table id="studentenlijst" class="table table-bordered">
+            <thead id="table-bottom">
+                <tr>
+                    <th>Voornaam<i id='sorteerPijlVoornaam' class="fa fa-fw fa-sort" (click)="sorteerTabel(0)"></i></th>
+                    <th>Achternaam<i id='sorteerPijlAchternaam' class="fa fa-fw fa-sort" (click)="sorteerTabel(1)"></i></th>
+                    <th>E-mailadres<i id='sorteerPijlEmail' class="fa fa-fw fa-sort" (click)="sorteerTabel(1)"></i></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let Gebruiker of studenten">
+                    <td>{{Gebruiker.voornaam}}</td>
+                    <td>{{Gebruiker.tussenvoegsel}} {{Gebruiker.achternaam}}</td>
+                    <td>{{Gebruiker.emailadres}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <div id="melding">
+            <alert id="alert-1"></alert>
+        </div>
+    </div>
+</div>
