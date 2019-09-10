@@ -3,19 +3,17 @@ import { Observable } from 'rxjs/internal/Observable';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Gebruiker } from '../Objecten/gebruiker';
-import { GebruikersRol } from '../model/GebruikersRol';
 import { WijzigWachtwoordDTO } from '../Objecten/wijzig-wachtwoord-dto';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GebruikersService {
-  private api: string = environment.apiUrl
+  private api: string = (environment.apiUrl + "/gebruiker")
 
   constructor(private http: HttpClient) { }
 
   geefActieveGebruikers(): Observable<Gebruiker[]> {
-
     return this.http.get<Gebruiker[]>(`${this.api}/haalGebruikersOp`);
   }
 
@@ -26,6 +24,7 @@ export class GebruikersService {
   vraagGebruikerOpId(id: number): Observable<Gebruiker> {
     return this.http.get<Gebruiker>(`${this.api}/getGebruikerId/` + id);
   }
+  
   gebruikerToevoegen(gebruiker) {
     return this.http.post(`${this.api}/maakGebruikerAan/`, gebruiker);
   }
@@ -43,6 +42,7 @@ export class GebruikersService {
   geefStudentenVanTrajectEnOngekoppelde(traject_id: number): Observable<Gebruiker[]> {
     return this.http.get<Gebruiker[]>(`${this.api}/studentenVanTrajectEnOngekoppeldeStudenten/` + traject_id);
   }
+
   wijzigWachtwoord(id: number, wachtwoordDTO: WijzigWachtwoordDTO): Observable<any> {	
     return this.http.put(`${this.api}/wijzigWachtwoord/` + id, wachtwoordDTO);	
   }
@@ -54,7 +54,6 @@ export class GebruikersService {
   haalAlleStudentenVanTraject(id: number): Observable<Gebruiker[]> {
     return this.http.get<Gebruiker[]>(`${this.api}/haalStudentenOpMetTrajectId/` + id);
   }
-
 
   haalDocentOpMetTraject(traject_id): Observable<any> {
     console.log(traject_id);

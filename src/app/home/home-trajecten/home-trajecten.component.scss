@@ -51,30 +51,26 @@ p {
     width: 100%;
     height: 0;
     transition: .5s ease;
-    /* These are technically the same, but use both */
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  word-break: break-word;
-
+    text-overflow: ellipsis;
   }
 .text {
-    white-space: nowrap; 
     color: white;
     font-size: 20px;
+    max-width: 290px;
+    max-height: 230px;
+    
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: keep-all;
+
+    text-align: center;
+       
+    margin: 0;
     position: absolute;
-    // overflow: hidden;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    padding-top: 12px;
-    /* These are technically the same, but use both */
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  /* Instead use this non-standard one: */
-  word-break: break-word;
-
-  }
+}
 #titel{
     letter-spacing: 1px;
     color: #808285;
