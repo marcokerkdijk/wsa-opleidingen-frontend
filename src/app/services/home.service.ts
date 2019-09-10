@@ -9,12 +9,12 @@ import { environment } from 'src/environments/environment';
 })
 
 export class HomeService {
-  private api: string = environment.apiUrl
+  private api: string = (environment.apiUrl + "/home")
 
   constructor(private http: HttpClient) {
   }
 
   GeefZichtbareTrajectenHome(): Observable<Traject[]> {
-    return this.http.get<Traject[]>(`${this.api}/home`)
+    return this.http.get<Traject[]>(`${this.api}`)
   }
 }
