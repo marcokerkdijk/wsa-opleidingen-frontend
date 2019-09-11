@@ -1,7 +1,7 @@
 import { Component, ElementRef, Input, OnInit, OnDestroy } from '@angular/core';
 
 import { ModalService } from 'src/app/services/modal.service';
-import { AdminBeheerGebruikersComponent} from '../admin-beheer-gebruikers.component';
+import { BeheerGebruikersComponent} from '../beheer-gebruikers.component';
 
 @Component({
     selector: 'jw-gebruikers-modal',
@@ -17,7 +17,7 @@ export class GebruikersModalComponent implements OnInit, OnDestroy {
     @Input() id: string;
     private element: any;
 
-    constructor(private modalService: ModalService, private el: ElementRef, private gebruikersBeheer:AdminBeheerGebruikersComponent) {
+    constructor(private modalService: ModalService, private el: ElementRef, private gebruikersBeheer:BeheerGebruikersComponent) {
         this.element = el.nativeElement;
     }
 

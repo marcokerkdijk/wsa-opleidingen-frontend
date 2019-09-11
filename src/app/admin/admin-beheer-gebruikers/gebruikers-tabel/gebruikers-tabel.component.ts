@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Gebruiker } from 'src/app/Objecten/gebruiker';
 import { GebruikersService } from 'src/app/services/gebruikers.service';
-import { AdminBeheerGebruikersComponent } from '../admin-beheer-gebruikers.component';
+import { BeheerGebruikersComponent } from '../beheer-gebruikers.component';
 import { AlertService } from 'src/app/_alert';
 
 @Component({
@@ -12,7 +12,7 @@ import { AlertService } from 'src/app/_alert';
 export class GebruikersTabelComponent implements OnInit {
   actieveGebruikers : Gebruiker[];
   
-  constructor(private gebruikerService : GebruikersService, private adminBeheerGebruikers:AdminBeheerGebruikersComponent,
+  constructor(private gebruikerService : GebruikersService, private adminBeheerGebruikers:BeheerGebruikersComponent,
               private alertservice: AlertService) { }
 
   ngOnInit() {

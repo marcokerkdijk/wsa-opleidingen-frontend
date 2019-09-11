@@ -45,7 +45,7 @@ export class TrajectService {
     return this.http.get<Traject[]>(`${this.api}/geefAlleTrajectenVanGebruiker/` + gebruiker_id);
   }
 
-  koppelTrajectAanGebruiker(traject_id:number, lijstGebruikers:DTOGebruikerID[]){
+  koppelTrajectAanGebruiker(lijstGebruikers:DTOGebruikerID[], traject_id:number){
     return this.http.put<DTOGebruikerID>(`${this.api}/koppelTrajectAanGebruiker/` + traject_id, lijstGebruikers);
   }
 

@@ -3,6 +3,7 @@ import { Traject } from '../Objecten/traject';
 import { Opdracht } from '../Objecten/opdracht';
 import { Gebruiker } from '../Objecten/gebruiker';
 import { Uitwerking } from '../Objecten/uitwerking';
+import { Aantekening } from '../Objecten/aantekening';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,7 @@ export class DataserviceService {
   private opdracht: Opdracht;
   private gebruiker: Gebruiker;
   private uitwerking: Uitwerking;
+  private aantekening: Aantekening;
 
   constructor() { }
 
@@ -55,5 +57,13 @@ export class DataserviceService {
 
   public getUitwerking(): Uitwerking {
     return this.uitwerking;
+  }
+
+  public setAantekening(aantekening: Aantekening): void {
+    this.aantekening = aantekening;
+  }
+
+  public getAantekening(): Aantekening {
+    return this.aantekening;
   }
 }

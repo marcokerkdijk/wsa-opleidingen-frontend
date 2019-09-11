@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Opdracht } from 'src/app/Objecten/opdracht';
 import { OpdrachtService } from 'src/app/services/opdracht.service';
-import { AdminBeheerAssessmentsComponent } from '../admin-beheer-assessments.component';
 
 @Component({
   selector: 'wsa-assessment-tabel',
@@ -11,10 +10,7 @@ import { AdminBeheerAssessmentsComponent } from '../admin-beheer-assessments.com
 export class AssessmentTabelComponent implements OnInit {
   alleAssessments: Opdracht[];
 
-  constructor(
-    private opdrachtService: OpdrachtService,
-    private adminBeheerAssessmentsComponent: AdminBeheerAssessmentsComponent,
-  ) { }
+  constructor(private opdrachtService: OpdrachtService) { }
 
   ngOnInit() {
     this.getAlleAssessments();
