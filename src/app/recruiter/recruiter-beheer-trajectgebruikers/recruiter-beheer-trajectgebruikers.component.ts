@@ -139,7 +139,7 @@ export class RecruiterBeheerTrajectgebruikersComponent implements OnInit {
   }
 
   opslaanGebruikers(gebruikerIDs: DTOGebruikerID[]): void {
-    this.trajectService.koppelTrajectAanGebruiker(gebruikerIDs, this.traject.id).subscribe();
+    this.trajectService.koppelTrajectAanGebruiker(this.traject.id, gebruikerIDs).subscribe();
   }
 
 }
