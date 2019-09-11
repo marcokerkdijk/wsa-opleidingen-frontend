@@ -33,15 +33,10 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let SelectieFase of zichtbareSelectieFase">
-                        <td>{{SelectieFase.startdatum}}</td>
-                        <td>{{SelectieFase.tijdstip}}</td>
-                        <td>{{SelectieFase.naam}}</td>
-                    </tr>
-                    <tr *ngFor="let OpleidingsFase of zichtbareOpleidingsFase">
-                        <td>{{OpleidingsFase.startdatum}}</td>
-                        <td>{{OpleidingsFase.tijdstip}}</td>
-                        <td>{{OpleidingsFase.naam}}</td>
+                    <tr *ngFor="let Trajectonderdeel of traject.trajectOnderdelen">
+                        <td>{{Trajectonderdeel.startdatum}}</td>
+                        <td>{{Trajectonderdeel.tijdstip}}</td>
+                        <td>{{Trajectonderdeel.naam}}</td>
                     </tr>
                 </tbody>
             </table>
@@ -49,23 +44,12 @@
     </div>
 
     <!-- Selectiefases behorend bij het traject -->
-    <div class="row" *ngFor="let SelectieFase of zichtbareSelectieFase">
+    <div class="row" *ngFor="let Trajectonderdeel of traject.trajectOnderdelen">
         <div class="col-sm-4" id="titel">
-            {{SelectieFase.naam}}
+            {{Trajectonderdeel.naam}}
         </div>
         <div class="col-sm-8" id="text">
-            {{SelectieFase.omschrijving}}
+            {{Trajectonderdeel.omschrijving}}
         </div>
-    </div>
-    
-    <!-- Opleidingsfases behorend bij het traject -->
-    <div class="row" *ngFor="let OpleidingsFase of zichtbareOpleidingsFase">
-        <div class="col-sm-4" id="titel">
-            {{OpleidingsFase.naam}}
-        </div>
-        <div class="col-sm-8" id="text">
-            {{OpleidingsFase.omschrijving}}
-        </div>
-        <br><br>
     </div>
 </div>
