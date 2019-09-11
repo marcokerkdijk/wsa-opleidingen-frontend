@@ -70,7 +70,7 @@ const routes: Routes = [
       { path: '', redirectTo: 'admin', pathMatch: 'full'},
       { path: "admin-beheer-gebruikers", component: AdminBeheerGebruikersComponent },
       { path: '', redirectTo: 'admin', pathMatch: 'full' },
-      { path: "gebruikers-wijzigen/:id", component: GebruikerWijzigenComponent},
+      { path: "gebruiker-wijzigen/:id", component: GebruikerWijzigenComponent},
       { path: '', redirectTo: 'admin', pathMatch: 'full'},
       { path: "admin-beheer-trajectgebruikers/:id", component: AdminBeheerTrajectgebruikersComponent},
       { path: '', redirectTo: 'admin', pathMatch: 'full' },
