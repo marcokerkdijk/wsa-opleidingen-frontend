@@ -29,7 +29,6 @@ import { HomeTrajectenComponent } from './home/home-trajecten/home-trajecten.com
 import { HomeTrajectenInformatieComponent } from './home/home-trajecten/home-trajecten-informatie/home-trajecten-informatie.component';
 import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
 import { DocentOpdrachtenComponent } from './docent/docent-opdrachten/docent-opdrachten.component';
-import { DocentLesstofComponent } from './docent/docent-lesstof/docent-lesstof.component';
 import { DocentTrajectComponent } from './docent/docent-traject/docent-traject.component';
 import { DocentHomeComponent } from './docent/docent-home/docent-home.component';
 import { NavbarPerrolComponent } from './navbar-perrol/navbar-perrol.component';
@@ -70,6 +69,9 @@ import { TrajectToevoegenComponent } from './admin/admin-beheer-traject/traject-
 import { NgSelectModule } from '@ng-select/ng-select';
 import { ArchwizardModule } from 'angular-archwizard';
 import { TrajectWijzigenComponent } from './admin/admin-beheer-traject/traject-wijzigen/traject-wijzigen.component';
+import { DocentAantekeningenComponent } from './docent/docent-aantekeningen/docent-aantekeningen.component';
+import { AantekeningAanmaakComponent } from './docent/docent-aantekeningen/aantekening-aanmaak/aantekening-aanmaak.component';
+import { AantekeningWijzigComponent } from './docent/docent-aantekeningen/aantekening-wijzig/aantekening-wijzig.component';
 
 export function jwtOptionsFactory(tokenService: TokenService) {
   return {
@@ -108,7 +110,6 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     HomeTrajectenInformatieComponent,
     AdminHomeComponent,
     DocentOpdrachtenComponent,
-    DocentLesstofComponent,
     DocentTrajectComponent,
     DocentHomeComponent,
     NavbarPerrolComponent,
@@ -145,6 +146,9 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     AdminBeheerResultatenComponent,
     TrajectToevoegenComponent,
     TrajectWijzigenComponent,
+    DocentAantekeningenComponent,
+    AantekeningAanmaakComponent,
+    AantekeningWijzigComponent,
   ],
   imports: [
     BrowserModule,

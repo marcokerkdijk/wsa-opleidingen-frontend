@@ -57,7 +57,6 @@ export class DocentOpdrachtenComponent implements OnInit {
   }
 
   verwijderOpdracht(opdracht: Opdracht): void {
-    // alert("Weet je zeker dat je de opdracht '" + opdracht.titel + "' wilt verwijderen?");
     this.opdrachtService.verwijderOpdracht(opdracht)
         .subscribe(response => this.router.navigateByUrl('/docent/docent-traject').then(success => {
           this.router.navigateByUrl('docent/docent-traject/docent-opdrachten');

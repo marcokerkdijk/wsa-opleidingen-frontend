@@ -1,0 +1,146 @@
+#buttondiv {
+    padding-left: 0;
+    margin-bottom: 1%;
+}
+
+#toevoegbutton {
+    float: left;
+}
+
+#opdrachtentabel {
+    max-width: 100%;
+    margin-bottom: 3%;
+}
+
+table { 
+    table-layout:fixed;
+}
+
+#opdrachttitel {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#opdrachtomschrijving, #opdrachtcode {
+    position: relative;
+    vertical-align: middle;
+}
+
+.kop {
+    letter-spacing: 1px;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 32px;
+}
+
+.col-sm-5 pre {
+    padding: 0;
+    background-color: transparent;
+    border-color: transparent;
+    font-family: "Working Spirit";
+    color: #004085;
+    font-size: 1rem;
+}
+
+#uitklapdiv {
+    width: 990px;
+    max-width: 990px;
+    margin-bottom: 0;
+    overflow: auto;
+}
+
+#waarschuwing {
+    width: 990px;
+    max-width: 990px;
+    margin-bottom: 0;
+}
+
+#verwijdertekst {
+    margin-top: 1.2%;
+}
+
+#waarschuwing button {
+    margin-left: 5%;
+}
+
+td { 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    word-wrap: break-word;
+}
+
+#pencil {
+    color: #00aeef;
+    font-size: 20px;
+}
+
+#pencil:hover {
+    cursor: pointer;
+}
+
+#prullenbak {
+    color: #00aeef;
+    font-size: 20px;
+}
+
+#prullenbak:hover {
+    cursor: pointer;
+}
+
+#toevoegbutton {
+    border-color: #00aeef;
+    color: #00aeef;
+    width: 230px;
+    text-transform: uppercase;
+    border: 1px solid  #00aeef;
+    background-color: transparent;
+    border-radius: 0;
+    font-size: 12px;
+    font-weight: 600;
+    padding-top: 10px;
+    padding-bottom: 8px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    line-height: 1.42857;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#toevoegbutton:hover {
+    cursor: pointer;
+    color: white;
+    background-color: #00aeef;
+}
+
+#verwijderbutton {
+    border-color: #00aeef;
+    color: #00aeef;
+    width: 230px;
+    text-transform: uppercase;
+    border: 1px solid  #00aeef;
+    background-color: #ffffff;
+    border-radius: 0;
+    font-size: 12px;
+    font-weight: 600;
+    padding-top: 10px;
+    padding-bottom: 8px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    line-height: 1.42857;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#verwijderbutton:hover {
+    cursor: pointer;
+    color: white;
+    background-color: #00aeef;
+}
+
+#melding {
+    min-width: 100%;
+}

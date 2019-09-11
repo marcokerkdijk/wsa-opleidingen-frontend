@@ -8,7 +8,7 @@ import { Opdracht } from '../Objecten/opdracht';
   providedIn: 'root'
 })
 export class OpdrachtService {
-  private api: string = environment.apiUrl
+  private api: string = environment.apiUrl + "/opdracht"
 
   constructor(private http: HttpClient) { }
 

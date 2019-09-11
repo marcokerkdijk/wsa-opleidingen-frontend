@@ -14,7 +14,6 @@ import { DocentStudentenlijstComponent} from './docent/docent-studentenlijst/doc
 import { HomeTrajectenInformatieComponent } from './home/home-trajecten/home-trajecten-informatie/home-trajecten-informatie.component';
 import { HomeTrajectenComponent } from './home/home-trajecten/home-trajecten.component';
 import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
-import { DocentLesstofComponent } from './docent/docent-lesstof/docent-lesstof.component';
 import { DocentOpdrachtenComponent } from './docent/docent-opdrachten/docent-opdrachten.component';
 import { DocentTrajectComponent } from './docent/docent-traject/docent-traject.component';
 import { DocentHomeComponent } from './docent/docent-home/docent-home.component';
@@ -44,6 +43,9 @@ import { UitwerkingenLijstComponent } from './docent/docent-uitwerkingen/uitwerk
 import { BeheerUitwerkingComponent } from './docent/docent-uitwerkingen/beheer-uitwerking/beheer-uitwerking.component';
 import { TrajectToevoegenComponent } from './admin/admin-beheer-traject/traject-toevoegen/traject-toevoegen.component';
 import { TrajectWijzigenComponent } from './admin/admin-beheer-traject/traject-wijzigen/traject-wijzigen.component';
+import { DocentAantekeningenComponent } from './docent/docent-aantekeningen/docent-aantekeningen.component';
+import { AantekeningAanmaakComponent } from './docent/docent-aantekeningen/aantekening-aanmaak/aantekening-aanmaak.component';
+import { AantekeningWijzigComponent } from './docent/docent-aantekeningen/aantekening-wijzig/aantekening-wijzig.component';
 
 
 const routes: Routes = [
@@ -103,8 +105,12 @@ const routes: Routes = [
         children: [
           { path: "docent-studentenlijst/:id", component: DocentStudentenlijstComponent },
           { path: '', redirectTo: 'docent', pathMatch: 'full'},
-          { path: "docent-lesstof", component: DocentLesstofComponent },
+          { path: "docent-aantekeningen", component: DocentAantekeningenComponent },
           { path: '', redirectTo: 'docent', pathMatch: 'full'},
+          { path: "aantekening-aanmaak/:id", component: AantekeningAanmaakComponent },
+          { path: '', redirectTo: 'docent-traject', pathMatch: 'full'},
+          { path: "aantekening-wijzig/:id", component: AantekeningWijzigComponent },
+          { path: '', redirectTo: 'docent-traject', pathMatch: 'full'},
           { path: "docent-opdrachten", component: DocentOpdrachtenComponent },
           { path: '', redirectTo: 'docent', pathMatch: 'full'},
           { path: "opdracht-aanmaak/:id", component: OpdrachtAanmaakComponent },
