@@ -44,6 +44,7 @@ import { UitwerkingenLijstComponent } from './docent/docent-uitwerkingen/uitwerk
 import { BeheerUitwerkingComponent } from './docent/docent-uitwerkingen/beheer-uitwerking/beheer-uitwerking.component';
 import { TrajectToevoegenComponent } from './admin/admin-beheer-traject/traject-toevoegen/traject-toevoegen.component';
 import { TrajectWijzigenComponent } from './admin/admin-beheer-traject/traject-wijzigen/traject-wijzigen.component';
+import { GebruikerWijzigenComponent } from './admin/admin-beheer-gebruikers/gebruikers-wijzigen/gebruiker-wijzigen.component';
 
 
 const routes: Routes = [
@@ -69,6 +70,8 @@ const routes: Routes = [
       { path: '', redirectTo: 'admin', pathMatch: 'full'},
       { path: "admin-beheer-gebruikers", component: AdminBeheerGebruikersComponent },
       { path: '', redirectTo: 'admin', pathMatch: 'full' },
+      { path: "gebruikers-wijzigen/:id", component: GebruikerWijzigenComponent},
+      { path: '', redirectTo: 'admin', pathMatch: 'full'},
       { path: "admin-beheer-trajectgebruikers/:id", component: AdminBeheerTrajectgebruikersComponent},
       { path: '', redirectTo: 'admin', pathMatch: 'full' },
       { path: "admin-beheer-resultaten/:id", component: AdminBeheerResultatenComponent},

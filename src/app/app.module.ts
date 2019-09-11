@@ -70,6 +70,7 @@ import { TrajectToevoegenComponent } from './admin/admin-beheer-traject/traject-
 import { NgSelectModule } from '@ng-select/ng-select';
 import { ArchwizardModule } from 'angular-archwizard';
 import { TrajectWijzigenComponent } from './admin/admin-beheer-traject/traject-wijzigen/traject-wijzigen.component';
+import { GebruikerWijzigenComponent } from './admin/admin-beheer-gebruikers/gebruikers-wijzigen/gebruiker-wijzigen.component';
 
 export function jwtOptionsFactory(tokenService: TokenService) {
   return {
@@ -145,6 +146,7 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     AdminBeheerResultatenComponent,
     TrajectToevoegenComponent,
     TrajectWijzigenComponent,
+    GebruikerWijzigenComponent,
   ],
   imports: [
     BrowserModule,
