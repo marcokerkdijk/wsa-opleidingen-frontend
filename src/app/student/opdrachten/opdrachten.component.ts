@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Opdracht } from 'src/app/Objecten/opdracht';
-import { OpdrachtenserviceService } from 'src/app/services/opdrachtenservice.service';
+import { OpdrachtService } from 'src/app/services/opdracht.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,7 +12,7 @@ export class OpdrachtenComponent implements OnInit {
   opdrachten: Opdracht[];
 
   constructor(
-    private opdrachtenService: OpdrachtenserviceService,
+    private opdrachtService: OpdrachtService,
     private router: Router
   ) { }
 
@@ -21,6 +21,6 @@ export class OpdrachtenComponent implements OnInit {
   }
 
   haalZichtbareOpdrachtenOp(){
-    this.opdrachtenService.haalZichtbareOpdrachtenOp().subscribe(opdrachten => this.opdrachten = opdrachten);
+    this.opdrachtService.haalZichtbareOpdrachtenOp().subscribe(opdrachten => this.opdrachten = opdrachten);
   }
 }

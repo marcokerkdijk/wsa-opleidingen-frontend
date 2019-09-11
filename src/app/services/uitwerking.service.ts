@@ -8,11 +8,11 @@ import { Uitwerking } from '../Objecten/uitwerking';
   providedIn: 'root'
 })
 export class UitwerkingService {
-  private api: string = environment.apiUrl
+  private api: string = (environment.apiUrl+ "/uitwerking")
 
   constructor(private http: HttpClient) { }
 
-  haalAlleUitwerkingenOp() {
+  geefAlleUitwerkingen() {
     return this.http.get<Uitwerking[]>(`${this.api}/geefAlleUitwerkingen`)
   }
 

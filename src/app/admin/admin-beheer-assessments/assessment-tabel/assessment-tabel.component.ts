@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Opdracht } from 'src/app/Objecten/opdracht';
-import { OpdrachtenserviceService } from 'src/app/services/opdrachtenservice.service';
+import { OpdrachtService } from 'src/app/services/opdracht.service';
 import { AdminBeheerAssessmentsComponent } from '../admin-beheer-assessments.component';
 
 @Component({
@@ -12,7 +12,7 @@ export class AssessmentTabelComponent implements OnInit {
   alleAssessments: Opdracht[];
 
   constructor(
-    private opdrachtenService: OpdrachtenserviceService,
+    private opdrachtService: OpdrachtService,
     private adminBeheerAssessmentsComponent: AdminBeheerAssessmentsComponent,
   ) { }
 
@@ -21,7 +21,7 @@ export class AssessmentTabelComponent implements OnInit {
   }
 
   getAlleAssessments() {
-    this.opdrachtenService.haalAlleAssessments()
+    this.opdrachtService.haalAlleAssessments()
     .subscribe(alleAssessments => this.alleAssessments = alleAssessments);
   }
 

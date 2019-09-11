@@ -28,7 +28,7 @@ export class DocentHomeComponent implements OnInit {
   }
 
   haalTrajectenVanDocentOp():void {
-    this.trajectService.haalTrajectenOpVanGebruiker(this.gebruiker.gebruiker_id)
+    this.trajectService.geefAlleTrajectenVanGebruiker(this.gebruiker.gebruiker_id)
         .subscribe(trajecten => {
           this.trajectenDocent = trajecten;
         },

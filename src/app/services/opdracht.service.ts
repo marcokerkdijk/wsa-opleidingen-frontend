@@ -27,4 +27,17 @@ export class OpdrachtService {
   verwijderOpdracht(opdracht: Opdracht): Observable<any> {
     return this.http.put(`${this.api}/verwijderOpdracht`, opdracht);
   }
+
+  haalZichtbareOpdrachtenOp(): Observable<Opdracht[]>{
+    return this.http.get<Opdracht[]>(`${this.api}/haalZichtbareOpdrachtenOp`);
+  }
+
+  haalOpdrachtOpId(id: number): Observable<any> {
+    return this.http.get<Opdracht>(`${this.api}/haalOpdrachtOpId/` + id);
+  }
+
+  haalAlleAssessments(){
+    return this.http.get<Opdracht[]>(`${this.api}/haalAlleAssessmentsOp`);
+  }
+
 }

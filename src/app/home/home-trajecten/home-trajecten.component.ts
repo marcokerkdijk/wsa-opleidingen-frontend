@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Traject } from 'src/app/Objecten/traject';
 import { environment } from 'src/environments/environment';
-import { TrajectService } from 'src/app/services/traject.service';
+import { HomeService } from 'src/app/services/home.service';
 import { Router } from '@angular/router';
 import { DataserviceService } from 'src/app/services/dataservice.service';
-import { TekstobjectserviceService } from 'src/app/services/tekstobjectservice.service';
 import { TekstObject } from 'src/app/Objecten/tekst-object';
 
 @Component({
@@ -29,8 +28,7 @@ export class HomeTrajectenComponent implements OnInit {
 
   constructor(
     private dataService: DataserviceService, 
-    private trajectService: TrajectService,
-    private tekstObjectService: TekstobjectserviceService,
+    private homeService: HomeService,
     private router: Router) { }
 
   ngOnInit() {
@@ -39,7 +37,7 @@ export class HomeTrajectenComponent implements OnInit {
   }
 
   getTrajecten(): void {
-    this.trajectService.GeefZichtbareTrajectenHome()
+    this.homeService.GeefZichtbareTrajectenHome()
       .subscribe(zichtbareTrajecten => this.zichtbaarTrajecten = zichtbareTrajecten);
   }
 
@@ -49,8 +47,4 @@ export class HomeTrajectenComponent implements OnInit {
     this.router.navigateByUrl("home/home-trajecten-informatie");
   }
 
-  getWelkomstTekst(tekstId){
-    this.tekstObjectService.geefTekstobjectPerId(tekstId).subscribe(tekstObject => this.tekstObject = tekstObject);
-  }
 }
-
