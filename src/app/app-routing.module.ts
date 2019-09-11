@@ -7,9 +7,9 @@ import { StudentComponent } from "./student/student.component";
 import { DocentComponent } from "./docent/docent.component";
 import { DocentAutorisatieGuard } from "./guards/docent-autorisatie.guard";
 import { StudentAutorisatieGuard } from "./guards/student-autorisatie.guard";
-import { AdminBeheerTrajectComponent } from './admin/admin-beheer-traject/admin-beheer-traject.component';
-import { AdminBeheerGebruikersComponent } from './admin/admin-beheer-gebruikers/admin-beheer-gebruikers.component';
-import { AdminBeheerResultatenComponent } from './admin/admin-beheer-resultaten/admin-beheer-resultaten.component';
+import { BeheerTrajectComponent } from './admin/admin-beheer-traject/beheer-traject.component';
+import { BeheerGebruikersComponent } from './admin/admin-beheer-gebruikers/beheer-gebruikers.component';
+import { BeheerResultatenComponent } from './admin/admin-beheer-resultaten/beheer-resultaten.component';
 import { DocentStudentenlijstComponent} from './docent/docent-studentenlijst/docent-studentenlijst.component';
 import { HomeTrajectenInformatieComponent } from './home/home-trajecten/home-trajecten-informatie/home-trajecten-informatie.component';
 import { HomeTrajectenComponent } from './home/home-trajecten/home-trajecten.component';
@@ -20,9 +20,6 @@ import { DocentHomeComponent } from './docent/docent-home/docent-home.component'
 import { RecruiterComponent } from "./recruiter/recruiter.component";
 import { RecruiterAutorisatieGuard } from './guards/recruiter-autorisatie.guard';
 import { RecruiterHomeComponent } from './recruiter/recruiter-home/recruiter-home.component';
-import { RecruiterBeheerTrajectComponent } from './recruiter/recruiter-beheer-traject/recruiter-beheer-traject.component';
-import { RecruiterBeheerTrajectfaseComponent } from './recruiter/recruiter-beheer-traject/recruiter-beheer-trajectfase/recruiter-beheer-trajectfase.component';
-import { RecruiterBeheerTrajectgebruikersComponent } from './recruiter/recruiter-beheer-trajectgebruikers/recruiter-beheer-trajectgebruikers.component';
 import { ProfielComponent } from './profiel/profiel.component';
 import { ProfielInfoComponent } from './profiel/profiel-info/profiel-info.component';
 import { GebruikerAutorisatieGuard } from './guards/gebruiker-autorisatie.guard';
@@ -30,14 +27,14 @@ import { OpdrachtenComponent } from './student/opdrachten/opdrachten.component';
 import { NotitiesComponent } from './student/notities/notities.component';
 import { MijnGegevensComponent } from './student/mijn-gegevens/mijn-gegevens.component';
 import { OpdrachtAanmaakComponent } from './docent/docent-opdrachten/opdracht-aanmaak/opdracht-aanmaak.component';
-import { AdminBeheerTrajectgebruikersComponent } from './admin/admin-beheer-trajectgebruikers/admin-beheer-trajectgebruikers.component';
+import { BeheerTrajectgebruikersComponent } from './admin/admin-beheer-trajectgebruikers/beheer-trajectgebruikers.component';
 import { StudentHomeComponent } from './student/student-home/student-home.component';
 import { VoorbereidingComponent } from './student/voorbereiding/voorbereiding.component';
 import { GettingstartedComponent } from './student/gettingstarted/gettingstarted.component';
 import { InstallatiehulpComponent } from './student/installatiehulp/installatiehulp.component';
 import { OpdrachtComponent } from './student/opdracht/opdracht.component';
 import { OpdrachtWijzigComponent } from './docent/docent-opdrachten/opdracht-wijzig/opdracht-wijzig.component';
-import { AdminBeheerAssessmentsComponent } from './admin/admin-beheer-assessments/admin-beheer-assessments.component';
+import { BeheerAssessmentsComponent } from './admin/admin-beheer-assessments/beheer-assessments.component';
 import { DocentUitwerkingenComponent } from './docent/docent-uitwerkingen/docent-uitwerkingen.component';
 import { UitwerkingenLijstComponent } from './docent/docent-uitwerkingen/uitwerkingen-lijst/uitwerkingen-lijst.component';
 import { BeheerUitwerkingComponent } from './docent/docent-uitwerkingen/beheer-uitwerking/beheer-uitwerking.component';
@@ -63,19 +60,19 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'admin', pathMatch: 'full'},
       { path: '', component: AdminHomeComponent, pathMatch: 'full'},
-      { path: "admin-beheer-traject", component: AdminBeheerTrajectComponent},
+      { path: "beheer-traject", component: BeheerTrajectComponent},
       { path: '', redirectTo: 'admin', pathMatch: 'full' },
       { path: "traject-toevoegen", component: TrajectToevoegenComponent},
       { path: '', redirectTo: 'admin', pathMatch: 'full'},
       { path: "traject-wijzigen/:id", component: TrajectWijzigenComponent},
       { path: '', redirectTo: 'admin', pathMatch: 'full'},
-      { path: "admin-beheer-gebruikers", component: AdminBeheerGebruikersComponent },
+      { path: "beheer-gebruikers", component: BeheerGebruikersComponent },
       { path: '', redirectTo: 'admin', pathMatch: 'full' },
-      { path: "admin-beheer-trajectgebruikers/:id", component: AdminBeheerTrajectgebruikersComponent},
+      { path: "beheer-trajectgebruikers/:id", component: BeheerTrajectgebruikersComponent},
       { path: '', redirectTo: 'admin', pathMatch: 'full' },
-      { path: "admin-beheer-resultaten/:id", component: AdminBeheerResultatenComponent},
+      { path: "beheer-resultaten/:id", component: BeheerResultatenComponent},
       { path: '', redirectTo: 'admin', pathMatch: 'full' },
-      { path: "admin-beheer-assessments", component: AdminBeheerAssessmentsComponent},
+      { path: "beheer-assessments", component: BeheerAssessmentsComponent},
     ]
   },
   { path: 'student', component: StudentComponent, canActivate: [StudentAutorisatieGuard],
@@ -109,7 +106,7 @@ const routes: Routes = [
           { path: '', redirectTo: 'docent', pathMatch: 'full'},
           { path: "aantekening-aanmaak/:id", component: AantekeningAanmaakComponent },
           { path: '', redirectTo: 'docent-traject', pathMatch: 'full'},
-          { path: "aantekening-wijzig/:id", component: AantekeningWijzigComponent },
+          { path: "aantekening-wijzig", component: AantekeningWijzigComponent },
           { path: '', redirectTo: 'docent-traject', pathMatch: 'full'},
           { path: "docent-opdrachten", component: DocentOpdrachtenComponent },
           { path: '', redirectTo: 'docent', pathMatch: 'full'},
@@ -131,11 +128,20 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'recruiter', pathMatch: 'full'},
       { path: '', component: RecruiterHomeComponent, pathMatch: 'full'},
-      { path: "recruiter-beheer-traject", component: RecruiterBeheerTrajectComponent},
+      { path: "beheer-traject", component: BeheerTrajectComponent},
       { path: '', redirectTo: 'recruiter', pathMatch: 'full' },
-      { path: "recruiter-beheer-trajectfase/:id", component: RecruiterBeheerTrajectfaseComponent},
+      { path: "beheer-trajectgebruikers/:id", component: BeheerTrajectgebruikersComponent},
       { path: '', redirectTo: 'recruiter', pathMatch: 'full' },
-      { path: "recruiter-beheer-trajectgebruikers/:id", component: RecruiterBeheerTrajectgebruikersComponent},
+      { path: "traject-toevoegen", component: TrajectToevoegenComponent},
+      { path: '', redirectTo: 'recruiter', pathMatch: 'full'},
+      { path: "traject-wijzigen/:id", component: TrajectWijzigenComponent},
+      { path: '', redirectTo: 'recruiter', pathMatch: 'full'},
+      { path: "beheer-resultaten/:id", component: BeheerResultatenComponent},
+      { path: '', redirectTo: 'recruiter', pathMatch: 'full' },
+      { path: "beheer-gebruikers", component: BeheerGebruikersComponent },
+      { path: '', redirectTo: 'recruiter', pathMatch: 'full' },
+      { path: "beheer-assessments", component: BeheerAssessmentsComponent},
+      { path: '', redirectTo: 'recruiter', pathMatch: 'full' },
     ]
   },
   { path: 'profiel', component: ProfielComponent, canActivate: [GebruikerAutorisatieGuard],

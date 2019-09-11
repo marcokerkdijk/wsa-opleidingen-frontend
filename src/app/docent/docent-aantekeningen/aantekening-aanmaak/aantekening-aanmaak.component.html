@@ -11,9 +11,7 @@
             </div>
             <div class="col-sm-6">
                 <p>Datum</p>
-                <div class="form-control" id="datumpreview">
-                    <p>{{datum | date:'dd-MM-yyyy'}}</p>
-                </div>
+                <input name="dag" class="form-control" type="date" [(ngModel)]="aantekening.dag" id="datumpreview">
             </div>
         </div>
         <div class="row">

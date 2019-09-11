@@ -8,11 +8,11 @@ import { DTOGebruikerID } from 'src/app/Objecten/gebruikerDTO';
 import { AlertService } from 'src/app/_alert';
 
 @Component({
-  selector: 'wsa-recruiter-beheer-trajectgebruikers',
-  templateUrl: './recruiter-beheer-trajectgebruikers.component.html',
-  styleUrls: ['./recruiter-beheer-trajectgebruikers.component.scss']
+  selector: 'wsa-beheer-trajectgebruikers',
+  templateUrl: './beheer-trajectgebruikers.component.html',
+  styleUrls: ['./beheer-trajectgebruikers.component.scss']
 })
-export class RecruiterBeheerTrajectgebruikersComponent implements OnInit {
+export class BeheerTrajectgebruikersComponent implements OnInit {
   traject: Traject = new Traject;
   studentenlijst: Gebruiker[] = new Array;
   gebruikerIDLijst: DTOGebruikerID[] = new Array;
@@ -20,7 +20,7 @@ export class RecruiterBeheerTrajectgebruikersComponent implements OnInit {
   docentIDLijst: DTOGebruikerID[] = new Array;
 
   constructor(private activeRouter: ActivatedRoute, private trajectService:TrajectService,
-              private gebruikersService: GebruikersService, private alertservice: AlertService) { }
+              private gebruikersService: GebruikersService, private alertService: AlertService) { }
 
   ngOnInit() {
     const id = +this.activeRouter.snapshot.paramMap.get('id');
@@ -39,7 +39,7 @@ export class RecruiterBeheerTrajectgebruikersComponent implements OnInit {
       this.maakStudentArray();
     },
     (error) => {
-      this.alertservice.error("Er zijn geen studenten zonder traject.", "alert-1");
+      this.alertService.error("Er zijn geen studenten zonder traject.", "alert-1");
     });
   }
 
@@ -55,6 +55,7 @@ export class RecruiterBeheerTrajectgebruikersComponent implements OnInit {
           docent.aanTraject = this.gekoppeldAanTrajectCheck(docent);
         }
       }
+
       this.maakDocentArray();
     });
   }
@@ -73,6 +74,7 @@ export class RecruiterBeheerTrajectgebruikersComponent implements OnInit {
       if (student.gekoppeld === true) {
         let gebruikerDTO: DTOGebruikerID = new DTOGebruikerID;
         gebruikerDTO.id = student.id;
+  
         this.gebruikerIDLijst.push(gebruikerDTO);
       }
     }
@@ -82,7 +84,8 @@ export class RecruiterBeheerTrajectgebruikersComponent implements OnInit {
     for (let docent of this.docentenlijst) {
       if (docent.aanTraject) {
         let gebruikerDTO: DTOGebruikerID = new DTOGebruikerID;
-        gebruikerDTO.id = docent.id;  
+        gebruikerDTO.id = docent.id;
+  
         this.gebruikerIDLijst.push(gebruikerDTO);
       }
     }
@@ -92,12 +95,14 @@ export class RecruiterBeheerTrajectgebruikersComponent implements OnInit {
     if (check === false && gebruiker.gekoppeld === false) {
       let gebruikerDTO: DTOGebruikerID = new DTOGebruikerID;
       gebruikerDTO.id = gebruiker.id;
+
       this.gebruikerIDLijst.push(gebruikerDTO);
     }
 
     if (check === true) {
       let gebruikerDTO: DTOGebruikerID = new DTOGebruikerID;
       gebruikerDTO.id = gebruiker.id;
+
       let index: number;
 
       for (let i = 1; i < this.gebruikerIDLijst.length; i++) {
@@ -110,6 +115,8 @@ export class RecruiterBeheerTrajectgebruikersComponent implements OnInit {
         this.gebruikerIDLijst.splice(index, 1);
       }
     }
+
+    console.log(this.gebruikerIDLijst);
     this.opslaanGebruikers(this.gebruikerIDLijst);
   }
 
@@ -117,12 +124,14 @@ export class RecruiterBeheerTrajectgebruikersComponent implements OnInit {
     if (check === false) {
       let gebruikerDTO: DTOGebruikerID = new DTOGebruikerID;
       gebruikerDTO.id = gebruiker.id;
+
       this.gebruikerIDLijst.push(gebruikerDTO);
     }
 
     if (check === true) {
       let gebruikerDTO: DTOGebruikerID = new DTOGebruikerID;
       gebruikerDTO.id = gebruiker.id;
+
       let index: number;
 
       for (let i = 1; i < this.gebruikerIDLijst.length; i++) {
@@ -135,11 +144,12 @@ export class RecruiterBeheerTrajectgebruikersComponent implements OnInit {
         this.gebruikerIDLijst.splice(index, 1);
       }
     }
+
+    console.log(this.gebruikerIDLijst);
     this.opslaanGebruikers(this.gebruikerIDLijst);
   }
 
   opslaanGebruikers(gebruikerIDs: DTOGebruikerID[]): void {
     this.trajectService.koppelTrajectAanGebruiker(gebruikerIDs, this.traject.id).subscribe();
   }
-
 }

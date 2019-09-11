@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { AdminBeheerTrajectComponent } from './admin-beheer-traject.component';
+import { BeheerTrajectComponent } from './beheer-traject.component';
 
-describe('AdminBeheerTrajectComponent', () => {
-  let component: AdminBeheerTrajectComponent;
-  let fixture: ComponentFixture<AdminBeheerTrajectComponent>;
+describe('BeheerTrajectComponent', () => {
+  let component: BeheerTrajectComponent;
+  let fixture: ComponentFixture<BeheerTrajectComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AdminBeheerTrajectComponent ]
+      declarations: [ BeheerTrajectComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AdminBeheerTrajectComponent);
+    fixture = TestBed.createComponent(BeheerTrajectComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

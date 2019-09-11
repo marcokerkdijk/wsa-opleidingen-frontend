@@ -6,11 +6,11 @@ import { Uitwerking } from 'src/app/Objecten/uitwerking';
 import { UitwerkingService } from 'src/app/services/uitwerking.service';
 
 @Component({
-  selector: 'wsa-admin-beheer-resultaten',
-  templateUrl: './admin-beheer-resultaten.component.html',
-  styleUrls: ['./admin-beheer-resultaten.component.scss']
+  selector: 'wsa-beheer-resultaten',
+  templateUrl: './beheer-resultaten.component.html',
+  styleUrls: ['./beheer-resultaten.component.scss']
 })
-export class AdminBeheerResultatenComponent implements OnInit {
+export class BeheerResultatenComponent implements OnInit {
   traject: Traject = new Traject;
   uitwerkingenlijst: Uitwerking[] = new Array;
 

@@ -7,7 +7,7 @@
     float: left;
 }
 
-#opdrachtentabel {
+#aantekeningentabel {
     max-width: 100%;
     margin-bottom: 3%;
 }
@@ -16,14 +16,9 @@ table {
     table-layout:fixed;
 }
 
-#opdrachttitel {
+#aantekeningtitel {
     cursor: pointer;
     text-decoration: underline;
-}
-
-#opdrachtomschrijving, #opdrachtcode {
-    position: relative;
-    vertical-align: middle;
 }
 
 .kop {

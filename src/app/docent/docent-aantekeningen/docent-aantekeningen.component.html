@@ -20,11 +20,11 @@
                         <td id="titel{{Aantekening.id}}"><span id="aantekeningtitel" title="Toon aantekeninginformatie"
                                 (click)="toggleOmschrijving(i);">{{Aantekening.titel}}</span>
                         </td>
-                        <td id="dag{{Aantekening.id}}">{{Aantekening.dag}}</td>
+                        <td id="dag{{Aantekening.id}}">{{Aantekening.dag | date:'dd-MM-yyyy'}}</td>
                         <td>
                             <div id="pencil">
                                 <i class='fa fa-pencil' id="pencil{{Aantekening.id}}" (click)="wijzigAantekening(Aantekening);"
-                                    routerLink="../aantekening-wijzig/{{traject_id}}"></i>
+                                    routerLink="../aantekening-wijzig"></i>
                             </div>
                         </td>
                         <td>

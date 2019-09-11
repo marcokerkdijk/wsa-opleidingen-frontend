@@ -4,14 +4,13 @@ import { GebruikersService } from 'src/app/services/gebruikers.service';
 import { Gebruiker } from 'src/app/Objecten/gebruiker';
 import { ModalService } from 'src/app/services/modal.service';
 import { Router } from '@angular/router';
-import { FormBuilder, SelectControlValueAccessor } from '@angular/forms';
 
 @Component({
-  selector: 'wsa-admin-beheer-gebruikers',
-  templateUrl: './admin-beheer-gebruikers.component.html',
-  styleUrls: ['./admin-beheer-gebruikers.component.scss']
+  selector: 'wsa-beheer-gebruikers',
+  templateUrl: './beheer-gebruikers.component.html',
+  styleUrls: ['./beheer-gebruikers.component.scss']
 })
-export class AdminBeheerGebruikersComponent implements OnInit {
+export class BeheerGebruikersComponent implements OnInit {
   gebruikerInvoer: Gebruiker = new Gebruiker;
   actieveGebruikers : Gebruiker[];
   private api:string = environment.apiUrl;

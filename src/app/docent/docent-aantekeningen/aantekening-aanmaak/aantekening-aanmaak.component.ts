@@ -11,7 +11,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class AantekeningAanmaakComponent implements OnInit {
   traject_id: number;
   aantekening: Aantekening = new Aantekening;
-  datum: number = Date.now();
 
   constructor(private aantekeningservice: AantekeningserviceService, private activeRoute: ActivatedRoute,
               private router: Router) { }
