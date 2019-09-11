@@ -1,0 +1,162 @@
+.container-fluid {
+    padding-left: 19%;
+    padding-right: 19%;
+    margin-top: 5%;
+    margin-bottom: 3%;
+}
+
+#paginatitel {
+    padding-left: 0;
+}
+
+h5 {
+    letter-spacing: 1px;
+    color: #808285;
+    font-size: 26px;
+    font-weight: normal;
+    line-height: 32px;
+}
+
+h6 {
+    letter-spacing: 1px;
+    color: #00aeef;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.row{
+    padding-top: 2%;
+}
+
+.grijs {
+    background-color: rgba($color: #a9a9a9, $alpha: 0.05);
+    padding-bottom: 2%;
+}
+
+p {
+    color: #808285;
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 1%;
+}
+
+.actieftekst {
+    color: #808285;
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 1%;
+    margin-left: 5%;
+    padding-top: 15px;
+}
+
+button{
+    border-color: #00aeef;
+    color: #00aeef;
+    width: 230px;
+    text-transform: uppercase;
+    border: 1px solid  #00aeef;
+    background-color: transparent;
+    border-radius: 0;
+    font-size: 12px;
+    font-weight: 600;
+    padding-top: 10px;
+    padding-bottom: 8px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    white-space: nowrap;
+    line-height: 1.42857;
+    margin-top: 5px;
+}
+
+button:hover{
+    cursor: pointer;
+    color: white;
+    background-color: #00aeef;
+}
+
+#voornaaminvoer, #tussenvoegselinvoer, #achternaaminvoer, #emailadresinvoer {
+    width: 100%;
+    border-radius: 0;
+}
+
+#rolkeuze {
+    width: 100%;
+    border-color: #a9a9a9;
+    border-radius: 0;
+}
+
+#actiefcheck {
+    width: 15px;
+    height: 15px;
+}
+
+textarea {
+    resize: none;
+}
+
+.bottom {
+    margin-top: 1%;
+}
+
+// -- Switch-slider opmaak -- //
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 32px;
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 3.5px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #00aeef;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }

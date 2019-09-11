@@ -43,6 +43,7 @@ import { TrajectWijzigenComponent } from './admin/admin-beheer-traject/traject-w
 import { DocentAantekeningenComponent } from './docent/docent-aantekeningen/docent-aantekeningen.component';
 import { AantekeningAanmaakComponent } from './docent/docent-aantekeningen/aantekening-aanmaak/aantekening-aanmaak.component';
 import { AantekeningWijzigComponent } from './docent/docent-aantekeningen/aantekening-wijzig/aantekening-wijzig.component';
+import { GebruikerWijzigenComponent } from './admin/admin-beheer-gebruikers/gebruikers-wijzigen/gebruiker-wijzigen.component';
 
 
 const routes: Routes = [
@@ -69,6 +70,10 @@ const routes: Routes = [
       { path: "beheer-gebruikers", component: BeheerGebruikersComponent },
       { path: '', redirectTo: 'admin', pathMatch: 'full' },
       { path: "beheer-trajectgebruikers/:id", component: BeheerTrajectgebruikersComponent},
+      { path: '', redirectTo: 'admin', pathMatch: 'full' },
+      { path: "gebruiker-wijzigen/:id", component: GebruikerWijzigenComponent},
+      { path: '', redirectTo: 'admin', pathMatch: 'full'},
+      { path: "admin-beheer-trajectgebruikers/:id", component: BeheerTrajectgebruikersComponent},
       { path: '', redirectTo: 'admin', pathMatch: 'full' },
       { path: "beheer-resultaten/:id", component: BeheerResultatenComponent},
       { path: '', redirectTo: 'admin', pathMatch: 'full' },

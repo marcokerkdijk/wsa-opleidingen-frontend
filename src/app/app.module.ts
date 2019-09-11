@@ -64,7 +64,7 @@ import { TrajectWijzigenComponent } from './admin/admin-beheer-traject/traject-w
 import { DocentAantekeningenComponent } from './docent/docent-aantekeningen/docent-aantekeningen.component';
 import { AantekeningAanmaakComponent } from './docent/docent-aantekeningen/aantekening-aanmaak/aantekening-aanmaak.component';
 import { AantekeningWijzigComponent } from './docent/docent-aantekeningen/aantekening-wijzig/aantekening-wijzig.component';
-
+import { GebruikerWijzigenComponent } from './admin/admin-beheer-gebruikers/gebruikers-wijzigen/gebruiker-wijzigen.component';
 
 export function jwtOptionsFactory(tokenService: TokenService) {
   return {
@@ -134,6 +134,7 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     DocentAantekeningenComponent,
     AantekeningAanmaakComponent,
     AantekeningWijzigComponent,
+    GebruikerWijzigenComponent,
   ],
   imports: [
     BrowserModule,

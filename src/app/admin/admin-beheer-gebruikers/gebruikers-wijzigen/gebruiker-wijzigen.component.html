@@ -1,0 +1,77 @@
+<div class="container-fluid">
+    <div>
+        <div class="row">
+            <div class="col-sm-4" id="paginatitel">
+                <h5>Gebruiker wijzigen</h5>
+            </div>
+            <div class="col-sm-6">
+            </div>
+        </div>
+        <div class="row grijs">
+            <div class="col-sm-6">
+                <p>Vul hier alle benodigde informatie voor de gebruiker in.
+                    Wanneer een gebruiker als niet-actief staat ingesteld, kan de gebruiker helemaal niets
+                    meer doen op de site. Uiteraard kan deze wel ten alle tijde weer teruggezet worden.
+                    De rol van de gebruiker bepaalt welke bevoegdheden de gebruiker
+                    heeft.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <p>Voornaam</p>
+                <input name="voornaam" class="form-control" [(ngModel)]="gebruikerInvoer.voornaam" type="text" required
+                    id="voornaaminvoer" maxlength="256">
+            </div>
+            <div class="col-sm-2">
+                <p>Tussenvoegsel</p>
+                <input name="tussenvoegsel" class="form-control" [(ngModel)]="gebruikerInvoer.tussenvoegsel" type="text"
+                    id="tussenvoegselinvoer" maxlength="16">
+            </div>
+            <div class="col-sm-6">
+                <p>Achternaam</p>
+                <input name="achternaam" class="form-control" [(ngModel)]="gebruikerInvoer.achternaam" type="text"
+                    required id="achternaaminvoer" maxlength="256">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <p>Emailadres</p>
+                <input name="emailadres" class="form-control" [(ngModel)]="gebruikerInvoer.emailadres" type="text"
+                    id="emailadresinvoer" maxlength="256">
+            </div>
+            <div class="col-sm-6">
+                <p>Rol</p>
+                <div>
+                    <select name="rol" [(ngModel)]="gebruikerInvoer.rol" class="form-control" required id="rolkeuze">
+                        <option value="ADMIN">Admin</option>
+                        <option value="DOCENT">Docent</option>
+                        <option value="RECRUITER">Recruiter</option>
+                        <option value="STUDENT">Student</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <p>Activatie gebruiker</p>
+                <div>
+                    <label class="switch">
+                        <input type="checkbox" [(ngModel)]="gebruikerInvoer.actief">
+                        <span class="slider round"></span>
+                    </label>
+                    <ng-container>
+                        <span class="actieftekst" *ngIf="gebruikerInvoer.actief">De gebruiker is actief.</span>
+                        <span class="actieftekst" *ngIf="!gebruikerInvoer.actief">De gebruiker is niet actief.</span>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6"></div>
+            <div class="col-sm-6 bottom">
+                <button id="gebruikeropslaan" (click)="wijzigGebruiker(gebruikerInvoer);">Gebruiker opslaan</button>
+            </div>
+        </div>
+    </div>
+</div>
