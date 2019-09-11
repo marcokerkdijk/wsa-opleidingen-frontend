@@ -145,6 +145,8 @@ const routes: Routes = [
       { path: '', redirectTo: 'recruiter', pathMatch: 'full' },
       { path: "beheer-gebruikers", component: BeheerGebruikersComponent },
       { path: '', redirectTo: 'recruiter', pathMatch: 'full' },
+      { path: "gebruiker-wijzigen/:id", component: GebruikerWijzigenComponent},
+      { path: '', redirectTo: 'recruiter', pathMatch: 'full'},
       { path: "beheer-assessments", component: BeheerAssessmentsComponent},
       { path: '', redirectTo: 'recruiter', pathMatch: 'full' },
     ]
