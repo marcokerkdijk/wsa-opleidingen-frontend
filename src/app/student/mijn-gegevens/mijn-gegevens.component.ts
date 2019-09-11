@@ -36,7 +36,7 @@ export class MijnGegevensComponent implements OnInit {
   }
 
   HaalTrajectBijGebruikerOp() {
-    this.trajectService.haalTrajectenOpVanGebruiker(this.gebruiker.gebruiker_id).subscribe(trajecten => {
+    this.trajectService.geefAlleTrajectenVanGebruiker(this.gebruiker.gebruiker_id).subscribe(trajecten => {
       this.trajecten = trajecten;
     },
       (error) => {
