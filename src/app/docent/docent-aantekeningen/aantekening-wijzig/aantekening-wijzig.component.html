@@ -10,20 +10,20 @@
                     maxlength="256">
             </div>
             <div class="col-sm-6">
-                <p>Datum</p>
+                <p>Datum*</p>
                 <input name="dag" class="form-control" type="date" [(ngModel)]="aantekening.dag" id="datumpreview">
             </div>
         </div>
         <div class="row">
             <div class="col-sm-6">
-                <p>Tekst</p>
+                <p>Tekst*</p>
                 <textarea name="tekst" class="form-control" [(ngModel)]="aantekening.tekst" type="text" id="tekstinvoer"
                     maxlength="15000" required></textarea>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-6">
-                <button id="opslaanbutton" (click)="aantekeningOpslaan(aantekening)">Opslaan</button>
+                <button id="opslaanbutton" (click)="wijzigAantekening(aantekening)">Opslaan</button>
             </div>
         </div>
     </form>

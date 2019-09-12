@@ -3,6 +3,7 @@ import { DataserviceService } from 'src/app/services/dataservice.service';
 import { Aantekening } from 'src/app/Objecten/aantekening';
 import { AantekeningserviceService } from 'src/app/services/aantekeningservice.service';
 import { AlertService } from 'src/app/_alert';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'wsa-docent-aantekeningen',
@@ -16,7 +17,7 @@ export class DocentAantekeningenComponent implements OnInit {
   toonOmschrijving: boolean[] = new Array;
 
   constructor(private dataservice: DataserviceService, private aantekeningservice: AantekeningserviceService,
-              private alertservice: AlertService) { }
+              private alertservice: AlertService, private router: Router) { }
 
   ngOnInit() {
     this.krijgTrajectId();
@@ -55,10 +56,9 @@ export class DocentAantekeningenComponent implements OnInit {
   }
 
   verwijderAantekening(aantekening: Aantekening): void {
-    alert("MOET JE NOG IMPLEMENTEREN: " + aantekening.titel);
-    // this.aantekeningservice.verwijderAantekening(aantekening)
-    //     .subscribe(response => this.router.navigateByUrl('/docent/docent-traject').then(success => {
-    //       this.router.navigateByUrl('docent/docent-traject/docent-opdrachten');
-    //     }));
+    this.aantekeningservice.verwijderAantekening(aantekening)
+        .subscribe(response => this.router.navigateByUrl('/docent/docent-traject').then(success => {
+          this.router.navigateByUrl('docent/docent-traject/docent-aantekeningen');
+        }));
   }
 }
