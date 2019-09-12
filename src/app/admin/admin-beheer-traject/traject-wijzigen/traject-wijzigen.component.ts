@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { TrajectService } from 'src/app/services/traject.service';
 import { TrajectDTO } from 'src/app/Objecten/traject-dto';
 import { TrajectOnderdeel } from 'src/app/Objecten/traject-onderdeel';
+import { AutenticatieService } from 'src/app/services/autenticatie.service';
 
 @Component({
   selector: 'wsa-traject-wijzigen',
@@ -13,13 +14,15 @@ export class TrajectWijzigenComponent implements OnInit {
   traject: TrajectDTO = new TrajectDTO;
   onderdeelWijzigen: boolean;
   trajectonderdeel: TrajectOnderdeel = new TrajectOnderdeel;
+  rolIngelogdeGebruiker: string;
 
   constructor(private activeRouter: ActivatedRoute, private trajectservice: TrajectService,
-              private router: Router) { }
+              private router: Router, private authenticatieservice: AutenticatieService) { }
 
   ngOnInit() {
     const id = +this.activeRouter.snapshot.paramMap.get('id');
     this.haalTrajectOp(id);
+    this.rolIngelogdeGebruiker = this.authenticatieservice.krijgRol();
   }
 
   haalTrajectOp(id: number): void {
@@ -77,7 +80,7 @@ export class TrajectWijzigenComponent implements OnInit {
 
   trajectOpslaan(traject: TrajectDTO) {
     this.trajectservice.wijzigTraject(traject).subscribe(response => {
-      this.router.navigateByUrl('admin/admin-beheer-traject');
+      this.router.navigateByUrl(this.rolIngelogdeGebruiker + '/beheer-traject');
     });
   }
 }

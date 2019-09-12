@@ -37,18 +37,6 @@ export class BeheerGebruikersComponent implements OnInit {
       this.modalService.close(id);
   }
   
-  wijzigGebruiker(gebruiker:Gebruiker){
-    this.gebruikerService.wijzigGebruiker(gebruiker,gebruiker.id)
-    .subscribe(response => this.router.navigateByUrl('/admin').then(Succes => { 
-      this.router.navigateByUrl('/admin/admin-beheer-gebruikers')
-    }));
-  } 
-
-  clickWijzigModal(id,gebruikerId:number) {
-    this.haalGebruikerOpId(gebruikerId);
-    this.openModal(id);
-	}
-  
   haalGebruikerOpId(id:number): void {
     this.gebruikerService.vraagGebruikerOpId(id).subscribe(gebruiker => this.gebruikerInvoer = gebruiker);
   }
