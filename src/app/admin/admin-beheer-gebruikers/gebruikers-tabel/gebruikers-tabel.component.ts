@@ -29,10 +29,6 @@ export class GebruikersTabelComponent implements OnInit {
         }
         );
   }
-
-  openWijzigModal(id,gebruikerId:number) {
-    this.adminBeheerGebruikers.clickWijzigModal(id,gebruikerId);
-    }
     
   openToevoegModal(id){
     this.adminBeheerGebruikers.openModal(id);
