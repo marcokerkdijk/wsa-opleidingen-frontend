@@ -5,26 +5,45 @@
 .row{
     padding-top: 5%;
 }
-
-#h5{
+#titel{
     letter-spacing: 1px;
     color: #808285;
     font-size: 26px;
     font-weight: normal;
     line-height: 32px;
+    text-align: right;
 }
 
-#h6{
-    letter-spacing: 1px;
-    color: #808285;
-    font-size: 26px;
-    font-weight: normal;
-    line-height: 32px;
-}
-
-p {
-    font-family: "Working Spirit";
-    font-size: 14px;
+#aantekeningenWelkomTekst {
+    padding-top: 8px;
+    font-size: 16px;
     line-height: 24px;
-    color:  #808285;
+    color: #808285
+}
+
+button {
+    border-color: #00aeef;
+    color: #00aeef;
+    width: 230px;
+    text-transform: uppercase;
+    border: 1px solid  #00aeef;
+    background-color: transparent;
+    border-radius: 0;
+    font-size: 12px;
+    font-weight: 600;
+    padding-top: 10px;
+    padding-bottom: 8px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    line-height: 1.42857;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+button:hover {
+    cursor: pointer;
+    color: white;
+    background-color: #00aeef;
 }

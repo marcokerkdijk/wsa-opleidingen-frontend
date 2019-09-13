@@ -65,6 +65,7 @@ import { DocentAantekeningenComponent } from './docent/docent-aantekeningen/doce
 import { AantekeningAanmaakComponent } from './docent/docent-aantekeningen/aantekening-aanmaak/aantekening-aanmaak.component';
 import { AantekeningWijzigComponent } from './docent/docent-aantekeningen/aantekening-wijzig/aantekening-wijzig.component';
 import { GebruikerWijzigenComponent } from './admin/admin-beheer-gebruikers/gebruikers-wijzigen/gebruiker-wijzigen.component';
+import { NotitiesInformatieComponent } from './student/notities-informatie/notities-informatie.component';
 
 export function jwtOptionsFactory(tokenService: TokenService) {
   return {
@@ -135,6 +136,7 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     AantekeningAanmaakComponent,
     AantekeningWijzigComponent,
     GebruikerWijzigenComponent,
+    NotitiesInformatieComponent,
   ],
   imports: [
     BrowserModule,
