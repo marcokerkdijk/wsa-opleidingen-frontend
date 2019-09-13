@@ -23,4 +23,11 @@ export class AantekeningserviceService {
   aantekeningOpslaan(aantekening: Aantekening, traject_id: number): Observable<any> {
     return this.http.post<Aantekening>(`${this.api}/AantekeningAanmaken/` + traject_id, aantekening);
   }
+  getNotitiesVanTrajectOpGebruikerId(gebruiker_id: number): Observable<Aantekening[]> {
+    return this.http.get<Aantekening[]>(`${this.api}/aantekeningenVanTrajectOpGebruikerId/` + gebruiker_id);
+  }
+
+  getAantekeningOpId(id: number): Observable<Aantekening>{
+    return this.http.get<Aantekening>(`${this.api}/getAantekeningOpId/` + id);
+  }
 }

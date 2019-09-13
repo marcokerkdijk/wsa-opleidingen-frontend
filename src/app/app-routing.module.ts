@@ -44,6 +44,7 @@ import { DocentAantekeningenComponent } from './docent/docent-aantekeningen/doce
 import { AantekeningAanmaakComponent } from './docent/docent-aantekeningen/aantekening-aanmaak/aantekening-aanmaak.component';
 import { AantekeningWijzigComponent } from './docent/docent-aantekeningen/aantekening-wijzig/aantekening-wijzig.component';
 import { GebruikerWijzigenComponent } from './admin/admin-beheer-gebruikers/gebruikers-wijzigen/gebruiker-wijzigen.component';
+import { NotitiesInformatieComponent } from './student/notities-informatie/notities-informatie.component';
 
 
 const routes: Routes = [
@@ -97,6 +98,8 @@ const routes: Routes = [
       {path: "mijn-gegevens", component: MijnGegevensComponent},
       {path: '', redirectTo: 'student-home', pathMatch: 'full'},
       {path: "opdracht/:id", component: OpdrachtComponent},
+      {path: '', redirectTo: 'student-home', pathMatch: 'full'},
+      {path: "notitie-informatie/:id", component: NotitiesInformatieComponent},
     ]
   },
   { path: 'docent', component: DocentComponent, canActivate: [DocentAutorisatieGuard],

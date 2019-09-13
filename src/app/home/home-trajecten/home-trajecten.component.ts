@@ -12,10 +12,6 @@ import { TekstObject } from 'src/app/Objecten/tekst-object';
   styleUrls: ['./home-trajecten.component.scss']
 })
 export class HomeTrajectenComponent implements OnInit {
-  tekstId: number = 1;
-  tekstObject: TekstObject = new TekstObject();
-  trajecttest: Traject = new Traject();
-
   traject: Traject = new Traject();
   zichtbaarTrajecten: Traject[] = new Array;
   private api: string = environment.apiUrl;
@@ -33,7 +29,6 @@ export class HomeTrajectenComponent implements OnInit {
 
   ngOnInit() {
     this.getTrajecten();
-    // this.getWelkomstTekst(this.tekstId);
   }
 
   getTrajecten(): void {

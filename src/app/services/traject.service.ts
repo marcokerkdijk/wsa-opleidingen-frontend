@@ -52,4 +52,8 @@ export class TrajectService {
   geefAlleTrajectonderdelenVanTraject(traject_id: number): Observable<TrajectOnderdeel[]> {
     return this.http.get<TrajectOnderdeel[]>(`${this.api}/geefTrajectOnderdelenVanTraject/` + traject_id);
   }
+
+  geefTrajectBijGebruiker(gebruiker_id: number): Observable<Traject> {
+    return this.http.get<Traject>(`${this.api}/geefTrajectVanGebruiker/` + gebruiker_id);
+  }
 }
