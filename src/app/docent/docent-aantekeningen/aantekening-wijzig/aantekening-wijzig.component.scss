@@ -1,0 +1,84 @@
+.container-fluid {
+    margin-bottom: 5%;
+    padding-left: 0%;
+}
+
+.row{
+    padding-top: 2%;
+}
+
+.col-sm-6 {
+    padding-left: 0;
+}
+
+.form-control {
+    border-radius: 0;
+}
+
+h6 {
+    letter-spacing: 1px;
+    color: #808285;
+    font-size: 26px;
+    font-weight: normal;
+    line-height: 32px;
+}
+
+p {
+    color: #808285;
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 1%;
+}
+
+#titelinvoer {
+    width: 100%;
+}
+
+#tekstinvoer {
+    width: 100%;
+    min-height: 150px;
+    resize: none;
+}
+
+#datumpreview {
+    width: 100%;
+}
+
+[type="date"] {
+    background:#fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png) 97% 50% no-repeat;
+  }
+  [type="date"]::-webkit-inner-spin-button {
+    padding-right: 5px;
+  }
+  [type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    cursor: pointer;
+  }
+
+button {
+    border-color: #00aeef;
+    color: #00aeef;
+    width: 230px;
+    text-transform: uppercase;
+    border: 1px solid  #00aeef;
+    background-color: transparent;
+    border-radius: 0;
+    font-size: 12px;
+    font-weight: 600;
+    padding-top: 10px;
+    padding-bottom: 8px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    white-space: nowrap;
+    line-height: 1.42857;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+button:hover {
+    cursor: pointer;
+    color: white;
+    background-color: #00aeef;
+}

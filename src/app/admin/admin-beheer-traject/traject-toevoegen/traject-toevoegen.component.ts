@@ -3,6 +3,7 @@ import { TrajectOnderdeel } from 'src/app/Objecten/traject-onderdeel';
 import { TrajectService } from 'src/app/services/traject.service';
 import { Router } from '@angular/router';
 import { TrajectDTO } from 'src/app/Objecten/traject-dto';
+import { AutenticatieService } from 'src/app/services/autenticatie.service';
 
 @Component({
   selector: 'wsa-traject-toevoegen',
@@ -14,10 +15,13 @@ export class TrajectToevoegenComponent implements OnInit {
   onderdeelWijzigen: boolean;
   trajectonderdeel: TrajectOnderdeel = new TrajectOnderdeel;
   nieuweTrajectOnderdelen: TrajectOnderdeel[] = new Array;
+  rolIngelogdeGebruiker: string;
 
-  constructor(private trajectservice: TrajectService, private router: Router) { }
+  constructor(private trajectservice: TrajectService, private router: Router,
+              private authenticatieservice: AutenticatieService) { }
 
   ngOnInit() {
+    this.rolIngelogdeGebruiker = this.authenticatieservice.krijgRol();
   }
 
   verwijderOnderdeel(trajectonderdeel: TrajectOnderdeel): void {
@@ -71,7 +75,7 @@ export class TrajectToevoegenComponent implements OnInit {
     traject.trajectOnderdelen = this.nieuweTrajectOnderdelen;
 
     this.trajectservice.maakTrajectAan(traject).subscribe(response => {
-      this.router.navigateByUrl('admin/admin-beheer-traject');
+      this.router.navigateByUrl(this.rolIngelogdeGebruiker + '/beheer-traject');
     });
   }
 }
