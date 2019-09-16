@@ -16,7 +16,7 @@ table {
     table-layout:fixed;
 }
 
-#aantekeningtitel {
+.aantekeningtitel {
     cursor: pointer;
     text-decoration: underline;
 }
@@ -28,13 +28,15 @@ table {
     line-height: 32px;
 }
 
-.col-sm-5 pre {
+pre {
+    width: 100%;
     padding: 0;
     background-color: transparent;
     border-color: transparent;
     font-family: "Working Spirit";
     color: #004085;
     font-size: 1rem;
+    white-space: pre-wrap;
 }
 
 #uitklapdiv {
