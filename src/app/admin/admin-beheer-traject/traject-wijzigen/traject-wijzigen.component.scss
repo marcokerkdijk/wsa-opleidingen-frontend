@@ -151,14 +151,14 @@ textarea {
     cursor: pointer;
 }
 
-#verwijderonderdeel {
+i {
     cursor: pointer;
     color: #000000;
     float: right;
     opacity: 0.3;
 }
 
-#verwijderonderdeel:hover {
+i:hover {
     color: red;
     opacity: 1.0;
 }

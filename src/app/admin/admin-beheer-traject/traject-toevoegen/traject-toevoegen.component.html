@@ -64,12 +64,12 @@
                             <ng-container *ngFor="let Trajectonderdeel of nieuweTrajectOnderdelen">
                                 <div class="trajectonderdeel">
                                     <div class="col-sm-10 onderdeelnaam">
-                                        <a id="wijzigonderdeel" (click)="wijzigTrajectonderdeel(Trajectonderdeel);">
+                                        <a id="wijzigonderdeel{{Trajectonderdeel.naam}}" (click)="wijzigTrajectonderdeel(Trajectonderdeel);">
                                             {{Trajectonderdeel.naam}}
                                         </a>
                                     </div>
                                     <i class="fa fa-times" aria-hidden="true"
-                                        (click)="verwijderOnderdeel(Trajectonderdeel);" id="verwijderonderdeel"></i>
+                                        (click)="verwijderOnderdeel(Trajectonderdeel);" id="verwijderonderdeel{{Trajectonderdeel.naam}}"></i>
                                 </div>
                             </ng-container>
                         </div>
