@@ -19,8 +19,8 @@
             <tbody>
                 <ng-container *ngFor="let Opdracht of opdrachten; let i = index;">
                     <tr (onCreate)="maakBooleanLijst();">
-                        <td id="titel{{Opdracht.id}}"><span id="opdrachttitel" title="Toon opdrachtinformatie"
-                                (click)="toggleOmschrijving(i);">{{Opdracht.titel}}</span>
+                        <td id="titel{{Opdracht.id}}"><span id="opdrachttitel{{Opdracht.id}}" title="Toon opdrachtinformatie"
+                                (click)="toggleOmschrijving(i);"><div id="opdrachttitel">{{Opdracht.titel}}</div></span>
                         </td>
                         <td id="dag{{Opdracht.id}}">{{Opdracht.dag}}</td>
                         <td id="trajectonderdeel{{Opdracht.id}}">{{Opdracht.trajectOnderdeel.naam}}</td>
