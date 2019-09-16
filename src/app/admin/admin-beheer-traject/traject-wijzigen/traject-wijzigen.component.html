@@ -25,7 +25,7 @@
                     <div class="col-sm-6">
                         <p>Zichtbaarheid traject</p>
                         <div>
-                            <label class="switch">
+                            <label id="zichtbaar" class="switch">
                                 <input type="checkbox" [(ngModel)]="traject.zichtbaar">
                                 <span class="slider round"></span>
                             </label>
@@ -95,8 +95,8 @@
                             <div>
                                 <select name="rol" [(ngModel)]="trajectonderdeel.fase" class="form-control" required
                                     id="fasetypekeuze">
-                                    <option value="OPLEIDING">Opleidingsfase</option>
-                                    <option value="SELECTIE">Selectiefase</option>
+                                    <option value="OPLEIDING" id="opleidingsfasekeuze">Opleidingsfase</option>
+                                    <option value="SELECTIE" id="selectiefasekeuze">Selectiefase</option>
                                 </select>
                             </div>
                         </div>
@@ -146,8 +146,8 @@
                             <div>
                                 <select name="rol" [(ngModel)]="trajectonderdeel.fase" class="form-control" required
                                     id="fasetypekeuze">
-                                    <option value="OPLEIDING">Opleidingsfase</option>
-                                    <option value="SELECTIE">Selectiefase</option>
+                                    <option value="OPLEIDING" id="opleidingsfasekeuze">Opleidingsfase</option>
+                                    <option value="SELECTIE" id="selectiefasekeuze">Selectiefase</option>
                                 </select>
                             </div>
                         </div>
