@@ -122,12 +122,12 @@
             </div>
         </fieldset>
         <div>
-            <button class="button button-primary" (click)="login()">Login</button>
-            <button class="button button-primary" (click)="closeModal('login-modal');">Sluiten</button>
+            <button id="LoginButton" class="button button-primary" (click)="login()">Login</button>
+            <button id="SluitenButton" class="button button-primary" (click)="closeModal('login-modal');">Sluiten</button>
         </div>
     </form>
     <div id="vergetenWachtwoord">
-        <a id="vergetenWachtwoord" (click)="toggleVergeten();">Wachtwoord vergeten?</a>
+        <a id="vergetenWachtwoordText" (click)="toggleVergeten();">Wachtwoord vergeten?</a>
     </div>
     <div id="wwvergetendiv" *ngIf="vergeten">
         <p>Voer uw e-mailadres in:</p>

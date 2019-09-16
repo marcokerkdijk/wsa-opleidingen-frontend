@@ -37,20 +37,13 @@ h6{
     line-height: 24px;
     color: #808285
 }
-#table-bottom,
-th {
-    background: #ffffff;
-    color: #696969;
-    font-size: 15px;
-    text-transform: uppercase;
-    border: 1px solid;
-    border-color: black
+th#Informatie {
+    min-width: 647px;
 }
-#table-bottom,
-td {
-    background: #ffffff;
-    color: #696969;
-    font-size: 15px;
-    border: 1px solid;
-    text-align: left;
+th#Datum{
+    min-width: 158px;
 }
+th#Tijdstip{
+    min-width: 158px;
+}
+
