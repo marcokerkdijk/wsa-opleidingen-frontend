@@ -30,6 +30,7 @@ export class AantekeningserviceService {
 
   getAantekeningOpId(id: number): Observable<Aantekening>{
     return this.http.get<Aantekening>(`${this.api}/getAantekeningOpId/` + id);
+  }
 
   aantekeningWijzigen(aantekening: Aantekening): Observable<any> {
     return this.http.put<Aantekening>(`${this.api}/AantekeningWijzigen`, aantekening);
