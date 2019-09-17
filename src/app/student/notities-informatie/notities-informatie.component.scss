@@ -1,26 +1,60 @@
-#mainbody {
-    padding-top: 5%;
-    background: #ffffff;
-    color: #808080;
-    font-size: 15px;
-    margin-bottom: 3%;
-}
 .container-fluid {
     padding-left: 19%;
     padding-right: 19%;
+    padding-top: 5%;
+    margin-bottom: 3%;
 }
 .row {
-    padding-top: 2.5%;
+    padding-top: 2%;
 }
-.titel{
-    font-size: 32px;
-    color: #808080;
-    font-weight: 400;
-    text-align: right;
+
+h6 {
+    letter-spacing: 1px;
+    color: #808285;
+    font-size: 26px;
+    font-weight: normal;
+    line-height: 32px;
 }
-#aantekeningTekst {
-    padding-top: 8px;
-    font-size: 16px;
-    line-height: 24px;
-    color: #808285
+
+.grijs {
+    background-color: rgba($color: #a9a9a9, $alpha: 0.05);
+    padding-bottom: 2%;
+}
+
+.display {
+    color: #00aeef;
+    bottom: 50;
+    width: 100%;
+    min-height: 47px;
+    border-style: solid;
+    border-radius: 0;
+    border-width: 0.5px;
+    border-color: #00aeef;
+    background-color: rgba($color: #00aeef, $alpha: 0.2);
+    padding-top: 5px;
+    padding-left: 5px;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+}
+
+.display p {
+    padding-top: 9px;
+    padding-left: 9px;
+}
+
+.col-sm-12 {
+    padding: 0;
+}
+
+pre {
+    width: 100%;
+    height: auto;
+    overflow: auto;
+    white-space: pre-wrap;
+    word-break: normal;
+    background-color: transparent;
+    border: 1px solid #00aeef;
+    border-radius: 0;
+    font-family: "Working Spirit";
+    font-size: 14px;
+    color: #808285;
 }

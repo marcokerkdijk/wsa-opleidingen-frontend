@@ -24,7 +24,7 @@ export class NotitiesInformatieComponent implements OnInit {
 
   haalAantekeningOp(id: number){
     this.aantekeningService.getAantekeningOpId(id).subscribe(
-      aantekening => this.aantekening = aantekening)
+      aantekening => this.aantekening = aantekening);
   }
 
 }

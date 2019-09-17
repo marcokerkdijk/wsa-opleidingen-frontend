@@ -1,74 +1,68 @@
-#mainbody {
-    padding-top: 5%;
-    background: #ffffff;
-    color: #808080;
-    font-size: 15px;
-    margin-bottom: 3%;
-}
 .container-fluid {
     padding-left: 19%;
     padding-right: 19%;
+    margin-top: 5%;
+    margin-bottom: 3%;
 }
+
 .row {
-    padding-top: 2.5%;
+    padding-top: 2%;
 }
-.titel{
-    font-size: 32px;
-    color: #808080;
-    font-weight: 400;
-    text-align: right;
+
+.display {
+    border: 1px solid #00aeef;
+    padding: 9.5px;
+    color: #808285;
+    min-height: 100%;
 }
-.titel2 {
-    font-size: 32px;
-    color: #808080;
-    font-weight: 400;
-    text-align: left;
-}
-.subTitel{
-    font-size: 32px;
-    color: #808080;
-    font-weight: 400;
-    text-align: left;
-}
-table {
-    white-space: normal;
-    line-height: normal;
-    font-weight: normal;
-    font-size: medium;
-    font-style: normal;
-    text-align: start;
-    font-variant: normal;
-    border-block-color: white;
-}
-td{
-    border-right-style: solid;
-    padding: 5pt 5pt 5pt 5pt;
-    border-top-width: 1pt;
-    border-right-width: 1pt;
-    vertical-align: top;
-    border-left-width: 1pt;
-    border-top-style: solid;
-    border-left-style: solid;
-    border-bottom-width: 1pt;
-    max-width: 618px;
-    min-width: 618px;
-    border-bottom-style: solid;
-}
-pre{
-    max-width: 940px;
-    overflow-y: auto;
-    // text-overflow: inherit;
-    word-wrap: normal;
+
+pre {
+    background-color: #ffffff;
+    border-color: #00aaef;
+    color: #808285;
+    width: 100%;
+    min-height: 250px;
+    max-height: 250px;
+    border-radius: 0;
+    overflow-x: hidden;
     white-space: pre-wrap;
-    white-space: -moz-pre-wrap;
-    white-space: -pre-wrap;
-    white-space: -o-pre-wrap;
-    
+    word-break: keep-all;
 }
-button{
+
+.col-sm-6 {
+    padding-left: 0;
+}
+
+h5 {
+    letter-spacing: 1px;
+    color: #808285;
+    font-size: 26px;
+    font-weight: normal;
+    line-height: 32px;
+}
+
+h6 {
+    letter-spacing: 1px;
+    color: #00aeef;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 32px;
+}
+
+textarea {
+    width: 100%;
+    color: #808285;
+    min-height: 250px;
+    max-height: 250px;
+    border-color: #00aaef;
+    padding: 9.5px;
+    resize: none;
+}
+
+button {
     border-color: #00aeef;
     color: #00aeef;
-    width: 30%;
+    width: 230px;
     text-transform: uppercase;
     border: 1px solid  #00aeef;
     background-color: transparent;
@@ -83,8 +77,11 @@ button{
     touch-action: manipulation;
     white-space: nowrap;
     line-height: 1.42857;
+    margin-top: 10px;
+    margin-bottom: 2px;
 }
-button:hover{
+
+button:hover {
     cursor: pointer;
     color: white;
     background-color: #00aeef;

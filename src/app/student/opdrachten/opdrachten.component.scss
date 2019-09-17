@@ -1,22 +1,38 @@
-#mainbody {
-    background: #ffffff;
-    color: #808080;
-    font-size: 15px;
-}
 .container-fluid {
     padding-left: 19%;
     padding-right: 19%;
+    margin-top: 5%;
+    margin-bottom: 3%;
 }
+
 .row {
-    padding-top: 2.5%;
+    padding-top: 2%;
 }
-.titel {
-    font-size: 32px;
-    color: #808080;
-    font-weight: 400;
-    text-align: right;
+
+.col-sm-3 {
+    padding-left: 0;
 }
-button{
+
+h6 {
+    letter-spacing: 1px;
+    color: #808285;
+    font-size: 26px;
+    font-weight: normal;
+    line-height: 32px;
+}
+
+p {
+    font-family: "Working Spirit";
+    font-size: 14px;
+    line-height: 24px;
+    color:  #808285;
+}
+
+.buttontd {
+    padding-left: 0;
+}
+
+button {
     border-color: #00aeef;
     color: #00aeef;
     width: 100%;
@@ -35,7 +51,8 @@ button{
     white-space: nowrap;
     line-height: 1.42857;
 }
-button:hover{
+
+button:hover {
     cursor: pointer;
     color: white;
     background-color: #00aeef;

@@ -1,63 +1,41 @@
-<div class="container-fluid" id="mainbody">
+<div class="container-fluid">
 
-    <!-- Opdracht titel -->
     <div class="row">
-        <div class="col-sm-4 titel">
+        <div class="col-sm-6">
             <div>
-                Opdracht:
+                <h5>Opdracht: {{opdracht.titel}}</h5>
             </div>
         </div>
-        <div class="col-sm-8 subTitel">
+        <div class="col-sm-6">
             <div>
-                <pre>{{opdracht.titel}}</pre>
+                <h6>Trajectfase: {{opdracht.trajectOnderdeel.naam}}</h6>
             </div>
         </div>
     </div>
 
-    <!-- Opdracht omschrijving -->
     <div class="row">
-        <div class="col-sm-4 titel">
-            <div>Beschrijving:</div>
-        </div>
-        <div class="col-sm-8">
-            <pre>{{opdracht.omschrijving}}</pre>
+        <div class="col-sm-6">
+            <div>
+                <h6>Omschrijving van de opdracht</h6>
+                <p class="display">{{opdracht.omschrijving}}</p>
+            </div>
         </div>
     </div>
 
-    <!-- Opdracht codevoorbeeld -->
     <div class="row">
-        <div class="col-sm-4 titel">
-            <div>Code voorbeeld:</div>
+        <div class="col-sm-6">
+            <h6>Uitwerking van de opdracht</h6>
+            <textarea id="codeinvoer" [(ngModel)]="uitwerking.resultaat" placeholder="Voer code in" required></textarea>
         </div>
-        <div class="col-sm-8">
+        <div class="col-sm-6">
+            <h6>Codevoorbeeld van de opdracht</h6>
             <pre>{{opdracht.codevoorbeeld}}</pre>
         </div>
     </div>
 
     <div class="row">
-
-    </div>
-
-    <!-- Code upload formulier -->
-    <div class="row">
-        <div class="col titel2">
-            Lever je code in via onderstaand formulier
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-11">
-            <form action="#codeupload">
-                <div class="form-group" id="codeupload">
-                    <td class="form-control" id="opdrachtDetails">Opdracht ID: {{opdracht.id}}, Opdracht:
-                        {{opdracht.titel}}</td>
-                </div>
-                <div class="form-group">
-                    <textarea class="form-control" rows="10" id="code" [(ngModel)]="uitwerking.resultaat"
-                        placeholder="Voer code in" name="code" required></textarea>
-                </div>
-                <button type="submit" (click)="verstuurUitwerking(uitwerking);" class="btn btn-primary"
-                    id="submitbutton">Verzenden</button>
-            </form>
+        <div class="col-sm-6">
+            <button type="submit" (click)="verstuurUitwerking(uitwerking);" id="submitbutton">Verzenden</button>
         </div>
     </div>
 </div>

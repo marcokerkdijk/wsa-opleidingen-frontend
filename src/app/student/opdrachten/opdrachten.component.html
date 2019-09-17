@@ -1,15 +1,12 @@
-<div class="container-fluid" id="mainbody">
+<div class="container-fluid">
     <div class="row">
-        <br><br>
-    </div>
-    <div class="row">
-        <div class="col-sm-3 titel">
-            Opdrachten
+        <div class="col-sm-3">
+            <h6>Opdrachten</h6>
         </div>
         <div class="col-sm-9">
-            Gebruik het Code Upload form om je code in te leveren.
+            <p>Gebruik het Code Upload form om je code in te leveren.
             Als het niet lukt om een opdracht te maken, lever dan (maximaal) 3 pogingen in zodat we kunnen zien hoe je de opdracht
-            aangepakt hebt en daar tips over kunnen geven.
+            aangepakt hebt en daar tips over kunnen geven.</p>
         </div>
     </div>
     <div class="row">
@@ -19,8 +16,8 @@
             <table class='table col-lg-8'>
                 <tbody>
                     <tr *ngFor="let opdracht of opdrachten" routerLink="../opdracht/{{opdracht.id}}">
-                        <td>
-                            <button id="opdracht{{opdracht.id}}">{{opdracht.id}} : {{opdracht.titel}}</button>
+                        <td class="buttontd">
+                            <button id="opdracht{{opdracht.id}}">{{opdracht.titel}}</button>
                         </td>
                     </tr>
                 </tbody>
