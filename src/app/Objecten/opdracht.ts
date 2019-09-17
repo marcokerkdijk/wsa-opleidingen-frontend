@@ -1,5 +1,4 @@
 import { OpdrachtType } from '../model/opdracht-type.enum';
-import { Traject } from './traject';
 import { Uitwerking } from './uitwerking';
 import { TrajectOnderdeel } from './traject-onderdeel';
 

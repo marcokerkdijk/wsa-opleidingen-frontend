@@ -13,7 +13,6 @@
     font-size: 26px;
     font-weight: normal;
     line-height: 32px;
-    text-align: right;
 }
 
 p {
@@ -69,7 +68,8 @@ p {
     align-self: center;
     cursor: pointer;
 }
-#h5{
+#h5 {
+    padding-top: 10px;
     letter-spacing: 1px;
     color: #808285;
     font-size: 20px;
@@ -78,7 +78,7 @@ p {
     text-align: center;
 }
 
-#melding {
+.melding {
     min-width: 100%;
     margin-top: 3%;
     margin-bottom: 0;

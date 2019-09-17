@@ -1,18 +1,18 @@
-<div class="container-fluid" id="mainbody">
+<div class="container-fluid">
     <div class="row">
-
-    </div>
-
-    <div class="row">
-        <div class="col-sm-4" id="titel">
-            Behandelde stof op:
-        </div>
-        <div class="col-sm-4" id="aantekeningDag">
-            <pre>{{aantekening.dag | date:'dd-MM-yyyy'}}</pre>
+        <div class="col-sm-5">
+            <h6>{{aantekening.titel}}</h6>
         </div>
     </div>
+    <div class="row grijs">
+        <div class="col-sm-5" id="titel">
+            <div class="display">
+                <p>Stof behandeld op: {{aantekening.dag | date:'EEE dd-MM-yyyy'}}</p>
+            </div>
+        </div>
+    </div>
     <div class="row">
-        <div class="col-sm-11" id="aantekeningTekst">
+        <div class="col-sm-12">
             <pre>{{aantekening.tekst}}</pre>
         </div>
     </div>
