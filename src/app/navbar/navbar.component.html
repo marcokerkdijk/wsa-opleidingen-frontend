@@ -41,8 +41,8 @@
                         Werken bij
                     </a>
                 </li>
-                <li class="nav-item" id="LogButton">
-                    <a class="nav-link" *ngIf="!ingelogd" (click)="openModal('login-modal')" id="LoginButton">
+                <li class="nav-item" id="LoginButton">
+                    <a class="nav-link" *ngIf="!ingelogd" (click)="openModal('login-modal')" id="Login">
                         Login
                     </a>
                     <a class="nav-link" *ngIf="ingelogd" (click)="navigeerNaar('profiel')" id="ProfielButton">
@@ -74,7 +74,7 @@
                             id="StudentButtonHamburger">
                             Student
                         </a>
-                        <a id="CorperateHamburger" class="nav-link hamburgerButton"
+                        <a id="CorporateHamburger" class="nav-link hamburgerButton"
                             href="https://www.workingspirit.nl/corporate/">
                             Corporate
                         </a>
@@ -83,15 +83,15 @@
                             Detachering
                         </a>
                         <a id="ContactHamburger" class="nav-link hamburgerButton"
-                            href="https://www.workingspirit.nl/contact/" id="Contact">
+                            href="https://www.workingspirit.nl/contact/">
                             Contact
                         </a>
-                        <a id="WerkenBijHamburger" class="nav-link hamburgerButton"
+                        <a id="WerkenbijHamburger" class="nav-link hamburgerButton"
                             href="https://www.workingspirit.nl/werken-bij-working-spirit/">
                             Werken bij
                         </a>
                         <a class="nav-link" *ngIf="!ingelogd" (click)="openModal('login-modal')"
-                            id="LoginButtonHamburger">
+                            id="LoginHamburger">
                             Login
                         </a>
                     </div>
