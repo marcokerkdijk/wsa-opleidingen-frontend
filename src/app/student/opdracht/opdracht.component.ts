@@ -5,6 +5,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Uitwerking } from 'src/app/Objecten/uitwerking';
 import { UitwerkingService } from 'src/app/services/uitwerking.service';
 import { AutenticatieService } from 'src/app/services/autenticatie.service';
+import { TrajectOnderdeel } from 'src/app/Objecten/traject-onderdeel';
+import { VirtualTimeScheduler } from 'rxjs';
 
 @Component({
   selector: 'wsa-opdracht',
@@ -13,6 +15,7 @@ import { AutenticatieService } from 'src/app/services/autenticatie.service';
 })
 export class OpdrachtComponent implements OnInit {
   opdracht: Opdracht = new Opdracht();
+  trajectOnderdeel: TrajectOnderdeel = new TrajectOnderdeel();
   uitwerking: Uitwerking = new Uitwerking();
   gebruiker_id: number;
 
@@ -27,7 +30,10 @@ export class OpdrachtComponent implements OnInit {
   }
 
   haalOpdrachtOp(id: number): void{
-    this.opdrachtservice.haalOpdrachtOpId(id).subscribe(opdracht => this.opdracht = opdracht);
+    this.opdrachtservice.haalOpdrachtOpId(id).subscribe(opdracht => {
+      this.opdracht = opdracht;
+      this.trajectOnderdeel = opdracht.trajectOnderdeel;
+    });
   }
 
   haalGebruikerIdOp(): void {

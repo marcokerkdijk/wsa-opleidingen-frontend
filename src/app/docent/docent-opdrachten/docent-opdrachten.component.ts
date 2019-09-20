@@ -15,7 +15,6 @@ export class DocentOpdrachtenComponent implements OnInit {
   opdrachten: Opdracht[] = new Array;
   zichtbaar: boolean[] = new Array;
   toonOmschrijving: boolean[] = new Array;
-  geenOpdrachten: boolean;
 
   constructor(private dataservice: DataserviceService, private opdrachtService: OpdrachtService,
               private router: Router, private alertservice: AlertService) { }
