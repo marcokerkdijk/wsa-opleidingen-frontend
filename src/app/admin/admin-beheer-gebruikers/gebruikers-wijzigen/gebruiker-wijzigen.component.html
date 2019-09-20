@@ -58,11 +58,11 @@
                 <div>
                     <label class="switch">
                         <input type="checkbox" [(ngModel)]="gebruikerInvoer.actief">
-                        <span class="slider round"></span>
+                        <span class="slider round" id="actiefslider"></span>
                     </label>
                     <ng-container>
-                        <span class="actieftekst" *ngIf="gebruikerInvoer.actief">De gebruiker is actief.</span>
-                        <span class="actieftekst" *ngIf="!gebruikerInvoer.actief">De gebruiker is niet actief.</span>
+                        <span class="actieftekst" id="actief" *ngIf="gebruikerInvoer.actief">De gebruiker is actief.</span>
+                        <span class="actieftekst" id="niet-actief" *ngIf="!gebruikerInvoer.actief">De gebruiker is niet actief.</span>
                     </ng-container>
                 </div>
             </div>
