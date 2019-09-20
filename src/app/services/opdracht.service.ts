@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {environment} from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { Opdracht } from '../Objecten/opdracht';
+import { OpdrachtDTO } from '../Objecten/opdracht-dto';
 
 @Injectable({
   providedIn: 'root'
@@ -40,4 +41,11 @@ export class OpdrachtService {
     return this.http.get<Opdracht[]>(`${this.api}/haalAlleAssessmentsOp`);
   }
 
+  geefOpdrachtDTO(id: number): Observable<OpdrachtDTO> {
+    return this.http.get<OpdrachtDTO>(`${this.api}/geefOpdrachtDTO/` + id);
+  }
+
+  wijzigOpdrachtMetDTO(opdrachtDTO: OpdrachtDTO): Observable<any> {
+    return this.http.put<OpdrachtDTO>(`${this.api}/wijzigOpdrachtMetDTO`, opdrachtDTO);
+  }
 }

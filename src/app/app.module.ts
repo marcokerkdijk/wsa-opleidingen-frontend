@@ -50,7 +50,6 @@ import { OpdrachtWijzigComponent } from './docent/docent-opdrachten/opdracht-wij
 import { NavbarPerRolComponent } from './navbar-per-rol/navbar-per-rol.component';
 import { BeheerAssessmentsComponent } from './admin/admin-beheer-assessments/beheer-assessments.component';
 import { AssessmentTabelComponent } from './admin/admin-beheer-assessments/assessment-tabel/assessment-tabel.component';
-import { AssessmentModalComponent } from './admin/admin-beheer-assessments/assessment-modal/assessment-modal.component';
 import { AlertModule } from './_alert';
 import { DocentUitwerkingenComponent } from './docent/docent-uitwerkingen/docent-uitwerkingen.component';
 import { BeheerUitwerkingComponent } from './docent/docent-uitwerkingen/beheer-uitwerking/beheer-uitwerking.component';
@@ -66,6 +65,8 @@ import { AantekeningAanmaakComponent } from './docent/docent-aantekeningen/aante
 import { AantekeningWijzigComponent } from './docent/docent-aantekeningen/aantekening-wijzig/aantekening-wijzig.component';
 import { GebruikerWijzigenComponent } from './admin/admin-beheer-gebruikers/gebruikers-wijzigen/gebruiker-wijzigen.component';
 import { NotitiesInformatieComponent } from './student/notities-informatie/notities-informatie.component';
+import { MaakAssessmentComponent } from './admin/admin-beheer-assessments/maak-assessment/maak-assessment.component';
+import { WijzigAssessmentComponent } from './admin/admin-beheer-assessments/wijzig-assessment/wijzig-assessment.component';
 
 export function jwtOptionsFactory(tokenService: TokenService) {
   return {
@@ -125,7 +126,6 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     NavbarPerRolComponent,
     BeheerAssessmentsComponent,
     AssessmentTabelComponent,
-    AssessmentModalComponent,
     DocentUitwerkingenComponent,
     BeheerUitwerkingComponent,
     UitwerkingenLijstComponent,
@@ -137,6 +137,8 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     AantekeningWijzigComponent,
     GebruikerWijzigenComponent,
     NotitiesInformatieComponent,
+    MaakAssessmentComponent,
+    WijzigAssessmentComponent,
   ],
   imports: [
     BrowserModule,
