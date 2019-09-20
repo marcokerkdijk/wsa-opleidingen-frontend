@@ -1,36 +1,74 @@
-<div class="container-fluid" id="Filter_Assessments">
-    <div class="row">
-        <!-- Toevoegen assessment button -->
-        <div>
-            <button id="openToevoegModal" (click)="openToevoegModal('assessments-toevoegen-modal')">Assessment
-                toevoegen</button>
-        </div>
-
-        <!-- Assessments tabel -->
-        <table class='table borderless col-lg-12'>
-            <thead id="table-header">
+<div class="row">
+    <div class="col-sm-6" id="buttondiv">
+        <button id="toevoegbutton" routerLink="../maak-assessment">Assessment toevoegen</button>
+    </div>
+</div>
+<div class="row">
+    <div id="opdrachtentabel">
+        <table class="table table-bordered">
+            <thead id="table-bottom">
                 <tr>
-                    <th id="thTitel">Titel</th>
-                    <th id="thOmschrijving">Omschrijving</th>
-                    <th id="thTraject">Traject</th>
-                    <th id="thFase">Fase</th>
-                    <th id="thBewerken">Bewerken</th>
+                    <th id="titel">Titel</th>
+                    <!-- <th id="dag">Bootcampdag</th> -->
+                    <th id="fase">Fase</th>
+                    <th id="zichtbaar">Zichtbaar</th>
+                    <th id="wijzigen">Wijzig</th>
+                    <th id="verwijderen">Verwijder</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let Opdracht of alleAssessments">
-                    <td id="tdAssessment{{Opdracht.id}}">{{Opdracht.titel}}</td>
-                    <td id="tdOmschrijving{{Opdracht.id}}">{{Opdracht.omschrijving}}</td>
-                    <td id="tdTraject{{Opdracht.id}}">{{Opdracht.traject.naam}}</td>
-                    <td id="tdFase{{Opdracht.id}}">{{Opdracht.fase}}</td>
-                    <td id="tdWijzig{{Opdracht.id}}">
-                        <a id="pencil">
-                            <i class='fa fa-pencil' id="tdWijzig{{Opdracht.id}}"
-                                (click)="clickWijzigModal('assessment-wijzig-modal', Opdracht.id)"></i>
-                        </a>
-                    </td>
-                </tr>
+                <ng-container *ngFor="let Assessment of assessments; let i = index;">
+                    <tr (onCreate)="maakBooleanLijst();">
+                        <td id="titel{{Assessment.id}}"><span id="opdrachttitel{{Assessment.id}}"
+                                title="Toon assessmentinformatie" (click)="toggleOmschrijving(i);">
+                                <div id="opdrachttitel">{{Assessment.titel}}</div>
+                            </span>
+                        </td>
+                        <!-- <td id="dag{{Assessment.id}}">{{Assessment.dag}}</td> -->
+                        <td id="trajectonderdeel{{Assessment.id}}">{{Assessment.trajectOnderdeel.naam}}</td>
+                        <td id="zichtbaar{{Assessment.id}}">
+                            <p *ngIf="Assessment.zichtbaar">Ja</p>
+                            <p *ngIf="!Assessment.zichtbaar">Nee</p>
+                        </td>
+                        <td>
+                            <div id="pencil">
+                                <i class='fa fa-pencil' id="pencil{{Assessment.id}}"
+                                    routerLink="../wijzig-assessment/{{Assessment.id}}"></i>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="prullenbak">
+                                <i class='fa fa-trash' id="verwijder{{Assessment.id}}" (click)="toggle(i);"></i>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr *ngIf="toonOmschrijving[i]">
+                        <div class="alert alert-primary" role="alert" id="uitklapdiv">
+                            <div class="col-sm-10" id="opdrachtomschrijving">
+                                <p class="kop">Omschrijving</p>
+                                <pre>{{Assessment.omschrijving}}</pre>
+                            </div>
+                            <button type="button" class="close" aria-label="Close" (click)="toggleOmschrijving(i);">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </tr>
+                    <tr *ngIf="zichtbaar[i]">
+                        <div class="alert alert-danger" role="alert" id="waarschuwing">
+                            <div class="col-sm-7" id="verwijdertekst">
+                                <p>Weet u zeker dat u het assessment '{{Assessment.titel}}' wilt verwijderen?</p>
+                            </div>
+                            <button id="verwijderbutton" (click)="verwijderAssessment(Assessment);">Verwijderen</button>
+                            <button type="button" class="close" aria-label="Close" (click)="toggle(i);">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </tr>
+                </ng-container>
             </tbody>
         </table>
+        <div id="melding">
+            <alert id="alert-1"></alert>
+        </div>
     </div>
 </div>

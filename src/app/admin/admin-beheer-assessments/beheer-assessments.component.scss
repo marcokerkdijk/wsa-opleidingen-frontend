@@ -1,16 +1,29 @@
 .container-fluid {
     padding-left: 19%;
     padding-right: 19%;
+    margin-top: 5%;
+    margin-bottom: 3%;
 }
 
 .row{
-    padding-top: 5%;
+    padding-top: 2%;
 }
-#titel{
+
+.col-sm-4 {
+    padding-left: 0;
+}
+
+h5 {
     letter-spacing: 1px;
     color: #808285;
     font-size: 26px;
     font-weight: normal;
     line-height: 32px;
-    text-align: right;
+}
+
+p {
+    font-family: "Working Spirit";
+    font-size: 14px;
+    line-height: 24px;
+    color:  #808285;
 }

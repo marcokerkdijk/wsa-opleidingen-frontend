@@ -45,6 +45,8 @@ import { AantekeningAanmaakComponent } from './docent/docent-aantekeningen/aante
 import { AantekeningWijzigComponent } from './docent/docent-aantekeningen/aantekening-wijzig/aantekening-wijzig.component';
 import { GebruikerWijzigenComponent } from './admin/admin-beheer-gebruikers/gebruikers-wijzigen/gebruiker-wijzigen.component';
 import { NotitiesInformatieComponent } from './student/notities-informatie/notities-informatie.component';
+import { MaakAssessmentComponent } from './admin/admin-beheer-assessments/maak-assessment/maak-assessment.component';
+import { WijzigAssessmentComponent } from './admin/admin-beheer-assessments/wijzig-assessment/wijzig-assessment.component';
 
 
 const routes: Routes = [
@@ -79,6 +81,11 @@ const routes: Routes = [
       { path: "beheer-resultaten/:id", component: BeheerResultatenComponent},
       { path: '', redirectTo: 'admin', pathMatch: 'full' },
       { path: "beheer-assessments", component: BeheerAssessmentsComponent},
+      { path: '',  redirectTo: 'admin', pathMatch: 'full'},
+      { path: "maak-assessment", component: MaakAssessmentComponent },
+      { path: '', redirectTo: 'admin', pathMatch: 'full'},
+      { path: "wijzig-assessment/:id", component: WijzigAssessmentComponent },
+      { path: '', redirectTo: 'admin', pathMatch: 'full' },
     ]
   },
   { path: 'student', component: StudentComponent, canActivate: [StudentAutorisatieGuard],
@@ -151,6 +158,10 @@ const routes: Routes = [
       { path: "gebruiker-wijzigen/:id", component: GebruikerWijzigenComponent},
       { path: '', redirectTo: 'recruiter', pathMatch: 'full'},
       { path: "beheer-assessments", component: BeheerAssessmentsComponent},
+      { path: '', redirectTo: 'recruiter', pathMatch: 'full' },
+      { path: "maak-assessment", component: MaakAssessmentComponent },
+      { path: '', redirectTo: 'recruiter', pathMatch: 'full'},
+      { path: "wijzig-assessment/:id", component: WijzigAssessmentComponent },
       { path: '', redirectTo: 'recruiter', pathMatch: 'full' },
     ]
   },
