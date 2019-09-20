@@ -6,3 +6,4 @@ RUN $(npm bin)/ng build --prod
 
 FROM nginx:1.15.8-alpine
 COPY --from=builder /wsa-opleidingen-frontend/dist/wsa-opleidingen-frontend/ /usr/share/nginx/html
+
