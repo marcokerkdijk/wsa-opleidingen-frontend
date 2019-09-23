@@ -1,4 +1,4 @@
-<div class="container-fluid" id="Filter_Gebruiker">
+<div class="container-fluid" id="Tabel_Gebruiker">
     <div class="row">
         <div class="dropdown" id="FilterActief">
             <div id='FilterKnopGebruiker'><button>Filteren</button></div>
@@ -28,7 +28,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let Gebruiker of actieveGebruikers">
+                <tr *ngFor="let Gebruiker of actieveGebruikers" id="tablerow{{Gebruiker.id}}">
                     <td>{{Gebruiker.voornaam}}</td>
                     <td>{{Gebruiker.tussenvoegsel}} {{Gebruiker.achternaam}}</td>
                     <td class="rolnaam">{{Gebruiker.rol}}</td>
