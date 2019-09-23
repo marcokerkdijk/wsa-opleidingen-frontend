@@ -28,7 +28,7 @@ export class TrajectToevoegenComponent implements OnInit {
     let arrayindex: number;
 
     for (let i = 1; i < this.nieuweTrajectOnderdelen.length; i++) {
-      if (this.nieuweTrajectOnderdelen[i].index === trajectonderdeel.index) {
+      if (this.nieuweTrajectOnderdelen[i].naam === trajectonderdeel.naam) {
         arrayindex = i;
       }
     }
@@ -40,7 +40,6 @@ export class TrajectToevoegenComponent implements OnInit {
 
   maakNieuwTrajectonderdeel(trajectonderdeel: TrajectOnderdeel) {
     let nieuwTrajectonderdeel = trajectonderdeel;
-    nieuwTrajectonderdeel.index = this.nieuweTrajectOnderdelen.length + 1;
     this.nieuweTrajectOnderdelen.push(nieuwTrajectonderdeel);
     this.trajectonderdeel = new TrajectOnderdeel;
   }
@@ -57,7 +56,7 @@ export class TrajectToevoegenComponent implements OnInit {
     let arrayindex: number;
 
     for (let i = 1; i < this.nieuweTrajectOnderdelen.length; i++) {
-      if (this.nieuweTrajectOnderdelen[i].index === trajectonderdeel.index) {
+      if (this.nieuweTrajectOnderdelen[i].naam === trajectonderdeel.naam) {
         arrayindex = i;
       }
     }
