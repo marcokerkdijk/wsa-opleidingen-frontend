@@ -3,6 +3,7 @@ import { Gebruiker } from 'src/app/Objecten/gebruiker';
 import { GebruikersService } from 'src/app/services/gebruikers.service';
 import { BeheerGebruikersComponent } from '../beheer-gebruikers.component';
 import { AlertService } from 'src/app/_alert';
+import { Rol } from 'src/app/rol.enum';
 
 @Component({
   selector: 'wsa-gebruikers-tabel',
