@@ -24,7 +24,7 @@
                     <td id="Voornaam{{Student.id}}">{{Student.voornaam}}</td>
                     <td id="Achternaam{{Student.id}}">{{Student.tussenvoegsel}} {{Student.achternaam}}</td>
                     <td id="Vink{{Student.id}}">
-                        <input type="checkbox" [(ngModel)]="Student.gekoppeld"
+                        <input type="checkbox" id="Checkbox{{Student.id}}" [(ngModel)]="Student.gekoppeld"
                             (click)="wijzigStudentArray(Student, Student.gekoppeld);" />
                     </td>
                 </tr>
@@ -49,7 +49,7 @@
                     <td id="Voornaam{{Docent.id}}">{{Docent.voornaam}}</td>
                     <td id="Achternaam{{Docent.id}}">{{Docent.tussenvoegsel}} {{Docent.achternaam}}</td>
                     <td id="Vink{{Docent.id}}">
-                        <input type="checkbox" [(ngModel)]="Docent.aanTraject"
+                        <input type="checkbox" id="Checkbox{{Docent.id}}" [(ngModel)]="Docent.aanTraject"
                             (click)="wijzigDocentArray(Docent, Docent.aanTraject);" />
                     </td>
                 </tr>
