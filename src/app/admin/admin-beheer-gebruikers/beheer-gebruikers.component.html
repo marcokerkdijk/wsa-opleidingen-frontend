@@ -4,86 +4,8 @@
             <h6>Gebruikers beheren</h6>
         </div>
         <div class="col-sm-6">
-            <p>Hier kun je als admin gebruikers aanmaken en wijzigen. Kort gezegd, beheren dus.
-            Lorem ipsum fugit exclamare ad fundum veni vidi vici. Dit latijn slaat volkomen
-            nergens op eerlijk gezegd. Toch is het leuk om wat opvulling voor de webpagina
-            te genereren om te zien hoe het eruit komt te zien wanneer het wel gevuld is
-            met zinnige tekst. Bedankt voor uw aandacht en tot de volgende keer maar weer.</p>
-        </div>
+            <p>Hier kun je als admin gebruikers aanmaken en wijzigen.</p>
+        </div>   
         <wsa-gebruikers-tabel></wsa-gebruikers-tabel>
     </div>
 </div>
-
-<!-- Modaal voor het toevoegen van de gebruiker -->
-
-<jw-modal class="jw-modal" id="gebruikers-toevoegen-modal">
-    <div class="row">
-        <div class="col-sm-11">
-            <div>Voornaam:</div>
-            <div>
-                <input [(ngModel)]="gebruikerInvoer.voornaam" type="text" class="form-control" required />
-            </div>
-
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-11">
-            <div>Tussenvoegsel:</div>
-            <div>
-                <input [(ngModel)]="gebruikerInvoer.tussenvoegsel" type="text" class="form-control" />
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-11">
-            <div>Achternaam:</div>
-            <input [(ngModel)]="gebruikerInvoer.achternaam" type="text" class="form-control" required />
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-11">
-            <div>Emailadres:</div>
-            <div>
-                <input [(ngModel)]="gebruikerInvoer.emailadres" type="e-mail" class="form-control" required />
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-11">
-            <div>Wachtwoord:</div>
-            <div>
-                <input [(ngModel)]="gebruikerInvoer.wachtwoord" type="password" class="form-control" required />
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-11">
-            <div>Rol:</div>
-            <div>
-                <select name="rol" [(ngModel)]="gebruikerInvoer.rol" class="form-control" required>
-                    <option value="ADMIN">Admin</option>
-                    <option value="DOCENT">Docent</option>
-                    <option value="RECRUITER">Recruiter</option>
-                    <option value="STUDENT">Student</option>
-                </select>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-11">
-            <div *ngIf="gebruikerInvoer.actief; else elseBlock">Actief: Ja</div>
-            <ng-template #elseBlock>Actief: Nee</ng-template>
-            <div>
-                <input id='actiefCheckbox' type="checkbox" name='actief' value="true"
-                    [(ngModel)]="gebruikerInvoer.actief">Actief
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-11">
-            <button id='ToevoegenNieuweGebruikerButton' (click)="voegGebruikerToe(gebruikerInvoer)">Toevoegen</button>
-            <button id='AnnuleerNieuweGebruikerButton'
-                (click)="sluitModal('gebruikers-toevoegen-modal');">Annuleren</button>
-        </div>
-    </div>
-</jw-modal>
