@@ -3,7 +3,6 @@ import { Gebruiker } from 'src/app/Objecten/gebruiker';
 import { GebruikersService } from 'src/app/services/gebruikers.service';
 import { BeheerGebruikersComponent } from '../beheer-gebruikers.component';
 import { AlertService } from 'src/app/_alert';
-import { Rol } from 'src/app/rol.enum';
 
 @Component({
   selector: 'wsa-gebruikers-tabel',
@@ -29,10 +28,6 @@ export class GebruikersTabelComponent implements OnInit {
           this.alertservice.error("Er zijn geen gebruikers gevonden in de database.", "alert-1");
         }
         );
-  }
-    
-  openToevoegModal(id){
-    this.adminBeheerGebruikers.openModal(id);
   }
 
   sorteerTabel(n) {

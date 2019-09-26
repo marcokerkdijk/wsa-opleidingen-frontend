@@ -21,7 +21,6 @@ import { ModalComponent } from './login-modal/modal.component';
 import { TrajectenComponent } from './trajecten/trajecten.component';
 import { BeheerTrajectComponent } from './admin/admin-beheer-traject/beheer-traject.component';
 import { BeheerGebruikersComponent } from './admin/admin-beheer-gebruikers/beheer-gebruikers.component';
-import { GebruikersModalComponent } from './admin/admin-beheer-gebruikers/gebruikers-modal/gebruikers-modal.component';
 import { GebruikersTabelComponent } from './admin/admin-beheer-gebruikers/gebruikers-tabel/gebruikers-tabel.component';
 import { TrajectTabelComponent } from './admin/admin-beheer-traject/traject-tabel/traject-tabel.component';
 import { DocentStudentenlijstComponent } from './docent/docent-studentenlijst/docent-studentenlijst.component';
@@ -67,6 +66,7 @@ import { GebruikerWijzigenComponent } from './admin/admin-beheer-gebruikers/gebr
 import { NotitiesInformatieComponent } from './student/notities-informatie/notities-informatie.component';
 import { MaakAssessmentComponent } from './admin/admin-beheer-assessments/maak-assessment/maak-assessment.component';
 import { WijzigAssessmentComponent } from './admin/admin-beheer-assessments/wijzig-assessment/wijzig-assessment.component';
+import { GebruikersToevoegenComponent } from './admin/admin-beheer-gebruikers/gebruikers-toevoegen/gebruikers-toevoegen.component';
 
 export function jwtOptionsFactory(tokenService: TokenService) {
   return {
@@ -97,7 +97,6 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     TrajectenComponent,
     BeheerTrajectComponent,
     BeheerGebruikersComponent,
-    GebruikersModalComponent,
     GebruikersTabelComponent,
     TrajectTabelComponent,
     DocentStudentenlijstComponent,
@@ -139,6 +138,7 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     NotitiesInformatieComponent,
     MaakAssessmentComponent,
     WijzigAssessmentComponent,
+    GebruikersToevoegenComponent,
   ],
   imports: [
     BrowserModule,

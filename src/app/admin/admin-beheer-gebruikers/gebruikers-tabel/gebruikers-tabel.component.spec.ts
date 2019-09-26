@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { GebruikersTabelComponent } from './gebruikers-tabel.component';
 
 describe('GebruikersTabelComponent', () => {
