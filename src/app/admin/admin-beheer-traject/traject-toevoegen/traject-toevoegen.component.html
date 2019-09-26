@@ -30,8 +30,8 @@
                                 <span class="slider round"></span>
                             </label>
                             <ng-container>
-                                <span class="zichtbaartekst" *ngIf="traject.zichtbaar">Het traject is zichtbaar.</span>
-                                <span class="zichtbaartekst" *ngIf="!traject.zichtbaar">Het traject is niet zichtbaar.</span>
+                                <span id=trajectZichtbaar class="zichtbaartekst" *ngIf="traject.zichtbaar">Het traject is zichtbaar.</span>
+                                <span id=trajectOnzichtbaar class="zichtbaartekst" *ngIf="!traject.zichtbaar">Het traject is niet zichtbaar.</span>
                             </ng-container>
                         </div>
                     </div>
