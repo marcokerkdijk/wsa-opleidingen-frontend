@@ -35,16 +35,16 @@
                     <form [formGroup]="wijzigWachtwoordForm">
                         <fieldset>
                             <div class="form-field">
-                                <input name="huidigwachtwoord1" formControlName="huidigwachtwoord" type="password" 
+                                <input id="huidigeWachtwoord" name="huidigwachtwoord1" formControlName="huidigwachtwoord" type="password" 
                                     placeholder="Huidig wachtwoord" maxlength="25">
                             </div>
                             <div class="form-field">
-                                <input name="nieuwWachtwoord" formControlName="nieuwwachtwoord" type="password"
+                                <input id="nieuweWachtwoord" name="nieuwWachtwoord" formControlName="nieuwwachtwoord" type="password"
                                     placeholder="Nieuw wachtwoord" maxlength="25">
                             </div>
                         </fieldset>
                         <div>
-                            <button class="button button-primary" (click)="wijzigWachtwoord(token.gebruiker_id);">
+                            <button id="wijzigWachtwoordButton" class="button button-primary" (click)="wijzigWachtwoord(token.gebruiker_id);">
                                 Wijzigen
                             </button>
                         </div>
