@@ -41,10 +41,10 @@
                     id="emailadresinvoer" maxlength="256">
             </div>
             <div class="col-sm-6">
-                    <p>wachtwoord</p>
-                    <input name="wachtwoord" class="form-control" [(ngModel)]="gebruikerInvoer.wachtwoord" type="text"
-                        id="wachtwoordinvoer" maxlength="256">
-            </div>   
+                <p>wachtwoord</p>
+                <input name="wachtwoord" class="form-control" [(ngModel)]="gebruikerInvoer.wachtwoord" type="text"
+                    id="wachtwoordinvoer" maxlength="256">
+            </div>
         </div>
         <div class="row">
             <div class="col-sm-6">
@@ -59,24 +59,29 @@
                 </div>
             </div>
             <div class="col-sm-6">
-                    <p>Activatie gebruiker</p>
-                    <div>
-                        <label class="switch">
-                            <input type="checkbox" [(ngModel)]="gebruikerInvoer.actief">
-                            <span class="slider round" id="actiefslider"></span>
-                        </label>
-                        <ng-container>
-                            <span class="actieftekst" id="actief" *ngIf="gebruikerInvoer.actief">De gebruiker is actief.</span>
-                            <span class="actieftekst" id="niet-actief" *ngIf="!gebruikerInvoer.actief">De gebruiker is niet actief.</span>
-                        </ng-container>
-                    </div>
+                <p>Activatie gebruiker</p>
+                <div>
+                    <label class="switch">
+                        <input type="checkbox" [(ngModel)]="gebruikerInvoer.actief">
+                        <span class="slider round" id="actiefslider"></span>
+                    </label>
+                    <ng-container>
+                        <span class="actieftekst" id="actief" *ngIf="gebruikerInvoer.actief">De gebruiker is
+                            actief.</span>
+                        <span class="actieftekst" id="niet-actief" *ngIf="!gebruikerInvoer.actief">De gebruiker is niet
+                            actief.</span>
+                    </ng-container>
                 </div>
+            </div>
         </div>
         <div class="row">
             <div class="col-sm-6"></div>
             <div class="col-sm-6 bottom">
                 <button id="gebruikeropslaan" (click)="toevoegenGebruiker(gebruikerInvoer);">Gebruiker opslaan</button>
             </div>
+        </div>
+        <div id="melding">
+            <alert id="alert-1"></alert>
         </div>
     </div>
 </div>
