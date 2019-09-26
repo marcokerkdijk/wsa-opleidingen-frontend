@@ -11,7 +11,6 @@ import { Router } from '@angular/router';
 export class BeheerGebruikersComponent implements OnInit {
   gebruikerInvoer: Gebruiker = new Gebruiker;
   actieveGebruikers : Gebruiker[];
-  // bodyText:string;
  
   constructor(private router: Router, private gebruikerService : GebruikersService) { }
  
