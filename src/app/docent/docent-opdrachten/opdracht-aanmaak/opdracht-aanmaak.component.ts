@@ -5,6 +5,7 @@ import { OpdrachtService } from 'src/app/services/opdracht.service';
 import { OpdrachtType } from 'src/app/model/opdracht-type.enum';
 import { TrajectService } from 'src/app/services/traject.service';
 import { TrajectOnderdeel } from 'src/app/Objecten/traject-onderdeel';
+import { AlertService } from 'src/app/_alert';
 
 @Component({
   selector: 'wsa-opdracht-aanmaak',
@@ -17,7 +18,7 @@ export class OpdrachtAanmaakComponent implements OnInit {
   trajectonderdelen: TrajectOnderdeel[] = new Array;
 
   constructor(private activeRoute: ActivatedRoute, private opdrachtservice: OpdrachtService,
-              private router: Router, private trajectservice: TrajectService) { }
+              private router: Router, private trajectservice: TrajectService, private alertservice: AlertService) { }
 
   ngOnInit() {
     const id = +this.activeRoute.snapshot.paramMap.get('id');
@@ -34,8 +35,13 @@ export class OpdrachtAanmaakComponent implements OnInit {
   opdrachtOpslaan(opdracht: Opdracht): void {
     opdracht.type = OpdrachtType.OPDRACHT;
     this.opdrachtservice.maakOpdrachtAan(opdracht)
-        .subscribe(response => this.router.navigateByUrl('/docent/docent-traject').then(success => {
-          this.router.navigateByUrl('/docent/docent-traject/docent-opdrachten');
-        }));
+        .subscribe(response => {
+          this.router.navigateByUrl('/docent/docent-traject').then(success => {
+            this.router.navigateByUrl('/docent/docent-traject/docent-opdrachten');
+          });
+        },
+        (error) => {
+          this.alertservice.error("Er gaat iets fout bij het aanmaken van de opdracht.", "alert-1");
+        });
   }
 }
