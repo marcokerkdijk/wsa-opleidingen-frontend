@@ -29,7 +29,7 @@ export class GebruikerWijzigenComponent implements OnInit {
   }
 
   wijzigGebruiker(gebruiker: Gebruiker) {
-    this.gebruikerService.gebruikerToevoegen(gebruiker)
+    this.gebruikerService.wijzigGebruiker(gebruiker, gebruiker.id)
       .subscribe(response => 
         {
           this.router.navigateByUrl('/' + this.rolIngelogdeGebruiker).then(Succes => {

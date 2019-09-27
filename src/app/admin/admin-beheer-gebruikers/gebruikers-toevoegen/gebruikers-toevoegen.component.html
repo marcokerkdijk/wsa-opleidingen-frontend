@@ -2,7 +2,7 @@
     <div>
         <div class="row">
             <div class="col-sm-4" id="paginatitel">
-                <h5>Gebruiker Toevoegen</h5>
+                <h5>Gebruiker toevoegen</h5>
             </div>
             <div class="col-sm-6">
             </div>
@@ -41,7 +41,7 @@
                     id="emailadresinvoer" maxlength="256">
             </div>
             <div class="col-sm-6">
-                <p>wachtwoord</p>
+                <p>Wachtwoord</p>
                 <input name="wachtwoord" class="form-control" [(ngModel)]="gebruikerInvoer.wachtwoord" type="text"
                     id="wachtwoordinvoer" maxlength="256">
             </div>
@@ -75,10 +75,10 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-6"></div>
             <div class="col-sm-6 bottom">
                 <button id="gebruikeropslaan" (click)="toevoegenGebruiker(gebruikerInvoer);">Gebruiker opslaan</button>
             </div>
+            <div class="col-sm-6"></div>
         </div>
         <div id="melding">
             <alert id="alert-1"></alert>
