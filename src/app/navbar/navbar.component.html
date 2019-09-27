@@ -114,11 +114,11 @@
     <form [formGroup]="loginform">
         <fieldset>
             <div class="form-field">
-                <input name="emailadres" formControlName="emailadres" placeholder="E-mailadres">
+                <input name="emailadres" formControlName="emailadres" placeholder="E-mailadres" required>
             </div>
             <div class="form-field">
                 <input name="wachtwoord" formControlName="wachtwoord" type="password" placeholder="Wachtwoord"
-                    maxlength="25">
+                    maxlength="25" required>
             </div>
         </fieldset>
         <div>
@@ -132,7 +132,7 @@
     <div id="wwvergetendiv" *ngIf="vergeten">
         <p>Voer uw e-mailadres in:</p>
         <input [(ngModel)]="emailgebruiker" name="email" id="emailInput" placeholder="E-mailadres"
-            (keydown)="keyDownFunction($event)">
+            (keydown)="keyDownFunction($event)" required>
         <button class="button button-primary" (click)="wachtwoordVergeten();">Verzenden</button>
     </div>
     <div id="melding">

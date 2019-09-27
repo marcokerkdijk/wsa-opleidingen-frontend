@@ -96,6 +96,10 @@ export class NavbarComponent implements OnInit {
           }
         );
     }
+    else {
+      this.spinner.hide("laadspinner");
+      this.alertService.error("Voer een e-mail adres of wachtwoord in.", "alert-1");
+    }
   }
 
   public navigeerNaar(url: string): void {
@@ -104,6 +108,7 @@ export class NavbarComponent implements OnInit {
 
   public toggleVergeten(): void {
     this.vergeten = !this.vergeten;
+    this.emailgebruiker = '';
     this.alertService.clear("alert-1");
   }
 
@@ -146,5 +151,7 @@ export class NavbarComponent implements OnInit {
 
   closeModal(id: string) {
     this.modalService.close(id);
+    this.alertService.clear("alert-1");
+    this.vergeten = false;
   }
 }
