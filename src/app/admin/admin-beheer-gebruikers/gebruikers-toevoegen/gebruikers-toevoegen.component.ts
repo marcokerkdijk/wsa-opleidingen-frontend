@@ -23,15 +23,14 @@ export class GebruikersToevoegenComponent implements OnInit {
 
   toevoegenGebruiker(gebruiker: Gebruiker) {
     this.gebruikerService.gebruikerToevoegen(gebruiker)
-      .subscribe(response => 
-        {
-          this.router.navigateByUrl('/' + this.rolIngelogdeGebruiker).then(Succes => {
-          this.router.navigateByUrl('/'+ this.rolIngelogdeGebruiker + '/beheer-gebruikers')
+      .subscribe(response => {
+        this.router.navigateByUrl('/' + this.rolIngelogdeGebruiker).then(Succes => {
+          this.router.navigateByUrl('/' + this.rolIngelogdeGebruiker + '/beheer-gebruikers')
         });
       },
-      (error) => {
-        this.alertService.error("Vul alle velden in alvorens op opslaan te klikken.", "alert-1");
-      });
+        (error) => {
+          this.alertService.error("Vul alle verplichte velden in alvorens Gebruiker Opslaan te klikken.", "alert-1");
+        });
   }
 
 }
