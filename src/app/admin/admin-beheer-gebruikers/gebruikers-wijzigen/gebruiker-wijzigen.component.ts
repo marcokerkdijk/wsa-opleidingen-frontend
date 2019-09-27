@@ -14,8 +14,8 @@ export class GebruikerWijzigenComponent implements OnInit {
   gebruikerInvoer: Gebruiker = new Gebruiker;
   rolIngelogdeGebruiker: string;
 
-  constructor(private activeRouter: ActivatedRoute, private router: Router, 
-    private gebruikerService: GebruikersService, private alertService: AlertService, 
+  constructor(private activeRouter: ActivatedRoute, private router: Router,
+    private gebruikerService: GebruikersService, private alertService: AlertService,
     private authenticatieservice: AutenticatieService) { }
 
   ngOnInit() {
@@ -30,15 +30,13 @@ export class GebruikerWijzigenComponent implements OnInit {
 
   wijzigGebruiker(gebruiker: Gebruiker) {
     this.gebruikerService.wijzigGebruiker(gebruiker, gebruiker.id)
-      .subscribe(response => 
-        {
-          this.router.navigateByUrl('/' + this.rolIngelogdeGebruiker).then(Succes => {
-          this.router.navigateByUrl('/'+ this.rolIngelogdeGebruiker + '/beheer-gebruikers')
+      .subscribe(response => {
+        this.router.navigateByUrl('/' + this.rolIngelogdeGebruiker).then(Succes => {
+          this.router.navigateByUrl('/' + this.rolIngelogdeGebruiker + '/beheer-gebruikers')
         });
       },
       (error) => {
-        this.alertService.error("Vul alle velden in alvorens op opslaan te klikken.", "alert-1");
-      });
+        this.alertService.error("Vul alle verplichte velden in alvorens Gebruiker Opslaan te klikken.", "alert-1");
+       });
   }
-
 }
