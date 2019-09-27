@@ -44,10 +44,10 @@ import { DocentAantekeningenComponent } from './docent/docent-aantekeningen/doce
 import { AantekeningAanmaakComponent } from './docent/docent-aantekeningen/aantekening-aanmaak/aantekening-aanmaak.component';
 import { AantekeningWijzigComponent } from './docent/docent-aantekeningen/aantekening-wijzig/aantekening-wijzig.component';
 import { GebruikerWijzigenComponent } from './admin/admin-beheer-gebruikers/gebruikers-wijzigen/gebruiker-wijzigen.component';
+import { GebruikersToevoegenComponent } from './admin/admin-beheer-gebruikers/gebruikers-toevoegen/gebruikers-toevoegen.component';
 import { NotitiesInformatieComponent } from './student/notities-informatie/notities-informatie.component';
 import { MaakAssessmentComponent } from './admin/admin-beheer-assessments/maak-assessment/maak-assessment.component';
 import { WijzigAssessmentComponent } from './admin/admin-beheer-assessments/wijzig-assessment/wijzig-assessment.component';
-
 
 const routes: Routes = [
 
@@ -74,6 +74,8 @@ const routes: Routes = [
       { path: '', redirectTo: 'admin', pathMatch: 'full' },
       { path: "beheer-trajectgebruikers/:id", component: BeheerTrajectgebruikersComponent},
       { path: '', redirectTo: 'admin', pathMatch: 'full' },
+      { path: "gebruikers-toevoegen", component: GebruikersToevoegenComponent},
+      { path: '', redirectTo: 'admin', pathMatch: 'full'},
       { path: "gebruiker-wijzigen/:id", component: GebruikerWijzigenComponent},
       { path: '', redirectTo: 'admin', pathMatch: 'full'},
       { path: "admin-beheer-trajectgebruikers/:id", component: BeheerTrajectgebruikersComponent},

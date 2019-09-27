@@ -1,9 +1,8 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { AutenticatieService, JwtResponse, JwtToken } from "../services/autenticatie.service";
+import { AutenticatieService, JwtResponse } from "../services/autenticatie.service";
 import { Router } from "@angular/router";
 import { TokenService } from "../services/token.service";
-
 import { ModalService } from '../services/modal.service';
 import { WachtwoordVergetenService } from '../services/wachtwoord-vergeten.service';
 import { AlertService } from '../_alert';

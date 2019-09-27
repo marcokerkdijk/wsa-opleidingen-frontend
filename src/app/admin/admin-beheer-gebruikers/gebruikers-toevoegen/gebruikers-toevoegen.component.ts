@@ -6,29 +6,22 @@ import { AutenticatieService } from 'src/app/services/autenticatie.service';
 import { AlertService } from 'src/app/_alert';
 
 @Component({
-  selector: 'wsa-gebruiker-wijzigen',
-  templateUrl: './gebruiker-wijzigen.component.html',
-  styleUrls: ['./gebruiker-wijzigen.component.scss']
+  selector: 'wsa-gebruikers-toevoegen',
+  templateUrl: './gebruikers-toevoegen.component.html',
+  styleUrls: ['./gebruikers-toevoegen.component.scss']
 })
-export class GebruikerWijzigenComponent implements OnInit {
+export class GebruikersToevoegenComponent implements OnInit {
   gebruikerInvoer: Gebruiker = new Gebruiker;
   rolIngelogdeGebruiker: string;
 
-  constructor(private activeRouter: ActivatedRoute, private router: Router, 
-    private gebruikerService: GebruikersService, private alertService: AlertService, 
-    private authenticatieservice: AutenticatieService) { }
+  constructor(private activeRouter: ActivatedRoute, private router: Router,
+    private gebruikerService: GebruikersService, private authenticatieservice: AutenticatieService, private alertService: AlertService) { }
 
   ngOnInit() {
-    const id = +this.activeRouter.snapshot.paramMap.get('id');
-    this.haalGebruikerOpId(id);
     this.rolIngelogdeGebruiker = this.authenticatieservice.krijgRol();
   }
 
-  haalGebruikerOpId(id: number): void {
-    this.gebruikerService.vraagGebruikerOpId(id).subscribe(gebruiker => this.gebruikerInvoer = gebruiker);
-  }
-
-  wijzigGebruiker(gebruiker: Gebruiker) {
+  toevoegenGebruiker(gebruiker: Gebruiker) {
     this.gebruikerService.gebruikerToevoegen(gebruiker)
       .subscribe(response => 
         {
