@@ -3,8 +3,8 @@
         <div class="dropdown" id="FilterActief">
             <div id='FilterKnopGebruiker'><button>Filteren</button></div>
             <div class="dropdown-content">
-                <button id='filterActief' (click)="filterTabel('Ja',3)">Filter op actief</button>
-                <button id='filterNonActief' (click)="filterTabel('Nee',3)">Filter op non-actief</button>
+                <button id='filterActief' (click)="filterTabel('Ja',4)">Filter op actief</button>
+                <button id='filterNonActief' (click)="filterTabel('Nee',4)">Filter op non-actief</button>
                 <button id='filterAdmin' (click)="filterTabel('Admin',2)">Filter op administrator</button>
                 <button id='filterStudent' (click)="filterTabel('Student',2)">Filter op student</button>
                 <button id='filterDocent' (click)="filterTabel('Docent',2)">Filter op docent</button>
@@ -22,16 +22,18 @@
                     </th>
                     <th>Rol <i id='sorteerPijlRol' class="fa fa-fw fa-sort" (click)="sorteerTabel(2)">
                         </i></th>
-                    <th>Actief <i id='sorteerPijlActief' class="fa fa-fw fa-sort" (click)="sorteerTabel(3)"></i>
+                    <th>Emailadres <i id='sorteerPijlRol' class="fa fa fw fa-sort" (click)="sorteerTabel(3)"></i></th>
+                    <th>Actief <i id='sorteerPijlActief' class="fa fa-fw fa-sort" (click)="sorteerTabel(4)"></i>
                     </th>
                     <th>Bewerken</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let Gebruiker of actieveGebruikers" id="tablerow{{Gebruiker.id}}">
-                    <td>{{Gebruiker.voornaam}}</td>
-                    <td>{{Gebruiker.tussenvoegsel}} {{Gebruiker.achternaam}}</td>
-                    <td class="rolnaam">{{Gebruiker.rol}}</td>
+                    <td id="voornaam{{Gebruiker.id}}">{{Gebruiker.voornaam}}</td>
+                    <td id="achternaam{{Gebruiker.id}}">{{Gebruiker.tussenvoegsel}} {{Gebruiker.achternaam}}</td>
+                    <td id="rol{{Gebruiker.id}}" class="rolnaam">{{Gebruiker.rol}}</td>
+                    <td id="emailadres{{Gebruiker.id}}">{{Gebruiker.emailadres}}</td>
                     <td id='actief'>
                         <div *ngIf="Gebruiker.actief; else elseBlock">Ja</div>
                         <ng-template #elseBlock>Nee</ng-template>
