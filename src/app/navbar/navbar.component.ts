@@ -1,9 +1,8 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { AutenticatieService, JwtResponse, JwtToken } from "../services/autenticatie.service";
+import { AutenticatieService, JwtResponse } from "../services/autenticatie.service";
 import { Router } from "@angular/router";
 import { TokenService } from "../services/token.service";
-
 import { ModalService } from '../services/modal.service';
 import { WachtwoordVergetenService } from '../services/wachtwoord-vergeten.service';
 import { AlertService } from '../_alert';
@@ -97,6 +96,10 @@ export class NavbarComponent implements OnInit {
           }
         );
     }
+    else {
+      this.spinner.hide("laadspinner");
+      this.alertService.error("Voer een e-mail adres of wachtwoord in.", "alert-1");
+    }
   }
 
   public navigeerNaar(url: string): void {
@@ -105,6 +108,7 @@ export class NavbarComponent implements OnInit {
 
   public toggleVergeten(): void {
     this.vergeten = !this.vergeten;
+    this.emailgebruiker = '';
     this.alertService.clear("alert-1");
   }
 
@@ -147,5 +151,7 @@ export class NavbarComponent implements OnInit {
 
   closeModal(id: string) {
     this.modalService.close(id);
+    this.alertService.clear("alert-1");
+    this.vergeten = false;
   }
 }
