@@ -6,7 +6,7 @@ import { Uitwerking } from 'src/app/Objecten/uitwerking';
 import { UitwerkingService } from 'src/app/services/uitwerking.service';
 import { AutenticatieService } from 'src/app/services/autenticatie.service';
 import { TrajectOnderdeel } from 'src/app/Objecten/traject-onderdeel';
-import { VirtualTimeScheduler } from 'rxjs';
+import { UitwerkingType } from 'src/app/model/uitwerking-type.enum';
 
 @Component({
   selector: 'wsa-opdracht',
@@ -42,6 +42,7 @@ export class OpdrachtComponent implements OnInit {
   }
 
   verstuurUitwerking(uitwerking: Uitwerking){
+    uitwerking.type = UitwerkingType.OPDRACHTUITWERKING;
     this.uitwerkingservice.maakUitwerking(this.gebruiker_id, this.opdracht.id, uitwerking)
         .subscribe(response => this.router.navigateByUrl('student/opdrachten'));
   }

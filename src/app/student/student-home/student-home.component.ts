@@ -3,6 +3,7 @@ import { Traject } from 'src/app/Objecten/traject';
 import { AutenticatieService, JwtToken } from 'src/app/services/autenticatie.service';
 import { TrajectService } from 'src/app/services/traject.service';
 import { AlertService } from 'src/app/_alert';
+import { DataserviceService } from 'src/app/services/dataservice.service';
 
 @Component({
   selector: 'wsa-student-home',
@@ -10,12 +11,13 @@ import { AlertService } from 'src/app/_alert';
   styleUrls: ['./student-home.component.scss']
 })
 export class StudentHomeComponent implements OnInit, AfterViewChecked {
-  gebruiker:JwtToken;
+  gebruiker: JwtToken;
   index: number = 0;
-  trajecten: Traject[];
+  trajecten: Traject[] = new Array;
+  trajectVanGebruiker: Traject = new Traject;
   
   constructor(private authenticatieService:AutenticatieService, private trajectService: TrajectService,
-              private alertservice: AlertService ) { }
+              private alertservice: AlertService, private dataservice: DataserviceService) { }
 
   ngOnInit() {
     this.haalGebruikerOp();
@@ -38,10 +40,15 @@ export class StudentHomeComponent implements OnInit, AfterViewChecked {
   HaalTrajectBijGebruikerOp(){
     this.trajectService.geefAlleTrajectenVanGebruiker(this.gebruiker.gebruiker_id).subscribe(trajecten => {
       this.trajecten = trajecten;
+      this.trajectVanGebruiker = trajecten[0];
     },
     (error) => {
       this.alertservice.error("Je bent nog niet aan een traject gekoppeld.", "alert-1");
     });
+  }
+
+  setTraject(): void {
+    this.dataservice.setTraject_id(this.trajectVanGebruiker.id);
   }
 
   sorteerTabel(n) {

@@ -1,5 +1,6 @@
 import { Opdracht } from './opdracht';
 import { Gebruiker } from './gebruiker';
+import { UitwerkingType } from '../model/uitwerking-type.enum';
 
 export class Uitwerking {
     id: number;
@@ -9,4 +10,5 @@ export class Uitwerking {
     gebruiker: Gebruiker;
     opmerking: string;
     gelezen: boolean;
+    type: UitwerkingType;
 }
