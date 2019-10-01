@@ -40,8 +40,6 @@
                 <input name="emailadres" class="form-control" [(ngModel)]="gebruikerInvoer.emailadres" type="text"
                     id="emailadresinvoer" maxlength="256">
             </div>
-        </div>
-        <div class="row">
             <div class="col-sm-6">
                 <p>Rol</p>
                 <div>
@@ -53,6 +51,8 @@
                     </select>
                 </div>
             </div>
+        </div>
+        <!-- <div class="row">
             <div class="col-sm-6">
                 <p>Activatie gebruiker</p>
                 <div>
@@ -68,7 +68,7 @@
                     </ng-container>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="row">
             <div class="col-sm-6 bottom">
                 <button id="gebruikeropslaan" (click)="toevoegenGebruiker(gebruikerInvoer);">Gebruiker opslaan</button>
