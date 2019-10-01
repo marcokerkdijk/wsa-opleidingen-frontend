@@ -5,6 +5,7 @@ import { TrajectonderdeelService } from 'src/app/services/trajectonderdeel.servi
 import { OpdrachtService } from 'src/app/services/opdracht.service';
 import { Router } from '@angular/router';
 import { OpdrachtType } from 'src/app/model/opdracht-type.enum';
+import { AutenticatieService } from 'src/app/services/autenticatie.service';
 
 @Component({
   selector: 'wsa-maak-assessment',
@@ -12,14 +13,16 @@ import { OpdrachtType } from 'src/app/model/opdracht-type.enum';
   styleUrls: ['./maak-assessment.component.scss']
 })
 export class MaakAssessmentComponent implements OnInit {
+  rolIngelogdeGebruiker: string;
   assessment: Opdracht = new Opdracht;
   trajectonderdelen: TrajectOnderdeel[] = new Array;
 
   constructor(private trajectonderdeelservice: TrajectonderdeelService, private opdrachtservice: OpdrachtService,
-              private router: Router) { }
+              private router: Router, private authenticatieService: AutenticatieService) { }
 
   ngOnInit() {
     this.haalTrajectonderdelenOp();
+    this.rolIngelogdeGebruiker = this.authenticatieService.krijgRol();
   }
 
   haalTrajectonderdelenOp(): void {
@@ -31,7 +34,7 @@ export class MaakAssessmentComponent implements OnInit {
   assessmentOpslaan(assessment: Opdracht): void {
     assessment.type = OpdrachtType.ASSESSMENT;
     this.opdrachtservice.maakOpdrachtAan(assessment).subscribe(response => {
-      this.router.navigateByUrl('admin/beheer-assessments');
+      this.router.navigateByUrl(this.rolIngelogdeGebruiker + '/beheer-assessments');
     });
   }
 }

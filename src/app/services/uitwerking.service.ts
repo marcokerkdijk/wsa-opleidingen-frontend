@@ -23,4 +23,12 @@ export class UitwerkingService {
   wijzigUitwerking(gebruiker_id: number, uitwerking: Uitwerking) {
     return this.http.put<Uitwerking>(`${this.api}/WijzigUitwerking/` + gebruiker_id, uitwerking);
   }
+
+  geefAssessmentUitwerkingenVanTraject(traject_id: number): Observable<Uitwerking[]> {
+    return this.http.get<Uitwerking[]>(`${this.api}/geefAssessmentUitwerkingenVanTraject/` + traject_id);
+  }
+
+  haalUitwerkingOp(uitwerking_id: number): Observable<Uitwerking> {
+    return this.http.get<Uitwerking>(`${this.api}/geefUitwerking/` + uitwerking_id);
+  }
 }

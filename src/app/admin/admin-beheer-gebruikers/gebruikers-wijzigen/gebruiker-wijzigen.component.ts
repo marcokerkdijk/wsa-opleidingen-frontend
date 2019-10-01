@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { GebruikersService } from 'src/app/services/gebruikers.service';
 import { AutenticatieService } from 'src/app/services/autenticatie.service';
 import { AlertService } from 'src/app/_alert';
+import { isNullOrUndefined } from 'util';
 
 @Component({
   selector: 'wsa-gebruiker-wijzigen',
@@ -29,15 +30,20 @@ export class GebruikerWijzigenComponent implements OnInit {
   }
 
   wijzigGebruiker(gebruiker: Gebruiker) {
-    this.gebruikerService.wijzigGebruiker(gebruiker, gebruiker.id)
-      .subscribe(response => {
-        this.router.navigateByUrl('/' + this.rolIngelogdeGebruiker).then(Succes => {
-          this.router.navigateByUrl('/' + this.rolIngelogdeGebruiker + '/beheer-gebruikers')
-        });
-      },
+    if (gebruiker.voornaam && gebruiker.achternaam && gebruiker.emailadres) {
+      this.gebruikerService.wijzigGebruiker(gebruiker, gebruiker.id)
+        .subscribe(response => {
+          this.router.navigateByUrl('/' + this.rolIngelogdeGebruiker).then(Succes => {
+            this.router.navigateByUrl('/' + this.rolIngelogdeGebruiker + '/beheer-gebruikers')
+          });
+        },
         (error) => {
-          this.alertService.error("Vul alle verplichte velden in alvorens Gebruiker Opslaan te klikken.", "alert-1");
+          this.alertService.error("Er gaat iets mis bij het wijzigen van de gebruiker.", "alert-1");
         });
+    }
+    else {
+      this.alertService.clear("alert-1");
+      this.alertService.error("Vul alle verplichte velden in alvorens op 'Gebruiker Opslaan' te klikken.", "alert-1");
+    }
   }
-
 }

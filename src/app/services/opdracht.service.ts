@@ -48,4 +48,12 @@ export class OpdrachtService {
   wijzigOpdrachtMetDTO(opdrachtDTO: OpdrachtDTO): Observable<any> {
     return this.http.put<OpdrachtDTO>(`${this.api}/wijzigOpdrachtMetDTO`, opdrachtDTO);
   }
+
+  geefZichtbareOpdrachtenVanTraject(traject_id: Number): Observable<Opdracht[]> {
+    return this.http.get<Opdracht[]>(`${this.api}/geefZichtbareOpdrachtenVanTraject/` + traject_id);
+  }
+
+  geefAssessmentsVanTraject(traject_id: number): Observable<Opdracht[]> {
+    return this.http.get<Opdracht[]>(`${this.api}/geefAssessmentsVanTraject/` + traject_id);
+  }
 }

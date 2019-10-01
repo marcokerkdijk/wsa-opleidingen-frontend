@@ -4,29 +4,55 @@
             {{traject.naam}}
         </div>
         <div class="col-sm-6">
-            <p>
-                Controleer hier alle resultaten van de studenten.
-            </p>
         </div>
     </div>
     <div class="row">
-        Tabel met resultaten.
-        <table class="table table-bordered col-lg-12">
+        <div class="col-sm-3" id="buttondiv">
+            <button id="resultaatknop" (click)="navigeerNaar('resultaat-invoeren');">Resultaat toevoegen</button>
+        </div>
+
+        <div class="col-sm-9" id="filterdiv">
+            <input id="filterinvoer" [(ngModel)]="filterwaarde" (keyup)="filterStudenten(filterwaarde);"
+                placeholder="Filter studenten...">
+        </div>
+
+    </div>
+    <div class="row">
+        <table class="table table-bordered col-lg-12" id="uitwerkingtabel">
             <thead id="table-bottom">
                 <tr>
+                    <th id="Gebruiker">
+                        Student
+                        <i id='sorteerPijlVoornaam' class="fa fa-fw fa-sort" (click)="sorteerTabel(0)"></i>
+                    </th>
+                    <th id="Opdracht">
+                        Opdracht
+                        <i id='sorteerPijlOpdracht' class="fa fa-fw fa-sort" (click)="sorteerTabel(1)"></i>
+                    </th>
                     <th id="Resultaat">Resultaat</th>
-                    <th id="Opdracht">Opdracht</th>
-                    <th id="Gebruiker">Student</th>
+                    <th id="Wijzigen">Wijzigen</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let Uitwerking of uitwerkingenlijst">
-                    <td id="Resultaat{{Uitwerking.id}}">{{Uitwerking.resultaat}}</td>
+                    <td id="Gebruiker{{Uitwerking.id}}">
+                        {{Uitwerking.gebruiker.voornaam}}
+                        {{Uitwerking.gebruiker.tussenvoegsel}}
+                        {{Uitwerking.gebruiker.achternaam}}
+                    </td>
                     <td id="Opdracht{{Uitwerking.id}}">{{Uitwerking.opdracht.titel}}</td>
-                    <td id="Gebruiker{{Uitwerking.id}}">{{Uitwerking.gebruiker.voornaam}}
-                        {{Uitwerking.gebruiker.achternaam}}</td>
+                    <td id="Resultaat{{Uitwerking.id}}">{{Uitwerking.resultaat}}</td>
+                    <td>
+                        <div id="pencil">
+                            <i class='fa fa-pencil' id="pencil{{Uitwerking.id}}"
+                                (click)="setTrajectId(); naarWijzigPagina(Uitwerking.id);"></i>
+                        </div>
+                    </td>
                 </tr>
             </tbody>
         </table>
+        <div id="melding">
+            <alert id="alert-1"></alert>
+        </div>
     </div>
 </div>

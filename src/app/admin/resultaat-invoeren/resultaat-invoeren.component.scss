@@ -1,19 +1,19 @@
 .container-fluid {
-    padding-left: 19%;
-    padding-right: 19%;
     margin-top: 5%;
     margin-bottom: 3%;
+    padding-left: 19%;
+    padding-right: 19%;
 }
 
-.row {
+.row{
     padding-top: 2%;
 }
 
-.col-sm-3 {
+#resultaattitel {
     padding-left: 0;
 }
 
-h6 {
+h5 {
     letter-spacing: 1px;
     color: #808285;
     font-size: 26px;
@@ -21,21 +21,35 @@ h6 {
     line-height: 32px;
 }
 
+.grijs {
+    background-color: rgba($color: #a9a9a9, $alpha: 0.05);
+    padding-bottom: 2%;
+}
+
 p {
     font-family: "Working Spirit";
     font-size: 14px;
     line-height: 24px;
     color:  #808285;
+    margin-bottom: 1%;
 }
 
-.buttontd {
-    padding-left: 0;
+#assessmentkeuze, #gebruikerkeuze {
+    width: 100%;
+    border-radius: 0;
 }
 
-button {
+#resultaatinvoer {
+    width: 100%;
+    min-height: 150px;
+    border-radius: 0;
+    resize: none;
+}
+
+button{
     border-color: #00aeef;
     color: #00aeef;
-    width: 100%;
+    width: 230px;
     text-transform: uppercase;
     border: 1px solid  #00aeef;
     background-color: transparent;
@@ -50,14 +64,11 @@ button {
     touch-action: manipulation;
     white-space: nowrap;
     line-height: 1.42857;
+    margin-top: 5px;
 }
 
-button:hover {
+button:hover{
     cursor: pointer;
     color: white;
     background-color: #00aeef;
-}
-
-#melding {
-    width: 100%;
 }

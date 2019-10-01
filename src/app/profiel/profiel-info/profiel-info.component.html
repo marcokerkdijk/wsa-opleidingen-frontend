@@ -36,11 +36,11 @@
                         <fieldset>
                             <div class="form-field">
                                 <input id="huidigeWachtwoord" name="huidigwachtwoord1" formControlName="huidigwachtwoord" type="password" 
-                                    placeholder="Huidig wachtwoord" maxlength="25">
+                                    placeholder="Huidig wachtwoord" minlength="6">
                             </div>
                             <div class="form-field">
                                 <input id="nieuweWachtwoord" name="nieuwWachtwoord" formControlName="nieuwwachtwoord" type="password"
-                                    placeholder="Nieuw wachtwoord" maxlength="25">
+                                    placeholder="Nieuw wachtwoord" minlength="6">
                             </div>
                         </fieldset>
                         <div>
@@ -49,6 +49,9 @@
                             </button>
                         </div>
                     </form>
+                </div>
+                <div id="melding">
+                    <alert id="alert-1"></alert>
                 </div>
             </div>
         </div>
