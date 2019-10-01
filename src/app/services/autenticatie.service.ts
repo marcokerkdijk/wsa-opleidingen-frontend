@@ -1,12 +1,12 @@
-import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
-import {environment} from "../../environments/environment";
-import {Observable} from "rxjs";
-import {JwtHelperService} from "@auth0/angular-jwt";
-import {GebruikersRol} from "../model/GebruikersRol";
-import {isNotNullOrUndefined} from "codelyzer/util/isNotNullOrUndefined";
-import {TokenService} from "./token.service";
-import {isNullOrUndefined} from "util";
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
+import { environment } from "../../environments/environment";
+import { Observable } from "rxjs";
+import { JwtHelperService } from "@auth0/angular-jwt";
+import { GebruikersRol } from "../model/GebruikersRol";
+import { isNotNullOrUndefined } from "codelyzer/util/isNotNullOrUndefined";
+import { TokenService } from "./token.service";
+import { isNullOrUndefined } from "util";
 
 @Injectable({
   providedIn: 'root'
@@ -67,7 +67,7 @@ export class AutenticatieService {
 
     let rol = this.jwtToken.authorities[0];
 
-    switch(rol) {
+    switch (rol) {
       case 'ADMIN': {
         return '/admin';
       }
@@ -90,7 +90,7 @@ export class AutenticatieService {
 
     let rol = this.jwtToken.authorities[0];
 
-    switch(rol) {
+    switch (rol) {
       case 'ADMIN': {
         return "admin";
       }
