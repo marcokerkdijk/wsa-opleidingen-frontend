@@ -40,11 +40,6 @@
                 <input name="emailadres" class="form-control" [(ngModel)]="gebruikerInvoer.emailadres" type="text"
                     id="emailadresinvoer" maxlength="256">
             </div>
-            <div class="col-sm-6">
-                <p>wachtwoord</p>
-                <input name="wachtwoord" class="form-control" [(ngModel)]="gebruikerInvoer.wachtwoord" type="text"
-                    id="wachtwoordinvoer" maxlength="256">
-            </div>
         </div>
         <div class="row">
             <div class="col-sm-6">
@@ -83,5 +78,11 @@
         <div id="melding">
             <alert id="alert-1"></alert>
         </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="spinner col-sm-2 fixed-top">
+        <ngx-spinner id="spinner" name="laadspinner" [fullScreen]="false"></ngx-spinner>
     </div>
 </div>
