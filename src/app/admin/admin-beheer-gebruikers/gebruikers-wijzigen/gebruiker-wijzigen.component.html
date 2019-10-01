@@ -38,7 +38,7 @@
             <div class="col-sm-6">
                 <p>Emailadres</p>
                 <input name="emailadres" class="form-control" [(ngModel)]="gebruikerInvoer.emailadres" type="text"
-                    id="emailadresinvoer" maxlength="256">
+                    id="emailadresinvoer" maxlength="256" required>
             </div>
             <div class="col-sm-6">
                 <p>Rol</p>
@@ -68,10 +68,10 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-6"></div>
             <div class="col-sm-6 bottom">
                 <button id="gebruikeropslaan" (click)="wijzigGebruiker(gebruikerInvoer);">Gebruiker opslaan</button>
             </div>
+            <div class="col-sm-6"></div>
         </div>
         <div id="melding">
             <alert id="alert-1"></alert>

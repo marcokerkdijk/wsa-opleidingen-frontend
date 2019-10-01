@@ -67,6 +67,8 @@ import { NotitiesInformatieComponent } from './student/notities-informatie/notit
 import { MaakAssessmentComponent } from './admin/admin-beheer-assessments/maak-assessment/maak-assessment.component';
 import { WijzigAssessmentComponent } from './admin/admin-beheer-assessments/wijzig-assessment/wijzig-assessment.component';
 import { GebruikersToevoegenComponent } from './admin/admin-beheer-gebruikers/gebruikers-toevoegen/gebruikers-toevoegen.component';
+import { ResultaatInvoerenComponent } from './admin/resultaat-invoeren/resultaat-invoeren.component';
+import { ResultaatWijzigenComponent } from './admin/resultaat-wijzigen/resultaat-wijzigen.component';
 
 export function jwtOptionsFactory(tokenService: TokenService) {
   return {
@@ -139,6 +141,8 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     MaakAssessmentComponent,
     WijzigAssessmentComponent,
     GebruikersToevoegenComponent,
+    ResultaatInvoerenComponent,
+    ResultaatWijzigenComponent,
   ],
   imports: [
     BrowserModule,

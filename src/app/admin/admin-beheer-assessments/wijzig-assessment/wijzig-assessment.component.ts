@@ -4,6 +4,7 @@ import { TrajectonderdeelService } from 'src/app/services/trajectonderdeel.servi
 import { ActivatedRoute, Router } from '@angular/router';
 import { OpdrachtService } from 'src/app/services/opdracht.service';
 import { OpdrachtDTO } from 'src/app/Objecten/opdracht-dto';
+import { AutenticatieService } from 'src/app/services/autenticatie.service';
 
 @Component({
   selector: 'wsa-wijzig-assessment',
@@ -11,16 +12,19 @@ import { OpdrachtDTO } from 'src/app/Objecten/opdracht-dto';
   styleUrls: ['./wijzig-assessment.component.scss']
 })
 export class WijzigAssessmentComponent implements OnInit {
+  rolIngelogdeGebruiker: string;
   assessment: OpdrachtDTO = new OpdrachtDTO;
   trajectonderdelen: TrajectOnderdeel[] = new Array;
 
   constructor(private trajectonderdeelservice: TrajectonderdeelService, private activeRoute: ActivatedRoute,
-              private opdrachtservice: OpdrachtService, private router: Router) { }
+              private opdrachtservice: OpdrachtService, private router: Router,
+              private authenticatieService: AutenticatieService) { }
 
   ngOnInit() {
     const id = +this.activeRoute.snapshot.paramMap.get('id');
     this.haalAssessmentDTOOP(id);
     this.haalTrajectonderdelenOp();
+    this.rolIngelogdeGebruiker = this.authenticatieService.krijgRol();
   }
 
   haalAssessmentDTOOP(id: number): void {
@@ -37,7 +41,7 @@ export class WijzigAssessmentComponent implements OnInit {
 
   assessmentWijzigen(assessmentDTO: OpdrachtDTO): void {
     this.opdrachtservice.wijzigOpdrachtMetDTO(assessmentDTO).subscribe(response => {
-      this.router.navigateByUrl('admin/beheer-assessments');
+      this.router.navigateByUrl(this.rolIngelogdeGebruiker + '/beheer-assessments');
     });
   }
 }

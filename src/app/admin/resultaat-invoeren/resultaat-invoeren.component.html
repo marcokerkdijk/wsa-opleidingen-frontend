@@ -1,0 +1,55 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-4" id="resultaattitel">
+            <h5>Resultaat toevoegen</h5>
+        </div>
+        <div class="col-sm-8">
+        </div>
+    </div>
+    <div class="row grijs">
+        <div class="col-sm-6">
+            <p>
+                Hieronder is het mogelijk om een resultaat van een assessment in te voeren.
+                Kies het assessment waarvoor het resultaat ingevoerd moet worden en vervolgens
+                de student voor wie het resultaat bedoeld is.
+            </p>
+        </div>
+        <div class="col-sm-6">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <p>Assessment*</p>
+            <select name="assessment" class="form-control" [(ngModel)]="assessment" id="assessmentkeuze">
+                <ng-container *ngFor="let Assessment of assessments">
+                    <option id="assessmentkeuze{{Assessment.id}}" [ngValue]="Assessment">
+                        {{Assessment.titel}}
+                    </option>
+                </ng-container>
+            </select>
+        </div>
+        <div class="col-sm-6">
+            <p>Student*</p>
+            <select name="student" class="form-control" [(ngModel)]="student" id="gebruikerkeuze">
+                <ng-container *ngFor="let Student of studenten">
+                    <option id="studentkeuze{{Student.id}}" [ngValue]="Student">
+                        {{Student.voornaam}} {{Student.tussenvoegsel}} {{Student.achternaam}}
+                    </option>
+                </ng-container>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <p>Resultaat*</p>
+            <textarea name="resultaat" class="form-control" id="resultaatinvoer"
+                [(ngModel)]="resultaat.resultaat"></textarea>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <button id="opslaanknop" (click)="resultaatOpslaan(resultaat);">Resultaat opslaan</button>
+        </div>
+    </div>
+</div>

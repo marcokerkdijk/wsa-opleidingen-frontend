@@ -48,6 +48,8 @@ import { GebruikersToevoegenComponent } from './admin/admin-beheer-gebruikers/ge
 import { NotitiesInformatieComponent } from './student/notities-informatie/notities-informatie.component';
 import { MaakAssessmentComponent } from './admin/admin-beheer-assessments/maak-assessment/maak-assessment.component';
 import { WijzigAssessmentComponent } from './admin/admin-beheer-assessments/wijzig-assessment/wijzig-assessment.component';
+import { ResultaatInvoerenComponent } from './admin/resultaat-invoeren/resultaat-invoeren.component';
+import { ResultaatWijzigenComponent } from './admin/resultaat-wijzigen/resultaat-wijzigen.component';
 
 const routes: Routes = [
 
@@ -62,14 +64,14 @@ const routes: Routes = [
   },
   {path: 'admin', component: AdminComponent, canActivate: [AdminAutorisatieGuard],
     children: [
-      { path: '', redirectTo: 'admin', pathMatch: 'full'},
+      { path: '', redirectTo: 'admin', pathMatch: 'full' },
       { path: '', component: AdminHomeComponent, pathMatch: 'full'},
       { path: "beheer-traject", component: BeheerTrajectComponent},
       { path: '', redirectTo: 'admin', pathMatch: 'full' },
       { path: "traject-toevoegen", component: TrajectToevoegenComponent},
-      { path: '', redirectTo: 'admin', pathMatch: 'full'},
+      { path: '', redirectTo: 'admin', pathMatch: 'full' },
       { path: "traject-wijzigen/:id", component: TrajectWijzigenComponent},
-      { path: '', redirectTo: 'admin', pathMatch: 'full'},
+      { path: '', redirectTo: 'admin', pathMatch: 'full' },
       { path: "beheer-gebruikers", component: BeheerGebruikersComponent },
       { path: '', redirectTo: 'admin', pathMatch: 'full' },
       { path: "beheer-trajectgebruikers/:id", component: BeheerTrajectgebruikersComponent},
@@ -77,7 +79,7 @@ const routes: Routes = [
       { path: "gebruikers-toevoegen", component: GebruikersToevoegenComponent},
       { path: '', redirectTo: 'admin', pathMatch: 'full'},
       { path: "gebruiker-wijzigen/:id", component: GebruikerWijzigenComponent},
-      { path: '', redirectTo: 'admin', pathMatch: 'full'},
+      { path: '', redirectTo: 'admin', pathMatch: 'full' },
       { path: "admin-beheer-trajectgebruikers/:id", component: BeheerTrajectgebruikersComponent},
       { path: '', redirectTo: 'admin', pathMatch: 'full' },
       { path: "beheer-resultaten/:id", component: BeheerResultatenComponent},
@@ -85,8 +87,12 @@ const routes: Routes = [
       { path: "beheer-assessments", component: BeheerAssessmentsComponent},
       { path: '',  redirectTo: 'admin', pathMatch: 'full'},
       { path: "maak-assessment", component: MaakAssessmentComponent },
-      { path: '', redirectTo: 'admin', pathMatch: 'full'},
+      { path: '', redirectTo: 'admin', pathMatch: 'full' },
       { path: "wijzig-assessment/:id", component: WijzigAssessmentComponent },
+      { path: '', redirectTo: 'admin', pathMatch: 'full' },
+      { path: "resultaat-invoeren/:id", component: ResultaatInvoerenComponent },
+      { path: '', redirectTo: 'admin', pathMatch: 'full' },
+      { path: "resultaat-wijzigen/:id", component: ResultaatWijzigenComponent },
       { path: '', redirectTo: 'admin', pathMatch: 'full' },
     ]
   },
@@ -157,6 +163,8 @@ const routes: Routes = [
       { path: '', redirectTo: 'recruiter', pathMatch: 'full' },
       { path: "beheer-gebruikers", component: BeheerGebruikersComponent },
       { path: '', redirectTo: 'recruiter', pathMatch: 'full' },
+      { path: "gebruikers-toevoegen", component: GebruikersToevoegenComponent},
+      { path: '', redirectTo: 'recruiter', pathMatch: 'full'},
       { path: "gebruiker-wijzigen/:id", component: GebruikerWijzigenComponent},
       { path: '', redirectTo: 'recruiter', pathMatch: 'full'},
       { path: "beheer-assessments", component: BeheerAssessmentsComponent},
@@ -164,6 +172,10 @@ const routes: Routes = [
       { path: "maak-assessment", component: MaakAssessmentComponent },
       { path: '', redirectTo: 'recruiter', pathMatch: 'full'},
       { path: "wijzig-assessment/:id", component: WijzigAssessmentComponent },
+      { path: '', redirectTo: 'recruiter', pathMatch: 'full' },
+      { path: "resultaat-invoeren/:id", component: ResultaatInvoerenComponent },
+      { path: '', redirectTo: 'recruiter', pathMatch: 'full' },
+      { path: "resultaat-wijzigen/:id", component: ResultaatWijzigenComponent },
       { path: '', redirectTo: 'recruiter', pathMatch: 'full' },
     ]
   },
