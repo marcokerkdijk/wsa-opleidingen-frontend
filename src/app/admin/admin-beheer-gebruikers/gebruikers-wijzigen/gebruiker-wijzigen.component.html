@@ -2,7 +2,7 @@
     <div>
         <div class="row">
             <div class="col-sm-4" id="paginatitel">
-                <h5>Gebruiker wijzigen</h5>
+                <h5 id="h5">Gebruiker wijzigen</h5>
             </div>
             <div class="col-sm-6">
             </div>
@@ -36,6 +36,11 @@
         </div>
         <div class="row">
             <div class="col-sm-6">
+                <p>Emailadres</p>
+                <input name="emailadres" class="form-control" [(ngModel)]="gebruikerInvoer.emailadres" type="text"
+                    id="emailadresinvoer" maxlength="256">
+            </div>
+            <div class="col-sm-6">
                 <p>Rol</p>
                 <div>
                     <select name="rol" [(ngModel)]="gebruikerInvoer.rol" class="form-control" required id="rolkeuze">
@@ -45,11 +50,6 @@
                         <option id="student" value="STUDENT">Student</option>
                     </select>
                 </div>
-            </div>
-            <div class="col-sm-6">
-                <p>Emailadres</p>
-                <input name="emailadres" class="form-control" [(ngModel)]="gebruikerInvoer.emailadres" type="text"
-                    id="emailadresinvoer" maxlength="256">
             </div>
         </div>
         <div class="row">
@@ -68,6 +68,9 @@
                     </ng-container>
                 </div>
             </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6"></div>
             <div class="col-sm-6 bottom">
                 <button id="gebruikeropslaan" (click)="wijzigGebruiker(gebruikerInvoer);">Gebruiker opslaan</button>
             </div>

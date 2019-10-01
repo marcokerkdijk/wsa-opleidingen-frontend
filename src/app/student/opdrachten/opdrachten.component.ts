@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Opdracht } from 'src/app/Objecten/opdracht';
 import { OpdrachtService } from 'src/app/services/opdracht.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { DataserviceService } from 'src/app/services/dataservice.service';
+import { AlertService } from 'src/app/_alert';
 
 @Component({
   selector: 'wsa-opdrachten',
@@ -10,17 +12,26 @@ import { Router } from '@angular/router';
 })
 export class OpdrachtenComponent implements OnInit {
   opdrachten: Opdracht[];
+  traject_id: number;
 
-  constructor(
-    private opdrachtService: OpdrachtService,
-    private router: Router
-  ) { }
+  constructor(private opdrachtService: OpdrachtService, private dataservice: DataserviceService,
+              private alertservice: AlertService) { }
 
   ngOnInit() {
-    this.haalZichtbareOpdrachtenOp();
+    this.haalTrajectIdOp();
+    this.haalOpdrachtenOp();
   }
 
-  haalZichtbareOpdrachtenOp(){
-    this.opdrachtService.haalZichtbareOpdrachtenOp().subscribe(opdrachten => this.opdrachten = opdrachten);
+  haalTrajectIdOp(): void {
+    this.traject_id = this.dataservice.getTraject_id();
+  }
+
+  haalOpdrachtenOp(): void {
+    this.opdrachtService.geefZichtbareOpdrachtenVanTraject(this.traject_id).subscribe(opdrachtenlijst => {
+      this.opdrachten = opdrachtenlijst;
+    },
+    (error) => {
+      this.alertservice.error("Er zijn nog geen opdrachten beschikbaar.", "alert-1");
+    });
   }
 }
