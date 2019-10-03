@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Gebruiker } from 'src/app/Objecten/gebruiker';
 import { GebruikersService } from 'src/app/services/gebruikers.service';
 import { AlertService } from 'src/app/_alert';
-import { TrajectService } from 'src/app/services/traject.service';
 import { AutenticatieService } from 'src/app/services/autenticatie.service';
 import { Traject } from 'src/app/Objecten/traject';
 
@@ -13,6 +12,7 @@ import { Traject } from 'src/app/Objecten/traject';
 })
 export class MijnGegevensComponent implements OnInit {
   studenten: Gebruiker[] = new Array;
+  docenten: Gebruiker[] = new Array;
   gebruiker: Gebruiker = new Gebruiker;
   traject: Traject = new Traject;
 
@@ -29,12 +29,23 @@ export class MijnGegevensComponent implements OnInit {
       this.gebruiker = gebruiker;
       this.traject = gebruiker.trajecten[0];
       this.haalStudentenOp(gebruiker.trajecten[0].id);
+      this.haalDocentenOp(gebruiker.trajecten[0].id);
     });
   }
 
   haalStudentenOp(id) {
     this.gebruikerService.haalAlleStudentenVanTraject(id).subscribe(studenten => {
       this.studenten = studenten;
+    },
+    (error) => {
+      this.alertservice.error("Je bent nog niet aan een traject gekoppeld.", "alert-1");
+    }
+    );
+  }
+
+  haalDocentenOp(id) {
+    this.gebruikerService.haalDocentOpMetTraject(id).subscribe(docenten => {
+      this.docenten = docenten;
     },
     (error) => {
       this.alertservice.error("Je bent nog niet aan een traject gekoppeld.", "alert-1");
