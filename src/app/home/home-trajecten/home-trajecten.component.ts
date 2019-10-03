@@ -30,7 +30,7 @@ export class HomeTrajectenComponent implements OnInit {
 
   ngOnInit() {
     this.getTrajecten();
-    this.getTekstObject(302);
+    this.getTekstObject(1);
   }
 
   getTrajecten(): void {
