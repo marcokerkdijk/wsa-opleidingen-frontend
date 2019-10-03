@@ -6,6 +6,8 @@ import { AlertService } from 'src/app/_alert';
 import { DataserviceService } from 'src/app/services/dataservice.service'; 
 import { GebruikersService } from 'src/app/services/gebruikers.service';
 import { Gebruiker } from 'src/app/Objecten/gebruiker';
+import { TekstObject } from 'src/app/Objecten/tekst-object';
+import { TekstobjectService } from 'src/app/services/tekstobject.service';
 
 @Component({
   selector: 'wsa-student-home',
@@ -17,13 +19,16 @@ export class StudentHomeComponent implements OnInit, AfterViewChecked {
   index: number = 0;
   trajecten: Traject[] = new Array;
   trajectVanGebruiker: Traject = new Traject;
+  tekstObject: TekstObject = new TekstObject();
   
   constructor(private authenticatieService:AutenticatieService, private trajectService: TrajectService,
-              private alertservice: AlertService, private dataservice: DataserviceService, private gebruikersService: GebruikersService) { }
+              private alertservice: AlertService, private dataservice: DataserviceService, private gebruikersService: GebruikersService,
+              private tekstobjectservice: TekstobjectService) { }
 
   ngOnInit() {
     this.haalGebruikerOp();
     this.HaalTrajectBijGebruikerOp();
+    this.getTekstObject(5);
   }
 
   ngAfterViewChecked() {
@@ -33,6 +38,10 @@ export class StudentHomeComponent implements OnInit, AfterViewChecked {
     catch(error) {
       //Error afhandeling want er kwam een error terwijl alles goed werkt.
     }
+  }
+
+  getTekstObject(tekstObject_id: number) {
+    this.tekstobjectservice.haalTekstObjectOpId(tekstObject_id).subscribe(opgehaaldTekstObject => this.tekstObject = opgehaaldTekstObject);
   }
   
   haalGebruikerOp():void {
