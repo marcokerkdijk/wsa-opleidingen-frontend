@@ -4,7 +4,10 @@
             <h5 id="overzichttitel">Mijn overzicht</h5>
         </div>
         <div class="col-sm-9">
-            <p>Door op jouw traject te klikken kun je zien wie je medestudenten voor desbetreffend traject zijn.</p>
+            <p>
+                Hieronder kan je van jou traject je medestudenten en de docenten terugvinden.
+                Ook kan je je resultaten van ingeleverde opdrachten en uitgevoerde assessments vinden.
+            </p>
         </div>
     </div>
 
@@ -48,6 +51,29 @@
         <div class="col-sm-6">
             <h6 id="resultaattitel">Resultaten assessments</h6>
             <p>Lijst met assessmentresultaten.</p>
+            <div class="row">
+                <h6 id="docenttitel">Docenten voor jou traject</h6>
+                <table id="docentenlijsten" class="table table-bordered">
+                    <thead id="table-bottom">
+                        <tr>
+                            <th>Voornaam<i id='sorteerPijlVoornaam' class="fa fa-fw fa-sort"
+                                    (click)="sorteerTabel(0)"></i></th>
+                            <th>Achternaam<i id='sorteerPijlAchternaam' class="fa fa-fw fa-sort"
+                                    (click)="sorteerTabel(1)"></i>
+                            </th>
+                            <th>E-mailadres<i id='sorteerPijlEmail' class="fa fa-fw fa-sort"
+                                    (click)="sorteerTabel(1)"></i></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let Gebruiker of docenten">
+                            <td>{{Gebruiker.voornaam}}</td>
+                            <td>{{Gebruiker.tussenvoegsel}} {{Gebruiker.achternaam}}</td>
+                            <td>{{Gebruiker.emailadres}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>
