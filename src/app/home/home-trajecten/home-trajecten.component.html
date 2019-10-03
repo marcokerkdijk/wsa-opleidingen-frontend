@@ -20,10 +20,10 @@
             <!-- Onderdeel als meerdere trajecten actief zijn -->
             <div class="row">
                 <div class="col-md-4 col-xs-24">
-                    <div class="home-banner" [ngStyle]="{'background': 'url(' + afbeeldingen[i] + ') no-repeat 0 0'}"
+                    <div class="home-banner" id="afbeelding{{Traject.id}}" [ngStyle]="{'background': 'url(' + afbeeldingen[i] + ') no-repeat 0 0'}"
                         [style.background-size]="cover">
                         <a (click)="gaNaarTrajectInformatie(Traject)">
-                            <div class="overlay">
+                            <div id="banner{{Traject.id}}" class="overlay">
                                 <div class="text">Ga naar {{Traject.naam}}</div>
                             </div>
                         </a>
@@ -31,7 +31,7 @@
                 </div>
                 <div class="col-md-5">
                     <div>
-                        <p id="subTitel">
+                        <p class="subTitel" id="subTitel{{Traject.id}}">
                             {{Traject.naam}}
                         </p>
                         <p id="trajectKorteOmschrijving{{Traject.id}}">
@@ -67,7 +67,7 @@
             <!-- Agenda van het traject -->
             <div class="row">
                 <div class="col-sm-12" id="Agenda">
-                    <table class="table table-bordered">
+                    <table class="table table-bordered" id="trajectonderdeelTabel">
                         <thead id="tabel-headers">
                             <tr>
                                 <th>Datum</th>
@@ -76,7 +76,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let Trajectonderdeel of traject.trajectOnderdelen">
+                            <tr *ngFor="let Trajectonderdeel of traject.trajectOnderdelen" id="row{{Trajectonderdeel.id}}">
                                 <td>{{Trajectonderdeel.startdatum}}</td>
                                 <td>{{Trajectonderdeel.tijdstip}}</td>
                                 <td>{{Trajectonderdeel.naam}}</td>

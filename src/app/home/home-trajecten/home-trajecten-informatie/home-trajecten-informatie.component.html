@@ -4,7 +4,7 @@
     <div class="row">
         <div class="landingspage-header">
             <div class="container" id="background">
-                <h6>
+                <h6 id="afbeelding{{this.traject.id}}">
                     {{this.traject.naam}}
                 </h6>
             </div>
@@ -24,7 +24,7 @@
     <!-- Agenda van het traject -->
     <div class="row">
         <div class="col-sm-12" id="Agenda">
-            <table class="table table-bordered">
+            <table class="table table-bordered" id="trajectonderdeelTabel">
                 <thead id="tabel-headers">
                     <tr>
                         <th id="Datum">Datum</th>
@@ -33,7 +33,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let Trajectonderdeel of traject.trajectOnderdelen">
+                    <tr *ngFor="let Trajectonderdeel of traject.trajectOnderdelen" id="row{{Trajectonderdeel.id}}">
                         <td>{{Trajectonderdeel.startdatum}}</td>
                         <td>{{Trajectonderdeel.tijdstip}}</td>
                         <td>{{Trajectonderdeel.naam}}</td>

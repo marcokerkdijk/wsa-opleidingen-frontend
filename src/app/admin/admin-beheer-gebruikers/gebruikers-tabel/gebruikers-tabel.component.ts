@@ -10,10 +10,10 @@ import { AlertService } from 'src/app/_alert';
   styleUrls: ['./gebruikers-tabel.component.scss']
 })
 export class GebruikersTabelComponent implements OnInit {
-  actieveGebruikers : Gebruiker[];
-  
-  constructor(private gebruikerService : GebruikersService, private adminBeheerGebruikers:BeheerGebruikersComponent,
-              private alertservice: AlertService) { }
+  actieveGebruikers: Gebruiker[];
+
+  constructor(private gebruikerService: GebruikersService, private adminBeheerGebruikers: BeheerGebruikersComponent,
+    private alertservice: AlertService) { }
 
   ngOnInit() {
     this.haalActieveGebruikers();
@@ -21,21 +21,21 @@ export class GebruikersTabelComponent implements OnInit {
 
   haalActieveGebruikers(): void {
     this.gebruikerService.geefActieveGebruikers()
-        .subscribe(gebruikers => {
-          this.actieveGebruikers = gebruikers;
-        },
+      .subscribe(gebruikers => {
+        this.actieveGebruikers = gebruikers;
+      },
         (error) => {
           this.alertservice.error("Er zijn geen gebruikers gevonden in de database.", "alert-1");
         }
-        );
+      );
   }
 
   sorteerTabel(n) {
     var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
     table = document.getElementById("gebruikersTabel");
     switching = true;
-    dir = "asc"; 
-      while (switching) {
+    dir = "asc";
+    while (switching) {
       switching = false;
       rows = table.rows;
       for (i = 1; i < (rows.length - 1); i++) {
@@ -58,7 +58,7 @@ export class GebruikersTabelComponent implements OnInit {
       if (shouldSwitch) {
         rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
         switching = true;
-        switchcount ++; 
+        switchcount++;
       } else {
         if (switchcount == 0 && dir == "asc") {
           dir = "desc";
@@ -68,22 +68,26 @@ export class GebruikersTabelComponent implements OnInit {
     }
   }
 
-  filterTabel(input:string, kolomnr:number) { 
- var filter, tabel, tr, td, i, txtValue;
- filter = input.toUpperCase();
- tabel = document.getElementById("gebruikersTabel");
- tr = tabel.getElementsByTagName("tr");
+  filterTabel(input: string, kolomnr: number) {
+    if (input != "Alles") {
+      var filter, tabel, tr, td, i, txtValue;
+      filter = input.toUpperCase();
+      tabel = document.getElementById("gebruikersTabel");
+      tr = tabel.getElementsByTagName("tr");
 
- for (i = 0; i < tr.length; i++) {
-   td = tr[i].getElementsByTagName("td")[kolomnr];
-   if (td) {
-     txtValue = td.textContent || td.innerText;
-     if (txtValue.toUpperCase().indexOf(filter) > -1) {
-       tr[i].style.display = "";
-     } else {
-       tr[i].style.display = "none";
-     }
-   } 
- }
-}
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[kolomnr];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+    } else {
+      this.haalActieveGebruikers();
+    }
+  }
 }
