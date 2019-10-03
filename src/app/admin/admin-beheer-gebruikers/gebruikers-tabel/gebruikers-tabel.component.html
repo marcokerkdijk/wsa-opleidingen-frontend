@@ -8,6 +8,8 @@
                 <button id='filterAdmin' (click)="filterTabel('Admin',2)">Filter op administrator</button>
                 <button id='filterStudent' (click)="filterTabel('Student',2)">Filter op student</button>
                 <button id='filterDocent' (click)="filterTabel('Docent',2)">Filter op docent</button>
+                <button id='filterRecruiter' (click)="filterTabel('Recruiter',2)">Filter op recruiter</button>
+                <button id='filterAlles' (click)="filterTabel('Alles',2)">Toon alle gebruikers</button>
             </div>
         </div>
         <div>
@@ -29,7 +31,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let Gebruiker of actieveGebruikers" id="tablerow{{Gebruiker.id}}">
+                <tr *ngFor="let Gebruiker of actieveGebruikers" id="tablerow{{Gebruiker.id}}" name=tabelrij>
                     <td id="voornaam{{Gebruiker.id}}">{{Gebruiker.voornaam}}</td>
                     <td id="achternaam{{Gebruiker.id}}">{{Gebruiker.tussenvoegsel}} {{Gebruiker.achternaam}}</td>
                     <td id="rol{{Gebruiker.id}}" class="rolnaam">{{Gebruiker.rol}}</td>
