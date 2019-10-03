@@ -11,49 +11,43 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row2">
         <div class="col-sm-6">
-            <div class="row">
-                <div>
-                    <h6 id="trajecttitel">Jouw traject</h6>
-                    <p id="trajectnaam">{{traject.naam}}</p>
-                </div>
-            </div>
-            <div class="row">
-                <div>
-                    <h6>Medestudenten</h6>
-                    <table id="studentenlijst" class="table table-bordered">
-                        <thead id="table-bottom">
-                            <tr>
-                                <th>Voornaam<i id='sorteerPijlVoornaam' class="fa fa-fw fa-sort"
-                                        (click)="sorteerTabel(0)"></i></th>
-                                <th>Achternaam<i id='sorteerPijlAchternaam' class="fa fa-fw fa-sort"
-                                        (click)="sorteerTabel(1)"></i>
-                                </th>
-                                <th>E-mailadres<i id='sorteerPijlEmail' class="fa fa-fw fa-sort"
-                                        (click)="sorteerTabel(1)"></i></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let Gebruiker of studenten">
-                                <td>{{Gebruiker.voornaam}}</td>
-                                <td>{{Gebruiker.tussenvoegsel}} {{Gebruiker.achternaam}}</td>
-                                <td>{{Gebruiker.emailadres}}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div id="melding">
-                        <alert id="alert-1"></alert>
-                    </div>
-                </div>
+            <div>
+                <h6 id="trajecttitel">Jouw traject</h6>
+                <p id="trajectnaam">{{traject.naam}}</p>
             </div>
         </div>
         <div class="col-sm-6">
             <h6 id="resultaattitel">Resultaten assessments</h6>
-            <p>Lijst met assessmentresultaten.</p>
-            <div class="row">
-                <h6 id="docenttitel">Docenten voor jou traject</h6>
-                <table id="docentenlijsten" class="table table-bordered">
+            <table id="assessmentslijst" class="table table-bordered">
+                <thead id="table-bottom">
+                    <tr>
+                        <th>Resultaattitel<i id='sorteerPijlResultaattitel' class="fa fa-fw fa-sort"
+                                (click)="sorteerTabel(0)"></i></th>
+                        <th>Resultaat<i id='sorteerPijlResultaat' class="fa fa-fw fa-sort"
+                                (click)="sorteerTabel(1)"></i>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let Assessment of assessments">
+                        <td>{{Assessment.opdracht.titel}}</td>
+                        <td>{{Assessment.resultaat}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div id="melding">
+                <alert id="alert-3"></alert>
+            </div>
+        </div>
+    </div>
+
+    <div class="row2">
+        <div class="col-sm-6">
+            <div>
+                <h6>Medestudenten</h6>
+                <table id="studentenlijst" class="table table-bordered">
                     <thead id="table-bottom">
                         <tr>
                             <th>Voornaam<i id='sorteerPijlVoornaam' class="fa fa-fw fa-sort"
@@ -66,14 +60,44 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let Gebruiker of docenten">
+                        <tr *ngFor="let Gebruiker of studenten">
                             <td>{{Gebruiker.voornaam}}</td>
                             <td>{{Gebruiker.tussenvoegsel}} {{Gebruiker.achternaam}}</td>
                             <td>{{Gebruiker.emailadres}}</td>
                         </tr>
                     </tbody>
                 </table>
+                <div id="melding">
+                    <alert id="alert-1"></alert>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <h6 id="docenttitel">Docenten voor jou traject</h6>
+            <table id="docentenlijst" class="table table-bordered">
+                <thead id="table-bottom">
+                    <tr>
+                        <th>Voornaam<i id='sorteerPijlVoornaam' class="fa fa-fw fa-sort" (click)="sorteerTabel(0)"></i>
+                        </th>
+                        <th>Achternaam<i id='sorteerPijlAchternaam' class="fa fa-fw fa-sort"
+                                (click)="sorteerTabel(1)"></i>
+                        </th>
+                        <th>E-mailadres<i id='sorteerPijlEmail' class="fa fa-fw fa-sort" (click)="sorteerTabel(1)"></i>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let Gebruiker of docenten">
+                        <td>{{Gebruiker.voornaam}}</td>
+                        <td>{{Gebruiker.tussenvoegsel}} {{Gebruiker.achternaam}}</td>
+                        <td>{{Gebruiker.emailadres}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div id="melding">
+                <alert id="alert-2"></alert>
             </div>
         </div>
     </div>
+
 </div>

@@ -31,4 +31,9 @@ export class UitwerkingService {
   haalUitwerkingOp(uitwerking_id: number): Observable<Uitwerking> {
     return this.http.get<Uitwerking>(`${this.api}/geefUitwerking/` + uitwerking_id);
   }
+
+  geefAssessmentUitwerkingenVanStudent(gebruiker_id: number): Observable<Uitwerking[]> {
+    return this.http.get<Uitwerking[]>(`${this.api}/geefAssessmentUitwerkingenVanStudent/` + gebruiker_id);
+  }
+
 }

@@ -3,7 +3,9 @@ import { Traject } from 'src/app/Objecten/traject';
 import { AutenticatieService, JwtToken } from 'src/app/services/autenticatie.service';
 import { TrajectService } from 'src/app/services/traject.service';
 import { AlertService } from 'src/app/_alert';
-import { DataserviceService } from 'src/app/services/dataservice.service';
+import { DataserviceService } from 'src/app/services/dataservice.service'; 
+import { GebruikersService } from 'src/app/services/gebruikers.service';
+import { Gebruiker } from 'src/app/Objecten/gebruiker';
 
 @Component({
   selector: 'wsa-student-home',
@@ -11,13 +13,13 @@ import { DataserviceService } from 'src/app/services/dataservice.service';
   styleUrls: ['./student-home.component.scss']
 })
 export class StudentHomeComponent implements OnInit, AfterViewChecked {
-  gebruiker: JwtToken;
+  gebruiker: Gebruiker = new Gebruiker;
   index: number = 0;
   trajecten: Traject[] = new Array;
   trajectVanGebruiker: Traject = new Traject;
   
   constructor(private authenticatieService:AutenticatieService, private trajectService: TrajectService,
-              private alertservice: AlertService, private dataservice: DataserviceService) { }
+              private alertservice: AlertService, private dataservice: DataserviceService, private gebruikersService: GebruikersService) { }
 
   ngOnInit() {
     this.haalGebruikerOp();
@@ -34,11 +36,14 @@ export class StudentHomeComponent implements OnInit, AfterViewChecked {
   }
   
   haalGebruikerOp():void {
-    this.gebruiker = this.authenticatieService.haalTokenOp();
+    let token = this.authenticatieService.haalTokenOp();
+    this.gebruikersService.vraagGebruikerOpId(token.gebruiker_id).subscribe(opgehaaldeGebruiker => {
+      this.gebruiker = opgehaaldeGebruiker
+    })
   }
 
   HaalTrajectBijGebruikerOp(){
-    this.trajectService.geefAlleTrajectenVanGebruiker(this.gebruiker.gebruiker_id).subscribe(trajecten => {
+    this.trajectService.geefAlleTrajectenVanGebruiker(this.gebruiker.id).subscribe(trajecten => {
       this.trajecten = trajecten;
       this.trajectVanGebruiker = trajecten[0];
     },
