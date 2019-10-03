@@ -3,6 +3,9 @@ import { Gebruiker } from 'src/app/Objecten/gebruiker';
 import { GebruikersService } from 'src/app/services/gebruikers.service';
 import { BeheerGebruikersComponent } from '../beheer-gebruikers.component';
 import { AlertService } from 'src/app/_alert';
+import { TrajectService } from 'src/app/services/traject.service';
+import { Router } from '@angular/router';
+import { AutenticatieService } from 'src/app/services/autenticatie.service';
 
 @Component({
   selector: 'wsa-gebruikers-tabel',
@@ -11,12 +14,16 @@ import { AlertService } from 'src/app/_alert';
 })
 export class GebruikersTabelComponent implements OnInit {
   actieveGebruikers : Gebruiker[];
+  teVerwijderenGebruiker : Gebruiker = new Gebruiker;
+  rol :  String;
   
   constructor(private gebruikerService : GebruikersService, private adminBeheerGebruikers:BeheerGebruikersComponent,
-              private alertservice: AlertService) { }
+              private alertservice: AlertService, private trajectService : TrajectService, private router : Router
+              , private authenticatieService : AutenticatieService) { }
 
   ngOnInit() {
     this.haalActieveGebruikers();
+    this.rol = this.authenticatieService.krijgRol();
   }
 
   haalActieveGebruikers(): void {
@@ -86,4 +93,12 @@ export class GebruikersTabelComponent implements OnInit {
    } 
  }
 }
+
+verwijderGebruiker(gebruikerID:number){
+    this.gebruikerService.verwijderGebruiker(gebruikerID).subscribe(response => {
+    this.router.navigateByUrl('/' + this.rol).then(succes => {this.router.navigateByUrl('/' + this.rol + '/beheer-gebruikers')})
+    } )
+   
+}
+
 }
