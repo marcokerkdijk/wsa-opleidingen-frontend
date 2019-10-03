@@ -1,12 +1,12 @@
 <div class="container-fluid">
     <div class="row">
         <div id=h6 class="col-sm-6">
-            Welkom recruiter!
+            {{tekstObject.titel}}
         </div>
         <div class="col-sm-6">
             <p>
                 Welkom {{gebruiker.displaynaam}} op de academy.
-                Klik hieronder op Trajecten om deze te beheren.
+                {{tekstObject.tekst}}
             </p>
             <br>
             <button id='linkBeheerTrajecten' [routerLink]="'./beheer-traject'">Trajecten</button><br>
