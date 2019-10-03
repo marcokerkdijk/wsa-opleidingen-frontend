@@ -4,6 +4,8 @@ import { AutenticatieService, JwtToken } from 'src/app/services/autenticatie.ser
 import { TrajectService } from 'src/app/services/traject.service';
 import { AlertService } from 'src/app/_alert';
 import { DataserviceService } from 'src/app/services/dataservice.service';
+import { TekstObject } from 'src/app/Objecten/tekst-object';
+import { TekstobjectService } from 'src/app/services/tekstobject.service';
 
 @Component({
   selector: 'wsa-student-home',
@@ -15,13 +17,16 @@ export class StudentHomeComponent implements OnInit, AfterViewChecked {
   index: number = 0;
   trajecten: Traject[] = new Array;
   trajectVanGebruiker: Traject = new Traject;
+  tekstObject: TekstObject = new TekstObject();
   
   constructor(private authenticatieService:AutenticatieService, private trajectService: TrajectService,
-              private alertservice: AlertService, private dataservice: DataserviceService) { }
+              private alertservice: AlertService, private dataservice: DataserviceService,
+              private tekstobjectservice: TekstobjectService) { }
 
   ngOnInit() {
     this.haalGebruikerOp();
     this.HaalTrajectBijGebruikerOp();
+    this.getTekstObject(306);
   }
 
   ngAfterViewChecked() {
@@ -31,6 +36,10 @@ export class StudentHomeComponent implements OnInit, AfterViewChecked {
     catch(error) {
       //Error afhandeling want er kwam een error terwijl alles goed werkt.
     }
+  }
+
+  getTekstObject(tekstObject_id: number) {
+    this.tekstobjectservice.haalTekstObjectOpId(tekstObject_id).subscribe(opgehaaldTekstObject => this.tekstObject = opgehaaldTekstObject);
   }
   
   haalGebruikerOp():void {
