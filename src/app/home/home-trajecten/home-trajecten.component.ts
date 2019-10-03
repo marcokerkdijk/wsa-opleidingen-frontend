@@ -13,22 +13,24 @@ import { TekstObject } from 'src/app/Objecten/tekst-object';
 })
 export class HomeTrajectenComponent implements OnInit {
   traject: Traject = new Traject();
+  tekstObject: TekstObject = new TekstObject();
   zichtbaarTrajecten: Traject[] = new Array;
   private api: string = environment.apiUrl;
   afbeeldingen: string[] = [
-     "https://www.workingspirit.nl/assets/HH-40894461.jpg",
-     "https://www.workingspirit.nl/assets/Uploads/HeaderAfbeeldingen/Softwareontwikkelaars.jpg",
-     "https://www.workingspirit.nl/assets/Uploads/HeaderAfbeeldingen/HH-60257639.jpg",
-     "https://www.workingspirit.nl/assets/HH-60267130.jpg"
-    ]
+    "https://www.workingspirit.nl/assets/HH-40894461.jpg",
+    "https://www.workingspirit.nl/assets/Uploads/HeaderAfbeeldingen/Softwareontwikkelaars.jpg",
+    "https://www.workingspirit.nl/assets/Uploads/HeaderAfbeeldingen/HH-60257639.jpg",
+    "https://www.workingspirit.nl/assets/HH-60267130.jpg"
+  ]
 
   constructor(
-    private dataService: DataserviceService, 
+    private dataService: DataserviceService,
     private homeService: HomeService,
     private router: Router) { }
 
   ngOnInit() {
     this.getTrajecten();
+    this.getTekstObject(302);
   }
 
   getTrajecten(): void {
@@ -36,10 +38,13 @@ export class HomeTrajectenComponent implements OnInit {
       .subscribe(zichtbareTrajecten => this.zichtbaarTrajecten = zichtbareTrajecten);
   }
 
-  gaNaarTrajectInformatie(traject:Traject){
+  gaNaarTrajectInformatie(traject: Traject) {
     this.traject = traject;
     this.dataService.setTraject(traject);
     this.router.navigateByUrl("home/home-trajecten-informatie");
   }
 
+  getTekstObject(tekstObject_id: number) {
+    this.homeService.haalTekstObjectOpIdHome(tekstObject_id).subscribe(opgehaaldTekstObject => this.tekstObject = opgehaaldTekstObject);
+  }
 }
