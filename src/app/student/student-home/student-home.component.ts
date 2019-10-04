@@ -27,7 +27,6 @@ export class StudentHomeComponent implements OnInit, AfterViewChecked {
 
   ngOnInit() {
     this.haalGebruikerOp();
-    this.HaalTrajectBijGebruikerOp();
     this.getTekstObject(5);
   }
 
@@ -46,13 +45,15 @@ export class StudentHomeComponent implements OnInit, AfterViewChecked {
   
   haalGebruikerOp():void {
     let token = this.authenticatieService.haalTokenOp();
+    this.HaalTrajectBijGebruikerOp(token.gebruiker_id);
     this.gebruikersService.vraagGebruikerOpId(token.gebruiker_id).subscribe(opgehaaldeGebruiker => {
       this.gebruiker = opgehaaldeGebruiker
     })
+
   }
 
-  HaalTrajectBijGebruikerOp(){
-    this.trajectService.geefAlleTrajectenVanGebruiker(this.gebruiker.id).subscribe(trajecten => {
+  HaalTrajectBijGebruikerOp(id:number){
+    this.trajectService.geefAlleTrajectenVanGebruiker(id).subscribe(trajecten => {
       this.trajecten = trajecten;
       this.trajectVanGebruiker = trajecten[0];
     },
