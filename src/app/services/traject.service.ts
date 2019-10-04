@@ -6,6 +6,7 @@ import { environment } from 'src/environments/environment';
 import { DTOGebruikerID } from '../Objecten/gebruikerDTO';
 import { TrajectOnderdeel } from '../Objecten/traject-onderdeel';
 import { TrajectDTO } from '../Objecten/traject-dto';
+import { Gebruiker } from '../Objecten/gebruiker';
 
 @Injectable({
   providedIn: 'root'
@@ -56,4 +57,5 @@ export class TrajectService {
   geefTrajectBijGebruiker(gebruiker_id: number): Observable<Traject> {
     return this.http.get<Traject>(`${this.api}/geefTrajectVanGebruiker/` + gebruiker_id);
   }
+  
 }
