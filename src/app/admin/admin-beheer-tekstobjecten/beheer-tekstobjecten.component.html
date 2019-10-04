@@ -1,0 +1,19 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-4">
+            <h5>Webteksten beheren</h5>
+        </div>
+        <div class="col-sm-8">
+            <p> Hier kunt u webteksten beheren.
+            </p>
+        </div>
+    </div>
+    <div class="row" *ngFor="let TekstObject of alleTekstObjecten">
+        <div class="col-sm-4">
+            <h5 id="tekstobjectTitel{{TekstObject.id}}">{{TekstObject.titel}}</h5>
+        </div>
+        <button id="tekstobjectWijzig{{TekstObject.id}}" routerLink="../tekstobject-wijzigen/{{TekstObject.id}}">
+            Bewerk Tekst
+        </button>
+    </div>
+</div>
