@@ -35,12 +35,16 @@
             </div>
         </div>
 
-        <div class="col-sm-3">
-            <div [routerLink]="'mijn-gegevens'">
-                <div id="MijnOverzicht"></div>
-                <div id=h5>Mijn Overzicht</div>
+        <div *ngIf="gebruiker.gekoppeld">
+            <div class="col-sm-3">
+                <div [routerLink]="'mijn-gegevens'">
+                    <div id="MijnOverzicht"></div>
+                    <div id=h5>Mijn Overzicht</div>
+                </div>
             </div>
+
         </div>
+
     </div>
 
     <!-- Hier wordt de trajectinformatie van het traject getoont waar de student aan gekoppeld is -->

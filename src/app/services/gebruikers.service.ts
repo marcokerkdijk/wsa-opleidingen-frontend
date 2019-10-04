@@ -56,7 +56,6 @@ export class GebruikersService {
   }
 
   haalDocentOpMetTraject(traject_id): Observable<any> {
-    console.log(traject_id);
     return this.http.get<Gebruiker>(`${this.api}/haalDocentOpMetTraject/` + traject_id);
   }
 
