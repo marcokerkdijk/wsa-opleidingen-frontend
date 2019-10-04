@@ -31,7 +31,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let Gebruiker of actieveGebruikers" id="tablerow{{Gebruiker.id}}" name=tabelrij>
+                <tr *ngFor="let Gebruiker of actieveGebruikers" id="tablerow{{Gebruiker.id}}" name="tabelrij">
                     <td id="voornaam{{Gebruiker.id}}">{{Gebruiker.voornaam}}</td>
                     <td id="achternaam{{Gebruiker.id}}">{{Gebruiker.tussenvoegsel}} {{Gebruiker.achternaam}}</td>
                     <td id="rol{{Gebruiker.id}}" class="rolnaam">{{Gebruiker.rol}}</td>
@@ -48,6 +48,7 @@
                         <div id="pencil">
                             <i class='fa fa-pencil' id="pencil{{Gebruiker.id}}"
                                 routerLink="../gebruiker-wijzigen/{{Gebruiker.id}}"></i>
+                            <i class='fa fa-trash'  id="trash{{Gebruiker.id}}"  (click)="verwijderGebruiker(Gebruiker.id)"></i>
                         </div>
                     </td>
                 </tr>

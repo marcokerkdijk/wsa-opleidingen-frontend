@@ -53,8 +53,12 @@ p {
     color: #00aeef;
 }
 
-.fa-pencil:hover {
+.fa-pencil:hover, .fa-trash:hover{
     cursor: pointer;
+}
+
+.fa-pencil{
+    margin-right: 5mm
 }
 
 #gebruikersTabel {

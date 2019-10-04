@@ -60,4 +60,11 @@ export class GebruikersService {
     return this.http.get<Gebruiker>(`${this.api}/haalDocentOpMetTraject/` + traject_id);
   }
 
+  /**
+   * Methode voor het verwijderen van de gebruiker.
+   * @param gebruikerID het ID van de gebruiker die verwijderd moet worden.
+   */
+  verwijderGebruiker(gebruikerID:number): Observable<any>{
+    return this.http.delete(`${this.api}/verwijderGebruikertwee/` + gebruikerID);
+  }
 }
