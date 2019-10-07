@@ -1,33 +1,25 @@
-#mainbody {
-    background: #ffffff;
-    color: #808080;
-    font-size: 15px;
-}
 .container-fluid {
     padding-left: 19%;
     padding-right: 19%;
+    margin-top: 5%;
+    margin-bottom: 3%;
 }
 .row {
-    padding-top: 2.5%;
+    padding-top: 2%;
 }
-.introTitle {
-    font-size: 24px;
-    color: #808080;
-    font-weight: 400;
-    text-align: right;
+
+p {
+    white-space: pre-wrap;
+    font-family: "Working Spirit";
+    font-size: 14px;
+    line-height: 24px;
+    color:  #808285;
 }
-.subIntroTitle{
-    font-size: 24px;
-    color: #808080;
-    text-align: right;
-}
-#instructiepagina, #jdk-link, #notepadlink {
-    color:#007bef;
-}
-#instructiepagina:hover, #jdk-link:hover, #notepadlink:hover {
-    cursor: pointer;
-    color: #00aeef;
-}
-#text {
-    padding-top: 9px;
+
+#h6 {
+    letter-spacing: 1px;
+    color: #808285;
+    font-size: 26px;
+    font-weight: normal;
+    line-height: 32px;
 }

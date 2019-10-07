@@ -5,18 +5,14 @@
                 {{tekstObject.titel}}
             </div>
             <div class="col-sm-6">
-                <p>
-                    Welkom {{gebruiker.displaynaam}} op de academy. {{tekstObject.tekst}}
-                </p>
+                <p>Welkom {{gebruiker.displaynaam}} op de academy. {{tekstObject.tekst}}</p>
             </div>
         </div>
         <div class="row ruimte">
             <div class="col-sm-6">
                 <p id="trajecten-titel">Jouw trajecten</p>
-                <p>
-                    Bekijk hier jouw trajecten en klik op meer informatie om studenten te zien
-                    of om lesstof en opdrachten aan te maken.
-                </p>
+                <p>Bekijk hier jouw trajecten en klik op meer informatie om studenten te zien of om lesstof en
+                    opdrachten aan te maken.</p>
             </div>
         </div>
         <div class="row ruimte traject" *ngFor="let Traject of trajectenDocent">
