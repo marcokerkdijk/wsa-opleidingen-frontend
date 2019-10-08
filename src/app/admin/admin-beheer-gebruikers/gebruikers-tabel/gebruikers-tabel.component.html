@@ -8,6 +8,8 @@
                 <button id='filterAdmin' (click)="filterTabel('Admin',2)">Filter op administrator</button>
                 <button id='filterStudent' (click)="filterTabel('Student',2)">Filter op student</button>
                 <button id='filterDocent' (click)="filterTabel('Docent',2)">Filter op docent</button>
+                <button id='filterRecruiter' (click)="filterTabel('Recruiter',2)">Filter op recruiter</button>
+                <button id='filterAlles' (click)="filterTabel('Alles',2)">Toon alle gebruikers</button>
             </div>
         </div>
         <div>
@@ -29,19 +31,24 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let Gebruiker of actieveGebruikers" id="tablerow{{Gebruiker.id}}">
+                <tr *ngFor="let Gebruiker of actieveGebruikers" id="tablerow{{Gebruiker.id}}" name="tabelrij">
                     <td id="voornaam{{Gebruiker.id}}">{{Gebruiker.voornaam}}</td>
                     <td id="achternaam{{Gebruiker.id}}">{{Gebruiker.tussenvoegsel}} {{Gebruiker.achternaam}}</td>
                     <td id="rol{{Gebruiker.id}}" class="rolnaam">{{Gebruiker.rol}}</td>
                     <td id="emailadres{{Gebruiker.id}}">{{Gebruiker.emailadres}}</td>
-                    <td id='actief'>
-                        <div *ngIf="Gebruiker.actief; else elseBlock">Ja</div>
-                        <ng-template #elseBlock>Nee</ng-template>
+                    <td>
+                        <ng-template [ngIf]="Gebruiker.actief" [ngIfElse]="nietactief">
+                            <div id='actief'>Ja</div>
+                        </ng-template>
+                        <ng-template #nietactief>
+                            <div id='nietactief'>Nee</div>
+                        </ng-template>
                     </td>
                     <td>
                         <div id="pencil">
                             <i class='fa fa-pencil' id="pencil{{Gebruiker.id}}"
                                 routerLink="../gebruiker-wijzigen/{{Gebruiker.id}}"></i>
+                            <i class='fa fa-trash'  id="trash{{Gebruiker.id}}"  (click)="verwijderGebruiker(Gebruiker.id)"></i>
                         </div>
                     </td>
                 </tr>

@@ -1,14 +1,15 @@
 .container-fluid {
-    margin-top: 5%;
     padding-left: 19%;
     padding-right: 19%;
-}
-.ruimte {
-    padding-top: 5%;
-    padding-bottom: 2%;
+    margin-top: 5%;
+    margin-bottom: 3%;
 }
 
-#traject-titel {
+#paginatitel {
+    padding-left: 0;
+}
+
+h5 {
     letter-spacing: 1px;
     color: #808285;
     font-size: 26px;
@@ -16,19 +17,25 @@
     line-height: 32px;
 }
 
+h6 {
+    letter-spacing: 1px;
+    color: #00aeef;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.row{
+    padding-top: 2%;
+}
+
 p {
-    font-family: "Working Spirit";
+    color: #808285;
     font-size: 14px;
     line-height: 24px;
-    color:  #808285;
+    margin-bottom: 1%;
 }
 
-.buttons {
-    padding-top: 2%;
-    margin-bottom: 2%;
-}
-
-.buttons button {
+button{
     border-color: #00aeef;
     color: #00aeef;
     width: 230px;
@@ -47,23 +54,14 @@ p {
     white-space: nowrap;
     line-height: 1.42857;
     margin-top: 5px;
-    margin-bottom: 5px;
 }
 
-#studentButton {
-    margin-right: 10px;
-}
-
-#opdrachtButton {
-    margin-left: 10px;
-}
-
-#uitwerkingButton {
-    margin-left: 10px;
-}
-
-.buttons button:hover {
+button:hover{
     cursor: pointer;
     color: white;
     background-color: #00aeef;
+}
+
+.bottom {
+    margin-top: 1%;
 }

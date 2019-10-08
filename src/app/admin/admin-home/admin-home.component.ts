@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { JwtToken, AutenticatieService } from 'src/app/services/autenticatie.service';
+import { TekstobjectService } from 'src/app/services/tekstobject.service';
+import { TekstObject } from 'src/app/Objecten/tekst-object';
 
 @Component({
   selector: 'wsa-admin-home',
@@ -8,16 +10,23 @@ import { JwtToken, AutenticatieService } from 'src/app/services/autenticatie.ser
 })
 export class AdminHomeComponent implements OnInit {
   gebruiker: JwtToken;
+  tekstObject: TekstObject = new TekstObject();
 
   constructor(
-    private authenticatieService:AutenticatieService) { }
+    private authenticatieService:AutenticatieService,
+    private tekstobjectservice: TekstobjectService) { }
 
   ngOnInit() {
     this.haalGebruikerOp();
+    this.getTekstObject(2);
   }
 
   haalGebruikerOp():void {
     this.gebruiker = this.authenticatieService.haalTokenOp();
+  }
+
+  getTekstObject(tekstObject_id: number) {
+    this.tekstobjectservice.haalTekstObjectOpId(tekstObject_id).subscribe(opgehaaldTekstObject => this.tekstObject = opgehaaldTekstObject);
   }
 
 }

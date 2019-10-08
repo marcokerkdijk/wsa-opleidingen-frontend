@@ -1,0 +1,30 @@
+<div class="container-fluid">
+    <div>
+        <div class="row">
+            <div class="col-sm-4" id="paginatitel">
+                <h5>Webtekst wijzigen</h5>
+            </div>
+            <div class="col-sm-6">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <p>Titel</p>
+                <textarea class="form-control" [(ngModel)]="tekstObject.titel" id="titelInvoer{{tekstObject.id}}"
+                    maxlength="64" rows="1"></textarea>
+            </div>
+            <div class="col-sm-9">
+                <p>Tekst</p>
+                <textarea class="form-control" [(ngModel)]="tekstObject.tekst" id="tekstInvoer{{tekstObject.id}}"
+                    maxlength="10001" rows="10"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3 bottom">
+            </div>
+            <div class="col-sm-9 bottom">
+                <button id="tekstObjectOpslaan" (click)="tekstObjectOpslaan(tekstObject);">Webtekst opslaan</button>
+            </div>
+        </div>
+    </div>
+</div>

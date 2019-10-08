@@ -3,7 +3,11 @@ import { Traject } from 'src/app/Objecten/traject';
 import { AutenticatieService, JwtToken } from 'src/app/services/autenticatie.service';
 import { TrajectService } from 'src/app/services/traject.service';
 import { AlertService } from 'src/app/_alert';
-import { DataserviceService } from 'src/app/services/dataservice.service';
+import { DataserviceService } from 'src/app/services/dataservice.service'; 
+import { GebruikersService } from 'src/app/services/gebruikers.service';
+import { Gebruiker } from 'src/app/Objecten/gebruiker';
+import { TekstObject } from 'src/app/Objecten/tekst-object';
+import { TekstobjectService } from 'src/app/services/tekstobject.service';
 
 @Component({
   selector: 'wsa-student-home',
@@ -11,17 +15,19 @@ import { DataserviceService } from 'src/app/services/dataservice.service';
   styleUrls: ['./student-home.component.scss']
 })
 export class StudentHomeComponent implements OnInit, AfterViewChecked {
-  gebruiker: JwtToken;
+  gebruiker: Gebruiker = new Gebruiker;
   index: number = 0;
   trajecten: Traject[] = new Array;
   trajectVanGebruiker: Traject = new Traject;
+  tekstObject: TekstObject = new TekstObject();
   
   constructor(private authenticatieService:AutenticatieService, private trajectService: TrajectService,
-              private alertservice: AlertService, private dataservice: DataserviceService) { }
+              private alertservice: AlertService, private dataservice: DataserviceService, private gebruikersService: GebruikersService,
+              private tekstobjectservice: TekstobjectService) { }
 
   ngOnInit() {
     this.haalGebruikerOp();
-    this.HaalTrajectBijGebruikerOp();
+    this.getTekstObject(5);
   }
 
   ngAfterViewChecked() {
@@ -32,13 +38,22 @@ export class StudentHomeComponent implements OnInit, AfterViewChecked {
       //Error afhandeling want er kwam een error terwijl alles goed werkt.
     }
   }
+
+  getTekstObject(tekstObject_id: number) {
+    this.tekstobjectservice.haalTekstObjectOpId(tekstObject_id).subscribe(opgehaaldTekstObject => this.tekstObject = opgehaaldTekstObject);
+  }
   
   haalGebruikerOp():void {
-    this.gebruiker = this.authenticatieService.haalTokenOp();
+    let token = this.authenticatieService.haalTokenOp();
+    this.HaalTrajectBijGebruikerOp(token.gebruiker_id);
+    this.gebruikersService.vraagGebruikerOpId(token.gebruiker_id).subscribe(opgehaaldeGebruiker => {
+      this.gebruiker = opgehaaldeGebruiker
+    })
+
   }
 
-  HaalTrajectBijGebruikerOp(){
-    this.trajectService.geefAlleTrajectenVanGebruiker(this.gebruiker.gebruiker_id).subscribe(trajecten => {
+  HaalTrajectBijGebruikerOp(id:number){
+    this.trajectService.geefAlleTrajectenVanGebruiker(id).subscribe(trajecten => {
       this.trajecten = trajecten;
       this.trajectVanGebruiker = trajecten[0];
     },

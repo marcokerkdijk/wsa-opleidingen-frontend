@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Gebruiker } from 'src/app/Objecten/gebruiker';
 import { GebruikersService } from 'src/app/services/gebruikers.service';
+import { UitwerkingService } from 'src/app/services/uitwerking.service'
 import { AlertService } from 'src/app/_alert';
-import { TrajectService } from 'src/app/services/traject.service';
 import { AutenticatieService } from 'src/app/services/autenticatie.service';
 import { Traject } from 'src/app/Objecten/traject';
+import { Uitwerking } from 'src/app/Objecten/uitwerking';
 
 @Component({
   selector: 'wsa-mijn-gegevens',
@@ -13,11 +14,13 @@ import { Traject } from 'src/app/Objecten/traject';
 })
 export class MijnGegevensComponent implements OnInit {
   studenten: Gebruiker[] = new Array;
+  docenten: Gebruiker[] = new Array;
+  assessments: Uitwerking[] = new Array;
   gebruiker: Gebruiker = new Gebruiker;
   traject: Traject = new Traject;
 
   constructor(private authenticatieService: AutenticatieService, private gebruikerService: GebruikersService, 
-              private alertservice: AlertService) { }
+              private alertservice: AlertService, private uitwerkingenService: UitwerkingService) { }
 
   ngOnInit() {
     this.haalGebruikerOp();
@@ -28,7 +31,9 @@ export class MijnGegevensComponent implements OnInit {
     this.gebruikerService.vraagGebruikerOpId(ingelogdeGebruiker.gebruiker_id).subscribe(gebruiker => {
       this.gebruiker = gebruiker;
       this.traject = gebruiker.trajecten[0];
+      this.haalAssessmentsOp(gebruiker.id);
       this.haalStudentenOp(gebruiker.trajecten[0].id);
+      this.haalDocentenOp(gebruiker.trajecten[0].id);
     });
   }
 
@@ -37,7 +42,27 @@ export class MijnGegevensComponent implements OnInit {
       this.studenten = studenten;
     },
     (error) => {
-      this.alertservice.error("Je bent nog niet aan een traject gekoppeld.", "alert-1");
+      this.alertservice.error("Er zijn nog geen studenten aan het traject gekoppeld.", "alert-1");
+    }
+    );
+  }
+
+  haalDocentenOp(id) {
+    this.gebruikerService.haalDocentOpMetTraject(id).subscribe(docenten => {
+      this.docenten = docenten;
+    },
+    (error) => {
+      this.alertservice.error("Er zijn nog geen docenten aan het traject gekoppeld.", "alert-2");
+    }
+    );
+  }
+
+  haalAssessmentsOp(gebruiker_id){
+    this.uitwerkingenService.geefAssessmentUitwerkingenVanStudent(gebruiker_id).subscribe(assessments => {
+      this.assessments = assessments;
+    },
+    (error) => {
+      this.alertservice.error("Er zijn nog geen resultaten van assessments gekoppeld.", "alert-3");
     }
     );
   }

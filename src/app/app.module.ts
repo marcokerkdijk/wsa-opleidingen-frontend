@@ -69,6 +69,8 @@ import { WijzigAssessmentComponent } from './admin/admin-beheer-assessments/wijz
 import { GebruikersToevoegenComponent } from './admin/admin-beheer-gebruikers/gebruikers-toevoegen/gebruikers-toevoegen.component';
 import { ResultaatInvoerenComponent } from './admin/resultaat-invoeren/resultaat-invoeren.component';
 import { ResultaatWijzigenComponent } from './admin/resultaat-wijzigen/resultaat-wijzigen.component';
+import { AdminBeheerTekstobjectenComponent } from './admin/admin-beheer-tekstobjecten/beheer-tekstobjecten.component';
+import { TekstobjectWijzigenComponent } from './admin/admin-beheer-tekstobjecten/tekstobject-wijzigen/tekstobject-wijzigen.component';
 
 export function jwtOptionsFactory(tokenService: TokenService) {
   return {
@@ -143,6 +145,8 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     GebruikersToevoegenComponent,
     ResultaatInvoerenComponent,
     ResultaatWijzigenComponent,
+    AdminBeheerTekstobjectenComponent,
+    TekstobjectWijzigenComponent,
   ],
   imports: [
     BrowserModule,

@@ -50,6 +50,8 @@ import { MaakAssessmentComponent } from './admin/admin-beheer-assessments/maak-a
 import { WijzigAssessmentComponent } from './admin/admin-beheer-assessments/wijzig-assessment/wijzig-assessment.component';
 import { ResultaatInvoerenComponent } from './admin/resultaat-invoeren/resultaat-invoeren.component';
 import { ResultaatWijzigenComponent } from './admin/resultaat-wijzigen/resultaat-wijzigen.component';
+import { AdminBeheerTekstobjectenComponent } from './admin/admin-beheer-tekstobjecten/beheer-tekstobjecten.component';
+import { TekstobjectWijzigenComponent } from './admin/admin-beheer-tekstobjecten/tekstobject-wijzigen/tekstobject-wijzigen.component';
 
 const routes: Routes = [
 
@@ -93,6 +95,10 @@ const routes: Routes = [
       { path: "resultaat-invoeren/:id", component: ResultaatInvoerenComponent },
       { path: '', redirectTo: 'admin', pathMatch: 'full' },
       { path: "resultaat-wijzigen/:id", component: ResultaatWijzigenComponent },
+      { path: '', redirectTo: 'admin', pathMatch: 'full' },
+      { path: "beheer-tekstobjecten", component: AdminBeheerTekstobjectenComponent},
+      { path: '',  redirectTo: 'admin', pathMatch: 'full'},
+      { path: "tekstobject-wijzigen/:id", component: TekstobjectWijzigenComponent},
       { path: '', redirectTo: 'admin', pathMatch: 'full' },
     ]
   },
