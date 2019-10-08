@@ -51,8 +51,8 @@ export class GebruikersService {
    * Haal een lijst op van alle studenten die bij het opgegeven traject horen
    * @param id het ID van het traject waar de studenten voor worden opgevraagd.
    */
-  haalAlleStudentenVanTraject(id: number): Observable<Gebruiker[]> {
-    return this.http.get<Gebruiker[]>(`${this.api}/haalStudentenOpMetTrajectId/` + id);
+  haalAlleActieveStudentenVanTraject(id: number): Observable<Gebruiker[]> {
+    return this.http.get<Gebruiker[]>(`${this.api}/haalActieveStudentenOpMetTrajectId/` + id);
   }
 
   haalDocentOpMetTraject(traject_id): Observable<any> {

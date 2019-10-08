@@ -22,7 +22,7 @@ export class DocentUitwerkingenComponent implements OnInit {
   }
 
   haalStudentenOp(id: number): void {
-    this.gebruikerService.haalAlleStudentenVanTraject(id).subscribe(studenten => {
+    this.gebruikerService.haalAlleActieveStudentenVanTraject(id).subscribe(studenten => {
       this.studenten = studenten;
       for (let student of studenten) {
         this.maakGelezenLijst(student);

@@ -42,7 +42,7 @@ export class ResultaatInvoerenComponent implements OnInit {
   }
 
   haalStudentenOp(traject_id: number): void {
-    this.gebruikerservice.haalAlleStudentenVanTraject(traject_id).subscribe(studentenlijst => {
+    this.gebruikerservice.haalAlleActieveStudentenVanTraject(traject_id).subscribe(studentenlijst => {
       this.studenten = studentenlijst;
     });
   }

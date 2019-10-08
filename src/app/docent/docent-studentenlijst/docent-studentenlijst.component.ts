@@ -28,7 +28,7 @@ export class DocentStudentenlijstComponent implements OnInit {
    * @Param GebruikersRol.Student = rol van de opgevraagde gebruiker
    */
   haalStudentenOp(id: number): void {
-    this.gebruikerService.haalAlleStudentenVanTraject(id).subscribe(studenten => {
+    this.gebruikerService.haalAlleActieveStudentenVanTraject(id).subscribe(studenten => {
       this.studenten = studenten;
     },
     (error) => {
