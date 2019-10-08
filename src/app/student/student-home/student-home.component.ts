@@ -1,6 +1,6 @@
 import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { Traject } from 'src/app/Objecten/traject';
-import { AutenticatieService, JwtToken } from 'src/app/services/autenticatie.service';
+import { AutenticatieService } from 'src/app/services/autenticatie.service';
 import { TrajectService } from 'src/app/services/traject.service';
 import { AlertService } from 'src/app/_alert';
 import { DataserviceService } from 'src/app/services/dataservice.service'; 
@@ -49,7 +49,6 @@ export class StudentHomeComponent implements OnInit, AfterViewChecked {
     this.gebruikersService.vraagGebruikerOpId(token.gebruiker_id).subscribe(opgehaaldeGebruiker => {
       this.gebruiker = opgehaaldeGebruiker
     })
-
   }
 
   HaalTrajectBijGebruikerOp(id:number){
