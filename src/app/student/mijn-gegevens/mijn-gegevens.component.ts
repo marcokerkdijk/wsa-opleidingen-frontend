@@ -38,7 +38,7 @@ export class MijnGegevensComponent implements OnInit {
   }
 
   haalStudentenOp(id) {
-    this.gebruikerService.haalAlleStudentenVanTraject(id).subscribe(studenten => {
+    this.gebruikerService.haalAlleActieveStudentenVanTraject(id).subscribe(studenten => {
       this.studenten = studenten;
     },
     (error) => {
