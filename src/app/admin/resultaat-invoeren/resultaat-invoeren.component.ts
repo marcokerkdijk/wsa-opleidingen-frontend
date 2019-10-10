@@ -56,7 +56,7 @@ export class ResultaatInvoerenComponent implements OnInit {
       var bytes = new Array<number>();
       reader.readAsArrayBuffer(pdf);
       reader.onload = function() {
-        var arrayBuffer = reader.result;
+        let arrayBuffer = reader.result as ArrayBuffer;
         var byteArray = new Uint8Array(arrayBuffer);
 
         for (var i = 0; i < byteArray.length; i++) {
