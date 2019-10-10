@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { OpdrachtService } from 'src/app/services/opdracht.service';
 import { OpdrachtDTO } from 'src/app/Objecten/opdracht-dto';
 import { AutenticatieService } from 'src/app/services/autenticatie.service';
+import { AlertService } from 'src/app/_alert';
 
 @Component({
   selector: 'wsa-wijzig-assessment',
@@ -18,7 +19,7 @@ export class WijzigAssessmentComponent implements OnInit {
 
   constructor(private trajectonderdeelservice: TrajectonderdeelService, private activeRoute: ActivatedRoute,
               private opdrachtservice: OpdrachtService, private router: Router,
-              private authenticatieService: AutenticatieService) { }
+              private authenticatieService: AutenticatieService, private alertservice:AlertService) { }
 
   ngOnInit() {
     const id = +this.activeRoute.snapshot.paramMap.get('id');
@@ -42,6 +43,9 @@ export class WijzigAssessmentComponent implements OnInit {
   assessmentWijzigen(assessmentDTO: OpdrachtDTO): void {
     this.opdrachtservice.wijzigOpdrachtMetDTO(assessmentDTO).subscribe(response => {
       this.router.navigateByUrl(this.rolIngelogdeGebruiker + '/beheer-assessments');
+    },
+    (error) => {
+      this.alertservice.error("Vul alle velden in om een assessment op te kunnen slaan.", "alert-1");
     });
   }
 }
