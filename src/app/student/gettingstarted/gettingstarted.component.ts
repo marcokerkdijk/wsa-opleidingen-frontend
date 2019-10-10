@@ -13,7 +13,7 @@ export class GettingstartedComponent implements OnInit {
   constructor(private tekstobjectservice: TekstobjectService) { }
 
   ngOnInit() {
-    this.getTekstObject(8);
+    this.getTekstObject(5);
   }
 
   getTekstObject(tekstObject_id: number) {

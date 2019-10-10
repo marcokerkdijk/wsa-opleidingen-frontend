@@ -28,7 +28,7 @@ export class MijnGegevensComponent implements OnInit {
 
   ngOnInit() {
     this.haalGebruikerOp();
-    this.getTekstObject(11);
+    this.getTekstObject(8);
   }
 
   haalGebruikerOp(): void {
