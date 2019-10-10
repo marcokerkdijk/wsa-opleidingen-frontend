@@ -15,6 +15,7 @@ import { AutenticatieService } from 'src/app/services/autenticatie.service';
 export class GebruikersTabelComponent implements OnInit {
   actieveGebruikers : Gebruiker[];
   teVerwijderenGebruiker : Gebruiker = new Gebruiker;
+  zichtbaar: boolean[] = new Array;
   rol :  String;
   
   constructor(private gebruikerService : GebruikersService, private adminBeheerGebruikers:BeheerGebruikersComponent,
@@ -105,5 +106,14 @@ verwijderGebruiker(gebruikerID:number){
     } )
    
 }
+maakBooleanLijst(): void {
+  this.zichtbaar.concat(false);
+}
+
+toggle(index: number): void {
+  this.zichtbaar[index] = !this.zichtbaar[index];
+  console.log(this.zichtbaar[index]);
+}
+
   
 }
