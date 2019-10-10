@@ -18,7 +18,7 @@ export class AdminHomeComponent implements OnInit {
 
   ngOnInit() {
     this.haalGebruikerOp();
-    this.getTekstObject(2);
+    this.getTekstObject(9);
   }
 
   haalGebruikerOp():void {

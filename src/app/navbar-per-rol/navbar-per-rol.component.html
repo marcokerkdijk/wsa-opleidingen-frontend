@@ -27,11 +27,11 @@
                         Notities
                     </a>
                 </li>
-                <li class="nav-item" id="MijnOverzichtButton">
-                    <a class="nav-link" (click)="navigeerNaar('student/mijn-gegevens');" id="MijnOverzichtNav">
-                        Mijn-Overzicht
-                    </a>
-                </li>
+                    <li class="nav-item" id="MijnOverzichtButton" *ngIf="gebruiker.gekoppeld">
+                        <a class="nav-link" (click)="navigeerNaar('student/mijn-gegevens');" id="MijnOverzichtNav">
+                            Mijn-Overzicht
+                        </a>
+                    </li>
                 <li class="nav-item" id="LogButton">
                     <a class="nav-link" (click)="logout()" id="LogoutButton">
                         Logout
@@ -55,15 +55,17 @@
                         id="VoorbereidingHamburger">
                         Voorbereiding
                     </a>
-                    <a class="nav-link hamburgerButton" (click)="navigeerNaar('student/opdrachten');" id="OpdrachtenHamburger">
+                    <a class="nav-link hamburgerButton" (click)="navigeerNaar('student/opdrachten');"
+                        id="OpdrachtenHamburger">
                         Opdrachten
                     </a>
-                    <a class="nav-link hamburgerButton" (click)="navigeerNaar('student/notities');" id="NotitiesHamburger">
+                    <a class="nav-link hamburgerButton" (click)="navigeerNaar('student/notities');"
+                        id="NotitiesHamburger">
                         Notities
                     </a>
                     <a class="nav-link hamburgerButton" (click)="navigeerNaar('student/mijn-gegevens');"
-                        id="Mijn-GegevensHamburger">
-                        Mijn-Gegevens
+                        id="Mijn-GegevensHamburger" *ngIf="gebruiker.gekoppeld">
+                        Mijn-Overzicht
                     </a>
                     <a class="nav-link hamburgerButton" (click)="logout()" id="LogoutButtonHamburger">
                         Logout

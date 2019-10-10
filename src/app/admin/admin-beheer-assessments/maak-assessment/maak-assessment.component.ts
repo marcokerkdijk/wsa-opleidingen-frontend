@@ -6,6 +6,7 @@ import { OpdrachtService } from 'src/app/services/opdracht.service';
 import { Router } from '@angular/router';
 import { OpdrachtType } from 'src/app/model/opdracht-type.enum';
 import { AutenticatieService } from 'src/app/services/autenticatie.service';
+import { AlertService } from 'src/app/_alert';
 
 @Component({
   selector: 'wsa-maak-assessment',
@@ -18,7 +19,7 @@ export class MaakAssessmentComponent implements OnInit {
   trajectonderdelen: TrajectOnderdeel[] = new Array;
 
   constructor(private trajectonderdeelservice: TrajectonderdeelService, private opdrachtservice: OpdrachtService,
-              private router: Router, private authenticatieService: AutenticatieService) { }
+              private router: Router, private authenticatieService: AutenticatieService, private alertservice:AlertService) { }
 
   ngOnInit() {
     this.haalTrajectonderdelenOp();
@@ -35,6 +36,9 @@ export class MaakAssessmentComponent implements OnInit {
     assessment.type = OpdrachtType.ASSESSMENT;
     this.opdrachtservice.maakOpdrachtAan(assessment).subscribe(response => {
       this.router.navigateByUrl(this.rolIngelogdeGebruiker + '/beheer-assessments');
+    },
+    (error) => {
+      this.alertservice.error("Vul alle velden in om een assessment op te kunnen slaan.", "alert-1");
     });
   }
 }

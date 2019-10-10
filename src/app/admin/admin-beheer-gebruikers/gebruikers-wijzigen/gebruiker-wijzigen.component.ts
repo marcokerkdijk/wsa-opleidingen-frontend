@@ -4,7 +4,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { GebruikersService } from 'src/app/services/gebruikers.service';
 import { AutenticatieService } from 'src/app/services/autenticatie.service';
 import { AlertService } from 'src/app/_alert';
-import { isNullOrUndefined } from 'util';
+import { TekstObject } from 'src/app/Objecten/tekst-object';
+import { TekstobjectService } from 'src/app/services/tekstobject.service';
 
 @Component({
   selector: 'wsa-gebruiker-wijzigen',
@@ -14,15 +15,17 @@ import { isNullOrUndefined } from 'util';
 export class GebruikerWijzigenComponent implements OnInit {
   gebruikerInvoer: Gebruiker = new Gebruiker;
   rolIngelogdeGebruiker: string;
+  tekstObject: TekstObject = new TekstObject();
 
   constructor(private activeRouter: ActivatedRoute, private router: Router,
     private gebruikerService: GebruikersService, private alertService: AlertService,
-    private authenticatieservice: AutenticatieService) { }
+    private authenticatieservice: AutenticatieService, private tekstobjectservice: TekstobjectService) { }
 
   ngOnInit() {
     const id = +this.activeRouter.snapshot.paramMap.get('id');
     this.haalGebruikerOpId(id);
     this.rolIngelogdeGebruiker = this.authenticatieservice.krijgRol();
+    this.getTekstObject(15);
   }
 
   haalGebruikerOpId(id: number): void {
@@ -37,13 +40,17 @@ export class GebruikerWijzigenComponent implements OnInit {
             this.router.navigateByUrl('/' + this.rolIngelogdeGebruiker + '/beheer-gebruikers')
           });
         },
-        (error) => {
-          this.alertService.error("Er gaat iets mis bij het wijzigen van de gebruiker.", "alert-1");
-        });
+          (error) => {
+            this.alertService.error("Er gaat iets mis bij het wijzigen van de gebruiker.", "alert-1");
+          });
     }
     else {
       this.alertService.clear("alert-1");
       this.alertService.error("Vul alle verplichte velden in alvorens op 'Gebruiker Opslaan' te klikken.", "alert-1");
     }
+  }
+
+  getTekstObject(tekstObject_id: number) {
+    this.tekstobjectservice.haalTekstObjectOpId(tekstObject_id).subscribe(opgehaaldTekstObject => this.tekstObject = opgehaaldTekstObject);
   }
 }

@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { Traject } from 'src/app/Objecten/traject';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TrajectService } from 'src/app/services/traject.service';
-import { Uitwerking } from 'src/app/Objecten/uitwerking';
 import { UitwerkingService } from 'src/app/services/uitwerking.service';
 import { AlertService } from 'src/app/_alert';
 import { DataserviceService } from 'src/app/services/dataservice.service';
 import { AutenticatieService } from 'src/app/services/autenticatie.service';
 import { UitwerkingDTO } from 'src/app/Objecten/uitwerking-dto';
-import { DomSanitizer } from '@angular/platform-browser';
+import { TekstObject } from 'src/app/Objecten/tekst-object';
+import { TekstobjectService } from 'src/app/services/tekstobject.service';
 
 @Component({
   selector: 'wsa-beheer-resultaten',
@@ -20,17 +20,19 @@ export class BeheerResultatenComponent implements OnInit {
   traject: Traject = new Traject;
   uitwerkingenlijst: UitwerkingDTO[] = new Array;
   filterwaarde: string;
+  tekstObject: TekstObject = new TekstObject();
 
   constructor(private activeRouter: ActivatedRoute, private trajectService: TrajectService,
-              private uitwerkingService: UitwerkingService, private router: Router,
-              private alertservice: AlertService, private dataservice: DataserviceService,
-              private authenticatieService: AutenticatieService, private sanitizer: DomSanitizer) { }
+    private uitwerkingService: UitwerkingService, private router: Router,
+    private alertservice: AlertService, private dataservice: DataserviceService,
+    private authenticatieService: AutenticatieService, private tekstobjectservice: TekstobjectService) { }
 
   ngOnInit() {
     const id = +this.activeRouter.snapshot.paramMap.get('id');
     this.haalTrajectOp(id);
     this.haalUitwerkingenOp(id);
     this.rolIngelogdeGebruiker = this.authenticatieService.krijgRol();
+    this.getTekstObject(12);
   }
 
   haalTrajectOp(traject_id) {
@@ -125,5 +127,9 @@ export class BeheerResultatenComponent implements OnInit {
         }
       }
     }
+  }
+
+  getTekstObject(tekstObject_id: number) {
+    this.tekstobjectservice.haalTekstObjectOpId(tekstObject_id).subscribe(opgehaaldTekstObject => this.tekstObject = opgehaaldTekstObject);
   }
 }

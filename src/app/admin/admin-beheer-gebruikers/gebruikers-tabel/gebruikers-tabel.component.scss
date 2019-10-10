@@ -14,6 +14,10 @@
     line-height: 32px;
 }
 
+table { 
+    table-layout:fixed;
+}
+
 #h6{
     letter-spacing: 1px;
     color: #808285;
@@ -49,18 +53,6 @@ p {
     text-transform: capitalize;
 }
 
-#pencil {
-    color: #00aeef;
-}
-
-.fa-pencil:hover, .fa-trash:hover{
-    cursor: pointer;
-}
-
-.fa-pencil{
-    margin-right: 5mm
-}
-
 #gebruikersTabel {
     margin-top: 1%;
 }
@@ -88,7 +80,7 @@ p {
     display: block;
   } 
 
-  button{
+  .tabelknop{
     border-color: #00aeef;
     color: #00aeef;
     width: 230px;
@@ -110,7 +102,7 @@ p {
     margin-bottom: 5px;
 }
 
-button:hover{
+.tabelknop:hover{
     cursor: pointer;
     color: white;
     background-color: #00aeef;
@@ -118,4 +110,51 @@ button:hover{
 
 #melding {
     min-width: 100%;
+}
+
+#verwijdertekst {
+    margin-top: 1.2%;
+}
+
+#waarschuwing {
+    width: 990px;
+    max-width: 990px;
+    margin-bottom: 0;
+    overflow: auto;
+}
+
+td { 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    word-wrap: break-word;
+}
+
+#pencil {
+    color: #00aeef;
+    font-size: 20px;
+}
+
+#pencil:hover {
+    cursor: pointer;
+}
+
+#verwijderbutton {
+    border-color: #00aeef;
+    color: #00aeef;
+    width: 230px;
+    text-transform: uppercase;
+    border: 1px solid  #00aeef;
+    background-color: #ffffff;
+    border-radius: 0;
+    font-size: 12px;
+    font-weight: 600;
+    padding-top: 10px;
+    padding-bottom: 8px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    line-height: 1.42857;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }

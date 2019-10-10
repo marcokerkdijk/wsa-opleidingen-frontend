@@ -6,6 +6,8 @@ import { AlertService } from 'src/app/_alert';
 import { AutenticatieService } from 'src/app/services/autenticatie.service';
 import { Traject } from 'src/app/Objecten/traject';
 import { UitwerkingDTO } from 'src/app/Objecten/uitwerking-dto';
+import { TekstObject } from 'src/app/Objecten/tekst-object';
+import { TekstobjectService } from 'src/app/services/tekstobject.service';
 
 @Component({
   selector: 'wsa-mijn-gegevens',
@@ -18,12 +20,15 @@ export class MijnGegevensComponent implements OnInit {
   assessments: UitwerkingDTO[] = new Array;
   gebruiker: Gebruiker = new Gebruiker;
   traject: Traject = new Traject;
+  tekstObject: TekstObject = new TekstObject();
 
-  constructor(private authenticatieService: AutenticatieService, private gebruikerService: GebruikersService, 
-              private alertservice: AlertService, private uitwerkingenService: UitwerkingService) { }
+  constructor(private authenticatieService: AutenticatieService, private gebruikerService: GebruikersService,
+    private alertservice: AlertService, private uitwerkingenService: UitwerkingService,
+    private tekstobjectservice: TekstobjectService) { }
 
   ngOnInit() {
     this.haalGebruikerOp();
+    this.getTekstObject(8);
   }
 
   haalGebruikerOp(): void {
@@ -41,9 +46,9 @@ export class MijnGegevensComponent implements OnInit {
     this.gebruikerService.haalAlleActieveStudentenVanTraject(id).subscribe(studenten => {
       this.studenten = studenten;
     },
-    (error) => {
-      this.alertservice.error("Er zijn nog geen studenten aan het traject gekoppeld.", "alert-1");
-    }
+      (error) => {
+        this.alertservice.error("Er zijn nog geen studenten aan het traject gekoppeld.", "alert-1");
+      }
     );
   }
 
@@ -51,19 +56,19 @@ export class MijnGegevensComponent implements OnInit {
     this.gebruikerService.haalDocentOpMetTraject(id).subscribe(docenten => {
       this.docenten = docenten;
     },
-    (error) => {
-      this.alertservice.error("Er zijn nog geen docenten aan het traject gekoppeld.", "alert-2");
-    }
+      (error) => {
+        this.alertservice.error("Er zijn nog geen docenten aan het traject gekoppeld.", "alert-2");
+      }
     );
   }
 
-  haalAssessmentsOp(gebruiker_id){
+  haalAssessmentsOp(gebruiker_id) {
     this.uitwerkingenService.geefAssessmentUitwerkingenVanStudent(gebruiker_id).subscribe(assessments => {
       this.assessments = assessments;
     },
-    (error) => {
-      this.alertservice.error("Er zijn nog geen resultaten van assessments gekoppeld.", "alert-3");
-    }
+      (error) => {
+        this.alertservice.error("Er zijn nog geen resultaten van assessments gekoppeld.", "alert-3");
+      }
     );
   }
 
@@ -77,6 +82,10 @@ export class MijnGegevensComponent implements OnInit {
     let iframeEnd = "'><\/iframe>";
     
     newPdfWindow.document.write(iframeStart + content + iframeEnd);
+  }
+  
+  getTekstObject(tekstObject_id: number) {
+    this.tekstobjectservice.haalTekstObjectOpId(tekstObject_id).subscribe(opgehaaldTekstObject => this.tekstObject = opgehaaldTekstObject);
   }
 
   sorteerTabel(n) {
