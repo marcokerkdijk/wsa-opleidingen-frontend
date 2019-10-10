@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { AutenticatieService } from '../services/autenticatie.service';
 import { TokenService } from '../services/token.service';
 import { Location } from "@angular/common";
+import { Gebruiker } from 'src/app/Objecten/gebruiker';
+import { GebruikersService } from 'src/app/services/gebruikers.service';
 
 @Component({
   selector: 'wsa-navbar-per-rol',
@@ -10,12 +12,14 @@ import { Location } from "@angular/common";
   styleUrls: ['./navbar-per-rol.component.scss']
 })
 export class NavbarPerRolComponent implements OnInit {
+  gebruiker: Gebruiker = new Gebruiker;
   ingelogd: boolean = false;
   rol: string;
   locatie: string;
 
   constructor(private router: Router, private autenticatieService: AutenticatieService, 
-              private tokenService: TokenService, private currentLocation: Location) {
+              private tokenService: TokenService, private currentLocation: Location,
+              private gebruikersService: GebruikersService) {
   }
 
   ngOnInit() {
@@ -25,6 +29,11 @@ export class NavbarPerRolComponent implements OnInit {
   public checkInlogEnKrijgRol(): void {
     this.ingelogd = this.tokenService.isIngelogd();
     this.rol = this.autenticatieService.krijgRol();
+    let token = this.autenticatieService.haalTokenOp();
+    console.log(token.gebruiker_id);
+    this.gebruikersService.vraagGebruikerOpId(token.gebruiker_id).subscribe(opgehaaldeGebruiker => {
+      this.gebruiker = opgehaaldeGebruiker
+    });
   }
 
   public terug(): void {

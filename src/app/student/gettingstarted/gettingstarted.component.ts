@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TekstObject } from 'src/app/Objecten/tekst-object';
+import { TekstobjectService } from 'src/app/services/tekstobject.service';
 
 @Component({
   selector: 'wsa-gettingstarted',
@@ -6,24 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./gettingstarted.component.scss']
 })
 export class GettingstartedComponent implements OnInit {
+  tekstObject: TekstObject = new TekstObject();
 
-  constructor() { }
+  constructor(private tekstobjectservice: TekstobjectService) { }
 
   ngOnInit() {
+    this.getTekstObject(8);
   }
-  goToCodecademy(){
-    window.open("https://www.codecademy.com/", "_blank")
-  }
-  goToNewBoston()
-  {
-    window.open("https://www.youtube.com/playlist?list=PLFE2CE09D83EE3E28", "_blank")
-  }
-  goToMOOCFI()
-  {
-    window.open("https://moocfi.github.io/courses/2013/programming-part-1/", "_blank")
-  }
-  goToTutorialspoint()
-  {
-    window.open("https://www.tutorialspoint.com/java/index.htm", "_blank")
+
+  getTekstObject(tekstObject_id: number) {
+    this.tekstobjectservice.haalTekstObjectOpId(tekstObject_id).subscribe(opgehaaldTekstObject => this.tekstObject = opgehaaldTekstObject);
   }
 }
