@@ -7,6 +7,8 @@ import { UitwerkingService } from 'src/app/services/uitwerking.service';
 import { AlertService } from 'src/app/_alert';
 import { DataserviceService } from 'src/app/services/dataservice.service';
 import { AutenticatieService } from 'src/app/services/autenticatie.service';
+import { UitwerkingDTO } from 'src/app/Objecten/uitwerking-dto';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'wsa-beheer-resultaten',
@@ -16,13 +18,13 @@ import { AutenticatieService } from 'src/app/services/autenticatie.service';
 export class BeheerResultatenComponent implements OnInit {
   rolIngelogdeGebruiker: string;
   traject: Traject = new Traject;
-  uitwerkingenlijst: Uitwerking[] = new Array;
+  uitwerkingenlijst: UitwerkingDTO[] = new Array;
   filterwaarde: string;
 
   constructor(private activeRouter: ActivatedRoute, private trajectService: TrajectService,
               private uitwerkingService: UitwerkingService, private router: Router,
               private alertservice: AlertService, private dataservice: DataserviceService,
-              private authenticatieService: AutenticatieService) { }
+              private authenticatieService: AutenticatieService, private sanitizer: DomSanitizer) { }
 
   ngOnInit() {
     const id = +this.activeRouter.snapshot.paramMap.get('id');
@@ -54,6 +56,18 @@ export class BeheerResultatenComponent implements OnInit {
 
   naarWijzigPagina(id: number): void {
     this.router.navigateByUrl(this.rolIngelogdeGebruiker + '/resultaat-wijzigen/' + id);
+  }
+
+  downloadPdf(uitwerking: UitwerkingDTO): void {
+    let newPdfWindow = window.open("","Print");
+
+    let content = encodeURIComponent(uitwerking.byteString);
+    
+    let iframeStart = "<\iframe width='100%' height='100%' src='data:application/pdf;base64, ";
+    
+    let iframeEnd = "'><\/iframe>";
+    
+    newPdfWindow.document.write(iframeStart + content + iframeEnd);
   }
 
   sorteerTabel(n) {

@@ -5,7 +5,7 @@ import { UitwerkingService } from 'src/app/services/uitwerking.service'
 import { AlertService } from 'src/app/_alert';
 import { AutenticatieService } from 'src/app/services/autenticatie.service';
 import { Traject } from 'src/app/Objecten/traject';
-import { Uitwerking } from 'src/app/Objecten/uitwerking';
+import { UitwerkingDTO } from 'src/app/Objecten/uitwerking-dto';
 
 @Component({
   selector: 'wsa-mijn-gegevens',
@@ -15,7 +15,7 @@ import { Uitwerking } from 'src/app/Objecten/uitwerking';
 export class MijnGegevensComponent implements OnInit {
   studenten: Gebruiker[] = new Array;
   docenten: Gebruiker[] = new Array;
-  assessments: Uitwerking[] = new Array;
+  assessments: UitwerkingDTO[] = new Array;
   gebruiker: Gebruiker = new Gebruiker;
   traject: Traject = new Traject;
 
@@ -65,6 +65,18 @@ export class MijnGegevensComponent implements OnInit {
       this.alertservice.error("Er zijn nog geen resultaten van assessments gekoppeld.", "alert-3");
     }
     );
+  }
+
+  downloadPdf(uitwerking: UitwerkingDTO): void {
+    let newPdfWindow = window.open("","Print");
+
+    let content = encodeURIComponent(uitwerking.byteString);
+    
+    let iframeStart = "<\iframe width='100%' height='100%' src='data:application/pdf;base64, ";
+    
+    let iframeEnd = "'><\/iframe>";
+    
+    newPdfWindow.document.write(iframeStart + content + iframeEnd);
   }
 
   sorteerTabel(n) {

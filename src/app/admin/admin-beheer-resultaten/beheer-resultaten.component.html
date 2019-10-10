@@ -31,6 +31,7 @@
                     </th>
                     <th id="Resultaat">Resultaat</th>
                     <th id="Wijzigen">Wijzigen</th>
+                    <th id="Download">PDF</th>
                 </tr>
             </thead>
             <tbody>
@@ -46,6 +47,12 @@
                         <div id="pencil">
                             <i class='fa fa-pencil' id="pencil{{Uitwerking.id}}"
                                 (click)="setTrajectId(); naarWijzigPagina(Uitwerking.id);"></i>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="download" *ngIf="Uitwerking.byteString !== null">
+                            <i class="fa fa-download" id="download{{Uitwerking.id}}"
+                                (click)="downloadPdf(Uitwerking);"></i>
                         </div>
                     </td>
                 </tr>

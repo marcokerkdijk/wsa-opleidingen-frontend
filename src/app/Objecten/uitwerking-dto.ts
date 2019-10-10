@@ -2,7 +2,7 @@ import { Opdracht } from './opdracht';
 import { Gebruiker } from './gebruiker';
 import { UitwerkingType } from '../model/uitwerking-type.enum';
 
-export class Uitwerking {
+export class UitwerkingDTO {
     id: number;
     resultaat: string;
     inleverTijdstip: Date;
@@ -11,5 +11,6 @@ export class Uitwerking {
     opmerking: string;
     gelezen: boolean;
     type: UitwerkingType;
-    bestand: Blob;
+    documentBytes: number[];
+    byteString: string;
 }

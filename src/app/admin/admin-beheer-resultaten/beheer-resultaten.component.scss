@@ -63,12 +63,12 @@ p {
     cursor: pointer;
 }
 
-#pencil {
+#pencil, #download {
     padding-left: 5px;
     color: #00aeef;
 }
 
-.fa-pencil:hover {
+.fa-pencil:hover, .fa-download:hover {
     cursor: pointer;
 }
 

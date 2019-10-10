@@ -28,12 +28,19 @@
                         <th>Resultaat<i id='sorteerPijlResultaat' class="fa fa-fw fa-sort"
                                 (click)="sorteerTabel(1)"></i>
                         </th>
+                        <th id="download">PDF</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let Assessment of assessments">
                         <td>{{Assessment.opdracht.titel}}</td>
                         <td>{{Assessment.resultaat}}</td>
+                        <td>
+                            <div id="download" *ngIf="Assessment.byteString !== null">
+                                <i class="fa fa-download" id="download{{Assessment.id}}"
+                                    (click)="downloadPdf(Assessment);"></i>
+                            </div>
+                        </td>
                     </tr>
                 </tbody>
             </table>
