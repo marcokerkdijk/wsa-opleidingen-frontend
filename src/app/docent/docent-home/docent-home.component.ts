@@ -25,7 +25,7 @@ export class DocentHomeComponent implements OnInit {
   ngOnInit() {
     this.haalGebruikerOp();
     this.haalTrajectenVanDocentOp();
-    this.getTekstObject(4);
+    this.getTekstObject(17);
   }
 
   haalGebruikerOp():void {

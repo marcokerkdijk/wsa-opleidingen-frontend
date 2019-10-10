@@ -27,7 +27,7 @@ export class StudentHomeComponent implements OnInit, AfterViewChecked {
 
   ngOnInit() {
     this.haalGebruikerOp();
-    this.getTekstObject(5);
+    this.getTekstObject(2);
   }
 
   ngAfterViewChecked() {

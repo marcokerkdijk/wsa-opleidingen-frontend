@@ -14,7 +14,7 @@ export class VoorbereidingComponent implements OnInit {
   constructor(private router: Router, private tekstobjectservice: TekstobjectService) { }
 
   ngOnInit() {
-    this.getTekstObject(6);
+    this.getTekstObject(3);
   }
 
   getTekstObject(tekstObject_id: number) {

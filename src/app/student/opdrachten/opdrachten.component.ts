@@ -23,7 +23,7 @@ export class OpdrachtenComponent implements OnInit {
   ngOnInit() {
     this.haalTrajectIdOp();
     this.haalOpdrachtenOp();
-    this.getTekstObject(9);
+    this.getTekstObject(6);
   }
 
   haalTrajectIdOp(): void {
