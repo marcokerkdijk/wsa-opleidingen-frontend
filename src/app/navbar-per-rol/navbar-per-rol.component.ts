@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AutenticatieService } from '../services/autenticatie.service';
+import { AutenticatieService, JwtToken } from '../services/autenticatie.service';
 import { TokenService } from '../services/token.service';
 import { Location } from "@angular/common";
 import { Gebruiker } from 'src/app/Objecten/gebruiker';
@@ -30,9 +30,12 @@ export class NavbarPerRolComponent implements OnInit {
     this.ingelogd = this.tokenService.isIngelogd();
     this.rol = this.autenticatieService.krijgRol();
     let token = this.autenticatieService.haalTokenOp();
-    console.log(token.gebruiker_id);
-    this.gebruikersService.vraagGebruikerOpId(token.gebruiker_id).subscribe(opgehaaldeGebruiker => {
-      this.gebruiker = opgehaaldeGebruiker
+    this.haalGebruikerOp(token.gebruiker_id);
+  }
+
+  haalGebruikerOp(gebruiker_id: number): void {
+    this.gebruikersService.vraagGebruikerOpId(gebruiker_id).subscribe(opgehaaldeGebruiker => {
+      this.gebruiker = opgehaaldeGebruiker;
     });
   }
 
