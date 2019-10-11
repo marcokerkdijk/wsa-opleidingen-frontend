@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Traject } from 'src/app/Objecten/traject';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TrajectService } from 'src/app/services/traject.service';
-import { Uitwerking } from 'src/app/Objecten/uitwerking';
 import { UitwerkingService } from 'src/app/services/uitwerking.service';
 import { AlertService } from 'src/app/_alert';
 import { DataserviceService } from 'src/app/services/dataservice.service';
 import { AutenticatieService } from 'src/app/services/autenticatie.service';
+import { UitwerkingDTO } from 'src/app/Objecten/uitwerking-dto';
 import { TekstObject } from 'src/app/Objecten/tekst-object';
 import { TekstobjectService } from 'src/app/services/tekstobject.service';
 
@@ -18,7 +18,7 @@ import { TekstobjectService } from 'src/app/services/tekstobject.service';
 export class BeheerResultatenComponent implements OnInit {
   rolIngelogdeGebruiker: string;
   traject: Traject = new Traject;
-  uitwerkingenlijst: Uitwerking[] = new Array;
+  uitwerkingenlijst: UitwerkingDTO[] = new Array;
   filterwaarde: string;
   tekstObject: TekstObject = new TekstObject();
 
@@ -58,6 +58,18 @@ export class BeheerResultatenComponent implements OnInit {
 
   naarWijzigPagina(id: number): void {
     this.router.navigateByUrl(this.rolIngelogdeGebruiker + '/resultaat-wijzigen/' + id);
+  }
+
+  downloadPdf(uitwerking: UitwerkingDTO): void {
+    let newPdfWindow = window.open("","Print");
+
+    let content = encodeURIComponent(uitwerking.byteString);
+    
+    let iframeStart = "<\iframe width='100%' height='100%' src='data:application/pdf;base64, ";
+    
+    let iframeEnd = "'><\/iframe>";
+    
+    newPdfWindow.document.write(iframeStart + content + iframeEnd);
   }
 
   sorteerTabel(n) {
