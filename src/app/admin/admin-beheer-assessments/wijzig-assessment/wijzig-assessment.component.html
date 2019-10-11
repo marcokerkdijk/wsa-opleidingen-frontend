@@ -18,19 +18,20 @@
                     </label>
                     <ng-container>
                         <span class="zichtbaartekst" *ngIf="assessment.zichtbaar">Het assessment is zichtbaar.</span>
-                        <span class="zichtbaartekst" *ngIf="!assessment.zichtbaar">Het assessment is niet zichtbaar.</span>
+                        <span class="zichtbaartekst" *ngIf="!assessment.zichtbaar">Het assessment is niet
+                            zichtbaar.</span>
                     </ng-container>
                 </div>
             </div>
         </div>
-        <div class="row">
+         <div class="row">
             <div class="col-sm-6">
-                <p>Kies bij welke fase het assessment hoort</p>
-                <select name="fase" class="form-control" [(ngModel)]="assessment.trajectOnderdeel.id"
-                    id="trajectonderdeelmenu">
-                        <option id="fasekeuze{{Trajectonderdeel.id}}" [ngValue]="Trajectonderdeel.id"
-                         *ngFor="let Trajectonderdeel of trajectonderdelen">
-                            {{Trajectonderdeel.naam}} | Traject: {{Trajectonderdeel.traject.naam}}</option>
+                <p>Kies bij welke trajectonderdeel van een traject het assessment hoort</p>
+                <select name="fase" class="form-control" id="trajectonderdeelmenu"
+                    [(ngModel)]="trajectOnderdeel.id">
+                    <option id="fasekeuze{{Trajectonderdeel.id}}" *ngFor="let Trajectonderdeel of trajectonderdelen" [ngValue]="Trajectonderdeel.id">
+                        {{Trajectonderdeel.naam}} | Traject: {{Trajectonderdeel.traject.naam}}
+                    </option>
                 </select>
             </div>
         </div>

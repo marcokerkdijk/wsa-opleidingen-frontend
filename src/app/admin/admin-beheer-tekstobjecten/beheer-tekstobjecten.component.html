@@ -8,7 +8,54 @@
             </p>
         </div>
     </div>
-    <div class="row" *ngFor="let TekstObject of alleTekstObjecten">
+    <div class="row">
+        <p id="tekstobjecten-groep">HomePagina</p>
+    </div>
+    <div class="row" *ngFor="let TekstObject of alleTekstObjecten | slice:0:1">
+        <div class="col-sm-4">
+            <h5 id="tekstobjectTitel{{TekstObject.id}}">{{TekstObject.titel}}</h5>
+        </div>
+        <button id="tekstobjectWijzig{{TekstObject.id}}" routerLink="../tekstobject-wijzigen/{{TekstObject.id}}">
+            Bewerk Tekst
+        </button>
+    </div>
+    <div class="row">
+        <p id="tekstobjecten-groep">StudentPagina</p>
+    </div>
+    <div class="row" *ngFor="let TekstObject of alleTekstObjecten | slice:1:8">
+        <div class="col-sm-4">
+            <h5 id="tekstobjectTitel{{TekstObject.id}}">{{TekstObject.titel}}</h5>
+        </div>
+        <button id="tekstobjectWijzig{{TekstObject.id}}" routerLink="../tekstobject-wijzigen/{{TekstObject.id}}">
+            Bewerk Tekst
+        </button>
+    </div>
+    <div class="row">
+        <p id="tekstobjecten-groep">AdminPagina</p>
+    </div>
+    <div class="row" *ngFor="let TekstObject of alleTekstObjecten | slice:8:16">
+        <div class="col-sm-4">
+            <h5 id="tekstobjectTitel{{TekstObject.id}}">{{TekstObject.titel}}</h5>
+        </div>
+        <button id="tekstobjectWijzig{{TekstObject.id}}" routerLink="../tekstobject-wijzigen/{{TekstObject.id}}">
+            Bewerk Tekst
+        </button>
+    </div>
+    <div class="row">
+        <p id="tekstobjecten-groep">DocentPagina</p>
+    </div>
+    <div class="row" *ngFor="let TekstObject of alleTekstObjecten | slice:16:17">
+        <div class="col-sm-4">
+            <h5 id="tekstobjectTitel{{TekstObject.id}}">{{TekstObject.titel}}</h5>
+        </div>
+        <button id="tekstobjectWijzig{{TekstObject.id}}" routerLink="../tekstobject-wijzigen/{{TekstObject.id}}">
+            Bewerk Tekst
+        </button>
+    </div>
+    <div class="row">
+        <p id="tekstobjecten-groep">RecruiterPagina</p>
+    </div>
+    <div class="row" *ngFor="let TekstObject of alleTekstObjecten | slice:17">
         <div class="col-sm-4">
             <h5 id="tekstobjectTitel{{TekstObject.id}}">{{TekstObject.titel}}</h5>
         </div>

@@ -25,7 +25,7 @@ export class NotitiesComponent implements OnInit {
 
   ngOnInit() {
     this.getNotitiesVanTrajectOpGebruikerId();
-    this.getTekstObject(10);
+    this.getTekstObject(7);
   }
 
   getNotitiesVanTrajectOpGebruikerId() {

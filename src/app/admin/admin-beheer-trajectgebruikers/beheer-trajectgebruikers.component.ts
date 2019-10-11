@@ -6,6 +6,8 @@ import { Gebruiker } from 'src/app/Objecten/gebruiker';
 import { GebruikersService } from 'src/app/services/gebruikers.service';
 import { DTOGebruikerID } from 'src/app/Objecten/gebruikerDTO';
 import { AlertService } from 'src/app/_alert';
+import { TekstObject } from 'src/app/Objecten/tekst-object';
+import { TekstobjectService } from 'src/app/services/tekstobject.service';
 
 @Component({
   selector: 'wsa-beheer-trajectgebruikers',
@@ -18,15 +20,18 @@ export class BeheerTrajectgebruikersComponent implements OnInit {
   gebruikerIDLijst: DTOGebruikerID[] = new Array;
   docentenlijst: Gebruiker[] = new Array;
   docentIDLijst: DTOGebruikerID[] = new Array;
+  tekstObject: TekstObject = new TekstObject();
 
-  constructor(private activeRouter: ActivatedRoute, private trajectService:TrajectService,
-              private gebruikersService: GebruikersService, private alertService: AlertService) { }
+  constructor(private activeRouter: ActivatedRoute, private trajectService: TrajectService,
+    private gebruikersService: GebruikersService, private alertService: AlertService,
+    private tekstobjectservice: TekstobjectService) { }
 
   ngOnInit() {
     const id = +this.activeRouter.snapshot.paramMap.get('id');
     this.haalTrajectOp(id);
     this.haalStudentenOp(id);
     this.haalDocentenOp();
+    this.getTekstObject(11);
   }
 
   haalTrajectOp(traject_id) {
@@ -38,9 +43,9 @@ export class BeheerTrajectgebruikersComponent implements OnInit {
       this.studentenlijst = studenten;
       this.maakStudentArray();
     },
-    (error) => {
-      this.alertService.error("Er zijn geen studenten zonder traject.", "alert-1");
-    });
+      (error) => {
+        this.alertService.error("Er zijn geen studenten zonder traject.", "alert-1");
+      });
   }
 
   haalDocentenOp() {
@@ -74,7 +79,7 @@ export class BeheerTrajectgebruikersComponent implements OnInit {
       if (student.gekoppeld === true) {
         let gebruikerDTO: DTOGebruikerID = new DTOGebruikerID;
         gebruikerDTO.id = student.id;
-  
+
         this.gebruikerIDLijst.push(gebruikerDTO);
       }
     }
@@ -85,7 +90,7 @@ export class BeheerTrajectgebruikersComponent implements OnInit {
       if (docent.aanTraject) {
         let gebruikerDTO: DTOGebruikerID = new DTOGebruikerID;
         gebruikerDTO.id = docent.id;
-  
+
         this.gebruikerIDLijst.push(gebruikerDTO);
       }
     }
@@ -151,5 +156,9 @@ export class BeheerTrajectgebruikersComponent implements OnInit {
 
   opslaanGebruikers(gebruikerIDs: DTOGebruikerID[]): void {
     this.trajectService.koppelTrajectAanGebruiker(gebruikerIDs, this.traject.id).subscribe();
+  }
+
+  getTekstObject(tekstObject_id: number) {
+    this.tekstobjectservice.haalTekstObjectOpId(tekstObject_id).subscribe(opgehaaldTekstObject => this.tekstObject = opgehaaldTekstObject);
   }
 }
