@@ -26,13 +26,11 @@
         </div>
         <div class="row">
             <div class="col-sm-6">
-                <p>Kies bij welke fase het assessment hoort</p>
-                <select name="fase" class="form-control" [(ngModel)]="assessment.trajectOnderdeel"
-                    id="trajectonderdeelmenu">
-                    <ng-container *ngFor="let Trajectonderdeel of trajectonderdelen">
-                        <option id="fasekeuze{{Trajectonderdeel.id}}" [ngValue]="Trajectonderdeel">
-                            {{Trajectonderdeel.naam}} | Traject: {{Trajectonderdeel.traject.naam}}</option>
-                    </ng-container>
+                <p>Kies bij welke trajectonderdeel van een traject het assessment hoort</p>
+                <select name="fase" class="form-control" id="trajectonderdeelmenu" [(ngModel)]="trajectOnderdeel">
+                    <option *ngFor="let Trajectonderdeel of trajectonderdelen" [ngValue]="Trajectonderdeel">
+                        {{Trajectonderdeel.naam}} | Traject: {{Trajectonderdeel.traject.naam}}
+                    </option>
                 </select>
             </div>
         </div>
