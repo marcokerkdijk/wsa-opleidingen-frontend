@@ -16,6 +16,7 @@ export class WijzigAssessmentComponent implements OnInit {
   rolIngelogdeGebruiker: string;
   assessment: OpdrachtDTO = new OpdrachtDTO;
   trajectonderdelen: TrajectOnderdeel[] = new Array;
+  trajectOnderdeel: TrajectOnderdeel = new TrajectOnderdeel;
 
   constructor(private trajectonderdeelservice: TrajectonderdeelService, private activeRoute: ActivatedRoute,
               private opdrachtservice: OpdrachtService, private router: Router,
