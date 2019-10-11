@@ -44,12 +44,18 @@
         <div class="col-sm-6">
             <p>Resultaat*</p>
             <textarea name="resultaat" class="form-control" id="resultaatinvoer"
-                [(ngModel)]="resultaat.resultaat"></textarea>
+                [(ngModel)]="resultaatDTO.resultaat"></textarea>
+        </div>
+
+        <div class="col-sm-6">
+            <p>Pdf uploaden</p>
+            <input name="bestand" id="bestandinvoer" type="file" (change)="voegBestandToe($event.target.files);"
+                accept=".pdf">
         </div>
     </div>
     <div class="row">
         <div class="col-sm-6">
-            <button id="opslaanknop" (click)="resultaatOpslaan(resultaat);">Resultaat opslaan</button>
+            <button id="opslaanknop" (click)="resultaatOpslaan(resultaatDTO);">Resultaat opslaan</button>
         </div>
     </div>
 </div>

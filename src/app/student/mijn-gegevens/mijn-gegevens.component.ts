@@ -5,7 +5,7 @@ import { UitwerkingService } from 'src/app/services/uitwerking.service'
 import { AlertService } from 'src/app/_alert';
 import { AutenticatieService } from 'src/app/services/autenticatie.service';
 import { Traject } from 'src/app/Objecten/traject';
-import { Uitwerking } from 'src/app/Objecten/uitwerking';
+import { UitwerkingDTO } from 'src/app/Objecten/uitwerking-dto';
 import { TekstObject } from 'src/app/Objecten/tekst-object';
 import { TekstobjectService } from 'src/app/services/tekstobject.service';
 
@@ -17,7 +17,7 @@ import { TekstobjectService } from 'src/app/services/tekstobject.service';
 export class MijnGegevensComponent implements OnInit {
   studenten: Gebruiker[] = new Array;
   docenten: Gebruiker[] = new Array;
-  assessments: Uitwerking[] = new Array;
+  assessments: UitwerkingDTO[] = new Array;
   gebruiker: Gebruiker = new Gebruiker;
   traject: Traject = new Traject;
   tekstObject: TekstObject = new TekstObject();
@@ -72,6 +72,14 @@ export class MijnGegevensComponent implements OnInit {
     );
   }
 
+  downloadPdf(uitwerking: UitwerkingDTO): void {
+    let newPdfWindow = window.open("","Print");
+    let content = encodeURIComponent(uitwerking.byteString);
+    let iframeStart = "<\iframe width='100%' height='100%' src='data:application/pdf;base64, ";
+    let iframeEnd = "'><\/iframe>";
+    newPdfWindow.document.write(iframeStart + content + iframeEnd);
+  }
+  
   getTekstObject(tekstObject_id: number) {
     this.tekstobjectservice.haalTekstObjectOpId(tekstObject_id).subscribe(opgehaaldTekstObject => this.tekstObject = opgehaaldTekstObject);
   }

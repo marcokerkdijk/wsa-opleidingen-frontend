@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { Uitwerking } from '../Objecten/uitwerking';
+import { UitwerkingDTO } from '../Objecten/uitwerking-dto';
 
 @Injectable({
   providedIn: 'root'
@@ -24,16 +25,19 @@ export class UitwerkingService {
     return this.http.put<Uitwerking>(`${this.api}/WijzigUitwerking/` + gebruiker_id, uitwerking);
   }
 
-  geefAssessmentUitwerkingenVanTraject(traject_id: number): Observable<Uitwerking[]> {
-    return this.http.get<Uitwerking[]>(`${this.api}/geefAssessmentUitwerkingenVanTraject/` + traject_id);
+  geefAssessmentUitwerkingenVanTraject(traject_id: number): Observable<UitwerkingDTO[]> {
+    return this.http.get<UitwerkingDTO[]>(`${this.api}/geefAssessmentUitwerkingenVanTraject/` + traject_id);
   }
 
   haalUitwerkingOp(uitwerking_id: number): Observable<Uitwerking> {
     return this.http.get<Uitwerking>(`${this.api}/geefUitwerking/` + uitwerking_id);
   }
 
-  geefAssessmentUitwerkingenVanStudent(gebruiker_id: number): Observable<Uitwerking[]> {
-    return this.http.get<Uitwerking[]>(`${this.api}/geefAssessmentUitwerkingenVanStudent/` + gebruiker_id);
+  geefAssessmentUitwerkingenVanStudent(gebruiker_id: number): Observable<UitwerkingDTO[]> {
+    return this.http.get<UitwerkingDTO[]>(`${this.api}/geefAssessmentUitwerkingenVanStudent/` + gebruiker_id);
   }
 
+  maakAssessmentResultaat(gebruiker_id: number, opdracht_id: number, uitwerkingDTO: UitwerkingDTO): Observable<Uitwerking> {
+    return this.http.post<Uitwerking>(`${this.api}/maakAssessmentResultaat/` + gebruiker_id + '/' + opdracht_id, uitwerkingDTO);
+  }
 }
