@@ -74,13 +74,9 @@ export class MijnGegevensComponent implements OnInit {
 
   downloadPdf(uitwerking: UitwerkingDTO): void {
     let newPdfWindow = window.open("","Print");
-
     let content = encodeURIComponent(uitwerking.byteString);
-    
     let iframeStart = "<\iframe width='100%' height='100%' src='data:application/pdf;base64, ";
-    
     let iframeEnd = "'><\/iframe>";
-    
     newPdfWindow.document.write(iframeStart + content + iframeEnd);
   }
   
