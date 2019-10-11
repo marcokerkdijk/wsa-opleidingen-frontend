@@ -19,7 +19,7 @@ export class RecruiterHomeComponent implements OnInit {
 
   ngOnInit() {
     this.haalGebruikerOp();
-    this.getTekstObject(3);
+    this.getTekstObject(18);
   }
   
   haalGebruikerOp():void {

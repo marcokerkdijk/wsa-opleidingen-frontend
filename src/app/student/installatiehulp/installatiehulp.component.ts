@@ -13,7 +13,7 @@ export class InstallatiehulpComponent implements OnInit {
   constructor(private tekstobjectservice: TekstobjectService) { }
 
   ngOnInit() {
-    this.getTekstObject(7);
+    this.getTekstObject(4);
   }
 
   getTekstObject(tekstObject_id: number) {

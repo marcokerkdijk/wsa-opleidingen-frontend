@@ -47,17 +47,17 @@
                 <table id="studentenlijst" class="table table-bordered">
                     <thead id="table-bottom">
                         <tr>
-                            <th>Voornaam<i id='sorteerPijlVoornaam' class="fa fa-fw fa-sort"
+                            <th id="voornaam">Voornaam<i id='sorteerPijlVoornaam' class="fa fa-fw fa-sort"
                                     (click)="sorteerTabel(0)"></i></th>
-                            <th>Achternaam<i id='sorteerPijlAchternaam' class="fa fa-fw fa-sort"
+                            <th id="achternaam">Achternaam<i id='sorteerPijlAchternaam' class="fa fa-fw fa-sort"
                                     (click)="sorteerTabel(1)"></i>
                             </th>
-                            <th>E-mailadres<i id='sorteerPijlEmail' class="fa fa-fw fa-sort"
+                            <th id="emailadres">E-mailadres<i id='sorteerPijlEmail' class="fa fa-fw fa-sort"
                                     (click)="sorteerTabel(1)"></i></th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let Gebruiker of studenten">
+                        <tr *ngFor="let Gebruiker of studenten" id="tabelrij{{Gebruiker.id}}">
                             <td>{{Gebruiker.voornaam}}</td>
                             <td>{{Gebruiker.tussenvoegsel}} {{Gebruiker.achternaam}}</td>
                             <td>{{Gebruiker.emailadres}}</td>
