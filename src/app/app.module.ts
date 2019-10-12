@@ -37,7 +37,6 @@ import { OpdrachtenComponent } from './student/opdrachten/opdrachten.component';
 import { NotitiesComponent } from './student/notities/notities.component';
 import { MijnGegevensComponent } from './student/mijn-gegevens/mijn-gegevens.component';
 import { RecruiterComponent } from './recruiter/recruiter.component';
-import { RecruiterHomeComponent } from './recruiter/recruiter-home/recruiter-home.component';
 import { OpdrachtAanmaakComponent } from './docent/docent-opdrachten/opdracht-aanmaak/opdracht-aanmaak.component';
 import { BeheerTrajectgebruikersComponent } from './admin/admin-beheer-trajectgebruikers/beheer-trajectgebruikers.component';
 import { StudentHomeComponent } from './student/student-home/student-home.component';
@@ -117,7 +116,6 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     NotitiesComponent,
     MijnGegevensComponent,
     RecruiterComponent,
-    RecruiterHomeComponent,
     OpdrachtAanmaakComponent,
     BeheerTrajectgebruikersComponent,
     StudentHomeComponent,
