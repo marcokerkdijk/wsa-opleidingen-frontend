@@ -1,19 +1,21 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-3">
-            <h5>{{tekstObject.titel}}</h5>
+            <h5 class="capitalize">{{tekstObject.titel}} {{gebruiker.rol}}</h5>
         </div>
         <div class="col-sm-6" [innerHTML]="tekstObject.tekst | linkify">
-            <p>Welkom {{gebruiker.displaynaam}} op de academy.</p>
+            <p>Welkom {{gebruiker.voornaam}} op de academy.</p>
         </div>
     </div>
     <div class="grijs">
         <div class="row">
             <div class="col-sm-6">
-                <div class="dashboard">
-                    <img id="linkBeheerWebtekst" src="assets/Images/tekstobject_wit.png"
-                        [routerLink]="'./beheer-tekstobjecten'">
-                    <h6>Webtekst beheren</h6>
+                <div *ngIf="gebruiker.rol == 'ADMIN'">
+                    <div class="dashboard">
+                        <img id="linkBeheerWebtekst" src="assets/Images/tekstobject_wit.png"
+                            [routerLink]="'./beheer-tekstobjecten'">
+                        <h6>Webtekst beheren</h6>
+                    </div>
                 </div>
             </div>
             <div class="col-sm-6">
