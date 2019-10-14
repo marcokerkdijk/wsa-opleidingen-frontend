@@ -9,7 +9,7 @@
         </div>
         <div class="row grijs">
             <div class="col-sm-6">
-                <p>{{tekstObject.tekst}}</p>
+                <p [innerHTML]="tekstObject.tekst | linkify"></p>
             </div>
         </div>
         <div class="row">

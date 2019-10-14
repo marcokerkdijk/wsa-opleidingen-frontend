@@ -9,21 +9,21 @@
         </div>
         <div class="row">
             <div class="col-sm-3">
-                <p>Titel</p>
+                <p>Titel:</p>
                 <textarea class="form-control" [(ngModel)]="tekstObject.titel" id="titelInvoer{{tekstObject.id}}"
                     maxlength="64" rows="1"></textarea>
             </div>
             <div class="col-sm-9">
                 <p>Tekst</p>
-                <textarea class="form-control" [(ngModel)]="tekstObject.tekst" id="tekstInvoer{{tekstObject.id}}"
-                    maxlength="10001" rows="10"></textarea>
+                <textarea type="text" class="form-control"  [innerHTML]="tekstObject.titel" [(ngModel)]="tekstObject.tekst" id="tekstInvoer{{tekstObject.id}}"
+                    maxlength="10001" rows="10" placeholder=""></textarea>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-3 bottom">
             </div>
             <div class="col-sm-9 bottom">
-                <button id="tekstObjectOpslaan" (click)="tekstObjectOpslaan(tekstObject);">Webtekst opslaan</button>
+                <button id="tekstObjectOpslaan" (click)="tekstObjectOpslaan(tekstObject, tekstObject.tekst);">Webtekst opslaan</button>
             </div>
         </div>
     </div>

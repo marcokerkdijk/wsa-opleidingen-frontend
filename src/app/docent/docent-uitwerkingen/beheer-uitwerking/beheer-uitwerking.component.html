@@ -7,7 +7,7 @@
 <div class="row">
     <div class="col-sm-6">
         <h6>Codevoorbeeld van de opdracht</h6>
-        <pre>{{uitwerking.opdracht.codevoorbeeld}}</pre>
+        <pre [innerHTML]="uitwerking.opdracht.codevoorbeeld | linkify"></pre>
     </div>
     <div class="col-sm-6">
         <h6>Uitwerking van de student</h6>

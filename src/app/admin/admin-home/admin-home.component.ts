@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { JwtToken, AutenticatieService } from 'src/app/services/autenticatie.service';
 import { TekstobjectService } from 'src/app/services/tekstobject.service';
 import { TekstObject } from 'src/app/Objecten/tekst-object';
+import { NgxLinkifyjsModule} from 'ngx-linkifyjs';
 
 @Component({
   selector: 'wsa-admin-home',

@@ -7,8 +7,8 @@
             {{tekstObject.titel}}
         </div>
         <div class="col-sm-8">
-            <p>Welkom {{gebruiker.voornaam}} {{gebruiker.tussenvoegsel}} {{gebruiker.achternaam}} op de academy.
-                {{tekstObject.tekst}}</p>
+            <p [innerHTML]="tekstObject.tekst | linkify">Welkom {{gebruiker.voornaam}} {{gebruiker.tussenvoegsel}} {{gebruiker.achternaam}} op de academy.
+                </p>
         </div>
     </div>
     <!-- Hier begint het dashboard voor de student -->
