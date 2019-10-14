@@ -39,7 +39,7 @@
                 <p>Rol</p>
                 <div>
                     <select name="rol" [(ngModel)]="gebruikerInvoer.rol" class="form-control" required id="rolkeuze">
-                        <option id="admin" value="ADMIN">Admin</option>
+                        <option id="admin" value="ADMIN" *ngIf="rolIngelogdeGebruiker !== 'recruiter'">Admin</option>
                         <option id="docent" value="DOCENT">Docent</option>
                         <option id="recruiter" value="RECRUITER">Recruiter</option>
                         <option id="student" value="STUDENT">Student</option>
