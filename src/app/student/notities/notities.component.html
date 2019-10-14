@@ -4,7 +4,7 @@
             <h6 id="notitietitel">{{tekstObject.titel}}</h6>
         </div>
         <div class="col=sm-8">
-            <p [innerHTML]="tekstObject.tekst | linkify"></p>
+            <p id="tekstObject.id" [innerHTML]="tekstObject.tekst | linkify"></p>
         </div>
     </div>
     <ng-container *ngFor="let Aantekening of aantekeningen">
