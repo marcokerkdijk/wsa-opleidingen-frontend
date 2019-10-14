@@ -17,7 +17,7 @@
         <div class="col-sm-6">
             <div>
                 <h6>Omschrijving van de opdracht</h6>
-                <p class="display">{{opdracht.omschrijving}}</p>
+                <p class="display" [innerHTML]="opdracht.omschrijving | linkify"></p>
             </div>
         </div>
     </div>
@@ -29,7 +29,7 @@
         </div>
         <div class="col-sm-6">
             <h6>Codevoorbeeld van de opdracht</h6>
-            <pre>{{opdracht.codevoorbeeld}}</pre>
+            <pre [innerHTML]="opdracht.codevoorbeeld | linkify"></pre>
         </div>
     </div>
 

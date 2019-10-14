@@ -70,6 +70,7 @@ import { ResultaatInvoerenComponent } from './admin/resultaat-invoeren/resultaat
 import { ResultaatWijzigenComponent } from './admin/resultaat-wijzigen/resultaat-wijzigen.component';
 import { AdminBeheerTekstobjectenComponent } from './admin/admin-beheer-tekstobjecten/beheer-tekstobjecten.component';
 import { TekstobjectWijzigenComponent } from './admin/admin-beheer-tekstobjecten/tekstobject-wijzigen/tekstobject-wijzigen.component';
+import { NgxLinkifyjsModule } from 'ngx-linkifyjs';
 
 export function jwtOptionsFactory(tokenService: TokenService) {
   return {
@@ -163,6 +164,7 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     NgxSpinnerModule,
     NgSelectModule,
     ArchwizardModule,
+    NgxLinkifyjsModule.forRoot(),
   ],
   providers: [
     {provide: HomeTrajectenComponent},

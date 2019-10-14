@@ -13,7 +13,7 @@
     </div>
     <div class="row">
         <div class="col-sm-12">
-            <pre id="aantekeningdisplay">{{aantekening.tekst}}</pre>
+            <pre id="aantekeningdisplay" [innerHTML]="aantekening.tekst | linkify"></pre>
         </div>
     </div>
 </div>

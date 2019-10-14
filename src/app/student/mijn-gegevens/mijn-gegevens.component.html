@@ -4,7 +4,7 @@
             <h5 id="overzichttitel">{{tekstObject.titel}}</h5>
         </div>
         <div class="col-sm-9">
-            <p>{{tekstObject.tekst}}</p>
+            <p [innerHTML]="tekstObject.tekst | linkify"></p>
         </div>
     </div>
 

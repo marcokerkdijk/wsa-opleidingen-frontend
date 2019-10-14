@@ -3,8 +3,8 @@
         <div id="h6" class="col-sm-4">
             {{tekstObject.titel}}
         </div>
-        <div class="col-sm-8">
-            <p>{{tekstObject.tekst}}</p>
+        <div class="col-sm-8" [innerHTML]="tekstObject.tekst | linkify">
+            <p></p>
         </div>
     </div>
 </div>

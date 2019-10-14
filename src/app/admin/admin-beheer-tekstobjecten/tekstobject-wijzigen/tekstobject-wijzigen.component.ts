@@ -10,6 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class TekstobjectWijzigenComponent implements OnInit {
   tekstObject: TekstObject = new TekstObject;
+  tekstZonderLink : string;
 
   constructor(private tekstobjectservice: TekstobjectService, private activeRouter: ActivatedRoute,
     private router: Router) { }
@@ -20,12 +21,15 @@ export class TekstobjectWijzigenComponent implements OnInit {
   }
 
   getTekstObject(tekstObject_id: number) {
-    this.tekstobjectservice.haalTekstObjectOpId(tekstObject_id).subscribe(opgehaaldTekstObject => this.tekstObject = opgehaaldTekstObject);
+    this.tekstobjectservice.haalTekstObjectOpId(tekstObject_id).subscribe(opgehaaldTekstObject => {this.tekstObject = opgehaaldTekstObject
+   });
   }
-
-  tekstObjectOpslaan(tekstObject: TekstObject) {
+  
+ 
+  tekstObjectOpslaan(tekstObject: TekstObject, tekst) {
     this.tekstobjectservice.wijzigTekstObject(tekstObject).subscribe(response => {
       this.router.navigateByUrl('admin/beheer-tekstobjecten');
     });
   }
+
 }
