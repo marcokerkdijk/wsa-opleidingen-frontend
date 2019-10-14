@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AutenticatieService } from 'src/app/services/autenticatie.service';
 import { TekstobjectService } from 'src/app/services/tekstobject.service';
 import { TekstObject } from 'src/app/Objecten/tekst-object';
+import { NgxLinkifyjsModule} from 'ngx-linkifyjs';
 import { GebruikersService } from 'src/app/services/gebruikers.service';
 import { Gebruiker } from 'src/app/Objecten/gebruiker';
 

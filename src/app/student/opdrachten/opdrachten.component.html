@@ -4,7 +4,7 @@
             <h6>{{tekstObject.titel}}</h6>
         </div>
         <div class="col-sm-9">
-            <p>{{tekstObject.tekst}}</p>
+            <p [innerHTML]="tekstObject.tekst | linkify"></p>
         </div>
     </div>
     <div class="row">
