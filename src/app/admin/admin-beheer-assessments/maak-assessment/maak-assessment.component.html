@@ -27,7 +27,8 @@
         <div class="row">
             <div class="col-sm-6">
                 <p>Kies bij welke trajectonderdeel van een traject het assessment hoort</p>
-                <select name="fase" class="form-control" id="trajectonderdeelmenu" [(ngModel)]="assessment.trajectOnderdeel">
+                <select name="fase" class="form-control" id="trajectonderdeelmenu"
+                    [(ngModel)]="assessment.trajectOnderdeel">
                     <option id="fasekeuze{{Trajectonderdeel.id}}" *ngFor="let Trajectonderdeel of trajectonderdelen"
                         [ngValue]="Trajectonderdeel">
                         {{Trajectonderdeel.naam}} | Traject: {{Trajectonderdeel.traject.naam}}

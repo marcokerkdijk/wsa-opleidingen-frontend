@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { JwtToken, AutenticatieService } from 'src/app/services/autenticatie.service';
+import { AutenticatieService } from 'src/app/services/autenticatie.service';
 import { TekstobjectService } from 'src/app/services/tekstobject.service';
 import { TekstObject } from 'src/app/Objecten/tekst-object';
+import { GebruikersService } from 'src/app/services/gebruikers.service';
+import { Gebruiker } from 'src/app/Objecten/gebruiker';
 
 @Component({
   selector: 'wsa-admin-home',
@@ -9,12 +11,13 @@ import { TekstObject } from 'src/app/Objecten/tekst-object';
   styleUrls: ['./admin-home.component.scss']
 })
 export class AdminHomeComponent implements OnInit {
-  gebruiker: JwtToken;
+  gebruiker: Gebruiker = new Gebruiker;
   tekstObject: TekstObject = new TekstObject();
 
   constructor(
     private authenticatieService:AutenticatieService,
-    private tekstobjectservice: TekstobjectService) { }
+    private tekstobjectservice: TekstobjectService,
+    private gebruikersService: GebruikersService) { }
 
   ngOnInit() {
     this.haalGebruikerOp();
@@ -22,7 +25,12 @@ export class AdminHomeComponent implements OnInit {
   }
 
   haalGebruikerOp():void {
-    this.gebruiker = this.authenticatieService.haalTokenOp();
+    // this.gebruiker = this.authenticatieService.haalTokenOp();
+    let token = this.authenticatieService.haalTokenOp();
+    this.gebruikersService.vraagGebruikerOpId(token.gebruiker_id).subscribe(opgehaaldeGebruiker => {
+      this.gebruiker = opgehaaldeGebruiker
+      console.log("De rol van de gebruiker "+this.gebruiker.rol);
+    })
   }
 
   getTekstObject(tekstObject_id: number) {
