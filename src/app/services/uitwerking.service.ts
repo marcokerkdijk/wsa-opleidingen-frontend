@@ -40,4 +40,16 @@ export class UitwerkingService {
   maakAssessmentResultaat(gebruiker_id: number, opdracht_id: number, uitwerkingDTO: UitwerkingDTO): Observable<Uitwerking> {
     return this.http.post<Uitwerking>(`${this.api}/maakAssessmentResultaat/` + gebruiker_id + '/' + opdracht_id, uitwerkingDTO);
   }
+
+  wijzigAssessmentResultaat(gebruiker_id: number, uitwerkingDTO: UitwerkingDTO) {
+    return this.http.put<UitwerkingDTO>(`${this.api}/wijzigAssessmentUitwerking/` + gebruiker_id, uitwerkingDTO);
+  }
+
+  geefAssessmentResultaat(uitwerking_id: number): Observable<UitwerkingDTO> {
+    return this.http.get<UitwerkingDTO>(`${this.api}/geefAssessmentUitwerking/` + uitwerking_id);
+  }
+
+  verwijderAssessmentResultaat(uitwerking_id: number): Observable<any> {
+    return this.http.delete(`${this.api}/verwijderAssessmentResultaat/` + uitwerking_id);
+  }
 }

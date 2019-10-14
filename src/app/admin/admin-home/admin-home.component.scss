@@ -17,6 +17,10 @@ h5 {
     text-transform: lowercase;
 }
 
+.capitalize::first-letter {
+    text-transform: capitalize;
+}
+
 h6 {
     letter-spacing: 1px;
     color: #00aaef;
