@@ -19,7 +19,6 @@ import { DocentTrajectComponent } from './docent/docent-traject/docent-traject.c
 import { DocentHomeComponent } from './docent/docent-home/docent-home.component';
 import { RecruiterComponent } from "./recruiter/recruiter.component";
 import { RecruiterAutorisatieGuard } from './guards/recruiter-autorisatie.guard';
-import { RecruiterHomeComponent } from './recruiter/recruiter-home/recruiter-home.component';
 import { ProfielComponent } from './profiel/profiel.component';
 import { ProfielInfoComponent } from './profiel/profiel-info/profiel-info.component';
 import { GebruikerAutorisatieGuard } from './guards/gebruiker-autorisatie.guard';
@@ -156,7 +155,7 @@ const routes: Routes = [
   { path: 'recruiter', component: RecruiterComponent, canActivate: [RecruiterAutorisatieGuard],
     children: [
       { path: '', redirectTo: 'recruiter', pathMatch: 'full'},
-      { path: '', component: RecruiterHomeComponent, pathMatch: 'full'},
+      { path: '', component: AdminHomeComponent, pathMatch: 'full'},
       { path: "beheer-traject", component: BeheerTrajectComponent},
       { path: '', redirectTo: 'recruiter', pathMatch: 'full' },
       { path: "beheer-trajectgebruikers/:id", component: BeheerTrajectgebruikersComponent},
