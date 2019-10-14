@@ -21,6 +21,7 @@ export class BeheerResultatenComponent implements OnInit {
   uitwerkingenlijst: UitwerkingDTO[] = new Array;
   filterwaarde: string;
   tekstObject: TekstObject = new TekstObject();
+  zichtbaar: boolean[] = new Array;
 
   constructor(private activeRouter: ActivatedRoute, private trajectService: TrajectService,
     private uitwerkingService: UitwerkingService, private router: Router,
@@ -44,6 +45,7 @@ export class BeheerResultatenComponent implements OnInit {
       this.uitwerkingenlijst = uitwerkingenlijst;
     },
       (error) => {
+        this.alertservice.clear("alert-1")
         this.alertservice.error("Er zijn nog geen assessmentresultaten beschikbaar voor dit traject.", "alert-1");
       });
   }
@@ -58,6 +60,26 @@ export class BeheerResultatenComponent implements OnInit {
 
   naarWijzigPagina(id: number): void {
     this.router.navigateByUrl(this.rolIngelogdeGebruiker + '/resultaat-wijzigen/' + id);
+  }
+
+  maakBooleanLijst(): void {
+    this.zichtbaar.concat(false);
+  }
+
+  toggle(index: number): void {
+    this.zichtbaar[index] = !this.zichtbaar[index];
+  }
+
+  verwijderResultaat(resultaatDTO: UitwerkingDTO) {
+    this.uitwerkingService.verwijderAssessmentResultaat(resultaatDTO.id).subscribe(response => {
+      this.router.navigateByUrl(this.rolIngelogdeGebruiker).then(success => {
+        this.router.navigateByUrl(this.rolIngelogdeGebruiker + '/beheer-resultaten/' + this.traject.id);
+      });
+    },
+    (error) => {
+      this.alertservice.clear("alert-1");
+      this.alertservice.error("Er ging iets mis bij het verwijderen van een resultaat.", "alert-1");
+    });
   }
 
   downloadPdf(uitwerking: UitwerkingDTO): void {

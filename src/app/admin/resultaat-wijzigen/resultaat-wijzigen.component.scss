@@ -46,6 +46,15 @@ p {
     resize: none;
 }
 
+#checkpdf {
+    color: #00aeef;
+    cursor: pointer;
+}
+
+#checkpdf:hover {
+    text-decoration: underline;
+}
+
 button{
     border-color: #00aeef;
     color: #00aeef;

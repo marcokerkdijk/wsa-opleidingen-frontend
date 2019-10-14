@@ -31,32 +31,53 @@
                         <i id='sorteerPijlOpdracht' class="fa fa-fw fa-sort" (click)="sorteerTabel(1)"></i>
                     </th>
                     <th id="Resultaat">Resultaat</th>
-                    <th id="Wijzigen">Wijzigen</th>
                     <th id="Download">PDF</th>
+                    <th id="Wijzigen">Wijzig</th>
+                    <th id="Verwijder">Verwijder</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let Uitwerking of uitwerkingenlijst">
-                    <td id="Gebruiker{{Uitwerking.id}}">
-                        {{Uitwerking.gebruiker.voornaam}}
-                        {{Uitwerking.gebruiker.tussenvoegsel}}
-                        {{Uitwerking.gebruiker.achternaam}}
-                    </td>
-                    <td id="Opdracht{{Uitwerking.id}}">{{Uitwerking.opdracht.titel}}</td>
-                    <td id="Resultaat{{Uitwerking.id}}">{{Uitwerking.resultaat}}</td>
-                    <td>
-                        <div id="pencil">
-                            <i class='fa fa-pencil' id="pencil{{Uitwerking.id}}"
-                                (click)="setTrajectId(); naarWijzigPagina(Uitwerking.id);"></i>
+                <ng-container *ngFor="let Uitwerking of uitwerkingenlijst; let i = index;">
+                    <tr (onCreate)="maakBooleanLijst();">
+                        <td id="Gebruiker{{Uitwerking.id}}">
+                            {{Uitwerking.gebruiker.voornaam}}
+                            {{Uitwerking.gebruiker.tussenvoegsel}}
+                            {{Uitwerking.gebruiker.achternaam}}
+                        </td>
+                        <td id="Opdracht{{Uitwerking.id}}">{{Uitwerking.opdracht.titel}}</td>
+                        <td id="Resultaat{{Uitwerking.id}}">{{Uitwerking.resultaat}}</td>
+                        <td>
+                            <div id="download" *ngIf="Uitwerking.byteString !== null">
+                                <i class="fa fa-download" id="download{{Uitwerking.id}}"
+                                    (click)="downloadPdf(Uitwerking);"></i>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="pencil">
+                                <i class='fa fa-pencil' id="pencil{{Uitwerking.id}}"
+                                    (click)="setTrajectId(); naarWijzigPagina(Uitwerking.id);"></i>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="prullenbak">
+                                <i class='fa fa-trash' id="verwijder{{Uitwerking.id}}" (click)="toggle(i);"></i>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr *ngIf="zichtbaar[i]">
+                        <div class="alert alert-danger" role="alert" id="waarschuwing">
+                            <div class="col-sm-7" id="verwijdertekst">
+                                <p>Weet u zeker dat u het resultaat van '{{Uitwerking.gebruiker.voornaam}}
+                                    {{Uitwerking.gebruiker.tussenvoegsel}} {{Uitwerking.gebruiker.achternaam}}' wilt
+                                    verwijderen?</p>
+                            </div>
+                            <button id="verwijderbutton" (click)="verwijderResultaat(Uitwerking);">Verwijderen</button>
+                            <button type="button" class="close" aria-label="Close" (click)="toggle(i);">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
-                    </td>
-                    <td>
-                        <div id="download" *ngIf="Uitwerking.byteString !== null">
-                            <i class="fa fa-download" id="download{{Uitwerking.id}}"
-                                (click)="downloadPdf(Uitwerking);"></i>
-                        </div>
-                    </td>
-                </tr>
+                    </tr>
+                </ng-container>
             </tbody>
         </table>
         <div id="melding">
