@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-sm-6">
         <h5>Opdracht: {{uitwerking.opdracht.titel}}</h5>
-        <p>Bij deze opdracht hoort de volgende beschrijving: {{uitwerking.opdracht.omschrijving}}</p>
+        <p [innerHTML]="uitwerking.opdracht.omschrijving">Bij deze opdracht hoort de volgende beschrijving: {{uitwerking.opdracht.omschrijving}}</p>
     </div>
 </div>
 <div class="row">
