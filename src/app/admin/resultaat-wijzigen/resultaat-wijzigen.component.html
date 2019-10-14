@@ -21,9 +21,9 @@
     <div class="row">
         <div class="col-sm-6">
             <p>Assessment*</p>
-            <select name="assessment" class="form-control" [(ngModel)]="resultaat.opdracht" id="assessmentkeuze">
+            <select name="assessment" class="form-control" [(ngModel)]="huidigeOpdracht.id" id="assessmentkeuze">
                 <ng-container *ngFor="let Assessment of assessments">
-                    <option id="assessmentkeuze{{Assessment.id}}" [ngValue]="Assessment">
+                    <option id="assessmentkeuze{{Assessment.id}}" [ngValue]="Assessment.id">
                         {{Assessment.titel}}
                     </option>
                 </ng-container>
@@ -31,9 +31,9 @@
         </div>
         <div class="col-sm-6">
             <p>Student*</p>
-            <select name="student" class="form-control" [(ngModel)]="resultaat.gebruiker" id="gebruikerkeuze">
+            <select name="student" class="form-control" [(ngModel)]="huidigeGebruiker.id" id="gebruikerkeuze">
                 <ng-container *ngFor="let Student of studenten">
-                    <option id="studentkeuze{{Student.id}}" [ngValue]="Student">
+                    <option id="studentkeuze{{Student.id}}" [ngValue]="Student.id">
                         {{Student.voornaam}} {{Student.tussenvoegsel}} {{Student.achternaam}}
                     </option>
                 </ng-container>
@@ -44,12 +44,21 @@
         <div class="col-sm-6">
             <p>Resultaat*</p>
             <textarea name="resultaat" class="form-control" id="resultaatinvoer"
-                [(ngModel)]="resultaat.resultaat"></textarea>
+                [(ngModel)]="resultaatDTO.resultaat"></textarea>
+        </div>
+
+        <div class="col-sm-6">
+            <p>Pdf uploaden</p>
+            <a id="checkpdf" *ngIf="resultaatDTO.byteString !== null" (click)="downloadPdf(resultaatDTO);">
+                Bekijk huidig pdf
+            </a>
+            <input name="bestand" id="bestandinvoer" type="file" (change)="voegBestandToe($event.target.files);"
+                accept=".pdf">
         </div>
     </div>
     <div class="row">
         <div class="col-sm-6">
-            <button id="opslaanknop" (click)="resultaatWijzigen(resultaat);">Resultaat opslaan</button>
+            <button id="opslaanknop" (click)="resultaatWijzigen(resultaatDTO);">Resultaat opslaan</button>
         </div>
     </div>
 </div>

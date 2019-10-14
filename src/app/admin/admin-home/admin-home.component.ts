@@ -26,11 +26,9 @@ export class AdminHomeComponent implements OnInit {
   }
 
   haalGebruikerOp():void {
-    // this.gebruiker = this.authenticatieService.haalTokenOp();
     let token = this.authenticatieService.haalTokenOp();
     this.gebruikersService.vraagGebruikerOpId(token.gebruiker_id).subscribe(opgehaaldeGebruiker => {
-      this.gebruiker = opgehaaldeGebruiker
-      console.log("De rol van de gebruiker "+this.gebruiker.rol);
+      this.gebruiker = opgehaaldeGebruiker;
     })
   }
 

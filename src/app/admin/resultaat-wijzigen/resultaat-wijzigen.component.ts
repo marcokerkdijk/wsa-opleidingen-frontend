@@ -8,6 +8,7 @@ import { GebruikersService } from 'src/app/services/gebruikers.service';
 import { Gebruiker } from 'src/app/Objecten/gebruiker';
 import { Uitwerking } from 'src/app/Objecten/uitwerking';
 import { AutenticatieService } from 'src/app/services/autenticatie.service';
+import { UitwerkingDTO } from 'src/app/Objecten/uitwerking-dto';
 
 @Component({
   selector: 'wsa-resultaat-wijzigen',
@@ -19,7 +20,9 @@ export class ResultaatWijzigenComponent implements OnInit {
   traject_id: number;
   assessments: Opdracht[] = new Array;
   studenten: Gebruiker[] = new Array;
-  resultaat: Uitwerking = new Uitwerking;
+  resultaatDTO: UitwerkingDTO = new UitwerkingDTO;
+  huidigeGebruiker: Gebruiker = new Gebruiker;
+  huidigeOpdracht: Opdracht = new Opdracht;
 
   constructor(private activeRoute: ActivatedRoute, private dataservice: DataserviceService,
               private uitwerkingservice: UitwerkingService, private opdrachtservice: OpdrachtService,
@@ -36,8 +39,10 @@ export class ResultaatWijzigenComponent implements OnInit {
   }
 
   haalUitwerkingOp(uitwerking_id: number): void {
-    this.uitwerkingservice.haalUitwerkingOp(uitwerking_id).subscribe(uitwerking => {
-      this.resultaat = uitwerking;
+    this.uitwerkingservice.geefAssessmentResultaat(uitwerking_id).subscribe(uitwerkingDTO => {
+      this.resultaatDTO = uitwerkingDTO;
+      this.huidigeGebruiker = uitwerkingDTO.gebruiker;
+      this.huidigeOpdracht = uitwerkingDTO.opdracht;
     });
   }
 
@@ -53,8 +58,40 @@ export class ResultaatWijzigenComponent implements OnInit {
     });
   }
 
-  resultaatWijzigen(resultaat: Uitwerking): void {
-    this.uitwerkingservice.wijzigUitwerking(resultaat.gebruiker.id, resultaat).subscribe(response => {
+  downloadPdf(resultaatDTO: UitwerkingDTO): void {
+    let newPdfWindow = window.open("","Print");
+
+    let content = encodeURIComponent(resultaatDTO.byteString);
+    
+    let iframeStart = "<\iframe width='100%' height='100%' src='data:application/pdf;base64, ";
+    
+    let iframeEnd = "'><\/iframe>";
+    
+    newPdfWindow.document.write(iframeStart + content + iframeEnd);
+  }
+
+  voegBestandToe(files: any[]): void {
+    if (files && files.length > 0) {
+      
+      let pdf = new Blob([files[0]], {type: "application/pdf"});
+
+      var reader = new FileReader();
+      var bytes = new Array<number>();
+      reader.readAsArrayBuffer(pdf);
+      reader.onload = function() {
+        let arrayBuffer = reader.result as ArrayBuffer;
+        var byteArray = new Uint8Array(arrayBuffer);
+
+        for (var i = 0; i < byteArray.length; i++) {
+          bytes.push(byteArray[i]);
+        }
+      }
+      this.resultaatDTO.documentBytes = bytes;
+    }
+  }
+
+  resultaatWijzigen(resultaatDTO: UitwerkingDTO): void {
+    this.uitwerkingservice.wijzigAssessmentResultaat(this.huidigeGebruiker.id, resultaatDTO).subscribe(response => {
       this.router.navigateByUrl(this.rolIngelogdeGebruiker + '/beheer-resultaten/' + this.traject_id);
     });
   }
