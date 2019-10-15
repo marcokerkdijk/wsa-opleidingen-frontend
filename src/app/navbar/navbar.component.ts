@@ -18,6 +18,7 @@ export class NavbarComponent implements OnInit {
   ingelogd: boolean = false;
   rol: string;
   vergeten: boolean = false;
+  zichtbaar: boolean = false;
   emailgebruiker: string;
   konamicode: Number[] = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
   toetscombinatie: Number[] = new Array;
@@ -106,10 +107,18 @@ export class NavbarComponent implements OnInit {
     this.router.navigateByUrl('/' + url);
   }
 
+  nieuwTabblad(url: string): void {
+    window.open(url);
+  }
+
   public toggleVergeten(): void {
     this.vergeten = !this.vergeten;
     this.emailgebruiker = '';
     this.alertService.clear("alert-1");
+  }
+
+  toggleZichtbaar(): void {
+    this.zichtbaar = !this.zichtbaar;
   }
 
   public keyDownFunction(event): void {

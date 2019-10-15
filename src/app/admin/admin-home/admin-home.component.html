@@ -3,8 +3,9 @@
         <div class="col-sm-4">
             <h5 class="capitalize">{{tekstObject.titel}} {{gebruiker.rol}}</h5>
         </div>
-        <div class="col-sm-6" id="tekstObject.id" [innerHTML]="tekstObject.tekst | linkify">
+        <div class="col-sm-6" >
             <p>Welkom {{gebruiker.voornaam}} op de academy.</p>
+            <p id="tekstObject.id" [innerHTML]="tekstObject.tekst | linkify"></p>
         </div>
     </div>
     <div class="grijs">
