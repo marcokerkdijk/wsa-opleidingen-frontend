@@ -1,10 +1,11 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-4">
-            <h5 class="capitalize">{{tekstObject.titel}} {{gebruiker.rol}}</h5>
+            <h5 id=welkom class="capitalize">{{tekstObject.titel}} {{gebruiker.rol}}</h5>
         </div>
-        <div class="col-sm-6" id="tekstvak{{tekstObject.id}}" [innerHTML]="tekstObject.tekst | linkify">
+        <div class="col-sm-6">
             <p>Welkom {{gebruiker.voornaam}} op de academy.</p>
+            <p id="tekstvak{{tekstObject.id}}" [innerHTML]="tekstObject.tekst | linkify"></p>
         </div>
     </div>
     <div class="grijs">

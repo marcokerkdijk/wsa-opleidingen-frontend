@@ -5,7 +5,8 @@
                 {{tekstObject.titel}}
             </div>
             <div class="col-sm-6">
-                <p id="tekstvak{{tekstObject.id}}" [innerHTML]="tekstObject.tekst | linkify">Welkom {{gebruiker.displaynaam}} op de academy. </p>
+                <p>Welkom {{gebruiker.displaynaam}} op de academy. </p>
+                <p id="tekstvak{{tekstObject.id}}" [innerHTML]="tekstObject.tekst | linkify"></p>
             </div>
         </div>
         <div class="row ruimte">
