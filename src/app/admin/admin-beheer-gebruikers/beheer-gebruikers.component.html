@@ -4,7 +4,7 @@
             <h6 id='h6'>{{tekstObject.titel}}</h6>
         </div>
         <div class="col-sm-6">
-            <p id="tekstObject.id" [innerHTML]="tekstObject.tekst | linkify"></p>
+            <p id="tekstvak{{tekstObject.id}}" [innerHTML]="tekstObject.tekst | linkify"></p>
         </div>
         <wsa-gebruikers-tabel></wsa-gebruikers-tabel>
     </div>
