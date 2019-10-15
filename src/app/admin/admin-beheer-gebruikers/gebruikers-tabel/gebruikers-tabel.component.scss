@@ -129,12 +129,12 @@ td {
     word-wrap: break-word;
 }
 
-#pencil {
+#pencil, #prullenbak {
     color: #00aeef;
     font-size: 20px;
 }
 
-#pencil:hover {
+.fa-pencil:hover, .fa-trash:hover {
     cursor: pointer;
 }
 

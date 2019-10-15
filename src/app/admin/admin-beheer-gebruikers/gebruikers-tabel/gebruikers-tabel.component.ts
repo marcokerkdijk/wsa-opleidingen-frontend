@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Gebruiker } from 'src/app/Objecten/gebruiker';
 import { GebruikersService } from 'src/app/services/gebruikers.service';
-import { BeheerGebruikersComponent } from '../beheer-gebruikers.component';
 import { AlertService } from 'src/app/_alert';
-import { TrajectService } from 'src/app/services/traject.service';
 import { Router } from '@angular/router';
-import { AutenticatieService } from 'src/app/services/autenticatie.service';
+import { AutenticatieService, JwtToken } from 'src/app/services/autenticatie.service';
 
 @Component({
   selector: 'wsa-gebruikers-tabel',
@@ -13,19 +11,24 @@ import { AutenticatieService } from 'src/app/services/autenticatie.service';
   styleUrls: ['./gebruikers-tabel.component.scss']
 })
 export class GebruikersTabelComponent implements OnInit {
-  actieveGebruikers : Gebruiker[];
-  teVerwijderenGebruiker : Gebruiker = new Gebruiker;
+  ingelogdeGebruiker: JwtToken;
+  actieveGebruikers: Gebruiker[];
+  teVerwijderenGebruiker: Gebruiker = new Gebruiker;
   zichtbaar: boolean[] = new Array;
-  rol :  String;
-  
-  constructor(private gebruikerService : GebruikersService, private adminBeheerGebruikers:BeheerGebruikersComponent,
-              private alertservice: AlertService, private trajectService : TrajectService, private router : Router,
-              private authenticatieService : AutenticatieService) { }
+  rol: string;
+
+  constructor(private gebruikerService: GebruikersService, private alertservice: AlertService, private router: Router,
+              private authenticatieService: AutenticatieService) { }
 
 
   ngOnInit() {
+    this.haalIngelogdeGebruikerOp();
     this.haalActieveGebruikers();
     this.rol = this.authenticatieService.krijgRol();
+  }
+
+  haalIngelogdeGebruikerOp(): void {
+    this.ingelogdeGebruiker = this.authenticatieService.haalTokenOp();
   }
 
   haalActieveGebruikers(): void {
@@ -100,20 +103,17 @@ export class GebruikersTabelComponent implements OnInit {
     }
   }
 
-verwijderGebruiker(gebruikerID:number){
+  verwijderGebruiker(gebruikerID: number) {
     this.gebruikerService.verwijderGebruiker(gebruikerID).subscribe(response => {
-    this.router.navigateByUrl('/' + this.rol).then(succes => {this.router.navigateByUrl('/' + this.rol + '/beheer-gebruikers')})
-    } )
-   
-}
-maakBooleanLijst(): void {
-  this.zichtbaar.concat(false);
-}
+      this.router.navigateByUrl('/' + this.rol).then(succes => { this.router.navigateByUrl('/' + this.rol + '/beheer-gebruikers') })
+    })
 
-toggle(index: number): void {
-  this.zichtbaar[index] = !this.zichtbaar[index];
-  console.log(this.zichtbaar[index]);
-}
+  }
+  maakBooleanLijst(): void {
+    this.zichtbaar.concat(false);
+  }
 
-  
+  toggle(index: number): void {
+    this.zichtbaar[index] = !this.zichtbaar[index];
+  }
 }

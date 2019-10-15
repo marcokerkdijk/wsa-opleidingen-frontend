@@ -1,19 +1,26 @@
 <div class="container-fluid" id="Tabel_Gebruiker">
     <div class="row">
         <div class="dropdown" id="FilterActief">
-            <div id='FilterKnopGebruiker' ><button class="tabelknop">Filteren</button></div>
+            <div id='FilterKnopGebruiker'><button class="tabelknop">Filteren</button></div>
             <div class="dropdown-content">
                 <button class="tabelknop" id='filterActief' (click)="filterTabel('Ja',4)">Filter op actief</button>
-                <button class="tabelknop" id='filterNonActief' (click)="filterTabel('Nee',4)">Filter op non-actief</button>
-                <button class="tabelknop" id='filterAdmin' (click)="filterTabel('Admin',2)">Filter op administrator</button>
-                <button class="tabelknop" id='filterStudent' (click)="filterTabel('Student',2)">Filter op student</button>
+                <button class="tabelknop" id='filterNonActief' (click)="filterTabel('Nee',4)">Filter op
+                    non-actief</button>
+                <button class="tabelknop" id='filterAdmin' (click)="filterTabel('Admin',2)"
+                    *ngIf="rol !== 'recruiter'">Filter op
+                    administrator</button>
+                <button class="tabelknop" id='filterStudent' (click)="filterTabel('Student',2)">Filter op
+                    student</button>
                 <button class="tabelknop" id='filterDocent' (click)="filterTabel('Docent',2)">Filter op docent</button>
-                <button class="tabelknop" id='filterRecruiter' (click)="filterTabel('Recruiter',2)">Filter op recruiter</button>
-                <button class="tabelknop" id='filterAlles' (click)="filterTabel('Alles',2)">Toon alle gebruikers</button>
+                <button class="tabelknop" id='filterRecruiter' (click)="filterTabel('Recruiter',2)">Filter op
+                    recruiter</button>
+                <button class="tabelknop" id='filterAlles' (click)="filterTabel('Alles',2)">Toon alle
+                    gebruikers</button>
             </div>
         </div>
         <div>
-            <button class="tabelknop" id="gebruikersToevoegen" routerLink="../gebruikers-toevoegen">Gebruiker toevoegen</button>
+            <button class="tabelknop" id="gebruikersToevoegen" routerLink="../gebruikers-toevoegen">Gebruiker
+                toevoegen</button>
         </div>
         <table id=gebruikersTabel class='table table-bordered'>
             <thead id="table-bottom">
@@ -33,7 +40,8 @@
             </thead>
             <ng-container *ngFor="let Gebruiker of actieveGebruikers, let i=index">
                 <tbody>
-                    <tr (onCreate)="maakBooleanLijst()" id="tablerow{{Gebruiker.id}}" name="tabelrij">
+                    <tr (onCreate)="maakBooleanLijst()" id="tablerow{{Gebruiker.id}}" name="tabelrij"
+                        *ngIf="!(rol === 'recruiter' && Gebruiker.rol === 'ADMIN')">
                         <td id="voornaam{{Gebruiker.id}}">{{Gebruiker.voornaam}}</td>
                         <td id="achternaam{{Gebruiker.id}}">{{Gebruiker.tussenvoegsel}} {{Gebruiker.achternaam}}</td>
                         <td id="rol{{Gebruiker.id}}" class="rolnaam">{{Gebruiker.rol}}</td>
@@ -47,12 +55,15 @@
                             </ng-template>
                         </td>
                         <td>
-                            <div id="pencil">
+                            <div id="pencil" *ngIf="ingelogdeGebruiker.gebruiker_id != Gebruiker.id;">
                                 <i class='fa fa-pencil' id="pencil{{Gebruiker.id}}"
                                     routerLink="../gebruiker-wijzigen/{{Gebruiker.id}}"></i>
                             </div>
                         </td>
-                        <td id="pencil"><i class='fa fa-trash' id="trash{{Gebruiker.id}}" (click)="toggle(i);"></i></td>
+                        <td id="prullenbak">
+                            <i class='fa fa-trash' id="trash{{Gebruiker.id}}" (click)="toggle(i);"
+                                *ngIf="ingelogdeGebruiker.gebruiker_id != Gebruiker.id"></i>
+                        </td>
                     </tr>
                     <tr *ngIf="zichtbaar[i]">
                         <div class="alert alert-danger" role="alert" id="waarschuwing">
@@ -61,9 +72,11 @@
                                     uitwerkingen wilt verwijderen?</p>
                             </div>
                             <div>
-                            <button id="verwijderbutton" (click)="verwijderGebruiker(Gebruiker.id)">Verwijderen</button>
-                            <button type="button" class="close" aria-label="Close" (click)="toggle(i);">&times;</button>
-                        </div>
+                                <button id="verwijderbutton"
+                                    (click)="verwijderGebruiker(Gebruiker.id)">Verwijderen</button>
+                                <button type="button" class="close" aria-label="Close"
+                                    (click)="toggle(i);">&times;</button>
+                            </div>
                         </div>
                     </tr>
                 </tbody>
