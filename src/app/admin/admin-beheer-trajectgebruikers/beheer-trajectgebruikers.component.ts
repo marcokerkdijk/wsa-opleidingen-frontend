@@ -121,7 +121,6 @@ export class BeheerTrajectgebruikersComponent implements OnInit {
       }
     }
 
-    console.log(this.gebruikerIDLijst);
     this.opslaanGebruikers(this.gebruikerIDLijst);
   }
 
@@ -150,7 +149,6 @@ export class BeheerTrajectgebruikersComponent implements OnInit {
       }
     }
 
-    console.log(this.gebruikerIDLijst);
     this.opslaanGebruikers(this.gebruikerIDLijst);
   }
 
