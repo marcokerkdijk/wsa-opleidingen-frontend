@@ -4,7 +4,7 @@
             {{tekstObject.titel}}
         </div>
         <div class="col-sm-8">
-            <p id="tekstObject.id" [innerHTML]="tekstObject.tekst | linkify"></p>
+            <p id="tekstvak{{tekstObject.id}}" [innerHTML]="tekstObject.tekst | linkify"></p>
         </div>
     </div>
 </div>
