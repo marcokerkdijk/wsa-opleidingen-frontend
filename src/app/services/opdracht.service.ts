@@ -56,4 +56,12 @@ export class OpdrachtService {
   geefAssessmentsVanTraject(traject_id: number): Observable<Opdracht[]> {
     return this.http.get<Opdracht[]>(`${this.api}/geefAssessmentsVanTraject/` + traject_id);
   }
+
+  maakOpdrachtenZichtbaar(dag: number): Observable<any> {
+    return this.http.get(`${this.api}/maakOpdrachtenZichtbaar/` + dag);
+  }
+
+  maakOpdrachtenNietZichtbaar(dag: number): Observable<any> {
+    return this.http.get(`${this.api}/maakOpdrachtenNietZichtbaar/` + dag);
+  }
 }
