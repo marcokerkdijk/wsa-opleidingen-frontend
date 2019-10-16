@@ -13,8 +13,8 @@
 }
 
 .container-fluid {
-    padding-left: 15%;
-    padding-right: 19%;
+    padding-left: 2%;
+    padding-right: 8%;
 }
 
 #navbarBrand{
@@ -52,17 +52,18 @@ li a {
     color: #ffffff;
 }
 
-#Login:hover {
+#Admin:hover, #Docent:hover, #Recruiter:hover, #Student:hover,
+#Login:hover, #Corporate:hover, #Contact:hover, #Werkenbij:hover {
     color: #ffffff;
 }
 
-#Admin:hover, #Docent:hover, #Recruiter:hover, #Student:hover {
-    color: #ffffff;
-}
-
-.hamburgerButton {
+a.hamburgerButton {
     font-size: 14px;
     color: #00aeef;
+}
+
+a.hamburgerButton:hover {
+    color: #ffffff;
 }
 
 #LoginHamburger {
@@ -109,7 +110,7 @@ li a {
 }
   
 .dropdown-content {
-    display: none;
+    display: block;
     position: absolute;
     right: 0%;
     background-color: #ffffff;
@@ -119,8 +120,8 @@ li a {
     z-index: 1;
 }
 
-.dropdown:hover .dropdown-content {
-    display: block;
+.dropdown:hover {
+    cursor: pointer;
 }   
  
 @media (max-width: 65rem){

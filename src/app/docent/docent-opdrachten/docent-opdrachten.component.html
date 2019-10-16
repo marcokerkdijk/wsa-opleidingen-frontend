@@ -5,6 +5,23 @@
     <div class="col-sm-6" id="buttondiv">
         <button id="toevoegbutton" routerLink="../opdracht-aanmaak/{{traject_id}}">Opdracht toevoegen</button>
     </div>
+
+    <div class="col-sm-6" id="wijzigZichtbaarheid">
+        <p>Wijzig zichtbaarheid voor opdrachten met bepaalde dag:</p>
+        <div class="input-group">
+            <select name="dag" class="form-control" id="dagkeuzemenu" [(ngModel)]="filterwaarde"
+                (change)="filterTabel(filterwaarde)">
+                <option value="1" id="bootcampkeuze1">Bootcampdag 1</option>
+                <option value="2" id="bootcampkeuze2">Bootcampdag 2</option>
+                <option value="3" id="bootcampkeuze3">Bootcampdag 3</option>
+            </select>
+            <button id="resetbutton" (click)="resetFilter();">Reset</button>
+        </div>
+        <div class="wijzigbuttons">
+            <button id="maakZichtbaar" (click)="maakOpdrachtenZichtbaar(filterwaarde);">Maak zichtbaar</button>
+            <button id="maakOnzichtbaar" (click)="maakOpdrachtenNietZichtbaar(filterwaarde);">Niet zichtbaar</button>
+        </div>
+    </div>
 </div>
 <div class="row">
     <div id="opdrachtentabel">
@@ -22,8 +39,10 @@
             <tbody>
                 <ng-container *ngFor="let Opdracht of opdrachten; let i = index;">
                     <tr (onCreate)="maakBooleanLijst();">
-                        <td id="titel{{Opdracht.id}}"><span id="opdrachttitel{{Opdracht.id}}" title="Toon opdrachtinformatie"
-                                (click)="toggleOmschrijving(i);"><div id="opdrachttitel">{{Opdracht.titel}}</div></span>
+                        <td id="titel{{Opdracht.id}}"><span id="opdrachttitel{{Opdracht.id}}"
+                                title="Toon opdrachtinformatie" (click)="toggleOmschrijving(i);">
+                                <div id="opdrachttitel">{{Opdracht.titel}}</div>
+                            </span>
                         </td>
                         <td id="dag{{Opdracht.id}}">{{Opdracht.dag}}</td>
                         <td id="trajectonderdeel{{Opdracht.id}}">{{Opdracht.trajectOnderdeel.naam}}</td>
