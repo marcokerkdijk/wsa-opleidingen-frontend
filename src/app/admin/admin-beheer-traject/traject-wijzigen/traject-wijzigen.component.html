@@ -109,15 +109,8 @@
                         <div class="col-sm-6">
                             <p>Startdatum</p>
                             <div>
-                                <textarea [(ngModel)]="trajectonderdeel.startdatum" class="form-control" rows="1"
-                                    id="startdatuminvoer"></textarea>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <p>Tijdstip</p>
-                            <div>
-                                <textarea [(ngModel)]="trajectonderdeel.tijdstip" class="form-control" rows="1"
-                                    id="tijdstipinvoer"></textarea>
+                                <input name="dag" class="form-control" type="datetime-local" 
+                                id="startdatuminvoer" [(ngModel)]="trajectonderdeel.startdatum">
                             </div>
                         </div>
                     </div>
@@ -160,15 +153,14 @@
                         <div class="col-sm-6">
                             <p>Startdatum</p>
                             <div>
-                                <textarea [(ngModel)]="trajectonderdeel.startdatum" class="form-control" rows="1"
-                                    id="startdatuminvoer"></textarea>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <p>Tijdstip</p>
-                            <div>
-                                <textarea [(ngModel)]="trajectonderdeel.tijdstip" class="form-control" rows="1"
-                                    id="tijdstipinvoer"></textarea>
+                                <input name="dag" class="form-control" type="datetime"
+                                 id="startdatuminvoer" [ngModel]="trajectonderdeel.startdatum | date:'yyyy-MM-dd HH:mm':nl"
+                                  (ngModelChange)="trajectonderdeel.startdatum">
+
+                                  <!-- <input name="dag" class="form-control" type="datetime-local"
+                                 id="startdatuminvoer" [(ngModel)]="datum" [value]="datum"> -->
+                                 
+                                 {{trajectonderdeel.startdatum  | date:'yyyy-MM-dd HH:mm'}}
                             </div>
                         </div>
                     </div>
