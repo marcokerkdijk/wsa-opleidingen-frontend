@@ -15,6 +15,7 @@ export class TrajectWijzigenComponent implements OnInit {
   onderdeelWijzigen: boolean;
   trajectonderdeel: TrajectOnderdeel = new TrajectOnderdeel;
   rolIngelogdeGebruiker: string;
+  datum: string;
 
   constructor(private activeRouter: ActivatedRoute, private trajectservice: TrajectService,
               private router: Router, private authenticatieservice: AutenticatieService) { }
@@ -38,12 +39,16 @@ export class TrajectWijzigenComponent implements OnInit {
   }
 
   wijzigTrajectonderdeel(trajectonderdeel: TrajectOnderdeel) {
+    console.log("datum " + trajectonderdeel.startdatum);
     this.trajectonderdeel = trajectonderdeel;
+    this.datum = new Date(trajectonderdeel.startdatum).toISOString().slice(0, 16);
     this.onderdeelWijzigen = true;
   }
 
   wijzigOnderdeel(trajectonderdeel: TrajectOnderdeel) {
     let gewijzigdTrajectonderdeel = trajectonderdeel;
+    gewijzigdTrajectonderdeel.startdatum = new Date(this.datum);
+    gewijzigdTrajectonderdeel.startdatum.setHours(gewijzigdTrajectonderdeel.startdatum.getHours() + 1);
 
     let arrayindex: number;
 
