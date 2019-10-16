@@ -84,3 +84,16 @@ p {
     margin-top: 3%;
     margin-bottom: 0;
 }
+
+h5 {
+    letter-spacing: 1px;
+    color: #808285;
+    font-size: 26px;
+    font-weight: normal;
+    line-height: 32px;
+    text-transform: lowercase;
+}
+
+.capitalize::first-letter {
+    text-transform: capitalize;
+}
