@@ -6,8 +6,7 @@ export class TrajectOnderdeel {
     id: number;
     naam: string;
     omschrijving: string;
-    startdatum: string;
-    tijdstip: string;
+    startdatum: Date;
     fase: FaseType;
     opdrachten: Opdracht[];
     traject: Traject;
