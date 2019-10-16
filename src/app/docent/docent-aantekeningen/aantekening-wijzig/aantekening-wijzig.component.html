@@ -11,7 +11,8 @@
             </div>
             <div class="col-sm-6">
                 <p>Datum*</p>
-                <input name="dag" class="form-control" type="date" [(ngModel)]="aantekening.dag" id="datumpreview">
+                <input name="dag" class="form-control" type="date" [ngModel]="aantekening.dag | date:'yyyy-MM-dd'" 
+                (ngModelChange)="aantekening.dag = $event" id="datumpreview">
             </div>
         </div>
         <div class="row">
