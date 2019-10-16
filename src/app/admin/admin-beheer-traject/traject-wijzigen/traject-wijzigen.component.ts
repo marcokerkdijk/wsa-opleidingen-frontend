@@ -47,8 +47,8 @@ export class TrajectWijzigenComponent implements OnInit {
 
   wijzigOnderdeel(trajectonderdeel: TrajectOnderdeel) {
     let gewijzigdTrajectonderdeel = trajectonderdeel;
-    gewijzigdTrajectonderdeel.startdatum = new Date(this.datum);
-    gewijzigdTrajectonderdeel.startdatum.setHours(gewijzigdTrajectonderdeel.startdatum.getHours() + 1);
+    // gewijzigdTrajectonderdeel.startdatum = new Date(this.datum);
+    // gewijzigdTrajectonderdeel.startdatum.setHours(gewijzigdTrajectonderdeel.startdatum.getHours() + 1);
 
     let arrayindex: number;
 
