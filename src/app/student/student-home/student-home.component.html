@@ -70,7 +70,7 @@
                     </thead>
                     <tbody>
                         <tr *ngFor="let Trajectonderdeel of traject.trajectOnderdelen">
-                            <td>{{Trajectonderdeel.startdatum}}</td>
+                            <td>{{Trajectonderdeel.startdatum | date:'d-MM-yyyy HH:mm'}}</td>
                             <td>{{Trajectonderdeel.tijdstip}}</td>
                             <td>{{Trajectonderdeel.naam}}</td>
                         </tr>
