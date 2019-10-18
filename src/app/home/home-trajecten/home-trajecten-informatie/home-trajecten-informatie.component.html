@@ -23,19 +23,20 @@
 
     <!-- Agenda van het traject -->
     <div class="row">
-        <div class="col-sm-12" id="Agenda">
+            <div class="col-sm-4" id="titel">
+                Agenda
+            </div>
+        <div class="col-sm-6" id="Agenda">
             <table class="table table-bordered" id="trajectonderdeelTabel">
                 <thead id="tabel-headers">
                     <tr>
                         <th id="Datum">Datum</th>
-                        <th id="Tijdstip">Tijdstip</th>
                         <th id="Informatie">Informatie</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let Trajectonderdeel of traject.trajectOnderdelen" id="row{{Trajectonderdeel.id}}">
-                        <td>{{Trajectonderdeel.startdatum}}</td>
-                        <td>{{Trajectonderdeel.tijdstip}}</td>
+                        <td>{{Trajectonderdeel.startdatum | date:'dd-MM-yyyy HH:mm'}}</td>
                         <td>{{Trajectonderdeel.naam}}</td>
                     </tr>
                 </tbody>
@@ -52,7 +53,5 @@
             {{Trajectonderdeel.omschrijving}}
         </div>
     </div>
-    <div class="row">
-                
-    </div>
+    <div class="row"></div>
 </div>
