@@ -48,11 +48,11 @@
                         <i class="fa fa-user-circle" aria-hidden="true" id="user-icon"></i>
                     </a>
                 </li>
-                <div class="dropdown" id="nav-hamburger" (click)="toggleZichtbaar();">
+                <div class="dropdown" id="nav-hamburger" tabindex="0">
                     <div id='hamburger'></div>
                     <div id='hamburger'></div>
                     <div id='hamburger'></div>
-                    <div class="dropdown-content" *ngIf="zichtbaar">
+                    <div class="dropdown-content">
                         <a class="nav-link" *ngIf="!ingelogd" (click)="openModal('login-modal')" id="LoginHamburger">
                             Login
                         </a>
