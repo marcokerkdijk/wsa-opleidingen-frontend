@@ -55,6 +55,7 @@ p {
 
 #gebruikersTabel {
     margin-top: 1%;
+    width: 100%;
 }
 
 #Tabel_Gebruiker {
@@ -129,6 +130,14 @@ td {
     word-wrap: break-word;
     font-family: "Working Spirit";
     color: #808285;
+}
+
+td.uitlijningCenter{
+    align-items: center;
+}
+
+th#Bewerken, th#Verwijderen, th#sorteerPijlRol, th#sorteerPijlActief {
+    width: 9%;
 }
 
 #pencil, #prullenbak {
