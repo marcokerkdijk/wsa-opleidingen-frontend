@@ -4,7 +4,6 @@
 }
 .row{
     padding-top: 2%;
-    padding-bottom: 2%;
 }
 #h6{
     letter-spacing: 1px;
@@ -18,15 +17,12 @@
 p {
     white-space: pre-wrap;
     display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     font-size: 14px;
     line-height: 24px;
-    margin-bottom: 20px;
     color: #808285;
-    
+    font-family: "Working Spirit";
 }
 .home-banner{
     width: 290px;
@@ -58,14 +54,11 @@ p {
     color: white;
     font-size: 20px;
     max-width: 290px;
-    max-height: 230px;
-    
+    max-height: 230px; 
     overflow-wrap: break-word;
     word-wrap: break-word;
     word-break: keep-all;
-
     text-align: center;
-       
     margin: 0;
     position: absolute;
     top: 50%;
@@ -86,7 +79,6 @@ p {
     font-size: 24px;
     font-weight: normal;
     line-height: 32px;
-
 }
 #table-bottom,
 th {
@@ -122,4 +114,3 @@ td {
     text-align: center;
     margin-top: 195px;
 }
-

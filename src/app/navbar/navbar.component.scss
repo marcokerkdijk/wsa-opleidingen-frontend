@@ -107,10 +107,11 @@ a.hamburgerButton:hover {
 .dropdown {
     position: relative;
     display: inline-block;
+    cursor: pointer;
 }
   
 .dropdown-content {
-    display: block;
+    display: none;
     position: absolute;
     right: 0%;
     background-color: #ffffff;
@@ -120,10 +121,10 @@ a.hamburgerButton:hover {
     z-index: 1;
 }
 
-.dropdown:hover {
-    cursor: pointer;
-}   
- 
+.dropdown:focus .dropdown-content {
+    display: block;
+}
+
 @media (max-width: 65rem){
     #hamburger {
         visibility: visible;

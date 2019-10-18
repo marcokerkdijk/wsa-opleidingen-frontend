@@ -6,7 +6,7 @@
             {{tekstObject.titel}}
         </div>
         <div class="col-sm-8">
-            <p id="text" id="tekstvak{{tekstObject.id}}" [innerHTML]="tekstObject.tekst | linkify"></p>
+            <p id="tekstvak{{tekstObject.id}}" [innerHTML]="tekstObject.tekst | linkify"></p>
         </div>
     </div>
 
@@ -58,27 +58,27 @@
                 <div class="col-sm-4" id="titel">
                     {{Traject.naam}}
                 </div>
-                <div class="col-sm-8" id="text">
-                    {{Traject.omschrijving}}
+                <div class="col-sm-8">
+                    <p>{{Traject.omschrijving}}</p>
                 </div>
             </div>
 
             <!-- Agenda van het traject -->
             <div class="row">
-                <div class="col-sm-12" id="Agenda">
+                <div class="col-sm-4" id="titel">
+                    Agenda
+                </div>
+                <div class="col-sm-8" id="Agenda">
                     <table class="table table-bordered" id="trajectonderdeelTabel">
                         <thead id="tabel-headers">
                             <tr>
-                                <th>Datum</th>
-                                <th>Tijdstip</th>
-                                <th>Informatie</th>
+                                <th id="Datum">Datum</th>
+                                <th id="Informatie">Informatie</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let Trajectonderdeel of traject.trajectOnderdelen"
-                                id="row{{Trajectonderdeel.id}}">
-                                <td>{{Trajectonderdeel.startdatum}}</td>
-                                <td>{{Trajectonderdeel.tijdstip}}</td>
+                            <tr *ngFor="let Trajectonderdeel of trajectonderdelen" id="row{{Trajectonderdeel.id}}">
+                                <td>{{Trajectonderdeel.startdatum | date:'dd-MM-yyyy HH:mm'}}</td>
                                 <td>{{Trajectonderdeel.naam}}</td>
                             </tr>
                         </tbody>
@@ -87,14 +87,15 @@
             </div>
 
             <!-- Selectiefases behorend bij het traject -->
-            <div class="row" *ngFor="let Trajectonderdeel of traject.trajectOnderdelen">
+            <div class="row" *ngFor="let Trajectonderdeel of trajectonderdelen">
                 <div class="col-sm-4" id="titel">
                     {{Trajectonderdeel.naam}}
                 </div>
-                <div class="col-sm-8" id="text">
-                    {{Trajectonderdeel.omschrijving}}
+                <div class="col-sm-8">
+                    <p>{{Trajectonderdeel.omschrijving}}</p>
                 </div>
             </div>
+
             <div class="row">
             </div>
         </ng-template>
