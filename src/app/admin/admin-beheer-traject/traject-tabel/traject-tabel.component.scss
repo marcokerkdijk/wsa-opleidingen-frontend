@@ -16,13 +16,20 @@ th {
     border-color: black;    
 }
 
-#table-bottom,
-td {
+#table-bottom {
     background: #ffffff;
     color: #696969;
     font-size: 15px;
     border: 1px solid;
     text-align: left;
+}
+
+td { 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    word-wrap: break-word;
+    font-family: "Working Spirit";
+    color: #808285;
 }
 
 .trajectlink {
