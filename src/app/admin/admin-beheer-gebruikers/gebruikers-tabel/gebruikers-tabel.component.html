@@ -25,28 +25,28 @@
         <table id=gebruikersTabel class='table table-bordered'>
             <thead id="table-bottom">
                 <tr>
-                    <th>Voornaam<i id='sorteerPijlVoornaam' class="fa fa-fw fa-sort" (click)="sorteerTabel(0)">
+                    <th id='sorteerPijlVoornaam'>Voornaam<i class="fa fa-fw fa-sort" (click)="sorteerTabel(0)">
                         </i></th>
-                    <th>Achternaam<i id='sorteerPijlAchternaam' class="fa fa-fw fa-sort" (click)="sorteerTabel(1)"></i>
+                    <th id='sorteerPijlAchternaam'>Achternaam<i class="fa fa-fw fa-sort" (click)="sorteerTabel(1)"></i>
                     </th>
-                    <th>Rol <i id='sorteerPijlRol' class="fa fa-fw fa-sort" (click)="sorteerTabel(2)">
+                    <th id='sorteerPijlRol'>Rol <i class="fa fa-fw fa-sort" (click)="sorteerTabel(2)">
                         </i></th>
-                    <th>Emailadres <i id='sorteerPijlEmail' class="fa fa fw fa-sort" (click)="sorteerTabel(3)"></i></th>
-                    <th>Actief <i id='sorteerPijlActief' class="fa fa-fw fa-sort" (click)="sorteerTabel(4)"></i>
+                    <th id='sorteerPijlEmailadres'>Emailadres <i class="fa fa fw fa-sort" (click)="sorteerTabel(3)"></i></th>
+                    <th id='sorteerPijlActief'>Actief <i class="fa fa-fw fa-sort" (click)="sorteerTabel(4)"></i>
                     </th>
-                    <th>Bewerken</th>
-                    <th>Verwijderen</th>
+                    <th id='Bewerken'>Bewerken</th>
+                    <th id='Verwijderen'>Verwijderen</th>
                 </tr>
             </thead>
             <ng-container *ngFor="let Gebruiker of actieveGebruikers, let i=index">
                 <tbody>
                     <tr (onCreate)="maakBooleanLijst()" id="tablerow{{Gebruiker.id}}" name="tabelrij"
                         *ngIf="!(rol === 'recruiter' && Gebruiker.rol === 'ADMIN')">
-                        <td id="voornaam{{Gebruiker.id}}">{{Gebruiker.voornaam}}</td>
-                        <td id="achternaam{{Gebruiker.id}}">{{Gebruiker.tussenvoegsel}} {{Gebruiker.achternaam}}</td>
-                        <td id="rol{{Gebruiker.id}}" class="rolnaam">{{Gebruiker.rol}}</td>
-                        <td id="emailadres{{Gebruiker.id}}">{{Gebruiker.emailadres}}</td>
-                        <td>
+                        <td class="uitlijningRechts" id="voornaam{{Gebruiker.id}}">{{Gebruiker.voornaam}}</td>
+                        <td class="uitlijningRechts"id="achternaam{{Gebruiker.id}}">{{Gebruiker.tussenvoegsel}} {{Gebruiker.achternaam}}</td>
+                        <td class="uitlijningRechts"id="rol{{Gebruiker.id}}" class="rolnaam">{{Gebruiker.rol}}</td>
+                        <td class="uitlijningRechts" id="emailadres{{Gebruiker.id}}">{{Gebruiker.emailadres}}</td>
+                        <td class="uitlijningCenter">
                             <ng-template [ngIf]="Gebruiker.actief" [ngIfElse]="nietactief">
                                 <div id='actief'>Ja</div>
                             </ng-template>
@@ -54,7 +54,7 @@
                                 <div id='nietactief'>Nee</div>
                             </ng-template>
                         </td>
-                        <td>
+                        <td class="uitlijningCenter">
                             <div id="pencil" *ngIf="ingelogdeGebruiker.gebruiker_id != Gebruiker.id;">
                                 <i class='fa fa-pencil' id="pencil{{Gebruiker.id}}"
                                     routerLink="../gebruiker-wijzigen/{{Gebruiker.id}}"></i>
