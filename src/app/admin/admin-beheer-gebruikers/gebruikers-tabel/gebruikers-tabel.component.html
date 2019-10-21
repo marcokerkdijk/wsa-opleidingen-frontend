@@ -60,7 +60,7 @@
                                     routerLink="../gebruiker-wijzigen/{{Gebruiker.id}}"></i>
                             </div>
                         </td>
-                        <td id="prullenbak">
+                        <td class="uitlijningCenter" id="prullenbak">
                             <i class='fa fa-trash' id="trash{{Gebruiker.id}}" (click)="toggle(i);"
                                 *ngIf="ingelogdeGebruiker.gebruiker_id != Gebruiker.id"></i>
                         </td>

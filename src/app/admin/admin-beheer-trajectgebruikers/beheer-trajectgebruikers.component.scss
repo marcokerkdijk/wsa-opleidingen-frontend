@@ -68,3 +68,15 @@ button:hover{
     color: white;
     background-color: #00aeef;
 }
+
+td { 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    word-wrap: break-word;
+    font-family: "Working Spirit";
+    color: #808285;
+}
+
+.uitlijningCenter{
+    text-align: center;
+}

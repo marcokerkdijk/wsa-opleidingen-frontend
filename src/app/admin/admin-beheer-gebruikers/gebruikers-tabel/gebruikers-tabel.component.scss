@@ -132,12 +132,12 @@ td {
     color: #808285;
 }
 
-td.uitlijningCenter{
-    align-items: center;
+.uitlijningCenter{
+    text-align: center;
 }
 
 th#Bewerken, th#Verwijderen, th#sorteerPijlRol, th#sorteerPijlActief {
-    width: 9%;
+    width: 10%;
 }
 
 #pencil, #prullenbak {
