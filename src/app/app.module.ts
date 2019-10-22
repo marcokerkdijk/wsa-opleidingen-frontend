@@ -3,7 +3,6 @@ import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {LoginComponent} from './login/login.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {AutorisatieInterceptor} from "./interceptor/AutorisatieInterceptor";
@@ -71,6 +70,7 @@ import { ResultaatWijzigenComponent } from './admin/resultaat-wijzigen/resultaat
 import { AdminBeheerTekstobjectenComponent } from './admin/admin-beheer-tekstobjecten/beheer-tekstobjecten.component';
 import { TekstobjectWijzigenComponent } from './admin/admin-beheer-tekstobjecten/tekstobject-wijzigen/tekstobject-wijzigen.component';
 import { NgxLinkifyjsModule } from 'ngx-linkifyjs';
+import { UserIdleModule } from 'angular-user-idle';
 
 export function jwtOptionsFactory(tokenService: TokenService) {
   return {
@@ -89,7 +89,6 @@ export function jwtOptionsFactory(tokenService: TokenService) {
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
     HomeComponent,
     StudentComponent,
     DocentComponent,
@@ -148,7 +147,9 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     TekstobjectWijzigenComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule, 
+    UserIdleModule.forRoot({
+      idle: 300, timeout: 300, ping: 10}),
     AlertModule,
     ReactiveFormsModule,
     HttpClientModule,
@@ -168,7 +169,8 @@ export function jwtOptionsFactory(tokenService: TokenService) {
   ],
   providers: [
     {provide: HomeTrajectenComponent},
-    {provide: HTTP_INTERCEPTORS, useClass: AutorisatieInterceptor, multi: true}
+    {provide: HTTP_INTERCEPTORS, useClass: AutorisatieInterceptor, multi: true},
+    NavbarComponent
   ],
   bootstrap: [AppComponent]
 })

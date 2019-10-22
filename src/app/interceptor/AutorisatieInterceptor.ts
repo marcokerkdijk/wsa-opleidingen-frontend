@@ -8,12 +8,14 @@ const AUTORISATIE_TOKEN_HEADER = 'Authorization';
 @Injectable()
 export class AutorisatieInterceptor implements HttpInterceptor {
 
+  counter:number;
+
   constructor(private tokenService: TokenService) {
 
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-
+    
     let authReq = req;
     const token = this.tokenService.getBearerToken();
 
@@ -25,3 +27,4 @@ export class AutorisatieInterceptor implements HttpInterceptor {
   }
 
 }
+
