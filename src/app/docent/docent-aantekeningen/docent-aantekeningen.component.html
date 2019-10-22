@@ -13,8 +13,8 @@
                 <tr>
                     <th id="titel">Titel</th>
                     <th id="dag">Dag</th>
-                    <th id="wijzigen">Wijzig</th>
-                    <th id="verwijderen">Verwijder</th>
+                    <th class="uitlijningCenter" id="wijzigen">Wijzig</th>
+                    <th class="uitlijningCenter" id="verwijderen">Verwijder</th>
                 </tr>
             </thead>
             <tbody>
@@ -26,13 +26,13 @@
                         </td>
                         <td id="dag{{Aantekening.id}}">{{Aantekening.dag | date:'dd-MM-yyyy'}}</td>
                         <td>
-                            <div id="pencil">
+                            <div class="uitlijningCenter" id="pencil">
                                 <i class='fa fa-pencil' id="pencil{{Aantekening.id}}"
                                     (click)="wijzigAantekening(Aantekening);" routerLink="../aantekening-wijzig"></i>
                             </div>
                         </td>
                         <td>
-                            <div id="prullenbak">
+                            <div class="uitlijningCenter" id="prullenbak">
                                 <i class='fa fa-trash' id="verwijder{{Aantekening.id}}" (click)="toggle(i);"></i>
                             </div>
                         </td>

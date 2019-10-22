@@ -12,7 +12,7 @@ h6{
     padding-right: 19%;
 }
 .row{
-    padding-top: 4%;
+    padding-top: 2%;
 }
 #background {
     background-image: url(src\assets\Images\Academy-people2.jpg);
@@ -27,7 +27,6 @@ h6{
     color: #808285;
     font-size: 26px;
     font-weight: normal;
-    line-height: 32px;
     text-align: right;
 }
 #text {
@@ -38,7 +37,23 @@ h6{
 }
 th#Informatie {
     min-width: 460px;
+    font-family: "Working Spirit";
 }
 th#Datum{
     min-width: 158px;
+    font-family: "Working Spirit";
+}
+td {
+    font-family: "Working Spirit";
+    color: #808285;
+}
+p {
+    white-space: pre-wrap;
+    display: block;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-size: 14px;
+    line-height: 24px;
+    color: #808285;
+    font-family: "Working Spirit";
 }
