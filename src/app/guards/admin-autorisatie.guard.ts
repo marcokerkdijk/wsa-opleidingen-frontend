@@ -16,11 +16,12 @@ export class AdminAutorisatieGuard implements CanActivate {
   }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-
+ 
     if (this.autenticatieService.isGeautoriseerd(GebruikersRol.ADMIN)) {
 
       return true;
     }
+  
 
     const url: string = state.url;
     this.autenticatieService.redirectUrl = url;
