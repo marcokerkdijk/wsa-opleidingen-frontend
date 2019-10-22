@@ -22,6 +22,7 @@ export class ResultaatInvoerenComponent implements OnInit {
   studenten: Gebruiker[] = new Array;
   student: Gebruiker = new Gebruiker;
   resultaatDTO: UitwerkingDTO = new UitwerkingDTO;
+  bestandsnaam: string;
 
   constructor(private activeRoute: ActivatedRoute, private opdrachtservice: OpdrachtService,
     private gebruikerservice: GebruikersService, private uitwerkingservice: UitwerkingService,
@@ -49,6 +50,7 @@ export class ResultaatInvoerenComponent implements OnInit {
 
   voegBestandToe(files: any[]): void {
     if (files && files.length > 0) {
+      this.bestandsnaam=files[0].name;
       
       let pdf = new Blob([files[0]], {type: "application/pdf"});
 
