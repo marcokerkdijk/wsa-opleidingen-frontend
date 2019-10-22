@@ -111,6 +111,8 @@ td {
     overflow: hidden; 
     text-overflow: ellipsis; 
     word-wrap: break-word;
+    font-family: "Working Spirit";
+    color: #808285;
 }
 
 #pencil {
@@ -195,4 +197,8 @@ h6 {
     font-size: 20px;
     font-weight: normal;
     line-height: 32px;
+}
+
+.uitlijningCenter{
+    text-align: center;
 }
