@@ -109,8 +109,8 @@
                         <div class="col-sm-6">
                             <p>Startdatum</p>
                             <div>
-                                <input name="dag" class="form-control" type="datetime-local" 
-                                id="startdatuminvoer" [(ngModel)]="trajectonderdeel.startdatum">
+                                <input name="dag" class="form-control" type="datetime-local" id="startdatuminvoer"
+                                    [(ngModel)]="trajectonderdeel.startdatum">
                             </div>
                         </div>
                     </div>
@@ -153,9 +153,9 @@
                         <div class="col-sm-6">
                             <p>Startdatum</p>
                             <div>
-                                <input name="dag" class="form-control" type="datetime-local"
-                                 id="startdatuminvoer" [ngModel]="trajectonderdeel.startdatum"
-                                  (ngModelChange)="trajectonderdeel.startdatum = $event">
+                                <input name="dag" class="form-control" type="datetime-local" id="startdatuminvoer"
+                                    [ngModel]="trajectonderdeel.startdatum"
+                                    (ngModelChange)="trajectonderdeel.startdatum = $event">
                             </div>
                         </div>
                     </div>
@@ -168,6 +168,9 @@
                             </div>
                         </div>
                         <div class="col-sm-6">
+                            <button id="annuleren" (click)="annuleerWijzigen();">
+                                Annuleer wijzigen
+                            </button>
                             <button id="onderdeelopslaan" (click)="wijzigOnderdeel(trajectonderdeel)">
                                 Onderdeel wijzigen
                             </button>

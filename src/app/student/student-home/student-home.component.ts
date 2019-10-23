@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewChecked } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Traject } from 'src/app/Objecten/traject';
 import { AutenticatieService } from 'src/app/services/autenticatie.service';
 import { TrajectService } from 'src/app/services/traject.service';
@@ -14,7 +14,7 @@ import { TekstobjectService } from 'src/app/services/tekstobject.service';
   templateUrl: './student-home.component.html',
   styleUrls: ['./student-home.component.scss']
 })
-export class StudentHomeComponent implements OnInit, AfterViewChecked {
+export class StudentHomeComponent implements OnInit {
   gebruiker: Gebruiker = new Gebruiker;
   index: number = 0;
   trajecten: Traject[] = new Array;
@@ -28,15 +28,6 @@ export class StudentHomeComponent implements OnInit, AfterViewChecked {
   ngOnInit() {
     this.haalGebruikerOp();
     this.getTekstObject(2);
-  }
-
-  ngAfterViewChecked() {
-    try {
-      this.sorteerTabel(0);
-    }
-    catch(error) {
-      //Error afhandeling want er kwam een error terwijl alles goed werkt.
-    }
   }
 
   getTekstObject(tekstObject_id: number) {
@@ -55,6 +46,7 @@ export class StudentHomeComponent implements OnInit, AfterViewChecked {
     this.trajectService.geefAlleTrajectenVanGebruiker(id).subscribe(trajecten => {
       this.trajecten = trajecten;
       this.trajectVanGebruiker = trajecten[0];
+      this.trajectVanGebruiker.trajectOnderdelen.sort((b, a) => new Date(b.startdatum).getTime() - new Date(a.startdatum).getTime());
     },
     (error) => {
       this.alertservice.error("Je bent nog niet aan een traject gekoppeld.", "alert-1");
@@ -63,43 +55,5 @@ export class StudentHomeComponent implements OnInit, AfterViewChecked {
 
   setTraject(): void {
     this.dataservice.setTraject_id(this.trajectVanGebruiker.id);
-  }
-
-  sorteerTabel(n) {
-    var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
-    table = document.getElementById("agendatabel");
-    switching = true;
-    dir = "asc";
-    while (switching) {
-      switching = false;
-      rows = table.rows;
-      for (i = 1; i < (rows.length - 1); i++) {
-        shouldSwitch = false;
-        x = rows[i].getElementsByTagName("TD")[n];
-        y = rows[i + 1].getElementsByTagName("TD")[n];
-
-        if (dir == "asc") {
-          if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-            shouldSwitch = true;
-            break;
-          }
-        } else if (dir == "desc") {
-          if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
-            shouldSwitch = true;
-            break;
-          }
-        }
-      }
-      if (shouldSwitch) {
-        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-        switching = true;
-        switchcount++;
-      } else {
-        if (switchcount == 0 && dir == "asc") {
-          dir = "desc";
-          switching = true;
-        }
-      }
-    }
   }
 }
