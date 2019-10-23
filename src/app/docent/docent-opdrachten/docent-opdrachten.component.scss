@@ -9,45 +9,46 @@
 
 #wijzigZichtbaarheid{
     padding-right: 0;
+}
 
-    p {
-        color: #808285;
-    }
+p {
+    color: #808285;
+    font-family: "Working Spirit";
+}
 
-    select {
-        border-radius: 0;
-    }
+select {
+    border-radius: 0;
+}
 
-    #resetbutton {
-        margin-left: 10px;
-    }
+#resetbutton {
+    margin-left: 10px;
+}
 
-    button {
-        text-transform: uppercase;
-        border-radius: 0;
-        border: 1px solid #00aeef;
-        background-color: transparent;
-        color: #00aeef;
-        cursor: pointer;
-        font-size: 12px;
-        font-weight: 600;
-        padding-top: 8px;
-        padding-bottom: 6px;
-    }
+#maakZichtbaar, #maakOnzichtbaar, #resetbutton {
+    text-transform: uppercase;
+    border-radius: 0;
+    border: 1px solid #00aeef;
+    background-color: transparent;
+    color: #00aeef;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
 
-    button:hover {
-        color: white;
-        background-color: #00aeef;
-    }
+#maakZichtbaar:hover, #maakOnzichtbaar:hover, #resetbutton:hover {
+    color: white;
+    background-color: #00aeef;
+}
 
-    .wijzigbuttons {
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-        
-        button {
-            margin-right: 10px;
-        }
-    }
+.wijzigbuttons {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+button {
+    margin-right: 10px;
 }
 
 #opdrachtentabel {
@@ -111,6 +112,8 @@ td {
     overflow: hidden; 
     text-overflow: ellipsis; 
     word-wrap: break-word;
+    font-family: "Working Spirit";
+    color: #808285;
 }
 
 #pencil {
@@ -131,7 +134,7 @@ td {
     cursor: pointer;
 }
 
-#toevoegbutton {
+#toevoegbutton, #verwijderbutton {
     border-color: #00aeef;
     color: #00aeef;
     width: 230px;
@@ -152,37 +155,14 @@ td {
     margin-bottom: 5px;
 }
 
-#toevoegbutton:hover {
+#toevoegbutton:hover, #verwijderbutton:hover {
     cursor: pointer;
     color: white;
     background-color: #00aeef;
 }
 
-#verwijderbutton {
-    border-color: #00aeef;
-    color: #00aeef;
-    width: 230px;
-    text-transform: uppercase;
-    border: 1px solid  #00aeef;
+#verwijderbutton{
     background-color: #ffffff;
-    border-radius: 0;
-    font-size: 12px;
-    font-weight: 600;
-    padding-top: 10px;
-    padding-bottom: 8px;
-    display: inline-block;
-    text-align: center;
-    vertical-align: middle;
-    touch-action: manipulation;
-    line-height: 1.42857;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-#verwijderbutton:hover {
-    cursor: pointer;
-    color: white;
-    background-color: #00aeef;
 }
 
 #melding {
@@ -195,4 +175,8 @@ h6 {
     font-size: 20px;
     font-weight: normal;
     line-height: 32px;
+}
+
+.uitlijningCenter{
+    text-align: center;
 }

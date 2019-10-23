@@ -19,14 +19,14 @@
                 <tr>
                     <th id="VoornaamStudent">Voornaam</th>
                     <th id="AchternaamStudent">Achternaam</th>
-                    <th id="KoppelenStudent">Koppelen</th>
+                    <th class="uitlijningCenter" id="KoppelenStudent">Koppelen</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let Student of studentenlijst">
                     <td id="Voornaam{{Student.id}}">{{Student.voornaam}}</td>
                     <td id="Achternaam{{Student.id}}">{{Student.tussenvoegsel}} {{Student.achternaam}}</td>
-                    <td id="Vink{{Student.id}}">
+                    <td class="uitlijningCenter" id="Vink{{Student.id}}">
                         <input type="checkbox" id="Checkbox{{Student.id}}" [(ngModel)]="Student.gekoppeld"
                             (click)="wijzigStudentArray(Student, Student.gekoppeld);" />
                     </td>
@@ -44,14 +44,14 @@
                 <tr>
                     <th id="VoornaamDocent">Voornaam</th>
                     <th id="AchternaamDocent">Achternaam</th>
-                    <th id="KoppelenDocent">Koppelen</th>
+                    <th class="uitlijningCenter" id="KoppelenDocent">Koppelen</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let Docent of docentenlijst">
                     <td id="Voornaam{{Docent.id}}">{{Docent.voornaam}}</td>
                     <td id="Achternaam{{Docent.id}}">{{Docent.tussenvoegsel}} {{Docent.achternaam}}</td>
-                    <td id="Vink{{Docent.id}}">
+                    <td class="uitlijningCenter" id="Vink{{Docent.id}}">
                         <input type="checkbox" id="Checkbox{{Docent.id}}" [(ngModel)]="Docent.aanTraject"
                             (click)="wijzigDocentArray(Docent, Docent.aanTraject);" />
                     </td>

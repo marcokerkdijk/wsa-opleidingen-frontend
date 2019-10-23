@@ -81,7 +81,7 @@ p {
     display: block;
   } 
 
-  .tabelknop{
+  .tabelknop, #verwijderbutton {
     border-color: #00aeef;
     color: #00aeef;
     width: 230px;
@@ -103,7 +103,11 @@ p {
     margin-bottom: 5px;
 }
 
-.tabelknop:hover{
+#verwijderbutton{
+    background-color: #ffffff;
+}
+
+.tabelknop:hover, #verwijderbutton:hover {
     cursor: pointer;
     color: white;
     background-color: #00aeef;
@@ -132,12 +136,16 @@ td {
     color: #808285;
 }
 
-td.uitlijningCenter{
-    align-items: center;
+.uitlijningCenter{
+    text-align: center;
 }
 
 th#Bewerken, th#Verwijderen, th#sorteerPijlRol, th#sorteerPijlActief {
-    width: 9%;
+    width: 10%;
+}
+
+th#sorteerPijlVoornaam, th#sorteerPijlAchternaam {
+    width: 18%;
 }
 
 #pencil, #prullenbak {
@@ -147,25 +155,4 @@ th#Bewerken, th#Verwijderen, th#sorteerPijlRol, th#sorteerPijlActief {
 
 .fa-pencil:hover, .fa-trash:hover {
     cursor: pointer;
-}
-
-#verwijderbutton {
-    border-color: #00aeef;
-    color: #00aeef;
-    width: 230px;
-    text-transform: uppercase;
-    border: 1px solid  #00aeef;
-    background-color: #ffffff;
-    border-radius: 0;
-    font-size: 12px;
-    font-weight: 600;
-    padding-top: 10px;
-    padding-bottom: 8px;
-    display: inline-block;
-    text-align: center;
-    vertical-align: middle;
-    touch-action: manipulation;
-    line-height: 1.42857;
-    margin-top: 5px;
-    margin-bottom: 5px;
 }

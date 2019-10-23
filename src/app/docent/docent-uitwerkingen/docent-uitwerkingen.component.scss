@@ -62,3 +62,11 @@ h6 {
     font-weight: normal;
     line-height: 32px;
 }
+
+td { 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    word-wrap: break-word;
+    font-family: "Working Spirit";
+    color: #808285;
+}

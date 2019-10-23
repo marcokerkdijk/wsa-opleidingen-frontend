@@ -46,10 +46,12 @@ export class AutenticatieService {
   }
 
   public isGeautoriseerd(gebruikersRol: GebruikersRol): boolean {
-
-    if (!this.tokenService.isIngelogd()) {
+   
+        
+    if (!this.tokenService.isIngelogd() ) {
       return false;
     }
+  
 
     if (isNullOrUndefined(this.jwtToken)) {
       this.jwtToken = this.jwtHelperService.decodeToken(this.tokenService.getBearerToken());

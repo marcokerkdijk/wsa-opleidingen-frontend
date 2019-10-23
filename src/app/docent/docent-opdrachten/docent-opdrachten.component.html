@@ -32,8 +32,8 @@
                     <th id="dag">Bootcampdag</th>
                     <th id="fase">Fase</th>
                     <th id="zichtbaar">Zichtbaar</th>
-                    <th id="wijzigen">Wijzig</th>
-                    <th id="verwijderen">Verwijder</th>
+                    <th class="uitlijningCenter" id="wijzigen">Wijzig</th>
+                    <th class="uitlijningCenter" id="verwijderen">Verwijder</th>
                 </tr>
             </thead>
             <tbody>
@@ -51,13 +51,13 @@
                             <p *ngIf="!Opdracht.zichtbaar">Nee</p>
                         </td>
                         <td>
-                            <div id="pencil">
+                            <div class="uitlijningCenter" id="pencil">
                                 <i class='fa fa-pencil' id="pencil{{Opdracht.id}}" (click)="wijzigOpdracht(Opdracht);"
                                     routerLink="../opdracht-wijzig/{{traject_id}}"></i>
                             </div>
                         </td>
                         <td>
-                            <div id="prullenbak">
+                            <div class="uitlijningCenter" id="prullenbak">
                                 <i class='fa fa-trash' id="verwijder{{Opdracht.id}}" (click)="toggle(i);"></i>
                             </div>
                         </td>
@@ -70,7 +70,7 @@
                             </div>
                             <div class="col-sm-5" id="opdrachtcode">
                                 <p class="kop">Codevoorbeeld</p>
-                                <pre>{{Opdracht.codevoorbeeld}}</pre>
+                                <pre><p>{{Opdracht.codevoorbeeld}}</p></pre>
                             </div>
                             <button type="button" class="close" aria-label="Close" (click)="toggleOmschrijving(i);">
                                 <span aria-hidden="true">&times;</span>

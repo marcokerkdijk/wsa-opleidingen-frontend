@@ -70,6 +70,8 @@ td {
     overflow: hidden; 
     text-overflow: ellipsis; 
     word-wrap: break-word;
+    font-family: "Working Spirit";
+    color: #808285;
 }
 
 #pencil {
@@ -146,4 +148,21 @@ td {
 
 #melding {
     min-width: 100%;
+}
+
+.uitlijningCenter{
+    text-align: center;
+}
+
+#fase{
+    width: 40%;
+}
+
+#titel{
+    width: 25%;
+}
+
+p {
+    color: #808285;
+    font-family: "Working Spirit";
 }
