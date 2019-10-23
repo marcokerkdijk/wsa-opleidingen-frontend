@@ -15,12 +15,12 @@
             </tr>
         </thead>
         <tbody>
-            <tr id="uitwerkingrow" *ngFor="let Uitwerking of student.uitwerkingen">
-                <td>{{Uitwerking.opdracht.titel}}</td>
-                <td>{{Uitwerking.inleverTijdstip | date:'dd-MM-yyyy HH:mm:ss'}}</td>
+            <tr id="uitwerkingrow" *ngFor="let OpdrachtUitwerking of opdrachtUitwerkingen">
+                <td>{{OpdrachtUitwerking.opdracht.titel}}</td>
+                <td>{{OpdrachtUitwerking.inleverTijdstip | date:'dd-MM-yyyy HH:mm:ss'}}</td>
                 <td>
-                    <button id="uitwerking{{Uitwerking.id}}" (click)="naarUitwerking(Uitwerking);">Bekijk uitwerking
-                        <div id="notificatie" *ngIf="!Uitwerking.gelezen">
+                    <button id="uitwerking{{OpdrachtUitwerking.id}}" (click)="naarUitwerking(OpdrachtUitwerking);">Bekijk uitwerking
+                        <div id="notificatie" *ngIf="!OpdrachtUitwerking.gelezen">
                             <i class="fa fa-exclamation-circle" title="Nieuwe uitwerking beschikbaar"
                                 aria-hidden="true"></i>
                         </div>
