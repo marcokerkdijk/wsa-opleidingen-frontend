@@ -21,8 +21,8 @@ export class UitwerkingService {
     return this.http.post<Uitwerking>(`${this.api}/maakUitwerking/` + gebruiker_id + '/' + opdracht_id, uitwerking);
   }
 
-  wijzigUitwerking(gebruiker_id: number, uitwerking: Uitwerking) {
-    return this.http.put<Uitwerking>(`${this.api}/WijzigUitwerking/` + gebruiker_id, uitwerking);
+  wijzigUitwerking(gebruiker_id: number, uitwerkingDTO: UitwerkingDTO) {
+    return this.http.put<Uitwerking>(`${this.api}/WijzigUitwerking/` + gebruiker_id, uitwerkingDTO);
   }
 
   geefAssessmentUitwerkingenVanTraject(traject_id: number): Observable<UitwerkingDTO[]> {

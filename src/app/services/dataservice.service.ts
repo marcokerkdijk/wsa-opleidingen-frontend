@@ -4,6 +4,7 @@ import { Opdracht } from '../Objecten/opdracht';
 import { Gebruiker } from '../Objecten/gebruiker';
 import { Uitwerking } from '../Objecten/uitwerking';
 import { Aantekening } from '../Objecten/aantekening';
+import { UitwerkingDTO } from '../Objecten/uitwerking-dto'
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +17,7 @@ export class DataserviceService {
   private gebruiker: Gebruiker;
   private uitwerking: Uitwerking;
   private aantekening: Aantekening;
+  private uitwerkingDTO: UitwerkingDTO;
 
   constructor() { }
 
@@ -57,6 +59,14 @@ export class DataserviceService {
 
   public getUitwerking(): Uitwerking {
     return this.uitwerking;
+  }
+
+  public setUitwerkingDTO(uitwerkingDTO: UitwerkingDTO): void {
+    this.uitwerkingDTO = uitwerkingDTO;
+  }
+
+  public getUitwerkingDTO(): UitwerkingDTO {
+    return this.uitwerkingDTO;
   }
 
   public setAantekening(aantekening: Aantekening): void {

@@ -19,7 +19,8 @@
                 <td>{{OpdrachtUitwerking.opdracht.titel}}</td>
                 <td>{{OpdrachtUitwerking.inleverTijdstip | date:'dd-MM-yyyy HH:mm:ss'}}</td>
                 <td>
-                    <button id="uitwerking{{OpdrachtUitwerking.id}}" (click)="naarUitwerking(OpdrachtUitwerking);">Bekijk uitwerking
+                    <button id="uitwerking{{OpdrachtUitwerking.id}}"
+                        (click)="naarUitwerking(OpdrachtUitwerking);">Bekijk uitwerking
                         <div id="notificatie" *ngIf="!OpdrachtUitwerking.gelezen">
                             <i class="fa fa-exclamation-circle" title="Nieuwe uitwerking beschikbaar"
                                 aria-hidden="true"></i>
