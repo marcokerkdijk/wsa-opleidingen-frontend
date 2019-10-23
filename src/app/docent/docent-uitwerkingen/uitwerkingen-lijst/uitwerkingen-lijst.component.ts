@@ -31,7 +31,7 @@ export class UitwerkingenLijstComponent implements OnInit {
       this.opdrachtUitwerkingen = uitwerkingen;
     },
       (error) => {
-        this.alertservice.error("Er zijn nog geen resultaten van assessments gekoppeld.", "alert-1");
+        this.alertservice.error("Er zijn nog geen uitwerkingen ingeleverd door deze student.", "alert-1");
       }
     );
   }
