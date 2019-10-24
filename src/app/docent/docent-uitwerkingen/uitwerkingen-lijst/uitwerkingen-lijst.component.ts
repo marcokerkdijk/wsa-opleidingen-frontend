@@ -1,10 +1,11 @@
-import { Component, OnInit, AfterViewChecked, ElementRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Gebruiker } from 'src/app/Objecten/gebruiker';
 import { DataserviceService } from 'src/app/services/dataservice.service';
-import { Uitwerking } from 'src/app/Objecten/uitwerking';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AlertService } from 'src/app/_alert';
 import { GebruikersService } from 'src/app/services/gebruikers.service';
+import { UitwerkingService } from 'src/app/services/uitwerking.service';
+import { UitwerkingDTO } from 'src/app/Objecten/uitwerking-dto';
 
 @Component({
   selector: 'wsa-uitwerkingen-lijst',
@@ -13,31 +14,37 @@ import { GebruikersService } from 'src/app/services/gebruikers.service';
 })
 export class UitwerkingenLijstComponent implements OnInit {
   student: Gebruiker = new Gebruiker();
+  opdrachtUitwerkingen: UitwerkingDTO[] = new Array;
+  OpdrachtUitwerking: UitwerkingDTO = new UitwerkingDTO();
 
   constructor(private dataservice: DataserviceService, private router: Router, private alertservice: AlertService, 
-              private activeRoute: ActivatedRoute, private gebruikerService: GebruikersService) { }
+              private activeRoute: ActivatedRoute, private gebruikerService: GebruikersService, private uitwerkingenService: UitwerkingService) { }
 
   ngOnInit() {
     const id = +this.activeRoute.snapshot.paramMap.get('id');
+    this.haalOpdrachtUitwerkingenOp(id)
     this.haalStudentOp(id);
+  }
+
+  haalOpdrachtUitwerkingenOp(gebruiker_id) {
+    this.uitwerkingenService.geefUitwerkingenVanStudent(gebruiker_id, "OPDRACHTUITWERKING").subscribe(uitwerkingen => {
+      this.opdrachtUitwerkingen = uitwerkingen;
+    },
+      (error) => {
+        this.alertservice.error("Er zijn nog geen uitwerkingen ingeleverd door deze student.", "alert-1");
+      }
+    );
   }
 
   haalStudentOp(id: number): void {
     this.gebruikerService.vraagGebruikerOpId(id).subscribe(student => {
       this.student = student;
       this.dataservice.setGebruiker(student);
-      if (student.uitwerkingen.length === 0) {
-        this.foutmelding();
-      }
     });
   }
 
-  foutmelding(): void {
-    this.alertservice.error("Deze student heeft nog geen uitwerkingen ingeleverd.", "alert-1");
-  }
-
-  naarUitwerking(uitwerking: Uitwerking): void {
-    this.dataservice.setUitwerking(uitwerking);
+  naarUitwerking(OpdrachtUitwerking: UitwerkingDTO): void {
+    this.dataservice.setUitwerkingDTO(OpdrachtUitwerking);
     this.router.navigateByUrl('docent/docent-traject/beheer-uitwerking');
   }
 

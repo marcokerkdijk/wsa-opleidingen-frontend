@@ -21,8 +21,8 @@ export class UitwerkingService {
     return this.http.post<Uitwerking>(`${this.api}/maakUitwerking/` + gebruiker_id + '/' + opdracht_id, uitwerking);
   }
 
-  wijzigUitwerking(gebruiker_id: number, uitwerking: Uitwerking) {
-    return this.http.put<Uitwerking>(`${this.api}/WijzigUitwerking/` + gebruiker_id, uitwerking);
+  wijzigUitwerking(gebruiker_id: number, uitwerkingDTO: UitwerkingDTO) {
+    return this.http.put<Uitwerking>(`${this.api}/WijzigUitwerking/` + gebruiker_id, uitwerkingDTO);
   }
 
   geefAssessmentUitwerkingenVanTraject(traject_id: number): Observable<UitwerkingDTO[]> {
@@ -33,8 +33,8 @@ export class UitwerkingService {
     return this.http.get<Uitwerking>(`${this.api}/geefUitwerking/` + uitwerking_id);
   }
 
-  geefAssessmentUitwerkingenVanStudent(gebruiker_id: number): Observable<UitwerkingDTO[]> {
-    return this.http.get<UitwerkingDTO[]>(`${this.api}/geefAssessmentUitwerkingenVanStudent/` + gebruiker_id);
+  geefUitwerkingenVanStudent(gebruiker_id: number, type_uitwerking): Observable<UitwerkingDTO[]> {
+    return this.http.get<UitwerkingDTO[]>(`${this.api}/geefUitwerkingenVanStudent/` + gebruiker_id + '/'+ type_uitwerking);
   }
 
   maakAssessmentResultaat(gebruiker_id: number, opdracht_id: number, uitwerkingDTO: UitwerkingDTO): Observable<Uitwerking> {

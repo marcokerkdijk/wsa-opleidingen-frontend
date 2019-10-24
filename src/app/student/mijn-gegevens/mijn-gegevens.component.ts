@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Gebruiker } from 'src/app/Objecten/gebruiker';
 import { GebruikersService } from 'src/app/services/gebruikers.service';
-import { UitwerkingService } from 'src/app/services/uitwerking.service'
+import { UitwerkingService } from 'src/app/services/uitwerking.service';
 import { AlertService } from 'src/app/_alert';
 import { AutenticatieService } from 'src/app/services/autenticatie.service';
 import { Traject } from 'src/app/Objecten/traject';
@@ -63,7 +63,7 @@ export class MijnGegevensComponent implements OnInit {
   }
 
   haalAssessmentsOp(gebruiker_id) {
-    this.uitwerkingenService.geefAssessmentUitwerkingenVanStudent(gebruiker_id).subscribe(assessments => {
+    this.uitwerkingenService.geefUitwerkingenVanStudent(gebruiker_id, "ASSESSMENTRESULTAAT").subscribe(assessments => {
       this.assessments = assessments;
     },
       (error) => {
