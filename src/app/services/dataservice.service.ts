@@ -5,6 +5,7 @@ import { Gebruiker } from '../Objecten/gebruiker';
 import { Uitwerking } from '../Objecten/uitwerking';
 import { Aantekening } from '../Objecten/aantekening';
 import { UitwerkingDTO } from '../Objecten/uitwerking-dto'
+import { InfoRoute } from '../Objecten/info-route'
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +19,7 @@ export class DataserviceService {
   private uitwerking: Uitwerking;
   private aantekening: Aantekening;
   private uitwerkingDTO: UitwerkingDTO;
+  private inforoute: InfoRoute;
 
   constructor() { }
 
@@ -76,4 +78,13 @@ export class DataserviceService {
   public getAantekening(): Aantekening {
     return this.aantekening;
   }
+
+  public setInfoRoute(inforoute: InfoRoute): void {
+    this.inforoute = inforoute;
+  }
+
+  public getInfoRoute(): InfoRoute {
+    return this.inforoute;
+  }
+
 }
