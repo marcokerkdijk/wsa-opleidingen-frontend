@@ -91,7 +91,7 @@ export class ResultaatWijzigenComponent implements OnInit {
   }
 
   resultaatWijzigen(resultaatDTO: UitwerkingDTO): void {
-    this.uitwerkingservice.wijzigAssessmentResultaat(this.huidigeGebruiker.id, resultaatDTO).subscribe(response => {
+    this.uitwerkingservice.wijzigUitwerking(this.huidigeGebruiker.id, resultaatDTO).subscribe(response => {
       this.router.navigateByUrl(this.rolIngelogdeGebruiker + '/beheer-resultaten/' + this.traject_id);
     });
   }
