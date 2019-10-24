@@ -152,15 +152,9 @@
                         <div class="col-sm-6">
                             <p>Startdatum</p>
                             <div>
-                                <textarea [(ngModel)]="trajectonderdeel.startdatum" class="form-control" rows="1"
-                                    id="startdatuminvoer"></textarea>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <p>Tijdstip</p>
-                            <div>
-                                <textarea [(ngModel)]="trajectonderdeel.tijdstip" class="form-control" rows="1"
-                                    id="tijdstipinvoer"></textarea>
+                                <input name="dag" class="form-control" type="datetime-local"
+                                 id="startdatuminvoer" [ngModel]="trajectonderdeel.startdatum"
+                                  (ngModelChange)="trajectonderdeel.startdatum = $event">
                             </div>
                         </div>
                     </div>
@@ -173,6 +167,9 @@
                             </div>
                         </div>
                         <div class="col-sm-6">
+                            <button id="annuleren" (click)="annuleerWijzigen();">
+                                Annuleer wijzigen
+                            </button>
                             <button id="onderdeelopslaan" (click)="wijzigOnderdeel(trajectonderdeel)">
                                 Onderdeel wijzigen
                             </button>

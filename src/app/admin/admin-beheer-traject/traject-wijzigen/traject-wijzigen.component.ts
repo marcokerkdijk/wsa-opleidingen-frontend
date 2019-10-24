@@ -37,6 +37,11 @@ export class TrajectWijzigenComponent implements OnInit {
     this.trajectonderdeel = new TrajectOnderdeel;
   }
 
+  annuleerWijzigen(): void {
+    this.onderdeelWijzigen = false;
+    this.trajectonderdeel = new TrajectOnderdeel();
+  }
+
   wijzigTrajectonderdeel(trajectonderdeel: TrajectOnderdeel) {
     this.trajectonderdeel = trajectonderdeel;
     this.onderdeelWijzigen = true;
