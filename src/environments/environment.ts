@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://localhost:8080',
+  apiUrl: 'https://wsa-opleidingen-test.azurewebsites.net',
   wsaClientId: 'wsa-opleidingen',
   wsaClientSecret: 'lancenNicaLCONiT'
 };
