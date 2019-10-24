@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Uitwerking } from 'src/app/Objecten/uitwerking';
 import { DataserviceService } from 'src/app/services/dataservice.service';
 import { Gebruiker } from 'src/app/Objecten/gebruiker';
 import { UitwerkingService } from 'src/app/services/uitwerking.service';
 import { Router } from '@angular/router';
+import { UitwerkingDTO } from 'src/app/Objecten/uitwerking-dto';
+import { Opdracht } from 'src/app/Objecten/opdracht';
 
 @Component({
   selector: 'wsa-beheer-uitwerking',
@@ -11,11 +12,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./beheer-uitwerking.component.scss']
 })
 export class BeheerUitwerkingComponent implements OnInit {
-  uitwerking: Uitwerking = new Uitwerking();
   student: Gebruiker = new Gebruiker();
+  opdrachtUitwerking: UitwerkingDTO = new UitwerkingDTO();
+  opdracht: Opdracht = new Opdracht;
 
   constructor(private dataservice: DataserviceService, private uitwerkingservice: UitwerkingService,
-              private router: Router, ) { }
+              private router: Router) { }
 
   ngOnInit() {
     this.haalUitwerkingOp();
@@ -23,17 +25,17 @@ export class BeheerUitwerkingComponent implements OnInit {
   }
 
   haalUitwerkingOp(): void {
-    this.uitwerking = this.dataservice.getUitwerking();
+    this.opdrachtUitwerking = this.dataservice.getUitwerkingDTO();
     this.student = this.dataservice.getGebruiker();
   }
 
   markeerAlsGelezen(): void {
-    this.uitwerking.gelezen = true;
-    this.uitwerkingservice.wijzigUitwerking(this.student.id, this.uitwerking).subscribe();
+    this.opdrachtUitwerking.gelezen = true;
+    this.uitwerkingservice.wijzigUitwerking(this.student.id, this.opdrachtUitwerking).subscribe();
   }
 
-  opmerkingOpslaan(uitwerking: Uitwerking): void {
-    this.uitwerkingservice.wijzigUitwerking(this.student.id ,uitwerking)
+  opmerkingOpslaan(): void {
+    this.uitwerkingservice.wijzigUitwerking(this.student.id ,this.opdrachtUitwerking)
         .subscribe(response => this.router.navigateByUrl('docent/docent-traject/uitwerkingen-lijst/' + this.student.id));
   }
 }

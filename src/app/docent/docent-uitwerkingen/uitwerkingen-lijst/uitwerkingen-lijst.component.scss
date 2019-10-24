@@ -62,3 +62,11 @@ button:hover {
 #melding {
     min-width: 100%;
 }
+
+td { 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    word-wrap: break-word;
+    font-family: "Working Spirit";
+    color: #808285;
+}

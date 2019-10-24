@@ -50,5 +50,4 @@ export class HomeTrajectenComponent implements OnInit {
   getTekstObject(tekstObject_id: number) {
     this.homeService.haalTekstObjectOpIdHome(tekstObject_id).subscribe(opgehaaldTekstObject => this.tekstObject = opgehaaldTekstObject);
   }
-
 }

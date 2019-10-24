@@ -32,14 +32,14 @@
             </div>
         </div>
 
-        <div *ngIf="gebruiker.gekoppeld">
+        <ng-container *ngIf="gebruiker.gekoppeld">
             <div class="col-sm-3">
                 <div [routerLink]="'mijn-gegevens'">
                     <div id="MijnOverzicht"></div>
                     <div id=h5>Mijn Overzicht</div>
                 </div>
             </div>
-        </div>
+        </ng-container>
     </div>
 
     <!-- Hier wordt de trajectinformatie van het traject getoont waar de student aan gekoppeld is -->
@@ -62,14 +62,12 @@
                     <thead id="tabel-headers">
                         <tr>
                             <th>Datum</th>
-                            <th>Tijdstip</th>
                             <th>Informatie</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr *ngFor="let Trajectonderdeel of traject.trajectOnderdelen">
                             <td>{{Trajectonderdeel.startdatum | date:'d-MM-yyyy HH:mm'}}</td>
-                            <td>{{Trajectonderdeel.tijdstip}}</td>
                             <td>{{Trajectonderdeel.naam}}</td>
                         </tr>
                     </tbody>
