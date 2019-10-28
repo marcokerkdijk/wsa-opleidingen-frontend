@@ -31,7 +31,10 @@ html {
     font-family: "Working Spirit";
 }
 
-
+//goed plaatsen van de close button bij de meldingen
+.alert-dismissable .close, .alert-dismissible .close{
+    right: 0px;
+}
 
 // ============ //
 // Modal opmaak //

@@ -1,3 +1,4 @@
 <div *ngFor="let alert of alerts" class="{{cssClass(alert)}} alert-dismissable" id="alert">
     {{alert.message}}
+    <p *ngIf="alert.type===2" class="close" (click)="removeAlert(alert)">&times;</p>
 </div>
