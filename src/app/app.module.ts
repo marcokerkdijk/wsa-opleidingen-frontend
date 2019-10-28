@@ -1,18 +1,18 @@
-import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
-import {FormsModule} from '@angular/forms';
-import {AppRoutingModule} from './app-routing.module';
-import {AppComponent} from './app.component';
-import {ReactiveFormsModule} from "@angular/forms";
-import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
-import {AutorisatieInterceptor} from "./interceptor/AutorisatieInterceptor";
-import {JWT_OPTIONS, JwtModule} from "@auth0/angular-jwt";
-import {environment} from "../environments/environment";
-import {TokenService} from "./services/token.service";
-import {HomeComponent} from './home/home.component';
-import {StudentComponent} from './student/student.component';
-import {DocentComponent} from './docent/docent.component';
-import {AdminComponent} from './admin/admin.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { ReactiveFormsModule } from "@angular/forms";
+import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
+import { AutorisatieInterceptor } from "./interceptor/AutorisatieInterceptor";
+import { JWT_OPTIONS, JwtModule } from "@auth0/angular-jwt";
+import { environment } from "../environments/environment";
+import { TokenService } from "./services/token.service";
+import { HomeComponent } from './home/home.component';
+import { StudentComponent } from './student/student.component';
+import { DocentComponent } from './docent/docent.component';
+import { AdminComponent } from './admin/admin.component';
 import { PageFooterComponent } from './page-footer/page-footer.component';
 import { HeaderComponent } from './header/header.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -71,6 +71,7 @@ import { AdminBeheerTekstobjectenComponent } from './admin/admin-beheer-tekstobj
 import { TekstobjectWijzigenComponent } from './admin/admin-beheer-tekstobjecten/tekstobject-wijzigen/tekstobject-wijzigen.component';
 import { NgxLinkifyjsModule } from 'ngx-linkifyjs';
 import { UserIdleModule } from 'angular-user-idle';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 export function jwtOptionsFactory(tokenService: TokenService) {
   return {
@@ -147,9 +148,10 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     TekstobjectWijzigenComponent,
   ],
   imports: [
-    BrowserModule, 
+    BrowserModule,
     UserIdleModule.forRoot({
-      idle: 300, timeout: 300, ping: 10}),
+      idle: 300, timeout: 300, ping: 10
+    }),
     AlertModule,
     ReactiveFormsModule,
     HttpClientModule,
@@ -168,8 +170,9 @@ export function jwtOptionsFactory(tokenService: TokenService) {
     NgxLinkifyjsModule.forRoot(),
   ],
   providers: [
-    {provide: HomeTrajectenComponent},
-    {provide: HTTP_INTERCEPTORS, useClass: AutorisatieInterceptor, multi: true},
+    { provide: HomeTrajectenComponent },
+    { provide: HTTP_INTERCEPTORS, useClass: AutorisatieInterceptor, multi: true },
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
     NavbarComponent
   ],
   bootstrap: [AppComponent]
